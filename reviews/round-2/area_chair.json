@@ -1,0 +1,33 @@
+{"verdict": "minor",
+ "score_1_10": 3,
+ "blockers": [
+  "The abstract (paper/main.tex:19, 'within each source, the pooled format added false choices on problems the judge could not solve and not on problems it solved') and Sec. 4.3 (paper/main.tex:67, 'The direction is the same within each source') are false as written for the third source. The arXiv-derived set is a source, and its split in exps/posthoc/solvability_by_source.json gives repl_solved n=4, D=+0.50 [0.00, 1.00]: on solved problems PICK added false choices there as well. The paper reports only the screen and contest splits and leaves this row out. The fix is to report the arXiv split (n=4, uninterpretable) and limit the sentence to 'within the screen and contest sources', or to drop 'each'."
+ ],
+ "non_blocking": [
+  "Contribution level: workshop. The primary pre-registered result is inconclusive (contest set n=24, D 0.00, 90% CI [-0.125, +0.125]; exps/c2_confirm/results.txt). At ISO false-accept 0.04 and a TA choosing rate of 0.125 in both arms, that set sits near the floor and has little power to detect a lineup effect. Every positive signal is exploratory or comes from a gate-failed set. The paper says this honestly, but honesty does not make the contribution flagship-level.",
+  "Novelty is modest. H2/S6 (a forced choice picks the wrong candidate that the same model's isolated verification accepts more often) is the expected result of correlated judgments within one model. A round-robin of forced pairwise comparisons crowning a unique winner on 3-candidate pools is close to guaranteed by construction. Only the absence-signal AUROC (0.56) adds information. NOTA/all-wrong multiple choice (wang2025llms) and comparative-judging bias (jeong2025comparative) cover nearby ground. What is new is the ISO-vs-PICK contrast on real graded frontier-model errors, which is a narrow increment.",
+  "The penalty contrast is asymmetric: ISO-any gets three acceptance chances against PICK's single choice (main.tex:45, 84). This biases the test against finding a penalty and makes 'no penalty' results hard to read as equivalence. It is disclosed, but a matched-compute variant (for example ISO on the single best-scored candidate, or PICK repeated three times) would make the contrast interpretable.",
+  "The abstract states the H2 result as a fact ('is the one the judge's own isolated verification passes most'), even though it is unconfirmed (p 0.043 unadjusted on the gated set). The next sentence ('None of these exploratory effects is confirmed') mitigates this. 'tends to be the one' would be more accurate, and 'passes most' overstates a mean difference of 0.20 vs 0.07 (s6).",
+  "The abstract puts the gate-failed arXiv set's '+0.15 penalty' next to the interpreted result. The paper elsewhere says this set is not interpreted, so calling it a 'penalty' in the abstract reads as interpreting it anyway.",
+  "results/hypothesis_ledger.csv still lists C2-H2-haiku as 'CONFIRMATORY: confirmed' and C2-H1-haiku as 'lineup penalty present' (union reading), next to the conservative rows. The ledger should mark the union rows as superseded by ruling A2 (exps/c2_confirm/AMENDMENTS.md) so that it does not contradict the paper.",
+  "The gate-conflict ruling A2 came after the data and after review (AMENDMENTS.md A2). It is disclosed and conservative (it removes positive results), so I do not treat it as a blocker. Still, the pre-registration's named primary analysis (the union) gave a significant penalty (D +0.117, one-sided p 0.007) and a confirmed H2 (Holm 0.0052). Readers deserve one sentence noting that, under the literal primary specification, the paper's headline would have been 'lineup penalty present'.",
+  "Locking provenance: the first replication lock was empty, and the set was rebuilt with a changed builder filter (MA_ALL_MODELS=1) at 23:16, before the 23:30 pre-registration and before any C2 call (banks/locked_ma/LOCK.md). This is acceptable and disclosed in main.tex:39. Stating it explicitly would help.",
+  "The solvability split depends on a single SOLVE attempt per problem and is confounded with source (acknowledged in main.tex:67). The proposed stratified confirmation is the right next step and is what would lift the paper's level.",
+  "The calibration file (reviews/calibration.json) was outside my permitted reading, so I scored on absolute rubric anchors and not against the calibration median. Under the rubric, the calibration bar cannot be assessed from this review."
+ ],
+ "evidence": [
+  "paper/main.tex:19",
+  "paper/main.tex:45",
+  "paper/main.tex:65",
+  "paper/main.tex:67",
+  "paper/main.tex:70-71",
+  "paper/main.tex:84",
+  "exps/posthoc/solvability_by_source.json (repl_solved n=4 D=+0.50)",
+  "exps/posthoc/solvability_split.json",
+  "exps/c2_confirm/PREREGISTRATION.md (Primary analysis; Gates)",
+  "exps/c2_confirm/AMENDMENTS.md (Outcome as preregistered; A2)",
+  "exps/c2_confirm/results.txt (haiku_conf, haiku_repl, haiku_all, holm)",
+  "results/hypothesis_ledger.csv (C2-H1-haiku, C2-H2-haiku rows)",
+  "banks/locked_ma/LOCK.md",
+  "paper/results.tex"
+ ]}

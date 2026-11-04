@@ -1,0 +1,27 @@
+{
+  "verdict": "minor",
+  "score_1_10": 6,
+  "blockers": [],
+  "non_blocking": [
+    "No ABANDON: after about ten searches (web plus arxiv.org/aclanthology fetches) I found no paper containing the main result (pooled pick with NONE vs isolated verification, matched confidence-based lineup ROC, base-rate instruction not moving the criterion, forced pick = most-accepted wrong candidate, same-family verifier not catching it). Absence of a hit is not proof; searches were keyword-limited.",
+    "Closest uncited-or-thinly-cited neighbours to add or position against: Tam et al. 2025 'None of the Above, Less of the Right' (ACL Findings 2025, aclanthology.org/2025.findings-acl.1031; arXiv 2503.01550), which reports that NOTA-as-correct options cause a 30-50% drop and that models struggle to reject all options; this is uncited and bears directly on the 'NONE option' claim. Kim & Jung 2026 (arXiv 2610.08153) is cited but only briefly: it removes the correct option from MMLU-Pro math MCQA and offers ABSTAIN, so it is the nearest math, no-valid-option precedent; the paper should say explicitly it does not compare pooled choosing against isolated verification.",
+    "Wixted & Mickes-style SDT/ROC analysis of lineup procedures is the method lineage; arXiv 2603.14893 ('LLMs as Signal Detectors', ROC from confidence bins for LLMs) and arXiv 2609.18204 (cited as chen2026beyond; SDT criterion shift in LLM overseers) show SDT framing of LLM judges is not new. The paper credits only the latter; the novelty claim should be limited to applying the lineup procedure contrast (pooled vs isolated, target-absent), not to the SDT framing.",
+    "Related-work characterisations checked and accurate: wang2025llms (arXiv 2402.01349 abstract and Table 3: incorrect options with highest confidence reach 83.6% to 99.4% of the correct option's confidence; NOTA replacement drops performance); rho2025best (arXiv 2510.04087 abstract: 'selecting the least bad of many unacceptable options', outside option); ma2026selecting (arXiv 2611.00507, selection vs solving, workshop); ji2026candidate (arXiv 2608.25937; 'All-wrong pools were excluded (Fig. 4c)' in the full text, matching the paper); chen2026beyond (arXiv 2609.18204, criterion shift via SDT); kim2026penalty (arXiv 2610.08153). Minor wording: chen2026 found a shift toward rejection and more false alarms, so 'criterion rather than detection effects' is right but the direction is opposite to this paper's liberal shift and could be stated.",
+    "Not verifiable by me: zhang2026selected (paper says only the abstract was read, which is honest) and the HICSS/AACL venue notes taken from arXiv comments. The sentence that wang2025llms 'models often still choose an option when the correct one is replaced and a no-answer option is offered' is a fair paraphrase but their 'None of the Above' result is an accuracy drop, not a choice rate; consider softening.",
+    "Claim 'Eyewitness research predicts...' in the abstract is framed as a prior; Wells 1984 and Malpass & Devine 1981 are the right sources, but the paper's own results (J not detectably lower, ROC indistinguishable) cut against the strict relative-judgment prediction, which the text already concedes."
+  ],
+  "evidence": [
+    "https://arxiv.org/abs/2402.01349",
+    "https://aclanthology.org/2025.coling-main.390",
+    "https://aclanthology.org/2025.findings-acl.1031/",
+    "https://arxiv.org/abs/2503.01550",
+    "https://arxiv.org/abs/2610.08153",
+    "https://arxiv.org/abs/2510.04087",
+    "https://arxiv.org/abs/2608.25937",
+    "https://arxiv.org/abs/2609.18204",
+    "https://arxiv.org/abs/2611.00507",
+    "https://arxiv.org/abs/2603.14893",
+    "paper/main.tex:34",
+    "paper/main.tex:89"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "verdict": "minor",
+  "score_1_10": 4,
+  "blockers": [],
+  "non_blocking": [
+    "Contribution level: the core phenomenon (a judge picks from an all-wrong pool more often than it accepts any of those options alone) largely overlaps with prior work. Wang et al. 2025 (COLING) show that models still choose when the correct option is replaced and a no-answer option is offered. Tam et al. report the 'none of the above' accuracy loss. The paper cites both and names its distinct contrasts honestly (main.tex:34). What is new is the stratified, pre-registered test on officially graded real errors, the select-then-verify result (H2u) and the criterion-shift analysis (A4/A5). That analysis ends in non-detections near chance: in A5 both ROCs lie close to the diagonal (main.tex:92), so the mechanism question stays open. Overall this is a careful, honest, incremental empirical note at the workshop-to-borderline level. It is not a flagship-level contribution.",
+    "The title (main.tex:11) leads with the unsolved-problem condition, but the pre-registered primary test of specificity to unsolved problems (H1) was inconclusive: b +0.12 [-0.03,+0.27], Holm 0.129 (exps/c3/results.txt H1; ledger row 67). The SOLVED stratum also shows a positive d of +0.06 [+0.01,+0.11]. The abstract and conclusion say this (main.tex:19, :119), but the title can still be read as claiming specificity. Consider adding a qualifier.",
+    "H3 pools all 225 judged problems, including SOLVED ones where the inflation is about zero (H2s +0.02). The conclusion attaches 'a second Claude model did not detectably catch it' to 'such problems', meaning the unsolved ones (main.tex:119), but H3 was not tested on the UNSOLVED stratum. The abstract states the scope correctly ('over all judged problems', main.tex:19). Make the conclusion match.",
+    "The abstract says the base-rate statement 'did not move the pooled judge's criterion' (main.tex:19). H7 is a non-detection with CI [-0.08,+0.12] on 78 problems (ledger row 81). 'Did not detectably move' would match the evidence and the paper's own H3 wording (main.tex:82).",
+    "PICK and ISO differ in more than presentation. PICK asks 'which has the correct final answer, if any', while ISO asks for ACCEPT/REJECT (exps/c3/jobs_pick.jsonl, jobs_iso.jsonl), and the number of calls differs (1 vs 3). The EACH control separates form from pooling only as an unpowered estimate (H5, AMENDMENTS.md:20). The paper discloses this (main.tex:87, :116); the general framing as a 'lineup effect' should stay modest.",
+    "Stratum noise: the post hoc audit reclassified 20 of the 90 UNSOLVED problems (14 solved, 6 mixed) and found 6 label problems. The sensitivity estimates hold (+0.27 and +0.28 for d; main.tex:73), so no claim changes. Still, 22% misclassification in the key stratum limits how far 'problems it did not solve' can be taken literally.",
+    "Scope: one vendor, 90 UNSOLVED problems almost all arXiv-derived (84/90; exps/c3/results.txt H1_family_arxiv), and adaptive thinking was not controlled. All of this is disclosed (main.tex:116); external validity is narrow.",
+    "Calibration: on instruction I did not read reviews/ (including reviews/calibration.json), so this score comes from my own judgment of subfield norms, not the recorded calibration set."
+  ],
+  "evidence": [
+    "paper/main.tex:11",
+    "paper/main.tex:19",
+    "paper/main.tex:34",
+    "paper/main.tex:73",
+    "paper/main.tex:82",
+    "paper/main.tex:87",
+    "paper/main.tex:92",
+    "paper/main.tex:116",
+    "paper/main.tex:119",
+    "exps/c3/results.txt (H1, D_unsolved, H2u, H1_family_arxiv)",
+    "exps/c3/AMENDMENTS.md:19-20",
+    "results/hypothesis_ledger.csv:67-81",
+    "exps/c3/jobs_pick.jsonl, exps/c3/jobs_iso.jsonl, exps/c3/jobs_forced.jsonl (prompt wording)",
+    "Independent recompute from exps/c3/raw/arms with my own regex parser, matching the paper: haiku UNSOLVED n=90, PICK 0.600, ISO-any 0.356, d +0.244, H2u +0.194; sonnet d +0.133, H2u +0.278",
+    "git log: exps/c3/PREREGISTRATION.md committed 62ab1fc 08:29 before the first C3 arm data (17818a7 09:21); A4 amendment 7a11786 10:09 before A4 data 2416579 10:30; A5 amendment b9470c0 10:53 before A5 data b52bfed 11:23",
+    "paper/main.pdf matches the committed paper/results.tex (A4 sensitivity -0.14 [-0.36,+0.07] on 56 problems)"
+  ]
+}

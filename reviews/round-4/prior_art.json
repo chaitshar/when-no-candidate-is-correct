@@ -1,0 +1,26 @@
+{
+  "verdict": "minor",
+  "score_1_10": 6,
+  "blockers": [],
+  "non_blocking": [
+    "No published paper found that contains the main results. Not an ABANDON case. Checked: 2402.01349 (Wang et al.), 2608.25937 (Ji et al.), 2611.00507 (Ma et al.), 2510.04087 (Rho and Lee), 2406.12319 (Jeong et al.), and the NeurIPS 2026 Selected-Tail poster (abstract only). Five targeted web searches on none-of-the-above, listwise vs pointwise judging, verifier false positives in best-of-n, and abstention with a verifier turned up nothing that compares pooled choice with a NONE option against isolated acceptance on all-wrong pools.",
+    "Uncited and closest on the framing: Rho and Lee, arXiv 2510.04087, 'Best of mini-N in-loop Sampling'. Abstract: 'leaving systems vulnerable to selecting the least bad of many unacceptable options. This is particularly problematic for hard prompts, where the risk of such false acceptances increases with the number of samples.' It trains a reward model with an outside option. It does not test an LLM judge on all-wrong pools, and it has no isolated-versus-pooled contrast and no solvability stratification. Cite it in Related work next to the selection-under-imperfect-verification and none-of-the-above paragraphs.",
+    "Uncited concurrent work: Ma et al., arXiv 2611.00507 (31 Oct 2026), 'Selecting or Solving?'. It separates a verifier's selection benefit from its own solving, but only for video QA best-of-N with correct candidates in the pool. It is not about all-wrong pools. Cite it as concurrent and adjacent: the verifier's own competence on the question matters.",
+    "Wang et al. (2402.01349) description is broadly accurate but could be sharper. Sec 3.3 and Table 1 give true-or-false accuracy on options from MCQs. Table 2 replaces the correct option with 'None of the above' and finds models mostly fail to pick it. Sec 4.2 replaces correct options with non-semantic tokens and adds a 'no answer' instruction. ChatGPT-4o 'successfully identifies that there is no correct answer in approximately 60% of the MCQs', and 'for the remaining 40% of the questions, it still selects one option as correct'. The paper's wording 'when the correct one is replaced and a no-answer option is offered' fits this. But Sec 4.1 is a token-probability confidence analysis ('Option Probability Analysis'), not an isolated-verification accept rate tied to the model's choice. The sentence that this analysis relates isolated verification to choice and is the closest prior result should say 'relates the model's confidence in true-or-false judgments of options to its choice'. Wang's hypothesis ('LLMs may treat the selected option as the most accurate among the choices') is the conceptual precursor of the select-then-verify result. It concerns multiple-choice knowledge questions, not math solutions, and not an all-wrong pool measured against isolated acceptance.",
+    "Ji et al. (2608.25937) description is accurate. Text: 'All-wrong pools were excluded (Fig. 4c)', and ranking-AUC traces were excluded when they 'contained no correct-wrong comparisons'. Their Fig 1c notes that 'No selection rule can recover a correct answer when no correct candidate was generated'. Label it a preprint; it is dated Aug 2026.",
+    "Selected-Tail Reliability (neurips.cc/virtual/2026/poster/155878): only the abstract could be read. It is a theory paper on selected-rank exposure laws and certified compute caps. Nothing in the abstract overlaps the empirical claims. The paper's disclosure that only the abstract was read is honest. Re-check if the full text becomes available.",
+    "Jeong et al. (2406.12319) is accurately cited: pairwise amplifies biased preferences, pointwise is less susceptible. It does not involve a NONE option or all-wrong pools.",
+    "Novelty is narrow but real. It is a scoped empirical finding for two Claude models on math solutions. The generality claim is already limited in the paper (conclusion: whether the effect is specific to unsolved problems is not established). The cross-model claim rests on one pair from one family, so avoid wording that suggests generality.",
+    "Search limits: the arxiv.org abs and pdf pages were fetched with curl. WebSearch is a general search and not exhaustive. Absence of a prior result is not proof."
+  ],
+  "evidence": [
+    "https://arxiv.org/abs/2402.01349 (Wang et al.; Sec 3.3, 4.1, 4.2, Table 2)",
+    "https://arxiv.org/abs/2608.25937 (Ji et al.; 'All-wrong pools were excluded (Fig. 4c)')",
+    "https://arxiv.org/abs/2611.00507 (Ma et al., concurrent, uncited)",
+    "https://arxiv.org/abs/2510.04087 (Rho and Lee, uncited)",
+    "https://arxiv.org/abs/2406.12319 (Jeong et al.)",
+    "https://neurips.cc/virtual/2026/poster/155878 (Selected-Tail, abstract only)",
+    "paper/main.tex:34 (Wang and Ji characterisation)",
+    "paper/main.tex:35 (Selected-Tail citation)"
+  ]
+}

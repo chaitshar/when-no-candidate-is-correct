@@ -1,0 +1,49 @@
+{
+ "defects_found": [
+  {
+   "location": "Abstract, Sec. 4.4 (c3h_du_ci in results.tex line 78)",
+   "description": "The 95% CI for the headline difference on UNSOLVED problems is given as [+0.21, +0.36]. The artifact gives [+0.13, +0.36], so the lower bound is overstated; the interval nearly reaches the point estimate's neighbourhood of 0.24 only in the paper. results.tex also disagrees with claims.json.",
+   "evidence": "exps/c3/results.json D_unsolved.ci95=[0.133,0.356]; results/claims.json c3h_du_ci=[+0.13, +0.36]"
+  },
+  {
+   "location": "Sec. 3.5 (C3 description): 'MathArena problems never shown to a subject in this project'",
+   "description": "C3 selected problems include items duplicating problems already used earlier: apex-shortlist_25..28 duplicate aime_2025/hmmt_feb_2025 calibration problems, and smt_2025_42 duplicates an apex_2025 problem. All five are in the selected C3 set. C3 also draws on smt_2025, cmimc_2025, brumo_2025, apex_2025, hmmt_nov_2025 and arxivmath-0626, which the Method section lists as the screen split already judged by subjects. The freshness claim in the abstract ('fresh') is therefore false.",
+   "evidence": "exps/c3/duplicates_of_used.json; exps/c3/strata.json selected list; exps/c3/PREREGISTRATION.md line 12"
+  },
+  {
+   "location": "Sec. 3.5: 'six monthly arXiv-derived sets from December 2025 to May 2026'; '13 competitions'",
+   "description": "The C3 selection contains seven arXiv-derived sets (arxivmath-1225, 0126, 0226, 0326, 0426, 0526, 0626), i.e. through June 2026, not six ending in May. The paper's 'held-out' arXiv sets (August and September 2026) are not in C3 at all.",
+   "evidence": "exps/c3/strata.json (selected ids by competition prefix)"
+  },
+  {
+   "location": "Sec. 4.5 / Conclusion: 'verification by sonnet removed none of the inflation'; Sec. 4.4 H3",
+   "description": "Only the haiku-pick direction is reported (d=+0.02, p=0.29). The pre-registered companion result for sonnet's picks has a Holm-free one-sided p=0.049 (d=+0.04) and is omitted; also H3 was declared inconclusive, so 'did not reduce' and 'removed none' overstates a null/inconclusive result.",
+   "evidence": "exps/c3/results_h3.json select_sonnet p_one_sided=0.0486; results.tex h3_sonnet_p"
+  },
+  {
+   "location": "Sec. 4.5 Tournaments",
+   "description": "AUROC 0.56 with CI [0.47, 0.65] includes 0.5, yet the text says decisiveness 'separated' TP from TA; the claim of 'little warning' is fine but 'separated' implies a detectable signal. Also the p2 pilot AUROCs 0.64/0.59 are cited as comparable without CIs.",
+   "evidence": "exps/screens/s3_tournament/results.json haiku.dec auroc 0.5625 ci [0.475,0.65]"
+  },
+  {
+   "location": "Sec. 4.6 Agreement and diversity (s10_hetero vs s10_homo)",
+   "description": "The claim that errors correlate less across models (0.54) than within one model (0.67) is presented without caveat, but the artifact notes that the bootstrap is over model pairs that share models and 'is descriptive, not a valid test'; the statistical unit is not problems.",
+   "evidence": "exps/screens/s2_s10_free/results.json S10.note"
+  },
+  {
+   "location": "Sec. 4.6 Who&When: sonnet 'close to' the majority baseline",
+   "description": "Sonnet normalized hand-crafted accuracy is 0.57 versus majority baseline 0.53, i.e. above it, not merely close; haiku strict hand-crafted agent accuracy is 0.17 (far below baseline), which is not stated, only the post hoc normalized 0.43.",
+   "evidence": "exps/screens/s5_whowhen/results.json haiku_hand agent_acc 0.172; results_norm.json"
+  },
+  {
+   "location": "Sec. 2 Related work, description of wang2025llms",
+   "description": "The paper attributes to Wang et al. (COLING 2025) specific analyses (isolated true/false verification of incorrect options, relation to choice, replaced-correct-option with a no-answer option). The citation evidence was obtained only from search snippets with pages blocked and supports only the 'least incorrect option / accuracy persists when correct option removed' claim, so the detailed characterization used to delimit novelty is unverified.",
+   "evidence": "evidence/citations/wang2025llms.json (fetched_via: WebSearch snippet, pages blocked)"
+  },
+  {
+   "location": "Sec. 3.2 Subjects: 'extended thinking is adaptive and on by default'",
+   "description": "The harness sets no thinking or effort option; the claim about the thinking setting is not implemented or verifiable in code, and sonnet's system prompt differs from haiku's (disclosed only in Results, while Methods says 'a fixed one-sentence system prompt').",
+   "evidence": "harness/run_jobs.py lines 39-45; exps/c3/build.py sonnet extra system prompt"
+  }
+ ]
+}

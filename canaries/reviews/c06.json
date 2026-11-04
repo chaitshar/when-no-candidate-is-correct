@@ -1,0 +1,44 @@
+{
+ "defects_found": [
+  {
+   "location": "Method 'Calibration, inference and multiplicity'",
+   "description": "Claims estimates are pooled across haiku and sonnet judges into one sample with bootstrap over pooled judgments. The analysis code and results report haiku and sonnet separately (results.json, results_sonnet.json, results_h3.json); no pooled sample exists.",
+   "evidence": "exps/c3/analyze.py; exps/c3/analyze_sonnet.py; exps/c3/results_sonnet.json"
+  },
+  {
+   "location": "Method 'Subjects' (Claude Code version cli_version=2.1.317)",
+   "description": "Stated as the single CLI version for all calls, but the C3 preregistration says C3 ran on 2.1.318 (S1 and C2 ran on 2.1.317; CLI updated in between). The version claim is wrong for the headline C3 data.",
+   "evidence": "exps/c3/PREREGISTRATION.md line 9"
+  },
+  {
+   "location": "Method 'The stratified confirmation (C3)'",
+   "description": "Says C3 drew on 'six monthly arXiv-derived sets from December 2025 to May 2026'. The locked C3 pools contain seven arxivmath sets (1225, 0126, 0226, 0327... i.e. 1225,0126,0226,0326,0426,0526 and 0626), including June 2026.",
+   "evidence": "exps/c3/strata.json; exps/c3/PREREGISTRATION.md line 12"
+  },
+  {
+   "location": "Method 'C3' / Splits",
+   "description": "Claims C3 used only problems never shown to a subject, yet its pools come from smt_2025, cmimc_2025, brumo_2025, apex_2025, hmmt_nov_2025 and arxivmath-0626, which the paper lists as the screen splits; exclusion was by problem and the duplicates file shows five C3 problems duplicate earlier-used ones. 'Never shown' and the clean split description are not supported.",
+   "evidence": "exps/c3/PREREGISTRATION.md line 12; exps/c3/duplicates_of_used.json"
+  },
+  {
+   "location": "Abstract/Contributions/Results 'Seven exploratory screens'",
+   "description": "Count does not match artifacts: exps/screens holds s1, s2/s10, s3, s4, s5, s8, s9 (eight distinct screens s1,s2,s3,s4,s5,s8,s9,s10) plus calibration.",
+   "evidence": "exps/screens/ directory"
+  },
+  {
+   "location": "Results H3 and Conclusion 'verification by claude-sonnet-5-5 removed none of the inflation'; 'the one the other model is most likely to pass'",
+   "description": "H3 was inconclusive (d=+0.02, CI [-0.04,+0.07], p=0.29), which does not show that cross-model verification removes none. Sonnet-judge arm gave p=0.049 for a same-model excess. Acceptance of the pick by sonnet (0.16) vs haiku (0.14) is aggregate over all 225 pools, not 'most likely to pass' versus the other candidates; no such cross-model contrast was computed.",
+   "evidence": "exps/c3/results_h3.json"
+  },
+  {
+   "location": "Related work, characterization of wang2025llms",
+   "description": "Attributes detailed findings (models accept individual incorrect options verified alone; relates isolated verification to choice; still choose when correct replaced and no-answer option offered) to Wang et al. The evidence file records only a search snippet and a one-sentence summary (least incorrect option; accuracy persists when correct option removed); pages were blocked, so the detailed claims and the 'closest prior result' framing are unsupported.",
+   "evidence": "evidence/citations/wang2025llms.json"
+  },
+  {
+   "location": "Abstract/Results 'Holm-confirmed' and Method 'one Holm family' vs sonnet",
+   "description": "Sonnet replication H1u Holm p=0.012 is described as 'the same two confirmed effects', yet sonnet's effect (d=+0.13) is about half of haiku's and its strata are defined by haiku, not sonnet competence; 'beyond its competence' framing for sonnet is not measured (sonnet solvability not measured).",
+   "evidence": "exps/c3/AMENDMENTS.md A1; exps/c3/results_sonnet.json"
+  }
+ ]
+}

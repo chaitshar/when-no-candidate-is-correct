@@ -1,0 +1,39 @@
+{
+  "verdict": "minor",
+  "score_1_10": 4,
+  "blockers": [],
+  "non_blocking": [
+    "Contribution level: careful and honest, but narrow. One model family (claude-haiku-5-5, with sonnet as a second judge), one domain (math final answers), one benchmark source. The pre-registered primary test (H1: penalty larger on UNSOLVED than SOLVED after competition fixed effects) was inconclusive (+0.12, [-0.03, +0.27]). What was confirmed is that a pooled pick-or-NONE format chooses more often than isolated verification on items the judge cannot solve. Amendment A4 then shows that this is consistent with a liberal criterion rather than worse discrimination. In eyewitness terms that is the well-known choosing/criterion account (Wixted and Mickes 2012), and on the LLM side it sits close to Wang et al. 2025 (COLING), whose models keep choosing an option after the correct one is removed and a no-answer option is offered. The new parts are the pre-registered stratified design, the TP/TA criterion-shift decomposition, and the select-then-verify result (H2u). That makes it a solid workshop paper or a borderline main-track paper, not a flagship result. I scored on the rubric's verbal scale; reviews/calibration.json was off-limits under my instructions.",
+    "The H3 numbers in the abstract and Contribution (3) are attributed to the wrong population. The abstract says 'On those problems [unsolved] ... verification by claude-sonnet-5-5 did not detectably reduce that (+0.02, [-0.04, +0.07])'. But H3 (results_h3.json, n=225) pools SOLVED and UNSOLVED problems, as A1 specifies. My own recomputation on UNSOLVED only gives h_same - h_cross = +0.03, 95% CI [-0.08, +0.15] (n=90; h_same 0.19, h_cross 0.16; sonnet accepts haiku's forced pick in 0.32 of these pools vs haiku 0.29). The pooled acceptance rates 0.14/0.16 at main.tex:82 are also all-problem figures. The qualitative claim survives with a wider interval, but either the scope or the numbers must change.",
+    "'Criterion shift' is stated more strongly than the evidence allows. Contribution (2) (main.tex:30, 'showing that this is a criterion shift') and the abstract ('The effect is therefore a shift toward choosing') rest on H4 not being confirmed. The PICK-ISO J difference is -0.09 with a 95% CI down to -0.26 (results_a4.json), so a sizeable loss of discrimination is not excluded. A4 itself (AMENDMENTS.md:19) only licenses 'consistent with a criterion shift', which is the wording at main.tex:87. The abstract and contributions should use that wording.",
+    "Question form vs co-presentation (H5) is presented as a finding: Contribution (2), 'the question form contributes beyond co-presentation', and main.tex:87, 'Question form mattered'. A4 (AMENDMENTS.md:20) pre-registered H5 as an estimate with no test. The haiku CI barely excludes zero (+0.13, [+0.01, +0.25]), and sonnet's does not (+0.06, [-0.01, +0.14]). It should be labelled an untested estimate and not listed as a contribution.",
+    "A4's hit definitions are asymmetric. For ISO and EACH, a hit requires rejecting the two wrong candidates that the TP pool shares with the TA pool, so hit and false-choice rate are mechanically coupled for those procedures but not for PICK. The paper calls J 'crude' (main.tex:106). It should also say that this coupling biases J_ISO relative to J_PICK in an unknown direction.",
+    "UNSOLVED is 84/90 arXiv-derived (c3h_fam_arxiv_nu), and 20/90 UNSOLVED problems were misclassified by both graders (audit_unsolved.csv). The paper discloses both, and the sensitivity analysis holds (+0.27, [+0.14, +0.40]). Even so, the title's 'Problems It Cannot Solve' is better read as 'hard arXiv-derived problems'. The conclusion (main.tex:109) handles this correctly; the title and abstract framing could be more cautious.",
+    "Pools are described as 'first three distinct wrong answers' (main.tex:39), but deduplication is by MathArena's parsed-answer string. Some UNSOLVED pools therefore hold two candidates with the same boxed answer whose parse strings differ only by an object address: arxivmath-0326_30 and arxivmath-0426_18, both '<function N at 0x...>' with boxed 'N'. This is minor, but it contradicts 'distinct'. A spot check of these and of the '(inf+0j)' labels found the candidates genuinely wrong, so I see no evidence of MathArena label noise.",
+    "The abstract's '278 fresh ... problems' is the locked bank; 227 were judged (50 MIXED and 1 unresolved were excluded). Stating the judged count would be clearer.",
+    "Recomputed and matching the paper: haiku UNSOLVED PICK 0.600 vs ISO-any 0.356 (n=90); SOLVED 0.117 vs 0.058 (n=137); sonnet UNSOLVED 0.633 vs 0.500; SOLVED 0.141 vs 0.081."
+  ],
+  "evidence": [
+    "paper/main.tex:19",
+    "paper/main.tex:30",
+    "paper/main.tex:34",
+    "paper/main.tex:39",
+    "paper/main.tex:73",
+    "paper/main.tex:82",
+    "paper/main.tex:87",
+    "paper/main.tex:106",
+    "paper/main.tex:109",
+    "paper/results.tex (h3_haiku_n=225, a4hu_dj_ci, a4hu_dform_ci, a4su_dform_ci, c3h_b_ci)",
+    "exps/c3/PREREGISTRATION.md:24-32",
+    "exps/c3/AMENDMENTS.md:6",
+    "exps/c3/AMENDMENTS.md:18-20",
+    "exps/c3/results_h3.json",
+    "exps/c3/results_a4.json",
+    "exps/c3/analyze_h3.py:15-24 (loops over all selected problems, both strata)",
+    "exps/c3/audit_unsolved.csv",
+    "exps/c3/strata.json",
+    "banks/locked_c3/pools.json (arxivmath-0326_30, arxivmath-0426_18)",
+    "banks/matharena_pools.py:14",
+    "scratchpad recomputation: H3 restricted to UNSOLVED gives +0.033 [-0.083, +0.150], n=90"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "verdict": "minor",
+ "score_1_10": 7,
+ "blockers": [],
+ "non_blocking": [
+  "Subjects paragraph says a 'fixed one-sentence system prompt'; harness/run_jobs.py:33-34 SYS is two sentences (sonnet's C3 prompt is extended further, which the C3 section does disclose).",
+  "Subjects section names only haiku and sonnet, but the P1 floor result also ran opus and claude-fable-5-1 (results/cost_ledger.csv rows 25-26, exps/p1_lineup_math/results.json); the text names opus but never fable and the P1 sentence omits fable. Scope statement 'All subjects are Anthropic models' is still true.",
+  "cli_version (2.1.317) is sourced to loop/STEER.md, an internal notes file, and raw records do not store the CLI version (paper discloses this); version claim is not independently verifiable from exps/ artifacts. 2.1.318 is supported by exps/c3/PREREGISTRATION.md:9.",
+  "'Haiku's C3 judging cost 10.7 USD' (results/claims.json c3h_cost) sums only ISO/PICK(TA)/FORCED (exps/c3/results.json cost); A4/A5 haiku arms (EACH, PICK-TP, BASE, PICKC, ISOC, about 24 USD in results/cost_ledger.csv) are excluded. Total (cost_subjects 283) is correct; the per-arm phrase could mislead.",
+  "C3 amendment A2 (exps/c3/AMENDMENTS.md) was written after haiku results were computed (commit 8f895ba) but is not mentioned in the paper; it only changes cost/id tallies, so low impact.",
+  "A4/A5 hypotheses (H4, H6, H7) were committed before their data (7a11786 before 2416579; b9470c0 before b52bfed) but after C3 H1u was seen, so 'pre-registered follow-up' in the abstract is accurate only in the sense stated in Section 4.5; the abstract could say 'post-review amendment'.",
+  "Prompts show no leakage: grep of exps/c3/jobs_*.jsonl finds no study, model-name or correctness metadata outside the candidate text; keys are id/model/prompt/timeout(/system); PICK/ISO prompts end with the neutral question. Candidate solution text itself sometimes contains words like 'wrong' as part of mathematical output, which is inherent."
+ ],
+ "evidence": [
+  "python3 analysis/make_claims.py --no-run reproduced 405 claims; git diff --stat results/claims.json empty (nothing to restore). All \\res ids in paper/main.tex exist in results/claims.json and all source files exist.",
+  "Independent recompute from exps/c3/raw/arms with exps/c3/strata.json: UNSOLVED n=90 PICK wrong-choice 0.600, ISO-any 0.356; SOLVED n=137 0.117 vs 0.058; matches claims c3h_unsolved_pick 0.60, c3h_unsolved_iso 0.36, c3h_du +0.24 (exps/c3/results.json D_unsolved mean 0.2444).",
+  "Spot-checked against artifacts (24 claims): c3_n_ta 278, c3h_n 227, c3_n_unsolved 90, c3_n_solved 137, c3_n_mixed 50, c3_disagree 22 (exps/c3/solve_summary.json); c3h_du_ci, c3h_gate passed, c3h_isoparse 1.000; c3_gate_parse 0.90 and c3_gate_diff 0.10 (exps/c3/PREREGISTRATION.md); c3_n_dup 5 (exps/c3/duplicates_of_used.json); c3_audit_solved 14 / mixed 6 (exps/c3/audit_unsolved.csv); ledger_total 80 (results/hypothesis_ledger.csv, 81 lines with header); cost_subjects 283 = sum of rows with resolved ids in results/cost_ledger.csv (283.5); c3s_cost 66.2 = 34.0+16.4+15.8 raw sums; sonnet missing calls (ISO 893/895, EACH 440/441) match the 'three blocked' text; P1 never-choose claim (exps/p1_lineup_math/results.json haiku/sonnet/opus all 0.0 across ISO/PICK/EACH/BASE/SEQ); 13 competitions in strata.json selected (7 arxivmath sets 1225-0626); selected pids disjoint from earlier pools (exps/c2_confirm, s1, s3, p1).",
+  "Chronology (git log): C3 pools locked e11f496 (08:28) < prereg 62ab1fc (08:29) < solve raw/strata and 22 hand checks ce7eed1 (09:10:14) < arm jobs 12fa20c (09:10:21) < arm raw 17818a7; A1 7cbaccc 08:36 before arm data; A4 7a11786 10:09 before A4 raw 2416579 10:30; A5 b9470c0 10:54 before A5 raw b52bfed 11:23. C2 prereg 6bdfeee precedes C2 jobs/raw; C2 A2/A3 are labelled AFTER data (exps/c2_confirm/AMENDMENTS.md:24,27) and paper says so.",
+  "Settings vs code: harness/run_jobs.py:41-44 uses --setting-sources '', --strict-mcp-config, --tools '', cwd /tmp/subject_cwd, no-session-persistence, matching 'no tools, no project settings, empty working directory'; A5 BASE prompt (exps/c3/jobs_a5_base.jsonl) states the base rate and drops 'It is possible that none of them is correct', as disclosed in Threats.",
+  "Gemma: the paper says the open-model arm had returned no data; no gemma C3 results file or raw exist in exps/c3 (only open_jobs.jsonl, gemma_selected.json), consistent."
+ ]
+}

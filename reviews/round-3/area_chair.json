@@ -1,0 +1,37 @@
+{
+  "verdict": "minor",
+  "score_1_10": 3,
+  "blockers": [
+    "The description of the candidates is false for the only interpreted set. The abstract (main.tex:19) says pools hold wrong solutions 'that MathArena's frontier models produced', contribution (1) (main.tex:30) says candidates are 'wrong solutions from frontier models', and the threats section (main.tex:84) says 'pools are restricted to problems on which several frontier models erred'. The builder sorts candidates alphabetically by model name and takes the first three distinct wrong answers from any model in the lineup (banks/matharena_pools.py:15,21,60,74-76). As a result, 26 of the 72 TA candidates in the gated 2026 contest set (24 problems) come from small models: Qwen3-4B-2507-Think 12, QED-Nano 13 and Qwen3-30B-A3B 1. On HMMT Feb 2026, 20 of 54 come from QED-Nano or Qwen3-4B (exps/c2_confirm/pools.json). In the screen, 16 of 180 TA candidates are QED-Nano (exps/screens/s1_lineup/pools.json). The inclusion rule needs three distinct wrong answers from any model, not errors from several frontier models, and the candidates are not the 'best-looking' wrong ones. Fix: describe the candidates and the selection rule accurately, report the share of small-model candidates per set, and note that easy-to-reject small-model distractors may explain part of the low isolated false-accept rate on the contest set (0.04, results.tex:27) and the null H1 there."
+  ],
+  "non_blocking": [
+    "Contribution level. The one interpreted pre-registered test has n=24, and its 90% CI of [-0.12, +0.12] cannot show equivalence or a penalty. Every positive signal is exploratory or comes from sets that failed the gate: the solvability split on 7 and 4 problems in key cells, H2 at p 0.043 before Holm, and tournament AUROC. As an honestly scoped, partly negative pre-registered study this is workshop level, not a flagship contribution. That matches the paper's own cautious framing.",
+    "Novelty of H2 / S6. 'The forced choice picks the wrong candidate the same model's verifier passes most' is close to a known selection or correlated-error effect: the selector and the verifier share one model's beliefs, so the argmax is the one most likely to pass. The project's own screen note says 'Plausibly a known selection effect; needs a prior-art check' (exps/screens/s1_lineup/SCREEN_NOTE.md). The paper does not frame it against that idea (main.tex:71). Cite or discuss winner's-curse and self-verification correlation work, or state that the effect is expected by construction.",
+    "The abstract (main.tex:19) says 'in the screen and contest sources the pooled format added false choices on problems the judge could not solve'. These are point estimates whose 95% CIs include zero or touch it: screen unsolved +0.12 [-0.04, +0.29], contest unsolved +0.14 [0.00, +0.43] on n=7 (exps/posthoc/solvability_by_source.json). Wording such as 'point estimates were positive' would be more accurate.",
+    "The gate-conflict ruling (exps/c2_confirm/AMENDMENTS.md A2) came after the data and after review. It is disclosed and conservative, which is good. Still, the abstract headline (an inconclusive H1) depends on a post hoc resolution. Under the pre-registered union reading, H1 shows a significant penalty (+0.12, 90% CI [+0.04, +0.19]) and H2 is confirmed. The paper reports both readings (main.tex:65), but the abstract mentions only the arXiv-set penalty and not the union outcome.",
+    "The contamination probe is described as uninformative (main.tex:84). With answer-only accuracy of 0.88 versus 0.87 when working the problem (results.tex:61-62), the probe shows that nothing separates the two modes, so the 2025 calibration and the 2026 contest items may be memorized. This weakens the competence interpretation more than the text admits.",
+    "The 'design lesson' (contribution 3: calibrate the judge per item set) is standard practice, not a contribution.",
+    "I did not use the calibration set in reviews/calibration.json because this assignment barred reading anything under reviews/. The score reflects my own judgment of venue level."
+  ],
+  "evidence": [
+    "paper/main.tex:19",
+    "paper/main.tex:30",
+    "paper/main.tex:39",
+    "paper/main.tex:65",
+    "paper/main.tex:67",
+    "paper/main.tex:71",
+    "paper/main.tex:84",
+    "paper/results.tex:20-30",
+    "paper/results.tex:61-62",
+    "banks/matharena_pools.py:15",
+    "banks/matharena_pools.py:21",
+    "banks/matharena_pools.py:60",
+    "banks/matharena_pools.py:74-76",
+    "exps/c2_confirm/pools.json (TA gens: hmmt_feb_2026 QED-Nano 12, Qwen3-4B 8 of 54; aime_2026 Qwen3-4B 4, QED-Nano 1, Qwen3-30B 1 of 18)",
+    "exps/screens/s1_lineup/pools.json (QED-Nano 16 of 180 TA candidates)",
+    "exps/c2_confirm/PREREGISTRATION.md (Gates; Primary analysis)",
+    "exps/c2_confirm/AMENDMENTS.md (A2)",
+    "exps/posthoc/solvability_by_source.json",
+    "exps/screens/s1_lineup/SCREEN_NOTE.md (S6 'Plausibly a known selection effect')"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+ "verdict": "minor",
+ "score_1_10": 7,
+ "blockers": [],
+ "non_blocking": [
+  "A5 BASE prompt (harness/lineup_prompts.py pick_base_most) tells the subject 'most of the problems have no correct solution', but the BASE jobs are 227 all-wrong plus 214 right-containing pools (51.5% all-wrong), so 'most' is only barely true and the prompt docstring's 'true for the pool mix' is generous. The H7 contrast (BASE vs PICK) also differs in wording beyond the base rate: pick_base_most drops the sentence 'It is possible that none of them is correct.' that pick() contains. The paper (main.tex:92) describes the manipulation only as 'stating that most problems have no correct solution'; it should disclose the 51% mix and the dropped sentence, since the null conclusion on criterion movement is read from this arm.",
+  "claims.json cites loop/STEER.md as the source of cli_version (2.1.317 for screens and C2). That is an internal notes file, not an artifact, and raw records do not store the CLI version (paper admits this at main.tex:42). Version for screens/C2 is unverifiable from the repo.",
+  "Cost: results/cost_ledger.csv TOTAL_SUBJECTS is 283.48 USD; summing 'cost' over all exps/*/raw JSON gives 280.03 USD (C3 rows match exactly: 144.72). The roughly 3.4 USD gap is unexplained but the paper says 'about 283'.",
+  "H7 and H6 report n=78 of 90 UNSOLVED problems (both pools and all verdicts required), while the abstract and Section 3 quote 90; the paper should state the analysed n next to the A5 rates.",
+  "'Subjects saw only the task prompt' rests on run_jobs.py flags (--setting-sources '', --strict-mcp-config, --tools '', empty cwd /tmp/subject_cwd) which I read but could not test; user-level memory or auto-loaded context is not ruled out by an artifact.",
+  "Gemma-4-e4b arm (amendment A3) is pre-registered with open_jobs.jsonl but has no raw data; paper discloses this at main.tex:116. Fine, but the amendment text promises a report."
+ ],
+ "evidence": [
+  "git log: exps/c3/PREREGISTRATION.md 62ab1fc 08:29:56 precedes first raw data 003bd75 08:31:13; AMENDMENTS A1 7cbaccc 08:36 precedes arm raw (ced3791/8f895ba 09:40+); A3 c4b9ccd; A4 7a11786 10:09 (jobs incl.) precedes raw/a4 2416579 10:30; A5 b9470c0 10:53:58 (prompts, jobs, analyze_a5.py) precedes raw/a5 b52bfed 11:23. A2 (descriptive tally fix) is after haiku results but is disclosed and affects no test.",
+  "banks/locked_c3/pools.json sha256 matches LOCK.sha256 (c471650b...) and LOCK.md date 08:28:55 precedes preregistration; 278 TA pools as claimed (c3_n_ta).",
+  "Independent recomputation from raw: UNSOLVED n=90, PICK wrong-choice 0.60, ISO-any 0.356 (claims c3h_unsolved_pick 0.60, c3h_unsolved_iso 0.36); ISO parse 1.000, wrong-accept 0.078, right-accept 0.827 (claims 1.000/0.08/0.83); A5 UNSOLVED fa_base 0.603, fa_pick 0.590, n=78 matches results_a5.json; strata 137/50/90/1 sum to 278 and 227 judged; 22 disagreements match.",
+  "Spot-checked about 30 \\res ids (c3_*, c3h_*, c3s_cost 66.2, c3h_cost 10.7, a4hu_*, a4s_h4, a5u_*, a5_verdict_H6/H7, h3_haiku_d, ledger_total, cost_subjects, c3_audit_*, c3_n_dup, gate constants): all 206 ids used in paper/main.tex resolve in results/claims.json; sources exist.",
+  "Reproducibility: python3 analysis/make_claims.py --no-run prints '405 claims'; git diff --stat results/claims.json empty; no restore needed.",
+  "Leakage: head/regex scan of all exps/c3/jobs_*.jsonl prompts: only the system prompt (and the A1 sonnet extension 'You have no tools and cannot run code.') plus task text; no gold/answer/study/lineup wording outside problem statements; TP right-candidate position is balanced (101/88/76 across positions 3/1/2). harness/lineup_prompts.py iso_conf, pick_conf match the A5 text; pick_base_most matches jobs_a5_base.jsonl but see non-blocking note 1.",
+  "paper/main.tex:42,51,73,82,92,116 statements on scope, exclusions (22 hand checks, 5 duplicates, 14 solved/6 mixed audit), caps (ledger sonnet C3 rows 29.7/15.8/34.0/29.1 within A1/A4 caps), blocked sonnet calls (ISO 893 vs 895, EACH 440 vs 441) are consistent with exps/c3 artifacts."
+ ]
+}

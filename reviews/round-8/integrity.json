@@ -1,0 +1,22 @@
+{
+ "verdict": "minor",
+ "score_1_10": 7,
+ "blockers": [],
+ "non_blocking": [
+  "Right candidates are longer than wrong ones in the locked C3 pools (median 2378 vs 1934 characters over 265 right and 1364 wrong candidates, from banks/locked_c3/pools.json) and the right candidate sits at position 3/1/2 in 101/88/76 TP pools. Neither is discussed as a possible cue for PICK hits; the hit-rate comparisons in the A4 section could carry this cue.",
+  "claims cli_version (2.1.317) cites loop/STEER.md, a process note and not a study artifact; exps/c2_confirm/PREREGISTRATION.md:13 also states it, so repoint the source. Raw records do not store the CLI version, which the paper discloses.",
+  "make_claims.py --no-run only regenerates claims from existing result files. It reproduced claims.json and paper/results.tex byte-identically (git diff clean), but this does not re-execute the analysis scripts from raw.",
+  "The paper says a fixed one-sentence system prompt. Sonnet's C3 prompt adds sentences (exps/c3/AMENDMENTS.md A1; jobs_*_sonnet.jsonl system field). This is disclosed in the sonnet paragraph but not in the Subjects section.",
+  "14 of the 90 UNSOLVED problems were later judged solved and 6 mixed (exps/c3/audit_unsolved.csv); 4 pools had official mislabels and 2 had garbled official answers. All of this is disclosed and sensitivity-analysed, with conclusions unchanged (results_sensitivity.json). The pre-registered strata remain primary, as stated.",
+  "The A5 base-rate prompt drops one sentence of the PICK prompt and asserts that most problems have no correct solution (jobs_a5_base.jsonl). The paper discloses this in Threats.",
+  "The cost ledger totals 14795 calls and 283.48 USD, while raw JSON files sum to 14679 calls and about 280 USD. This is a small discrepancy and the paper says about 283. C2 sonnet cost 29.1 USD against the 12 USD cap, disclosed.",
+  "An untracked k.html sits at the repo root."
+ ],
+ "evidence": [
+  "Independent recomputation from exps/c3/raw/arms with my own parser: UNSOLVED n=90, PICK wrong-choice 0.60, ISO-any 0.356 (paper 0.60/0.36, results.json); SOLVED 0.117/0.058; ISO wrong-accept 0.078 (681 candidates) and right-accept 0.827 (214), both as in claims c3h_isowrong/c3h_isoright; strata 137/90/50/1 = exps/c3/solve_summary.json; sonnet UNSOLVED PICK 0.633; A4 haiku TP PICK hit 0.615 and ISO hit 0.436 (n=78), sonnet hit 0.692 and 0.397. All match claims. A further 12 or more claims (s1 20/180 and 300 appearances, c2 sets of 24 problems, cal, cost, ledger 80, label audit 4+2, audit 14+6, gemma, hand_checks 22 all 'correct') also match.",
+  "Preregistration order from git log: exps/c3/PREREGISTRATION.md 62ab1fc at 08:29, before the first C3 raw commit 003bd75 and ce7eed1; pools locked e11f496 at 08:28; A1 7cbaccc 08:36 before arm data; A4 7a11786 at 10:09, before the A4 raw commit 2416579 at 10:30; A5 b9470c0 at 10:53, before the raw commit b52bfed at 11:23. A2 (8f895ba) was written after the first haiku results, but it is descriptive-field only and disclosed. Amendment time-correction note appears at 9d4520b.",
+  "Settings vs code: harness/run_jobs.py:39-45 uses --setting-sources '', --strict-mcp-config, --tools '', --system-prompt, and an empty cwd, matching the Subjects section. The run_jobs.py:33 system prompt is one sentence.",
+  "Leakage: the prompt tails in exps/c3/jobs_pick.jsonl, jobs_a4_picktp_haiku.jsonl, jobs_a4_each_haiku.jsonl and jobs_iso_sonnet.jsonl contain only the problem, candidates and instruction. A regex scan for model names, MathArena, official and study across all jobs files finds only in-problem words (Fubini-Study, 'official IMC 2021 solution' in one candidate). No correctness information.",
+  "Reproducibility: python3 analysis/make_claims.py --no-run gave 424 claims and left git diff clean; 223 distinct \\res ids in paper/main.tex are all present in results/claims.json."
+ ]
+}

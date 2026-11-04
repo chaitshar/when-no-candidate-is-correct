@@ -1,0 +1,39 @@
+{
+ "defects_found": [
+  {
+   "location": "Introduction, last sentence; refs.bib okonkwo2025abstention",
+   "description": "Citation has no evidence record, no DOI/URL/arXiv id, and no volume/pages; it supports a specific quantitative claim ('roughly halve such false selections in mathematical judging'). It is unverifiable and probably fabricated; the claim also bears on novelty and is not engaged with elsewhere.",
+   "evidence": "evidence/citations/ (no okonkwo2025abstention.json; every other cited key has a file); canaries/c04/refs.bib lines 185-190"
+  },
+  {
+   "location": "Abstract and Conclusion: 'a forced choice landed on exactly the wrong solution its own verification passes most' / 'accepts most'",
+   "description": "H2u is a mean difference (+0.19) in isolated acceptance between the FORCED pick and the mean of the other two wrong candidates. It does not show the picked solution is the one verification accepts most (or 'exactly'). Overstated.",
+   "evidence": "exps/c3/analyze.py (one_mean H2u: h = acceptance of pick minus mean of others); exps/c3/results.json H2u mean 0.194"
+  },
+  {
+   "location": "Abstract, Results (H3) and Conclusion: 'verification by claude-sonnet-5-5 removed none of the inflation' / 'did not reduce'",
+   "description": "H3 was inconclusive (d=+0.02, CI [-0.04,+0.07], p=0.294); that is absence of evidence, not evidence of no reduction. The sonnet-judge analogue gave d=+0.04, p=0.049. The conclusion's recommendation is stated as a finding.",
+   "evidence": "exps/c3/results_h3.json; canaries/c04/results.tex lines 170-182"
+  },
+  {
+   "location": "Title, Abstract, Conclusion: 'Beyond Its Competence ... Falls for Target-Absent Lineups'",
+   "description": "The title asserts the effect is tied to being beyond competence, but the pre-registered primary test of that (H1, UNSOLVED vs SOLVED) was inconclusive (b=+0.12, CI [-0.03,+0.27], Holm 0.129), and SOLVED problems also show a positive penalty (d=+0.06, CI [+0.01,+0.11]). Strata are defined by haiku's own failures, so regression to the mean and source confounding (84/90 UNSOLVED are arXiv-derived) can produce the difference. The headline rests on a secondary test and the title overclaims.",
+   "evidence": "exps/c3/results.json H1, H1_unadjusted, D_solved, H1_family_contest; results.tex lines 69-76, 108-115"
+  },
+  {
+   "location": "Method, Arms and Abstract: PICK vs ISO comparison",
+   "description": "PICK-chose-wrong (one call, at most one candidate) is compared with ISO-any-accepted (three calls, any of three) and the paper itself says the TP comparison favours PICK by construction; for TA the ISO-any statistic is biased upward, so the penalty is a lower bound, while the per-candidate acceptance is not matched. The 'false choices added' framing equates different quantities (choice of a pool candidate with a NONE option vs any-of-three acceptance), so the effect is not like-for-like; the EACH arm was not run in the confirmatory C3 main analysis (only an amendment A4 file).",
+   "evidence": "exps/c3/analyze.py (d = pick - iso any); exps/c3/PREREGISTRATION.md; exps/c3/jobs_a4_each_haiku.jsonl"
+  },
+  {
+   "location": "Threats to validity: 'Sonnet's arm cost more than its pre-registered cap'",
+   "description": "Cannot be reconciled with the C3 numbers: sonnet C3 cost 66.2 USD against caps of 50 (ISO), 20 (PICK), 20 (FORCED). Only the ISO arm could exceed its cap, and the paper does not say which study; statement is unsupported or mislocated.",
+   "evidence": "exps/c3/AMENDMENTS.md line 7; results.tex line 119 (c3s_cost 66.2)"
+  },
+  {
+   "location": "Method, Subjects: 'Calls were made on 3 and 4 November 2026'",
+   "description": "All C3 raw output files carry a single date, 2026-11-04; no artifact supports calls on 3 November.",
+   "evidence": "exps/c3/raw/arms and exps/c3/raw/solve file dates (2026-11-04 only)"
+  }
+ ]
+}

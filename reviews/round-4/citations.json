@@ -1,0 +1,21 @@
+{
+  "verdict": "minor",
+  "score_1_10": 8,
+  "blockers": [],
+  "non_blocking": [
+    "zhang2026selected: only the neurips.cc poster page (title, author Teresa Zhang, abstract) was reachable; the OpenReview id 2A1ozLhi9p could not be opened (bot challenge), so the id is UNVERIFIED. The paper already says only the abstract was read, and the citing sentence matches the abstract.",
+    "kenton2024scalable: abstract and venue verified, but the sentence 'Debate can help judges' is a loose summary. Kenton et al. report mixed results (debate beats consultancy, but does not always beat direct QA). Consider 'can help in some settings'.",
+    "ji2026candidate: preprint status, title and authors are correct. The claim that it excludes all-wrong pools is supported only for the stratified analysis (Fig 4c, 'All-wrong pools were excluded'). I did not find the same statement for the ranking analyses. Narrow the wording or check that analysis.",
+    "gottweis2025towards: bib key and year field say 2025/2026 and the note gives the Nature version (Nature 655(8122):487-496, May 2026, verified through Crossref). The arXiv title now reads 'Accelerating scientific discovery with Co-Scientist'. Fine as written.",
+    "stroebl2026limits: the 'ICLR 2026' venue is confirmed through search (OpenReview j8H84v6AZ1, ICLR 2026 schedule), not through arxiv.org, which carries no venue note.",
+    "All 23 entries use @misc with the venue in note. This is cosmetic, but the journal and conference items will render as misc."
+  ],
+  "evidence": [
+    "VERIFIED (title, authors, venue and citing sentence match): balunovic2025matharena https://arxiv.org/abs/2505.23281; brown2024large arXiv 2407.21787; cobbe2021training arXiv 2110.14168; hendrycks2021measuring arXiv 2103.03874 (arXiv comment 'NeurIPS 2021'); irving2018ai arXiv 1805.00899; kadavath2022language arXiv 2207.05221 (the none-of-the-above discussion is also quoted in Wang et al. 2025, line 452); lightman2024lets arXiv 2305.20050; wang2023self arXiv 2203.11171; zheng2023judging arXiv 2306.05685; wen2024know arXiv 2407.18418 (comment 'TACL 2024'); khan2024debating https://proceedings.mlr.press/v235/khan24a.html (ICML 2024); kenton2024scalable proceedings.neurips.cc NeurIPS 2024",
+    "VERIFIED, with checks of the paper text: wang2025llms https://aclanthology.org/2025.coling-main.390 (COLING main). The PDF has the True/False verification of correct versus incorrect options, the 'None of the above' replacement where models fail to select it, and the Cincorrect* confidence analysis, so main.tex:34 is faithful. zhang2025which arXiv 2505.00212: 127 systems and 184 failure logs, camera-ready ICML 2025. stroebl2026limits https://arxiv.org/abs/2411.17501: the abstract states the false-positive ceiling. gottweis2025towards https://arxiv.org/abs/2502.18864: Nature (2026); doi 10.1038/s41586-026-10644-y resolves in Crossref; the tournament process is in the abstract.",
+    "VERIFIED (Crossref DOI metadata, volume, issue, pages and authors all match): malpass1981eyewitness 10.1037/0021-9010.66.4.482; steblay2001eyewitness 10.1023/A:1012888715007; steblay2011seventytwo 10.1037/a0021650; wells1984psychology 10.1111/j.1559-1816.1984.tb02223.x. I read only the metadata of these four, so the substantive claims are PARTIALLY VERIFIED. They are the standard findings: relative judgment, instructions that the culprit may be absent, and sequential lineups giving fewer false identifications at some cost in hits.",
+    "VERIFIED with workshop label correct: jeong2025comparative https://aclanthology.org/2025.blackboxnlp-1.5 (BlackboxNLP 2025 workshop; the abstract says pairwise evaluation exacerbates biased preferences).",
+    "PARTIALLY VERIFIED: ji2026candidate https://arxiv.org/abs/2608.25937 (all-wrong pools excluded in Fig 4c, /tmp ji text line 842; the ranking analyses were not confirmed). zhang2026selected https://neurips.cc/virtual/2026/poster/155878 (poster exists; OpenReview id not opened).",
+    "UNVERIFIED: none beyond the OpenReview id above. CONTRADICTED: none."
+  ]
+}

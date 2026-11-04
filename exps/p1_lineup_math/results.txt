@@ -1,0 +1,294 @@
+== fable: included=True iso_parse=1.0 iso_acc_wrong=0.0 iso_acc_right=1.0 solve=None
+   TA choosing ISO   (0.0, 16)
+   TA choosing PICK  (0.0, 16)
+   TP ISO   {'hit': 1.0, 'false': 0.0, 'n': 16}
+   PICK-ISO   diff=0.0 ci=[0.0, 0.0] n=16 mcnemar_p=1.0000 (0 vs 0)
+   EACH-ISO no data
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH no data
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: None
+   ISO_solved1: None
+   PICK_solved0: None
+   PICK_solved1: None
+   EACH_solved0: None
+   EACH_solved1: None
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 0} n={'ISO': 64, 'PICK': 16}
+   cost={'ISO': 3.277, 'PICK': 1.159}
+== gemma-2-2b: included=True iso_parse=0.9875 iso_acc_wrong=0.2857142857142857 iso_acc_right=0.4358974358974359 solve=0.3333333333333333
+   TA choosing EACH  (0.65, 40)
+   TA choosing ISO   (0.5641025641025641, 39)
+   TA choosing PICK  (0.9, 30)
+   TP EACH  {'hit': 0.325, 'false': 0.35, 'n': 40}
+   TP ISO   {'hit': 0.4358974358974359, 'false': 0.41025641025641024, 'n': 39}
+   TP PICK  {'hit': 0.4375, 'false': 0.53125, 'n': 32}
+   PICK-ISO   diff=0.3793103448275862 ci=[0.1724137931034483, 0.5862068965517241] n=29 mcnemar_p=0.0034 (12 vs 1)
+   EACH-ISO   diff=0.07692307692307693 ci=[-0.1282051282051282, 0.28205128205128205] n=39 mcnemar_p=0.6291 (10 vs 7)
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH  diff=0.3 ci=[0.13333333333333333, 0.4666666666666667] n=30 mcnemar_p=0.0039 (9 vs 0)
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: (0.3157894736842105, 19)
+   ISO_solved1: (0.9, 10)
+   PICK_solved0: (0.8666666666666667, 15)
+   PICK_solved1: (0.8888888888888888, 9)
+   EACH_solved0: (0.55, 20)
+   EACH_solved1: (0.6, 10)
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 2, 'PICK': 18, 'SOLVE': 10} n={'ISO': 160, 'PICK': 80, 'EACH': 80, 'SOLVE': 40}
+   cost={'EACH': 0.0, 'PICK': 0.0, 'SOLVE': 0.0, 'ISO': 0.0}
+== granite-3.3-2b: included=False iso_parse=1.0 iso_acc_wrong=0.9833333333333333 iso_acc_right=1.0 solve=0.47368421052631576
+   TA choosing EACH  (0.6410256410256411, 39)
+   TA choosing ISO   (1.0, 40)
+   TA choosing PICK  (0.9565217391304348, 23)
+   TP EACH  {'hit': 0.225, 'false': 0.45, 'n': 40}
+   TP ISO   {'hit': 1.0, 'false': 1.0, 'n': 40}
+   TP PICK  {'hit': 0.3684210526315789, 'false': 0.47368421052631576, 'n': 19}
+   PICK-ISO   diff=-0.043478260869565216 ci=[-0.13043478260869565, 0.0] n=23 mcnemar_p=1.0000 (0 vs 1)
+   EACH-ISO   diff=-0.358974358974359 ci=[-0.5128205128205128, -0.20512820512820512] n=39 mcnemar_p=0.0001 (0 vs 14)
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH  diff=0.3181818181818182 ci=[0.09090909090909091, 0.5454545454545454] n=22 mcnemar_p=0.0391 (8 vs 1)
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: (1.0, 20)
+   ISO_solved1: (1.0, 18)
+   PICK_solved0: (1.0, 10)
+   PICK_solved1: (1.0, 12)
+   EACH_solved0: (0.5789473684210527, 19)
+   EACH_solved1: (0.7222222222222222, 18)
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 0, 'PICK': 38, 'EACH': 1, 'SOLVE': 2} n={'ISO': 160, 'PICK': 80, 'EACH': 80, 'SOLVE': 40}
+   cost={'PICK': 0.0, 'EACH': 0.0, 'ISO': 0.0, 'SOLVE': 0.0}
+== haiku: included=True iso_parse=1.0 iso_acc_wrong=0.0 iso_acc_right=1.0 solve=1.0
+   TA choosing BASE  (0.0, 40)
+   TA choosing EACH  (0.0, 40)
+   TA choosing ISO   (0.0, 40)
+   TA choosing PICK  (0.0, 40)
+   TA choosing SEQ   (0.0, 40)
+   TP BASE  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP EACH  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP ISO   {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP PICK  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP SEQ   {'hit': 1.0, 'false': 0.0, 'n': 40}
+   PICK-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   EACH-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-ISO    diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   BASE-PICK  diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   PICK-EACH  diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   BASE-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-EACH   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   ISO_solved0: None
+   ISO_solved1: (0.0, 40)
+   PICK_solved0: None
+   PICK_solved1: (0.0, 40)
+   EACH_solved0: None
+   EACH_solved1: (0.0, 40)
+   SEQ_solved0: None
+   SEQ_solved1: (0.0, 40)
+   parse_fail={'ISO': 0} n={'ISO': 160, 'PICK': 80, 'BASE': 80, 'EACH': 80, 'SEQ': 80, 'SOLVE': 40}
+   cost={'BASE': 0.069, 'ISO': 0.115, 'EACH': 0.08, 'SEQ': 0.271, 'PICK': 0.073, 'SOLVE': 0.02}
+== opus: included=True iso_parse=1.0 iso_acc_wrong=0.0 iso_acc_right=1.0 solve=1.0
+   TA choosing BASE  (0.0, 40)
+   TA choosing EACH  (0.0, 40)
+   TA choosing ISO   (0.0, 40)
+   TA choosing PICK  (0.0, 40)
+   TA choosing SEQ   (0.0, 40)
+   TP BASE  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP EACH  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP ISO   {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP PICK  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP SEQ   {'hit': 1.0, 'false': 0.0, 'n': 40}
+   PICK-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   EACH-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-ISO    diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   BASE-PICK  diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   PICK-EACH  diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   BASE-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-EACH   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   ISO_solved0: None
+   ISO_solved1: (0.0, 40)
+   PICK_solved0: None
+   PICK_solved1: (0.0, 40)
+   EACH_solved0: None
+   EACH_solved1: (0.0, 40)
+   SEQ_solved0: None
+   SEQ_solved1: (0.0, 40)
+   parse_fail={'ISO': 0} n={'ISO': 160, 'PICK': 80, 'BASE': 80, 'EACH': 80, 'SEQ': 80, 'SOLVE': 40}
+   cost={'PICK': 2.37, 'BASE': 2.319, 'ISO': 3.464, 'SOLVE': 0.599, 'SEQ': 8.468, 'EACH': 2.446}
+== phi-3.5-mini: included=False iso_parse=0.75 iso_acc_wrong=0.5 iso_acc_right=1.0 solve=1.0
+   TA choosing EACH  (1.0, 1)
+   TA choosing ISO   None
+   TA choosing PICK  None
+   TP EACH  {'hit': 0.0, 'false': 0.0, 'n': 1}
+   TP ISO   {'hit': 1.0, 'false': 1.0, 'n': 1}
+   TP PICK  {'hit': 0.0, 'false': 0.0, 'n': 1}
+   PICK-ISO no data
+   EACH-ISO no data
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH no data
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: None
+   ISO_solved1: None
+   PICK_solved0: None
+   PICK_solved1: None
+   EACH_solved0: None
+   EACH_solved1: (1.0, 1)
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 1, 'PICK': 1} n={'ISO': 4, 'PICK': 2, 'EACH': 2, 'SOLVE': 1}
+   cost={'SOLVE': 0.0, 'ISO': 0.0, 'EACH': 0.0, 'PICK': 0.0}
+== qwen2.5-0.5b: included=False iso_parse=0.10624999999999996 iso_acc_wrong=1.0 iso_acc_right=1.0 solve=0.0
+   TA choosing EACH  (0.9714285714285714, 35)
+   TA choosing ISO   (1.0, 1)
+   TA choosing PICK  (0.30434782608695654, 23)
+   TP EACH  {'hit': 0.9444444444444444, 'false': 0.9444444444444444, 'n': 36}
+   TP ISO   {'hit': 1.0, 'false': 1.0, 'n': 1}
+   TP PICK  {'hit': 0.12, 'false': 0.2, 'n': 25}
+   PICK-ISO   diff=0.0 ci=[0.0, 0.0] n=1 mcnemar_p=1.0000 (0 vs 0)
+   EACH-ISO   diff=0.0 ci=[0.0, 0.0] n=1 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH  diff=-0.6666666666666666 ci=[-0.8571428571428571, -0.47619047619047616] n=21 mcnemar_p=0.0001 (0 vs 14)
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: None
+   ISO_solved1: None
+   PICK_solved0: (1.0, 1)
+   PICK_solved1: None
+   EACH_solved0: (1.0, 2)
+   EACH_solved1: None
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 143, 'PICK': 32, 'EACH': 9, 'SOLVE': 37} n={'ISO': 160, 'PICK': 80, 'EACH': 80, 'SOLVE': 40}
+   cost={'ISO': 0.0, 'EACH': 0.0, 'PICK': 0.0, 'SOLVE': 0.0}
+== qwen2.5-1.5b: included=False iso_parse=1.0 iso_acc_wrong=0.9833333333333333 iso_acc_right=1.0 solve=0.43333333333333335
+   TA choosing EACH  (1.0, 40)
+   TA choosing ISO   (1.0, 40)
+   TA choosing PICK  (0.0, 39)
+   TP EACH  {'hit': 0.575, 'false': 0.9, 'n': 40}
+   TP ISO   {'hit': 1.0, 'false': 1.0, 'n': 40}
+   TP PICK  {'hit': 0.025, 'false': 0.0, 'n': 40}
+   PICK-ISO   diff=-1.0 ci=[-1.0, -1.0] n=39 mcnemar_p=0.0000 (0 vs 39)
+   EACH-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH  diff=-1.0 ci=[-1.0, -1.0] n=39 mcnemar_p=0.0000 (0 vs 39)
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: (1.0, 17)
+   ISO_solved1: (1.0, 13)
+   PICK_solved0: (0.0, 16)
+   PICK_solved1: (0.0, 13)
+   EACH_solved0: (1.0, 17)
+   EACH_solved1: (1.0, 13)
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 0, 'PICK': 1, 'SOLVE': 10} n={'ISO': 160, 'PICK': 80, 'EACH': 80, 'SOLVE': 40}
+   cost={'EACH': 0.0, 'ISO': 0.0, 'PICK': 0.0, 'SOLVE': 0.0}
+== qwen3-0.6b: included=False iso_parse=1.0 iso_acc_wrong=0.9833333333333333 iso_acc_right=1.0 solve=0.0
+   TA choosing EACH  (0.825, 40)
+   TA choosing ISO   (1.0, 40)
+   TA choosing PICK  (1.0, 40)
+   TP EACH  {'hit': 0.45, 'false': 0.6, 'n': 40}
+   TP ISO   {'hit': 1.0, 'false': 1.0, 'n': 40}
+   TP PICK  {'hit': 0.35, 'false': 0.65, 'n': 40}
+   PICK-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   EACH-ISO   diff=-0.175 ci=[-0.3, -0.075] n=40 mcnemar_p=0.0156 (0 vs 7)
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH  diff=0.175 ci=[0.075, 0.3] n=40 mcnemar_p=0.0156 (7 vs 0)
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: (1.0, 36)
+   ISO_solved1: None
+   PICK_solved0: (1.0, 36)
+   PICK_solved1: None
+   EACH_solved0: (0.8333333333333334, 36)
+   EACH_solved1: None
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 0, 'SOLVE': 4} n={'ISO': 160, 'PICK': 80, 'EACH': 80, 'SOLVE': 40}
+   cost={'ISO': 0.0, 'PICK': 0.0, 'SOLVE': 0.0, 'EACH': 0.0}
+== smollm2-1.7b: included=False iso_parse=0.9875 iso_acc_wrong=0.9915254237288136 iso_acc_right=1.0 solve=0.23076923076923078
+   TA choosing EACH  (1.0, 20)
+   TA choosing ISO   (1.0, 38)
+   TA choosing PICK  (1.0, 40)
+   TP EACH  {'hit': 1.0, 'false': 1.0, 'n': 15}
+   TP ISO   {'hit': 1.0, 'false': 1.0, 'n': 38}
+   TP PICK  {'hit': 0.3, 'false': 0.7, 'n': 40}
+   PICK-ISO   diff=0.0 ci=[0.0, 0.0] n=38 mcnemar_p=1.0000 (0 vs 0)
+   EACH-ISO   diff=0.0 ci=[0.0, 0.0] n=19 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH  diff=0.0 ci=[0.0, 0.0] n=20 mcnemar_p=1.0000 (0 vs 0)
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: (1.0, 9)
+   ISO_solved1: (1.0, 3)
+   PICK_solved0: (1.0, 10)
+   PICK_solved1: (1.0, 3)
+   EACH_solved0: (1.0, 3)
+   EACH_solved1: (1.0, 1)
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 2, 'EACH': 45, 'SOLVE': 27} n={'ISO': 160, 'PICK': 80, 'EACH': 80, 'SOLVE': 40}
+   cost={'ISO': 0.0, 'PICK': 0.0, 'EACH': 0.0, 'SOLVE': 0.0}
+== smollm2-135m: included=False iso_parse=0.025000000000000022 iso_acc_wrong=1.0 iso_acc_right=0.0 solve=0.0
+   TA choosing EACH  (1.0, 28)
+   TA choosing PICK  (0.0, 1)
+   TP EACH  {'hit': 1.0, 'false': 1.0, 'n': 29}
+   PICK-ISO no data
+   EACH-ISO no data
+   SEQ-ISO no data
+   BASE-PICK no data
+   PICK-EACH  diff=-1.0 ci=[-1.0, -1.0] n=1 mcnemar_p=1.0000 (0 vs 1)
+   BASE-ISO no data
+   SEQ-EACH no data
+   ISO_solved0: None
+   ISO_solved1: None
+   PICK_solved0: None
+   PICK_solved1: None
+   EACH_solved0: None
+   EACH_solved1: None
+   SEQ_solved0: None
+   SEQ_solved1: None
+   parse_fail={'ISO': 156, 'PICK': 79, 'EACH': 23, 'SOLVE': 39} n={'ISO': 160, 'PICK': 80, 'EACH': 80, 'SOLVE': 40}
+   cost={'SOLVE': 0.0, 'EACH': 0.0, 'PICK': 0.0, 'ISO': 0.0}
+== sonnet: included=True iso_parse=1.0 iso_acc_wrong=0.0 iso_acc_right=1.0 solve=1.0
+   TA choosing BASE  (0.0, 40)
+   TA choosing EACH  (0.0, 40)
+   TA choosing ISO   (0.0, 40)
+   TA choosing PICK  (0.0, 40)
+   TA choosing SEQ   (0.0, 40)
+   TP BASE  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP EACH  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP ISO   {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP PICK  {'hit': 1.0, 'false': 0.0, 'n': 40}
+   TP SEQ   {'hit': 1.0, 'false': 0.0, 'n': 40}
+   PICK-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   EACH-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-ISO    diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   BASE-PICK  diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   PICK-EACH  diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   BASE-ISO   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   SEQ-EACH   diff=0.0 ci=[0.0, 0.0] n=40 mcnemar_p=1.0000 (0 vs 0)
+   ISO_solved0: None
+   ISO_solved1: (0.0, 40)
+   PICK_solved0: None
+   PICK_solved1: (0.0, 40)
+   EACH_solved0: None
+   EACH_solved1: (0.0, 40)
+   SEQ_solved0: None
+   SEQ_solved1: (0.0, 40)
+   parse_fail={'ISO': 0} n={'ISO': 160, 'PICK': 80, 'BASE': 80, 'EACH': 80, 'SEQ': 80, 'SOLVE': 40}
+   cost={'SEQ': 3.956, 'BASE': 1.08, 'EACH': 1.127, 'ISO': 1.57, 'SOLVE': 0.287, 'PICK': 1.087}

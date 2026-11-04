@@ -1,0 +1,82 @@
+{
+ "c01": {
+  "split": "TRAIN",
+  "type": "wrong_unit",
+  "location": "main.tex Method, Calibration/inference",
+  "original": "The problem is the unit of analysis; confidence intervals are percentile bootstraps over problems (TA and TP pools of one problem move together).",
+  "planted": "Each candidate is treated as an independent observation; confidence intervals are percentile bootstraps over candidates.",
+  "how_to_detect": "exps/c3/analyze.py and analysis code bootstrap per problem (boot over per-problem values); H1 uses HC3 per problem."
+ },
+ "c02": {
+  "split": "TRAIN",
+  "type": "false_novelty",
+  "location": "main.tex Introduction",
+  "original": "We ask whether the lineup effect holds",
+  "planted": "To our knowledge, no prior work has examined isolated verification of incorrect options. We ask whether the lineup effect holds",
+  "how_to_detect": "Wang et al. 2025 (arXiv 2402.01349, Sec 3.3) verify incorrect options in isolation; the paper itself cites it in Related work as doing so."
+ },
+ "c03": {
+  "split": "TRAIN",
+  "type": "false_novelty",
+  "location": "main.tex Related work",
+  "original": "those are our contrasts, and",
+  "planted": "those are our contrasts. We are the first to show that language models accept individual incorrect options when each is verified alone as true or false, and",
+  "how_to_detect": "Wang et al. 2025 (arXiv 2402.01349, Sec 3.3) already show this; contradicts the preceding sentence of the paper."
+ },
+ "c04": {
+  "split": "TRAIN",
+  "type": "fake_citation",
+  "location": "main.tex Introduction, added sentence; refs.bib entry okonkwo2025abstention",
+  "original": "Those pilots are lineage, not evidence for current models.",
+  "planted": "Those pilots are lineage, not evidence for current models. Abstention-aware prompting has been reported to roughly halve such false selections in mathematical judging \\citep{okonkwo2025abstention}.",
+  "how_to_detect": "Look up the cited paper (title, authors): it does not exist in any index."
+ },
+ "c05": {
+  "split": "TRAIN",
+  "type": "altered_number",
+  "location": "results.tex macro c3h_du_ci (C3 haiku UNSOLVED difference CI; abstract and Results C3)",
+  "original": "\\csname res@c3h_du_ci\\endcsname{[+0.13, +0.36]}",
+  "planted": "\\csname res@c3h_du_ci\\endcsname{[+0.21, +0.36]}",
+  "how_to_detect": "Compare with exps/c3/results.json D_unsolved.ci95 = [0.133, 0.356]; also results/claims.json."
+ },
+ "c06": {
+  "split": "HELDOUT",
+  "type": "wrong_unit",
+  "location": "main.tex Method, Calibration/inference",
+  "original": "confidence intervals are percentile bootstraps over problems (TA and TP pools of one problem move together).",
+  "planted": "estimates are pooled across the haiku and sonnet judges into one sample, and confidence intervals are percentile bootstraps over the pooled judgments.",
+  "how_to_detect": "exps/c3/analyze.py and analyze_sonnet.py analyze each model separately, bootstrapping over problems; nothing is pooled across models."
+ },
+ "c07": {
+  "split": "HELDOUT",
+  "type": "altered_number",
+  "location": "results.tex macro c3h_unsolved_pick (PICK wrong-choice rate on UNSOLVED)",
+  "original": "\\csname res@c3h_unsolved_pick\\endcsname{0.60}",
+  "planted": "\\csname res@c3h_unsolved_pick\\endcsname{0.72}",
+  "how_to_detect": "0.72 minus ISO rate 0.36 is 0.36, not the reported d=+0.24; recompute PICK rate from exps/c3/results.json arms / raw outputs (0.60)."
+ },
+ "c08": {
+  "split": "HELDOUT",
+  "type": "fake_citation",
+  "location": "main.tex Related work, added sentence; refs.bib entry halvorsen2026rejection",
+  "original": "We study target-absent pools directly, with and without a rejection option.",
+  "planted": "We study target-absent pools directly, with and without a rejection option. A recent study found that offering a rejection option removes the pooled-choice penalty for code-review judges \\citep{halvorsen2026rejection}.",
+  "how_to_detect": "Look up the cited paper (title, authors): it does not exist in any index."
+ },
+ "c09": {
+  "split": "HELDOUT",
+  "type": "leaked_answer",
+  "location": "main.tex Method, Subjects",
+  "original": "Subjects saw only the task prompt; prompts contain no study context and no correctness information.",
+  "planted": "Subjects saw only the task prompt; prompts contain no study context. The judge prompt also showed MathArena's grading of each candidate.",
+  "how_to_detect": "harness/lineup_prompts.py builds prompts from candidate text only; no grading label appears. Also contradicts the independence of the labels."
+ },
+ "c10": {
+  "split": "HELDOUT",
+  "type": "leaked_answer",
+  "location": "main.tex Method, Arms",
+  "original": "ISO judges each candidate alone (ACCEPT or REJECT).",
+  "planted": "ISO judges each candidate alone (ACCEPT or REJECT); to reduce variance, the PICK and FORCED prompts also listed the official answer-key value from MathArena.",
+  "how_to_detect": "harness/lineup_prompts.py: PICK/FORCED prompts contain only candidate blocks and instructions; no answer key is passed."
+ }
+}

@@ -1,0 +1,37 @@
+{
+  "verdict": "minor",
+  "score_1_10": 4,
+  "blockers": [],
+  "non_blocking": [
+    "Contribution level. After A4 and A5 the confirmed finding comes down to this: on problems haiku cannot solve, both procedures are near chance and the pooled PICK format sits at a more liberal criterion than ISO-any. The A5 UNSOLVED ROC points for both procedures lie close to the diagonal (PICK (0.45,0.58),(0.67,0.60); ISO (0.31,0.35),(0.36,0.38)). That LLMs over-select when offered a none-of-the-above option and accept wrong options in isolation is already reported by Wang et al. 2025 (COLING), which the paper cites as closest prior work. What is new is the careful same-candidate comparison against isolated verification, the preregistered stratification by solvability, real officially graded candidates, and the select-then-verify inflation (H2u). This is a solid, honest measurement paper for one model and one domain, not a new phenomenon. My calibration is at workshop or upper-workshop level, below flagship accept. I did not read the calibration set, because reviews/ is off-limits for this review.",
+    "The preregistered primary test (H1, whether the effect is specific to UNSOLVED problems after competition fixed effects) is inconclusive: b=+0.12 [-0.03,+0.27], Holm 0.129. The sonnet repeat gives b=-0.02. On SOLVED problems PICK also chooses more often (d=+0.06 [+0.01,+0.11]; hit +0.10). The title, 'Asked to Pick on Problems It Cannot Solve...', invites a specificity reading that the data do not establish. The abstract and conclusion disclose this correctly. Consider wording the title as a stratum-level description rather than a condition.",
+    "The abstract says the confidence-ROC comparison was 'indistinguishable' (+0.002 [-0.030,+0.045]), and Section 4.6 says 'the two procedures trace the same curve'. This is a non-detection and should not be worded as equivalence. The partial area is capped at fa 0.36, so the CI spans roughly -8% to +12% of the maximum attainable pAUC, and both curves are near chance on UNSOLVED. 'Not detectably different' is the accurate phrasing, and is how H3 and H4 are already worded.",
+    "The conclusion advises builders to 'ask for a verdict on each candidate rather than a pick'. A4 shows EACH has the same J as ISO on UNSOLVED (+0.12) and fewer hits than PICK (0.57 vs 0.62). Under the paper's own criterion-shift reading, EACH moves the criterion and does not improve discrimination. PICK minus EACH on false choices is an untested estimate (+0.13 [+0.01,+0.25] for haiku; +0.06 [-0.01,+0.14] for sonnet). The recommendation should state the trade-off: fewer false choices at the cost of fewer hits.",
+    "The conclusion says 'a second Claude model did not detectably catch it' right after 'on such problems', but H3 was tested over all 225 problems, and the abstract correctly says so. My own descriptive recomputation restricted to UNSOLVED gives h_same-h_cross=+0.03 [-0.08,+0.15] (n=90); sonnet accepts haiku's forced pick in 0.32 of pools vs 0.29 for haiku. This supports the statement but is wide. Report it, or scope the conclusion sentence to all problems.",
+    "H2u (the forced pick is the wrong candidate that isolated verification accepts most) is close to what any judge with a consistent latent plausibility score would produce. The paper should say that this is expected under a single-score model, and that the contribution is its size and operational consequence, not its existence.",
+    "Generality is narrow, and the paper discloses this: one vendor, one model as the primary subject, math final answers, 90 UNSOLVED problems (84 from arXiv-derived sets), contamination not excludable, and about 16% of UNSOLVED labels corrected by a post hoc audit (14 solved, 6 mixed). The sensitivity analyses leave conclusions unchanged.",
+    "Process strengths worth keeping: timestamped commits put the preregistration, A1, A4 and A5 before their data. A2 is a descriptive-only fix made after the data and is disclosed. The C2 failure is reported, and the ISO arm gets three calls to PICK's one, a compute asymmetry that works against the reported effect."
+  ],
+  "evidence": [
+    "paper/main.tex:11 (title)",
+    "paper/main.tex:19 (abstract: 'indistinguishable', H1 inconclusive disclosed)",
+    "paper/main.tex:34 (Wang et al. 2025 positioned as closest prior work)",
+    "paper/main.tex:73 (C3 results, audit sensitivity)",
+    "paper/main.tex:87 (A4 haiku UNSOLVED hit/fa/J; question-form estimate)",
+    "paper/main.tex:92 (A5 'trace the same curve')",
+    "paper/main.tex:119 (conclusion: builder advice; H3 scope)",
+    "paper/results.tex:179-181 (c3h_b +0.12 [-0.03,+0.27], p 0.065)",
+    "paper/results.tex:183-184 (SOLVED d +0.06 [+0.01,+0.11])",
+    "paper/results.tex:226-227 (sonnet b -0.02)",
+    "paper/results.tex:22-40 (A4 haiku UNSOLVED numbers)",
+    "paper/results.tex:103-107 (A5 pAUC diff, famax 0.36)",
+    "exps/c3/results_a5.json (prereg.UNSOLVED.roc_pick / roc_iso near diagonal)",
+    "exps/c3/results_a4.json (haiku UNSOLVED EACH J 0.117, ISO J 0.115, PICK J 0.026)",
+    "exps/c3/results_h3.json (n=225, all strata)",
+    "exps/c3/results.txt (gate passed; H1u 0.244 [0.133,0.356]; H2u 0.194)",
+    "exps/c3/PREREGISTRATION.md:24-36 (H1 primary, Holm family, decision rules)",
+    "exps/c3/AMENDMENTS.md (A1-A5 timestamps)",
+    "git log: 62ab1fc 08:29 prereg; ce7eed1 09:10 strata; 8f895ba 09:42 haiku results; 7a11786 10:09 A4; b9470c0 10:53 A5",
+    "scratch recomputation (not committed): H3 restricted to UNSOLVED, n=90, +0.033 [-0.083,+0.15]"
+  ]
+}

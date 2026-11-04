@@ -1,0 +1,1967 @@
+{
+ "models": {
+  "fable": {
+   "n_records": 80,
+   "parse_fail": {
+    "ISO": 0
+   },
+   "n": {
+    "ISO": 64,
+    "PICK": 16
+   },
+   "iso_accept_wrong": 0.0,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 1.0,
+   "included": true,
+   "solve_rate": null,
+   "choosing_TA": {
+    "ISO": [
+     0.0,
+     16
+    ],
+    "PICK": [
+     0.0,
+     16
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 16
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 16,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": null,
+    "ISO_solved1": null,
+    "PICK_solved0": null,
+    "PICK_solved1": null,
+    "EACH_solved0": null,
+    "EACH_solved1": null,
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "ISO": 3.27739,
+    "PICK": 1.15856
+   },
+   "secs": {
+    "ISO": 758.5999999999998,
+    "PICK": 191.1
+   }
+  },
+  "gemma-2-2b": {
+   "n_records": 360,
+   "parse_fail": {
+    "ISO": 2,
+    "PICK": 18,
+    "SOLVE": 10
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "EACH": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.2857142857142857,
+   "iso_accept_right": 0.4358974358974359,
+   "iso_parse_rate": 0.9875,
+   "included": true,
+   "solve_rate": 0.3333333333333333,
+   "choosing_TA": {
+    "ISO": [
+     0.5641025641025641,
+     39
+    ],
+    "PICK": [
+     0.9,
+     30
+    ],
+    "EACH": [
+     0.65,
+     40
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 0.4358974358974359,
+     "false": 0.41025641025641024,
+     "n": 39
+    },
+    "PICK": {
+     "hit": 0.4375,
+     "false": 0.53125,
+     "n": 32
+    },
+    "EACH": {
+     "hit": 0.325,
+     "false": 0.35,
+     "n": 40
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.3793103448275862,
+     "ci": [
+      0.1724137931034483,
+      0.5862068965517241
+     ],
+     "n": 29,
+     "mcnemar_p": 0.00341796875,
+     "a_only": 12,
+     "b_only": 1
+    },
+    "EACH-ISO": {
+     "diff": 0.07692307692307693,
+     "ci": [
+      -0.1282051282051282,
+      0.28205128205128205
+     ],
+     "n": 39,
+     "mcnemar_p": 0.629058837890625,
+     "a_only": 10,
+     "b_only": 7
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": 0.3,
+     "ci": [
+      0.13333333333333333,
+      0.4666666666666667
+     ],
+     "n": 30,
+     "mcnemar_p": 0.00390625,
+     "a_only": 9,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": [
+     0.3157894736842105,
+     19
+    ],
+    "ISO_solved1": [
+     0.9,
+     10
+    ],
+    "PICK_solved0": [
+     0.8666666666666667,
+     15
+    ],
+    "PICK_solved1": [
+     0.8888888888888888,
+     9
+    ],
+    "EACH_solved0": [
+     0.55,
+     20
+    ],
+    "EACH_solved1": [
+     0.6,
+     10
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "EACH": 0.0,
+    "PICK": 0.0,
+    "SOLVE": 0.0,
+    "ISO": 0.0
+   },
+   "secs": {
+    "EACH": 191.18000000000006,
+    "PICK": 201.33,
+    "SOLVE": 574.5799999999999,
+    "ISO": 298.35999999999996
+   }
+  },
+  "granite-3.3-2b": {
+   "n_records": 360,
+   "parse_fail": {
+    "ISO": 0,
+    "PICK": 38,
+    "EACH": 1,
+    "SOLVE": 2
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "EACH": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.9833333333333333,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 1.0,
+   "included": false,
+   "solve_rate": 0.47368421052631576,
+   "choosing_TA": {
+    "ISO": [
+     1.0,
+     40
+    ],
+    "EACH": [
+     0.6410256410256411,
+     39
+    ],
+    "PICK": [
+     0.9565217391304348,
+     23
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 40
+    },
+    "EACH": {
+     "hit": 0.225,
+     "false": 0.45,
+     "n": 40
+    },
+    "PICK": {
+     "hit": 0.3684210526315789,
+     "false": 0.47368421052631576,
+     "n": 19
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": -0.043478260869565216,
+     "ci": [
+      -0.13043478260869565,
+      0.0
+     ],
+     "n": 23,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 1
+    },
+    "EACH-ISO": {
+     "diff": -0.358974358974359,
+     "ci": [
+      -0.5128205128205128,
+      -0.20512820512820512
+     ],
+     "n": 39,
+     "mcnemar_p": 0.0001220703125,
+     "a_only": 0,
+     "b_only": 14
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": 0.3181818181818182,
+     "ci": [
+      0.09090909090909091,
+      0.5454545454545454
+     ],
+     "n": 22,
+     "mcnemar_p": 0.0390625,
+     "a_only": 8,
+     "b_only": 1
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": [
+     1.0,
+     20
+    ],
+    "ISO_solved1": [
+     1.0,
+     18
+    ],
+    "PICK_solved0": [
+     1.0,
+     10
+    ],
+    "PICK_solved1": [
+     1.0,
+     12
+    ],
+    "EACH_solved0": [
+     0.5789473684210527,
+     19
+    ],
+    "EACH_solved1": [
+     0.7222222222222222,
+     18
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "PICK": 0.0,
+    "EACH": 0.0,
+    "ISO": 0.0,
+    "SOLVE": 0.0
+   },
+   "secs": {
+    "PICK": 427.53999999999996,
+    "EACH": 745.94,
+    "ISO": 207.44,
+    "SOLVE": 449.05000000000007
+   }
+  },
+  "haiku": {
+   "n_records": 520,
+   "parse_fail": {
+    "ISO": 0
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "BASE": 80,
+    "EACH": 80,
+    "SEQ": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.0,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 1.0,
+   "included": true,
+   "solve_rate": 1.0,
+   "choosing_TA": {
+    "ISO": [
+     0.0,
+     40
+    ],
+    "PICK": [
+     0.0,
+     40
+    ],
+    "BASE": [
+     0.0,
+     40
+    ],
+    "EACH": [
+     0.0,
+     40
+    ],
+    "SEQ": [
+     0.0,
+     40
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "PICK": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "BASE": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "EACH": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "SEQ": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": null,
+    "ISO_solved1": [
+     0.0,
+     40
+    ],
+    "PICK_solved0": null,
+    "PICK_solved1": [
+     0.0,
+     40
+    ],
+    "EACH_solved0": null,
+    "EACH_solved1": [
+     0.0,
+     40
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": [
+     0.0,
+     40
+    ]
+   },
+   "cost_usd": {
+    "BASE": 0.0694227,
+    "ISO": 0.11481250000000004,
+    "EACH": 0.08038960000000002,
+    "SEQ": 0.27096699999999996,
+    "PICK": 0.0729567,
+    "SOLVE": 0.019653300000000005
+   },
+   "secs": {
+    "BASE": 1085.4,
+    "ISO": 1955.999999999999,
+    "EACH": 1044.3,
+    "SEQ": 2960.3,
+    "PICK": 1021.6,
+    "SOLVE": 444.4999999999999
+   }
+  },
+  "opus": {
+   "n_records": 520,
+   "parse_fail": {
+    "ISO": 0
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "BASE": 80,
+    "EACH": 80,
+    "SEQ": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.0,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 1.0,
+   "included": true,
+   "solve_rate": 1.0,
+   "choosing_TA": {
+    "ISO": [
+     0.0,
+     40
+    ],
+    "PICK": [
+     0.0,
+     40
+    ],
+    "BASE": [
+     0.0,
+     40
+    ],
+    "EACH": [
+     0.0,
+     40
+    ],
+    "SEQ": [
+     0.0,
+     40
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "PICK": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "BASE": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "EACH": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "SEQ": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": null,
+    "ISO_solved1": [
+     0.0,
+     40
+    ],
+    "PICK_solved0": null,
+    "PICK_solved1": [
+     0.0,
+     40
+    ],
+    "EACH_solved0": null,
+    "EACH_solved1": [
+     0.0,
+     40
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": [
+     0.0,
+     40
+    ]
+   },
+   "cost_usd": {
+    "PICK": 2.3699679999999996,
+    "BASE": 2.318892000000001,
+    "ISO": 3.4636040000000006,
+    "SOLVE": 0.5993959999999999,
+    "SEQ": 8.468269,
+    "EACH": 2.4459279999999994
+   },
+   "secs": {
+    "PICK": 1308.3000000000002,
+    "BASE": 1275.6,
+    "ISO": 2524.2000000000003,
+    "SOLVE": 550.9,
+    "SEQ": 3915.6000000000013,
+    "EACH": 1306.8999999999996
+   }
+  },
+  "phi-3.5-mini": {
+   "n_records": 9,
+   "parse_fail": {
+    "ISO": 1,
+    "PICK": 1
+   },
+   "n": {
+    "ISO": 4,
+    "PICK": 2,
+    "EACH": 2,
+    "SOLVE": 1
+   },
+   "iso_accept_wrong": 0.5,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 0.75,
+   "included": false,
+   "solve_rate": 1.0,
+   "choosing_TA": {
+    "EACH": [
+     1.0,
+     1
+    ],
+    "ISO": null,
+    "PICK": null
+   },
+   "TP": {
+    "EACH": {
+     "hit": 0.0,
+     "false": 0.0,
+     "n": 1
+    },
+    "ISO": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 1
+    },
+    "PICK": {
+     "hit": 0.0,
+     "false": 0.0,
+     "n": 1
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": null,
+    "ISO_solved1": null,
+    "PICK_solved0": null,
+    "PICK_solved1": null,
+    "EACH_solved0": null,
+    "EACH_solved1": [
+     1.0,
+     1
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "SOLVE": 0.0,
+    "ISO": 0.0,
+    "EACH": 0.0,
+    "PICK": 0.0
+   },
+   "secs": {
+    "SOLVE": 6.59,
+    "ISO": 37.199999999999996,
+    "EACH": 16.759999999999998,
+    "PICK": 25.57
+   }
+  },
+  "qwen2.5-0.5b": {
+   "n_records": 360,
+   "parse_fail": {
+    "ISO": 143,
+    "PICK": 32,
+    "EACH": 9,
+    "SOLVE": 37
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "EACH": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 1.0,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 0.10624999999999996,
+   "included": false,
+   "solve_rate": 0.0,
+   "choosing_TA": {
+    "PICK": [
+     0.30434782608695654,
+     23
+    ],
+    "EACH": [
+     0.9714285714285714,
+     35
+    ],
+    "ISO": [
+     1.0,
+     1
+    ]
+   },
+   "TP": {
+    "PICK": {
+     "hit": 0.12,
+     "false": 0.2,
+     "n": 25
+    },
+    "EACH": {
+     "hit": 0.9444444444444444,
+     "false": 0.9444444444444444,
+     "n": 36
+    },
+    "ISO": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 1
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 1,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 1,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": -0.6666666666666666,
+     "ci": [
+      -0.8571428571428571,
+      -0.47619047619047616
+     ],
+     "n": 21,
+     "mcnemar_p": 0.0001220703125,
+     "a_only": 0,
+     "b_only": 14
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": null,
+    "ISO_solved1": null,
+    "PICK_solved0": [
+     1.0,
+     1
+    ],
+    "PICK_solved1": null,
+    "EACH_solved0": [
+     1.0,
+     2
+    ],
+    "EACH_solved1": null,
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "ISO": 0.0,
+    "EACH": 0.0,
+    "PICK": 0.0,
+    "SOLVE": 0.0
+   },
+   "secs": {
+    "ISO": 33.09000000000001,
+    "EACH": 41.470000000000006,
+    "PICK": 45.34999999999999,
+    "SOLVE": 166.63
+   }
+  },
+  "qwen2.5-1.5b": {
+   "n_records": 360,
+   "parse_fail": {
+    "ISO": 0,
+    "PICK": 1,
+    "SOLVE": 10
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "EACH": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.9833333333333333,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 1.0,
+   "included": false,
+   "solve_rate": 0.43333333333333335,
+   "choosing_TA": {
+    "ISO": [
+     1.0,
+     40
+    ],
+    "PICK": [
+     0.0,
+     39
+    ],
+    "EACH": [
+     1.0,
+     40
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 40
+    },
+    "PICK": {
+     "hit": 0.025,
+     "false": 0.0,
+     "n": 40
+    },
+    "EACH": {
+     "hit": 0.575,
+     "false": 0.9,
+     "n": 40
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": -1.0,
+     "ci": [
+      -1.0,
+      -1.0
+     ],
+     "n": 39,
+     "mcnemar_p": 3.637978807091713e-12,
+     "a_only": 0,
+     "b_only": 39
+    },
+    "EACH-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": -1.0,
+     "ci": [
+      -1.0,
+      -1.0
+     ],
+     "n": 39,
+     "mcnemar_p": 3.637978807091713e-12,
+     "a_only": 0,
+     "b_only": 39
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": [
+     1.0,
+     17
+    ],
+    "ISO_solved1": [
+     1.0,
+     13
+    ],
+    "PICK_solved0": [
+     0.0,
+     16
+    ],
+    "PICK_solved1": [
+     0.0,
+     13
+    ],
+    "EACH_solved0": [
+     1.0,
+     17
+    ],
+    "EACH_solved1": [
+     1.0,
+     13
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "EACH": 0.0,
+    "ISO": 0.0,
+    "PICK": 0.0,
+    "SOLVE": 0.0
+   },
+   "secs": {
+    "EACH": 128.53000000000003,
+    "ISO": 160.39000000000007,
+    "PICK": 240.72000000000006,
+    "SOLVE": 373.52000000000004
+   }
+  },
+  "qwen3-0.6b": {
+   "n_records": 360,
+   "parse_fail": {
+    "ISO": 0,
+    "SOLVE": 4
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "EACH": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.9833333333333333,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 1.0,
+   "included": false,
+   "solve_rate": 0.0,
+   "choosing_TA": {
+    "ISO": [
+     1.0,
+     40
+    ],
+    "PICK": [
+     1.0,
+     40
+    ],
+    "EACH": [
+     0.825,
+     40
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 40
+    },
+    "PICK": {
+     "hit": 0.35,
+     "false": 0.65,
+     "n": 40
+    },
+    "EACH": {
+     "hit": 0.45,
+     "false": 0.6,
+     "n": 40
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": -0.175,
+     "ci": [
+      -0.3,
+      -0.075
+     ],
+     "n": 40,
+     "mcnemar_p": 0.015625,
+     "a_only": 0,
+     "b_only": 7
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": 0.175,
+     "ci": [
+      0.075,
+      0.3
+     ],
+     "n": 40,
+     "mcnemar_p": 0.015625,
+     "a_only": 7,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": [
+     1.0,
+     36
+    ],
+    "ISO_solved1": null,
+    "PICK_solved0": [
+     1.0,
+     36
+    ],
+    "PICK_solved1": null,
+    "EACH_solved0": [
+     0.8333333333333334,
+     36
+    ],
+    "EACH_solved1": null,
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "ISO": 0.0,
+    "PICK": 0.0,
+    "SOLVE": 0.0,
+    "EACH": 0.0
+   },
+   "secs": {
+    "ISO": 163.32999999999996,
+    "PICK": 146.11999999999995,
+    "SOLVE": 157.65999999999997,
+    "EACH": 165.84
+   }
+  },
+  "smollm2-1.7b": {
+   "n_records": 360,
+   "parse_fail": {
+    "ISO": 2,
+    "EACH": 45,
+    "SOLVE": 27
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "EACH": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.9915254237288136,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 0.9875,
+   "included": false,
+   "solve_rate": 0.23076923076923078,
+   "choosing_TA": {
+    "ISO": [
+     1.0,
+     38
+    ],
+    "PICK": [
+     1.0,
+     40
+    ],
+    "EACH": [
+     1.0,
+     20
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 38
+    },
+    "PICK": {
+     "hit": 0.3,
+     "false": 0.7,
+     "n": 40
+    },
+    "EACH": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 15
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 38,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 19,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 20,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": [
+     1.0,
+     9
+    ],
+    "ISO_solved1": [
+     1.0,
+     3
+    ],
+    "PICK_solved0": [
+     1.0,
+     10
+    ],
+    "PICK_solved1": [
+     1.0,
+     3
+    ],
+    "EACH_solved0": [
+     1.0,
+     3
+    ],
+    "EACH_solved1": [
+     1.0,
+     1
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "ISO": 0.0,
+    "PICK": 0.0,
+    "EACH": 0.0,
+    "SOLVE": 0.0
+   },
+   "secs": {
+    "ISO": 235.25999999999993,
+    "PICK": 184.5300000000001,
+    "EACH": 178.33000000000004,
+    "SOLVE": 705.38
+   }
+  },
+  "smollm2-135m": {
+   "n_records": 360,
+   "parse_fail": {
+    "ISO": 156,
+    "PICK": 79,
+    "EACH": 23,
+    "SOLVE": 39
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "EACH": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 1.0,
+   "iso_accept_right": 0.0,
+   "iso_parse_rate": 0.025000000000000022,
+   "included": false,
+   "solve_rate": 0.0,
+   "choosing_TA": {
+    "EACH": [
+     1.0,
+     28
+    ],
+    "PICK": [
+     0.0,
+     1
+    ]
+   },
+   "TP": {
+    "EACH": {
+     "hit": 1.0,
+     "false": 1.0,
+     "n": 29
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": -1.0,
+     "ci": [
+      -1.0,
+      -1.0
+     ],
+     "n": 1,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 1
+    },
+    "BASE-ISO": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": null,
+     "ci": [
+      null,
+      null
+     ],
+     "n": 0,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": null,
+    "ISO_solved1": null,
+    "PICK_solved0": null,
+    "PICK_solved1": null,
+    "EACH_solved0": null,
+    "EACH_solved1": null,
+    "SEQ_solved0": null,
+    "SEQ_solved1": null
+   },
+   "cost_usd": {
+    "SOLVE": 0.0,
+    "EACH": 0.0,
+    "PICK": 0.0,
+    "ISO": 0.0
+   },
+   "secs": {
+    "SOLVE": 28.199999999999992,
+    "EACH": 68.58999999999997,
+    "PICK": 216.58999999999995,
+    "ISO": 85.29
+   }
+  },
+  "sonnet": {
+   "n_records": 520,
+   "parse_fail": {
+    "ISO": 0
+   },
+   "n": {
+    "ISO": 160,
+    "PICK": 80,
+    "BASE": 80,
+    "EACH": 80,
+    "SEQ": 80,
+    "SOLVE": 40
+   },
+   "iso_accept_wrong": 0.0,
+   "iso_accept_right": 1.0,
+   "iso_parse_rate": 1.0,
+   "included": true,
+   "solve_rate": 1.0,
+   "choosing_TA": {
+    "ISO": [
+     0.0,
+     40
+    ],
+    "PICK": [
+     0.0,
+     40
+    ],
+    "BASE": [
+     0.0,
+     40
+    ],
+    "EACH": [
+     0.0,
+     40
+    ],
+    "SEQ": [
+     0.0,
+     40
+    ]
+   },
+   "TP": {
+    "ISO": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "PICK": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "BASE": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "EACH": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    },
+    "SEQ": {
+     "hit": 1.0,
+     "false": 0.0,
+     "n": 40
+    }
+   },
+   "contrasts": {
+    "PICK-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "EACH-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-PICK": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "PICK-EACH": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "BASE-ISO": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    },
+    "SEQ-EACH": {
+     "diff": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "n": 40,
+     "mcnemar_p": 1.0,
+     "a_only": 0,
+     "b_only": 0
+    }
+   },
+   "by_solved": {
+    "ISO_solved0": null,
+    "ISO_solved1": [
+     0.0,
+     40
+    ],
+    "PICK_solved0": null,
+    "PICK_solved1": [
+     0.0,
+     40
+    ],
+    "EACH_solved0": null,
+    "EACH_solved1": [
+     0.0,
+     40
+    ],
+    "SEQ_solved0": null,
+    "SEQ_solved1": [
+     0.0,
+     40
+    ]
+   },
+   "cost_usd": {
+    "SEQ": 3.956096,
+    "BASE": 1.0803820000000002,
+    "EACH": 1.1268,
+    "ISO": 1.5702380000000005,
+    "SOLVE": 0.286688,
+    "PICK": 1.0874419999999998
+   },
+   "secs": {
+    "SEQ": 4256.800000000002,
+    "BASE": 1367.3999999999999,
+    "EACH": 1413.2,
+    "ISO": 2764.8999999999996,
+    "SOLVE": 647.9999999999999,
+    "PICK": 1365.3
+   }
+  }
+ }
+}

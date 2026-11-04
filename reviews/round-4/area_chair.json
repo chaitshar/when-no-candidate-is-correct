@@ -1,0 +1,32 @@
+{
+  "verdict": "minor",
+  "score_1_10": 4,
+  "blockers": [
+    "Conclusion (paper/main.tex:102) states that 'verification by claude-sonnet-5-5 removed none of the inflation', and the abstract (main.tex:19) says cross-model verification 'did not reduce the selection effect'. The pre-registered H3 is inconclusive, not refuted (exps/c3/results_h3.json: h_same - h_cross = +0.016, 95% CI [-0.038, +0.069], upper bound above the +0.05 refutation threshold in exps/c3/AMENDMENTS.md A1). The point estimate is a reduction. The pre-registered descriptive mirror analysis (A1) is also left out of the paper, and it points the other way: for sonnet's forced picks, haiku verification reduced the inflation by +0.044 [-0.007, +0.096], one-sided p 0.049 (results_h3.json select_sonnet). By my recomputation over all 225 problems, h_same is 0.127 and h_cross is 0.082. 'Removed none' is unsupported. It should read 'no reduction was detected (inconclusive)', and the mirror result should be reported."
+  ],
+  "non_blocking": [
+    "Contribution level. The two confirmed contrasts are real and match the artifacts. On haiku-UNSOLVED problems, PICK is 0.60 against ISO-any 0.36 (d +0.24 [+0.13, +0.36]), and the forced pick is more often accepted by isolated verification (+0.19 [+0.11, +0.28]); both repeat with sonnet. But the pre-registered primary test H1, which carries the paper's distinctive 'beyond its competence' thesis, is inconclusive, and source and solvability are entangled. The study covers one vendor, final-answer math only, and about $77 of judging. What survives is a well-documented replication of the known pattern 'LLMs pick an option when none is correct' (Wang et al. 2025, COLING, cited) with a NONE option, plus a select-then-verify correlation. Workshop to borderline, not a flagship contribution.",
+    "The title (main.tex:11) and the Conclusion's opening imply the effect is conditional on competence. C3's SOLVED stratum also shows a positive penalty, +0.06 [+0.01, +0.11] for haiku and for sonnet (exps/c3/results.txt D_solved; results_sonnet.txt). The paper does say specificity is not established, but the title still leads with it. Also, the section heading 'Screen: no lineup penalty on problems the judge mostly solves' (main.tex:57) is contradicted in direction by this C3 SOLVED estimate. It should say 'no detectable penalty' and cross-reference C3.",
+    "There is a deflationary reading of H2/H3 that the paper does not address: wrong candidates differ in intrinsic plausibility (for example, near-miss answers from frontier generators versus small models), so any judge's forced pick and any verifier's acceptance would correlate. h_cross alone is clearly positive on UNSOLVED problems (my recomputation: haiku picks +0.16 [+0.06, +0.27]; sonnet picks +0.18 [+0.09, +0.27]), which fits candidate-intrinsic plausibility rather than a judge-specific mechanism. A control on candidate features (generator strength, answer closeness) would show which reading holds.",
+    "main.tex:51 says 'six monthly arXiv-derived sets from December 2025 to May 2026'. The C3 sample also includes arxivmath-0626 (18 problems, 5 UNSOLVED; exps/c3/strata.json, PREREGISTRATION.md items list), so it is seven sets running to June 2026.",
+    "The Subjects section reports CLI version 2.1.317, but C3 ran on 2.1.318 (exps/c3/PREREGISTRATION.md, Subject). This should be stated for C3.",
+    "The H3 test pools SOLVED and UNSOLVED problems (n=225, as pre-registered), which dilutes it toward zero because the inflation lives almost entirely on UNSOLVED problems. A stratum-restricted estimate should be reported descriptively, so readers do not read the null as evidence of no reduction.",
+    "paper/results.tex is modified in the working tree and is newer than paper/main.pdf (10:03 vs 09:58). The spot-checked numbers match, but the PDF should be rebuilt."
+  ],
+  "evidence": [
+    "paper/main.tex:11",
+    "paper/main.tex:19",
+    "paper/main.tex:51",
+    "paper/main.tex:57",
+    "paper/main.tex:82",
+    "paper/main.tex:102",
+    "exps/c3/PREREGISTRATION.md (gate, H1/H1u/H2 rules, Subject CLI 2.1.318; committed 62ab1fc 08:29Z before arm data)",
+    "exps/c3/AMENDMENTS.md A1 (H3 and mirror descriptive, committed 7cbaccc before arm data), A2",
+    "exps/c3/results.txt (H1 b +0.118 p 0.065 inconclusive; D_unsolved +0.244; D_solved +0.058 [+0.007, +0.109]; H2u +0.194)",
+    "exps/c3/results_sonnet.txt (D_unsolved +0.133; D_solved +0.059 [+0.007, +0.111]; H2u +0.278; H1 -0.019)",
+    "exps/c3/results_h3.json (select_haiku +0.016 [-0.038, +0.069] p 0.294; select_sonnet +0.044 [-0.007, +0.096] p 0.049)",
+    "exps/c3/strata.json (227 selected; UNSOLVED 84 arXiv-derived, 6 contest; arxivmath-0626 present)",
+    "results/hypothesis_ledger.csv:67-75",
+    "Own recomputation from exps/c3/raw/arms: h_same/h_cross UNSOLVED haiku 0.194/0.161, sonnet 0.278/0.178; all problems haiku 0.089/0.073, sonnet 0.127/0.082"
+  ]
+}

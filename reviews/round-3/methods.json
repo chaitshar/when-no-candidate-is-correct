@@ -1,0 +1,28 @@
+{
+ "verdict": "major",
+ "score_1_10": 4,
+ "blockers": [
+  "Solve-rate gate and solvability split are computed with a parser bug. harness/parse.py:36-37 uses r\"^\\W*ANSWER\\W*:?\\s*(.+?)\\s*$\"; the greedy \\W* eats a leading '$\\' so 'ANSWER: $\\sqrt{17}-1$' becomes 'sqrt{17}-1' and is graded wrong (also 'sqrt{69}', 'dfrac{100(2^{100}-1)}{2^{101}-1}', '\\frac' answers; exps/c2_confirm/raw/haiku__SOLVE__hmmt_feb_2026_{26,28,30,9}.json). Recomputed from raw with the same mathgrade but the unmangled ANSWER line: haiku SOLVE on the 24 contest problems is 21/24=0.875 (paper 0.71, results.tex c2_haiku_conf_solve), above the preregistered band [0.2,0.8] (PREREGISTRATION.md Gates), so the contest set FAILS its gate; the sentence 'the only set that passed its calibration gate' (main.tex abstract, Sec. C2) is unsupported. Arxiv set 8/78=0.103 (paper 0.05) still fails; union 29/102=0.284; screen 44/59=0.746 (paper 0.60, still in band). Under the paper's own ruling A2 no held-out set is then interpretable.",
+  "Competence split (F5) numbers and its 'holds in two of three sources' statement (main.tex Exploratory: competence; abstract) rest on the same mislabelled solved/unsolved. Corrected: all TA n=163 PICK-ISO +0.061 [-0.006,+0.135]; solved n=73 -0.041 [-0.137,+0.055]; unsolved n=88 +0.148 [+0.045,+0.250]; unsolved-solved +0.189 [+0.047,+0.332]. By source: screen solved n=44 -0.114 [-0.227,0.000], unsolved n=15 +0.200 [-0.067,+0.467]; contests solved n=21 0.000 [-0.190,+0.190], unsolved n=3 0.000 (paper: n=7, +0.14); arxiv solved n=8 +0.250, unsolved n=70 +0.143 [+0.029,+0.257]. The contest source no longer supports the pattern at all (3 unsolved, D=0), so the abstract's 'in the screen and contest sources the pooled format added false choices on problems the judge could not solve' is false for contests and uninformative for the screen (CI includes 0); only arxiv shows a positive unsolved effect, fully confounded with source."
+ ],
+ "non_blocking": [
+  "Other headline numbers reproduce. S1 (n=60): PICK 0.267, ISO-any 0.300, D -0.033, 95% CI [-0.150,+0.083]; ISO accept right 0.850, wrong 0.130 (paper s1_isowrong 0.11 is per-pool/other denominator; check); H2 +0.133 [+0.025,+0.250]. C2 haiku contests n=24: pick 0.125, iso 0.125, D 0.000, 90% CI [-0.125,+0.125]; H2 +0.125, one-sided p 0.038 (paper 0.043, bootstrap-seed difference). Arxiv n=79: D +0.152 [+0.063,+0.241]; H2 +0.114 p 0.006. Union n=103: D +0.117 90% CI [+0.039,+0.194], H2 +0.117 p 0.0006. Sonnet contests: H1 n=17 D 0.000; H2 n=19 +0.105 [0,+0.263] p 0.12 (matches). Sonnet ISO parse 0.896 reproduces.",
+  "Sonnet H1/H2 drop pools with an unparseable ISO reply (7 of 24 for H1, 5 for H2); exclusion is outcome-related and not an intention-to-treat analysis; the gate failure is right but the descriptive D=0.00 on 17 is not representative.",
+  "H1 compares one PICK call with ISO-any over three calls, so ISO-any has up to three chances to accept; a lineup effect would be masked in the direction of the null. State this asymmetry in the main text, not only for TP pools.",
+  "H2 has no null control for selection: the picked candidate is the one the model finds most plausible, so higher isolated accept is expected from any rank-then-verify with the same model; the 'most dangerous candidate' reading needs a random-pick or other-model-picker baseline. Also candidates come from a handful of generator models and the same problem family; clustering by generator is not modelled.",
+  "Multiplicity: ledger has 64 hypotheses (65 lines incl. header; ledger_total=64 ok) but the exploratory p-values and CIs (F5, S6, S4b, S9) are unadjusted; the text correctly says none is confirmed, but 'suggestive' wording in the abstract should note the selection among 64 and that F5 was proposed after seeing S1 and C2 data (post hoc, not just 'not preregistered for C2').",
+  "Preregistration deviations are disclosed (A2 ruling after data, D1-D3). The preregistered primary (union) is superseded by a post-data reading; the ledger and paper show both, which is adequate, but the abstract leads with the conservative reading only for contests while the corrected gate would also fail that set.",
+  "Power: with n=24 the preregistered CI half-width is 0.125, so equivalence at 0.10 was unreachable; the paper says so. The arxiv set (79 of 103 problems) was added to power the test but its judge solve rate (~0.10) makes it a different regime."
+ ],
+ "evidence": [
+  "harness/parse.py:36-37",
+  "exps/c2_confirm/raw/haiku__SOLVE__hmmt_feb_2026_26.json",
+  "exps/c2_confirm/raw/haiku__SOLVE__hmmt_feb_2026_9.json",
+  "exps/c2_confirm/PREREGISTRATION.md (Gates)",
+  "exps/c2_confirm/AMENDMENTS.md (A2)",
+  "paper/results.tex:sb_* and c2_haiku_conf_solve",
+  "paper/main.tex:19,64-67",
+  "exps/posthoc/solvability_split.py:25",
+  "/tmp/review_methods3/r.py"
+ ]
+}

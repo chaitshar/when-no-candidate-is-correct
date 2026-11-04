@@ -1,0 +1,30 @@
+{
+  "lens": "hostile_expert",
+  "model": "opus",
+  "papers": {
+    "F1": {
+      "score_1_10": 6,
+      "objection": "Everything is inference-only with prompted LLM stand-ins for human judges, so the paper cannot speak to debate as a training signal, which is the main reason to study it. The open-role results (open consultancy and open debate) are also not new runs. They come from post-hoc filtering of assigned-role transcripts by whether the assignment matched the agent's direct-QA answer, so they inherit selection effects tied to question difficulty and do not show what happens when an agent actually chooses its side. The headline 'debate beats consultancy' is largely built in by the 50/50 forced-advocacy consultancy baseline, which the authors admit is weak. Against the meaningful baseline, direct QA on non-asymmetric tasks, the effect is null or small. Test: train debaters by self-play against the weak judge, then compare against open consultancy with the agent choosing its side genuinely, under matched compute."
+    },
+    "F2": {
+      "score_1_10": 7,
+      "objection": "There is one task (QuALITY) whose strong-weak gap is pure information hiding plus a verified-quote tool. Debate's advantage may come from evidence retrieval, since the adversary is forced to surface the decisive verified quote, rather than from adversarial scrutiny of reasoning, and nothing here separates the two. The 'persuasiveness improves truthfulness' result optimises with best-of-N and critique-and-refinement scored by GPT-4-Turbo log-probs. The main judge is also GPT-4-Turbo, so the 'unsupervised' optimisation is close to optimising against the evaluator's own family. On top of that, the human annotators were filtered and selected. Test: rerun with the passage visible, or on a reasoning-gap task, with a held-out judge family used for optimisation."
+    },
+    "F3": {
+      "score_1_10": 5,
+      "objection": "The paper defines a decisive error formally as a counterfactual intervention, but never runs the intervention. The ground truth is a consensus judgment from three authors-as-annotators, reached by discussion until everyone is 'persuaded', with 15-30% of items self-rated uncertain. Chance-corrected inter-annotator agreement before discussion is not reported. So step-level 'accuracy' of about 14%, near or below random, may partly measure label noise and the annotators' idiosyncratic choice of which of several errors counts as decisive. With 184 items, the method rankings are fragile. Test: replay each trajectory with the labeled step corrected, check that the outcome flips, and report Krippendorff's alpha from independent first-pass labels."
+    },
+    "N1": {
+      "score_1_10": 3,
+      "objection": "The 'pairwise amplifies bias' claim rests on one adversarial set, LLMBar-Adversarial, which was constructed specifically to fool pairwise-comparing models. The method is a prompt variant evaluated on about 319 items with no significance tests, and it gives no gain, or a small loss, on MT-Bench. The cognitive-psychology framing is also backwards. The joint-versus-separate evaluation literature (the evaluability hypothesis) predicts that joint evaluation reduces reliance on easy-to-evaluate superficial attributes. The cited 1970s information-overload work is about many-alternative choice, not two-option comparison. Position bias and prompt-length confounds between the pointwise and pairwise prompts are not controlled. Test: build a fresh adversarial set not tuned against pairwise judges, randomise and swap order, and add bootstrap CIs."
+    },
+    "N2": {
+      "score_1_10": 4,
+      "objection": "The headline gain, judge-rank-weighted voting beating majority vote by about 7 pp on fixed pools, is a known result in different words: verifier or reward-model reranking and weighted majority vote over sampled candidates. The 'generation-retention gap' is pass@k minus maj@k. The AUC-versus-p_gen 'sigmoid' is confounded by construction. p_gen comes from the same generator's bank, so it indexes question difficulty and how separable the candidates are, and the paper concedes the 2C/6W control does not remove this. Memetic drift and evolutionary selection are post-hoc metaphor, not tested mechanism. The tuned exponent t is also chosen on the evaluation pools. Test: compare against a standard PRM or ORM reranker and self-consistency-with-verifier baselines, with t tuned on held-out data."
+    },
+    "N3": {
+      "score_1_10": 4,
+      "objection": "The 'usable advantage' condition is fitted after the fact to five pairings (3 responders, 2 non-responders) and is close to tautological: if the critic classifies better than the judge and the judge listens, the judge improves. Rebuttals contribute nothing, so the protocol that works is critique-then-judge, a known LLM-critic setup (as in CriticGPT and Saunders et al.), not debate in the Irving sense. The 'weak judge' pairings on ARC (Opus 4.6 versus 4.5, Gemini Pro versus Flash) differ in task skill but not in any principled oversight gap. Test: specify the critic-judge gap threshold in advance and check it on new held-out pairings and a new domain, and compare against a non-debate critique baseline with matched compute."
+    }
+  }
+}

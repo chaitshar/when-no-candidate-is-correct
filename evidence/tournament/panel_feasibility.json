@@ -1,0 +1,341 @@
+{
+ "panel": "feasibility, power and information per hour",
+ "assumptions": "Assumptions: haiku about 6,000 calls/h effective (probe: 24 parallel calls in 12 s), sonnet about 2,500/h, opus about 1,200/h, fable about 400/h and costly. 'calls' = per phase; 'hours' = pilot (0.25x) + confirmatory (1x) + replication (1x) = 2.25x one phase, wall clock. Paired binary n uses McNemar n = (1.96*sqrt(pd)+0.84*sqrt(pd-d^2))^2/d^2; replicate calls within an item are discounted by DE = 1+(m-1)*ICC. Item-supply check: PRM800K phase-2 test has 458 problems; by string match, about 340 have >=3 distinct GPT-4 wrong final answers, about 235 have >=4 and about 144 have >=5 (fewer after sympy normalisation). On CRUXEval-O, haiku errors are near-deterministic, so items with >=3 to 5 distinct haiku-sampled wrong outputs are scarce (likely <15 percent of 800). Pool designs that need many distinct real wrongs should use MATH/PRM800K, or add sonnet and open-weight wrongs.",
+ "verdicts": [
+  {
+   "id": "U1",
+   "verdict": "keep",
+   "assumed_effect": "Top-1 win-rate AUROC absent vs present about 0.70 (it sits inside the 0.65 to 0.75 grey zone); ICC between the paired absent and present pools 0.5",
+   "calls_for_80pct_power": "80 items/phase x 2 pools x 15 matches = 2,400 haiku + about 1,000 generation",
+   "hours": 1.5,
+   "null_informative": true,
+   "reason": "Fits in time, but the 40 proposed items give an AUROC CI of about +/-0.10, which cannot separate 0.65 from 0.75. It needs about 80 items/phase, each with >=5 distinct wrongs. CRUXEval cannot supply that from haiku alone, so use PRM800K (about 144 problems qualify, which is not enough for 3 phases; generate more wrongs). The grey-zone outcome is likely. Both outcomes are informative for co-scientist Elo. Lower priority than the lineup core. Absorbs U2."
+  },
+  {
+   "id": "U2",
+   "verdict": "merge:U1",
+   "assumed_effect": "3-cycle rate ratio 1.5 to 2; top-1 agreement 0.6 absent",
+   "calls_for_80pct_power": "+1,500 haiku over U1",
+   "hours": 0.7,
+   "null_informative": false,
+   "reason": "Confounded by design. PRESENT pools reuse the same 5 wrongs, so half their triads are the same all-wrong triads, which dilutes the contrast toward 1. Winner instability is better reported as a secondary analysis of U1 order-swapped data."
+  },
+  {
+   "id": "U3",
+   "verdict": "keep",
+   "assumed_effect": "BW side-pick 0.55 vs CW false accept 0.35 (paired d=0.20, pd 0.4); ICC across 3 judge samples 0.5",
+   "calls_for_80pct_power": "about 140 items/phase: 700 sonnet debater + 1,260 haiku judge calls",
+   "hours": 2.5,
+   "null_informative": true,
+   "reason": "The proposed 60 items are underpowered for a 0.15 paired difference; about 140 are needed. Run it on MATH/PRM800K (>=2 distinct wrongs is common) rather than CRUXEval. It fits. A null would mean debate stays safe when both sides are wrong, and a positive extends the lineup effect to debate. Alternate #7."
+  },
+  {
+   "id": "U4",
+   "verdict": "kill",
+   "assumed_effect": "Ratio of majority-of-5 to binomial >>3, essentially guaranteed",
+   "calls_for_80pct_power": "300 candidates x 5 haiku + 300 sonnet",
+   "hours": 0.4,
+   "null_informative": false,
+   "reason": "The result is foregone: repeated default-temperature claude -p verdicts on the same prompt are nearly deterministic (ICC near 1), so the binomial comparison is a straw man. Compute it free as an ICC secondary from replicate calls in K1, U6 and T1."
+  },
+  {
+   "id": "U5",
+   "verdict": "kill",
+   "assumed_effect": "FA ratio 1.5 (0.20 to 0.30, paired d=0.10, pd 0.3)",
+   "calls_for_80pct_power": "about 230 qualifying items/phase x 12 = 2,800 haiku",
+   "hours": 1.5,
+   "null_informative": true,
+   "reason": "Item supply fails. Only about 60 of 800 CRUXEval items have haiku and sonnet both wrong with different outputs, against about 230 needed per phase and about 500 across phases. Rationale style, length and problem difficulty also confound generator source."
+  },
+  {
+   "id": "U6",
+   "verdict": "keep",
+   "assumed_effect": "FA 0.20 to 0.28 with 6 prior rejects (paired d=0.08, pd 0.2); ICC between candidates within an item 0.3, about 3 per item",
+   "calls_for_80pct_power": "about 380 candidates x 4 conditions = 1,520 haiku",
+   "hours": 0.8,
+   "null_informative": true,
+   "reason": "A clean within-candidate manipulation that is cheap and fits easily. Items are plentiful (MATH or CRUXEval single wrongs), and short math prompts fit open-weight 4096-token contexts for a capability gradient. A null is useful: it would show that retry-until-verified loops do not drift lenient. Caveat: the history is fabricated in-prompt, so frame the result as a context effect. Top-6."
+  },
+  {
+   "id": "U7",
+   "verdict": "kill",
+   "assumed_effect": "AUROC drop 0.05; paired SE about 0.03 at 150 items",
+   "calls_for_80pct_power": "about 420 band items x 12 = 5,000 haiku + 2,100 screening",
+   "hours": 2.7,
+   "null_informative": true,
+   "reason": "About 420 items in the 40 to 70 percent band are needed, not 150; CRUXEval has too few in that band, so MATH screening is required. A 3-level agreement statistic makes AUROC coarse. The debate-dynamics literature is crowded, so information per hour is low."
+  },
+  {
+   "id": "K1",
+   "verdict": "keep",
+   "assumed_effect": "Target-absent any-accept at n=4 exceeds independence prediction by 0.20 (corpus shows about 0.7 vs about 0.2), per-item SD 0.5, ICC across orders 0.6; sonnet excess 0.10",
+   "calls_for_80pct_power": "100 items/phase: 1,200 haiku + 300 sonnet; zero generation using PRM800K human-labelled GPT-4 wrongs",
+   "hours": 1.2,
+   "null_informative": true,
+   "reason": "About 50 items are enough for the primary test, so 100 gives margin for the sonnet clause. The 'recall at n=2 +0.05' clause needs about 470 items, so demote it to secondary. The candidates are certified-wrong real errors at no cost, and the prompts fit open-weight contexts (8-model capability gradient). A null on real math would show the corpus lineup law is a synthetic-arithmetic artifact, which is the most decision-relevant result available. This is the shared bank for F3, F6, T2 and T9. Top-6."
+  },
+  {
+   "id": "K2",
+   "verdict": "kill",
+   "assumed_effect": "Interaction 0.08",
+   "calls_for_80pct_power": "about 720 items for the interaction (SE of a 2x2 interaction contrast)",
+   "hours": 4.0,
+   "null_informative": false,
+   "reason": "Badly underpowered: 60 items planned against about 720 needed. MBPP is not in the item sources and HumanEval has 164 items. Giving debaters the test traces makes the asymmetry gain near-tautological."
+  },
+  {
+   "id": "K3",
+   "verdict": "kill",
+   "assumed_effect": "Interaction 0.15; content effect 0.25 vs 0.10",
+   "calls_for_80pct_power": "about 275 items per solvability stratum per phase; screening about 15,000 haiku",
+   "hours": 4.0,
+   "null_informative": true,
+   "reason": "Low-solvability MATH items are scarce, so screening is costly. The 'valid argument for the wrong label' construction (a transcription slip) is itself an invalid argument, which is a construct-validity failure. The question is heavily preempted (audit B2)."
+  },
+  {
+   "id": "K4",
+   "verdict": "kill",
+   "assumed_effect": "Same-wrong rate difference 0.08 conditional on both wrong",
+   "calls_for_80pct_power": "about 250 band items x 15 + screening = 5,000+ haiku",
+   "hours": 2.0,
+   "null_informative": false,
+   "reason": "Conditioning on both-wrong pairs shrinks n, and the accuracy match is likely to fail, which the pre-specified rule calls 'inconclusive'. The finding is already reported (A8fKFiZMnu), so this is a replication with low information."
+  },
+  {
+   "id": "K5",
+   "verdict": "kill",
+   "assumed_effect": "Own vs other FA difference <0.03 (equivalence claim)",
+   "calls_for_80pct_power": "about 330 candidates per arm in the restricted stratum",
+   "hours": 3.0,
+   "null_informative": true,
+   "reason": "The core claim is an equivalence, so a CI of +/-0.03 to 0.06 needs about 330 restricted candidates. Sonnet wrongs that haiku also produces are a small minority, so this is infeasible. The self-preference literature is crowded."
+  },
+  {
+   "id": "K6",
+   "verdict": "kill",
+   "assumed_effect": "Interaction 0.15 (0.20 vs 0.05)",
+   "calls_for_80pct_power": "about 140 low-consistency items/phase; screening about 10,000 haiku + 6,000 judge",
+   "hours": 3.0,
+   "null_informative": true,
+   "reason": "It fits, but screening dominates the cost, and uncertainty-gated conformity is close to foregone given the existing literature. Only the unlikely null would surprise anyone, so information per hour is low. Absorbs K3's question in cleaner form if the panel wants one conformity test."
+  },
+  {
+   "id": "K7",
+   "verdict": "kill",
+   "assumed_effect": "Both-fail pairwise agreement 0.55 vs threshold 0.62",
+   "calls_for_80pct_power": "about 640 both-fail pairs (about 210 items)",
+   "hours": 2.0,
+   "null_informative": true,
+   "reason": "Haiku passes about 90 percent of HumanEval/MBPP, so both-fail pairs with pass fractions differing by >=0.3 barely exist. EvalPlus release assets may be blocked. Item supply fails."
+  },
+  {
+   "id": "K8",
+   "verdict": "kill",
+   "assumed_effect": "Parallel vs sequential gap about 0.04 per cell",
+   "calls_for_80pct_power": "about 730 items per model x difficulty cell",
+   "hours": 6.0,
+   "null_informative": false,
+   "reason": "Cell-level gaps are too small to estimate signs, so the kill rule ('no cell differs') would almost surely trigger, giving a null that says nothing about the law."
+  },
+  {
+   "id": "K9",
+   "verdict": "kill",
+   "assumed_effect": "Calibrated minus shuffled accuracy 0.04 (pd 0.12)",
+   "calls_for_80pct_power": "about 580 items x 4 arms x 3 agents = 7,000 haiku/phase",
+   "hours": 4.0,
+   "null_informative": false,
+   "reason": "Needs about 580 items, against 200 planned. The raw-vs-shuffled clause is an equivalence that needs more still. Debate accuracy effects are small and unstable."
+  },
+  {
+   "id": "F1",
+   "verdict": "keep",
+   "assumed_effect": "POOL0-noPICK minus ISO any-accept D=0.10 (pd 0.3); ICC across 2 orders 0.7",
+   "calls_for_80pct_power": "about 230 problems x 15 = 3,450 haiku + about 400 sonnet",
+   "hours": 1.7,
+   "null_informative": true,
+   "reason": "The proposed 120 problems are too few; about 230 are needed per phase. The generator supplies unlimited fresh synthetic items, so locked confirm and replication banks are easy. Both outcomes resolve the corpus's main confound (PICK demand vs presentation). Strongly recommend adding the noPICK arm to K1's real-math pools too. Absorbs F2. Top-6."
+  },
+  {
+   "id": "F2",
+   "verdict": "merge:F1",
+   "assumed_effect": "Gap shrink from 0.15 to 0.075 (difference of gaps)",
+   "calls_for_80pct_power": "about 830 problems for the gap-ratio test",
+   "hours": 3.0,
+   "null_informative": true,
+   "reason": "A difference of two paired gaps is about 3x underpowered at 120 problems. Add the absolute-criterion wording as a third format level in F1 and report it descriptively."
+  },
+  {
+   "id": "F3",
+   "verdict": "merge:K1",
+   "assumed_effect": "G_cert 0 vs 0.10",
+   "calls_for_80pct_power": "about 230 problems + 480 opus ratings",
+   "hours": 1.2,
+   "null_informative": true,
+   "reason": "K1 on PRM800K answers the same question better: the wrongs are certified by gold answers and human step labels, not generated. Part A (opus defensibility rating of picked vs unpicked) can be applied to K1 picks as a cheap secondary."
+  },
+  {
+   "id": "F4",
+   "verdict": "kill",
+   "assumed_effect": "Gap 0.10",
+   "calls_for_80pct_power": "about 230 abstracts/phase",
+   "hours": 1.0,
+   "null_informative": true,
+   "reason": "SciFact is not in the item sources, and there are far fewer than 3 x 230 abstracts with SUPPORT + CONTRADICT. Off-topic other-abstract fillers are easy negatives, so the result would sit on a floor. Item supply fails for confirm and replication."
+  },
+  {
+   "id": "F5",
+   "verdict": "keep",
+   "assumed_effect": "Choosing in zero-correct pools on 3/3-solved items: 0.05 (gating) vs >=0.30 (relative judgment); ICC across 2 sizes x 2 orders 0.6",
+   "calls_for_80pct_power": "about 150 items (>=60 solved 3/3): 450 solve + 600 pool + 750 iso = 1,800 haiku",
+   "hours": 0.8,
+   "null_informative": true,
+   "reason": "Cheap, with unlimited fresh items. The decision between the two accounts is sharp, and either outcome rewrites the remedy (better judge vs presentation). Needs >=60 solved items, not 20, for a Wilson bound under 0.15. Pre-specify the same solve-status moderator in K1 on MATH. Top-6."
+  },
+  {
+   "id": "F6",
+   "verdict": "merge:K1",
+   "assumed_effect": "Single-call excess over independence 0.30",
+   "calls_for_80pct_power": "about 90 items, 700 haiku",
+   "hours": 0.3,
+   "null_informative": true,
+   "reason": "K1 already uses single isolated calls and computes the independence prediction. The overdispersion re-estimate of corpus batches is a reanalysis, not a new run."
+  },
+  {
+   "id": "F7",
+   "verdict": "kill",
+   "assumed_effect": "choose(8) - choose(2) = 0.15",
+   "calls_for_80pct_power": "about 120 abstracts/phase",
+   "hours": 1.0,
+   "null_informative": true,
+   "reason": "Same SciFact supply and filler-floor problems as F4. Non-exclusive candidates require NL claims that the item sources do not provide."
+  },
+  {
+   "id": "F8",
+   "verdict": "kill",
+   "assumed_effect": "Fable - haiku at matched margin; equivalence +/-0.08",
+   "calls_for_80pct_power": "about 156 pools per model -> about 1,800 fable calls total",
+   "hours": 4.0,
+   "null_informative": true,
+   "reason": "Expensive fable equivalence test. Matching on each model's own 1 to 7 rating compares different scales, so the margin covariate is not commensurable across models. The capability gradient is cheaper from K1 tiers plus the 8 open-weight models."
+  },
+  {
+   "id": "F9",
+   "verdict": "kill",
+   "assumed_effect": "Flip ratio 0.5 vs 0.25 of rates around 0.07 vs 0.14",
+   "calls_for_80pct_power": "about 1,500 agent-item opportunities on split items, about 4,000 haiku/phase",
+   "hours": 2.5,
+   "null_informative": true,
+   "reason": "A ratio of two rare flip rates needs >=30 events per arm, so the n balloons. The hard bank has to be built and screened first, and the work is specific to the synthetic bank."
+  },
+  {
+   "id": "T1",
+   "verdict": "keep",
+   "assumed_effect": "Baseline - BASE-RATE = 0.20 (needs about 70 items); baseline - CAUTION about 0.03 (CI of about +/-0.07 at 150 items)",
+   "calls_for_80pct_power": "150 items x 3 arms x TA/TP = 900 haiku + 180 sonnet",
+   "hours": 0.6,
+   "null_informative": true,
+   "reason": "Cheap, and it can share K1's PRM800K pools rather than CRUXEval, where >=3 distinct haiku wrongs are scarce. Both outcomes are directly actionable for ranker prompts. A null (base rate fails too) shows that instruction repairs do not work. Top-6."
+  },
+  {
+   "id": "T2",
+   "verdict": "merge:K1",
+   "assumed_effect": "Predictive difference 0.20 between blank pickers and rejecters",
+   "calls_for_80pct_power": "about 200 items per phase with real TA pools",
+   "hours": 1.0,
+   "null_informative": false,
+   "reason": "Between-item association is near guaranteed through item difficulty, so the incremental value over a difficulty covariate is the real question and needs far more n. CRUXEval cannot supply 4 distinct real wrongs. Add a perturbed-answer blank pool to K1 items as a secondary."
+  },
+  {
+   "id": "T3",
+   "verdict": "keep",
+   "assumed_effect": "Shift in false-WRONG rate on probes about 0.07 (c shift 0.2); paired within-probe across prevalence; residual SD 0.23",
+   "calls_for_80pct_power": "about 170 probes (85 per class) -> about 1,000 batch calls/phase (long prompts, about 30 s each)",
+   "hours": 1.2,
+   "null_informative": true,
+   "reason": "The proposed 80 probes x 8 reps are underpowered because of high within-probe ICC; 170 probes are needed. CRUXEval probes in the 0.35 to 0.85 band are borderline for 3 phases, so replicate on MATH/GSM8K answer claims (abundant, and short enough for open-weight contexts). The two human literatures predict opposite signs, so every outcome, including a null, is informative. Absorbs T5. Top-6."
+  },
+  {
+   "id": "T4",
+   "verdict": "kill",
+   "assumed_effect": "Detection deficit 0.10 (pd 0.3)",
+   "calls_for_80pct_power": "about 230 functions/phase x 3 conditions x 3",
+   "hours": 2.0,
+   "null_informative": true,
+   "reason": "HumanEval has 164 functions, against about 700 needed across phases. Validated bug injection is significant engineering time, and the dissimilarity interaction of 0.05 is hopeless. This sits outside the verifier-lineup line."
+  },
+  {
+   "id": "T5",
+   "verdict": "merge:T3",
+   "assumed_effect": "Lag-1 within-item effect 0.05; SE about 0.015 at 4,800 verdicts",
+   "calls_for_80pct_power": "400 batch calls/phase",
+   "hours": 0.5,
+   "null_informative": true,
+   "reason": "Well powered and cheap, but T3's randomised-order batches already provide lag-1 own-verdict and lagged-gold regressors. Analyse it there as a pre-registered secondary rather than paying for separate batches."
+  },
+  {
+   "id": "T6",
+   "verdict": "kill",
+   "assumed_effect": "Leak 0.08 on a base pick rate of about 0.12 (pd 0.2)",
+   "calls_for_80pct_power": "about 240 TA pools/phase + 480 sonnet",
+   "hours": 1.2,
+   "null_informative": true,
+   "reason": "Needs about 240 pools of 4 distinct real wrongs per phase, which neither CRUXEval nor PRM800K can supply across 3 phases. The prior effect is small because a sonnet told not to reveal will mostly comply, so the likely result is an imprecise null."
+  },
+  {
+   "id": "T7",
+   "verdict": "kill",
+   "assumed_effect": "Standard-of-proof difference 0.15 in P(REJECT given 2:2)",
+   "calls_for_80pct_power": "about 140 naturally split items per phase; about 5,400 haiku/phase",
+   "hours": 3.0,
+   "null_informative": false,
+   "reason": "The criterion shift caused by the 'beyond reasonable doubt' wording is close to foregone. Items that split 2:2 under both standards are scarce, and 4-agent, 2-round panels are costly."
+  },
+  {
+   "id": "T8",
+   "verdict": "kill",
+   "assumed_effect": "Specificity gap >=0.20 (near certain); tau between 6 configs",
+   "calls_for_80pct_power": "about 1,700 calls/phase",
+   "hours": 0.8,
+   "null_informative": false,
+   "reason": "The spectrum gap is foregone (mutant outputs are visibly odd). A Kendall tau over 6 configurations has a CI spanning almost [-1, 1], so the ranking-inversion claim cannot be tested."
+  },
+  {
+   "id": "T9",
+   "verdict": "merge:K1",
+   "assumed_effect": "Pooled/isolated ratio of conf>=90 false accepts 1.5",
+   "calls_for_80pct_power": "add confidence to K1 calls: +0",
+   "hours": 0.0,
+   "null_informative": true,
+   "reason": "Confidence can be elicited at zero extra calls on K1's ISO, POOL and SERIAL arms. Report the CAC curves as a K1 secondary."
+  }
+ ],
+ "top6": [
+  {
+   "rank": 1,
+   "id": "K1"
+  },
+  {
+   "rank": 2,
+   "id": "F1"
+  },
+  {
+   "rank": 3,
+   "id": "F5"
+  },
+  {
+   "rank": 4,
+   "id": "T3"
+  },
+  {
+   "rank": 5,
+   "id": "U6"
+  },
+  {
+   "rank": 6,
+   "id": "T1"
+  }
+ ],
+ "alternate": "U3",
+ "top6_total_hours": 6.3,
+ "notes": "K1, F1 (noPICK arm), F5 (solve-status moderator) and T1 (instruction arms) can share one PRM800K/MATH pool bank, so a single factorial pool experiment with locked fresh MATH items covers the confirmatory and replication phases. All six top designs fit 4096-token open-weight contexts if MATH/GSM8K items are used (T3 only with short GSM8K claims)."
+}

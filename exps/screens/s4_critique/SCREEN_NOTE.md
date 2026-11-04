@@ -1,0 +1,6 @@
+# S4 screen note (exploratory): critique validity and source label, claude-haiku-5-5
+60 wrong candidates (first wrong of each S1 TA pool) and 60 right candidates (TP pools). Control = the same candidate's S1 ISO verdict (no critique). Critique text: "The final answer of this solution is wrong." Numbers from results.json.
+- Wrong candidates (valid critique): accept 0.20 control; with critique 0.117 (automated checker, diff -0.083, CI -0.183 to +0.017) and 0.10 (another student, -0.10, CI -0.217 to +0.017).
+- Right candidates (invalid critique): accept 0.85 control; 0.733 with the "automated checker" label (diff -0.117, CI -0.233 to -0.017) and 0.85 with the "another student" label (0.0, CI -0.083 to +0.083).
+- Label effect at fixed validity: right candidates -0.117 (checker minus student); wrong candidates +0.017.
+Kill rule (all effects within +-0.05): not met. Reading: a false critique moved the judge only when attributed to an automated checker; a correct critique helped a little under either label. The label contrast is a difference between two CIs, not itself tested; it is a candidate hypothesis (authority of the critic mediates harm from invalid critiques), close to known identity and authority effects (2510.07517 per the novelty audit). Not confirmed.

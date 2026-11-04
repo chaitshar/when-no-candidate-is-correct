@@ -1,0 +1,32 @@
+{
+  "verdict": "minor",
+  "score_1_10": 8,
+  "blockers": [],
+  "non_blocking": [
+    "Labels: VERIFIED (title, venue note and citing sentence checked): balunovic2025matharena, brown2024large, chen2026beyond (arXiv comments: accepted HICSS; abstract says traces shift criterion toward rejection), cobbe2021training, gottweis2025towards (Crossref: Nature 655(8122):487-496, 2026, doi matches; arXiv title is now 'Accelerating scientific discovery with Co-Scientist'), hendrycks2021measuring (NeurIPS 2021 per arXiv comments), irving2018ai, jeong2025comparative (ACL Anthology page, BlackboxNLP 2025; abstract says pairwise amplifies biased preferences), kadavath2022language (has 'none of the above' replacement section), kenton2024scalable, khan2024debating, kim2026penalty (AACL-IJCNLP 2026 short paper per arXiv comments; no-valid-option abstention), lightman2024lets, rho2025best (abstract: 'least bad of many unacceptable options', outside option), stroebl2026limits (false-positive upper bound on resampling), tam2025none (NA-as-correct causes 30-50% drop), wang2023self, wen2024know (arXiv comments TACL 2024), zhang2025which (184 failure annotations), zheng2023judging, malpass1981eyewitness, steblay2001eyewitness, steblay2011seventytwo, wells1984psychology, wixted2012field (all six psychology/Nature DOIs checked via Crossref; titles, journals, volumes and pages match the bib).",
+    "PARTIALLY VERIFIED: wang2025llms (COLING 2025 confirmed). Full text supports each sentence in main.tex: Table 3 relative confidence of the top incorrect option is 83.6-99.4% of the correct option's; Table 4 shows the models write 'no answer' on only 24.7-60.0% of MCQs with no correct option. The abstract alone does not say this, and 'close to' is generous at the 83.6% end. The claim that the paper does not test the contrasts the authors claim for themselves is consistent with the text I read.",
+    "PARTIALLY VERIFIED: ji2026candidate. Paper exists and the title matches. Full text shows an 'all-wrong pools excluded' panel and a p_gen=0 regime where no selection rule can recover, which supports the exclusion claim, but the bib lists three authors while arXiv lists at least four (Ji, Li, Cheng, She, ...) without 'and others'. Fix the author list.",
+    "PARTIALLY VERIFIED: ma2026selecting. Title and workshop acceptance confirmed in arXiv comments. The bib omits the fourth author (Louis-Philippe Morency). The 'separates selecting from solving' description matches the abstract (Selection Increment).",
+    "PARTIALLY VERIFIED: zhang2026selected. The NeurIPS poster page exists with the matching title, author Teresa Zhang and an OpenReview link containing id 2A1ozLhi9p. The text already discloses that only the abstract was read. I did not extract the abstract text, so the 'tail reliability rather than average accuracy' sentence is unchecked by me.",
+    "PRM800K/MATH sentence (main.tex:55): lightman2024lets and hendrycks2021measuring both exist. 'Human-verified wrong GPT-4 solutions' matches PRM800K's human step labels in general, but I did not check the per-problem filtering. That is an artifact matter, not a citation one.",
+    "Several bib entries use @misc with the venue only in note= and abbreviate authors with 'others' (balunovic, chen, gottweis, kadavath, wang2023, wen, zhang2025, zhang2026 entries); cosmetic.",
+    "Because the reference list is dated 2026, the arXiv IDs 2608.25937, 2609.18204, 2610.08153 and 2611.00507 should be re-checked at release in case versions change venue notes. All four resolved today."
+  ],
+  "evidence": [
+    "paper/refs.bib:1-231",
+    "paper/main.tex:23,25,30,33-35,39,55,85,89",
+    "https://arxiv.org/abs/2609.18204",
+    "https://arxiv.org/abs/2610.08153",
+    "https://arxiv.org/abs/2608.25937",
+    "https://arxiv.org/abs/2611.00507",
+    "https://arxiv.org/abs/2510.04087",
+    "https://arxiv.org/abs/2503.01550",
+    "https://arxiv.org/abs/2411.17501",
+    "https://arxiv.org/abs/2505.00212",
+    "https://aclanthology.org/2025.coling-main.390",
+    "https://aclanthology.org/2025.blackboxnlp-1.5",
+    "https://proceedings.mlr.press/v235/khan24a.html",
+    "https://neurips.cc/virtual/2026/poster/155878",
+    "https://api.crossref.org/works/10.1038/s41586-026-10644-y"
+  ]
+}

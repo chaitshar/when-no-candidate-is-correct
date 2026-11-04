@@ -1,0 +1,32 @@
+{
+ "verdict": "minor",
+ "score_1_10": 6,
+ "blockers": [],
+ "non_blocking": [
+  "Verified by independent recomputation from raw (own code, not analysis/): C2 haiku conf/repl/union (H1 D 0.00/+0.152/+0.117, H2 0.125/0.114/0.117, ISO wrong accept, solve 0.708/0.051, n 24/79/103), sonnet conf (n 17, ISO parse 0.896), S1 (PICK .267, ISO .300, EACH .317, S6 +0.133, solve 0.60, isowrong .111, isoright .85), S2 range (10 models >=60 problems), S3 AUROC, S4, S5, S9, P1 floor, cost total 135.23, locked-pool sha256 OK. 28 of 28 spot-checked claims match; results.tex equals claims.json for all 154 ids and every \\res used exists.",
+  "Stale count: paper \\res{ledger_total}=61 but results/hypothesis_ledger.csv now has 64 data rows (rows C2-*-conservative, F5-posthoc* added after claims were generated). Rerun analysis/make_claims.py.",
+  "Who&When sentence 'neither beat always naming the most frequent agent (0.53; normalized 0.43, 0.57)' is numerically false for sonnet normalized (0.569 > 0.534). Strict values (0.17, 0.36) are below. The baseline is in-sample (exps/screens/s5_whowhen/analyze.py docstring) and the paper does not say so. Reword to 'did not clearly beat'. Also undisclosed in the paper: the S5 prompt gives the attributor the correct task answer (exps/screens/s5_whowhen/jobs.jsonl line 1).",
+  "'Within each source' solvability claim (abstract, Sec 4.3) omits the third source: exps/posthoc/solvability_by_source.json repl_solved n=4 D=+0.50 [0,1] (opposite of 'not on solved'), and screen_unsolved CI is [-0.04,+0.29] (includes 0) although the abstract says the pooled format 'added false choices'. Disclose both or soften.",
+  "Comparator asymmetry: H1 contrasts PICK (at most one pick) with ISO-any over three calls. The paper flags this for TP pools but for the headline TA contrast only as a 'compute difference'. ISO-any is an upward-biased comparator, which favours a null on penalty. State the direction of bias in Sec 3.3.",
+  "S2 reported only for the 10 models with >=60 problems (AUROC 0.75-0.98, unanimous-wrong <=0.06). The same results.json shows 12 newest models with ~12 problems where unanimous answers are wrong 50-80% (ledger S2b). The restriction is stated but the contrary evidence is not; one sentence needed.",
+  "Subject isolation not audited: raw usage shows ~1,400-1,500 input tokens for a ~100-token SOLVE prompt plus a 25-token system prompt (exps/c2_confirm/raw/haiku__SOLVE__hmmt_feb_2026_10.json), i.e. unexplained CLI-injected context; the runner uses --setting-sources '' and cwd /tmp/subject_cwd (harness/run_jobs.py:30,40) but no probe of what the subject sees was kept. Prompts themselves are clean (grep of all jobs files found no study, label, or model-name text; ids with _w/_r roles are not in prompts). 'System prompt is one sentence' is two sentences (run_jobs.py:25).",
+  "Plan vs execution, undisclosed in paper: S9 prereg says use problems haiku solved in a no-note call, executed on all 60 (exps/screens/s9_peernote/SCREEN_NOTE.md) and no amendment; S8 ran no consultancy baseline (note only). Replication-pool builder option MA_ALL_MODELS was added after the first lock came out empty (banks/locked_ma/LOCK.md), before any held-out call; paper states the rule but not that it was changed after an empty result.",
+  "Pool construction takes the 'first' three distinct wrong answers after sorting by model_name (banks/matharena_pools.py), so alphabetically early models are over-represented; sonnet C2 parse failures (PICK 6, FORCED 1, SOLVE 1) are not reported though ISO's are. P3 stage A (1,998 files, cost ledger) and fable P1 are absent from the paper. C2 prereg header is stamped ~23:30 but committed 23:24 (git 6bdfeee); order versus data is still correct (raw committed 00:47).",
+  "Held-out claim that pools were built by an independent agent rests on LOCK.md text; the lock hashes verify but authorship cannot be verified from artifacts."
+ ],
+ "evidence": [
+  "paper/main.tex:34-40 (c2 gate and A2 ruling) vs exps/c2_confirm/AMENDMENTS.md A2, results.json",
+  "exps/c2_confirm/analyze.py",
+  "banks/locked_ma/LOCK.md and LOCK.sha256 (sha256sum -c OK)",
+  "harness/lineup_prompts.py:19-48",
+  "harness/run_jobs.py:25-40",
+  "banks/matharena_pools.py:70-90",
+  "results/hypothesis_ledger.csv (64 rows) vs paper/results.tex ledger_total 61",
+  "exps/screens/s5_whowhen/results.json, results_norm.json (haiku_hand, sonnet_hand)",
+  "exps/posthoc/solvability_by_source.json",
+  "exps/screens/s2_s10_free/results.json",
+  "exps/screens/s9_peernote/SCREEN_NOTE.md vs exps/screens/PREREGISTRATION_v2.md S9",
+  "exps/screens/s1_lineup/results.json",
+  "results/cost_ledger.csv:58"
+ ]
+}

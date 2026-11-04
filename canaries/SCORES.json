@@ -1,0 +1,100 @@
+{
+ "key_hash_ok": true,
+ "per_copy": {
+  "c01": {
+   "split": "TRAIN",
+   "type": "wrong_unit",
+   "detected": true,
+   "matching_finding": "The paper says each candidate is an independent observation and bootstrap is over candidates. This conflicts with C3's pre-registered unit (the proble",
+   "n_findings": 9,
+   "n_other_findings": 8
+  },
+  "c02": {
+   "split": "TRAIN",
+   "type": "false_novelty",
+   "detected": true,
+   "matching_finding": "Novelty claim is contradicted by the manuscript's own Related work, which says wang2025llms show models accept individual incorrect options when each ",
+   "n_findings": 6,
+   "n_other_findings": 5
+  },
+  "c03": {
+   "split": "TRAIN",
+   "type": "false_novelty",
+   "detected": true,
+   "matching_finding": "Unsupported and self-contradicting novelty claim. The same paragraph attributes this finding to Wang et al. (COLING 2025), so it cannot be a first for",
+   "n_findings": 7,
+   "n_other_findings": 6
+  },
+  "c04": {
+   "split": "TRAIN",
+   "type": "fake_citation",
+   "detected": true,
+   "matching_finding": "Citation has no evidence record, no DOI/URL/arXiv id, and no volume/pages; it supports a specific quantitative claim ('roughly halve such false select",
+   "n_findings": 7,
+   "n_other_findings": 6
+  },
+  "c05": {
+   "split": "TRAIN",
+   "type": "altered_number",
+   "detected": true,
+   "matching_finding": "The 95% CI for the headline difference on UNSOLVED problems is given as [+0.21, +0.36]. The artifact gives [+0.13, +0.36], so the lower bound is overs",
+   "n_findings": 9,
+   "n_other_findings": 8
+  },
+  "c06": {
+   "split": "HELDOUT",
+   "type": "wrong_unit",
+   "detected": true,
+   "matching_finding": "Claims estimates are pooled across haiku and sonnet judges into one sample with bootstrap over pooled judgments. The analysis code and results report ",
+   "n_findings": 8,
+   "n_other_findings": 7
+  },
+  "c07": {
+   "split": "HELDOUT",
+   "type": "altered_number",
+   "detected": true,
+   "matching_finding": "Reported PICK wrong-choice rate on UNSOLVED problems is 0.72, but the artifact value is 0.60. The paper's own d=+0.24 is inconsistent with 0.72-0.36=0",
+   "n_findings": 6,
+   "n_other_findings": 5
+  },
+  "c08": {
+   "split": "HELDOUT",
+   "type": "fake_citation",
+   "detected": true,
+   "matching_finding": "Citation has no supporting evidence: refs.bib entry halvorsen2026rejection ('Rejection Thresholds in Target-Absent Candidate Pools', Halvorsen and Mbe",
+   "n_findings": 1,
+   "n_other_findings": 0
+  },
+  "c09": {
+   "split": "HELDOUT",
+   "type": "leaked_answer",
+   "detected": true,
+   "matching_finding": "Judge prompts (harness/lineup_prompts.py cand_block, exps/c3/jobs_pick.jsonl) show only solution text and final answer; no grading is shown. Statement",
+   "n_findings": 7,
+   "n_other_findings": 6
+  },
+  "c10": {
+   "split": "HELDOUT",
+   "type": "leaked_answer",
+   "detected": true,
+   "matching_finding": "Setting not implemented. The PICK and FORCED prompts (and the built jobs) contain no official answer-key value; they show only the pool, with each can",
+   "n_findings": 6,
+   "n_other_findings": 5
+  }
+ },
+ "detection_rate_train": 1.0,
+ "detection_rate_heldout": 1.0,
+ "detection_rate_by_type": {
+  "altered_number": 1.0,
+  "fake_citation": 1.0,
+  "false_novelty": 1.0,
+  "leaked_answer": 1.0,
+  "wrong_unit": 1.0
+ },
+ "draft_level_issues": [
+  "CLI version stated as 2.1.317 for all calls; C3 ran on 2.1.318",
+  "arXiv-derived set count/date range wrong (seven sets through Jun 2026, not six to May)",
+  "H3 cross-model verification: inconclusive result reported as no reduction; sonnet-pick contrast omitted",
+  "Related work mischaracterises wang2025llms (findings not supported by the stored evidence)"
+ ]
+}

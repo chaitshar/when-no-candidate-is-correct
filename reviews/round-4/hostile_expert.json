@@ -1,0 +1,33 @@
+{
+  "verdict": "major",
+  "score_1_10": 4,
+  "blockers": [],
+  "non_blocking": [
+    "MOST DAMAGING OBJECTION (eyewitness ROC / criterion critique, Wixted & Mickes 2012; Gronlund, Wixted & Mickes 2014). The confirmed C3 result (H1u: PICK 0.60 vs ISO-any 0.36 on 90 UNSOLVED TA pools) is a target-absent false-ID rate only. Eyewitness research abandoned TA choosing rates as evidence of a 'lineup effect' because a higher false-ID rate can reflect a more liberal response criterion that also raises hits, i.e. equal or better discriminability. C3 ran PICK only on TA pools (no *PICK*TP* files in exps/c3/raw/arms; arms list at paper/main.tex:51 and exps/c3/PREREGISTRATION.md:18), although 78 UNSOLVED and 136 SOLVED TP pools were built and locked (banks/locked_c3/pools.json) and their right candidates were already ISO-judged for the gate. So the paper cannot say whether the pooled format is worse at discriminating or just answers 'which is correct?' more liberally when the judge cannot solve the problem. The title ('falls for target-absent lineups') and the conclusion ('the eyewitness lineup effect appears', main.tex:102) invite the relative-judgment reading that the design cannot distinguish from a criterion shift. The paper does not answer this; it acknowledges compute asymmetry and the descriptive TP comparison only in the screen (main.tex:58), not in C3.",
+    "Second, related: C3 dropped the EACH arm (pooled presentation, per-candidate ACCEPT/REJECT). Without it, 'pooled format' confounds simultaneous presentation (the relative-judgment mechanism the abstract invokes from Wells 1984) with question form: PICK asks 'Which solution has the correct final answer, if any?' (harness/lineup_prompts.py pick()), which presupposes existence despite the 'none may be' clause, while ISO asks 'Is the final answer correct?'. In S1, where EACH ran, PICK-EACH was null (exps/screens/s1_lineup notes, -0.05). The mechanism attribution is therefore untested in the confirmatory study.",
+    "EXPERIMENT THAT WOULD TEST IT: on the already-locked C3 items, run PICK and EACH on the 214 TP pools and EACH on the 227 TA pools (haiku, then sonnet), plus a showup-matched ISO with the same presupposition-neutral wording. Report, per stratum, hit rate vs false-ID rate for PICK, EACH and ISO, the diagnosticity ratio and a partial ROC (using PICK confidence or a 3-level confidence prompt), with a pre-registered test that PICK's pAUC is below ISO's on UNSOLVED. If PICK's TP hit rate on UNSOLVED rises in step with its TA false-ID rate, the result is a criterion shift, not a lineup penalty. Cost is small (roughly 650 calls at about 0.015 to 0.03 USD each for haiku).",
+    "Answered by the paper, checked against artifacts: a natural alternative mechanism, that the judge simply picks/accepts the candidate matching its own wrong SOLVE answer, does not explain the results. My own recomputation (exps/c3/raw/solve, raw/arms, banks/locked_c3/pools.json): 35/90 UNSOLVED pools contain a candidate matching one of haiku's wrong answers; ISO accepts matching candidates more (12/37 vs 31/233), but d remains +0.20 (n=55) in pools with no match and H2u h remains +0.19 [+0.08, +0.31] (haiku) and +0.25 [+0.12, +0.37] (sonnet) in no-match pools. Worth reporting as a robustness check.",
+    "Isolated discrimination on UNSOLVED is far from chance (my recomputation: haiku ISO accepts right 0.63 of 78 vs wrong 0.16 of 270; sonnet 0.64 vs 0.22), which makes the missing TP PICK arm more, not less, consequential: the gate shows the judge discriminates in isolation, so the question is whether pooling reduces discrimination or only shifts criterion.",
+    "Novelty is narrow for the scalable-oversight audience: Wang et al. 2025 (COLING) already show choosing persists when the correct option is removed and NOTA is offered, and link isolated verification to choice; the distinctive contributions are the competence stratification and the all-wrong-pool H2 contrast. The pre-registered primary test H1 was inconclusive for haiku (+0.12 [-0.03,+0.27]) and near zero for sonnet (-0.02), so the 'beyond its competence' framing in the title rests on a within-stratum secondary test, not on the pre-registered interaction.",
+    "H3 conclusion ('a second model from the same family' does not catch the pick, main.tex:102) is a non-rejection of a one-sided test, not evidence of equivalence; it is phrased as 'removed none of the inflation', which overstates a null without an equivalence bound.",
+    "Scope: one vendor, adaptive thinking uncontrolled, final-answer math only; the paper says so (main.tex:99)."
+  ],
+  "evidence": [
+    "paper/main.tex:11",
+    "paper/main.tex:19",
+    "paper/main.tex:51",
+    "paper/main.tex:58",
+    "paper/main.tex:73",
+    "paper/main.tex:82",
+    "paper/main.tex:102",
+    "exps/c3/PREREGISTRATION.md:18",
+    "exps/c3/analyze.py:23-58",
+    "exps/c3/raw/arms/ (no *__PICK__*_TP.json files; 0 matches)",
+    "banks/locked_c3/pools.json (TP pools: 78 UNSOLVED, 136 SOLVED)",
+    "harness/lineup_prompts.py pick(), iso()",
+    "exps/screens/s1_lineup (PICK minus EACH -0.05; TP hit PICK 0.867 vs ISO 0.85)",
+    "paper/results.tex c3h_unsolved_pick 0.60, c3h_unsolved_iso 0.36, c3h_b +0.12 [-0.03,+0.27], c3s_b -0.02",
+    "Wixted & Mickes 2012, Perspectives on Psychological Science 7(3):275-278, https://doi.org/10.1177/1745691612442906",
+    "Gronlund, Wixted & Mickes 2014, Current Directions in Psychological Science 23(1):3-10, https://doi.org/10.1177/0963721413498891"
+  ]
+}

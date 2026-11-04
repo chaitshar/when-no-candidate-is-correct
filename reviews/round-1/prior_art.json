@@ -1,0 +1,21 @@
+{"verdict": "minor", "score_1_10": 7,
+"blockers": [],
+"non_blocking": [
+"No ABANDON. None of the five named candidates contains claim (a) (NONE-option judge choosing wrong candidates from all-wrong pools, more than isolated verification, moderated by solvability) or claim (b) (forced pick = the wrong candidate the same model's verification passes most). The checks below were run against the actual papers, not only search snippets.",
+"arXiv 2402.01349 (Wang et al., COLING 2025, the same paper as wang2025llms): section 4.2 'MCQA with No Correct Option' prompts models with 'no answer' over all-wrong MCQs and finds ChatGPT-4o picks it in about 60% of cases. Section 3.5 hypothesises that LLMs 'treat the selected option as the most accurate among the choices'. This is adjacent to (a) and (b) but has no isolated-verification arm, no same-model verify-after-select test and no solvability moderation. Cite it as related work and drop any suggestion that it anticipates the result.",
+"arXiv 2503.01550 'None of the Above, Less of the Right' (Mar 2025): NA as the correct answer in MMLU causes a 30-50% drop across 28 LLMs. This is the reverse failure (not picking NONE when it is right), so it does not show a NONE option choosing wrong candidates. Cite it as related NONE-option work. Cite it in the paper; it is the closest published NONE-option result.",
+"arXiv 2510.04087 (Best of mini-N in-loop): a reward model trained with an outside option to avoid 'the least bad of many unacceptable options'. It trains a reward model on IMDB sentiment and does not test LLM judges on target-absent pools. Related work on outside options, not overlapping.",
+"arXiv 2611.00507 'Selecting or Solving?' (accepted NeurIPS 2026 VLM4WRD workshop): best-of-N video selection, with Selection Increment as the verifier's gain over its own accuracy with candidates withheld. Not NONE-option, not all-wrong pools, not isolated-versus-pooled. Related only in the 'selecting versus solving' framing, which the paper could cite as an adjacent decomposition.",
+"NeurIPS 2026 poster 'Selected-Tail Reliability in Verifier-Guided Best-of-N Inference' (https://neurips.cc/virtual/2026/poster/155878, Teresa Zhang, posted 2026-09-25): studies selected-rank exposure laws and tail certification for verifier-guided BoN. It has no LLM-judge NONE option and no lineup-style comparison. Only the search summary of the abstract was readable; the full text was not. Not overlapping, but a related selection-reliability work the paper should cite.",
+"arXiv 2608.25937 (ji2026candidate): states 'No selection rule can recover a correct answer when no correct candidate' and excludes all-wrong pools. This is the paper's stated gap, and the manuscript already cites it correctly.",
+"Recommendation: add 2402.01349 section 4.2 and 2503.01550 to related work. The manuscript's Related work does not mention either, so a reviewer could raise the NONE-option literature as an omission (non-blocking)."
+],
+"evidence": [
+"https://arxiv.org/abs/2402.01349 and https://arxiv.org/pdf/2402.01349 (sec. 3.5, 4.2, Table 2 'None of the Above')",
+"https://arxiv.org/abs/2503.01550",
+"https://arxiv.org/abs/2510.04087",
+"https://arxiv.org/abs/2611.00507",
+"https://neurips.cc/virtual/2026/poster/155878",
+"https://arxiv.org/abs/2608.25937 and https://arxiv.org/pdf/2608.25937 (line ~272, ~620)",
+"paper/main.tex:34 (ji2026candidate cited as excluding all-wrong pools)"
+]}

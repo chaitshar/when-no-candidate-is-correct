@@ -1,0 +1,34 @@
+{
+ "defects_found": [
+  {
+   "location": "results.tex res@c3h_unsolved_pick; abstract and Sec 4.4 (C3)",
+   "description": "Reported PICK wrong-choice rate on UNSOLVED problems is 0.72, but the artifact value is 0.60. The paper's own d=+0.24 is inconsistent with 0.72-0.36=0.36; 0.60-0.36 gives 0.24.",
+   "evidence": "exps/c3/results.json arms.UNSOLVED.pick=0.6; results/claims.json c3h_unsolved_pick='0.60'"
+  },
+  {
+   "location": "Sec 3.2 Subjects (Claude Code version)",
+   "description": "Paper states a single CLI version 2.1.317 for all subject calls. C3, the confirmatory study, ran on 2.1.318; only S1 and C2 ran on 2.1.317.",
+   "evidence": "exps/c3/PREREGISTRATION.md line 9"
+  },
+  {
+   "location": "Sec 2 Related work, characterization of wang2025llms",
+   "description": "The paper attributes to Wang et al. specific findings: isolated true/false verification accepts incorrect options, that verification is related to choice, and that models still choose when a no-answer option is offered. The citation evidence records only the least-incorrect-option claim, from a search snippet with the pages blocked. The detailed priority and novelty-boundary claims are unsupported.",
+   "evidence": "evidence/citations/wang2025llms.json (supports, fetched_via)"
+  },
+  {
+   "location": "Abstract and Conclusion, H3 cross-model verification",
+   "description": "Text says sonnet verification 'removed none of the inflation' and that the forced pick is also the one the other model is most likely to pass. H3 was inconclusive (d=+0.02, CI [-0.04,+0.07]), which cannot show that no inflation is removed. The mirror analysis for sonnet's picks (same-minus-cross +0.044, one-sided p=0.0486) is not reported.",
+   "evidence": "exps/c3/results_h3.json (H3_verdict inconclusive, select_sonnet)"
+  },
+  {
+   "location": "Sec 3.2 Subjects; Threats",
+   "description": "Paper says subjects are only haiku and sonnet. An amendment adds gemma-4-e4b as a descriptive C3 subject (20 problems). It is not mentioned, so the run is not disclosed.",
+   "evidence": "exps/c3/AMENDMENTS.md line 14"
+  },
+  {
+   "location": "Sec 4.4 sonnet repeat / abstract",
+   "description": "Abstract says the sonnet repeat showed 'the same two confirmed effects'. Sonnet's primary interaction was b=-0.02 (null), and the strata are defined by haiku's competence, not sonnet's. The effect on haiku-UNSOLVED problems does not show sonnet is beyond its own competence there.",
+   "evidence": "exps/c3/results_sonnet.json H1; exps/c3/AMENDMENTS.md line 5"
+  }
+ ]
+}

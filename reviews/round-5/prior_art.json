@@ -1,0 +1,25 @@
+{
+  "verdict": "minor",
+  "score_1_10": 6,
+  "blockers": [],
+  "non_blocking": [
+    "No paper found that contains the main result (pooled pick with NONE vs isolated verification on judge-unsolvable problems: more wrong picks in all-wrong pools AND more right picks in pools with a right answer, J not detectably different, pick near-uninformative). Search covered the required IDs plus listwise/pointwise judging, SDT/criterion-shift judge papers, none-of-the-above and abstention. Absence of a hit is not proof; searches were web-snippet based.",
+    "Cite arXiv 2610.08153 (Penalty-Framed No-Valid-Option MCQA): removes the correct option, lets models choose or ABSTAIN, and reports 'models still produce invalid forced-choice responses'. Closest unaddressed prior on forced choice when no option is valid; differs (MCQA, no isolated-verification contrast, no target-present hit rates, no solvability stratification). Related-work claim that only Wang 2025 covers NONE-style replacement should be softened.",
+    "Cite arXiv 2609.18204 (Beyond Accuracy: Procedural Traces Shift the Decision Criterion of LLM Overseers): applies signal detection theory to LLM judges and says 'AI auditors should be evaluated by their decision criterion and false-alarm behavior, alongside accuracy.' Precedent for the criterion-shift framing (different manipulation, shift toward rejection); the paper credits only the eyewitness literature (wixted2012field).",
+    "arXiv 2608.25937 (Candidate supply and answer selection shape the value of LLM judging) is correctly characterised: full text states 'All-wrong pools were' excluded from its stratified analyses; no overlap. 2611.00507 (Selecting or Solving) separates selection gain from verifier solving ability in video best-of-N; conceptually adjacent (judge competence vs selection), no all-wrong pools or criterion analysis. 2510.04087 and 2406.12319 are already cited and correctly distinguished. 2402.01349 is the Wang et al. paper already cited. Verified from arXiv abstracts.",
+    "NeurIPS 2026 poster 'Selected-Tail Reliability in Verifier-Guided Best-of-N Inference' (neurips.cc/virtual/2026/poster/155878): abstract-level only; theoretical selected-tail laws and Tail-Certified Compute Caps, no pooled-vs-isolated LLM judge experiment. Already cited as concurrent; fine.",
+    "Possibly cite arXiv 2610.02492 (pointwise vs bundled listwise judge protocol shifts acceptance-rate calibration: judges estimate '3.0%-97.9% of responses are acceptable') as protocol-dependent criterion evidence in listwise judging; I did not verify any all-wrong-pool result there."
+  ],
+  "evidence": [
+    "https://arxiv.org/abs/2610.08153",
+    "https://arxiv.org/abs/2609.18204",
+    "https://arxiv.org/abs/2608.25937",
+    "https://arxiv.org/abs/2611.00507",
+    "https://arxiv.org/abs/2510.04087",
+    "https://arxiv.org/abs/2406.12319",
+    "https://arxiv.org/abs/2402.01349",
+    "https://neurips.cc/virtual/2026/poster/155878",
+    "https://arxiv.org/abs/2610.02492",
+    "/home/user/mas-autoscientist/paper/main.tex:34"
+  ]
+}

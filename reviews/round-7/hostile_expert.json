@@ -1,0 +1,30 @@
+{
+ "verdict": "minor",
+ "score_1_10": 4,
+ "blockers": [],
+ "non_blocking": [
+  "MOST DAMAGING FAIR OBJECTION (ground truth on the UNSOLVED stratum). The target-absent contrasts (H1u, H2u, A4 false-choice, A5 ROC) treat MathArena's automatic grade as truth (main.tex:39 'wrong or right by MathArena's grading'). On the UNSOLVED stratum, which is almost all arXiv-derived research-level items with symbolic answers, that grade is least reliable. The authors' own audit of haiku's replies found 20 of 90 UNSOLVED problems misclassified by answer-form errors (exps/c3/audit_unsolved.csv; main.tex:73), but the same audit was never applied to the candidates, which MathArena's parser graded with the same failure modes (parsed answers such as '<function N ...>', '(inf+0j)', 'N(N + 1)' read as a function call; banks/locked_c3/pools.json). I checked the selected target-absent pools and found 'wrong' candidates that equal the official answer: arxivmath-0526_10 (all three: (N-1)N(N+1)/6 = C(N+1,3)), arxivmath-0526_11 (max(2/p,3-p) = max(3-p,2/p)), arxivmath-0526_1 (4^m (m!)^2/(2m+1)! = (2m)!!/(2m+1)!!), all pre-registered UNSOLVED, and arxivmath-0626_7 ((1-lambda)/(-log lambda) = (1-lambda)/log(1/lambda), SOLVED). In every one of these pools haiku's FORCED pick and PICK chose exactly the truly correct candidate and ISO accepted it, i.e. each contributes a full positive h to the select-then-verify effect while being a hit, not a false choice. A domain reviewer would say: where the judge cannot solve the problem, the effect you call 'choosing the best-looking wrong solution' is partly the judge finding right solutions your labels call wrong, and the visible cases are a lower bound on undetected label noise (equivalent forms, casewise answers such as arxivmath-0126_19, or contested arXiv gold answers).",
+  "Does the paper already answer it? Partly. The direction of the bias is known to the authors for haiku's own replies, and the d contrast is protected because a mislabeled pool adds to both PICK and ISO-any (d = 0 in all four pools). My own recomputation (harness/parse.py, same definitions as exps/c3/analyze_sensitivity.py) excluding the four pools gives haiku dU +0.253 [0.138, 0.368] (n 87, paper +0.24) and hU +0.172 [0.086, 0.259] (paper +0.19); sonnet dU +0.138, hU +0.270. So no stated conclusion becomes false, but H2u is inflated by roughly 10 percent through label error and the paper nowhere reports a candidate-label audit. Add one sentence and a sensitivity row (main.tex:73) and qualify 'wrong by official grading' as automatic grading with known misses.",
+  "Experiment that would test it: a blinded, pre-registered audit of every candidate label in the 227 selected pools (CAS symbolic equivalence of each candidate's boxed answer against the gold, then human adjudication of disagreements and of casewise or set-valued answers, plus a check of each arXiv-derived gold against its source paper), followed by recomputing H1u, H2u, A4 and A5 on audited labels with mislabeled pools dropped or re-typed as target-present. The prediction that would sink H2u: on audited labels, the forced-pick inflation on UNSOLVED shrinks toward the SOLVED value (+0.02).",
+  "Mechanism, from an eyewitness/signal-detection standpoint: on UNSOLVED problems PICK's J is +0.03 and both A5 ROCs lie near chance (main.tex:87, 92), so the confirmed target-absent effect reduces to a prompt-induced difference in response bias at near-zero sensitivity. Relative-judgment theory makes no distinctive prediction there; the title and abstract say this honestly ('right or wrong'), but the eyewitness framing in the abstract's first sentences promises more than a criterion difference at chance can deliver. The paper names the right next test (intermediate discriminability, matched sources; main.tex:92, 119).",
+  "H2 (forced pick is the candidate own-model ISO accepts most) is close to what any judge with a stable, item-level plausibility signal would show; the paper's practical reading (main.tex:103) is fair, but it is not evidence of a lineup-specific mechanism and Wang et al. 2025 already report the closest result (acknowledged, main.tex:34).",
+  "Scope: one small model as the confirmatory subject, one vendor, one interface with uncontrolled adaptive thinking, final-answer math only; the primary pre-registered interaction (H1) is inconclusive. These are disclosed (main.tex:116) but bound the contribution to workshop or borderline level."
+ ],
+ "evidence": [
+  "paper/main.tex:19",
+  "paper/main.tex:39",
+  "paper/main.tex:73",
+  "paper/main.tex:87",
+  "paper/main.tex:92",
+  "paper/main.tex:103",
+  "paper/main.tex:116",
+  "banks/locked_c3/pools.json (pids arxivmath-0526_10, arxivmath-0526_11, arxivmath-0526_1, arxivmath-0626_7; parsed answers '<function N ...>', '(inf+0j)')",
+  "banks/matharena_pools.py:13",
+  "exps/c3/audit_unsolved.csv",
+  "exps/c3/strata.json",
+  "exps/c3/raw/arms/haiku__FORCED__arxivmath-0526_10_TA.json",
+  "exps/c3/raw/arms/haiku__PICK__arxivmath-0526_10_TA.json",
+  "exps/c3/analyze_sensitivity.py:24-35",
+  "paper/results.tex (c3h_du +0.24 [+0.13,+0.36]; c3h_h2u +0.19 [+0.11,+0.28]; a4hu_pick_j +0.03)"
+ ]
+}

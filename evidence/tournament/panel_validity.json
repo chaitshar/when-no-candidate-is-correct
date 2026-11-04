@@ -1,0 +1,287 @@
+{
+  "panel": "validity",
+  "lens": "internal validity and confounds",
+  "verdicts": [
+    {
+      "id": "U1",
+      "verdict": "keep",
+      "main_confound": "The prediction is a NULL (AUROC <= 0.65), and a null is produced for free by a judge that cannot solve the item: if haiku's gold-vs-wrong pairwise accuracy is near chance on an item, PRESENT and ABSENT tournaments look alike because the judge is guessing in both, not because tournaments are blind to target absence. Second: haiku generates the wrongs and haiku judges them (shared-error attractors make one wrong dominate in ABSENT pools). Third: x3 showed presentation order alone moved choosing 0.29 -> 0.125, so the decisiveness statistic depends on side/order randomization.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Pre-register the analysis on items where haiku gets gold right in ISO (>= 2/3 independent solves) and report AUROC within that stratum as primary; add a positive control (PRESENT-pool gold win rate must be >= 0.8 in that stratum or the test is declared uninformative, not a confirmation). Canonicalize CRUXEval outputs with ast.literal_eval before declaring a candidate wrong. Judge with sonnet on a subset so generator != judge. Both sides for every match.",
+      "reason": "Directly fixes the x3 floor (0/64 isolated accepts) by using real CRUXEval wrongs with nonzero f and gold by execution, so 'items not truly wrong' is excluded. Kill criterion is sharp; needs the positive-control gate so a weak judge cannot manufacture support."
+    },
+    {
+      "id": "U2",
+      "verdict": "merge:U1",
+      "main_confound": "Under any noisy but perfectly transitive Bradley-Terry model, triads of near-equal strength produce 3-cycles often (up to ~25%), while PRESENT pools contain a dominant gold that makes every gold triad transitive. A higher cycle rate and lower top-1 agreement in ABSENT pools are therefore mechanically predicted by strength compression, with no 'absence of latent order'.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Compare cycle rates against a BT-fitted parametric-bootstrap null per pool, and compare ABSENT triads only with the wrong-only triads inside PRESENT pools (same 5 wrongs). Runs on U1's matches plus the swapped-side pass.",
+      "reason": "Cheap add-on to U1's data, but as written the kill criterion (ratio >= 1.5) would be met by noise compression alone, so it is not a test of the claim."
+    },
+    {
+      "id": "U3",
+      "verdict": "keep",
+      "main_confound": "Multiplicity: in the both-wrong debate the judge has two wrong answers to endorse and in consultancy only one, so the side-pick rate exceeds the single-answer false accept by about 1-(1-f1)(1-f2) even with zero debate effect. Also a 3-way A/B/NEITHER format versus binary accept/reject (the forced-choice demand found in the corpus), and sonnet arguing an answer it knows is wrong may leak hedges.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Run consultancy for BOTH wrong answers per item and pre-register the null as the independence prediction 1-(1-CW1)(1-CW2), not CW+5. Add a 'no-argument' arm (two answers, A/B/NEITHER, no debate text) to separate the format effect from the argument effect. Use only items with gold by execution.",
+      "reason": "Interesting extension of the lineup finding into debate. The kill as written is not sharp (it is beaten by multiplicity), but the fix fits in the same call budget."
+    },
+    {
+      "id": "U4",
+      "verdict": "kill",
+      "main_confound": "Jensen/heterogeneity: any variation in per-candidate f makes majority-of-k false accept exceed the binomial from mean f, and makes false accepts concentrate on a few candidates. A positive result is almost guaranteed and says nothing about 'convincingness'. Repeated claude -p calls at default sampling can also be near-deterministic, so k samples are not k draws.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "If kept, the informative quantity is the cross-tier conditional lift given candidate difficulty (a mixed model with a candidate random effect), not the binomial ratio. That analysis can be folded into T2/K5 data at no extra cost.",
+      "reason": "Near-certain positive, widely known, and the kill criterion is an AND of two conditions, so it is hard to fire. Low information per call."
+    },
+    {
+      "id": "U5",
+      "verdict": "merge:K5",
+      "main_confound": "The author is confounded with how plausible the wrong answer is: on items where both models err, sonnet's wrongs are plausibly nearer misses (closer to gold, formatting-level or one-step slips), so a weak judge accepts them more for content reasons, not because a stronger author wrote them. Rationale style and length differ by author even with the 3-sentence cap. Items are selected on both models erring (selection on difficulty).",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Cross the rationale author with the answer author (sonnet rationale on haiku answer and the reverse) and add an edit-distance or near-miss covariate to gold. Same design and items as K5 (haiku judging haiku vs sonnet wrongs on the same items), so run them together.",
+      "reason": "Same substrate and judge as K5, with opposite predicted sign; one experiment answers both."
+    },
+    {
+      "id": "U6",
+      "verdict": "keep",
+      "main_confound": "The history rows show other wrong candidates for the same item, so k=6 versus k=0 confounds 'prior rejections' with 'exposure to rival candidates', which is the lineup context itself. Fabricated verdicts can also act as an experimenter demand ('this judge should accept something eventually').",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Add a k=6-no-verdicts control (the same 6 candidates shown with verdicts withheld) and a k=6-mixed control. The primary contrast is k=6 rejects versus k=6 no-verdicts, not versus k=0. The k=6 accepts contrast arm already in the design is good.",
+      "reason": "Randomized within-candidate manipulation with a sharp, pre-specifiable trend test. Practical relevance to retry loops is real. Needs one extra control arm (~400 haiku)."
+    },
+    {
+      "id": "U7",
+      "verdict": "merge:F9",
+      "main_confound": "Mechanical compression: after 2 rounds almost every item is unanimous, so the agreement score loses range (ties) and its AUROC falls whether or not information is destroyed. Selecting the 40 to 70 percent band from the same samples gives regression to the mean between round 0 and round 2.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Select the band on separate screening calls. Compare with the 'extra samples' control arm already planned, and report the unanimous-wrong rate among items with round-0 disagreement as primary rather than AUROC. Run it on the same debate transcripts as F9.",
+      "reason": "Same 3-haiku debate on non-floor CRUXEval items as F9; agreement AUROC is a secondary readout of that run."
+    },
+    {
+      "id": "K1",
+      "verdict": "merge:F1",
+      "main_confound": "The 'isolated' baseline is a serial-in-one-prompt format, not isolated calls; and the pool arm carries the PICK demand. A pool-minus-independence excess is therefore exactly the format confound that F1 tests. Also sympy-equivalence errors (a 'wrong' answer that is equivalent, e.g. unsimplified form) would put items that are not truly wrong in target-absent pools, and MATH contamination may make some answers recalled.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Fold the MATH or CRUXEval real-error substrate into F1's presentation x format crossing, with true single-call ISO as the baseline and an equivalence audit (sympy plus a manual check of 50 'wrongs').",
+      "reason": "Its unique value is real solver errors plus a sonnet tier, which is best spent as F1's real-data arm."
+    },
+    {
+      "id": "K2",
+      "verdict": "kill",
+      "main_confound": "Tautology: debaters who see pytest output can quote it, so the 'debate gain' under asymmetry is evidence transfer by construction; the no-asymmetry null is the established result (Khan et al., Michael et al.). Substrate (MBPP/HumanEval with hidden tests) is not on disk.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "None worth the budget; an 'evidence-only' arm (show the judge the quoted trace without debate) would show the same thing more cheaply.",
+      "reason": "The predicted interaction is guaranteed by design, the substrate is missing, and the result would not move the lineup or oversight line."
+    },
+    {
+      "id": "K3",
+      "verdict": "kill",
+      "main_confound": "Floor and ceiling plus regression to the mean: strata are defined by the receiver's own 5 samples, so 5/5 items are partly lucky and adoption on solvable items is pinned near the floor in every cell, which compresses any content effect into the unsolvable stratum's opposite. The constructed 'valid argument ending in a transcription slip' is an artificial stimulus whose detectability differs from 'invalid step' stimuli. GSM8K is contaminated.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Would need stratification on independent screening samples and a log-odds analysis; still heavily preempted.",
+      "reason": "The interaction is largely mechanical, scoop risk is high (audit B2 preempted), and it is off the corpus line."
+    },
+    {
+      "id": "K4",
+      "verdict": "kill",
+      "main_confound": "Matching accuracy by dropping strategy prompts whose solo accuracy deviates is selection on noise. Arms change the answer format (casework or estimation prompts produce different parse-failure and boxed-answer rates), which changes same-wrong-answer rates. The predicted -0.08 difference sits within prompt-to-prompt variance.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Would need pre-registered prompts with matching on a held-out split and a canonicalized answer parser.",
+      "reason": "High scoop risk (A8fKFiZMnu reports the strategy result) and the matching step invites forking paths."
+    },
+    {
+      "id": "K5",
+      "verdict": "keep",
+      "main_confound": "Circular stratification: haiku-generated wrongs are by definition in haiku's own sample set, and the sonnet wrongs that match haiku strings are a selected subset (common attractor answers), so 'gap disappears after restriction' can come from selection rather than shared error. The randomized provenance-label manipulation on identical text is clean.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Make the label manipulation (identical text, 'you wrote this' vs 'another model wrote this', randomized) the primary. Define 'haiku would produce it' from a separate held-out set of haiku samples, not the samples being judged. Absorb U5 by crossing answer author with rationale author on the same items.",
+      "reason": "The randomized label arm gives a sharp, confound-free test of self-recognition; it is directly relevant to same-family co-scientist pipelines. With U5 merged, one design tests self-preference against strong-author leniency."
+    },
+    {
+      "id": "K6",
+      "verdict": "kill",
+      "main_confound": "Same mechanical floor/ceiling and regression-to-the-mean problem as K3: on 5/5 items the switch rate is pinned near 0 in both label conditions, so the label x consistency interaction is produced by bounded outcomes, not by uncertainty gating. Strata come from the same receiver's samples.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Analyze on log-odds with strata from independent samples; still crowded.",
+      "reason": "Conformity is heavily studied; the predicted interaction is near-guaranteed by floors."
+    },
+    {
+      "id": "K7",
+      "verdict": "kill",
+      "main_confound": "The prediction is a null (pairwise <= 0.58 on both-fail pairs), which noise in the target guarantees: test-pass fraction is a noisy, test-suite-dependent proxy for closeness to correct, so low agreement can be measurement error in the gold. Pointwise 'estimate fraction passed' and pairwise answers are on different scales. Substrate (MBPP/HumanEval/EvalPlus) is not on disk.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Would need test-suite reliability (split-half agreement of pass fractions) as a ceiling for any judge.",
+      "reason": "Null claim with a noisy gold and a missing substrate."
+    },
+    {
+      "id": "K8",
+      "verdict": "kill",
+      "main_confound": "Near tautology: sequential accuracy after 3 revisions is a deterministic function of the per-step transition rates, which are estimated from the same kind of chains, so predicting the sign is mostly arithmetic. The 6 held-out cells each have small n, so the observed sign of small gaps is noise, and the 'contradiction' may not exist on this substrate (they allow a null).",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "None that fits; a real test would predict across substrates, not across splits of the same chains.",
+      "reason": "Weak falsifiability and off the corpus line."
+    },
+    {
+      "id": "K9",
+      "verdict": "kill",
+      "main_confound": "Power and salience: a +0.04 accuracy difference on 200 items with one round has a paired SE near 0.02 to 0.03, so the kill criterion (CI upper < +0.02) rarely fires either way. The 'calibrated' transform also changes the spread and salience of the numbers, so a gain could come from contrast rather than calibration.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Would need a monotone-but-miscalibrated control arm (rescaled raw confidences with matched spread) and ~3x the items.",
+      "reason": "Underpowered for its effect size and peripheral to the corpus findings."
+    },
+    {
+      "id": "F1",
+      "verdict": "keep",
+      "main_confound": "This IS the main confound for the whole corpus: the frontier run's per-pool choosing (~0.70 to 0.80 at every n) equals the 'picked a wrong answer' rate, and per-candidate f(n) falls roughly as choosing/n, which is what a forced PICK produces. Residual confound inside F1: in noPICK arms the judge may write several ACCEPTs or an implicit pick, so parse rules decide the outcome; the synthetic bank also carries the 'not truly wrong' risk (F3).",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Pre-register the parse rule for multi-ACCEPT noPICK replies (any ACCEPT counts as choosing). Average >= 3 slot orders (x1 showed 0.29 vs 0.125 by order). Add a real-error arm on CRUXEval with gold by execution (absorbing K1), a criterion-wording factor (absorbing F2), confidence fields (absorbing T9) and an n = 2 vs 8 contrast on non-exclusive PRM800K step-error judgments (absorbing F7).",
+      "reason": "Highest internal-validity value: it decides whether the headline is relative judgment or a forced-choice artifact. One-call-per-unit claude -p removes batching. The primary D with CI-upper < 0.05 is sharp."
+    },
+    {
+      "id": "F2",
+      "verdict": "merge:F1",
+      "main_confound": "Changing the criterion also moves the ISO baseline, so the gap ratio G_abs/G_x1 shrinks mechanically if ISO-abs rises or the pool rate hits a floor; ratios of two noisy small differences are unstable (G_x1 may itself be ~0.1).",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Use absolute differences on the log-odds scale with a pre-specified threshold, and run it as a wording factor inside F1's crossing on the same problems and orders.",
+      "reason": "Same bank, arms and judge as F1; a 2x2x2 (presentation x PICK x criterion) is cheaper than two studies."
+    },
+    {
+      "id": "F3",
+      "verdict": "keep",
+      "main_confound": "Part A is circular: opus 'defensibility' ratings and haiku picks share a model family's sense of plausibility, so picked wrongs will look more defensible whether or not they are partly true. Part B confounds 'certified contradicted' with 'easier': if the new bank drives ISO f and pool choosing to the floor, the gap shrinks for floor reasons (x3 and x4 already died at floors).",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "For Part B, calibrate the certified bank so ISO any-accept matches the x1 bank (within 0.05), and compare gaps on the log-odds scale. Replace Part A's opus rater with a programmatic support score (likelihood of the data under each hypothesis) so the rater is not a Claude judge.",
+      "reason": "Directly addresses 'items not truly wrong' for the synthetic bank (x4 already concedes one 'wrong' was arguably right). Lower priority if F1 runs on execution-gold CRUXEval, which settles truth by construction."
+    },
+    {
+      "id": "F4",
+      "verdict": "kill",
+      "main_confound": "SciFact is not on disk. Filler 'unsupported' claims taken from other abstracts are off-topic and trivially rejected (an easy-spectrum negative), which lowers both ISO and pool rates and biases toward a null; some unlabeled cross-abstract claims may be partly supported (items not truly wrong).",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Use CRUXEval or PRM800K real errors, which the study already has, for the unclustered real-data test.",
+      "reason": "The goal (unclustered, certified negatives) is better met by on-disk execution-gold items via F1's real-error arm."
+    },
+    {
+      "id": "F5",
+      "verdict": "keep",
+      "main_confound": "Item easiness: items haiku solves 3/3 also have wrong candidates that are easier to reject (lower ISO f), so lower choosing in that stratum follows from lower f under independence, not from competence gating. The strata are defined by 3 samples (regression to the mean for 3/3).",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Make the primary the stratum-specific excess over independence (choose - [1-prod(1-f_iso)]) rather than the raw choosing rate, and estimate solve status from samples independent of the ones used for screening. Run on CRUXEval (solve-then-verify maps cleanly; gold by execution) as well as the frontier bank. The 'picked == own free answer' check is an excellent mechanism test.",
+      "reason": "Separates relative judgment from uncertainty resolution with a sharp Wilson-bound kill, using a cheap within-model stratifier."
+    },
+    {
+      "id": "F6",
+      "verdict": "keep",
+      "main_confound": "Documented judge-instance heterogeneity: the frontier run used 42 batched judge instances, with ten strict (median accept 0.045) and two lenient ones, so 0.7 and the serial 0.012 come from 6 to 27 instances and their CIs treat verdicts as independent. Residual confound in the fix: single-call prompts differ from batch prompts in context and wording, so a shift could be a wording change.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Use the exact per-pool wording of the batch prompt in single calls, and add a batched replication (12 slices) inside the same run so batch versus single is a paired contrast on the same pools.",
+      "reason": "Cheapest and most basic validity check (~680 haiku calls): it re-estimates the corpus's most-quoted numbers with no batching. The kill is sharp."
+    },
+    {
+      "id": "F7",
+      "verdict": "merge:F1",
+      "main_confound": "Correct diagnosis of a corpus confound (with one-answer uniqueness plus PICK, per-pool choosing is flat by construction), but the SciFact substrate is not on disk, and cross-abstract fillers are easy negatives that bias the slope.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Test non-exclusivity inside F1 using PRM800K: judge whether each of n GPT-4 solutions contains an error (several can be flawed at once), with n in {2, 8}, PICK vs noPICK.",
+      "reason": "Its question is the F1 format question in another guise; run it as F1's non-exclusive arm on on-disk data."
+    },
+    {
+      "id": "F8",
+      "verdict": "kill",
+      "main_confound": "Conditioning on a mediator: the 'isolated margin' is measured with each model's own ratings, and capability acts through that margin, so matching on it removes the capability effect by construction (post-treatment conditioning). 1 to 7 ratings are also calibrated differently across models. The 'common curve' prediction is a null with 48 problems per large model.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Would need a model-independent difficulty variable (e.g. the generator noise level or a programmatic margin), which turns it into a different study.",
+      "reason": "As specified, the supporting result is guaranteed by conditioning on the mediator."
+    },
+    {
+      "id": "F9",
+      "verdict": "keep",
+      "main_confound": "Raising generator noise to make the bank hard makes some 'wrong' hypotheses statistically indistinguishable from the data (not truly wrong; x4 already concedes one), so accepting them is reasonable. Screening items on nonzero isolated accept selects on noise, so their accept rates regress on retest. R is a ratio with small denominators.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Use CRUXEval real wrongs (gold by execution) in the 0.15 to 0.40 isolated-accept band, selected on separate screening calls, and report the flip-rate difference with an item-cluster bootstrap rather than the ratio alone. Run U7's agreement-AUROC readout on the same debates.",
+      "reason": "x3 and x4 both died at floors; this is the needed non-floor test of the corpus's 'MAS interaction is safe' nulls, and execution gold removes the truth confound."
+    },
+    {
+      "id": "T1",
+      "verdict": "keep",
+      "main_confound": "Demand and response-rate matching: a stated '~half the pools contain no correct answer' can make the judge output NONE at about that rate whatever the content, a criterion shift with no discrimination gain. x1 already ran a base-rate sentence (choosing 0.29 -> 0.146 with no recall cost), so the base-rate half is partly done.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Report SDT d' and c across arms and add a dose arm (stated rate 10% vs 50%): if NONE tracks the stated number on target-present pools as well, it is demand, not prior updating. Average >= 3 orders.",
+      "reason": "Useful and cheap on CRUXEval, but the novel part (caution vs base rate) is narrow given x1 H2. Keep, outside the top 6."
+    },
+    {
+      "id": "T2",
+      "verdict": "keep",
+      "main_confound": "Common cause: item difficulty or judge uncertainty drives both blank-pool and real-pool picks, so a positive association is near-guaranteed and does not show that the blank lineup adds screening value. Mutant outputs are easier negatives than real solver wrongs (spectrum), so blank choosing may be near 0 (their degeneracy kill).",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Make the primary the incremental AUROC of blank-pick over the isolated-accept rate (and over haiku solve rate) for predicting real false picks, with a pre-specified minimum gain (e.g. >= 0.05). Use near-miss mutants matched to real wrongs in edit distance.",
+      "reason": "A deployable instrument if it beats the obvious covariate; the kill must be on incremental value, not the raw difference."
+    },
+    {
+      "id": "T3",
+      "verdict": "keep",
+      "main_confound": "Within one prompt of 20 items, the model may apply a quota or balance heuristic, or simply track filler difficulty. Probe position in the batch and parse failures in long batched outputs differ by condition. Batch-level leniency (instance stance) adds variance that a probe-level bootstrap ignores.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Fix probe positions across conditions, match filler difficulty (isolated accuracy) across prevalence levels, use a mixed model with batch and probe random effects, and pre-register parse-failure handling. Shares batches with T5's lag-1 analysis.",
+      "reason": "Clean within-probe manipulation with a sharp SDT kill; relevant to batched judging in agent loops."
+    },
+    {
+      "id": "T4",
+      "verdict": "kill",
+      "main_confound": "The A+B condition changes more code and can semantically mask B (A changes control flow so B no longer matters), and they only verify each bug fails tests alone. A response-brevity norm (stop after naming one bug) reads as 'satisfaction of search'. Line-range scoring confounds proximity of A and B. HumanEval is not on disk.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Would need a masking check (B changes outputs even given A) and a 'B plus a cosmetic edit' control.",
+      "reason": "Off the corpus line, missing substrate, and the main alternative (answer-length norms) is hard to rule out cheaply."
+    },
+    {
+      "id": "T5",
+      "verdict": "merge:T3",
+      "main_confound": "Batch-level leniency (judge-instance stance, documented in the frontier run) produces positive lag-1 autocorrelation with no sequential dependence. Item fixed effects do not remove it, and lagged gold is a weak instrument for the lagged verdict.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Include batch fixed effects (within-batch demeaning) and a permutation null that shuffles positions within batch. Run it on T3's randomized-order batches.",
+      "reason": "As specified, the positive result is predicted by instance heterogeneity alone; with batch FE it is a free secondary analysis of T3's data."
+    },
+    {
+      "id": "T6",
+      "verdict": "keep",
+      "main_confound": "The sonnet administrator may alter the candidates themselves (fix a wrong output, round it or change the repr), making target-absent pools no longer all-wrong or changing which candidate is X. A leak could come from ordering or position rather than wording.",
+      "can_smallest_experiment_rule_it_out": true,
+      "fix": "Programmatically verify that every candidate output appears verbatim in each summary (reject and regenerate otherwise), fix the slot order before rewriting, and keep the randomized X so the null is exact. Use the planned detective manipulation check as the mechanism readout.",
+      "reason": "Fully randomized designation gives an exact null and a sharp kill; it is a zero-cost architectural fix if positive and a novel blinding question for orchestrators."
+    },
+    {
+      "id": "T7",
+      "verdict": "kill",
+      "main_confound": "Selection on a post-treatment split: the 2:2 panels are chosen from first-round verdicts under each standard separately, so the reasonable-doubt panels come from different (more acceptable) items than the preponderance panels. The main effect is also trivial instruction compliance ('reject unless beyond doubt' produces more REJECTs).",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Would need identical items and injected, fixed 2:2 first-round arguments under both standards; then it is a criterion-compliance check.",
+      "reason": "Expensive (~5,000 calls) for a largely demand-driven result."
+    },
+    {
+      "id": "T8",
+      "verdict": "kill",
+      "main_confound": "Near-certain positive: mutant outputs are known to be easier negatives. Hard negatives selected as haiku's own modal wrong are hardest for haiku specifically, so any ranking inversion is produced by selecting on one configuration. Kendall tau over 6 configurations has a CI spanning most of [-1, 1].",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Draw hard negatives from a held-out generator (e.g. a small open-weight model or sonnet) and rank more configurations.",
+      "reason": "The gap is expected and the inversion test is unpowered and biased by selection."
+    },
+    {
+      "id": "T9",
+      "verdict": "merge:F1",
+      "main_confound": "Verbalized confidence attached to a PICK is elicited in a different format than confidence on an isolated ACCEPT, so higher pooled confidence can be a format artifact (the same PICK confound as F1). Haiku confidences cluster at 90 to 95, so the >= 90 bin holds most verdicts and the ratio mostly restates the choosing ratio.",
+      "can_smallest_experiment_rule_it_out": false,
+      "fix": "Add a 0 to 100 confidence field to every F1 arm (ISO, POOL PICK/noPICK, SERIAL) and compare within format; pre-register bins from the ISO distribution's quantiles.",
+      "reason": "Already listed internally (X-G15); free secondary readout of F1."
+    }
+  ],
+  "top6": [
+    "F1",
+    "F6",
+    "F5",
+    "U1",
+    "F9",
+    "T6"
+  ],
+  "top6_rationale": "F1 tests the confound most likely to explain the corpus headline (forced PICK). F6 re-estimates the headline numbers without batched judge instances. F5 separates relative judgment from item easiness and competence. U1 and F9 rerun the two floor-killed MAS nulls (x3 tournament, x4 debate) on execution-gold CRUXEval items with nonzero f. T6 is fully randomized with an exact null. All six have sharp, pre-specifiable kills that the smallest experiment can deliver once the listed fixes are in."
+}

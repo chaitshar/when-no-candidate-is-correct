@@ -1,0 +1,24 @@
+{
+ "verdict": "minor",
+ "score_1_10": 7,
+ "blockers": [
+  "Unreproducible/false cost claim: committed results/claims.json has cost_subjects=220 but `python3 analysis/make_claims.py --no-run` regenerates 269 (results/cost_ledger.csv TOTAL_SUBJECTS 269.39); paper/results.tex also changed. The paper's 'subject calls cost about \\res{cost_subjects} US dollars' (paper/main.tex, provenance section) therefore prints a stale figure ~$49 too low (the A4/sonnet spend post-dates the last claims build). Regenerate and commit claims.json and results.tex. All other 375 claims reproduced byte-identically; I restored the files with git checkout."
+ ],
+ "non_blocking": [
+  "Spot-checked 28 claims against artifacts, all matched: c3_n_ta 278 (137+50+90+1 UNRESOLVED; only 227 judged, abstract's 'on 278 problems' overstates the analysed sample and the UNRESOLVED problem is unmentioned), strata, c3h unsolved pick 0.60 / iso 0.36 / d +0.24 and solved 0.117/0.058 (I recomputed from raw/arms with my own parser), gate, H1 b=+0.118 CI [-0.034,+0.270] Holm 0.129, H2u, haiku cost 10.7 (=2.53+5.50+2.71), sonnet cost 66.2, A4 haiku UNSOLVED hit/fa (0.615/0.590 recomputed from raw/a4 + raw/arms), pools.json sha256 equals LOCK.sha256, 22 hand checks, per-arm --max-usd caps in the run logs.",
+  "Timeline is clean: prereg 08:29:56 -> first SOLVE output 08:30:22; hand_checks/strata/jobs_{iso,pick,forced} committed 09:10 before first arm output 09:11; sonnet jobs and A1 committed before sonnet data; A4 amendment plus jobs 10:09:20 before first a4 output 10:10:15. Code (run_jobs.py, lineup_prompts.py, grader_b.py, matharena_pools.py) unchanged since before C3; only analyze.py changed after data (A2, disclosed, descriptive tally only).",
+  "No answer leakage in exps/c3/jobs_*.jsonl: prompts contain problem, candidate text and the final-answer line only; no role/gold/study text (hits for 'gold'/'official' are problem or solution text); system prompt is the generic SYS (sonnet adds the disclosed no-tools sentence).",
+  "A4 is called 'pre-registered' but was written after C3 data and in response to review; its ISO verdicts already existed. Abstract and contributions should say 'review-prompted amendment, new calls only'. Likewise the hit/fa operationalisation (ISO hit requires rejecting both wrong candidates) is favourable to nothing but is stricter than PICK's hit; the paper states it.",
+  "Gemma amendment A3 (100 descriptive jobs, analyze_gemma.py, gemma_selected.json) has no raw data, no ledger row and no mention in paper/main.tex; state that it was not run. Sonnet C3 had 2 ISO calls blocked by the API safeguard (results_sonnet.json d_missing=2; run_iso_s.log) which the paper does not disclose (it mentions only one blocked A4 call).",
+  "Title/abstract headline 'on problems it cannot solve' while the pre-registered primary H1 (UNSOLVED vs SOLVED, source-adjusted) is inconclusive, SOLVED also shows d=+0.06 CI [+0.007,+0.109], and sonnet's interaction is -0.02; the conclusion hedges correctly but the title is stronger than the evidence. 'The pattern repeated' for sonnet is true for H1u/H2u only.",
+  "Contribution (2) 'question form contributes beyond co-presentation' rests on one estimate-only haiku contrast (+0.13 [+0.013,+0.247]) and sonnet's CI includes 0 (+0.064 [-0.013,+0.141]); the builder advice generalises beyond that.",
+  "Minor wording: system prompt is two sentences, paper says 'one-sentence'; CLI versions come from STEER/prereg text, raw records store no interface version (paper admits this). Strata audit found 14 UNSOLVED problems actually solved twice and 6 once (audit_unsolved.csv); disclosed and sensitivity-analysed."
+ ],
+ "evidence": [
+  "results/claims.json cost_subjects; results/cost_ledger.csv TOTAL_SUBJECTS 269.39; analysis/make_claims.py:236",
+  "exps/c3/PREREGISTRATION.md; exps/c3/AMENDMENTS.md A1-A4; git log timestamps for exps/c3/*",
+  "exps/c3/results.json; exps/c3/results_a4.json; exps/c3/results_sonnet.json (d_missing 2); exps/c3/run_iso_s.log",
+  "banks/locked_c3/LOCK.sha256; exps/c3/hand_checks.csv; harness/run_jobs.py; harness/lineup_prompts.py",
+  "paper/main.tex abstract, Section 'Stratified confirmation (C3)', 'Criterion shift' and provenance paragraphs"
+ ]
+}

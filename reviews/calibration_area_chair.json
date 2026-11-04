@@ -1,0 +1,30 @@
+{
+  "lens": "area_chair",
+  "model": "opus",
+  "papers": {
+    "F1": {
+      "score_1_10": 6,
+      "one_line": "Large, careful sweep of debate/consultancy/QA across 9 tasks and judge strengths with open-role variants and ablations; extends a single-task prior result rather than introducing a new idea, and headline findings are mixed/null (debate ~ direct QA without information asymmetry), but the breadth and honest negatives make it a solid accept."
+    },
+    "F2": {
+      "score_1_10": 8,
+      "one_line": "Real contribution: persuasiveness-as-unsupervised-metric with Elo, evidence that optimising debaters for judge approval raises judge accuracy while optimising consultants lowers it, plus a large human-judge study; limited to one information-asymmetric reading task and inference-time optimisation, but conceptually clean and well-controlled."
+    },
+    "F3": {
+      "score_1_10": 6,
+      "one_line": "Defines a new, useful problem (agent/step failure attribution in MAS) with a hand-annotated benchmark and three simple LLM baselines; dataset is small (184 tasks), the counterfactual decisive-error definition is not what annotators actually verified, and baselines are naive, but problem framing plus resource carry it."
+    },
+    "N1": {
+      "score_1_10": 3,
+      "one_line": "Pairwise-vs-pointwise judge bias on LLMBar is largely known, and the fix (reason about each response separately, then compare) is a prompt tweak with modest, inconsistent gains on non-adversarial data; no significance testing, single adversarial benchmark; workshop/findings level."
+    },
+    "N2": {
+      "score_1_10": 4,
+      "one_line": "Very large-scale replay study, but the core results (oracle pass@k >> majority vote; verifier/judge-weighted voting beats plain voting; debate gains mostly from voting; verifier reliability depends on difficulty) are known results in new clothes, with an evolutionary 'memetic drift' framing that adds narrative not mechanism; rigorous bookkeeping, thin novelty."
+    },
+    "N3": {
+      "score_1_10": 4,
+      "one_line": "Proposer-critic debate on code/ARC as reward labelling with paired bootstrap and Holm correction; finding that a single critique helps when the critic beats the judge is close to known critique/CriticGPT results, and the 'usable advantage' condition is a post-hoc diagnostic fit on n=5 pairings with tiny ARC cells; honest caveats but borderline-below."
+    }
+  }
+}

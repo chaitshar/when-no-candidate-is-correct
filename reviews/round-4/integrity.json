@@ -1,0 +1,32 @@
+{
+ "verdict": "minor",
+ "score_1_10": 6,
+ "blockers": [
+  "Paper Sec. Method (C3) says C3 used 'only MathArena problems never shown to a subject in this project' and the prereg/LOCK say S1-S9 problems were excluded. False for 6 of the 137 SOLVED problems: exclusion in banks/locked_c3/LOCK.md was by pid against s1_lineup and c2_confirm pools only, so duplicates under other pids slipped in. smt_2025_42 is the same text as apex_2025_10 (exps/screens/s1_lineup/pools.json; also s3, s4, s8, s9 jobs). apex-shortlist_25,26,27,28 and smt_2025_21 match AIME 2025 calibration problems shown to haiku (exps/screens/cal/problems.json, jobs.jsonl). All 6 are in the SOLVED stratum, so the UNSOLVED headline is unaffected, but the sentence is wrong. Fix: state 6 repeats and report a sensitivity analysis without them.",
+  "paper/main.tex Subjects (and results/claims.json cli_version, source loop/STEER.md) says every call used Claude Code 2.1.317. exps/c3/PREREGISTRATION.md:9 states C3 ran on 2.1.318 (S1 and C2 on 2.1.317), and the installed CLI is 2.1.318. Raw call files record no version. Setting misreported for the paper's main experiment.",
+  "Conclusion says verification by sonnet 'removed none of the inflation', and Results says the forced-pick wrong solution 'is also the one the other model is most likely to pass'. H3 was inconclusive (exps/c3/results_h3.json: d=+0.016, CI [-0.038,+0.069], p=0.29), so 'none' is stronger than the data; the mirror test (sonnet picks verified by haiku) has p=0.049 in the same direction. The cross-model h (+0.07, CI roughly [+0.02,+0.12] by my recomputation) supports the second sentence but is not in results.json, claims.json or any analysis script, so that statement has no artifact behind it."
+ ],
+ "non_blocking": [
+  "Paper reports 'one sonnet call blocked by an API safeguard'; exps/c3/run_iso_s.log and the commit message show two (sonnet__ISO__brumo_2025_21_w1, cmimc_2025_13_w0; 893/895 raw files). Sonnet n is 225 not 227 as a result.",
+  "Abstract and Methods give 'c3_n_ta = 278 fresh problems' but only 227 (137 SOLVED + 90 UNSOLVED) were judged; 50 MIXED and 1 unresolved were not. Say 227 judged of 278 built.",
+  "Threats sentence 'Sonnet's arm cost more than its pre-registered cap and failed its gate' is ambiguous: it is true of C2 only. C3 sonnet spent 66.2 USD within its 90 USD of caps (run_*_s.log) and passed.",
+  "python3 analysis/make_claims.py --no-run changes results/claims.json only in p-value formatting ('0.000' to '$<$0.001', 6 keys) and cost_subjects (185 to 220, from uncommitted results/cost_ledger.csv edits). No result value changes. Committed claims.json and results.tex were stale relative to the working tree; commit them together.",
+  "Prereg, amendment and hand-check ordering holds per git: prereg+frozen code 62ab1fc 08:29:56; A1 7cbaccc 08:36:48 before any arm job (jobs 12fa20c 09:10:21); hand_checks.csv and strata ce7eed1 09:10:14 before arm data (17818a7 09:21); A2 after haiku results but touches only descriptive tallies. The prereg line 'Written 08:29:04Z' cannot be checked against raw files, which carry no timestamps; 003bd75 (stage-1 raw, 08:31) is consistent. analyze.py and stratify.py are unchanged apart from A2.",
+  "Settings match code: harness/run_jobs.py uses --tools '', --setting-sources '', --strict-mcp-config, empty cwd, fixed system prompt, and --max-usd as described (cap counts existing spend, can overshoot by in-flight calls). Jobs files carry the default system prompt for haiku and the extended one for sonnet; caps actually used 6/20/6/6 etc. match the prereg. Methods calls the system prompt 'one sentence'; it is two.",
+  "No answer leakage found: head/regex scan of jobs_{solve,pick,forced,iso}(_sonnet).jsonl shows only the lineup_prompts.py templates; the only hits for study/official words are inside problem statements. Cached-input size on a sampled call (2.8k tokens for a 4.4k-char prompt) is consistent with no extra project context.",
+  "Candidate wrongness rests entirely on MathArena's parsed-answer grading (banks/matharena_pools.py); no audit of mislabelled equivalent answers is reported for C3 wrong candidates, though the 22 solve-grader disagreements were hand-resolved.",
+  "Reproducibility: raw outputs, locked pools.json (sha256 matches LOCK.sha256), and analysis scripts reproduce the C3 numbers; the MathArena parquet files are not in data/ (only fetch script and pins), so rebuilding pools requires a refetch.",
+  "Spot-checks passing (about 30): c3_n_solved/unsolved/mixed/disagree (solve_summary.json, 22 hand checks), c3h gate parse 1.000, isowrong 0.078, isoright 0.827, solved/unsolved pick and iso-any (0.117/0.058, 0.600/0.356), d unsolved +0.24, H1 b=+0.118 se 0.078 p=0.065, arxiv/contest family counts (84 of 140, 6 of 87), haiku cost 10.74, sonnet cost 66.21, sonnet pick/iso rates, h3 numbers, ledger 74 rows, band/gate constants. I recomputed these independently from raw/arms and they match claims.json."
+ ],
+ "evidence": [
+  "exps/c3/PREREGISTRATION.md:9",
+  "banks/locked_c3/LOCK.md",
+  "exps/screens/s1_lineup/pools.json (apex_2025_10)",
+  "exps/screens/cal/problems.json",
+  "exps/c3/results_h3.json",
+  "exps/c3/run_iso_s.log",
+  "results/claims.json (cli_version)",
+  "paper/main.tex (Subjects, Threats, Conclusion)",
+  "git log: 62ab1fc, 7cbaccc, ce7eed1, 12fa20c, 17818a7"
+ ]
+}

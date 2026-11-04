@@ -1,0 +1,39 @@
+{
+ "defects_found": [
+  {
+   "location": "Methods 3.2 Subjects: 'The judge prompt also showed MathArena's grading of each candidate'",
+   "description": "Judge prompts (harness/lineup_prompts.py cand_block, exps/c3/jobs_pick.jsonl) show only solution text and final answer; no grading is shown. Statement is false and contradicts the 'subjects saw only the task prompt' framing.",
+   "evidence": "harness/lineup_prompts.py:12-15; exps/c3/jobs_pick.jsonl"
+  },
+  {
+   "location": "Methods 3.2: 'Claude Code version 2.1.317' (results.tex cli_version)",
+   "description": "C3 ran on Claude Code 2.1.318; only S1 and C2 ran on 2.1.317. The single version reported for all calls is wrong for the headline study.",
+   "evidence": "exps/c3/PREREGISTRATION.md line 9"
+  },
+  {
+   "location": "C3 UNSOLVED stratum (n=90) and headline results (abstract, Sec C3, conclusion)",
+   "description": "exps/c3/audit_unsolved.csv audits 20 problems that strata.json labels UNSOLVED as actually SOLVED (14) or MIXED (6) (answer-form/prefix equivalences missed by both graders). They remain in the UNSOLVED stratum used for all C3 results; the audit is not disclosed or analyzed, so stratum contamination of about 22% undermines 'problems it could not solve'.",
+   "evidence": "exps/c3/audit_unsolved.csv; exps/c3/strata.json"
+  },
+  {
+   "location": "Results, tournaments: 'decisiveness separated TP from TA pools with AUROC 0.56 [0.47,0.65]'",
+   "description": "CI includes 0.5 (and the consensus statistic AUROC is 0.48); no separation is demonstrated, 'separated' overstates a null.",
+   "evidence": "exps/screens/s3_tournament/results.json"
+  },
+  {
+   "location": "Related work: description of wang2025llms (accept incorrect options in isolated true/false verification; links isolated verification to choice; NOTA replaced-option finding)",
+   "description": "The evidence record supports only that models pick the least incorrect option and keep accuracy when the correct option is removed/replaced, and the page was never read (search snippet only). Other attributed findings are unsupported by the evidence.",
+   "evidence": "evidence/citations/wang2025llms.json"
+  },
+  {
+   "location": "Methods 3.1 Splits: 'held out for confirmation (HMMT Feb/AIME 2026; arXiv-math Aug/Sep 2026)' vs C3",
+   "description": "C3 used SMT, CMIMC, BRUMO, APEX, HMMT Nov 2025, arXiv-math Dec 2025-Jun 2026 and apex-shortlist, which the paper lists as screen sets; the listed held-out sets are not what C3 used. Split description does not match executed design ('fresh' problems come from screen competitions).",
+   "evidence": "exps/c3/PREREGISTRATION.md line 12"
+  },
+  {
+   "location": "C3 problem counts (Sec 3.5)",
+   "description": "137+90+50 = 277 of 278 pools; one UNRESOLVED problem (arxivmath-0226_16) is never reported.",
+   "evidence": "exps/c3/solve_summary.json; exps/c3/strata.json"
+  }
+ ]
+}

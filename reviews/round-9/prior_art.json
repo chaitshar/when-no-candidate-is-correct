@@ -1,0 +1,20 @@
+{
+  "verdict": "minor",
+  "score_1_10": 6,
+  "blockers": [],
+  "non_blocking": [
+    "No published paper or preprint found that contains the main result (pooled pick-or-NONE vs isolated verification on all-wrong math-solution pools, stratified by judge solvability, with a criterion-shift analysis). Nearest: Wang et al. COLING 2025 (arXiv 2402.01349, 'LLMs may perform MCQA by selecting the least incorrect option'): shows models accept individual incorrect options in true/false form and fail to choose 'None of the Above' when the correct option is replaced, but on MCQA benchmarks, not all-wrong solution pools, no pooled-vs-isolated acceptance contrast. Kim & Jung (arXiv 2610.08153) removes the correct option from MMLU-Pro math and studies abstention vs forced choice, with no isolated-verification comparison or solvability stratification. Paper's 'closest prior result' framing of Wang is fair.",
+    "Searched but not found overlapping: eyewitness-lineup paradigm applied to LLM judges; forced-choice vs pointwise verification on target-absent pools. Search coverage was web-search based and cannot rule out unindexed work.",
+    "Related-work characterisations checked and accurate as far as verifiable: Wang 2025 (None-of-the-Above replacement and highest-confidence incorrect option via T/F confidence, Table 3 of arXiv 2402.01349); Ji et al. 2026 (arXiv 2608.25937) states 'All-wrong pools were excluded' in its stratified analysis (Fig. 4c); Kim 2026 and Chen 2026 (arXiv 2609.18204, criterion shift toward rejection) match their abstracts. I could not check tam2025none, rho2025best, ma2026selecting, zhang2026selected (abstract-only, as the paper admits) in depth.",
+    "Possible uncited neighbour: 'Time to REFLECT' (arXiv 2605.19196) reports a best-of-N 'selection gap' (judges less accurate picking a verified reference from a candidate set than scoring a pair) in agent-trace evaluation; this is a different domain and not an overlap, but a one-line citation as related selection-vs-pointwise evidence would strengthen related work. Not verified beyond the search snippet.",
+    "Novelty is incremental and scoped: single vendor, math final-answer tasks, one named model; the lineup analogy and the criterion-shift reading rest on eyewitness literature the paper cites, and the discriminability test is inconclusive, which the paper states honestly."
+  ],
+  "evidence": [
+    "https://arxiv.org/abs/2402.01349",
+    "https://arxiv.org/abs/2608.25937",
+    "https://arxiv.org/abs/2610.08153",
+    "https://arxiv.org/abs/2609.18204",
+    "https://arxiv.org/abs/2605.19196",
+    "/home/user/mas-autoscientist/paper/main.tex:34"
+  ]
+}

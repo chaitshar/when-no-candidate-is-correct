@@ -1,0 +1,87 @@
+id,exp,primary_test,result,status
+K1,B1,see evidence/tournament,not yet tested,kept in tournament
+F1,B1,see evidence/tournament,not yet tested,kept in tournament
+F5,B1,see evidence/tournament,not yet tested,kept in tournament
+T1,B1,see evidence/tournament,not yet tested,kept in tournament
+F2,B1,see evidence/tournament,not yet tested,kept in tournament
+F6,B1,see evidence/tournament,not yet tested,kept in tournament
+T2,B1,see evidence/tournament,not yet tested,kept in tournament
+T9,B1,see evidence/tournament,not yet tested,kept in tournament
+U1,B2,see evidence/tournament,not yet tested,kept in tournament
+U2,B2,see evidence/tournament,not yet tested,kept in tournament
+K7,B2,see evidence/tournament,not yet tested,kept in tournament
+U3,B3,see evidence/tournament,not yet tested,kept in tournament
+F9,B3,see evidence/tournament,not yet tested,kept in tournament
+T3,B4,see evidence/tournament,not yet tested,kept in tournament
+T5,B4,see evidence/tournament,not yet tested,kept in tournament
+U6,B4,see evidence/tournament,not yet tested,kept in tournament
+F3,B1,see evidence/tournament,not yet tested,kept in tournament
+U4,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+K2,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+K4,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+K5,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+K8,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+K9,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+K3,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+K6,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+U5,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+U7,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+F4,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+F7,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+F8,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+T4,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+T6,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+T7,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+T8,none,tournament kill panel,not tested,killed before data (see DECISION.md)
+U1-P2,p2_tournament,AUROC decisiveness TA vs TP <= 0.65 (pilot),"haiku 0.64 [0.58,0.71]; sonnet 0.59 [0.54,0.65]",pilot: supported
+U2-P2,p2_tournament,order consistency AUROC >= 0.75 as absence detector (pilot),"haiku 0.67 [0.59,0.76]; sonnet 0.67 [0.57,0.75]",pilot: not supported
+K1-P1,p1_lineup_math,"PICK-ISO TA choosing, 4 Claude models (pilot)","all 0, CI [0,0]","pilot: null (floor), B1 headline killed on MATH-level items"
+F1-P1,p1_lineup_math,PICK-EACH (pilot),all 0,pilot: null (floor)
+T1-P1,p1_lineup_math,BASE-PICK (pilot),all 0,pilot: null (floor)
+F5-P1,p1_lineup_math,choosing by solvability (pilot),0 in solved and unsolved,pilot: uninformative (floor)
+U3-recheck,none,full-text recheck of kill evidence,Kenton et al. 2407.04622 does not contain the cited both-wrong statement; kill reason partly reversed,reopened (U3 now tested as screen S8)
+S0,s0_calibration,difficulty calibration on generated tasks (not a hypothesis),v1 and v2 tracing at ceiling; counting tasks 0.5 to 0.9,ABANDONED by user ruling (no made-up data); not evidence
+S1-S10 v1,screens,generated-task screens,no data collected,WITHDRAWN before data
+S2,screens/s2_s10_free,self-consistency AUROC>=0.75 and unanimous-wrong<0.10 per model (MathArena runs),holds for 11 models with >=60 problems; fails on ~12-problem hard subsets for 8 newest models,"screen: mixed, difficulty-confounded"
+S2b,screens/s2_s10_free,unanimous self-consistency wrong rate on research-level arxivmath problems,not yet tested (raised by S2),"new hypothesis, test on held-out arxivmath-0826/0926"
+S10,screens/s2_s10_free,hetero minus homo error phi,"-0.14 (28 pairs, descriptive)","screen: effect present, unsurprising"
+S5,screens/s5_whowhen,agent attribution acc >= 0.8 (claim holds),"haiku 0.49 [0.42,0.57], sonnet 0.55 [0.48,0.62] strict; 0.58 and 0.61 normalized",screen: claim does not hold; matches literature direction
+S1,screens/s1_lineup,"PICK-ISO TA choosing, claude-haiku-5-5","-0.033 [-0.15,0.083], n=60",screen: null (kill met at boundary)
+S1-F1,screens/s1_lineup,"PICK-EACH TA choosing, claude-haiku-5-5","-0.05 [-0.167,0.067]",screen: null
+S6,screens/s1_lineup,"ISO accept of FORCED-picked minus unpicked wrong, claude-haiku-5-5","+0.133 [0.025,0.25], n=60",screen: effect present
+S8,screens/s8_debate,"TA NEITHER rate >= 0.5 (judge detects both wrong), claude-haiku-5-5",0.675 (27/40); TP right 0.675,"screen: kill met, unsurprising"
+S9,screens/s9_peernote,"accuracy wrong-note minus no-note, claude-haiku-5-5","-0.085 [-0.186,0.000]; adoption 0.169","screen: effect present, known direction"
+K1-P1-gemma2,p1_lineup_math,"PICK-ISO TA choosing, gemma-2-2b (outdated, Mac, Q4_K_M)","+0.38 [0.17,0.59], n=29 (10 PICK parse failures); PICK-EACH +0.30 [0.13,0.47]",pilot: effect present in outdated model; no weight under current rules
+S3,screens/s3_tournament,"AUROC decisiveness TP vs TA, claude-haiku-5-5 (kill if CI lower >= 0.75)","0.5625 [0.475,0.65]; TA unique winner 0.90",screen: tournaments carry little absence signal
+S4a,screens/s4_critique,"valid critique benefit on wrong candidates, claude-haiku-5-5","checker -0.083 [-0.18,0.02]; student -0.10 [-0.22,0.02]","screen: small, CIs include 0"
+S4b,screens/s4_critique,"invalid critique harm on right candidates by label, claude-haiku-5-5","checker -0.117 [-0.23,-0.02]; student 0.0 [-0.08,0.08]",screen: harm only under checker label (candidate hypothesis)
+C2-H1-haiku,c2_confirm,"TOST |PICK-ISO|<0.10, claude-haiku-5-5, held-out union","D +0.117 [90% CI +0.039,+0.194]; Holm p_tost 0.62; one-sided D>0 p 0.007",SUPERSEDED (union reading; see C2-H1-haiku-conservative)
+C2-H2-haiku,c2_confirm,"ISO accept FORCED-picked minus unpicked wrong > 0, claude-haiku-5-5","+0.117 [+0.044,+0.194], p 0.0013, Holm 0.0052",SUPERSEDED (union reading; not confirmed under ruling A2, see C2-H2-haiku-conservative)
+C2-H1-sonnet,c2_confirm,"TOST, claude-sonnet-5-5, confirmation set",gate failed (ISO parse 0.896); D 0.00 n=17,not interpreted (gate)
+C2-H2-sonnet,c2_confirm,"select-then-verify, claude-sonnet-5-5","gate failed; +0.105 [0,0.26] p 0.12",not interpreted (gate)
+F5-posthoc,posthoc,"PICK-ISO by judge solvability, claude-haiku-5-5, S1+C2","unsolved +0.133 [+0.048,+0.219] n=105; solved -0.070 [-0.193,+0.053] n=57",POST HOC exploratory; needs fresh confirmation
+C2-H1-haiku-conservative,c2_confirm,TOST on gated contest set only (ruling A2),"D 0.00 [90% CI -0.125,+0.125], n=24",INCONCLUSIVE
+C2-H2-haiku-conservative,c2_confirm,H2 on gated contest set only (ruling A2),"+0.125, p 0.043 unadjusted",NOT CONFIRMED after Holm
+F5-posthoc-bysource,posthoc,PICK-ISO by solvability within source,screen unsolved +0.125 vs solved -0.139; contests unsolved +0.143 (n=7) vs solved -0.059,POST HOC exploratory
+C2-parserfix,c2_confirm,gates after parser fix (A3),"haiku contests solve 0.88 (above band), arXiv 0.10 (below)",C2 NOT INTERPRETABLE for haiku
+C3-H1-haiku,c3,"b(unsolved) in d ~ unsolved + competition FE, HC3, claude-haiku-5-5","b +0.118 [-0.034,+0.270], p 0.065, Holm 0.129",CONFIRMATORY: inconclusive
+C3-H1u-haiku,c3,mean PICK-ISOany on UNSOLVED > 0,"+0.244 [+0.133,+0.356] n=90, Holm 0.0006",CONFIRMATORY: confirmed
+C3-H2s-haiku,c3,select-then-verify inflation on SOLVED > 0,"+0.018 [-0.007,+0.051], Holm 0.129",CONFIRMATORY: inconclusive
+C3-H2u-haiku,c3,select-then-verify inflation on UNSOLVED > 0,"+0.194 [+0.111,+0.283], Holm 0.0000",CONFIRMATORY: confirmed
+C3-H1-sonnet,c3,"b(unsolved, haiku strata), claude-sonnet-5-5 judge","b -0.019 [-0.146,+0.108], Holm 0.614",inconclusive
+C3-H1u-sonnet,c3,"PICK-ISOany on haiku-UNSOLVED, sonnet judge","+0.133 [+0.044,+0.233], Holm 0.0123",confirmed (strata by another model)
+C3-H2s-sonnet,c3,"select-then-verify on SOLVED, sonnet","+0.026 [-0.007,+0.063], Holm 0.152",inconclusive
+C3-H2u-sonnet,c3,"select-then-verify on UNSOLVED, sonnet","+0.278 [+0.178,+0.378], Holm 0.0000",confirmed (strata by another model)
+C3-H3,c3,h_same - h_cross > 0 (haiku selects; sonnet vs haiku verifies),"+0.016 [-0.038,+0.069], p 0.294",inconclusive (no reduction detected)
+C3-H4-haiku,c3 A4,J_PICK - J_ISO < 0 on UNSOLVED (pooling lowers discriminability),"-0.090 [-0.256,+0.090], p 0.170","not confirmed; hit_PICK-hit_ISO +0.179 [+0.090,+0.269]: consistent with criterion shift"
+C3-H5-haiku,c3 A4,"fa_PICK - fa_EACH on UNSOLVED TA (question form vs presentation), estimate only","+0.130 [+0.013,+0.247]",estimate
+C3-H4-sonnet,c3 A4,"J_PICK - J_ISO < 0 on haiku-UNSOLVED, sonnet judge","+0.167 [+0.013,+0.321], p 0.986",not confirmed; PICK hits +0.295: criterion shift
+C3-H5-sonnet,c3 A4,"fa_PICK - fa_EACH on UNSOLVED TA, sonnet, estimate","+0.064 [-0.013,+0.141]",estimate
+C3-H6-haiku,c3 A5,pAUC(PICKC)-pAUC(ISOC) < 0 on UNSOLVED (lineup ROC),"+0.002 [-0.030,+0.045], p 0.564",not confirmed
+C3-H7-haiku,c3 A5,fa(BASE most-absent) - fa(PICK) < 0 on UNSOLVED TA,"+0.013 [-0.077,+0.115], p 0.648",not confirmed
+RV-own,c3 post hoc,d on UNSOLVED pools without the judge's own wrong answer,see exps/c3/results_review.json,post hoc
+RV-family,c3 post hoc,FORCED picks of Claude-authored candidates vs blind expectation,see exps/c3/results_review.json,post hoc
+RV-position,c3 post hoc,candidate position of PICK and FORCED choices,see exps/c3/results_review.json,post hoc
+RV-length,c3 post hoc,FORCED choice of longest and shortest candidate,see exps/c3/results_review.json,post hoc
+RV-perm,c3 post hoc,permutation test of the primary coefficient within competition,see exps/c3/results_review.json,post hoc
+RV-aligned,c3 post hoc,PICK EACH ISO with one output space (one candidate or abstain),see exps/c3/results_aligned.json,post hoc

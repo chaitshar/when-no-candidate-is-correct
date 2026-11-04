@@ -1,0 +1,43 @@
+{"verdict": "major", "score_1_10": 6,
+"blockers": [
+"gottweis2025towards: bib title 'Towards an AI co-scientist' and note 'no peer-reviewed venue found' are stale. The v1 title matches, but the current arXiv record (2502.18864) is 'Accelerating scientific discovery with Co-Scientist' and its comments say 'Nature (2026)'. PARTIALLY VERIFIED; the bib record is false as written. Fix the title/venue to the current version or cite v1 explicitly."
+],
+"non_blocking": [
+"balunovic2025matharena: PARTIALLY VERIFIED. Title and arXiv preprint status match. The bib author list omits Nikola Jovanovic and Martin Vechev behind 'and others'. The abstract confirms competitions with official answers and 50+ models, but not the phrase 'officially graded outputs'; check the paper body before relying on that wording.",
+"lightman2024lets: PARTIALLY VERIFIED. arXiv title and authors match. The ICLR 2024 venue comes only from ML Anthology and Paper Digest via search; the OpenReview or proceedings page was not opened. Fine for a note, but cite the proceedings page if you can.",
+"hendrycks2021measuring: PARTIALLY VERIFIED. Title and authors match. The arXiv comment says 'NeurIPS 2021', but the Datasets and Benchmarks track label is not on the page and comes from search snippets.",
+"kenton2024scalable: PARTIALLY VERIFIED. NeurIPS 2024 main-track venue and title match (proceedings page). The citing sentence 'Debate can help judges' is weaker than stated: the abstract says debate beats consultancy, but gains over direct QA are task-dependent. Narrow the wording.",
+"malpass1981eyewitness: PARTIALLY VERIFIED. Crossref confirms title, J. Applied Psychology 66(4) 482-489, and authors Roy S. Malpass and Patricia G. Devine. The claim that absence-neutral instructions reduce choices was checked only against secondary summaries.",
+"steblay2001eyewitness: PARTIALLY VERIFIED. Crossref confirms title, Law and Human Behavior 25(5) 459-473, and authors. The claim (sequential lineups reduce false identifications) rests on secondary summaries. The bib has no pages; add them.",
+"steblay2011seventytwo: PARTIALLY VERIFIED. Crossref confirms title, Psychology, Public Policy, and Law 17(1) 99-139, and authors. Claim checked only via secondary summaries.",
+"stroebl2026limits: PARTIALLY VERIFIED. arXiv title and authors match and the abstract supports the false-positive ceiling claim. The ICLR 2026 venue is not on the arXiv page (no comment) and comes from the authors' GitHub README via search.",
+"wells1984psychology: PARTIALLY VERIFIED. Crossref confirms title, J. Applied Social Psychology 14(2) 89-103, and author Gary L. Wells. The relative-judgment claim rests on secondary summaries.",
+"zhang2025which: PARTIALLY VERIFIED. Title matches and the paper body says '184 distinct failure annotation tasks' (127 systems, abstract). The ICML 2025 venue is not stated on the arXiv page; it comes from the PMLR index in the bib note.",
+"ji2026candidate: VERIFIED. Title and arXiv preprint match. The citing sentence is supported: all-wrong pools are excluded (full text, around the 'All-wrong pools were excluded' and Fig. 4c passages). Minor: the bib lists 3 of 6 authors without 'and others'.",
+"Verified as stated, no issues: brown2024large (coverage scaling in abstract), cobbe2021training (verifier ranks samples), irving2018ai (debate proposal), khan2024debating (ICML 2024, PMLR 235), wang2023self (Published at ICLR 2023), wang2025llms (COLING 2025; arXiv 2402.01349 has the same title and the least-incorrect-option hypothesis), zheng2023judging (NeurIPS 2023 D&B), jeong2025comparative (BlackboxNLP 2025 workshop; ACL Anthology title matches with 'Amplifies'). No entry is CONTRADICTED. The bib has 20 entries and all 20 are cited in main.tex."
+],
+"evidence": [
+"paper/refs.bib:1-159",
+"paper/main.tex:23-25,33-35,39,51,67,71",
+"https://arxiv.org/abs/2502.18864 (title 'Accelerating scientific discovery with Co-Scientist'; comments 'Nature (2026)')",
+"https://arxiv.org/abs/2502.18864v1 (title 'Towards an AI co-scientist')",
+"https://arxiv.org/abs/2505.23281",
+"https://arxiv.org/abs/2608.25937 and https://arxiv.org/pdf/2608.25937 (all-wrong pools excluded, line ~620)",
+"https://arxiv.org/pdf/2505.00212 (184 distinct failure annotation tasks, 127 systems)",
+"https://api.crossref.org/works/10.1037/0021-9010.66.4.482",
+"https://api.crossref.org/works/10.1023/A:1012888715007",
+"https://api.crossref.org/works/10.1037/a0021650",
+"https://api.crossref.org/works/10.1111/j.1559-1816.1984.tb02223.x",
+"https://proceedings.mlr.press/v235/khan24a.html",
+"https://proceedings.neurips.cc/paper_files/paper/2024/hash/899511e37a8e01e1bd6f6f1d377cc250-Abstract.html",
+"https://arxiv.org/abs/2306.05685 (NeurIPS 2023 D&B)",
+"https://arxiv.org/abs/2203.11171 (Published at ICLR 2023)",
+"https://aclanthology.org/2025.blackboxnlp-1.5",
+"https://arxiv.org/abs/2402.01349 (COLING 2025; least-incorrect-option hypothesis)",
+"https://arxiv.org/abs/2411.17501",
+"https://arxiv.org/abs/2110.14168",
+"https://arxiv.org/abs/2407.21787",
+"https://arxiv.org/abs/1805.00899",
+"https://arxiv.org/abs/2103.03874 (comments: NeurIPS 2021)",
+"https://arxiv.org/abs/2305.20050"
+]}

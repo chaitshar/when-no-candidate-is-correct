@@ -1,0 +1,398 @@
+{
+  "panel": "prior-art-and-importance",
+  "date": "2026-11-03",
+  "evidence_note": "WebSearch snippets only; no paper page fetched (scholarly hosts blocked). Kills name the holding paper per ARIS rule.",
+  "verdicts": [
+    {
+      "id": "U1",
+      "verdict": "keep",
+      "prior_art": [
+        "Gottweis et al. AI co-scientist arXiv 2502.18864 (validates Elo on target-present pools only)",
+        "Rajwal et al. arXiv 2608.17270 (target-present ranking only, v1)",
+        "Lineup background (not holding the result): Wang et al. COLING 2025 arXiv 2402.01349 (MCQA+ NOTA); Tam et al. ACL Findings 2025 arXiv 2503.01550; Goral et al. ACL 2025 arXiv 2409.00113; outside-option RM arXiv 2510.04087; Ma et al. NeurIPS 2026 arXiv 2611.00507 (Selection Increment)"
+      ],
+      "importance_1_5": 4,
+      "reason": "No paper tests Elo/BT tournament decisiveness on all-wrong pools (searched; none found). Directly attacks the validation logic of co-scientist-style rankers; a positive result is a clear warning, a negative one (tournament stats DO flag absence) is a usable detector, so both publish. Absorbs U2 and K7 as secondary analyses on the same pools."
+    },
+    {
+      "id": "U2",
+      "verdict": "merge:U1",
+      "prior_art": [
+        "Xu, Ruis, Rocktaschel, Kirk arXiv 2502.14074 (non-transitivity in LLM judges, ICML 2025)",
+        "Elo Uncovered arXiv 2311.17295"
+      ],
+      "importance_1_5": 3,
+      "reason": "Non-transitivity and Elo order-sensitivity are held by 2502.14074 and 2311.17295; only the conditioning on target absence is new, which is a secondary statistic of the U1 round robin, not a standalone paper."
+    },
+    {
+      "id": "U3",
+      "verdict": "kill",
+      "prior_art": [
+        "Elasky & Nakasako, 'Inference-time Generative Debates on Coding and Reasoning Tasks for Scalable Oversight' (LessWrong/Palaestra 2026): per search snippets, judge verdict accuracy in the both-wrong regime 11% under debate vs 62% under consultancy; debate FPR ~90% vs ~39% consultancy",
+        "Kenton et al. arXiv 2407.04622 (flags both-wrong as future work)"
+      ],
+      "importance_1_5": 4,
+      "reason": "The core empirical claim (debate raises false endorsement over consultancy when neither debater is right) is already reported by Elasky & Nakasako, with consultancy and no-transcript baselines. Adding a NEITHER option is an incremental variant; at most a robustness arm, not a contribution. Snippet evidence only, but specific numbers and mechanism match."
+    },
+    {
+      "id": "U4",
+      "verdict": "kill",
+      "prior_art": [
+        "Kohli, 'Nine Judges, Two Effective Votes: Correlated Errors Undermine LLM Evaluation Panels' arXiv 2605.29800",
+        "'A Second Judge is Not a Second Opinion: Correlated Error and Silent Failure in LLM Verifiers' (NeurIPS 2026)",
+        "Partially Correlated Verifier Cascades arXiv 2607.13918",
+        "Kim et al. 'Correlated Errors in LLMs' arXiv 2506.07962",
+        "arXiv 2603.06612 Consensus is Not Verification"
+      ],
+      "importance_1_5": 2,
+      "reason": "Correlated verifier/judge errors, effective-vote collapse vs independence, and blind-spot ceilings are all published in 2026. Majority-of-k vs binomial on CRUXEval would be a replication."
+    },
+    {
+      "id": "U5",
+      "verdict": "keep",
+      "prior_art": [
+        "Kenton et al. arXiv 2407.04622 (protocol accuracy, not FA by generator)",
+        "arXiv 2604.06756 (weak judges pass wrong answers more when reasoning attached)",
+        "'Neither Blinding Nor a Jury...' NeurIPS 2026 (own-error approval, adjacent)"
+      ],
+      "importance_1_5": 5,
+      "reason": "No paper found that holds item-fixed, generator-strength-conditioned false accept. It is the measured form of the central scalable-oversight worry (overseer error grows with overseen capability). Positive: high-impact; null: reassuring and still publishable. Rationale-vs-answer-only arm gives mechanism."
+    },
+    {
+      "id": "U6",
+      "verdict": "merge:T5",
+      "prior_art": [
+        "Kapetanovic et al. 'Anchoring Bias in LLM-as-a-Judge Systems: Prior Scores Compromise Evaluation Independence' arXiv 2608.25869 (attempt/prior-score metadata anchors judgments)",
+        "AMEL arXiv 2605.22714 (history polarity biases later judgments)"
+      ],
+      "importance_1_5": 2,
+      "reason": "Verdict-history effects on judges are already shown (2608.25869 includes revision/attempt framing; 2605.22714 history polarity). The quota-leniency direction is just the contrast pole of T5's assimilation-vs-alternation test; run as one design."
+    },
+    {
+      "id": "U7",
+      "verdict": "keep",
+      "prior_art": [
+        "arXiv 2608.00243 More Debate, Same Evidence (round-wise AUROC of confidence)",
+        "Counterfactual Graph for Multi-Agent LLM Calibration (communication-induced vs independent agreement)",
+        "Morandi arXiv 2605.19193",
+        "Debate or Vote arXiv 2508.17536"
+      ],
+      "importance_1_5": 3,
+      "reason": "Agreement-as-confidence before vs after debate is adjacent to several calibration papers but the paired AUROC with a resample control was not found. Useful for adaptive-stop MAS; moderate novelty; either sign publishable as a short paper or a section."
+    },
+    {
+      "id": "K1",
+      "verdict": "keep",
+      "prior_art": [
+        "Lineup background (not holding the result): Wang et al. COLING 2025 arXiv 2402.01349 (MCQA+ NOTA); Tam et al. ACL Findings 2025 arXiv 2503.01550; Goral et al. ACL 2025 arXiv 2409.00113; outside-option RM arXiv 2510.04087; Ma et al. NeurIPS 2026 arXiv 2611.00507 (Selection Increment)",
+        "Comparative Trap arXiv 2406.12319",
+        "Han et al. arXiv 2608.23941",
+        "BatchEval arXiv 2401.00437"
+      ],
+      "importance_1_5": 4,
+      "reason": "Real-math, two-tier test of the lineup effect against an independence baseline; no paper conditions batched/pooled judging on target presence (scoop A/B/C). Essential external-validity evidence for the strongest line; absorbs F6 (single-call design) and T9 (confidence/CAC collected in same arms)."
+    },
+    {
+      "id": "K2",
+      "verdict": "kill",
+      "prior_art": [
+        "Kenton et al. arXiv 2407.04622 (debate beats QA with information asymmetry, mixed/null without)",
+        "Michael et al. 2023 'Debate Helps Supervise Unreliable Experts' (asymmetric setup)",
+        "Elasky, Nakasako, Goyal arXiv 2605.27483 (null effects when judge lacks hidden info; single critique recovers benefit)"
+      ],
+      "importance_1_5": 2,
+      "reason": "The asymmetry-moderates-debate result is held across tasks by Kenton et al. and echoed by 2605.27483. Within-item manipulation is a tighter replication, not a new finding."
+    },
+    {
+      "id": "K3",
+      "verdict": "keep",
+      "prior_art": [
+        "Elasky, Nakasako, Goyal arXiv 2605.27483 (correlational)",
+        "Li et al. Beyond Final Accuracy arXiv 2610.01042",
+        "T3 sycophancy/skepticism arXiv 2601.08258 (ACL Findings 2026)",
+        "Shu 'Unanimity Without Persuasion' arXiv 2609.26145"
+      ],
+      "importance_1_5": 4,
+      "reason": "Scoop B/C: no paper randomizes checker-graded valid/invalid arguments crossed with displayed label; solvability stratification reconciles a live label-vs-content dispute. Either outcome informs whether debate content carries information on hard items. Absorbs K6."
+    },
+    {
+      "id": "K4",
+      "verdict": "kill",
+      "prior_art": [
+        "ICLR 2027 submission OpenReview A8fKFiZMnu 'One Model, Many Minds' (strategy diversification lowers rho 0.69 to 0.60; rephrasing does not), per corpus audit",
+        "arXiv 2609.35875 Beyond Symmetric Agents (persona tax)",
+        "arXiv 2607.20768 (diversity metrics collinear with accuracy)"
+      ],
+      "importance_1_5": 2,
+      "reason": "The strategy-vs-persona decorrelation claim is held by A8fKFiZMnu and the accuracy confound by 2607.20768; the generator itself rates scoop risk high. A Claude replication is not a paper. (A8fKFiZMnu not re-verified this session.)"
+    },
+    {
+      "id": "K5",
+      "verdict": "kill",
+      "prior_art": [
+        "'Neither Blinding Nor a Jury, Neither Capability Nor Strategy: What Brings a Verifier to Reliability' (NeurIPS 2026): per snippet, being told it wrote an answer moves false approval <1 pt, actually writing it raises own-error approval 11.9 pp; rewriting into another model's prose leaves verdict unmoved",
+        "Wataoka et al. 'Self-Preference Bias in LLM-as-a-Judge' arXiv 2410.21819 (bias tracks familiarity/likelihood of generating the same response, not authorship)",
+        "Panickssery et al. 2024 (self-recognition)"
+      ],
+      "importance_1_5": 2,
+      "reason": "The decomposition 'own-error approval is real, provenance label is not the cause, familiarity/shared generation is' is already published. Remaining delta (restricting to answers in own sample set) is a footnote."
+    },
+    {
+      "id": "K6",
+      "verdict": "merge:K3",
+      "prior_art": [
+        "Choi et al. arXiv 2510.07517 (ACL 2026)",
+        "arXiv 2602.13568 Who Do LLMs Trust?",
+        "arXiv 2608.07920",
+        "arXiv 2606.01637"
+      ],
+      "importance_1_5": 3,
+      "reason": "Same consistency-stratified receiver design and items as K3; label-only arm is a third factor of K3, not a separate paper. Label/authority conformity itself is well covered."
+    },
+    {
+      "id": "K7",
+      "verdict": "merge:U1",
+      "prior_art": [
+        "'Correct Looks Better' arXiv 2606.09409 (notes both-wrong pair concentration)",
+        "CodeJudgeBench arXiv 2507.10535 (correct-vs-incorrect pairs only)"
+      ],
+      "importance_1_5": 3,
+      "reason": "No paper tests pairwise signal within both-fail pairs (searched), but it is the same question as U1/U2 (does comparison carry signal when nothing is right). Fold in as a code-substrate arm."
+    },
+    {
+      "id": "K8",
+      "verdict": "kill",
+      "prior_art": [
+        "MarkovScale arXiv 2602.01120 (two-state Correct/Wrong Markov model of sequential scaling, criteria for when scaling helps, compared against parallel and sequential baselines)",
+        "arXiv 2604.22273 (ECR/EIR self-correction threshold)",
+        "Snell et al. arXiv 2408.03314"
+      ],
+      "importance_1_5": 2,
+      "reason": "The transition-rate Markov account of sequential vs parallel test-time compute is held by MarkovScale and 2604.22273; also peripheral to oversight."
+    },
+    {
+      "id": "K9",
+      "verdict": "kill",
+      "prior_art": [
+        "Lin & Hooi, ConfMAD, 'Enhancing Multi-Agent Debate System Performance via Confidence Expression' arXiv 2509.14034 (EMNLP 2025 Findings): calibrates debate confidences with Platt/temperature/histogram binning and reports calibrated confidence improves debate accuracy and error correction"
+      ],
+      "importance_1_5": 2,
+      "reason": "'Calibrated confidence helps debate where raw does not' is ConfMAD's result. The shuffled-confidence placebo is a nice control but not a contribution."
+    },
+    {
+      "id": "F1",
+      "verdict": "keep",
+      "prior_art": [
+        "Goral et al. arXiv 2409.00113 (forced choice suppresses rejection in MCQ answering)",
+        "Wang et al. arXiv 2402.01349",
+        "Lineup background (not holding the result): Wang et al. COLING 2025 arXiv 2402.01349 (MCQA+ NOTA); Tam et al. ACL Findings 2025 arXiv 2503.01550; Goral et al. ACL 2025 arXiv 2409.00113; outside-option RM arXiv 2510.04087; Ma et al. NeurIPS 2026 arXiv 2611.00507 (Selection Increment)"
+      ],
+      "importance_1_5": 4,
+      "reason": "The PICK-format confound is the single biggest threat to the lineup paper's mechanism claim and no external paper crosses presentation x response format in accept/reject verifiers. Either result is publishable inside the lineup paper (format artifact = cheap fix; survival = first presentation-based evidence). Absorbs F2 (criterion wording) as a third factor."
+    },
+    {
+      "id": "F2",
+      "verdict": "merge:F1",
+      "prior_art": [
+        "arXiv 2504.14716 Pairwise or Pointwise",
+        "Comparative Trap arXiv 2406.12319"
+      ],
+      "importance_1_5": 3,
+      "reason": "Criterion-wording artifact is a sibling confound to F1 on the same 120-problem bank; run as one factorial (presentation x PICK x criterion)."
+    },
+    {
+      "id": "F3",
+      "verdict": "merge:F4",
+      "prior_art": [
+        "none found holding the result; internal validity"
+      ],
+      "importance_1_5": 2,
+      "reason": "Defensibility of 'wrong' items is a negative-certification problem that F4's human-certified SciFact negatives solve externally; the opus re-rating is a supplementary audit."
+    },
+    {
+      "id": "F4",
+      "verdict": "keep",
+      "prior_art": [
+        "Wadden et al. SciFact (dataset)",
+        "Lineup background (not holding the result): Wang et al. COLING 2025 arXiv 2402.01349 (MCQA+ NOTA); Tam et al. ACL Findings 2025 arXiv 2503.01550; Goral et al. ACL 2025 arXiv 2409.00113; outside-option RM arXiv 2510.04087; Ma et al. NeurIPS 2026 arXiv 2611.00507 (Selection Increment)",
+        "Rajwal et al. arXiv 2608.17270 (target-present only)"
+      ],
+      "importance_1_5": 4,
+      "reason": "Human-certified, unclustered real-data test of the lineup effect; no prior target-absent pool vs isolated design on claim verification found. Needed before the line is credible to reviewers; a null is equally publishable (confines the effect). Absorbs F3 and F7."
+    },
+    {
+      "id": "F5",
+      "verdict": "keep",
+      "prior_art": [
+        "Kadavath et al. arXiv 2207.05221 (self-knowledge)",
+        "Stephan et al. arXiv 2409.04168 (judges struggle most when both wrong)",
+        "Wang EMNLP 2026 arXiv 2606.08239"
+      ],
+      "importance_1_5": 4,
+      "reason": "Competence gating vs relative judgment is the mechanism question that decides the remedy (stronger/tool judge vs presentation). Not found in prior art at item level. Absorbs F8 (margin vs capability), which is the cross-model version of the same question."
+    },
+    {
+      "id": "F6",
+      "verdict": "merge:K1",
+      "prior_art": [
+        "none found; internal re-estimate"
+      ],
+      "importance_1_5": 2,
+      "reason": "Batching overdispersion is an internal correction to corpus numbers; K1 should simply use single calls and report it."
+    },
+    {
+      "id": "F7",
+      "verdict": "merge:F4",
+      "prior_art": [
+        "arXiv 2604.14634 (MCQ option-count scaling, correct present)",
+        "arXiv 2510.04087 (failures double N=1 to N=32)"
+      ],
+      "importance_1_5": 3,
+      "reason": "Pool-size curve on non-exclusive claims uses the F4 SciFact substrate; 2510.04087 already hints failures grow with N for an RM. Run as F4's n-sweep."
+    },
+    {
+      "id": "F8",
+      "verdict": "merge:F5",
+      "prior_art": [
+        "none found"
+      ],
+      "importance_1_5": 3,
+      "reason": "Difficulty-vs-capability is F5's competence-gating question across models; one design."
+    },
+    {
+      "id": "F9",
+      "verdict": "keep",
+      "prior_art": [
+        "Elasky & Nakasako LessWrong 2026 (debate harms in both-wrong regime)",
+        "Talk Isn't Always Cheap arXiv 2509.05396",
+        "Wu et al. arXiv 2511.07784",
+        "persuasion in MAD Sci. Rep. 2026 s41598-026-42705-7"
+      ],
+      "importance_1_5": 2,
+      "reason": "Debate converting correct to wrong and entrenching wrong consensus is known; the truth-asymmetry ratio vs base rate is a corpus repair. Keep only as a supplementary check for the corpus's 'MAS interaction is safe' claim; low standalone importance."
+    },
+    {
+      "id": "T1",
+      "verdict": "keep",
+      "prior_art": [
+        "Goral et al. arXiv 2409.00113 (ACL 2025; flagged by corpus audit C7 as partial prior art for base-rate prompting)",
+        "Steblay 1997 (human caution meta-analysis)",
+        "EMNLP 2026 main.549 (abstention as prompt artifact)"
+      ],
+      "importance_1_5": 3,
+      "reason": "Caution vs stated base rate in verifier pools not found; it is a cheap remedy test. Partial preemption on the base-rate idea in MCQ; moderate importance, best as a remedy section of the lineup paper."
+    },
+    {
+      "id": "T2",
+      "verdict": "keep",
+      "prior_art": [
+        "Wells 1984 (blank lineup)",
+        "no LLM per-item negative-control screen found"
+      ],
+      "importance_1_5": 4,
+      "reason": "A deployable ground-truth-free reliability instrument; nothing in LLM-judge literature does per-item blank-pool screening (scoop C found no lineup bridge). A positive result is a tool people would adopt; a null is a short negative note."
+    },
+    {
+      "id": "T3",
+      "verdict": "keep",
+      "prior_art": [
+        "Levari et al. 2018 Science (PICC)",
+        "Wolfe et al. 2005 Nature",
+        "Balanced Accuracy arXiv 2512.08121 (metric prevalence-dependence, not criterion shift)"
+      ],
+      "importance_1_5": 3,
+      "reason": "No LLM prevalence-manipulation study of judge criterion found. Relevant to self-improvement loops; either direction (PICC vs Wolfe) publishable; somewhat peripheral to MAS core."
+    },
+    {
+      "id": "T4",
+      "verdict": "keep",
+      "prior_art": [
+        "Adamo et al. 2021 Cogn. Res. (SSM review)",
+        "Berbaum et al. 1990/1991",
+        "no controlled LLM SSM study found (only practitioner reports, e.g. Materialize blog)"
+      ],
+      "importance_1_5": 3,
+      "reason": "Novel transfer, clean programmatic scoring; matters to agentic code review pipelines more than to oversight theory. Either outcome publishable at SE/NLP venues."
+    },
+    {
+      "id": "T5",
+      "verdict": "keep",
+      "prior_art": [
+        "Chen, Moskowitz, Shue 2016 QJE",
+        "Kapetanovic et al. arXiv 2608.25869",
+        "AMEL arXiv 2605.22714"
+      ],
+      "importance_1_5": 3,
+      "reason": "History/anchoring effects in judges exist, but a within-item randomized-order lag-1 estimate contrasting assimilation vs gambler's-fallacy was not found. Absorbs U6. Moderate importance (non-exchangeability of batched verdicts)."
+    },
+    {
+      "id": "T6",
+      "verdict": "keep",
+      "prior_art": [
+        "Greathouse & Kovera 2009",
+        "Preference Leakage arXiv 2502.01534 (different channel)",
+        "'Neither Blinding Nor a Jury...' NeurIPS 2026 (authorship blinding, not administrator blinding)"
+      ],
+      "importance_1_5": 3,
+      "reason": "Administrator-knowledge leakage through an orchestrator is not found in prior art. Architecturally relevant to co-scientist pipelines; a null is less interesting, so publishability is asymmetric."
+    },
+    {
+      "id": "T7",
+      "verdict": "keep",
+      "prior_art": [
+        "MacCoun & Kerr 1988",
+        "'One Bad Juror' ICNLSP 2026; '12 Angry AI Agents' (May 2026) - multi-agent LLM juries without standard-of-proof manipulation"
+      ],
+      "importance_1_5": 3,
+      "reason": "LLM jury simulations exist but none manipulates standard of proof on split panels (searched). Shows panel 'gains' may be criterion shifts; moderate importance."
+    },
+    {
+      "id": "T8",
+      "verdict": "keep",
+      "prior_art": [
+        "AUDIT: Validating LLM Judges Through Controlled Error Injection (NeurIPS 2026; injected errors often unfaithful)",
+        "Scoring Verifiers arXiv 2502.13820",
+        "arXiv 2512.02389 synthetic error injection",
+        "SAFE arXiv 2604.01993"
+      ],
+      "importance_1_5": 3,
+      "reason": "'Synthetic negatives are easier' is widely shown on the training/fidelity side; the evaluation-side specificity gap with ranking inversion across tiers is not held. Moderate importance, methodological; partially crowded."
+    },
+    {
+      "id": "T9",
+      "verdict": "merge:K1",
+      "prior_art": [
+        "Wixted & Wells 2017 PSPI",
+        "verbalized-confidence calibration literature"
+      ],
+      "importance_1_5": 3,
+      "reason": "Pooled-vs-isolated CAC needs only a confidence field in K1's arms; overlaps corpus X-G15 internally. Not standalone."
+    }
+  ],
+  "top6": [
+    {
+      "id": "U5",
+      "why": "Measured form of the central scalable-oversight fear (judge FA rises with generator strength); unclaimed; both signs publishable."
+    },
+    {
+      "id": "U1",
+      "why": "Tests whether co-scientist Elo winners carry any signal on all-wrong pools; unclaimed; absorbs U2/K7."
+    },
+    {
+      "id": "F1",
+      "why": "Decides whether the lineup effect is presentation or PICK-format; the paper's mechanism claim lives or dies here; absorbs F2."
+    },
+    {
+      "id": "K1",
+      "why": "Real-math, two-tier replication against an independence baseline; external validity for the strongest unclaimed line; absorbs F6/T9."
+    },
+    {
+      "id": "K3",
+      "why": "Only unclaimed piece of the mediation line: randomized checker-graded validity x label x solvability; absorbs K6."
+    },
+    {
+      "id": "T2",
+      "why": "Turns the lineup finding into a deployable ground-truth-free screen; no LLM precedent."
+    }
+  ]
+}

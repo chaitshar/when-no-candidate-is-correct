@@ -1,0 +1,34 @@
+{
+ "defects_found": [
+  {
+   "location": "Introduction para 3 ('To our knowledge, no prior work has examined isolated verification of incorrect options')",
+   "description": "Novelty claim is contradicted by the manuscript's own Related work, which says wang2025llms show models accept individual incorrect options when each is verified alone and link that isolated verification to choice, calling it 'the closest prior result'. The related-work description of wang2025llms is also not supported by the stored evidence, which only records the least-incorrect-option / correct-option-removed finding and was read from search snippets (pages blocked).",
+   "evidence": "canaries/c02/main.tex lines 27 and 34; evidence/citations/wang2025llms.json"
+  },
+  {
+   "location": "Threats to validity, C2 ('one haiku solution call timed out')",
+   "description": "Four haiku SOLVE calls (arxivmath-0826 problems 12, 29, 34, 52) timed out twice at 900 s, not one.",
+   "evidence": "exps/c2_confirm/AMENDMENTS.md D2 (line 10)"
+  },
+  {
+   "location": "Section 'A second judge and cross-model verification' (final sentence: the wrong solution a forced choice selects is 'also the one the other model is most likely to pass')",
+   "description": "Not supported. results_h3.json reports only overall acceptance of haiku's pick by sonnet (0.156) versus haiku (0.138) and the same-minus-cross difference; there is no cross-model picked-versus-other-candidates contrast (h_cross) reported, so the claim that sonnet passes the pick more than other candidates is unverified. The mirror analysis for sonnet picks (diff +0.044, one-sided p 0.049) is also omitted.",
+   "evidence": "exps/c3/results_h3.json; canaries/c02/main.tex line 82"
+  },
+  {
+   "location": "Method, Benchmarks and pools (candidate definition: 'one output of a model in MathArena's 2026 lineup') versus C3 definition",
+   "description": "Inconsistent with C3, where candidates are outputs of every model MathArena ran on each competition (MA_ALL_MODELS=1), including older and smaller models; the claim that pools come from the 2026 lineup misstates the C3 pool construction. Also the abstract says candidates were produced for 'recent competition' problems by 'models evaluated', fine, but the 2026-lineup scoping is false for C3.",
+   "evidence": "exps/c3/PREREGISTRATION.md line 12; banks/matharena_pools.py"
+  },
+  {
+   "location": "Abstract and Conclusion: 'verification by claude-sonnet-5-5 removed none of the inflation' / 'did not reduce'",
+   "description": "Overstated for an inconclusive H3 (CI [-0.04,+0.07], verdict inconclusive): the data cannot show zero reduction; the pre-registered rule for 'refuted' (upper CI below +0.05) was not met, so absence of a reduction is not established. The sonnet-pick mirror gave p=0.049 in the opposite direction.",
+   "evidence": "exps/c3/results_h3.json; exps/c3/AMENDMENTS.md line 6"
+  },
+  {
+   "location": "Method C3 / abstract (stratified test of the lineup effect; comparison of PICK vs ISO)",
+   "description": "The PICK vs ISO contrast uses unequal compute and an any-of-three accept rule against a single choice; ISO-any is mechanically biased upward and PICK downward (the paper admits this for TP but presents the TA difference as a confirmed 'penalty'). Additional A4 arms (EACH, PICK-TP) were added to C3 after data in response to an objection but are not reported for C3, only the original comparison.",
+   "evidence": "exps/c3/AMENDMENTS.md A4 (line 17); exps/c3/jobs_a4_each_haiku.jsonl; canaries/c02/main.tex line 45"
+  }
+ ]
+}

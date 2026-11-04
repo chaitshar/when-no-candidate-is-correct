@@ -1,0 +1,30 @@
+{
+ "verdict": "minor",
+ "score_1_10": 6,
+ "blockers": [
+  "Strength of the criterion-shift claim (abstract: 'The effect is therefore a shift toward choosing'; contribution 2: 'showing that this is a criterion shift rather than detectably worse discrimination'). The only evidence is that H4 was not confirmed: dJ(PICK-ISO) on haiku UNSOLVED = -0.08 (mine, paired n=77; paper -0.09) with 95% CI [-0.25,+0.09] (paper [-0.26,+0.09]); the interval admits a loss of discrimination of about a quarter. A non-detection does not show a shift. Under the paper's own post hoc audited/deduplicated strata (70 UNSOLVED, 58 with A4 data) I get PICK hit 0.52, fa 0.64, J -0.12 vs ISO hit 0.34, fa 0.33, J +0.02, dJ -0.12 [-0.32,+0.09], one-sided p about 0.10, and the PICK J is negative, not 'near zero'. The sensitivity paragraph says 'no conclusion changes' but reports no A4 sensitivity, so the A4 conclusion was never checked on the audited strata. Reword to 'not distinguishable from' and report the A4 sensitivity row; until then 'therefore a shift' and 'pick carries almost no information' are stronger than the data."
+ ],
+ "non_blocking": [
+  "Recomputation matches the paper for every checked number (see evidence). No false numbers found. Gate passes on my numbers (parse 1.00; right 0.83 vs wrong 0.08, diff 0.75 >= 0.10; wrong accept >0; 137/90 >= 40). Holm over H1,H1u,H2s,H2u reproduces (H1 raw 0.065 -> 0.129; H2s 0.129).",
+  "Title and abstract attribute the penalty to unsolved problems, but H1 (UNSOLVED minus SOLVED, source-adjusted) is inconclusive (b +0.12 [-0.03,+0.27], p 0.065, Holm 0.129; sonnet b -0.02). The penalty is also nonzero on SOLVED (d +0.06 [+0.01,+0.12], mean-bootstrap p 0.016; PICK hit +0.10). 'On problems it cannot solve' is the stratum where it was confirmed, not evidence of specificity. Conclusion hedges correctly; title does not. Only 6 of 90 UNSOLVED problems are contest items, so stratum and source are confounded (disclosed).",
+  "d and J are not like-for-like across procedures: ISO-any gives three calls and any one accept counts as false choice; ISO 'hit' requires accepting the right and rejecting both wrongs (a stricter, three-call event) while PICK hit is only choosing the right one. PICK has no chance-level J of 0 either (guessing among 3 gives hit 1/3, fa 1). Paper notes J is crude; the H4 test inherits this asymmetry.",
+  "Multiplicity: Holm families are per model and per amendment (haiku 4, sonnet 4, H3, H4 x2 each own alpha); no correction across the roughly 10 confirmatory-labelled tests. Sonnet 'confirmed' labels rest on haiku-defined strata (disclosed). Sonnet H4 dJ +0.17 [+0.01,+0.32] reflects ISO J of -0.08 (accepting more wrongs than rights), which is a verifier failure, not evidence that pooling helps.",
+  "Deviations: A1-A4 were all written after C3 haiku data and A4 after round-4 review; A4 design (EACH, TP PICK) was informed by results already seen, though no A4 call preceded it. The strata audit moved 14 UNSOLVED to SOLVED and 6 to MIXED but audited neither SOLVED nor MIXED for grader leniency or other misgrading; it is asymmetric, though it only strengthens the d estimate (UNSOLVED d 0.27, p<0.001).",
+  "Sensitivity counts: audited+dedup haiku SOLVED n=146, UNSOLVED n=70 matches paper (sens_haiku_ns/nu). Duplicates (5) were found post hoc but were not excluded from primary, as stated.",
+  "Power: H1 detectable effect was prereg ~0.16 at 100/stratum; with only 6 contest UNSOLVED the FE-adjusted SE is ~0.09, so H1 was underpowered; paper says this."
+ ],
+ "evidence": [
+  "Recomputed from raw (own code /tmp/review_methods5/{rc,a,b}.py) vs paper/results.tex lines 150-243, 362-377, 2-100:",
+  "Haiku C3 UNSOLVED (n=90): PICK wrong-choice 0.600 vs ISO-any 0.356, d +0.244 [0.133,0.356], boot p<0.001 | paper 0.60/0.36/+0.24 [+0.13,+0.36].",
+  "Haiku SOLVED (n=137): 0.117 vs 0.058, d +0.058 [0.007,0.117] | paper 0.12/0.06/+0.06 [+0.01,+0.11].",
+  "Haiku OLS d~UNSOLVED+competition FE, HC3: b +0.118 [-0.034,+0.270], one-sided p 0.065 | paper +0.12 [-0.03,+0.27] p 0.065.",
+  "Haiku h: UNSOLVED +0.194 [0.111,0.283], SOLVED +0.018 [-0.007,0.047] | paper +0.19 [+0.11,+0.28], +0.02 [-0.01,+0.05].",
+  "Sonnet: UNSOLVED PICK 0.633 vs ISO 0.500, d +0.133 [0.044,0.222]; SOLVED n=135 d +0.059; b -0.019 [-0.146,+0.108] p 0.614; h UNSOLVED +0.278, SOLVED +0.026 | paper identical (0.63/0.50, +0.13, -0.02, p 0.614, +0.28, +0.03).",
+  "Gate haiku: ISO parse 1.000, accept right 0.827, wrong 0.078 | paper 1.000/0.83/0.08. Sonnet parse 0.998 (rounded 1.000), 0.855/0.106 | paper 0.86/0.11.",
+  "A4 haiku UNSOLVED (n 78/77/78): PICK hit 0.62 fa 0.59 J +0.03; EACH 0.57/0.45/+0.12; ISO 0.44/0.32/+0.12; dhit +0.18 [0.09,0.27]; dform +0.13 [0.01,0.25]; dJ paired -0.08 [-0.25,0.09] (paper -0.09 [-0.26,+0.09], difference of unpaired n) | paper matches rates exactly.",
+  "A4 haiku SOLVED (n136): PICK 0.99/0.12/+0.88, EACH 0.96/0.07/+0.88, ISO 0.90/0.06/+0.84; dJ +0.04 [-0.04,0.12] | paper identical.",
+  "A4 sonnet UNSOLVED: PICK 0.69/0.60/+0.09, EACH 0.65/0.54/+0.12, ISO 0.40/0.47/-0.08; dJ +0.17 [0.01,0.32], dhit +0.29 | paper identical.",
+  "Sensitivity (audit_unsolved.csv + duplicates_of_used.json): haiku UNSOLVED n=70 d +0.271 [0.143,0.400] (paper +0.27 [+0.14,+0.40]), h +0.20 [0.10,0.30], b +0.128 [-0.040,+0.296] (paper +0.13 [-0.04,+0.30]). Sonnet d +0.143, h +0.307, b +0.030 | paper matches. A4 on audited strata (not in paper): haiku UNSOLVED PICK J -0.12, ISO +0.02, dJ -0.12 [-0.32,+0.09]; sonnet PICK J -0.05, ISO -0.24.",
+  "paper/main.tex abstract and Contributions (2), A4 paragraph; exps/c3/AMENDMENTS.md A4 (H4 rule, definitions); exps/c3/PREREGISTRATION.md (gate, Holm family H1,H1u,H2s,H2u)."
+ ]
+}

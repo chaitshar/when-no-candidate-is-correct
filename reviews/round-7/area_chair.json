@@ -1,0 +1,34 @@
+{
+  "verdict": "minor",
+  "score_1_10": 4,
+  "blockers": [
+    "Conclusion (paper/main.tex:119) says asking for a verdict on each candidate 'lowered wrong choices for haiku but also lowered right ones, so it trades one error for the other'. The 'lowered right ones' half has no supporting test. EACH vs PICK hit on UNSOLVED is 0.57 vs 0.62 (exps/c3/results_a4.json, haiku.UNSOLVED), a difference of about -0.04 on n=77, reported without an interval. It also compares definitionally different quantities: hit_EACH requires accepting the right solution AND rejecting both wrong ones, while hit_PICK only requires choosing the right one (exps/c3/analyze_a4.py:36). On the A4 numbers EACH's J (+0.12) is higher than PICK's (+0.03). So 'trades one error for the other rather than fixing discrimination' is not established. Either report a paired interval for hit_PICK - hit_EACH under a matched hit definition, or remove or soften the clause."
+  ],
+  "non_blocking": [
+    "Contribution level. The one robust confirmed finding (H1u: PICK 0.60 vs ISO-any 0.36 on UNSOLVED, d=+0.24 [0.13, 0.36]; I recomputed this independently from exps/c3/raw/arms and got +0.244, n=90) is, once A4 and A5 are read, a difference in how readily the two formats choose. It happens in a regime where neither format discriminates (A5 ROC curves near the diagonal for both: exps/c3/results_a5.json prereg.UNSOLVED roc_pick and roc_iso; PICK J=+0.03). 'A prompt that asks the model to pick elicits more commitment than one that asks it to verify, when the model is at chance' sits close to known none-of-the-above and least-incorrect-option results (wang2025llms, tam2025none, kadavath2022language), which the paper cites honestly. The new parts are careful: pre-registration, real officially graded errors, stratification by solvability. But the substantive novelty is incremental, and the pre-registered primary test (H1, whether the effect depends on competence) was inconclusive. This is workshop or short-paper level, not flagship.",
+    "H2u (select-then-verify, +0.19 [0.11, 0.28]; I recomputed +0.194 using the candidate ids in banks/locked_c3/pools.json) is largely what any self-consistent judge would produce: the forced pick is the candidate the model finds most plausible, so its own isolated verdict favours it. The paper's framing ('sends the most dangerous candidate to the check most likely to pass it', main.tex:103) is fair practical advice, but the result should be presented as an expected consistency effect, not as a surprising mechanism. wang2025llms' confidence analysis already sits close to it, as main.tex:34 acknowledges.",
+    "H7 / base-rate claim (abstract main.tex:19; conclusion main.tex:119). The BASE prompt both adds the base-rate sentence and drops 'It is possible that none of them is correct' (disclosed at main.tex:116). The manipulation is therefore confounded, and the non-detection (+0.01 [-0.08, +0.12], n=78) cannot carry 'did not move the criterion' or the conclusion's inference that procedural interventions are 'more promising'. Phrase this as a non-detection of a confounded manipulation.",
+    "H3: 'a second Claude model did not detectably catch it' (abstract, conclusion) is worded correctly as a non-detection. However, the builders' advice 'do not assume a second model from the same family will catch the error' rests on that non-detection plus a mirror analysis that pointed the other way (main.tex:82). Note the mirror result next to the advice.",
+    "Asymmetric procedures. ISO-any gets three calls and counts any acceptance, while PICK gets one call. In TP pools ISO and EACH hits require rejecting both wrong candidates, while PICK hit does not. This tilts the J comparison against ISO and EACH. The Threats section discloses it (main.tex:116), and the A5 ROC partly addresses it. Even so, the abstract's framing of A4 should mention that hit definitions differ by procedure.",
+    "Generality. There is a single subject model (haiku) with sonnet as a secondary judge, one vendor, math final-answer items only, and 84 of 90 UNSOLVED problems from arXiv-derived sets (results.tex c3h_fam_arxiv_nu). The title and abstract are scoped to claude-haiku-5-5, which is appropriate.",
+    "The A5 pAUC comparison is up to FA 0.36 on near-diagonal curves (chance pAUC about 0.065). The CI [-0.030, +0.045] is therefore wide relative to the quantity, which the paper acknowledges. Consider reporting pAUC relative to chance.",
+    "Positives. The manuscript is unusually honest. It keeps the failed C2, the inconclusive primary, the post hoc audit with sensitivity numbers, and a public ledger of 80 hypotheses (results/hypothesis_ledger.csv). Claims trace to artifacts, and the headline numbers I recomputed match."
+  ],
+  "evidence": [
+    "paper/main.tex:19 (abstract claims)",
+    "paper/main.tex:73 (C3 H1u, H1, H2u results)",
+    "paper/main.tex:87 (A4 haiku UNSOLVED hit/fa/J)",
+    "paper/main.tex:92 (A5 ROC, H7)",
+    "paper/main.tex:116 (threats: BASE prompt drops NONE sentence; hit definitions)",
+    "paper/main.tex:119 (conclusion EACH trade-off claim)",
+    "paper/main.tex:34 (wang2025llms overlap acknowledged)",
+    "paper/results.tex (c3h_du=+0.24 [+0.13,+0.36]; c3h_b=+0.12 [-0.03,+0.27] inconclusive; a4hu_each_hit=0.57; a4hu_pick_hit=0.62)",
+    "exps/c3/PREREGISTRATION.md (H1 primary; Holm family of four)",
+    "exps/c3/AMENDMENTS.md A4 (criterion-shift reporting rule), A5 (H6/H7)",
+    "exps/c3/analyze_a4.py:36 (hit_EACH requires rejecting both wrong candidates)",
+    "exps/c3/results_a4.json haiku.UNSOLVED (EACH hit 0.571 n=77, PICK hit 0.615 n=78, J_EACH 0.117, J_PICK 0.026)",
+    "exps/c3/results_a5.json prereg.UNSOLVED (roc_pick, roc_iso near diagonal; dfa +0.013 [-0.077,+0.115])",
+    "exps/c3/raw/arms + banks/locked_c3/pools.json (independent recomputation: H1u d=+0.244 [0.133,0.356] n=90; H2u h=+0.194 [0.106,0.289] n=90; H2s +0.018)",
+    "results/hypothesis_ledger.csv (80 hypotheses)"
+  ]
+}

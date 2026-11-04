@@ -1,0 +1,35 @@
+{
+  "verdict": "minor",
+  "score_1_10": 4,
+  "blockers": [],
+  "non_blocking": [
+    "Contribution level: once A4 and A5 are in, the confirmed C3 effect (H1u) reduces to a more liberal choosing criterion for a pooled pick-or-NONE prompt than for isolated accept/reject on problems the judge cannot solve. Both procedures sit near chance there (PICK J=+0.03, ISO J=+0.12, ROC areas both near the diagonal). The relative-judgment mechanism that motivates the eyewitness framing (Intro, main.tex:25) is not supported. What remains is a carefully run response-bias result, close in spirit to Wang et al. 2025 (COLING) and Tam et al. 2025 (NOTA). The paper scopes this honestly (title, abstract, Sec. 4.4-4.5), but the novelty is incremental: workshop to borderline, not flagship.",
+    "The pre-registered primary test H1 (penalty larger on UNSOLVED than SOLVED) is inconclusive, and 84 of 90 UNSOLVED problems are arXiv-derived. So the 'problems it did not solve' scoping in the title describes the sample and does not establish a moderator. The paper says this (main.tex:116, 119); keep the title from implying more.",
+    "Select-then-verify (H2u) and H3: on UNSOLVED problems, my scratch recomputation from exps/c3/raw/arms gives a same-model inflation h_same=+0.19 and a cross-model inflation h_cross=+0.16 (sonnet ISO on haiku's FORCED pick: accept 0.32 vs haiku 0.29). H3 within UNSOLVED is therefore d=+0.03, 95% CI [-0.08,+0.15], n=90. This suggests the forced pick is a wrong answer that both models find generically more plausible, not a same-model self-confirmation artifact; it is worth saying so. H3 as pre-registered pools all 225 problems, where the SOLVED inflation is about 0.02, which dilutes it. Report the stratum split, and limit the conclusion's 'on such problems ... a second Claude model did not detectably catch it' (main.tex:119) to what was tested.",
+    "A4 analyses use 78 (EACH 77) UNSOLVED problems, not 90; presumably the rest lack a right candidate for a TP pool. The text (main.tex:87) does not state the n or the reason.",
+    "Scope stays narrow: one vendor, two models, math final-answer items, uncontrolled adaptive thinking, and contamination that cannot be excluded (main.tex:116). The gemma arm is uninformative. Generality to 'selection steps in multi-agent pipelines' (abstract, Intro) is motivation, not evidence.",
+    "The abstract is long and dense with macros; a reader has trouble recovering the single takeaway (criterion shift with near-chance discrimination on hard items). This is a style point, not a blocker.",
+    "Calibration: per the instructions I did not read reviews/calibration.json, so this score is not anchored to the rubric's flagship and workshop calibration set."
+  ],
+  "evidence": [
+    "paper/main.tex:11",
+    "paper/main.tex:19",
+    "paper/main.tex:25",
+    "paper/main.tex:34",
+    "paper/main.tex:73",
+    "paper/main.tex:82",
+    "paper/main.tex:87",
+    "paper/main.tex:92",
+    "paper/main.tex:116",
+    "paper/main.tex:119",
+    "paper/results.tex (c3h_du=+0.24 [+0.13,+0.36]; c3h_b=+0.12 [-0.03,+0.27]; a4hu_pick_j=+0.03; a4hu_iso_j=+0.12; a4hu_dj=-0.09 [-0.26,+0.09]; a5u_dpauc=+0.002; h3_haiku_d=+0.02 [-0.04,+0.07]; c3h_fam_contest_nu=6 of 87)",
+    "exps/c3/PREREGISTRATION.md:1-41 (committed 62ab1fc 08:29:56Z, before any C3 call; pools locked 08:28:55Z, banks/locked_c3/LOCK.md)",
+    "exps/c3/AMENDMENTS.md A1-A5 (each committed before its data per git log)",
+    "exps/c3/results.json (D_unsolved mean 0.244, H1 b 0.118 p 0.065; matches the paper)",
+    "exps/c3/results_a4.json (UNSOLVED PICK n=78, hit 0.615, fa 0.590)",
+    "exps/c3/results_h3.json and exps/c3/analyze_h3.py:15-22 (H3 pooled over all selected problems)",
+    "scratch recomputation: H3 within UNSOLVED n=90, d=+0.033 [-0.083,+0.150], h_same 0.194, h_cross 0.161",
+    "https://aclanthology.org/2025.coling-main.390",
+    "https://arxiv.org/abs/2503.01550"
+  ]
+}

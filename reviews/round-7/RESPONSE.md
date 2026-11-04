@@ -1,0 +1,4 @@
+# Response to round-7 reviews (2026-11-04T11:47:06Z)
+Blocker fixed (area chair): the conclusion's claim that per-candidate verdicts "also lowered right ones" was unsupported; it now says EACH produced fewer wrong choices on all-wrong pools (an estimate, not a test) and that its effect on finding the right solution was not tested.
+Hostile expert (non-blocking, valid): official MathArena labels were not audited. The PI read every judged pool with a symbolic official answer: 4 problems contain candidates equivalent to the official answer and 2 contain candidates with garbled official parses (exps/c3/candidate_label_audit.csv). Excluding them (with the stratum audit and duplicates) leaves every conclusion unchanged; reported in Section 4.4 and the Method now says official grading is not error-free.
+Not changed: requests to add Stephan et al. (2409.04168) were not acted on in this round (not verified here); other non-blocking wording notes were left for the next round.
