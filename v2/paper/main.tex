@@ -4,7 +4,7 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{hyperref}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \usepackage{natbib}
 \renewcommand{\topfraction}{0.9}
 \renewcommand{\dbltopfraction}{0.9}
@@ -37,7 +37,15 @@ Many AI systems work in two steps. First, one or more AI models write several po
 
 Research on eyewitnesses has studied a very similar problem for a long time \citep{wells1984psychology,malpass1981eyewitness,steblay2001eyewitness,steblay2011seventytwo}. In a police lineup, a witness looks at several people and says who did the crime. Sometimes the real culprit is not in the lineup. Witnesses who see everyone at the same time often choose the person who looks most like their memory, even when they are told that the culprit may be missing. When they see the people one at a time, they make fewer false choices. We borrow this test design and its usual way of measuring \citep{wixted2012field}. We do not claim that AI models think like people.
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/figA_two_ways}
+\caption{The two main ways of judging, shown on one all-wrong pool. In \texttt{PICK} the judge sees the three answers together in one call. In \texttt{ISO} it sees each answer alone, in three calls. The picture shows one possible outcome, not a result.}
+\label{fig:twoways}
+\end{figure*}
+
 \paragraph{Words we use.}
+Figure~\ref{fig:twoways} shows the two main methods as a picture.
 \begin{itemize}\setlength{\itemsep}{1pt}
 \item A \emph{pool} is the small group of candidates for one problem (three candidates in math, four in science).
 \item In an \emph{all-wrong pool} every candidate is wrong. In a \emph{one-right pool} exactly one candidate is correct.
@@ -59,6 +67,15 @@ We name our experiments C3 to C9. The letter C stands for ``confirmation'': each
 \item \textbf{Other judges and a second task (C6, C8, C9).} We test \texttt{gpt-oss-120b-medium}, \texttt{gemini-3.8-flash-medium}, \texttt{gemini-3.8-flash-low} and \texttt{gemini-4-hydrogen-medium} together with \texttt{claude-haiku-5-5} on science ideas, and the first two on new math pools. The results are mixed, and we report them that way.
 \item \textbf{Fixes (C7).} We test three fixes on 40 hard math problems. Showing the judge a known wrong answer does not help. Asking the judge to hunt for errors first removes wrong picks but also removes most right picks. Checking each candidate alone first works exactly as well as \texttt{ISO}, because it is \texttt{ISO} with one extra step. The practical message: checking candidates one at a time is the fix, and it costs more calls.
 \end{enumerate}
+
+Figure~\ref{fig:glance} puts the main numbers of all tests into one picture.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/figD_glance}
+\caption{All tests in one picture: the wrong-pick rate on all-wrong pools with \texttt{ISO} (blue) and with \texttt{PICK} (orange). For \texttt{claude-haiku-5-5} the orange dot is clearly to the right in every check. For the other judges on math the dots are close, and for the Gemini judges on science ideas both are near zero. The picture shows rates only; the sections below give the ranges and the right picks, which matter for the full story.}
+\label{fig:glance}
+\end{figure*}
 
 \begin{table}[t]
 \centering\footnotesize
@@ -91,6 +108,15 @@ We describe each judge with two numbers. This method comes from signal detection
 \item \textbf{Skill}, written $d'$: how well the judge tells right answers from wrong ones. A value of 0 means it cannot tell them apart at all.
 \item \textbf{Bar}, written $c$: how sure the judge must be before it chooses. A low or negative bar means the judge chooses easily.
 \end{itemize}
+
+Figure~\ref{fig:barskill} shows both numbers as a drawing. Think of every answer as having a place on a line from ``looks wrong'' to ``looks right''. The judge chooses the answers that lie to the right of its bar. If the judge has high skill, wrong answers lie far to the left, and moving the bar a little to the left lets in few of them. If the judge has low skill, wrong and right answers lie in almost the same place, and the same small move lets in many wrong answers.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/figB_bar_skill}
+\caption{What skill and bar mean. This is a drawing of the idea, not measured data. Grey curve: wrong answers. Green curve: right answers. The judge chooses everything to the right of its bar. Blue area: wrong picks with the \texttt{ISO} bar. Orange area: the extra wrong picks when the bar moves left by the same amount in both panels. The extra area is small when the curves are far apart (easy problems) and large when they overlap (hard problems). The size of the move is the average from the first study.}
+\label{fig:barskill}
+\end{figure*}
 
 Let $H$ be the rate of right picks on one-right pools and $F$ the rate of wrong picks on all-wrong pools. To compare all methods fairly, we treat \texttt{ISO} and \texttt{EACH} as follows: if the judge accepts several candidates, we count as if it picked one of them at random, and if it accepts none, that counts as \texttt{NONE}. Rates of exactly 0 or 1 break the formulas, so we use the standard small correction of \citet{hautus1995corrections} over $n$ pools:
 \begin{equation}
@@ -249,7 +275,14 @@ Judge (C6 math) & Problems & $N$ & \texttt{ISO} & \texttt{PICK} & \texttt{ISO} &
 \end{table*}
 
 \subsection{Three Fixes (C7)}
-Table~\ref{tab:mitigation} and Figure~\ref{fig:mitigation} compare the three fixes on the same $N=\res{c7_m1_n}$ hard math problems for \texttt{claude-haiku-5-5}. They also show M2 on the C6 math pools and on the science ideas.
+Table~\ref{tab:mitigation} and Figure~\ref{fig:mitigation} compare the three fixes on the same $N=\res{c7_m1_n}$ hard math problems for \texttt{claude-haiku-5-5}. They also show M2 on the C6 math pools and on the science ideas. Figure~\ref{fig:fixes} shows the steps of each fix and what it did.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/figC_fixes}
+\caption{The three fixes, step by step, with their results for \texttt{claude-haiku-5-5} on the 40 hard math problems. Wrong picks are counted on all-wrong pools (lower is better) and right picks on one-right pools (higher is better).}
+\label{fig:fixes}
+\end{figure*}
 
 One warning applies to every Haiku math number in this section. We drew the 40 problems at random, with a fixed seed, without looking at results. But the draw was lucky for \texttt{ISO}. In the 40 chosen all-wrong pools, the stored \texttt{ISO} verdicts accept a wrong candidate in \res{x_c7_sub_k} pools. In the \res{x_c7_rest_n} pools that were left out, they do so in \res{x_c7_rest_k}. On the full set it is \res{x_c7_full_k} of \res{x_c7_full_n}, or \res{x_c7_full_f}. The chance of a draw this low is \res{x_c7_tail}. The \texttt{PICK} rate on the 40 problems is the same as on the full set. So the gap between \texttt{PICK} and anything built on \texttt{ISO} is probably too large here. The C4 result on the full set (\res{c4_d_maj3_iso}) is the better guide to the true size.
 

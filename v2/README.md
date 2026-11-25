@@ -27,7 +27,7 @@ The letter C stands for "confirmation": a test that was planned before it was ru
 | `LOCKED.sha256`, `banks/locked_v2/LOCKED.sha256`, `exps/c7_mitigation/C7_LOCKED.sha256` | SHA-256 fingerprints of the locked files |
 | `banks/locked_v2/` | Locked candidate pools and `BANK_MANIFEST.md` |
 | `exps/` | Job files (the exact prompts) and raw judge replies for every experiment |
-| `autoloop/` | Runner, parsers, the two analysis programs (`analysis_a.py`, `analysis_b.py`), the figure and table generators |
+| `autoloop/` | Runner, parsers, the two analysis programs (`analysis_a.py`, `analysis_b.py`), the table generator, the data figures (`figures_svg.py`) and the explanatory diagrams (`figures_explain.py`) |
 | `scripts/` | Pool builder, audit helpers, and `final_sensitivity.py` (extra checks added at the end) |
 | `results/` | Outputs of both analysis programs, their value-by-value comparison, and the extra checks |
 | `audit/` | Parser audit, list of differences between the two analysis programs, and a tool for a human label check (not yet done) |
@@ -41,6 +41,7 @@ shasum -a 256 -c LOCKED.sha256
 python3 autoloop/make_results_tex.py
 python3 scripts/final_sensitivity.py
 python3 autoloop/figures_svg.py
+python3 autoloop/figures_explain.py
 git diff --stat paper/
 ```
 

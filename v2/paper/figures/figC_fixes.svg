@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+<style>text { font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif; }</style>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#111827"/></marker></defs>
+<rect x="0" y="0" width="900" height="420" fill="#FFFFFF"/>
+<text x="24.0" y="26.0" font-size="14.5" font-weight="700" fill="#111827" text-anchor="start">The three fixes we tried</text>
+<text x="24.0" y="44.0" font-size="10.5" font-weight="400" fill="#6B7280" text-anchor="start">Numbers: claude-haiku-5-5 on 40 hard math problems. Plain PICK gives 0.625 wrong picks and 0.600 right picks; ISO gives 0.175 and 0.512.</text>
+<rect x="24.0" y="60.0" width="272.0" height="344.0" rx="6.0" fill="#F9FAFB" fill-opacity="1.00" stroke="#E5E7EB" stroke-width="1.0"/>
+<rect x="24.0" y="60.0" width="272.0" height="34.0" rx="6.0" fill="#009E73" fill-opacity="1.00" stroke="none" stroke-width="1.0"/>
+<text x="38.0" y="82.0" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="start">M1: Check alone, then pick</text>
+<rect x="38.0" y="108.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="54.0" cy="131.0" r="9.0" fill="#009E73" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="54.0" y="135.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="70.0" y="128.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">Check each answer alone</text>
+<text x="70.0" y="142.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">(this is ISO, three calls).</text>
+<line x1="160.0" y1="156.0" x2="160.0" y2="168.0" stroke="#111827" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="38.0" y="170.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="54.0" cy="193.0" r="9.0" fill="#009E73" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="54.0" y="197.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="70.0" y="190.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">None accepted: say NONE.</text>
+<text x="70.0" y="204.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">One accepted: take it.</text>
+<line x1="160.0" y1="218.0" x2="160.0" y2="230.0" stroke="#111827" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="38.0" y="232.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="54.0" cy="255.0" r="9.0" fill="#009E73" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="54.0" y="259.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="70.0" y="252.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">Two or more accepted: one</text>
+<text x="70.0" y="266.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">extra PICK among them.</text>
+<rect x="38.0" y="300.0" width="244.0" height="90.0" rx="5.0" fill="#E7F6F1" fill-opacity="1.00" stroke="#009E73" stroke-width="1.4"/>
+<text x="50.0" y="320.0" font-size="11.0" font-weight="700" fill="#111827" text-anchor="start">Wrong picks: 0.175</text>
+<text x="270.0" y="320.0" font-size="11.0" font-weight="700" fill="#111827" text-anchor="end">Right picks: 0.550</text>
+<line x1="50.0" y1="330.0" x2="270.0" y2="330.0" stroke="#D1D5DB" stroke-width="1.0"/>
+<text x="50.0" y="350.0" font-size="10.8" font-weight="600" fill="#111827" text-anchor="start">Works. Same wrong picks as ISO,</text>
+<text x="50.0" y="364.5" font-size="10.8" font-weight="600" fill="#111827" text-anchor="start">at about 3 times the calls.</text>
+<rect x="314.0" y="60.0" width="272.0" height="344.0" rx="6.0" fill="#F9FAFB" fill-opacity="1.00" stroke="#E5E7EB" stroke-width="1.0"/>
+<rect x="314.0" y="60.0" width="272.0" height="34.0" rx="6.0" fill="#E69F00" fill-opacity="1.00" stroke="none" stroke-width="1.0"/>
+<text x="328.0" y="82.0" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="start">M2: Error hunt</text>
+<rect x="328.0" y="108.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="344.0" cy="131.0" r="9.0" fill="#E69F00" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="344.0" y="135.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="360.0" y="135.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">Show all answers together.</text>
+<line x1="450.0" y1="156.0" x2="450.0" y2="168.0" stroke="#111827" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="328.0" y="170.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="344.0" cy="193.0" r="9.0" fill="#E69F00" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="344.0" y="197.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="360.0" y="190.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">The judge must first look for</text>
+<text x="360.0" y="204.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">a concrete error in each one.</text>
+<line x1="450.0" y1="218.0" x2="450.0" y2="230.0" stroke="#111827" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="328.0" y="232.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="344.0" cy="255.0" r="9.0" fill="#E69F00" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="344.0" y="259.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="360.0" y="252.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">It gives a confidence from 1 to 5.</text>
+<text x="360.0" y="266.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">Keep its pick only at 4 or 5.</text>
+<rect x="328.0" y="300.0" width="244.0" height="90.0" rx="5.0" fill="#FDF3DC" fill-opacity="1.00" stroke="#E69F00" stroke-width="1.4"/>
+<text x="340.0" y="320.0" font-size="11.0" font-weight="700" fill="#111827" text-anchor="start">Wrong picks: 0.025</text>
+<text x="560.0" y="320.0" font-size="11.0" font-weight="700" fill="#111827" text-anchor="end">Right picks: 0.125</text>
+<line x1="340.0" y1="330.0" x2="560.0" y2="330.0" stroke="#D1D5DB" stroke-width="1.0"/>
+<text x="340.0" y="350.0" font-size="10.8" font-weight="600" fill="#111827" text-anchor="start">Too strict. Almost no wrong picks,</text>
+<text x="340.0" y="364.5" font-size="10.8" font-weight="600" fill="#111827" text-anchor="start">but most right picks are lost.</text>
+<rect x="604.0" y="60.0" width="272.0" height="344.0" rx="6.0" fill="#F9FAFB" fill-opacity="1.00" stroke="#E5E7EB" stroke-width="1.0"/>
+<rect x="604.0" y="60.0" width="272.0" height="34.0" rx="6.0" fill="#6B7280" fill-opacity="1.00" stroke="none" stroke-width="1.0"/>
+<text x="618.0" y="82.0" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="start">M3: Known decoy</text>
+<rect x="618.0" y="108.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="634.0" cy="131.0" r="9.0" fill="#6B7280" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="634.0" y="135.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="650.0" y="128.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">Add one clearly wrong answer</text>
+<text x="650.0" y="142.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">from a different problem.</text>
+<line x1="740.0" y1="156.0" x2="740.0" y2="168.0" stroke="#111827" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="618.0" y="170.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="634.0" cy="193.0" r="9.0" fill="#6B7280" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="634.0" y="197.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="650.0" y="190.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">Show all answers together</text>
+<text x="650.0" y="204.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">and ask the judge to pick.</text>
+<line x1="740.0" y1="218.0" x2="740.0" y2="230.0" stroke="#111827" stroke-width="1.2" marker-end="url(#arr)"/>
+<rect x="618.0" y="232.0" width="244.0" height="46.0" rx="5.0" fill="#FFFFFF" fill-opacity="1.00" stroke="#9CA3AF" stroke-width="1.0"/>
+<circle cx="634.0" cy="255.0" r="9.0" fill="#6B7280" stroke="#FFFFFF" stroke-width="1.0"/>
+<text x="634.0" y="259.0" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="650.0" y="252.0" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">Hope: rejecting the decoy makes</text>
+<text x="650.0" y="266.5" font-size="10.3" font-weight="400" fill="#111827" text-anchor="start">the judge more careful.</text>
+<rect x="618.0" y="300.0" width="244.0" height="90.0" rx="5.0" fill="#F3F4F6" fill-opacity="1.00" stroke="#6B7280" stroke-width="1.4"/>
+<text x="630.0" y="320.0" font-size="11.0" font-weight="700" fill="#111827" text-anchor="start">Wrong picks: 0.525</text>
+<text x="850.0" y="320.0" font-size="11.0" font-weight="700" fill="#111827" text-anchor="end">Right picks: 0.550</text>
+<line x1="630.0" y1="330.0" x2="850.0" y2="330.0" stroke="#D1D5DB" stroke-width="1.0"/>
+<text x="630.0" y="350.0" font-size="10.8" font-weight="600" fill="#111827" text-anchor="start">No real help. The judge never picks</text>
+<text x="630.0" y="364.5" font-size="10.8" font-weight="600" fill="#111827" text-anchor="start">the decoy, but still picks others.</text>
+<text x="24.0" y="414.0" font-size="10.0" font-weight="400" fill="#6B7280" text-anchor="start">Lower is better for wrong picks (all-wrong pools). Higher is better for right picks (one-right pools).</text>
+</svg>
