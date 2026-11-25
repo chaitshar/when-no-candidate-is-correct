@@ -1,6 +1,6 @@
 # v2: Lineups Without a Culprit
 
-Data, code and records for the second paper, "Lineups Without a Culprit: AI Judges Pick a Wrong Answer More Often When They See All the Answers Together" by Chaitanya Sharma (`paper/main.pdf`). Release tag: `v2.0`.
+Data, code and records for the second paper, "Lineups Without a Culprit: AI Judges Pick a Wrong Answer More Often When They See All the Answers Together" by Chaitanya Sharma (`paper/main.pdf`). Release tag: `v2.1` (`v2.0` is the same study before the explanatory diagrams were added).
 
 The first study (in the folders one level up, tag `v1.0`) showed that two Claude judges pick a wrong answer more often when they see all candidate answers together (PICK) than when they check each answer alone (ISO). This second study asks why, whether it holds for other judges and for science ideas, and what fixes it.
 
