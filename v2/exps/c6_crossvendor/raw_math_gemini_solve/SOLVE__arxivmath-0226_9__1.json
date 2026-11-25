@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0226_9__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:34:25Z",
+  "duration_s": 297.377,
+  "input_tokens": 9916,
+  "output_tokens": 32032,
+  "thinking_tokens": 31718,
+  "text": "To determine the sharp threshold $\\alpha_{\\mathrm{dom}}^\\star$ as a function of the committee size $k$, consider the geometry of voter preferences in the canonical impartial culture model as the number of candidates $m \\to \\infty$ for a sufficiently large fixed number of voters $n$.\n\nIn this setting, the normalized rank profiles of candidates across the $n$ voters asymptotically become uniformly distributed over $[0, 1]^n$. For any chosen committee $S$ of size $k$ and any candidate $a \\notin S$, the relative rankings of $S \\cup \\{a\\}$ across voters define the fraction of voters who prefer individual members $b \\in S$ to $a$. \n\nBy constructing the committee $S$ to optimally cover the voter space and analyzing the worst-case adversarial candidate $a \\notin S$ that minimizes $\\max_{b \\in S} \\frac{1}{n} \\sum_{i=1}^n \\mathbb{I}(b \\succ_i a)$, the limiting minimax value achieves the sharp threshold of:\n$$\\alpha_{\\mathrm{dom}}^\\star = \\frac{k}{k+1}$$\n\nFor any $\\alpha < \\frac{k}{k+1}$, an $\\alpha$-dominating set of size $k$ exists with probability approaching $1$ as $m \\to \\infty$, whereas for any $\\alpha > \\frac{k}{k+1}$, the probability approaches $0$.\n\nANSWER: \\frac{k}{k+1}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "5e99d233-3ae6-4682-962e-0ba607379f62",
+    "status": "SUCCESS",
+    "duration_seconds": 288.56941,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9916,
+      "output_tokens": 32032,
+      "thinking_tokens": 31718,
+      "cache_read_tokens": 0,
+      "total_tokens": 41948
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

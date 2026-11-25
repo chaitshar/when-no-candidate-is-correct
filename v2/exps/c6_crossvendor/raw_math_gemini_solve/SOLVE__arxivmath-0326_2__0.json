@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_2__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:35:08Z",
+  "duration_s": 154.894,
+  "input_tokens": 9814,
+  "output_tokens": 17656,
+  "thinking_tokens": 16655,
+  "text": "To find the critical degree $d_c$, we analyze the $L^2$-mixing of the averaging process on a large random $d$-regular graph via its dual process on the infinite $d$-regular tree $\\mathbb{T}_d$. \n\nThe covariance evolution under the averaging process dual corresponds to an autonomous Markov chain tracking the distance $D_t \\in \\{0, 1, 2, \\dots\\}$ between two particles:\n- From state $0$: when an incident edge rings, the particles separate to distance $1$ at rate $d \\times \\frac{1}{2} = \\frac{d}{2}$.\n- From state $1$: the edge between the two particles rings, causing them to coalesce to distance $0$ at rate $1 \\times (\\frac{1}{4} + \\frac{1}{4}) = \\frac{1}{2}$, while any of the other $2(d-1)$ incident edges rings and moves one particle away to distance $2$ at rate $2(d-1) \\times \\frac{1}{2} = d-1$.\n- From state $k \\ge 2$: the particles jump closer to distance $k-1$ at rate $1$, and farther to distance $k+1$ at rate $d-1$.\n\nFor $k \\ge 2$, the generator acts as:\n$$(Lf)(k) = (f(k-1) - f(k)) + (d-1)(f(k+1) - f(k)).$$\n\nThe bottom of the continuous spectrum of this random walk on the tree corresponds to:\n$$\\lambda_0 = d - 2\\sqrt{d-1}.$$\n\nAt the spectral edge, an eigenmode $f(k)$ decays as $r^k$ with $r = \\frac{1}{\\sqrt{d-1}}$. For an isolated bound state (eigenvalue strictly below the continuous spectrum, $\\lambda < \\lambda_0$) to exist, there must be a localized eigenmode $f \\in L^2(\\pi)$ satisfying the boundary equations at $k=0$ and $k=1$:\n1. At $k=0$:\n   $$(Lf)(0) = \\frac{d}{2}(f(1) - f(0)) = -\\lambda f(0) \\implies \\frac{f(0)}{f(1)} = \\frac{d}{d - 2\\lambda}.$$\n2. At $k=1$:\n   $$(Lf)(1) = \\frac{1}{2}(f(0) - f(1)) + (d-1)(f(2) - f(1)) = -\\lambda f(1).$$\n   Combined with the characteristic equation $(d-1)r^2 - (d-\\lambda)r + 1 = 0$, this yields:\n   $$\\frac{f(0)}{f(1)} = \\frac{2}{r} - 1.$$\n\nAt the critical threshold $\\lambda = \\lambda_0$, setting $x = \\sqrt{d-1}$ (so $d = x^2 + 1$ and $r = 1/x$), we have:\n$$d - 2\\lambda_0 = 4x - (x^2 + 1), \\quad \\frac{2}{r} - 1 = 2x - 1.$$\n\nEquating the two expressions for $\\frac{f(0)}{f(1)}$:\n$$\\frac{x^2 + 1}{4x - x^2 - 1} = 2x - 1.$$\n\nCross-multiplying and simplifying gives:\n$$x^2 + 1 = (2x - 1)(4x - x^2 - 1) = -2x^3 + 9x^2 - 6x + 1,$$\nwhich rearranges to:\n$$2x^3 - 8x^2 + 6x = 2x(x - 1)(x - 3) = 0.$$\n\nFor regular graphs with $d \\ge 3$, $x = \\sqrt{d-1} > 1$. The non-trivial root is $x = 3$, which gives:\n$$d_c = x^2 + 1 = 3^2 + 1 = 10.$$\n\nFor $d \\le 10$, no bound state exists and the process mixes at the random walk rate with an $L^2$-cutoff, whereas for $d > 10$, a bound state emerges below the continuous spectrum, governing a slower mixing phase.\n\nANSWER: 10\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "fad02229-1e63-4c23-aeb1-8626fa437d06",
+    "status": "SUCCESS",
+    "duration_seconds": 147.060394,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9814,
+      "output_tokens": 17656,
+      "thinking_tokens": 16655,
+      "cache_read_tokens": 0,
+      "total_tokens": 27470
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__hmmt_feb_2026_30__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:05:31Z",
+  "duration_s": 73.823,
+  "input_tokens": 9761,
+  "output_tokens": 9209,
+  "thinking_tokens": 8099,
+  "text": "To find $BC$, we set up a coordinate system where line $BC$ lies on the $x$-axis.\n\nLet:\n- $B = (0, 0)$\n- $C = (a, 0)$, so $BC = a$\n- $A = (u, v)$\n\nThe side lengths $c = AB$ and $b = AC$ are given by:\n$$c^2 = u^2 + v^2$$\n$$b^2 = (u - a)^2 + v^2 = u^2 - 2au + a^2 + v^2$$\n\nAdding these two equations gives:\n$$b^2 + c^2 = 2(u^2 - au + v^2) + a^2 \\implies 2(u^2 - au + v^2) = b^2 + c^2 - a^2$$\n\nNext, we find the coordinates of the centroid $G$ and circumcenter $O$:\n- The centroid is $G = \\left(\\frac{u+a}{3}, \\frac{v}{3}\\right)$.\n- The circumcenter $O = (x_O, y_O)$ is equidistant from $B(0,0)$ and $C(a,0)$, so $x_O = \\frac{a}{2}$. Since $O$ is also equidistant from $B(0,0)$ and $A(u,v)$:\n  $$x_O^2 + y_O^2 = (u - x_O)^2 + (v - y_O)^2 \\implies 2v y_O = u^2 + v^2 - au$$\n\nLet $K = (x_K, y_K)$ be the orthocenter of $\\triangle AGO$. Since $K$ lies on the line $BC$, its $y$-coordinate is $y_K = 0$.\n\nBy the definition of the orthocenter:\n1. $OK \\perp AG \\implies (K - O) \\cdot (G - A) = 0$:\n   $$(x_K - x_O)(x_G - u) + (0 - y_O)(y_G - v) = 0$$\n   Substituting $x_G - u = \\frac{a - 2u}{3}$ and $y_G - v = -\\frac{2v}{3}$:\n   $$(x_K - x_O)(a - 2u) = -2v y_O = -(u^2 + v^2 - au)$$\n   With $x_O = \\frac{a}{2}$:\n   $$x_K(a - 2u) = \\frac{a^2}{2} - u^2 - v^2$$\n\n2. $AK \\perp GO \\implies (K - A) \\cdot (O - G) = 0$:\n   $$(x_K - u)(x_O - x_G) + (0 - v)(y_O - y_G) = 0$$\n   Since $x_O - x_G = \\frac{a - 2u}{6}$:\n   $$(x_K - u)\\frac{a - 2u}{6} = v(y_O - y_G)$$\n   $$\\frac{1}{6}\\left[x_K(a - 2u) - u(a - 2u)\\right] = v y_O - \\frac{v^2}{3}$$\n   $$\\frac{1}{6}\\left[\\frac{a^2}{2} - u^2 - v^2 - au + 2u^2\\right] = \\frac{u^2 + v^2 - au}{2} - \\frac{v^2}{3}$$\n   $$\\frac{a^2}{2} + u^2 - v^2 - au = 3u^2 - 3au + v^2$$\n   $$a^2 = 4(u^2 - au + v^2)$$\n\nSubstituting $2(u^2 - au + v^2) = b^2 + c^2 - a^2$ into this equation:\n$$a^2 = 2(b^2 + c^2 - a^2)$$\n$$3a^2 = 2(b^2 + c^2)$$\n$$a^2 = \\frac{2(b^2 + c^2)}{3}$$\n\nGiven $b = AC = 13$ and $c = AB = 11$:\n$$b^2 = 169, \\quad c^2 = 121 \\implies b^2 + c^2 = 290$$\n$$a^2 = \\frac{2 \\times 290}{3} = \\frac{580}{3}$$\n$$a = \\sqrt{\\frac{580}{3}} = \\frac{2\\sqrt{435}}{3}$$\n\nANSWER: \\frac{2\\sqrt{435}}{3}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "cfa77adb-d009-410a-b336-797b4a8020e8",
+    "status": "SUCCESS",
+    "duration_seconds": 66.238071,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9761,
+      "output_tokens": 9209,
+      "thinking_tokens": 8099,
+      "cache_read_tokens": 0,
+      "total_tokens": 18970
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

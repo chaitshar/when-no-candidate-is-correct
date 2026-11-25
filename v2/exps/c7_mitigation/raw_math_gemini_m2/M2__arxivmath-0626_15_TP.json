@@ -1,0 +1,29 @@
+{
+  "job_id": "M2__arxivmath-0626_15_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T22:46:40Z",
+  "duration_s": 47.689,
+  "input_tokens": 13540,
+  "output_tokens": 5459,
+  "thinking_tokens": 4191,
+  "text": "### Step 1: Independent Falsification of Each Solution\n\n- **Solution 1:**\n  - **Analysis:** Solution 1 does not provide a rigorous proof. It mentions various unrelated theorems and operators (Bernstein-Steinhardt, Konyuker, contraction properties), tests constant functions, and makes contradictory remarks (e.g., noting that disjoint characteristic functions give LHS = 0 if noise isn't considered properly, or asserting $T_\\rho(1) = \\rho$ which is false since $T_\\rho 1 = 1$). It guesses $c_{\\rho,n} = 1$ based on heuristic intuition.\n  - **Falsification:** For $n=1$, take $f = \\mathbb{1}_{\\{0\\}}$ and $g = \\mathbb{1}_{\\{1\\}}$. Then $\\langle f, T_\\rho g \\rangle = \\frac{1-\\rho}{4}$, whereas $\\|f*g\\|_2^2 = \\frac{1}{8}$. The ratio is $\\frac{(1-\\rho)/4}{1/8} = 2(1-\\rho)$. For $\\rho \\in (1/2, 1)$, $2(1-\\rho) < 1$. Thus $c_{\\rho,1} \\le 2(1-\\rho) < 1$, which falsifies $c_{\\rho,n} = 1$.\n  - **Verdict:** Falsified.\n\n- **Solution 2:**\n  - **Analysis:** Solution 2 relies on vague associations with noise sensitivity, Cheeger constants, and guesses an affine relationship $\\rho - 1/2$ (or references an unrelated IMO Shortlist problem). It asserts that the optimal constant is independent of $n$ and equals $\\rho - 1/2$.\n  - **Falsification:** The constant must depend on $n$ because for $f = \\mathbb{1}_{\\{0^n\\}}$ and $g = \\mathbb{1}_{\\{1^n\\}}$, the ratio is $(2(1-\\rho))^n$, which scales exponentially with $n$. Furthermore, for $n=1$, $2(1-\\rho) = 2 - 2\\rho \\neq \\rho - 1/2$ in general (e.g., at $\\rho = 3/4$, $2(1-\\rho) = 1/2$, while $\\rho - 1/2 = 1/4$).\n  - **Verdict:** Falsified.\n\n- **Solution 3:**\n  - **Analysis & Verification:**\n    1. **Upper bound / Extremal example:**\n       - Let $f = \\mathbb{1}_{\\{0^n\\}}$, $g = \\mathbb{1}_{\\{1^n\\}}$.\n       - $\\langle f, T_\\rho g \\rangle = 2^{-n} T_\\rho g(0^n) = 2^{-n} \\big(\\frac{1-\\rho}{2}\\big)^n = \\frac{(1-\\rho)^n}{4^n}$.\n       - $(f * g)(x) = \\mathbb{E}_y[f(y)g(x\\oplus y)] = 2^{-n} \\mathbb{1}_{\\{1^n\\}}(x)$, so $\\|f*g\\|_2^2 = 2^{-n} (2^{-n})^2 = 8^{-n}$.\n       - Ratio: $\\frac{4^{-n}(1-\\rho)^n}{8^{-n}} = \\big(2(1-\\rho)\\big)^n$. This establishes the upper bound $c_{\\rho,n} \\le \\big(2(1-\\rho)\\big)^n$.\n    2. **Induction step:**\n       - Base case $n=0$: $f, g \\in [0, 1]$, so $fg \\ge (fg)^2$ holds.\n       - Induction hypothesis: $\\langle f', T_\\rho g' \\rangle \\ge c^{n-1} \\|f'*g'\\|_2^2$ with $c = 2(1-\\rho)$.\n       - Splitting the last bit:\n         $$\\langle f, T_\\rho g \\rangle = \\frac{1+\\rho}{4}(N_{00} + N_{11}) + \\frac{1-\\rho}{4}(N_{01} + N_{10})$$\n         $$\\|f*g\\|_2^2 = \\frac{1}{8}\\sum_{a,b} P_{ab} + \\frac{1}{2}X, \\quad \\text{where } X = \\langle f_0 * g_0, f_1 * g_1 \\rangle = \\langle f_0 * g_1, f_1 * g_0 \\rangle$$\n       - Since $\\frac{c}{8} = \\frac{1-\\rho}{4}$, multiplying $\\|f*g\\|_2^2$ by $c \\cdot c^{n-1}$ cancels the $(P_{01} + P_{10})$ terms from the lower bound on $\\langle f, T_\\rho g \\rangle$.\n       - The remaining condition to show is:\n         $$\\frac{\\rho}{2}(P_{00} + P_{11}) \\ge (1-\\rho)X$$\n       - By Cauchy–Schwarz, $X \\le \\sqrt{P_{00}P_{11}} \\le \\frac{P_{00}+P_{11}}{2}$.\n       - Since $\\rho \\in (1/2, 1)$, $\\rho \\ge 1-\\rho$, which completes the proof.\n  - **Verdict:** Fully verified.\n\n---\n\n### Step 2: Calibrated Selection Gate\nSolution 3 is entirely correct, rigorous, and completely survives falsification.\n\nCHOICE: 3\nCONFIDENCE: 5\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "cfedebcb-e7f3-423d-a8e7-e65a624c7eaf",
+    "status": "SUCCESS",
+    "duration_seconds": 40.591205,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 13540,
+      "output_tokens": 5459,
+      "thinking_tokens": 4191,
+      "cache_read_tokens": 0,
+      "total_tokens": 18999
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

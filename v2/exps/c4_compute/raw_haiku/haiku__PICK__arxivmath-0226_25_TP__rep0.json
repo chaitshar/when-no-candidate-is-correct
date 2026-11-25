@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0226_25_TP__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:47:24Z",
+  "duration_s": 33.147,
+  "input_tokens": 2,
+  "output_tokens": 6992,
+  "thinking_tokens": 6304,
+  "text": "**Solution 2** has the best-supported answer, though I have not verified that its value is the true infimum.\n\n**Reduction.** $\\alpha(G)\\le 2$ means the complement $H=\\bar G$ is triangle-free, and 8-cliques in $G$ are independent 8-sets in $H$. For a blow-up of a triangle-free graph $H$ on $f$ vertices with equal parts, the limiting density of independent $k$-sets is $\\sum_s i_s\\, s!\\, S(k,s)/f^k$, where $i_s$ counts independent $s$-sets of $H$.\n\n**Solution 1 (C₅ blow-up, 51/15625 ≈ 0.00326).** The arithmetic checks out, but the construction is beaten. The Clebsch graph (16 vertices, 5-regular, triangle-free, $\\alpha=5$) has $i_1=16$, $i_2=80$, $i_3=160$, $i_4=120$, $i_5=16$. I checked $i_3$ and $i_4$ directly from the strongly regular parameters $(16,5,0,2)$. Its density is about 0.00183, which is smaller than 0.00326. So Solution 1 is not the minimum.\n\n**Solution 3 (two cliques, 1/128 ≈ 0.0078).** This is the bipartite complement, and it is also beaten by both C₅ and Clebsch. The claimed Zykov argument is therefore wrong, since it would force this construction to be the minimizer.\n\n**Solution 2 (Clebsch blow-up, 491411/268435456).** Its numerator is $16+80\\cdot254+160\\cdot5796+120\\cdot40824+16\\cdot126000 = 7\\,862\\,576$, and dividing by $16^8$ and reducing by 16 gives $491411/268435456$. The Stirling numbers and the counts are consistent with the check above. The claim that no other graph does better is asserted, not proved, so I cannot confirm global optimality. It is the only candidate here that beats the other two constructions.\n\nCHOICE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 31925,
+    "stop_reason": "end_turn",
+    "session_id": "4b9625dd-d2bc-4c15-b786-ddf9ed06b55b",
+    "total_cost_usd": 0.00521646,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8032,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 6992,
+      "output_tokens_details": {
+        "thinking_tokens": 6304
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8032,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 6992,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8032,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8032
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 6992,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8032,
+        "webSearchRequests": 0,
+        "costUSD": 0.00521646,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6304,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8032,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 29719,
+    "type": "result",
+    "duration_ms": 32418,
+    "uuid": "95cff516-9d72-4be6-bcb6-be8a130708fd",
+    "ttft_stream_ms": 1326,
+    "time_to_request_ms": 496,
+    "first_content_frame_ms": 1326,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

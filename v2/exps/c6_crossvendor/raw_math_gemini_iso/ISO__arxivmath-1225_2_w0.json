@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-1225_2_w0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T11:20:44Z",
+  "duration_s": 535.107,
+  "input_tokens": 12567,
+  "output_tokens": 53969,
+  "thinking_tokens": 53599,
+  "text": "To determine whether the final answer $c^* = \\frac{2}{5}$ is correct, let us analyze the problem:\n\n1. **Lower Bound ($c^* \\ge \\frac{2}{5}$):**\n   Consider the regular tournament $T_5$ on 5 vertices where each vertex has in-degree 2 and out-degree 2 (so $\\Delta(T_5) = 4$). \n   - $T_5$ contains five directed 3-cycles.\n   - Deleting any single vertex leaves a tournament on 4 vertices with score sequence $(2,2,1,1)$, which still contains a directed 3-cycle. Thus, $fvs(T_5) \\ge 2$.\n   - Deleting any 2 vertices that form an arc leaves a transitive tournament on 3 vertices, which is acyclic, so $fvs(T_5) = 2$.\n   - Taking $k$ disjoint copies of $T_5$ gives $n = 5k$ vertices and $fvs = 2k$, which establishes $c^* \\ge \\frac{2}{5}$.\n\n2. **Upper Bound ($c^* \\le \\frac{2}{5}$):**\n   Every oriented graph with maximum degree $\\Delta(D) \\le 4$ satisfies $fvs(D) \\le \\frac{2}{5}n$ (equivalently, contains an induced acyclic subgraph on at least $\\frac{3}{5}n$ vertices). The extremal graph achieving this ratio is $T_5$ (and disjoint unions thereof).\n\nThus, the exact value of the infimum is indeed $c^* = \\frac{2}{5}$.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "a41bbc00-d1d7-4d56-94f0-1965ea216c00",
+    "status": "SUCCESS",
+    "duration_seconds": 656.711829,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12567,
+      "output_tokens": 53969,
+      "thinking_tokens": 53599,
+      "cache_read_tokens": 8491,
+      "total_tokens": 66536
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

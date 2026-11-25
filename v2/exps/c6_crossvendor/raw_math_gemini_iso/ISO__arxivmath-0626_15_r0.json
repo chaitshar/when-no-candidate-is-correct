@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0626_15_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T11:01:05Z",
+  "duration_s": 51.577,
+  "input_tokens": 10691,
+  "output_tokens": 12004,
+  "thinking_tokens": 11768,
+  "text": "The proposed solution is correct. \n\n- **Upper bound**: Choosing $f = \\mathbb{1}_{\\{0^n\\}}$ and $g = \\mathbb{1}_{\\{1^n\\}}$ gives $\\langle f, T_\\rho g \\rangle = 4^{-n}(1-\\rho)^n$ and $\\|f * g\\|_2^2 = 8^{-n}$, whose ratio is exactly $(2(1-\\rho))^n$.\n- **Lower bound**: Induction on $n$ splits the Boolean cube along a coordinate into restrictions $f_0, f_1, g_0, g_1: \\{0,1\\}^{n-1} \\to [0,1]$. Expressing both $\\langle f, T_\\rho g \\rangle$ and $\\|f * g\\|_2^2$ in terms of the restricted quantities and applying the induction hypothesis reduces the inequality to $\\frac{\\rho}{2}(P_{00} + P_{11}) \\ge (1-\\rho)X$, which holds via Cauchy–Schwarz and $\\rho \\ge 1/2$.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "c2cdea69-179e-4cb5-b837-1ebe2f4d97b4",
+    "status": "SUCCESS",
+    "duration_seconds": 131.437207,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10691,
+      "output_tokens": 12004,
+      "thinking_tokens": 11768,
+      "cache_read_tokens": 0,
+      "total_tokens": 22695
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0526_38_TP__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T23:20:14Z",
+  "duration_s": 29.047,
+  "input_tokens": 2,
+  "output_tokens": 6150,
+  "thinking_tokens": 5707,
+  "text": "Solution 2 is wrong. Bracket-generating distributions have finite-dimensional symmetry algebras (Tanaka/Yamaguchi), so the answer cannot be ∞. Its example also fails: the left-invariant generators have coefficients depending on the group coordinates, so a vector field like a(y₁₂,y₁₃)∂_{y₁₂} + b(y₁₂,y₁₃)∂_{y₁₃} does not generally preserve D. Right-invariant fields are the only easy symmetries here, and they give just the 8-dimensional family.\n\nSolution 3 is unsupported. It is a recollection attempt that drifts, and it proposes B₃/P₁,₂ (dimension 21) without checking that the grading gives growth (3,6,8). Its model is also not a verified maximal symmetry for this growth.\n\nSolution 1 is the most substantive. It reduces the problem to symbols (pencils in sl(3)), identifies a candidate extreme symbol with an explicit realization, and computes the prolongation degree by degree to get 29. I could not verify the prolongation computation or the claim that this symbol is the maximal one, and I cannot rule out a value from the literature that differs. Still, its answer is the only one that survives the structural checks, so I lean toward it with low confidence.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 27987,
+    "stop_reason": "end_turn",
+    "session_id": "359cb5dc-ab12-4599-9244-4472f30e2663",
+    "total_cost_usd": 0.00487266,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8418,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 6150,
+      "output_tokens_details": {
+        "thinking_tokens": 5707
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8418,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 6150,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8418,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8418
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 6150,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8418,
+        "webSearchRequests": 0,
+        "costUSD": 0.00487266,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5707,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8418,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 26373,
+    "type": "result",
+    "duration_ms": 28198,
+    "uuid": "a881e362-bf82-4b34-a5ac-8cbd9203e24d",
+    "ttft_stream_ms": 1081,
+    "time_to_request_ms": 212,
+    "first_content_frame_ms": 1081,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

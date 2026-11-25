@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r0_gold",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:34Z",
+  "duration_s": 8.46,
+  "input_tokens": 2,
+  "output_tokens": 1364,
+  "thinking_tokens": 786,
+  "text": "The candidate matches the abstract's main focus but adds a conclusion the abstract does not support.\n\n**What matches:** The abstract says Part 1 focuses on dust sources, \"primarily supernovae and asymptotic giant branch stars,\" together with reprocessing in the interstellar medium through destruction and growth. It also lists secondary sources (Red Super Giants, Wolf-Rayet stars, Classical Novae, Type Ia supernovae, and quasar winds). The candidate's claim that multiple stellar sources, especially SNe and AGB stars, plus ISM growth drive dust formation and evolution is a fair summary of the review's scope.\n\n**What does not match:** The candidate says the combination \"can account for the observed dust masses in early galaxies.\" The abstract never states that conclusion. It describes the review as an overview of findings and of \"theoretical efforts to explain the observational results,\" and it says that the comparison with high-z observations, and the models interpreting them, are reserved for Part 2. Part 1 does \"discuss the comparison with observations,\" but the abstract gives no result from that comparison. The candidate's sufficiency claim is therefore an extrapolation the evidence does not establish.\n\n**Other considerations:** The study is a review rather than a paper that tests a single hypothesis. The candidate's core framing is consistent with the review's scope, so the question is mainly whether the sufficiency claim is central enough to reject the whole candidate. The abstract gives no support for it, and it is the part of the candidate that makes a substantive claim about the early universe.\n\nBecause the abstract's support covers the sources and reprocessing but not the claim that they account for observed high-z dust masses, I judge the candidate as not the hypothesis the evidence supports.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 7160,
+    "stop_reason": "end_turn",
+    "session_id": "034e98a3-e107-477b-a1e2-6a45649edacf",
+    "total_cost_usd": 0.00189426,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5491,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1364,
+      "output_tokens_details": {
+        "thinking_tokens": 786
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5491,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1364,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5491,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5491
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1364,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5491,
+        "webSearchRequests": 0,
+        "costUSD": 0.00189426,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 786,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5491,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4977,
+    "type": "result",
+    "duration_ms": 7525,
+    "uuid": "5a71cda9-e4f7-477e-b864-aebe535631d3",
+    "ttft_stream_ms": 1384,
+    "time_to_request_ms": 366,
+    "first_content_frame_ms": 1384,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

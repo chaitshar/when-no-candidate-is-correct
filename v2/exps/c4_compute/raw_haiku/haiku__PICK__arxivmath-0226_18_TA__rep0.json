@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0226_18_TA__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:45:00Z",
+  "duration_s": 10.209,
+  "input_tokens": 2,
+  "output_tokens": 1825,
+  "thinking_tokens": 1344,
+  "text": "**Checking the lower bound:** $K_4 \\subseteq K_5 - e$, so any graph with no blue $K_4$ also has no blue $K_5 - e$. Hence $R(K_5, K_5-e) \\ge R(K_5, K_4) = 25$. This is the one bound I can confirm.\n\n**Solution 1 (22):** This contradicts the bound above, since $R(K_5, K_5-e) \\ge 25 > 22$. Its claimed value is wrong.\n\n**Solution 2 (25):** The lower bound argument is valid. The upper bound, $R(K_5, K_5-e) \\le 25$, is only asserted (\"the extremal analysis confirms\"). The argument gives no proof, so the equality is unsupported. I can't check the literature value from memory, so I can't confirm that 25 is the exact answer.\n\n**Solution 3 (34):** It has the correct lower bound of 25 and the trivial upper bound of 48, but the jump to 34 rests on an unsourced \"computer-assisted verification\" with no argument or citation. The listed values are also questionable. For example, $R(K_4, K_5-e)$ is given as 22 here, which doesn't match the value Solution 1 cites (16). Nothing supports 34.\n\nNone of the three solutions establishes its final answer. Solution 2 gets the strongest partial argument, but its exact value is not demonstrated, and I can't verify it independently.\n\nCHOICE: NONE",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 9134,
+    "stop_reason": "end_turn",
+    "session_id": "54befbe5-7eb8-4667-a185-6733887b62e0",
+    "total_cost_usd": 0.00227816,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6258,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1825,
+      "output_tokens_details": {
+        "thinking_tokens": 1344
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6258,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1825,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6258,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6258
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1825,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6258,
+        "webSearchRequests": 0,
+        "costUSD": 0.00227816,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1344,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6258,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 7199,
+    "type": "result",
+    "duration_ms": 9542,
+    "uuid": "c3903583-eb10-47f4-b38a-b649da19b3fc",
+    "ttft_stream_ms": 1268,
+    "time_to_request_ms": 408,
+    "first_content_frame_ms": 1269,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

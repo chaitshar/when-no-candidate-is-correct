@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0326_17_r0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T10:29:17Z",
+  "duration_s": 11.408,
+  "input_tokens": 4829,
+  "output_tokens": 414,
+  "thinking_tokens": 0,
+  "text": "The solution correctly identifies that a random \\([n,k]\\) code is MDS iff none of the \\(\\binom{n}{k}\\) \\(k\\)-column subsets are linearly dependent. For each fixed subset the failure probability is asymptotically \\(1/q\\); with the scaling \\(\\frac1q\\binom{n}{k}\\to\\lambda\\) the expected number of “bad’’ subsets tends to \\(\\lambda\\). By the Poisson limit (Stein–Chen) the count of bad subsets converges in distribution to \\(\\mathrm{Poisson}(\\lambda)\\), so the probability of having none (i.e., the code being MDS) tends to \\(e^{-\\lambda}\\). The derivation and limit are sound, and the final answer matches the correct limiting probability.  \n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "dc415687-c181-42ab-ab1c-59535d64da26",
+    "status": "SUCCESS",
+    "duration_seconds": 3.447408,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 4829,
+      "output_tokens": 414,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 5243
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

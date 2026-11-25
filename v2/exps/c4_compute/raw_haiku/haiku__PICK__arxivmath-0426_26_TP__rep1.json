@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0426_26_TP__rep1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T23:06:55Z",
+  "duration_s": 24.394,
+  "input_tokens": 2,
+  "output_tokens": 5313,
+  "thinking_tokens": 4592,
+  "text": "**Solutions 2 and 3 have the correct final answer, and they agree.** Solution 1 is wrong because its sign analysis excludes the range $\\beta\\in(s-1,0]$.\n\n**Check of the sign of the constant.** For $u = c\\,x_n^\\beta$, $(-\\Delta)^s x_n^\\beta = \\lambda(s,\\beta)\\,x_n^{\\beta-2s}$ on $x_n>0$. The constant $\\lambda$ vanishes at $\\beta=s$ and $\\beta=s-1$, since $x_+^s$ and $x_+^{s-1}$ are $s$-harmonic on the half-line. At $\\beta=0$, $(-\\Delta)^s\\mathbf{1}_{\\{x_n>0\\}}(x) = C\\int_{y<0}|x-y|^{-1-2s}\\,dy > 0$, so $\\lambda(s,0)>0$. Hence $\\lambda>0$ on $(s-1,s)$, not just on $(0,s)$. Solution 1's claim that $\\lambda<0$ for $\\beta<0$ contradicts this.\n\n**Interval for $\\alpha$.** Matching exponents gives $\\beta=\\frac{\\alpha+2s}{1+\\gamma}$, and existence requires $\\beta\\in(s-1,s)$. Solving for $\\alpha$:\n- $A=(s-1)(1+\\gamma)-2s$\n- $B=s(\\gamma-1)$\n\n**Sum.**\n$$A+B = (sγ - s - 1 - γ) + (sγ - s) = 2sγ - 2s - γ - 1.$$\n\nSolution 3's form $(1+\\gamma)(2s-1)-4s$ expands to the same expression. Both reduce to $(-2,\\gamma-1)$ at $s=1$, and the $s=\\tfrac12$ check in Solution 2 is consistent with $\\beta\\cot(\\pi\\beta)$.\n\nThe sign argument is my own check rather than a citation of the classification result. I did not verify the exact interval against the published theorem, so this rests on the scaling argument and the sign analysis.\n\nCHOICE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 23301,
+    "stop_reason": "end_turn",
+    "session_id": "4e1269fa-3367-4989-9922-4928d65267f7",
+    "total_cost_usd": 0.0028520900000000003,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 19539,
+      "output_tokens": 5313,
+      "output_tokens_details": {
+        "thinking_tokens": 4592
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 5313,
+          "cache_read_input_tokens": 19539,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 5313,
+        "cacheReadInputTokens": 19539,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0028520900000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4592,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 0,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 20891,
+    "type": "result",
+    "duration_ms": 23514,
+    "uuid": "4ffecfae-c807-4b1c-b95f-2d3b4e4c1466",
+    "ttft_stream_ms": 987,
+    "time_to_request_ms": 211,
+    "first_content_frame_ms": 987,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

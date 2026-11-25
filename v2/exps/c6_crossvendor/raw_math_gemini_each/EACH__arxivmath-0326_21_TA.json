@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__arxivmath-0326_21_TA",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T17:27:41Z",
+  "duration_s": 359.895,
+  "input_tokens": 11330,
+  "output_tokens": 42262,
+  "thinking_tokens": 41357,
+  "text": "To determine whether each solution is correct, we analyze the behavior of the Cauchy combination test (CCT) statistic:\n$$T_K = \\frac{1}{K}\\sum_{i=1}^K g(Z_i), \\quad g(z) = \\tan\\left(\\pi\\left(\\Phi(z) - \\frac{1}{2}\\right)\\right)$$\nunder the one-factor equicorrelated Gaussian copula model $Z_i = \\sqrt{\\rho_K}\\, W + \\sqrt{1-\\rho_K}\\, \\varepsilon_i$, where $W, \\varepsilon_i \\overset{\\text{iid}}{\\sim} \\mathcal{N}(0,1)$.\n\n---\n\n### Analysis of the Asymptotic Exactness\n\n1. **Behavior of the Summands:**\n   For large $z$, $1 - \\Phi(z) \\sim \\frac{\\phi(z)}{z}$, so:\n   $$g(z) = \\cot(\\pi(1-\\Phi(z))) \\sim \\frac{1}{\\pi(1-\\Phi(z))} \\sim \\frac{z}{\\pi \\phi(z)}$$\n   and thus $g(z) z \\phi(z) \\sim \\frac{z^2}{\\pi}$.\n\n2. **Shift Conditional on the Latent Factor $W$:**\n   Conditioning on the common factor $W$, $Z_i$ has conditional density $f(z) = \\frac{1}{\\sqrt{1-\\rho_K}}\\phi\\left(\\frac{z - \\sqrt{\\rho_K}W}{\\sqrt{1-\\rho_K}}\\right)$. The odd part of this density is:\n   $$f_{\\text{odd}}(z) \\approx \\phi(z) \\cdot \\sqrt{\\rho_K}\\, W z$$\n   Because the individual terms $g(Z_i)$ in a sample of size $K$ reach the characteristic Gaussian extreme scale $M_K \\approx \\sqrt{2\\log K}$, the accumulated conditional mean shift of $T_K$ is dominated by the integral:\n   $$\\Delta_K(W) \\approx 2\\sqrt{\\rho_K}\\, W \\int_0^{M_K} g(z) z \\phi(z)\\, dz \\approx 2\\sqrt{\\rho_K}\\, W \\int_0^{\\sqrt{2\\log K}} \\frac{z^2}{\\pi}\\, dz = \\frac{4\\sqrt{2}}{3\\pi} W \\sqrt{\\rho_K (\\log K)^3}$$\n\n3. **Condition for Asymptotic Exactness:**\n   Under this shift, the conditional distribution of $T_K$ given $W$ converges to a shifted Cauchy distribution $\\text{Cauchy}(\\Delta_K(W), 1)$. For $T_K$ to converge unconditionally to the standard Cauchy distribution $\\text{Cauchy}(0,1)$ (which is required for the raw CCT to remain asymptotically exact at any fixed nominal level $\\alpha$), this shift must vanish in probability, which occurs if and only if:\n   $$\\rho_K (\\log K)^3 \\to 0$$\n   Hence, the sharp exponent is $c = 3$.\n\n---\n\n### Evaluation of the Solutions\n\n- **Solution 1:**\n  - Claims $c = 2$.\n  - Heuristically combines an order $\\sqrt{\\rho_K} \\log K$ bulk perturbation with an additional $\\log K$ factor to arrive at $\\rho_K (\\log K)^2$, which is both dimensionally inconsistent and yields an incorrect threshold.\n  - **Verdict:** Incorrect.\n\n- **Solution 2:**\n  - Claims $c = 1$.\n  - Uses a bivariate extreme-value inclusion–exclusion argument, which fails for Cauchy-type sums because the test statistic is not merely dominated by pairwise joint tail events.\n  - **Verdict:** Incorrect.\n\n- **Solution 3:**\n  - Claims $c = 3/4$.\n  - The reasoning is entirely speculative and conjectures an incorrect exponent.\n  - **Verdict:** Incorrect.\n\n---\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "76dfc419-25b0-4b25-a725-b31acb69735e",
+    "status": "SUCCESS",
+    "duration_seconds": 380.852716,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 11330,
+      "output_tokens": 42262,
+      "thinking_tokens": 41357,
+      "cache_read_tokens": 0,
+      "total_tokens": 53592
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

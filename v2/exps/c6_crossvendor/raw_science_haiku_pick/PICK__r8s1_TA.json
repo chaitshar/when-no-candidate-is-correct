@@ -1,0 +1,117 @@
+{
+  "job_id": "PICK__r8s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:03Z",
+  "duration_s": 14.319,
+  "input_tokens": 2,
+  "output_tokens": 2577,
+  "thinking_tokens": 1676,
+  "text": "**Hypothesis 1 (CRAP framework): not supported.** The abstract is a systematic review of published studies. It reports no predictive modelling, graph neural networks, Bayesian causal inference, or social capital indices such as the Neighborhood Social Cohesion Index. It is a descriptive synthesis, not a modelling framework.\n\n**Hypothesis 2 (primary care behavioural health integration): not supported.** The review does not mention primary care integration, collaborative care, shared EHRs, or referral pathways as determinants. Its only related finding is \"collaboration between organizations providing care,\" which is a different construct. The hypothesis also proposes an intervention trial with a 12-month follow-up, which a review of observational and other studies cannot test.\n\n**Hypothesis 3 (integrated ecological intervention model): partly overlaps, but not supported as stated.** Its multilevel structure resembles the review's organizational, community, and policy levels. Several of its components also match identified determinants: school-based screening, parity law, insurance coverage, and inter-organizational collaboration. However, the hypothesis is an intervention package with detailed programme specifications (weekly peer support, bi-weekly family therapy, a 500-participant pilot, and so on). The review provides no evidence on whether such interventions work. It also includes interpersonal-level components, which fall outside the review's contextual scope (\"beyond individual and family factors\"). The hypothesis is therefore a design proposal that the evidence cannot test.\n\n**Hypothesis 4 (geographic accessibility, neighbourhood SES, school-based services): the closest match.** The review reports positive associations for:\n- living in an area with high accessibility of mental health care, which partly matches H4's geographic accessibility;\n- living in an area with high socio-economic status, which matches H4's median household income and poverty rates;\n- having access to a school-based health centre, which partly matches H4's school-based services.\n\nSeveral elements of H4 are not supported by the abstract:\n- Distance to facilities and public transport availability are not named. \"High accessibility\" is a broader and different measure.\n- School-based *counselling and therapy programmes* are not the same as the school-based *health centres* the review identifies.\n- Spatial regression, survey and administrative data, and tailored policy recommendations are methods or aims the abstract does not describe.\n- The abstract gives no effect sizes or directions for poverty rates or public transport.\n\nEven so, H4 is the only hypothesis whose core claim, that specific contextual determinants predict mental health care utilisation in Western children and adolescents, is directly consistent with the review's positive findings. The support is partial. The review did not test H4 as stated, and only two of its three determinant categories match clearly.\n\nCHOICE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 13256,
+    "stop_reason": "end_turn",
+    "session_id": "4570506e-0c8d-4c36-9d98-96c6cfb81a52",
+    "total_cost_usd": 0.0030079599999999996,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8027,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2577,
+      "output_tokens_details": {
+        "thinking_tokens": 1676
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8027,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2577,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8027,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8027
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2577,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8027,
+        "webSearchRequests": 0,
+        "costUSD": 0.0030079599999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1676,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8027,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 9423,
+    "type": "result",
+    "duration_ms": 13448,
+    "uuid": "7bcd621a-1da5-4d4c-9e29-b1cfe14b7ed8",
+    "ttft_stream_ms": 1102,
+    "time_to_request_ms": 193,
+    "first_content_frame_ms": 1102,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

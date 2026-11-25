@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_15__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:47:00Z",
+  "duration_s": 394.715,
+  "input_tokens": 9774,
+  "output_tokens": 45336,
+  "thinking_tokens": 44329,
+  "text": "To find the minimal genus of a non-trivial curve $C$ on the product $A_1 \\times A_2$ of two very general abelian surfaces, we analyze the projections:\n\n1. **Projections to the factors:**\n   Let $p_1: C \\to A_1$ and $p_2: C \\to A_2$ be the two projections. By the non-triviality assumption, both are non-constant. \n   Let $C_1 = p_1(C) \\subset A_1$ and $C_2 = p_2(C) \\subset A_2$ be their images. By definition, $C \\subseteq C_1 \\times C_2 \\subset A_1 \\times A_2$.\n\n2. **Genera of $C_1$ and $C_2$:**\n   Since $A_1$ and $A_2$ are very general abelian surfaces, they are simple (contain no elliptic curves). Consequently, any curve on $A_1$ or $A_2$ must have geometric genus at least $2$. The minimal genus of a curve on a very general abelian surface is achieved by a smooth curve of genus $2$ (the theta divisor). Thus, to minimize the genus of $C$, we must have $g(C_1) = g(C_2) = 2$.\n\n3. **Degrees of the projections:**\n   Let $a = \\deg(C \\to C_1)$ and $b = \\deg(C \\to C_2)$. \n   If $a = 1$, then $C$ would be birational to $C_1$, which would induce a non-constant morphism from the normalization $\\widetilde{C_1}$ to $A_2$. By the universal property of the Jacobian, this would yield a non-trivial homomorphism from $J(\\widetilde{C_1})$ to $A_2$. Since $A_2$ is simple, $A_2$ would be a quotient of $J(\\widetilde{C_1})$. However, $C_1$ depends solely on $A_1$, while $A_2$ is an independent very general abelian surface, making any non-trivial homomorphism impossible. \n   Therefore, we must have $a \\ge 2$ and symmetrically $b \\ge 2$.\n\n4. **Class and genus of $C$ on $C_1 \\times C_2$:**\n   Since $\\operatorname{Hom}(A_1, A_2) = 0$, we have $\\operatorname{NS}(C_1 \\times C_2) \\cong \\mathbb{Z} F_1 \\oplus \\mathbb{Z} F_2$, where $F_1 = \\{p\\} \\times C_2$ and $F_2 = C_1 \\times \\{q\\}$. Thus, the class of $C$ on the product surface $S = C_1 \\times C_2$ is $[C] = a F_2 + b F_1$.\n   \n   Using the adjunction formula on $S$:\n   $$K_S = (2g(C_1) - 2) F_2 + (2g(C_2) - 2) F_1 = 2 F_2 + 2 F_1$$\n   $$C^2 = 2ab$$\n   $$C \\cdot K_S = 2a + 2b$$\n   \n   The arithmetic genus $p_a(C)$ is:\n   $$2 p_a(C) - 2 = C^2 + C \\cdot K_S = 2ab + 2a + 2b$$\n   $$p_a(C) = ab + a + b + 1 = (a + 1)(b + 1)$$\n\n   Since $a \\ge 2$ and $b \\ge 2$, the minimum is attained at $a = 2$ and $b = 2$:\n   $$p_a(C) \\ge (2 + 1)(2 + 1) = 9$$\n\n5. **Smoothness:**\n   For $a = 2$ and $b = 2$, the linear system is $|p_1^* K_{C_1} \\otimes p_2^* K_{C_2}|$. Since the canonical linear system on a curve of genus $2$ is base-point-free, the product linear system is also base-point-free. By Bertini's theorem, a general member $C$ is smooth and irreducible, achieving genus $g(C) = 9$.\n\nANSWER: 9\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "bd26d077-7c96-4342-882f-8459b90eb4bd",
+    "status": "SUCCESS",
+    "duration_seconds": 385.262897,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9774,
+      "output_tokens": 45336,
+      "thinking_tokens": 44329,
+      "cache_read_tokens": 0,
+      "total_tokens": 55110
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

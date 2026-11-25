@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__apex-shortlist_14_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T09:29:35Z",
+  "duration_s": 64.56,
+  "input_tokens": 10550,
+  "output_tokens": 6594,
+  "thinking_tokens": 6162,
+  "text": "An analysis of the problem and the proposed solution confirms the following:\n\n1. **Upper bound / Impossibility for $> 2n^2 - 2n$ edges:** \n   The complete graph $K_{2n}$ has $\\binom{2n}{2} = 2n^2 - n$ edges. Any graph with strictly more than $2n^2 - 2n$ edges has at most $n - 1$ non-edges. Since each non-edge is incident to at most $2$ vertices, at most $2n - 2$ vertices can be incident to a non-edge, guaranteeing the existence of at least two universal vertices (degree $2n - 1$). If a universal vertex $v$ exists, Bob can move to $v$ on his first turn (or catch Alice immediately if she moves there), after which Bob can reach any vertex Alice moves to on his next turn, ensuring a win for Bob.\n\n2. **Achievability for $2n^2 - 2n$ edges:** \n   In $K_{2n} - M$ (where $M$ is a perfect matching), the number of edges is $\\binom{2n}{2} - n = 2n^2 - 2n$. Alice's strategy of always moving to the unique non-neighbor (matching partner) $b^*$ of Bob's current vertex $b$ guarantees:\n   - Bob can never move to Alice's position because $b$ and $b^*$ are non-adjacent.\n   - Whenever Bob moves to an adjacent vertex $d \\in N(b)$, we have $d \\neq b$ (so $d^* \\neq b^*$) and $d \\neq b^*$ (so $d^* \\neq b$). Thus $d^*$ is adjacent to Alice's current position $b^*$, ensuring Alice always has a valid move to $d^*$.\n\nThe reasoning is correct and the final answer is $2n^2 - 2n$.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "25396435-c968-42d3-a876-1cb3d9c247ae",
+    "status": "SUCCESS",
+    "duration_seconds": 57.290391,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10550,
+      "output_tokens": 6594,
+      "thinking_tokens": 6162,
+      "cache_read_tokens": 0,
+      "total_tokens": 17144
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

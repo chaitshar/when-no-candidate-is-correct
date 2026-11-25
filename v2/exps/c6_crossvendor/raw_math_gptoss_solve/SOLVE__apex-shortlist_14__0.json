@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__apex-shortlist_14__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:33:26Z",
+  "duration_s": 26.669,
+  "input_tokens": 4529,
+  "output_tokens": 2602,
+  "thinking_tokens": 0,
+  "text": "The densest connected graph on \\(2n\\) vertices in which a single cop cannot guarantee capture (so Alice can evade forever) is obtained by taking the complete graph \\(K_{2n}\\) and deleting a perfect matching.  \nEach vertex then misses exactly one neighbour, giving every closed neighbourhood a unique missing vertex; consequently no vertex’s closed neighbourhood is contained in another’s, so the graph is not dismantlable and has cop‑number ≥ 2.  \n\nThe complete graph on \\(2n\\) vertices has \\(\\frac{2n(2n-1)}{2}=n(2n-1)\\) edges. Removing a perfect matching deletes exactly \\(n\\) edges, leaving  \n\n\\[\nn(2n-1)-n = n(2n-2)=2n(n-1)\n\\]\n\nedges.\n\nThus the maximum possible number of edges is  \n\n**ANSWER: \\(2n(n-1)\\)**\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "58469c41-ff6b-4ae2-ab2c-457c807f2e1b",
+    "status": "SUCCESS",
+    "duration_seconds": 18.888733,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 4529,
+      "output_tokens": 2602,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 3840,
+      "total_tokens": 7131
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

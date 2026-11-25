@@ -1,0 +1,117 @@
+{
+  "job_id": "PICK__r3s0_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:26:01Z",
+  "duration_s": 5.757,
+  "input_tokens": 2,
+  "output_tokens": 831,
+  "thinking_tokens": 329,
+  "text": "The abstract doesn't support any of the four hypotheses. It is a review of EV and exosome isolation and characterization. It outlines the strengths and limitations of conventional and microfluidic isolation methods, lists commercial kits, and assesses market demand. It reports no experiments.\n\n- **Hypothesis 1** requires acoustofluidics, a two-tiered deep learning framework, SPRi, whole-blood isolation, and metastatic-potential correlations. The abstract mentions none of these. It refers only to microfluidic methods in general.\n- **Hypothesis 2** is the closest in topic, since it concerns isolating and characterizing exosomes from biofluids. But the abstract never mentions SPRi, size-exclusion chromatography, antibody microarrays, or real-time detection. It also reports no integrated system, so nothing in it tests this combination.\n- **Hypothesis 3** requires CNNs with acoustofluidics for exosomal protein and nucleic acid characterization. The abstract mentions neither deep learning nor acoustofluidics, and reports no diagnostic accuracy results.\n- **Hypothesis 4** requires an adaptive CNN controlling SEC parameters, validated by simulation and existing datasets. None of this appears in the abstract.\n\nThe abstract's general themes (heterogeneity of EVs, limits of current isolation methods, the promise of microfluidics, and commercial kits) are background for all four hypotheses rather than evidence for any one of them.\n\nCHOICE: NONE",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4406,
+    "stop_reason": "end_turn",
+    "session_id": "f7b11abb-ab70-4cea-8d43-27790a86cbfd",
+    "total_cost_usd": 0.00177136,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6209,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 831,
+      "output_tokens_details": {
+        "thinking_tokens": 329
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6209,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 831,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6209,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6209
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 831,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6209,
+        "webSearchRequests": 0,
+        "costUSD": 0.00177136,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 329,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6209,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2410,
+    "type": "result",
+    "duration_ms": 4638,
+    "uuid": "0b8fd49f-6f37-4df6-945b-0695d59fe7f1",
+    "ttft_stream_ms": 1031,
+    "time_to_request_ms": 234,
+    "first_content_frame_ms": 1031,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

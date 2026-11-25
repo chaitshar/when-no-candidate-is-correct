@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0526_32__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T18:03:21Z",
+  "duration_s": 288.877,
+  "input_tokens": 9881,
+  "output_tokens": 32768,
+  "thinking_tokens": 32114,
+  "text": "To find the optimal (minimal) integer $m$ such that the condition \n$$d_m > \\binom{n-1}{k-1} - \\binom{n-s}{k-1}$$ \nguarantees that a $k$-uniform hypergraph $\\mathcal{F}$ on $n$ vertices contains a matching of size at least $s$ (for sufficiently large $n$), we analyze the extremal hypergraphs avoiding a matching of size $s$:\n\n1. **Lower Bound ($m \\ge 2s$):**\n   Consider the $k$-uniform hypergraph $\\mathcal{H}$ defined by choosing a vertex subset $S \\subset V$ of size $|S| = 2s - 1$, and taking all edges that intersect $S$ in at least $2$ vertices:\n   $$\\mathcal{H} = \\left\\{ e \\in \\binom{V}{k} : |e \\cap S| \\ge 2 \\right\\}.$$\n   - Since every edge in $\\mathcal{H}$ contains at least $2$ vertices of $S$, any matching of size $s$ would require at least $2s$ distinct vertices in $S$. However, $|S| = 2s - 1 < 2s$, so $\\mathcal{H}$ contains no matching of size $s$.\n   - For every vertex $v \\in S$, its degree is given by:\n     $$d(v) = \\binom{n-1}{k-1} - \\binom{n - (2s-1)}{k-1}.$$\n     Since $s \\ge 2$, we have $2s - 1 > s$, which implies:\n     $$d(v) > \\binom{n-1}{k-1} - \\binom{n-s}{k-1}.$$\n   - Thus, there are $|S| = 2s - 1$ vertices whose degrees strictly exceed the threshold $\\binom{n-1}{k-1} - \\binom{n-s}{k-1}$, while $\\mathcal{H}$ has no matching of size $s$.\n   - Consequently, $m$ must be strictly greater than $2s - 1$, meaning $m \\ge 2s$.\n\n2. **Upper Bound ($m \\le 2s$):**\n   By the degree-sequence stability of the Bollobás–Daykin–Erdős theorem for matchings in hypergraphs, for sufficiently large $n$, any $k$-uniform hypergraph without a matching of size $s$ can have at most $2s - 1$ vertices with degree exceeding $\\binom{n-1}{k-1} - \\binom{n-s}{k-1}$. Therefore, the condition $d_{2s} > \\binom{n-1}{k-1} - \\binom{n-s}{k-1}$ is sufficient to guarantee a matching of size at least $s$.\n\nThus, the optimal (minimal) integer $m$ is $2s$.\n\nANSWER: 2s\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "8c242d4e-57b4-46fb-b876-a280a6f11e88",
+    "status": "SUCCESS",
+    "duration_seconds": 280.641027,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9881,
+      "output_tokens": 32768,
+      "thinking_tokens": 32114,
+      "cache_read_tokens": 0,
+      "total_tokens": 42649
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

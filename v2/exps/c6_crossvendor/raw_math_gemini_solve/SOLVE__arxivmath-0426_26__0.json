@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_26__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:51:19Z",
+  "duration_s": 217.399,
+  "input_tokens": 9804,
+  "output_tokens": 22152,
+  "thinking_tokens": 21312,
+  "text": "To determine the interval $(A, B)$ of the parameter $\\alpha$ for which global positive solutions exist, we analyze the problem by symmetry and scaling:\n\n1. **Reduction to One Dimension:**\n   The domain $\\mathbb{R}^n_+ = \\{x \\in \\mathbb{R}^n : x_n > 0\\}$ and the equation $(-\\Delta)^s u = \\frac{x_n^\\alpha}{u^\\gamma}$ are invariant under translations parallel to the boundary $\\{x_n = 0\\}$. Since $\\gamma > 0$, the nonlinearity $f(x_n, u) = x_n^\\alpha u^{-\\gamma}$ is strictly decreasing in $u$. By the method of moving planes and the maximum principle, any positive solution is independent of the tangential variables $x' = (x_1, \\ldots, x_{n-1})$, reducing $u$ to a function of $x_n$ alone: $u(x) = u(x_n)$.\n   \n   Furthermore, the fractional Laplacian of a one-dimensional profile satisfies $(-\\Delta_{\\mathbb{R}^n})^s u(x_n) = (-\\Delta_{\\mathbb{R}})^s u(x_n)$, leading to the one-dimensional problem on the half-line:\n   $$(-\\Delta)^s u(t) = \\frac{t^\\alpha}{u(t)^\\gamma} \\quad \\text{for } t > 0, \\quad \\text{with } u(t) = 0 \\text{ for } t \\le 0.$$\n\n2. **Uniqueness and Homogeneity:**\n   Because the nonlinearity is strictly decreasing in $u$, any positive solution must be unique. The problem is invariant under the scaling transformation $u_\\lambda(t) = \\lambda^{-\\beta} u(\\lambda t)$ provided the exponent satisfies:\n   $$\\beta - 2s = \\alpha - \\gamma \\beta \\implies \\beta = \\frac{\\alpha + 2s}{\\gamma + 1}.$$\n   By uniqueness, the solution must be self-similar, and hence of the form $u(t) = c t_+^\\beta$ for some constant $c > 0$.\n\n3. **Admissible Range for $\\beta$:**\n   - The Dirichlet boundary condition $u(0^+) = 0$ requires $\\beta > 0$.\n   - For $u(t) = c t_+^\\beta$, the fractional Laplacian is given by $(-\\Delta)^s (t_+^\\beta) = c(\\beta, s) t_+^{\\beta - 2s}$.\n   - The function $t_+^s$ is the unique $s$-harmonic function on the half-line vanishing on the complement, so $c(s, s) = 0$.\n   - The coefficient $c(\\beta, s)$ is strictly positive if and only if $\\beta \\in (0, s)$ (for $\\beta > s$, $c(\\beta, s) < 0$, while for $\\beta \\ge 2s$, the fractional Laplacian fails to be well-defined).\n\n   Therefore, a global positive solution exists if and only if:\n   $$0 < \\beta < s.$$\n\n4. **Range for $\\alpha$:**\n   Substituting $\\beta = \\frac{\\alpha + 2s}{\\gamma + 1}$:\n   $$0 < \\frac{\\alpha + 2s}{\\gamma + 1} < s \\iff -2s < \\alpha < s(\\gamma - 1).$$\n\n   Thus, the interval is $(A, B) = (-2s, s(\\gamma - 1))$, giving:\n   $$A = -2s, \\quad B = s(\\gamma - 1).$$\n\n   Adding the two endpoints:\n   $$A + B = -2s + s(\\gamma - 1) = s(\\gamma - 3).$$\n\nANSWER: s(\\gamma - 3)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "0ecc69e3-1228-42ac-84ea-724ce5cea07b",
+    "status": "SUCCESS",
+    "duration_seconds": 210.044476,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9804,
+      "output_tokens": 22152,
+      "thinking_tokens": 21312,
+      "cache_read_tokens": 0,
+      "total_tokens": 31956
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

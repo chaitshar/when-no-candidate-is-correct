@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r5_gold",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:34Z",
+  "duration_s": 5.225,
+  "input_tokens": 2,
+  "output_tokens": 847,
+  "thinking_tokens": 467,
+  "text": "The candidate matches the study's main hypothesis. The abstract's first sentence states it directly: magnetite-(apatite) deposits form by crystallization of iron-rich ultrabasic melts generated mainly by silicate melts interacting with oxidized P-F-SO4-bearing sedimentary rocks. The rest of the abstract supports that mechanism. Assimilation during ascent separates Fe-rich, Si-Al-poor melts from silicate magma, and those melts coalesce, migrate, and emplace at various crustal depths.\n\nThe candidate says the same thing in fewer words. It leaves out some supporting detail: the P-F-SO4 composition of the sediments, the melt immiscibility and slag cap, the high-fO2 control on sulfide and Ti, and the hydrothermal aureole. None of that changes the core claim. The candidate's phrase \"separation of iron-rich melts that crystallize to form the deposits\" also fits the abstract's account of separation and fractional crystallization producing massive magnetite ore.\n\nI did not run any searches. The judgment rests only on the abstract you supplied.\n\nVERDICT: ACCEPT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4055,
+    "stop_reason": "end_turn",
+    "session_id": "d9a690cb-0dcc-4b09-854f-57a2407fdccc",
+    "total_cost_usd": 0.0016727600000000001,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5676,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 847,
+      "output_tokens_details": {
+        "thinking_tokens": 467
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5676,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 847,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5676,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5676
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 847,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5676,
+        "webSearchRequests": 0,
+        "costUSD": 0.0016727600000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 467,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5676,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2803,
+    "type": "result",
+    "duration_ms": 4319,
+    "uuid": "d949ab96-fb31-4e57-bc18-1b339f20c350",
+    "ttft_stream_ms": 1087,
+    "time_to_request_ms": 263,
+    "first_content_frame_ms": 1087,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

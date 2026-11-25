@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__arxivmath-0426_3_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T10:05:04Z",
+  "duration_s": 21.856,
+  "input_tokens": 2,
+  "output_tokens": 4495,
+  "thinking_tokens": 3839,
+  "text": "**Step 1: Falsification**\n\n**Solution 1 (d−3):** Falsified. It assumes the projection has the same embedding as C, but C_q lies in P^{d-2} and is not linearly normal. The index d−3 is Green's result for C itself, and the solution gives no argument that projection leaves it unchanged.\n\n**Solution 2 (d−4):** Not verified. The key steps are asserted rather than shown: that K_{d-3,2}(E,L;V) ≠ 0 because of a connecting map, and that the index drops by exactly one. The dimension count for surjectivity of V ⊗ H^0(L^n) → H^0(L^{n+1}) is also not connected to the Koszul groups that actually control the property. I could not confirm the claimed drop.\n\n**Solution 3 (⌈d/2⌉−3):** The upper bound is plausible. A general q lies on a secant variety Σ_k once k ≥ d/2, and the projected configuration gives a (p+2)-secant p-plane, which obstructs N_{2,p} by the EGHP restriction theorem. However:\n- The sharpness direction is hand-waved (\"one checks\", \"one verifies surjectivity e.g. by degenerating\"). That is where the answer actually needs proof.\n- Its own convention is inconsistent at d=5. An elliptic quintic in P^3 has no quadrics, so N_{2,0} fails, yet the solution reports index 0 and treats that as a valid value.\n- I cannot recall the literature value well enough to confirm or refute its exact formula. A nearby candidate, ⌊(d−1)/2⌋−1, differs from it by 1 for every d, so the boundary convention matters.\n\n**Step 2: Selection gate**\n\nNo solution survives falsification with confidence of 4 or higher. Each relies on unverified steps at the point that decides the answer, and I cannot check the literature here to settle it.\n\nCHOICE: NONE\nCONFIDENCE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 20439,
+    "stop_reason": "end_turn",
+    "session_id": "6da43be8-34ea-489b-adfc-3c0d9f4c59b9",
+    "total_cost_usd": 0.00390596,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7722,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 4495,
+      "output_tokens_details": {
+        "thinking_tokens": 3839
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7722,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 4495,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7722,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7722
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 4495,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7722,
+        "webSearchRequests": 0,
+        "costUSD": 0.00390596,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3839,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7722,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 18221,
+    "type": "result",
+    "duration_ms": 21180,
+    "uuid": "10cc3cb5-56f2-45a8-9693-d815d0e2581b",
+    "ttft_stream_ms": 1533,
+    "time_to_request_ms": 743,
+    "first_content_frame_ms": 1533,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

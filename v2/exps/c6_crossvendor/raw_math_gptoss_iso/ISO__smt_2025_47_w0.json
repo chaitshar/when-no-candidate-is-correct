@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__smt_2025_47_w0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T10:25:40Z",
+  "duration_s": 15.59,
+  "input_tokens": 4436,
+  "output_tokens": 1097,
+  "thinking_tokens": 0,
+  "text": "The equation can be rewritten as  \n\n\\[\n(y^2-36)(y^2-4)=44^{2^{2025}},\\qquad y=x+10 .\n\\]\n\nLet \\(z=y^2\\). Then  \n\n\\[\nz^2-40z+144=44^{2^{2025}} \\Longrightarrow \nz^2-40z+(144-44^{2^{2025}})=0 .\n\\]\n\nSolving this quadratic for \\(z\\):\n\n\\[\nz = 20 \\pm \\sqrt{44^{2^{2025}}+256}.\n\\]\n\nBecause \\(44^{2^{2025}}\\) is astronomically large,  \n\n\\[\n20-\\sqrt{44^{2^{2025}}+256}<0,\n\\]\n\nso the corresponding \\(y^2\\) is negative and gives no real \\(y\\).  \nThe only admissible value is  \n\n\\[\ny^2 = 20 + \\sqrt{44^{2^{2025}}+256}>0,\n\\]\n\nyielding two real solutions  \n\n\\[\ny = \\pm\\sqrt{20 + \\sqrt{44^{2^{2025}}+256}}.\n\\]\n\nReturning to \\(x = y-10\\),\n\n\\[\nx_1 = \\sqrt{20 + \\sqrt{44^{2^{2025}}+256}} - 10,\\qquad\nx_2 = -\\sqrt{20 + \\sqrt{44^{2^{2025}}+256}} - 10.\n\\]\n\nThe sum of the real roots is  \n\n\\[\nx_1 + x_2 = -20.\n\\]\n\nThus the proposed answer \\(0\\) is incorrect.  \n\nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "00a6c149-2fcd-4117-b4b8-0356859ea55e",
+    "status": "SUCCESS",
+    "duration_seconds": 6.921562,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 4436,
+      "output_tokens": 1097,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 5533
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

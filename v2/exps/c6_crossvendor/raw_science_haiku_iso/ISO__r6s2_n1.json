@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r6s2_n1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:05Z",
+  "duration_s": 6.114,
+  "input_tokens": 2,
+  "output_tokens": 943,
+  "thinking_tokens": 322,
+  "text": "The candidate is not the hypothesis this abstract supports. The abstract is a broad review of nanofluid MQL in machining. It makes no specific, testable claim matching the candidate's details.\n\n**What the abstract reports:**\n- Jatropha oil-based alumina nanofluids reduce the coefficient of friction by 85% versus dry conditions (friction and wear tests).\n- Alumina-based cutting fluid improves tool life by 177–230% in hard milling.\n- Carbon nanotube additions raise the convective heat transfer coefficient of normal saline by 145.06%.\n- It reviews nanofluid supply equipment and atomization mechanisms, and discusses performance in turning, milling, and grinding.\n\n**What the candidate requires and the abstract lacks:**\n- **Nanoparticle:** silicon dioxide. The abstract's specific nanoparticles are alumina and carbon nanotubes.\n- **Atomization method:** electrostatic atomization compared against pneumatic atomization. The abstract mentions atomization mechanisms under different boundary conditions, but does not name electrostatic atomization or a pneumatic comparison.\n- **Quantitative targets:** at least 30% friction reduction and 25% wear-rate reduction against traditional metal cutting fluids. The abstract's figures are 85% friction reduction versus dry conditions, not versus MCFs, and it reports no wear-rate reduction.\n- **Process and conditions:** turning at 100 m/min, with tool wear assessed by surface integrity measurements. The abstract mentions turning only in passing, with no cutting speed or surface integrity results.\n\nThe candidate combines specifics the review does not state. Its general theme (nanofluid MQL improves lubrication and tool performance) matches the abstract, but the abstract does not support the candidate as its hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5140,
+    "stop_reason": "end_turn",
+    "session_id": "77f16bc8-779a-4f8a-8b45-b2c925deb565",
+    "total_cost_usd": 0.0017439600000000001,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5792,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 943,
+      "output_tokens_details": {
+        "thinking_tokens": 322
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5792,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 943,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5792,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5792
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 943,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5792,
+        "webSearchRequests": 0,
+        "costUSD": 0.0017439600000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 322,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5792,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2848,
+    "type": "result",
+    "duration_ms": 5375,
+    "uuid": "63875d4c-5ff5-43e1-9b8b-1796e8367f29",
+    "ttft_stream_ms": 1562,
+    "time_to_request_ms": 237,
+    "first_content_frame_ms": 1563,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

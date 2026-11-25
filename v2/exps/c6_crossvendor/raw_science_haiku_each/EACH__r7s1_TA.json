@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r7s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:24Z",
+  "duration_s": 7.145,
+  "input_tokens": 2,
+  "output_tokens": 1263,
+  "thinking_tokens": 584,
+  "text": "None of the four hypotheses is supported by this study's evidence. Each one rests on variables or mechanisms the abstract does not report.\n\nThe study's direct findings are: electricity consumption and real GDP increase EF, trade and urbanization reduce it, and spectral Granger tests show only urbanization and life expectancy affect EF across the frequency domain. Those results are quantile-regression and spectral-causality results, not moderation or mediation analyses.\n\n**Hypothesis 1** is rejected. It proposes an SEM with technological innovation (R&D share, renewable adoption growth) as a moderator, and urbanization attenuating the GDP and electricity effects. The study has no technology-innovation variable, no SEM, and no interaction terms. Its urbanization result is a direct negative effect on EF, not a moderating effect on GDP or electricity.\n\n**Hypothesis 2** is rejected. It depends on renewable energy share, urban compactness (dwelling density, sprawl indices), a threshold in urban form, and three historical sub-periods. None of these appear in the study. The abstract also does not report any renewable-energy variable or any threshold or period-specific analysis.\n\n**Hypothesis 3** is rejected. It relies on human capital (educational attainment, skill indices) moderating electricity and GDP effects. The study uses life expectancy, not education, and it reports no interaction between human capital or urbanization and the energy and growth variables.\n\n**Hypothesis 4** is rejected. It proposes that trade openness mediates the effect of renewable energy on EF, with a non-linear threshold. The study has no renewable-energy variable and no mediation analysis. Its trade result is a direct negative association with EF, which is the opposite of the amplification the hypothesis describes.\n\nThe abstract is only a summary, so a full-text check could in principle reveal additional analyses. Based on the evidence provided, though, I reject all four.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6169,
+    "stop_reason": "end_turn",
+    "session_id": "87574790-7a2c-4313-9aa7-cea990a535ae",
+    "total_cost_usd": 0.00203796,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6462,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1263,
+      "output_tokens_details": {
+        "thinking_tokens": 584
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6462,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1263,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6462,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6462
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1263,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6462,
+        "webSearchRequests": 0,
+        "costUSD": 0.00203796,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 584,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6462,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3727,
+    "type": "result",
+    "duration_ms": 6427,
+    "uuid": "fcfd22f4-e09d-4fc0-9d4b-a26f3f2740f3",
+    "ttft_stream_ms": 1277,
+    "time_to_request_ms": 257,
+    "first_content_frame_ms": 1277,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

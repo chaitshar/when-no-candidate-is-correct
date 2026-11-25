@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_21__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:39:14Z",
+  "duration_s": 282.338,
+  "input_tokens": 9820,
+  "output_tokens": 33159,
+  "thinking_tokens": 32281,
+  "text": "To determine the exponent $c$ such that the raw Cauchy combination test (CCT) is asymptotically exact at a fixed nominal level $\\alpha \\in (0, 1/2)$, we analyze the asymptotic distribution of the test statistic under the canonical one-factor equicorrelated Gaussian copula model.\n\nLet $Z_k = \\sqrt{\\rho_K} Z_0 + \\sqrt{1 - \\rho_K} \\epsilon_k$ for $k = 1, \\dots, K$, where $Z_0, \\epsilon_1, \\dots, \\epsilon_K \\stackrel{iid}{\\sim} N(0, 1)$. Under the Gaussian copula null model, the $p$-values are given by $p_k = 1 - \\Phi(Z_k) \\sim U(0, 1)$, and the CCT statistic is:\n$$T_K = \\frac{1}{K} \\sum_{k=1}^K \\tan\\left(\\left(\\frac{1}{2} - p_k\\right)\\pi\\right) = -\\frac{1}{K} \\sum_{k=1}^K \\cot(\\pi \\Phi(Z_k)).$$\n\nConditional on the latent factor $Z_0$, the summands $X_k = -\\cot(\\pi \\Phi(Z_k))$ are independent and identically distributed. As $u \\to 0$, we have $-\\Phi^{-1}(u) \\approx \\sqrt{2\\log(1/u)}$ and $\\cot(\\pi u) \\approx \\frac{1}{\\pi u}$. Expanding the conditional density $f(u \\mid Z_0)$ of $U_k = \\Phi(Z_k)$ around $\\rho_K = 0$ yields a leading-order perturbation:\n$$f(u \\mid Z_0) - 1 \\approx -\\sqrt{\\rho_K} Z_0 \\Phi^{-1}(u).$$\n\nThe conditional characteristic function of $X_1$ at $s = t/K$ satisfies:\n$$\\mathbb{E}\\left[e^{i s X_1} \\mid Z_0\\right] - e^{-|s|} \\approx -i \\sqrt{\\rho_K} Z_0 \\int_0^1 \\sin(s \\cot(\\pi u)) \\Phi^{-1}(u) \\, du.$$\n\nSplitting the integral and using the asymptotic behavior of $\\Phi^{-1}(u)$ near the tails $u \\to 0$ and $u \\to 1$:\n$$\\int_0^{1/2} \\sin\\left(\\frac{s}{\\pi u}\\right) \\sqrt{2\\log(1/u)} \\, du \\approx \\frac{s}{\\pi} \\int_{s/\\pi}^{1/2} \\frac{\\sqrt{2\\log(1/u)}}{u} \\, du \\approx \\frac{2\\sqrt{2}}{3\\pi} s \\left(\\log(1/s)\\right)^{3/2}.$$\n\nSetting $s = t/K$, the conditional sum $T_K$ experiences a random Cauchy location shift driven by $Z_0$:\n$$\\mu_{\\text{eff}} \\approx Z_0 \\cdot \\frac{4\\sqrt{2}}{3\\pi} \\sqrt{\\rho_K} (\\log K)^{3/2}.$$\n\nConditional on $Z_0$, $T_K \\xrightarrow{d} \\text{Cauchy}(\\mu_{\\text{eff}}, 1)$. Integrating over $Z_0 \\sim N(0, 1)$, the characteristic function of $T_K$ converges to that of a standard Cauchy distribution if and only if $\\text{Var}(\\mu_{\\text{eff}}) \\to 0$. Since\n$$\\text{Var}(\\mu_{\\text{eff}}) \\propto \\rho_K (\\log K)^3,$$\nthe raw CCT is asymptotically exact at nominal level $\\alpha \\in (0, 1/2)$ if and only if $\\rho_K (\\log K)^3 \\to 0$.\n\nANSWER: 3\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "758d6358-e6d4-4f29-a280-f6053a44a7e5",
+    "status": "SUCCESS",
+    "duration_seconds": 274.286548,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9820,
+      "output_tokens": 33159,
+      "thinking_tokens": 32281,
+      "cache_read_tokens": 0,
+      "total_tokens": 42979
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

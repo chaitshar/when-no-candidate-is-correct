@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r8s1_n2",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:28Z",
+  "duration_s": 5.54,
+  "input_tokens": 2,
+  "output_tokens": 688,
+  "thinking_tokens": 185,
+  "text": "The candidate is not the study's hypothesis, so I reject it. The abstract describes a systematic review, not a predictive modeling framework. Its aim is to summarize the evidence on contextual determinants of children's and adolescents' mental health care utilization, using 74 included studies from a search run in August 2021. Its main output is a list of ten determinants that policymakers and care providers can influence, grouped into organizational, community, public policy and macro-environmental levels.\n\nThe candidate proposes something the abstract never mentions: graph convolutional neural networks, Bayesian causal inference, spatio-temporal regression with adaptive learning, and weighted ensemble machine learning. It also names social capital metrics such as a Neighborhood Social Cohesion Index and a Collective Efficacy Score. None of these appear in the abstract. The review's determinants are school-based health centers, region of residence, urban living, accessibility of care, neighborhood socio-economic status, mental health parity laws, screening programs, fee-for-service plans versus managed care, insurance coverage extensions, and inter-organizational collaboration. The abstract does not mention social cohesion or collective efficacy among the ten.\n\nThe abstract also reports no predictive model, no validation, and no computational method. The review's stated purpose is summarizing existing evidence, and the candidate's proposal to build a new predictive system goes beyond what the study supports. The candidate may be a plausible idea in its own right, but the evidence does not support it as this study's hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 3851,
+    "stop_reason": "end_turn",
+    "session_id": "dd0f9584-e565-4ece-b4c5-065a05ebf1da",
+    "total_cost_usd": 0.0016036599999999998,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5728,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 688,
+      "output_tokens_details": {
+        "thinking_tokens": 185
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5728,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 688,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5728,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5728
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 688,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5728,
+        "webSearchRequests": 0,
+        "costUSD": 0.0016036599999999998,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 185,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5728,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2173,
+    "type": "result",
+    "duration_ms": 4298,
+    "uuid": "acf69f02-d0b6-4335-ad88-1795db1e1cb4",
+    "ttft_stream_ms": 1422,
+    "time_to_request_ms": 445,
+    "first_content_frame_ms": 1422,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__apex-shortlist_14_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T11:38:10Z",
+  "duration_s": 52.145,
+  "input_tokens": 11694,
+  "output_tokens": 5399,
+  "thinking_tokens": 4703,
+  "text": "To determine the correctness of each solution, let us analyze the game on a connected graph $G$ with $2n$ vertices ($n > 1$):\n\n1. **Upper Bound:**\n   - The total number of edges in the complete graph $K_{2n}$ is $\\binom{2n}{2} = 2n^2 - n$.\n   - If a graph has more than $2n^2 - 2n$ edges, the number of non-edges is at most $n - 1$.\n   - Since each non-edge is incident to at most 2 vertices, at most $2(n - 1) = 2n - 2$ vertices are incident to a non-edge.\n   - Therefore, at least $2n - (2n - 2) = 2$ vertices have degree $2n - 1$ (i.e., they are universal vertices connected to all other vertices).\n   - If a graph has a universal vertex $v$, Bob has an unbeatable winning strategy:\n     - If Bob does not start at $v$, Alice must move to some vertex $a'$. If $a' = v$, Bob moves to $v$ and catches her immediately. If $a' \\neq v$, Bob moves to $v$ on his first turn (which is valid because $v$ is adjacent to Bob's starting vertex).\n     - Then Alice must make a move from $a'$ to some neighbor $a''$.\n     - Since $v$ is adjacent to every vertex, Bob can move from $v$ directly to $a''$, catching Alice.\n   - Hence, Alice cannot evade Bob on any graph with more than $2n^2 - 2n$ edges.\n\n2. **Achievability:**\n   - Consider the graph $G = K_{2n} - M$, where $M$ is a perfect matching, containing $\\binom{2n}{2} - n = 2n^2 - 2n$ edges.\n   - Every vertex $v$ has a unique non-neighbor $v^*$ (its matching partner).\n   - Alice can choose starting positions where Bob is at $b$ and Alice is at a neighbor of $b^*$. On her turn, Alice moves to $b^*$. \n   - On Bob's turn, Bob must move to a neighbor $d \\in N(b)$. Since $b^*$ is not adjacent to $b$, $d \\neq b^*$.\n   - On Alice's subsequent turn, because $d$ is a neighbor of $b$, $d^*$ is adjacent to $b^*$, allowing Alice to safely move to $d^*$.\n   - Alice can maintain this invariant indefinitely, so she evades Bob forever.\n\nThus, the maximum possible number of edges is indeed $2n^2 - 2n$.\n\n- **Solution 1** concludes with $n^2$, which is incorrect.\n- **Solution 2** concludes with $n(2n-1)$, which is incorrect.\n- **Solution 3** concludes with $2n^2 - 2n$, which is correct.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "92bfff1f-159d-4449-a128-993b71e64bca",
+    "status": "SUCCESS",
+    "duration_seconds": 44.338488,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 11694,
+      "output_tokens": 5399,
+      "thinking_tokens": 4703,
+      "cache_read_tokens": 0,
+      "total_tokens": 17093
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

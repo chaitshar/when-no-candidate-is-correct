@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_14__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:40:26Z",
+  "duration_s": 55.676,
+  "input_tokens": 9859,
+  "output_tokens": 6127,
+  "thinking_tokens": 5456,
+  "text": "To find the order $\\beta$ of the Rényi entropy $H_\\beta(X)$ to which Sibson's $\\alpha$-mutual information $I_\\alpha(X; Y)$ converges as $\\mathsf{snr} \\to \\infty$, we recall the definition of Sibson's $\\alpha$-mutual information:\n$$I_\\alpha(X; Y) = \\min_{Q_Y} D_\\alpha(P_{XY} \\| P_X \\otimes Q_Y) = \\frac{\\alpha}{\\alpha-1} \\log \\int \\left( \\sum_x P(x) p(y|x)^\\alpha \\right)^{1/\\alpha} dy$$\n\nFor the additive Gaussian channel $Y = \\sqrt{\\mathsf{snr}} X + Z$ with $Z \\sim \\mathcal{N}(0, 1)$, the transition density is:\n$$p(y|x) = \\frac{1}{\\sqrt{2\\pi}} \\exp\\left( -\\frac{(y - \\sqrt{\\mathsf{snr}} x)^2}{2} \\right)$$\nso that\n$$p(y|x)^\\alpha = (2\\pi)^{-\\alpha/2} \\exp\\left( -\\frac{\\alpha(y - \\sqrt{\\mathsf{snr}} x)^2}{2} \\right)$$\n\nAs $\\mathsf{snr} \\to \\infty$, the points $\\sqrt{\\mathsf{snr}} x$ become well-separated. In the neighborhood of each $y \\approx \\sqrt{\\mathsf{snr}} x$, the sum $\\sum_{x'} P(x') p(y|x')^\\alpha$ is dominated by the single term $x' = x$. Taking the $1/\\alpha$ power gives:\n$$\\left( \\sum_x P(x) p(y|x)^\\alpha \\right)^{1/\\alpha} \\approx \\sum_x P(x)^{1/\\alpha} \\frac{1}{\\sqrt{2\\pi}} \\exp\\left( -\\frac{(y - \\sqrt{\\mathsf{snr}} x)^2}{2} \\right)$$\n\nIntegrating over $y \\in \\mathbb{R}$, each Gaussian component integrates to $1$, yielding:\n$$\\lim_{\\mathsf{snr} \\to \\infty} \\int \\left( \\sum_x P(x) p(y|x)^\\alpha \\right)^{1/\\alpha} dy = \\sum_x P(x)^{1/\\alpha}$$\n\nThus,\n$$\\lim_{\\mathsf{snr} \\to \\infty} I_\\alpha(X; Y) = \\frac{\\alpha}{\\alpha-1} \\log \\sum_x P(x)^{1/\\alpha} = \\frac{1}{1 - 1/\\alpha} \\log \\sum_x P(x)^{1/\\alpha}$$\n\nComparing this with the definition of the Rényi entropy of order $\\beta$,\n$$H_\\beta(X) = \\frac{1}{1-\\beta} \\log \\sum_x P(x)^\\beta$$\nwe identify $\\beta = \\frac{1}{\\alpha}$.\n\nANSWER: 1/\\alpha\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "48fcbbee-546e-4633-9b36-eb5433b6df89",
+    "status": "SUCCESS",
+    "duration_seconds": 48.089594,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9859,
+      "output_tokens": 6127,
+      "thinking_tokens": 5456,
+      "cache_read_tokens": 0,
+      "total_tokens": 15986
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

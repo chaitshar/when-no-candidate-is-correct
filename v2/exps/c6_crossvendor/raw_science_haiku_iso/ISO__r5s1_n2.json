@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r5s1_n2",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:42Z",
+  "duration_s": 8.067,
+  "input_tokens": 2,
+  "output_tokens": 1477,
+  "thinking_tokens": 739,
+  "text": "The candidate captures part of the study's hypothesis but misstates its mechanism and adds specifics the abstract does not support.\n\n**What the abstract supports:**\n- Magnetite-(apatite) deposits form by crystallization of iron-rich ultrabasic melts.\n- Those melts are generated when silicate melts interact with oxidized P-F-SO4-bearing sedimentary rocks.\n- Assimilation during ascent separates Fe-rich, Si-Al-poor melts from a silicate magma. These melts then coalesce, migrate, and emplace at varying crustal depths.\n- Fractional crystallization at neutral buoyancy causes melt immiscibility, which separates massive magnetite overlain by a phosphate- and silicate-bearing \"slag\" cap.\n- Downstream effects include high fO2, low-Ti magnetite, and exsolved magmatic-hydrothermal fluids that form alteration aureoles.\n\n**Where the candidate departs from the evidence:**\n1. **Direction of sedimentary interaction.** The abstract says silicate melts interact with the sedimentary rocks to generate the Fe-rich melt. The candidate says Fe-rich immiscible melts interact with the sedimentary rocks. That reverses the study's proposed sequence.\n2. **Unsupported numeric conditions.** The abstract gives no temperature (±800–1000 °C) or pressure (±300–500 MPa) range for the process.\n3. **Pb isotope method.** The abstract cites stable and radiogenic isotope geochemistry generally. It does not mention Pb isotope ratios, melt inclusions as a test, or \"distinct isotopic signatures\" as a driver. The candidate's analytical plan reads as a new proposal rather than the study's hypothesis.\n4. **\"Primarily driven by.\"** The study's core claim is crystallization and immiscibility of ultrabasic Fe-rich melts, with sedimentary interaction as the source of those melts. The candidate's framing does not match that emphasis.\n\nThe candidate overlaps with the study on Fe-rich melts and sedimentary rocks, but its mechanism is inverted and its specifics go beyond the evidence.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6982,
+    "stop_reason": "end_turn",
+    "session_id": "4bf47210-ede2-4d70-a18c-17f1703c569b",
+    "total_cost_usd": 0.00201176,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5796,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1477,
+      "output_tokens_details": {
+        "thinking_tokens": 739
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5796,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1477,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5796,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5796
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1477,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5796,
+        "webSearchRequests": 0,
+        "costUSD": 0.00201176,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 739,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5796,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4402,
+    "type": "result",
+    "duration_ms": 7390,
+    "uuid": "aa9070d3-629c-46f6-8f1f-2b2f4dfdcb4e",
+    "ttft_stream_ms": 1308,
+    "time_to_request_ms": 405,
+    "first_content_frame_ms": 1308,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

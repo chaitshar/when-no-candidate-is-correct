@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_20__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:34:31Z",
+  "duration_s": 64.959,
+  "input_tokens": 9773,
+  "output_tokens": 6879,
+  "thinking_tokens": 6043,
+  "text": "To find the sharp lower bound on $b_1(\\tilde{M})$, let $G = \\mathrm{Gal}(\\tilde{M}/M) = \\pi_1(M)/\\pi_1(\\tilde{M})$ be the finite deck transformation group of the regular covering $\\tilde{M} \\to M$.\n\n1. **Perfectness of the group:**\n   Since $M$ is an integral homology 3-sphere, its first homology group vanishes: $H_1(M; \\mathbb{Z}) \\cong \\pi_1(M)^{\\text{ab}} = 0$. Consequently, $\\pi_1(M)$ has no non-trivial abelian quotients, meaning any quotient of $\\pi_1(M)$, including $G$ and any of its quotient groups, must be perfect (i.e., its abelianization is trivial).\n\n2. **Action on homology:**\n   The deck transformation group $G$ acts on the vector space $V = H_1(\\tilde{M}; \\mathbb{Q})$ by orientation-preserving homeomorphisms. This defines a linear representation:\n   $$\\rho: G \\to \\mathrm{GL}(V) \\cong \\mathrm{GL}_k(\\mathbb{Q}), \\quad \\text{where } k = b_1(\\tilde{M}).$$\n   By the transfer property for finite group actions, the space of $G$-invariants satisfies:\n   $$V^G \\cong H_1(M; \\mathbb{Q}) = 0.$$\n   Since $b_1(\\tilde{M}) > 0$, the representation $\\rho(G)$ cannot be the trivial group, because otherwise $V^G = V \\ne 0$. Thus, the image $\\rho(G)$ is a non-trivial finite perfect subgroup of $\\mathrm{GL}_k(\\mathbb{Q})$.\n\n3. **Constraints on the dimension $k$:**\n   - For any finite subgroup $H \\le \\mathrm{GL}_k(\\mathbb{Q})$, the order of any element $g \\in H$ of prime order $p$ requires the cyclotomic polynomial $\\Phi_p(x)$ (which has degree $p - 1$) to divide the characteristic polynomial of $g$. Thus, $p - 1 \\le k$.\n   - If $k \\le 3$, then $p - 1 \\le 3 \\implies p \\in \\{2, 3\\}$. By Cauchy's theorem, the only primes dividing $|H|$ are 2 and 3. By Burnside's $p^a q^b$ theorem, any such group $H$ is solvable.\n   - Since the only perfect subgroup of a solvable group is the trivial group, any finite perfect subgroup of $\\mathrm{GL}_k(\\mathbb{Q})$ for $k \\le 3$ must be trivial.\n   - Consequently, for $k \\in \\{1, 2, 3\\}$, the image $\\rho(G)$ must be trivial, contradicting $V^G = 0$.\n\n4. **Attainability for $k = 4$:**\n   For $k = 4$, non-solvable finite groups do embed in $\\mathrm{GL}_4(\\mathbb{Q})$. Specifically, the alternating group $A_5$ (which is simple and perfect) acts faithfully on the standard 4-dimensional irreducible rational representation $V = \\{(x_1, \\dots, x_5) \\in \\mathbb{Q}^5 \\mid \\sum x_i = 0\\}$. By choosing an aspherical homology 3-sphere whose fundamental group surjects onto $A_5$ (which can be realized, for example, by Dehn surgery on hyperbolic knots), the corresponding regular cover achieves $b_1(\\tilde{M}) = 4$.\n\nThus, the sharp lower bound on $b_1(\\tilde{M})$ is 4.\n\nANSWER: 4\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "c38fa4a2-ecb3-481e-a48c-dfba509aa18c",
+    "status": "SUCCESS",
+    "duration_seconds": 57.573101,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9773,
+      "output_tokens": 6879,
+      "thinking_tokens": 6043,
+      "cache_read_tokens": 0,
+      "total_tokens": 16652
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__hmmt_feb_2026_30__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:05:58Z",
+  "duration_s": 86.288,
+  "input_tokens": 9757,
+  "output_tokens": 10565,
+  "thinking_tokens": 9482,
+  "text": "To find $BC$, let the circumcenter $O$ of triangle $ABC$ be the origin in the plane, so that $|\\vec{A}| = |\\vec{B}| = |\\vec{C}| = R$, where $R$ is the circumradius.\n\nThe centroid $G$ of triangle $ABC$ is given by:\n$$\\vec{G} = \\frac{\\vec{A} + \\vec{B} + \\vec{C}}{3} \\implies \\vec{B} + \\vec{C} = 3\\vec{G} - \\vec{A}$$\n\nLet $K$ be the orthocenter of triangle $AGO$. Since $O$ is the origin, the vertices of triangle $AGO$ are $\\vec{A}$, $\\vec{G}$, and $\\vec{0}$. By the definition of the orthocenter:\n1. $AK \\perp GO \\implies (\\vec{K} - \\vec{A}) \\cdot \\vec{G} = 0 \\implies \\vec{K} \\cdot \\vec{G} = \\vec{A} \\cdot \\vec{G}$\n2. $GK \\perp AO \\implies (\\vec{K} - \\vec{G}) \\cdot \\vec{A} = 0 \\implies \\vec{K} \\cdot \\vec{A} = \\vec{A} \\cdot \\vec{G}$\n\nSince $K$ lies on the line $BC$, and $|\\vec{B}| = |\\vec{C}| = R$, the vector $\\vec{B} + \\vec{C}$ is perpendicular to the line $BC$. Thus, for any point $X$ on the line $BC$, the dot product $\\vec{X} \\cdot (\\vec{B} + \\vec{C})$ is constant:\n$$\\vec{K} \\cdot (\\vec{B} + \\vec{C}) = \\vec{B} \\cdot (\\vec{B} + \\vec{C}) = |\\vec{B}|^2 + \\vec{B} \\cdot \\vec{C} = R^2 + \\vec{B} \\cdot \\vec{C}$$\n\nUsing $\\vec{B} + \\vec{C} = 3\\vec{G} - \\vec{A}$, we can also compute:\n$$\\vec{K} \\cdot (\\vec{B} + \\vec{C}) = \\vec{K} \\cdot (3\\vec{G} - \\vec{A}) = 3(\\vec{K} \\cdot \\vec{G}) - (\\vec{K} \\cdot \\vec{A}) = 3(\\vec{A} \\cdot \\vec{G}) - (\\vec{A} \\cdot \\vec{G}) = 2(\\vec{A} \\cdot \\vec{G})$$\n\nEquating the two expressions for $\\vec{K} \\cdot (\\vec{B} + \\vec{C})$:\n$$R^2 + \\vec{B} \\cdot \\vec{C} = 2(\\vec{A} \\cdot \\vec{G})$$\n\nIn terms of the side lengths $a = BC$, $b = AC$, and $c = AB$:\n$$\\vec{B} \\cdot \\vec{C} = R^2 - \\frac{a^2}{2}$$\n$$\\vec{A} \\cdot \\vec{G} = \\vec{A} \\cdot \\left(\\frac{\\vec{A} + \\vec{B} + \\vec{C}}{3}\\right) = \\frac{1}{3}\\left(R^2 + R^2 - \\frac{c^2}{2} + R^2 - \\frac{b^2}{2}\\right) = R^2 - \\frac{b^2 + c^2}{6}$$\n\nSubstituting these in:\n$$R^2 + \\left(R^2 - \\frac{a^2}{2}\\right) = 2\\left(R^2 - \\frac{b^2 + c^2}{6}\\right)$$\n$$2R^2 - \\frac{a^2}{2} = 2R^2 - \\frac{b^2 + c^2}{3}$$\n$$\\frac{a^2}{2} = \\frac{b^2 + c^2}{3} \\implies a^2 = \\frac{2(b^2 + c^2)}{3}$$\n\nGiven $b = AC = 13$ and $c = AB = 11$:\n$$b^2 + c^2 = 13^2 + 11^2 = 169 + 121 = 290$$\n$$a^2 = \\frac{2 \\times 290}{3} = \\frac{580}{3}$$\n$$a = \\sqrt{\\frac{580}{3}} = \\frac{2\\sqrt{435}}{3}$$\n\nANSWER: 2\\sqrt{435}/3\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "f46914b2-c45f-4cc4-a0ba-1db27ce760bf",
+    "status": "SUCCESS",
+    "duration_seconds": 76.540622,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9757,
+      "output_tokens": 10565,
+      "thinking_tokens": 9482,
+      "cache_read_tokens": 0,
+      "total_tokens": 20322
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__hmmt_feb_2026_28__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:04:32Z",
+  "duration_s": 81.042,
+  "input_tokens": 9817,
+  "output_tokens": 8825,
+  "thinking_tokens": 7846,
+  "text": "To find $AM$, we use properties of the circumcircles of triangles formed by the vertices and the orthocenter $H$.\n\n1. **Circumradii and Chords:**\n   Let $R$ denote the circumradius of $\\triangle ABC$. It is a standard result that the circumcircles of $\\triangle ABH$, $\\triangle ACH$, and $\\triangle BCH$ all have the same radius $R$ as the circumcircle of $\\triangle ABC$.\n\n2. **Angle Bisector and Distances from $H$:**\n   Let the internal angle bisector of $\\angle BAC$ be the ray $l$. The angle between the altitude from $A$ (which contains $H$) and the angle bisector $l$ is:\n   $$\\angle HAP = \\frac{|B - C|}{2}$$\n   Since points $A, H, P$ lie on the circumcircle of $\\triangle ABH$ (which has radius $R$), the Law of Sines in $\\triangle AHP$ gives:\n   $$HP = 2R \\sin(\\angle HAP) = 2R \\sin\\frac{|B - C|}{2}$$\n   Similarly, since $A, H, Q$ lie on the circumcircle of $\\triangle ACH$ (which also has radius $R$), and $Q$ lies on the same ray $l$:\n   $$HQ = 2R \\sin(\\angle HAQ) = 2R \\sin\\frac{|B - C|}{2}$$\n   Thus, $HP = HQ$.\n\n3. **Power of a Point:**\n   Since $HP = HQ$, the points $P$ and $Q$ lie on a circle centered at $H$ with radius $r = HP$. \n   The line $l$ passes through $A$ and intersects this circle at $P$ and $Q$. Since $A, P, Q$ lie in that order on the ray, $A$ lies outside this circle. By the power of point $A$ with respect to this circle:\n   $$AP \\cdot AQ = AH^2 - HP^2$$\n   We know that $AH = 2R \\cos A$. Substituting $AH$ and $HP$:\n   $$AP \\cdot AQ = 4R^2 \\cos^2 A - 4R^2 \\sin^2\\frac{B - C}{2}$$\n   Given $AP = 4$ and $AQ = 5$, we have:\n   $$4R^2 \\cos^2 A - 4R^2 \\sin^2\\frac{B - C}{2} = 4 \\times 5 = 20$$\n\n4. **Length of $AM$:**\n   The point $M$ is the intersection of the angle bisector with the circumcircle of $\\triangle ABC$. In $\\triangle ABM$, $\\angle BAM = \\frac{A}{2}$ and $\\angle ABM = B + \\frac{A}{2} = 90^\\circ + \\frac{B - C}{2}$. By the Law of Sines:\n   $$AM = 2R \\sin(\\angle ABM) = 2R \\cos\\frac{B - C}{2}$$\n   Squaring both sides gives:\n   $$AM^2 = 4R^2 \\cos^2\\frac{B - C}{2} = 4R^2 \\left(1 - \\sin^2\\frac{B - C}{2}\\right) = 4R^2 - 4R^2 \\sin^2\\frac{B - C}{2}$$\n   From our power of a point equation, $4R^2 \\sin^2\\frac{B - C}{2} = 4R^2 \\cos^2 A - 20$. Substituting this in:\n   $$AM^2 = 4R^2 - (4R^2 \\cos^2 A - 20) = 4R^2(1 - \\cos^2 A) + 20 = 4R^2 \\sin^2 A + 20$$\n\n5. **Using $BC = 7$:**\n   By the Law of Sines on $\\triangle ABC$, $BC = 2R \\sin A = 7$, which means $4R^2 \\sin^2 A = BC^2 = 49$.\n   Therefore:\n   $$AM^2 = 49 + 20 = 69 \\implies AM = \\sqrt{69}$$\n\nANSWER: \\sqrt{69}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "cdbadb97-6621-457a-a54e-6fef9055ee32",
+    "status": "SUCCESS",
+    "duration_seconds": 73.312814,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9817,
+      "output_tokens": 8825,
+      "thinking_tokens": 7846,
+      "cache_read_tokens": 0,
+      "total_tokens": 18642
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

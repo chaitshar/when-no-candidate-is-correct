@@ -1,0 +1,29 @@
+{
+  "job_id": "M2__arxivmath-1225_9_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T22:48:46Z",
+  "duration_s": 30.79,
+  "input_tokens": 12074,
+  "output_tokens": 2608,
+  "thinking_tokens": 1896,
+  "text": "### Step 1: Independent Falsification\n\n- **Solution 1:**\n  - Solution 1 claims $v(4, \\sqrt{2}) = 13$ and asserts that $n = 14$ is impossible.\n  - However, consider the bipartite graph formed by the incidence matrix of the complement of the Fano plane (a $2\\text{-}(7, 4, 2)$ block design). Its $7 \\times 7$ biadjacency matrix $B = J - N$ satisfies $B B^T = 2I + 2J$.\n  - The eigenvalues of this bipartite graph are $\\pm 4$ (multiplicity 1) and $\\pm\\sqrt{2}$ (multiplicity 6). Thus, it is a connected 4-regular graph on 14 vertices whose second largest eigenvalue is $\\lambda_2 = \\sqrt{2}$.\n  - Since a valid graph on 14 vertices exists, $v(4, \\sqrt{2}) \\ge 14 > 13$. Solution 1 is therefore falsified.\n\n- **Solution 2:**\n  - Solution 2 claims $v(4, \\sqrt{2}) = 9$.\n  - As shown above, valid connected 4-regular graphs with $\\lambda_2 \\le \\sqrt{2}$ exist on 13 and 14 vertices.\n  - Solution 2 is therefore falsified.\n\n- **Solution 3:**\n  - **Case $(4, \\sqrt{2})$:** Correctly constructs the 14-vertex connected 4-regular graph from the complement of the Fano plane. The biadjacency matrix $B = J_{7 \\times 7} - N$ satisfies $B B^T = 2I + 2J$, yielding singular values $4$ and $\\sqrt{2}$ (with multiplicity 6), so the graph's eigenvalues are $\\pm 4$ and $\\pm \\sqrt{2}$, with $\\lambda_2 = \\sqrt{2}$. By known linear programming bounds for regular graphs (Nozaki, 2015), $v(4, \\sqrt{2}) = 14$.\n  - **Case $(5, \\sqrt{2})$:** Identifies $\\operatorname{srg}(16, 5, 0, 2)$ (the folded 5-cube / complement of the Clebsch graph), which has spectrum $\\{5^1, 1^{10}, -3^5\\}$, giving $\\lambda_2 = 1 < \\sqrt{2}$. Since $5n$ must be even, $n$ cannot be 17, and by the linear programming bound $v(5, \\sqrt{2}) = 16$.\n  - **Case $(5, \\sqrt{5}-1)$:** Since $1 < \\sqrt{5}-1 \\approx 1.236 < \\sqrt{2}$, the same graph achieves 16, establishing $v(5, \\sqrt{5}-1) = 16$.\n  - All derivations, matrix calculations, and spectral analyses in Solution 3 are correct.\n\n---\n\n### Step 2: Calibrated Selection Gate\n\nSolution 3 survives falsification with complete mathematical certainty.\n\nCHOICE: 3\nCONFIDENCE: 5\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "de7957a1-1f38-4998-a118-ea015f415eb9",
+    "status": "SUCCESS",
+    "duration_seconds": 23.364621,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12074,
+      "output_tokens": 2608,
+      "thinking_tokens": 1896,
+      "cache_read_tokens": 0,
+      "total_tokens": 14682
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

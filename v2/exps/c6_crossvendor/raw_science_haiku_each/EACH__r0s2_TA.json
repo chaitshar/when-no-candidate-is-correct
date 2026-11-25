@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r0s2_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:30:20Z",
+  "duration_s": 8.131,
+  "input_tokens": 2,
+  "output_tokens": 1378,
+  "thinking_tokens": 596,
+  "text": "The abstract is a review of theoretical dust sources and interstellar-medium processing at z > 4. It names supernovae, AGB stars, red supergiants, Wolf-Rayet stars, novae, type Ia supernovae and quasar winds, plus grain destruction and growth. It explicitly defers the observational results to a second part. None of the four hypotheses is supported by that content.\n\n**Hypothesis 1** rests on spatial offsets between far-infrared and UV emission greater than 0.5\", ALMA/JWST comparisons, and dust masses above 0.01 M⊙ per Type IIP supernova. The abstract mentions none of these. Its supernova discussion is about dust sources in general, not Type IIP events specifically, and it does not discuss FIR/UV morphology. The hypothesis is not supported.\n\n**Hypothesis 2** overlaps with the abstract on supernova ejecta and ISM reprocessing. However, it proposes magneto-hydrodynamic simulations with magnetic field strength, ejecta temperatures of 10,000 to 30,000 K, ISM densities of 0.1 to 10 cm⁻³ and resolution down to 0.01 pc. The abstract describes no such simulations and does not say grain size or composition depends on magnetic fields. The shared topic does not make the specific claims supported. The hypothesis is not supported.\n\n**Hypothesis 3** repeats the FIR/UV spatial-separation claim from Hypothesis 1, now framed as simultaneous obscured and unobscured star formation. The abstract does not address this. The hypothesis is not supported.\n\n**Hypothesis 4** concerns AGB stars in binary systems, with mass-transfer rates of 10⁻⁷ to 10⁻⁵ M⊙/yr and binary-specific spectral signatures. The abstract mentions AGB stars as a dust source but says nothing about binarity, mass transfer or orbital dynamics. The hypothesis is not supported.\n\nNone of the four hypotheses is the main conclusion this evidence supports. The abstract's own focus is a theoretical review of dust production sources and ISM reprocessing, with observational comparison deferred to a later paper.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 7012,
+    "stop_reason": "end_turn",
+    "session_id": "431e72c2-12c2-4812-9c67-f6e76b0a9c1b",
+    "total_cost_usd": 0.00212546,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6612,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1378,
+      "output_tokens_details": {
+        "thinking_tokens": 596
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6612,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1378,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6612,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6612
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1378,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6612,
+        "webSearchRequests": 0,
+        "costUSD": 0.00212546,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 596,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6612,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3931,
+    "type": "result",
+    "duration_ms": 7170,
+    "uuid": "6f71c3a7-dab4-4bd4-9b4b-6d612247918a",
+    "ttft_stream_ms": 1083,
+    "time_to_request_ms": 159,
+    "first_content_frame_ms": 1083,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

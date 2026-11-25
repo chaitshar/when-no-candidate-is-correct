@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK2_OWN__arxivmath-0526_32_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T21:56:51Z",
+  "duration_s": 98.285,
+  "input_tokens": 2,
+  "output_tokens": 21588,
+  "thinking_tokens": 20928,
+  "text": "**Solution 1 (m = k(s−1)+2) is the one I'd back; Solution 2 (m = ks) fails already at k=3, s=2.** I checked this by hand against constructions, not against the literature, so treat the general formula as likely rather than proven.\n\nWrite T = C(n−1,k−1) − C(n−s,k−1). A family with no s-matching whose vertices exceed T is a counterexample to any m for which d_m > T is required to force a matching.\n\n- **Hilton–Milner-type family (s=2, general k).** Take a vertex x and a k-set Z not containing x. Let F consist of all k-sets through x that meet Z, plus Z itself. This is intersecting, so ν = 1. The vertex x has degree C(n−1,k−1) − C(n−k−1,k−1), and each z ∈ Z has degree T + 1. That gives k+1 vertices above T, so m ≥ k+2 when s=2.\n- **Solution 2 at s=2, k=3.** It predicts m = 6, which would require an intersecting 3-graph with 5 vertices of degree above T ≈ n−2. Intersecting families with linear-degree vertices have a cover of size at most 2, and cross-intersecting link structures then leave only about 3–4 high-degree vertices. So I see no such family, and m = 5 looks right there.\n- **Other constructions.** The family {F : |F∩Y| ≥ 2} with |Y| = 2s−1 gives 2s−1 high vertices for every k, so m ≥ 2s. For k=2 this matches both solutions, since both give 2s.\n- **Shape of the formula.** Requiring f(2,s)=2s and f(k,2)=k+2 is consistent with k(s−1)+2 and rules out simple alternatives like s+k or ks. I did not find an explicit construction with k(s−1)+1 high vertices for s ≥ 3, so that part of Solution 1 is unverified.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 97102,
+    "stop_reason": "end_turn",
+    "session_id": "cad40b15-44f2-43b5-93f3-123e2606ddfc",
+    "total_cost_usd": 0.01259886,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8454,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 21588,
+      "output_tokens_details": {
+        "thinking_tokens": 20928
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8454,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 21588,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8454,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8454
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 21588,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8454,
+        "webSearchRequests": 0,
+        "costUSD": 0.01259886,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 20928,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8454,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 94795,
+    "type": "result",
+    "duration_ms": 97623,
+    "uuid": "bc3b0038-cb02-4128-a62b-4b505588dedb",
+    "ttft_stream_ms": 1338,
+    "time_to_request_ms": 516,
+    "first_content_frame_ms": 1338,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

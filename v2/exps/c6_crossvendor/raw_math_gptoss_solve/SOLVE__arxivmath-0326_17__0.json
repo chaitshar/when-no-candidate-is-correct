@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_17__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:46:55Z",
+  "duration_s": 16.219,
+  "input_tokens": 3945,
+  "output_tokens": 1496,
+  "thinking_tokens": 0,
+  "text": "The expected number of non‑zero codewords of weight ≤ \\(n-k\\) in a random \\([n,k]\\) code is  \n\\[\n\\mathbb{E}[N]=\\binom{n}{k}(q-1)^{\\,n-k}q^{k-n}\\;=\\;\\binom{n}{k}\\Bigl(1-\\frac1q\\Bigr)^{\\,n-k}\\;.\n\\]\n\nUnder the assumptions \\(k/n\\to0\\) and \\(\\frac1q\\binom{n}{k}\\to\\lambda\\), the factor \\(\\bigl(1-\\frac1q\\bigr)^{n-k}\\) tends to 1, and therefore \\(\\mathbb{E}[N]\\to\\lambda\\).\n\nFor large \\(n,q\\) the numbers of low‑weight codewords become asymptotically independent, so \\(N\\) converges in distribution to a Poisson random variable with mean \\(\\lambda\\). Hence the probability that no such codeword exists—that is, that the code attains the Singleton bound and is MDS—converges to the Poisson “zero” probability:\n\n\\[\n\\boxed{\\displaystyle \\lim_{n,q\\to\\infty}\\Pr[C\\text{ is MDS}] = e^{-\\lambda}}.\n\\]\n\nANSWER: \\(e^{-\\lambda}\\)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "bae8cc4e-93fb-41e3-a104-5505ceb09251",
+    "status": "SUCCESS",
+    "duration_seconds": 9.556099,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3945,
+      "output_tokens": 1496,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 5441
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

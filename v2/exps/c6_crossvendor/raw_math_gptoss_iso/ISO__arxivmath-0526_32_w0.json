@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0526_32_w0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T12:37:11Z",
+  "duration_s": 18.764,
+  "input_tokens": 5142,
+  "output_tokens": 1365,
+  "thinking_tokens": 0,
+  "text": "The statement is a known extremal result for hypergraph matchings.  \nFor a \\(k\\)-uniform hypergraph the sharp degree‑sequence condition is  \n\n\\[\nd_{\\,sk-k+1}\\;>\\;\\binom{n-1}{k-1}-\\binom{n-s}{k-1}\n\\qquad\\Longrightarrow\\qquad \n\\nu(\\mathcal F)\\ge s .\n\\]\n\nThe integer \\(m=sk-k+1 = k(s-1)+1\\) is minimal.  \n* For \\(m=s-1\\) the construction consisting of all edges intersecting a fixed \\((s-1)\\)-set shows that the condition does **not** force a matching of size \\(s\\).  \n* For \\(m=sk-k\\) one can take a family of edges that each contain at least two vertices from a set of size \\(sk-1\\); this family has matching number at most \\(s-1\\) while \\(sk-k\\) vertices still satisfy the degree bound.  \n* Raising the index to \\(m=sk-k+1\\) eliminates these extremal examples, and the theorem of Bowtell–Mycroft (or equivalently the degree‑sequence version of the Erdős–Matching conjecture) guarantees a matching of size \\(s\\).  \n\nHence the optimal closed‑form expression for the minimal \\(m\\) is  \n\n\\[\n\\boxed{\\,m = k(s-1)+1\\,}.\n\\]\n\nThe answer proposed in the prompt (\\(m = k(s-1)+2\\)) is therefore off by one.\n\n**Final verdict:**  \nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "ef584aea-a25a-4aa5-92a1-a61fbe951fe8",
+    "status": "SUCCESS",
+    "duration_seconds": 10.887163,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 5142,
+      "output_tokens": 1365,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 6507
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0326_21_w1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:29:56Z",
+  "duration_s": 128.904,
+  "input_tokens": 10150,
+  "output_tokens": 12930,
+  "thinking_tokens": 12534,
+  "text": "The problem asks for the exponent $c$ such that the Cauchy combination test (CCT) under the canonical one-factor equicorrelated Gaussian copula model is asymptotically exact if and only if $\\rho_K (\\log K)^c \\to 0$.\n\nUnder the one-factor model, we can represent the latent Gaussian variables as:\n$$Z_i = \\sqrt{1 - \\rho_K}\\epsilon_i + \\sqrt{\\rho_K} Z_0, \\quad \\epsilon_i, Z_0 \\stackrel{iid}{\\sim} \\mathcal{N}(0, 1)$$\n\nConditioning on the common factor $Z_0$, the individual summands $X_i = \\tan((0.5 - p_i)\\pi)$ are conditionally independent with extreme tails determined by the event that $Z_i$ exceeds the quantile threshold $z_{1/K} \\approx \\sqrt{2 \\log K}$. \n\nEvaluating the conditional tail probability:\n$$P(X_i > K x \\mid Z_0) \\sim \\frac{1}{\\pi K x} \\exp\\left(Z_0 \\sqrt{2 \\rho_K \\log K} - \\rho_K \\log K\\right)$$\n\nBy the stable limit theorem, the conditional distribution of the test statistic $T = \\frac{1}{K}\\sum_{i=1}^K X_i$ given $Z_0$ converges to standard Cauchy if and only if the random scaling factor converges to 1 in probability. This occurs if and only if:\n$$\\sqrt{\\rho_K \\log K} \\to 0 \\iff \\rho_K \\log K \\to 0$$\n\nThus, the sharp threshold exponent is $c = 1$, and the proposed final answer is correct.\n\nVERDICT: ACCEPT (the final answer is correct)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "26e01d42-c1c4-4b02-9392-b297fe565bf2",
+    "status": "SUCCESS",
+    "duration_seconds": 119.781567,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10150,
+      "output_tokens": 12930,
+      "thinking_tokens": 12534,
+      "cache_read_tokens": 0,
+      "total_tokens": 23080
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

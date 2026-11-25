@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "project": "Lineups Without a Culprit (v2)",
+  "root": "/Users/chaitanya/research/mas-study/v2-upgrade",
+  "current_round": 4,
+  "status": "round_4_awaiting_c6_gemini_final",
+  "updated_utc": "2026-11-20T17:06:00Z",
+  "budget": {
+    "route_mode": "subscription_only",
+    "oop_max_usd": 0,
+    "api_scaffold_cap_usd": 0,
+    "api_vendor4_cap_usd": 0
+  },
+  "human_label_audit": {
+    "status": "pending_user",
+    "tool": "audit/human_audit_tool.html",
+    "note": "Blind human label audit awaits user execution."
+  },
+  "completed_experiments": {
+    "c4_haiku_compute": {
+      "status": "complete",
+      "calls_ok": 372,
+      "calls_expected": 372,
+      "parse_rate": 1.0
+    },
+    "c5_haiku_removal": {
+      "own_answer_removal": {
+        "status": "complete",
+        "calls_ok": 38,
+        "calls_expected": 38
+      },
+      "wells_removal": {
+        "status": "complete",
+        "calls_ok": 43,
+        "calls_expected": 43
+      }
+    },
+    "c6_crossvendor_math_gptoss": {
+      "status": "complete",
+      "calls_ok": 1000,
+      "calls_expected": 1000,
+      "parse_rate": 0.994
+    },
+    "c9_science_researchbench": {
+      "status": "complete",
+      "total_calls_ok": 1250,
+      "total_calls_expected": 1250,
+      "judge_configs": [
+        "gpt-oss-120b-medium (250/250)",
+        "gemini-3.8-flash-medium (250/250)",
+        "gemini-3.8-flash-low (250/250)",
+        "gemini-4-hydrogen-medium (250/250)",
+        "claude-haiku-5-5 (250/250)"
+      ]
+    },
+    "c7_mitigation_completed": {
+      "science_m2_gptoss": "60/60",
+      "science_m2_gemini": "60/60",
+      "science_m2_gemini_low": "60/60",
+      "science_m2_hydrogen": "60/60",
+      "science_m2_haiku": "60/60",
+      "math_m2_gptoss": "80/80",
+      "math_m2_gemini": "80/80",
+      "math_haiku_m1_tiebreak": "8/8",
+      "math_haiku_m2": "80/80",
+      "math_haiku_m3_foil": "80/80"
+    }
+  },
+  "dual_script_verification": {
+    "status": "verified_on_all_completed_sections",
+    "script_a": "autoloop/analysis_a.py",
+    "script_b": "autoloop/analysis_b.py",
+    "diff_report": "audit/diff_report.json",
+    "discrepancy_log": "audit/discrepancy_log.md",
+    "deterministic_mismatches_completed_sections": 0
+  },
+  "active_background_runs": [
+    "C6 Math gemini-3.8-flash-medium (solve in progress, then pick/iso/each via run_round1_resume_agy.py)"
+  ],
+  "rounds": [
+    {
+      "round": 0,
+      "name": "Infrastructure, Banks, Locks, and Pilot Gate",
+      "status": "complete",
+      "gate": "G0_G2_PILOT_COMPLETE"
+    },
+    {
+      "round": 1,
+      "name": "Confirmatory C4, C5, C6 Cross-Vendor Math, C8 Low-Thinking, and C9 Science",
+      "status": "in_progress",
+      "remaining_items": [
+        "Complete C6 Math gemini-3.8-flash-medium runs (solve/pick/iso/each)",
+        "Complete user-executed blind human label audit (pending_user)"
+      ],
+      "gate": "G3"
+    },
+    {
+      "round": 2,
+      "name": "C7 Compute-Matched Mitigation Matrix",
+      "status": "complete",
+      "gate": "G3_C7_COMPLETE"
+    },
+    {
+      "round": 4,
+      "name": "Dual-Script Verification, Figures, Macro-Driven Paper, and Preflight",
+      "status": "in_progress_awaiting_c6_gemini",
+      "completed_items": [
+        "Independent analysis_a.py implemented from scratch and diffed against analysis_b.py (0 deterministic mismatches across all 5 completed sections)",
+        "audit/discrepancy_log.md and audit/diff_report.json written",
+        "All 4 live vector SVGs generated via autoloop/figures_svg.py",
+        "1416 macros generated in paper/results.tex via autoloop/make_results_tex.py",
+        "paper/main.tex, paper/refs.bib, and paper/preview.html assembled",
+        "preflight.py --stage paper passing 100% (0 dash violations, 11/11 LOCKED.sha256)"
+      ],
+      "remaining_items": [
+        "Re-run synchronized analysis_a/b, diff_results, figures, results.tex, preview.html, and preflight once C6 Math gemini finishes"
+      ],
+      "gate": "G4_G5"
+    }
+  ]
+}

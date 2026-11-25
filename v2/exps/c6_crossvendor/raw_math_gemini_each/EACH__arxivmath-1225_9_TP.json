@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__arxivmath-1225_9_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T17:32:35Z",
+  "duration_s": 47.104,
+  "input_tokens": 11671,
+  "output_tokens": 4334,
+  "thinking_tokens": 3622,
+  "text": "To determine the correctness of each solution, let us analyze the values of the components of the triple $(v(4, \\sqrt{2}), v(5, \\sqrt{2}), v(5, \\sqrt{5}-1))$:\n\n1. **For $v(4, \\sqrt{2})$:**\n   - Consider the bipartite graph formed from the complement of the Fano plane (a $2\\text{-}(7,3,1)$ design). The incidence matrix $N$ of the Fano plane is a $7 \\times 7$ $(0,1)$-matrix satisfying $NN^T = 2I + J$.\n   - Its complement design has biadjacency matrix $B = J - N$, which is a $7 \\times 7$ $(0,1)$-matrix with row and column sums equal to 4.\n   - We compute:\n     $$BB^T = (J-N)(J-N)^T = 7J - 3J - 3J + (2I + J) = 2I + 2J$$\n   - The eigenvalues of $BB^T$ are $2 + 2(7) = 16$ (with multiplicity 1) and $2$ (with multiplicity 6).\n   - Thus, the singular values of $B$ are $4$ and $\\sqrt{2}$.\n   - The corresponding bipartite graph on $7 + 7 = 14$ vertices is connected, 4-regular, and has spectrum:\n     $$\\{4^{(1)}, \\sqrt{2}^{(6)}, (-\\sqrt{2})^{(6)}, -4^{(1)}\\}$$\n   - This explicitly demonstrates a connected 4-regular graph on 14 vertices with second eigenvalue $\\lambda_2 = \\sqrt{2}$, which proves $v(4, \\sqrt{2}) \\ge 14$.\n   - Consequently, Solution 1 (which claims $v(4,\\sqrt{2}) = 13$) and Solution 2 (which claims $v(4,\\sqrt{2}) = 9$) are both incorrect.\n   - It is a known result (e.g., via Nozaki's linear programming bound for regular graphs) that $v(4, \\sqrt{2}) = 14$.\n\n2. **For $v(5, \\sqrt{2})$ and $v(5, \\sqrt{5}-1)$:**\n   - The folded 5-cube (or complement of the Clebsch graph) is a connected 5-regular graph on 16 vertices with spectrum $\\{5^{(1)}, 1^{(10)}, -3^{(5)}\\}$.\n   - Since $\\lambda_2 = 1 < \\sqrt{5}-1 \\approx 1.236 < \\sqrt{2}$, this graph achieves 16 vertices for both constraints.\n   - Bounds confirm that 16 is the maximum in both cases, giving $v(5, \\sqrt{2}) = 16$ and $v(5, \\sqrt{5}-1) = 16$.\n\nThus, the correct triple is $(14, 16, 16)$, which matches Solution 3.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "a4f46ca6-ec8c-4487-91bd-076700bdaad5",
+    "status": "SUCCESS",
+    "duration_seconds": 39.588587,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 11671,
+      "output_tokens": 4334,
+      "thinking_tokens": 3622,
+      "cache_read_tokens": 0,
+      "total_tokens": 16005
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

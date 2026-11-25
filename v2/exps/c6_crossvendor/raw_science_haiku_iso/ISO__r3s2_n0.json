@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r3s2_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:11Z",
+  "duration_s": 4.743,
+  "input_tokens": 2,
+  "output_tokens": 545,
+  "thinking_tokens": 148,
+  "text": "The candidate is not the study's main hypothesis. The abstract is a review of EV and exosome isolation and characterization. It describes exosomes (40–150 nm, endosome-derived lipid-bilayer vesicles), notes that existing isolation and characterization methods have drawbacks, outlines conventional versus microfluidic isolation strategies, lists commercial kits, and assesses market demand for exosome assays.\n\nThe candidate makes several claims the abstract does not contain:\n- Reinforcement-learning control of the separation process\n- Acoustofluidic acoustic pressure fields\n- Dynamic adjustment of flow rates\n- Real-time feedback from inline optical and micro-electronic impedance sensors\n- Adaptation to sample viscosity and temperature\n- Outperformance over static control methods\n\nThe abstract mentions microfluidics only as a general category. It does not mention acoustics, machine learning, or sensor-based feedback, so nothing in it supports the candidate's specific design. The candidate's broad theme of better exosome isolation for diagnostic and therapeutic use overlaps with the study's framing, but the specific hypothesis is not one the evidence supports.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 3146,
+    "stop_reason": "end_turn",
+    "session_id": "7e05dc9c-52e4-4b72-bbac-f0c799892fa3",
+    "total_cost_usd": 0.00146936,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5414,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 545,
+      "output_tokens_details": {
+        "thinking_tokens": 148
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5414,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 545,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5414,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5414
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 545,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5414,
+        "webSearchRequests": 0,
+        "costUSD": 0.00146936,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 148,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5414,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1755,
+    "type": "result",
+    "duration_ms": 3469,
+    "uuid": "271bb24d-2ced-4f43-8073-d5fabc44806d",
+    "ttft_stream_ms": 1168,
+    "time_to_request_ms": 325,
+    "first_content_frame_ms": 1168,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

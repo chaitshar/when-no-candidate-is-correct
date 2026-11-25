@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK2_WELLS__arxivmath-0226_29_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T21:59:58Z",
+  "duration_s": 80.279,
+  "input_tokens": 2,
+  "output_tokens": 19508,
+  "thinking_tokens": 18766,
+  "text": "**Neither solution is correct.** Under the standard Waterman model (hairpin loops of at least 3 unpaired bases), the correlation is about -0.147, not +1/√2 or -√14/28.\n\n**Setup.** Let S(z,u,v) count structures, with u marking basepairs and v marking hairpins. Write q = z³/(1−z) and c = 1+z+z² − (v−1)q. An arc's interior is a structure of length ≥3, and a hairpin is an interior with no arcs, so\n\nS = 1 + zS + u·z²·(S − c)·S.\n\nThe discriminant of this quadratic gives the singularity ρ(u,v) through\n\nH = 1 − z − 2√u·z + u·z²·c(z,v) = 0.\n\n**Checks at u = v = 1.** The equation reduces to 1 − 3z + z² + z³ + z⁴ = 0, giving ρ₀ ≈ 0.43691 (growth constant ≈ 2.289). The per-length means come out as μ_B = −∂_s log z ≈ 0.2368 and μ_H ≈ 0.0531. These match the values I recall from the literature for this model, though I have not verified them against a source.\n\n**Covariance structure.** With u = e^s and v = e^t, the cumulant function is κ(s,t) = −log ρ(e^s,e^t) + const. Implicit differentiation of H gives:\n\n- κ_ss ≈ 0.04707\n- κ_tt ≈ 0.01640\n- κ_st ≈ −0.00409\n\nSo the correlation is r = κ_st / √(κ_ss·κ_tt) ≈ −0.147.\n\nSolution 1's +1/√2 has the wrong sign and magnitude, and its \"remarkably clean constant\" is asserted rather than derived. Solution 2 switches to the Motzkin model (θ=0), which is not the standard RNA model. Its means μ_B = 1/3 and μ_H = 1/6 are far from the known values, so its covariance inputs are unreliable, and −√14/28 ≈ −0.1336 does not match my −0.147. My hand computation carries roughly 1% error, which is well below the gap to −0.1336.\n\nCHOICE: NONE",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 79123,
+    "stop_reason": "end_turn",
+    "session_id": "b3907bfc-5337-4cc3-b199-088bc4cabbb6",
+    "total_cost_usd": 0.011275060000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7035,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 19508,
+      "output_tokens_details": {
+        "thinking_tokens": 18766
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7035,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 19508,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7035,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7035
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 19508,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7035,
+        "webSearchRequests": 0,
+        "costUSD": 0.011275060000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 18766,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7035,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 76865,
+    "type": "result",
+    "duration_ms": 79609,
+    "uuid": "e67848eb-1bcf-4652-a79d-f3b72f5e720c",
+    "ttft_stream_ms": 1263,
+    "time_to_request_ms": 486,
+    "first_content_frame_ms": 1263,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

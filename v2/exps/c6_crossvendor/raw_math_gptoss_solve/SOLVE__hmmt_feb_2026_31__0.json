@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__hmmt_feb_2026_31__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:40:20Z",
+  "duration_s": 13.387,
+  "input_tokens": 3925,
+  "output_tokens": 1039,
+  "thinking_tokens": 0,
+  "text": "Let the layers be numbered \\(1,2,\\dots ,2026\\) from the top.\nThe \\(n\\)‑th layer contains \\(2^{n}-1\\) bricks placed side‑by‑side.\nPlace the bricks so that the centre of layer \\(n\\) aligns with the centre of layer \\(n+1\\); then every brick of layer \\(n\\) sits exactly above two bricks of layer \\(n+1\\) (its left‑hand and right‑hand “children”).  \nThus the pattern of bricks is exactly the shape of a perfect binary tree:\n\n* the single brick of layer 1 is the root;\n* each brick in layer \\(n\\) has a left‑child and a right‑child in layer \\(n+1\\);\n* the total number of bricks in layer \\(n\\) is \\(2^{n}-1\\), matching the number of internal nodes of a complete binary tree of height \\(n\\).\n\nA legal move for Jessica – “go down one layer to a brick that shares a side with the current brick’’ – is precisely the move from a node of the tree to one of its two children.  \nConsequently a sequence of moves from the topmost brick to any brick in the 2026‑th layer corresponds uniquely to a sequence of choices “left’’ or “right’’ taken at each of the first \\(2026-1 = 2025\\) steps.\n\nConversely, any binary string of length \\(2025\\) (e.g. \\(LRR\\ldots L\\)) determines a unique path: start at the root and at step \\(k\\) move to the left child if the \\(k\\)-th symbol is \\(L\\), otherwise to the right child. This path ends at a brick of layer 2026, and different strings give different end bricks and different move sequences.\n\nHence the number of distinct move sequences equals the number of binary strings of length \\(2025\\):\n\\[\n\\#\\text{sequences}=2^{2025}.\n\\]\n\n\\[\n\\boxed{2^{2025}}\n\\]\n\n**Answer:**  \nANSWER: 2^{2025}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "8b3ffb07-eacc-4b2e-84a0-90dc7fc705e7",
+    "status": "SUCCESS",
+    "duration_seconds": 6.418544,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3925,
+      "output_tokens": 1039,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 4964
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

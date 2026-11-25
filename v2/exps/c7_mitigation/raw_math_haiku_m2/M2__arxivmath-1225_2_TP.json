@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__arxivmath-1225_2_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T10:07:29Z",
+  "duration_s": 18.864,
+  "input_tokens": 2,
+  "output_tokens": 3925,
+  "thinking_tokens": 2894,
+  "text": "**Step 1: Independent falsification**\n\n**Solution 1 (3/7):** The lower-bound construction checks out. On $\\mathbb{Z}_7$ with arcs $i\\to i+1$, $i\\to i+3$, the generators are disjoint from their negatives, so the graph is oriented with $\\Delta=4$. The only directed cycles are the 7 triangles, from steps $\\{1,3,3\\}$. Each vertex lies in 3 triangles, so two vertices hit at most 6, giving $fvs\\ge 3$. The solution's upper-bound set $\\{0,2,4\\}$ is also valid, though its remainder is stated wrongly. The remainder is $\\{1,3,5,6\\}$, not $\\{1,3,5\\}$, but its arcs $3\\to6$, $5\\to6$, $5\\to1$ are acyclic, so $fvs=3$ holds. The upper bound fails, though. The \"structural fact\" about $n=7$ is wrong: the complement of a 4-regular graph on 7 vertices is 2-regular, not necessarily $C_7$. The general bound $fvs\\le\\lfloor 3n/7\\rfloor$ is asserted after a \"careful inductive/reduction argument\" that is never given, so it is unsupported. The table entries are also unchecked.\n\n**Solution 2 (2/5):** The $T_5$ lower bound is valid, since $fvs(T_5)=2$ and disjoint copies give $2/5$. But the upper bound is broken. A 5-colouring of the underlying graph does not give a homomorphism $D\\to T_5$, and the argument assumes one exists for every $D$ with $\\Delta\\le4$ without justification. The $C_5\\square C_5$ example is asserted, not computed. Since $3/7>2/5$, the claimed $c^*\\le 2/5$ is refuted by the $\\mathbb{Z}_7$ construction from Solution 1, which I verified above.\n\n**Solution 3 (1/2):** The max-cut step is correct: a locally maximal cut gives each vertex at most 2 neighbours in its own part. The next step fails. A graph of maximum degree 2 need not have an independent set of at least half its vertices in each component, because an odd cycle $C_3$ has $\\alpha=1<3/2$. So the bound $fvs\\le n/2$ is not established. The lower-bound argument (an expander with an Eulerian orientation giving $n/2-o(n)$) is pure hand-waving with no computation. The value $1/2$ is also probably too large, since the upper bound is loose, but I cannot rule that out without more work.\n\n**Step 2: Selection gate**\n\nNo solution survives falsification with confidence at least 4. Solution 1 has a correct lower-bound construction, so $c^*\\ge 3/7$ holds, but its matching upper bound is unproven. Solution 2's upper bound is invalid, and Solution 3's argument has a false step. I can't run code or check the literature here, so I can't verify $c^*=3/7$ exactly.\n\nCHOICE: NONE\n\nCONFIDENCE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 17918,
+    "stop_reason": "end_turn",
+    "session_id": "2a2e1d79-7341-4096-8f91-230579c60855",
+    "total_cost_usd": 0.00391556,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 9195,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 3925,
+      "output_tokens_details": {
+        "thinking_tokens": 2894
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 9195,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3925,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 9195,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 9195
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 3925,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 9195,
+        "webSearchRequests": 0,
+        "costUSD": 0.00391556,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2894,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 9195,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 14087,
+    "type": "result",
+    "duration_ms": 18203,
+    "uuid": "80146c21-3d86-42b1-9d05-401636f6eba9",
+    "ttft_stream_ms": 1134,
+    "time_to_request_ms": 285,
+    "first_content_frame_ms": 1134,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "M1_TIEBREAK__math_haiku_c3__arxivmath-0526_17_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:44:04Z",
+  "duration_s": 13.473,
+  "input_tokens": 2,
+  "output_tokens": 2732,
+  "thinking_tokens": 2313,
+  "text": "Solution 1 is correct, as far as I can tell from memory. I could not check the literature, so this rests on recalled results rather than a verified source.\n\n- **Degree ≤ 4 suffices.** I recall Braun and Oréfice-Okamoto (2016) proving that a nowhere-vanishing Jacobian plus deg p ≤ 4 forces global injectivity. The earlier cases (deg ≤ 2, deg ≤ 3 by Braun and dos Santos Filho) are consistent with this.\n- **Degree 5 fails.** Solution 1 says there are non-injective examples with deg p = 5 (Braun–Fernandes). I have a vague recollection of such a construction, but I can't confirm it. If that holds, the answer is 4.\n- **Solution 2 is less plausible.** It claims deg p ≤ 5 forces injectivity, which contradicts the degree-5 counterexample above. It also cites a degree-6 counterexample, which is not needed if the degree-5 one exists. Its degree-5 positive result is the claim I trust least.\n\nSince the question asks for the sharp bound, and the sharpness claim is the part I'm least sure of, the answer 4 is my best judgment, not a certainty.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 12226,
+    "stop_reason": "end_turn",
+    "session_id": "388a3df4-4c8a-4afe-993a-555ffda60887",
+    "total_cost_usd": 0.0048734,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 17536,
+      "cache_read_input_tokens": 0,
+      "output_tokens": 2732,
+      "output_tokens_details": {
+        "thinking_tokens": 2313
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 17536,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2732,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 17536,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 17536
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2732,
+        "cacheReadInputTokens": 0,
+        "cacheCreationInputTokens": 17536,
+        "webSearchRequests": 0,
+        "costUSD": 0.0048734,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2313,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 17536,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 10511,
+    "type": "result",
+    "duration_ms": 12317,
+    "uuid": "35f4345c-11b4-447f-b35b-654c1ef22e0e",
+    "ttft_stream_ms": 980,
+    "time_to_request_ms": 86,
+    "first_content_frame_ms": 980,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

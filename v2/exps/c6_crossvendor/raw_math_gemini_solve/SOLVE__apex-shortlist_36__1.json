@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__apex-shortlist_36__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T16:43:56Z",
+  "duration_s": 254.286,
+  "input_tokens": 9779,
+  "output_tokens": 31682,
+  "thinking_tokens": 30890,
+  "text": "To find the smallest real number $M$, consider a polynomial of the form $P(z) = az^3 + bz^2 + cz + d$ with $|a|=|b|=|c|=|d|=1$.\n\nBy multiplying $P(z)$ by a suitable phase and scaling $z$ by a unit complex number, we can normalize $a = 1$ and $d = 1$ without loss of generality. By the symmetry of the extremal polynomial under the reciprocal involution $P(z) \\leftrightarrow z^3 \\overline{P(1/\\bar{z})}$, the optimal choice satisfies $b = c$. \n\nThus, we consider self-reciprocal polynomials:\n\\[P(z) = z^3 + bz^2 + bz + 1, \\quad |b| = 1.\\]\nLet $b = e^{i\\theta}$ and set $B = 2\\cos\\theta \\in [-2, 2]$. For $z = e^{it}$ on the unit circle:\n\\[|P(e^{it})|^2 = 4 + 2\\left[\\cos(3t) + B\\cos(2t) + (1+B)\\cos t\\right].\\]\nWriting this in terms of $u = \\cos t \\in [-1, 1]$, using $\\cos(2t) = 2u^2 - 1$ and $\\cos(3t) = 4u^3 - 3u$, we have:\n\\[|P(e^{it})|^2 = 4 + 2 H(u),\\]\nwhere\n\\[H(u) = 4u^3 + 2Bu^2 + (B-2)u - B.\\]\n\nAt the endpoint $u = 1$, we have $H(1) = 2 + 2B$. To minimize the maximum of $H(u)$ on $[-1, 1]$, the local maximum of $H(u)$ must equal the endpoint value $H(1)$. This means the cubic $H(u) - H(1)$ must have a double root. Factoring out $(u - 1)$:\n\\[H(u) - (2 + 2B) = (u - 1)\\left(4u^2 + (2B+4)u + (3B+2)\\right).\\]\n\nFor the quadratic factor to have a double root, its discriminant must vanish:\n\\[(2B+4)^2 - 16(3B+2) = 0 \\implies B^2 - 8B - 4 = 0.\\]\n\nSince $B \\in [-2, 2]$, we take the root:\n\\[B = 4 - 2\\sqrt{5}.\\]\nThe double root lies at $u = -\\frac{B+2}{4} = \\frac{\\sqrt{5}-3}{2} \\in [-1, 1]$, so this critical value is indeed achieved.\n\nThe maximum value of $H(u)$ is:\n\\[H(1) = 2 + 2(4 - 2\\sqrt{5}) = 10 - 4\\sqrt{5}.\\]\n\nThus, the maximum value of $|P(z)|^2$ on the unit circle is:\n\\[M^2 = 4 + 2(10 - 4\\sqrt{5}) = 24 - 8\\sqrt{5}.\\]\n\nTaking the square root:\n\\[M = \\sqrt{24 - 8\\sqrt{5}} = 2\\sqrt{5} - 2.\\]\n\nANSWER: 2\\sqrt{5}-2\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "2a91e1b7-edbd-4633-b07c-9a4460954d04",
+    "status": "SUCCESS",
+    "duration_seconds": 245.94054,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9779,
+      "output_tokens": 31682,
+      "thinking_tokens": 30890,
+      "cache_read_tokens": 0,
+      "total_tokens": 41461
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

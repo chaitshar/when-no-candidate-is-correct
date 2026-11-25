@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r3s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:30:39Z",
+  "duration_s": 6.122,
+  "input_tokens": 2,
+  "output_tokens": 962,
+  "thinking_tokens": 382,
+  "text": "The abstract is a narrative review. It outlines the strengths and limits of conventional and microfluidic EV isolation methods, lists commercial exosome isolation kits, and assesses market demand. It reports no experiments, yields, purities, or measured outcomes.\n\nNone of the four hypotheses is supported by it:\n\n- **Hypothesis 1** proposes a specific PNB-based thermosensitive hydrogel with CD63 aptamers and SERS readout, with pH and temperature selectivity. The abstract mentions none of these materials or readouts.\n- **Hypothesis 2** proposes acoustic microfluidics at 1–5 MHz combined with EIS from 1 Hz to 1 MHz, with 98.5% purity and over 97% yield. The abstract mentions microfluidic isolation only in general terms and reports no such numbers.\n- **Hypothesis 3** proposes a PNB matrix combined with SEC and multi-aptamer capture, with a 30% yield gain and ≥90% purity. The abstract reports no comparison or yield figures.\n- **Hypothesis 4** proposes PNB-aptamer capture with a phase transition near 32°C, compared against ultrafiltration in MSC cultures. The abstract does not discuss MSC cultures, ultrafiltration comparisons, or a transition temperature.\n\nThe abstract does touch on the general themes of the research question (isolation methods, characterization, microfluidics, commercial kits), but it does not test or validate any of these specific designs. Each hypothesis makes concrete empirical claims that would need primary data to confirm.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4800,
+    "stop_reason": "end_turn",
+    "session_id": "b110ef4f-5b2a-44d0-8eb6-81bae5d86f74",
+    "total_cost_usd": 0.00187826,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6416,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 962,
+      "output_tokens_details": {
+        "thinking_tokens": 382
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6416,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 962,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6416,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6416
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 962,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6416,
+        "webSearchRequests": 0,
+        "costUSD": 0.00187826,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 382,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6416,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2681,
+    "type": "result",
+    "duration_ms": 5018,
+    "uuid": "941acd8b-af19-470c-83b4-5c9b8f79d246",
+    "ttft_stream_ms": 996,
+    "time_to_request_ms": 220,
+    "first_content_frame_ms": 996,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

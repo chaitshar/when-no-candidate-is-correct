@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__arxivmath-0326_21_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T17:22:06Z",
+  "duration_s": 55.133,
+  "input_tokens": 11748,
+  "output_tokens": 5485,
+  "thinking_tokens": 5123,
+  "text": "An analysis of the three proposed solutions:\n\n- **Solution 1** correctly identifies the mechanism driving the size distortion of the Cauchy combination test under the one-factor equicorrelated Gaussian copula model. Using the Mehler (Hermite) expansion of the conditional characteristic function, the leading perturbation arises from the first Hermite coefficient $a_1(u) = \\mathbb{E}[Z e^{iu T}]$. Because $g^{-1}(t) \\sim \\sqrt{2\\log t}$ for large $t$, integration yields $a_1(u) \\sim i \\frac{4\\sqrt{2}}{3\\pi} u (\\log(1/u))^{3/2}$. Evaluating at $u = s/K$ and integrating out the latent Gaussian factor $W$ produces a Gaussian characteristic function factor with variance scaled by $\\rho_K (\\log K)^3$. Hence, the sharp condition for asymptotic exactness is $\\rho_K (\\log K)^3 \\to 0$, giving $c = 3$.\n- **Solution 2** incorrectly estimates the rate of the perturbation as $\\rho_K (\\log K)^2$, missing the additional factor of $\\log K$ that arises from integrating the tail behavior of $g^{-1}(t)$ against the Cauchy density, arriving at $c = 2$.\n- **Solution 3** incorrectly applies an extreme-value bivariate tail approximation suited for tests driven by a single minimal $p$-value (such as Bonferroni or Simes), which does not capture the collective shift of the Cauchy average, leading to the incorrect exponent $c = 1$.\n\nVERDICT 1: ACCEPT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "1cc0090b-dc48-493c-b285-1a52ab6d7f74",
+    "status": "SUCCESS",
+    "duration_seconds": 48.148195,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 11748,
+      "output_tokens": 5485,
+      "thinking_tokens": 5123,
+      "cache_read_tokens": 0,
+      "total_tokens": 17233
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

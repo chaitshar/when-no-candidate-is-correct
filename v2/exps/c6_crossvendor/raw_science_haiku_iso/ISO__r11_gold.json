@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r11_gold",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:59Z",
+  "duration_s": 6.24,
+  "input_tokens": 2,
+  "output_tokens": 1019,
+  "thinking_tokens": 546,
+  "text": "The candidate matches the abstract's main claims and its stated aim.\n\n- **Performance varies across seasons, domains, and variables, with no model best in all aspects.** The abstract says \"model performance varies considerably with seasons, domains, and variables evaluated, and no model outperforms in all aspects.\"\n- **The multi-model ensemble mean outperforms most individual models.** The abstract says the MME \"performs much better than almost all models.\"\n- **Significant interdependency exists among models.** The abstract says \"dependence exists between most of the CMIP6 models,\" and that models sharing a concept show less independence.\n- **Hierarchical clustering on multivariate error-field similarity identifies relatively independent models.** The abstract clusters the top 15 models this way to find relatively independent ones.\n- **Selecting a subset to reduce redundancy and improve reliability.** The abstract's stated purpose is a \"more reliable ensemble of dynamical downscaling simulations with reasonable inter-model spread.\" The candidate's \"minimizes redundancy\" is a reasonable reading of the independence criterion. The study does not test downscaling reliability directly, so \"enhances the reliability of regional climate projections\" is the intended benefit rather than a demonstrated result.\n\nThe candidate is a faithful summary of the study's central hypothesis. Its only overreach is the implied downstream benefit, which the abstract states as the goal rather than a result.\n\nVERDICT: ACCEPT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5000,
+    "stop_reason": "end_turn",
+    "session_id": "43d46348-fe01-4905-9f3e-991b8e7f56e4",
+    "total_cost_usd": 0.00174436,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5604,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1019,
+      "output_tokens_details": {
+        "thinking_tokens": 546
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5604,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1019,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5604,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5604
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1019,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5604,
+        "webSearchRequests": 0,
+        "costUSD": 0.00174436,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 546,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5604,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3506,
+    "type": "result",
+    "duration_ms": 5311,
+    "uuid": "5c52b2c7-066a-4e99-98b5-cd0defadedfb",
+    "ttft_stream_ms": 1036,
+    "time_to_request_ms": 310,
+    "first_content_frame_ms": 1036,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_34__1",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:48:56Z",
+  "duration_s": 16.567,
+  "input_tokens": 3852,
+  "output_tokens": 1811,
+  "thinking_tokens": 0,
+  "text": "For a connected graph \\(G\\) with minimum degree \\(\\delta(G)=3\\) every endpoint of a longest path must have all its neighbours on that path; otherwise the path could be extended.  \nSince each endpoint has at least three neighbours that lie on the same path, at least three distinct longest paths can be produced by choosing a different neighbour as the first edge of the path.  \n\nIt is possible to construct a cubic (3‑regular) graph that attains this lower bound.  \nTake a long cycle and at three equally spaced vertices replace each of them by a small “tri‑wheel’’ (a triangle with a pendant vertex attached to each of its three vertices).  The resulting graph has minimum degree three, order \\(n\\ge 18\\), and its longest paths all have the same length; exactly three of them are obtained by starting the traversal at one of the three distinguished vertices.  No other longest path exists, because any deviation would either shorten the path or create a vertex of degree 1 at an endpoint, contradicting \\(\\delta(G)=3\\).\n\nHence the smallest possible number of longest paths in any connected graph with minimum degree \\(3\\) and order at least \\(18\\) is three, and this value is achieved for every \\(n\\ge 18\\).\n\n**Answer**\n\n\\(a(3,n)=3\\) for all integers \\(n\\ge 18\\).\n\nANSWER: 3\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "2b5efe5f-247c-4198-a87f-ab53e102fb42",
+    "status": "SUCCESS",
+    "duration_seconds": 9.725784,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3852,
+      "output_tokens": 1811,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 5663
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

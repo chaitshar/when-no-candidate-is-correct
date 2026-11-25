@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_21_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:43:04Z",
+  "duration_s": 58.576,
+  "input_tokens": 2055,
+  "output_tokens": 5398,
+  "thinking_tokens": 4983,
+  "text": "The proposed solution is correct.\n\n1. **Upper bound**: A forbidden configuration $\\{n, p_1 n, \\dots, p_r n\\}$ corresponds in the exponent lattice $\\mathbb{Z}_{\\ge 0}^r$ to a translated star $a + V$, where $V = \\{0, e_1, \\dots, e_r\\}$. In the simplex $T_X$, there are $C = \\Psi_S(X/\\max p_i) = (1 - o(1))\\Psi_S(X)$ such stars. Any subset $A \\subseteq T_X$ avoiding all stars has complement $B = T_X \\setminus A$ which must intersect every star. Since each point $v \\in \\mathbb{Z}^r$ belongs to at most $r+1$ stars (as the base or as one of the $r$ endpoints), double-counting edge-vertex incidences gives $(r+1)|B| \\ge C$, leading to $|A| \\le \\left(\\frac{r}{r+1} + o(1)\\right)\\Psi_S(X)$.\n\n2. **Lower bound**: Setting $\\phi(a) = \\sum_{i=1}^r i a_i \\pmod{r+1}$ maps $V$ bijectively onto $\\mathbb{Z}/(r+1)\\mathbb{Z}$. Thus, every translate $a+V$ contains exactly one element with $\\phi(a+v) \\equiv 0 \\pmod{r+1}$. Removing the sublattice $\\ker \\phi$ (which has index $r+1$ and asymptotic density $\\frac{1}{r+1}$) leaves a star-free subset of asymptotic density $\\frac{r}{r+1}$.\n\nBoth bounds match, establishing $\\lim_{X\\to\\infty} \\frac{F_S(X)}{\\Psi_S(X)} = \\frac{r}{r+1}$.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "60a2ea9a-b35c-4ef2-b108-d3828ae53077",
+    "status": "SUCCESS",
+    "duration_seconds": 49.149117,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 2055,
+      "output_tokens": 5398,
+      "thinking_tokens": 4983,
+      "cache_read_tokens": 8434,
+      "total_tokens": 7453
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

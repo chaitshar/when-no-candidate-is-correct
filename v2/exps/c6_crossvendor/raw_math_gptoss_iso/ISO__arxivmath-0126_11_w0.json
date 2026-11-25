@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0126_11_w0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T10:26:40Z",
+  "duration_s": 39.387,
+  "input_tokens": 4520,
+  "output_tokens": 3673,
+  "thinking_tokens": 0,
+  "text": "The reasoning in the proposed solution is sound. The constraints that each hole’s boundary be disjoint from every other hole’s boundary and from the outer boundary force a minimum “protective” layer of polyomino cells around every hole. In the optimal construction the holes can be arranged with density \\(1/3\\) (one hole per \\(3\\times3\\) block) while the surrounding polyomino cells occupy density \\(2/3\\) and remain edge‑connected. This yields an asymptotic ratio  \n\n\\[\n\\frac{h_n}{n} = \\frac{\\tfrac13}{\\tfrac23}= \\tfrac12 .\n\\]\n\nThe upper‑bound argument using vertex‑cover density and connectivity also shows that a higher ratio cannot be achieved. Therefore the limit is indeed \\( \\tfrac12\\).\n\n**Verdict:** VERDICT: ACCEPT (the final answer is correct)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "73769f7a-240c-4c0c-8f31-93808ff32209",
+    "status": "SUCCESS",
+    "duration_seconds": 31.206753,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 4520,
+      "output_tokens": 3673,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 8193
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

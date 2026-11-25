@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0326_21_w2",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:29:43Z",
+  "duration_s": 94.032,
+  "input_tokens": 10194,
+  "output_tokens": 10434,
+  "thinking_tokens": 10096,
+  "text": "The proposed solution asserts that the exponent is $c = 3/4$. \n\nHowever, under the canonical one-factor equicorrelated Gaussian copula model, the $p$-values are generated as $p_k = \\Phi(Z_k)$ with $Z_k = \\sqrt{\\rho_K} Z_0 + \\sqrt{1 - \\rho_K} \\epsilon_k$, where $Z_0, \\epsilon_1, \\dots, \\epsilon_K \\stackrel{i.i.d.}{\\sim} \\mathcal{N}(0, 1)$. \n\nThe tail behavior of the Cauchy combination test statistic is dominated by the extreme $p$-values (specifically, the minimum $p$-value $p_{(1)}$). From Gaussian extreme value theory, the extremes of $K$ standard normal variables scale as $\\sqrt{2 \\log K}$. Expanding the underlying Gaussian variable gives:\n$$Z_{(1)} \\approx -\\sqrt{2 \\log K}\\sqrt{1 - \\rho_K} + \\sqrt{\\rho_K} Z_0$$\nThe tail probability $\\Phi(Z_{(1)})$ depends on $Z_{(1)}^2/2$, where the cross-term and variance shift produce terms proportional to $\\rho_K \\log K$ and $\\sqrt{\\rho_K \\log K} Z_0$. \n\nConsequently, the dependence effect vanishes and the test is asymptotically exact if and only if $\\rho_K \\log K \\to 0$, corresponding to $c = 1$, not $3/4$.\n\nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "58171520-774f-4a24-ad44-ae27f72b10d9",
+    "status": "SUCCESS",
+    "duration_seconds": 84.269237,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10194,
+      "output_tokens": 10434,
+      "thinking_tokens": 10096,
+      "cache_read_tokens": 0,
+      "total_tokens": 20628
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

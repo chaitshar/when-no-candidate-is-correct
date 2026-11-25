@@ -1,5 +1,7 @@
 # When No Candidate Is Correct: study archive
 
+**Update, November 2026 (release `v2.0`).** The follow-up study, "Lineups Without a Culprit: AI Judges Pick a Wrong Answer More Often When They See All the Answers Together", is in [`v2/`](v2/README.md): paper, plans, locked pools, raw replies and analysis code. Everything below describes the first study (release `v1.0`), which is unchanged.
+
 Data, code and records for the preprint "When No Candidate Is Correct: Pooled Selection Raises False Choices by Claude Judges" by Chaitanya Sharma (`paper/main.pdf`).
 
 The study compares three ways of judging model answers when no candidate is correct: separate verdicts (ISO), joint verdicts (EACH) and choosing one candidate or NONE (PICK). Judges are claude-haiku-5-5 and claude-sonnet-5-5. Claims are scoped to those models and settings.

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__smt_2025_47__1",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:44:53Z",
+  "duration_s": 13.838,
+  "input_tokens": 3845,
+  "output_tokens": 1334,
+  "thinking_tokens": 0,
+  "text": "The equation can be rewritten as  \n\n\\[\n(x+12)(x+4)(x+16)(x+8)=44^{2^{2025}}.\n\\]\n\nLet \\(y=x+10\\). Then  \n\n\\[\n(x+12)(x+4)(x+16)(x+8)=(y+2)(y-2)(y+6)(y-6)=(y^{2}-4)(y^{2}-36)=y^{4}-40y^{2}+144.\n\\]\n\nSetting this equal to \\(C=44^{2^{2025}}\\) gives  \n\n\\[\ny^{4}-40y^{2}+144=C\\quad\\Longrightarrow\\quad t^{2}-40t+144-C=0,\n\\]\n\nwhere \\(t=y^{2}\\ge0\\). Solving for \\(t\\),\n\n\\[\nt=20\\pm\\sqrt{C+256}.\n\\]\n\nSince \\(C\\) is astronomically large, the “\\(-\\)” branch yields a negative \\(t\\) and is discarded. Hence  \n\n\\[\ny^{2}=20+\\sqrt{C+256},\n\\qquad\ny=\\pm\\sqrt{20+\\sqrt{C+256}}.\n\\]\n\nReturning to \\(x=y-10\\),\n\n\\[\nx=-10\\pm\\sqrt{20+\\sqrt{C+256}}.\n\\]\n\nThus there are exactly two real roots, and their sum is  \n\n\\[\n(-10+\\sqrt{...})+(-10-\\sqrt{...})=-20.\n\\]\n\n**ANSWER: -20**\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "2a598796-d054-44fd-b304-48052e20d970",
+    "status": "SUCCESS",
+    "duration_seconds": 6.783193,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3845,
+      "output_tokens": 1334,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 5179
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

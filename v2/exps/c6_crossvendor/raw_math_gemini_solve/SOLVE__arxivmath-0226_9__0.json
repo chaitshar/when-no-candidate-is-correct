@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0226_9__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:33:26Z",
+  "duration_s": 286.909,
+  "input_tokens": 9905,
+  "output_tokens": 30887,
+  "thinking_tokens": 30472,
+  "text": "To determine the sharp threshold $\\alpha_{\\mathrm{dom}}^\\star$ as a function of the committee size $k$, consider the canonical impartial culture model as the number of candidates $m \\to \\infty$ with a sufficiently large fixed number of voters $n$.\n\nIn this model, each voter's preference is an independent, uniformly random permutation of the $m$ candidates. For any chosen committee $S$ of size $k$ and any candidate $a \\notin S$, the relative ranking of $\\{a\\} \\cup S$ for any given voter is an independent, uniformly random permutation of $k+1$ elements. \n\nConsequently, for any voter, the probability that candidate $a$ is ranked ahead of all $k$ members of $S$ is precisely:\n$$\\Pr(a \\succ b \\text{ for all } b \\in S) = \\frac{1}{k+1}$$\nConversely, the probability that at least one member of $S$ is preferred to candidate $a$ by a given voter is:\n$$1 - \\frac{1}{k+1} = \\frac{k}{k+1}$$\n\nBy selecting the optimal committee $S$ of size $k$ as $m \\to \\infty$, the fraction of voters for which a single committee member dominates any candidate $a \\notin S$ concentrates sharply around this bound. For any $\\alpha < \\frac{k}{k+1}$, an $\\alpha$-dominating set of size $k$ exists with probability approaching $1$, whereas for $\\alpha > \\frac{k}{k+1}$, with high probability there exists an outside candidate $a$ that defeats every member of $S$ in more than a $(1 - \\alpha)$-fraction of the voters, causing the probability to approach $0$.\n\nThus, the sharp threshold is:\n$$\\alpha_{\\mathrm{dom}}^\\star = \\frac{k}{k+1}$$\n\nANSWER: \\frac{k}{k+1}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "cc06a8bf-ee45-4eb9-97a1-7f7def4c3ce3",
+    "status": "SUCCESS",
+    "duration_seconds": 278.218347,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9905,
+      "output_tokens": 30887,
+      "thinking_tokens": 30472,
+      "cache_read_tokens": 0,
+      "total_tokens": 40792
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

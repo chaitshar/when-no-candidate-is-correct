@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0626_15__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T18:05:04Z",
+  "duration_s": 102.305,
+  "input_tokens": 9985,
+  "output_tokens": 11702,
+  "thinking_tokens": 10774,
+  "text": "To find the optimal constant $c_{\\rho,n}$, we evaluate the quantities for specific choices of $f$ and $g$ and verify the base case.\n\n### 1. Test Functions (Upper Bound on $c_{\\rho,n}$)\nLet $x_0 = (0, 0, \\dots, 0)$ and $y_0 = (1, 1, \\dots, 1)$ in $\\{0,1\\}^n$. Consider the indicator functions:\n$$f = \\mathbf{1}_{\\{x_0\\}}, \\quad g = \\mathbf{1}_{\\{y_0\\}}$$\nBoth $f$ and $g$ take values in $\\{0,1\\} \\subseteq [0,1]$.\n\n- Under the uniform probability measure on $\\{0,1\\}^n$, the noise operator applied to $g$ evaluated at $x_0$ gives:\n  $$(T_\\rho g)(x_0) = \\left(\\frac{1-\\rho}{2}\\right)^n$$\n  Hence, the inner product is:\n  $$\\langle f, T_\\rho g \\rangle = \\mathbb{E}_x[f(x)(T_\\rho g)(x)] = 2^{-n} (T_\\rho g)(x_0) = 2^{-n} \\left(\\frac{1-\\rho}{2}\\right)^n = 4^{-n}(1-\\rho)^n$$\n\n- For the convolution $(f * g)(x) = \\mathbb{E}_y[f(y)g(x \\oplus y)]$, the product $f(y)g(x \\oplus y)$ is nonzero if and only if $y = x_0$ and $x \\oplus y = y_0$, which uniquely determines $x = x_0 \\oplus y_0 = y_0$. At this point:\n  $$(f * g)(y_0) = 2^{-n} f(x_0)g(y_0) = 2^{-n}$$\n  and $(f * g)(x) = 0$ for all $x \\ne y_0$. Therefore:\n  $$\\| f * g \\|_2^2 = \\mathbb{E}_x[(f * g)(x)^2] = 2^{-n} (2^{-n})^2 = 8^{-n}$$\n\nComparing the two quantities:\n$$\\frac{\\langle f, T_\\rho g \\rangle}{\\| f * g \\|_2^2} = \\frac{4^{-n}(1-\\rho)^n}{8^{-n}} = 2^n (1-\\rho)^n = (2(1-\\rho))^n$$\nThus, the optimal constant satisfies $c_{\\rho,n} \\le (2(1-\\rho))^n$.\n\n### 2. Base Case ($n=1$) and Tensorization\nFor $n=1$, any functions $f, g: \\{0,1\\} \\to [0,1]$ can be parameterized by their values $(a, b)$ and $(c, d)$ respectively. Setting $X = ac + bd$ and $Y = ad + bc$, the ratio becomes:\n$$\\frac{\\langle f, T_\\rho g \\rangle}{\\| f * g \\|_2^2} = 2 \\frac{(1+\\rho)X + (1-\\rho)Y}{X^2 + Y^2}$$\nSince $a,b,c,d \\in [0,1]$, we have $X, Y \\ge 0$, $|X - Y| \\le 1$, and $X + Y \\le (a+b)(c+d)$. For $\\rho \\in (1/2, 1)$, minimizing this expression over the valid domain yields the minimum at $X = 0, Y = 1$ (corresponding to $a=1, b=0, c=0, d=1$), which gives:\n$$c_{\\rho, 1} = 2(1-\\rho)$$\n\nBy the standard tensorization property of the noise operator and convolution on the Boolean cube, the inequality extends to dimension $n$ with constant:\n$$c_{\\rho,n} = (c_{\\rho,1})^n = (2(1-\\rho))^n$$\n\nANSWER: (2(1-\\rho))^n\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "0004676e-b44b-4c95-86e0-9397d2549714",
+    "status": "SUCCESS",
+    "duration_seconds": 93.39314,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9985,
+      "output_tokens": 11702,
+      "thinking_tokens": 10774,
+      "cache_read_tokens": 0,
+      "total_tokens": 21687
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

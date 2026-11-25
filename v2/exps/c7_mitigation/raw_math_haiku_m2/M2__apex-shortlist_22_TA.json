@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__apex-shortlist_22_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:49:11Z",
+  "duration_s": 106.332,
+  "input_tokens": 2,
+  "output_tokens": 23688,
+  "thinking_tokens": 22935,
+  "text": "**Step 1: Independent falsification**\n\n**Solution 1 (answer 3): falsified.** Its claim that n = 4 is impossible is wrong. Walkers that bounce on distinct edges meet only at vertices, so no non-vertex collision can occur. Solution 3's construction gives a valid n = 4 configuration: the speed-2, 4, 8 walkers bounce on the three edges at O, and the speed-16 walker leaves O along the speed-8 edge (where they meet only at t = 0) and then cycles on the face y = 1. The argument that bouncing \"always fails\" overlooks this.\n\n**Solution 2 (answer 8): not verified.** I checked a concrete 8-walker assignment for the edges: bouncers A(2), B(4), C(8) on the three edges at O; D(16) takes the 4-cycle on the y = 1 face, with a transit through O–z; E(32) transits O–x and bounces on (1,0,0)–(1,0,1); F(64) transits O–x and bounces on (1,0,0)–(1,1,0); G(128) transits O–z and bounces on (0,0,1)–(1,0,1); H(256) transits O–z and (0,0,1)–(1,0,1), then bounces on (1,0,1)–(1,1,1). Every transit ends before any slower bouncer reaches that edge, so this seems valid, which supports the lower bound 8. However, Solution 2's optimality argument is hand-wavy: \"no two 4-cycles are edge-disjoint\" and \"2-edge paths support only one walker\" are asserted, not proven. The upper bound of 8 is unproven, and I have not ruled out 9 or more.\n\n**Solution 3 (answer 4): falsified.** Its n = 4 construction is valid, but its claim that n ≥ 5 always collides is unsupported (\"as demonstrated by overlapping intervals\" gives no computation). The n = 5 through 8 configurations above break it.\n\n**Step 2: Selection gate**\n\nNo solution survives falsification at confidence 4 or higher. Solution 1 is refuted, Solution 3 is refuted, and Solution 2 matches a valid construction but lacks a proof of optimality.\n\nCHOICE: NONE\n\nCONFIDENCE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 105348,
+    "stop_reason": "end_turn",
+    "session_id": "ef29f731-43a5-434f-b8db-b536df2f89f7",
+    "total_cost_usd": 0.013604460000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8232,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 23688,
+      "output_tokens_details": {
+        "thinking_tokens": 22935
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8232,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 23688,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8232,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8232
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 23688,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8232,
+        "webSearchRequests": 0,
+        "costUSD": 0.013604460000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 22935,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8232,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 102873,
+    "type": "result",
+    "duration_ms": 105622,
+    "uuid": "823ba27c-f377-4914-ba06-d6baba9d356a",
+    "ttft_stream_ms": 1428,
+    "time_to_request_ms": 275,
+    "first_content_frame_ms": 1428,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

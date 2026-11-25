@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_14_w1",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T12:34:22Z",
+  "duration_s": 19.542,
+  "input_tokens": 4172,
+  "output_tokens": 1558,
+  "thinking_tokens": 0,
+  "text": "The limit of Sibson’s \\(\\alpha\\)-mutual information for a deterministic (high‑SNR) Gaussian channel with discrete \\(X\\) is known to be the Rényi entropy of order \\(\\beta = 2-\\alpha\\). This follows from the definition  \n\n\\[\nI_\\alpha(X;Y)=\\frac{1}{\\alpha-1}\\log\\sum_x p_X(x)\\,p_Y(f(x))^{\\,1-\\alpha},\n\\]\n\nand, when the channel becomes injective (so \\(p_Y(f(x))=p_X(x)\\)), it reduces to  \n\n\\[\nI_\\alpha(X;Y)=\\frac{1}{\\alpha-1}\\log\\sum_x p_X(x)^{\\,2-\\alpha}\n      = H_{2-\\alpha}(X).\n\\]\n\nHence the correct relationship is \\(\\beta = 2-\\alpha\\), not \\(\\beta = \\frac{1}{1-\\alpha}\\).\n\n**Verdict:** The final answer is incorrect.  \n\nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "b6acd6ad-baf4-4b79-a52c-4644d74d971b",
+    "status": "SUCCESS",
+    "duration_seconds": 11.951487,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 4172,
+      "output_tokens": 1558,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 5730
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

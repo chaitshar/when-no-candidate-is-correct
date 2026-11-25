@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0526_17__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T18:00:33Z",
+  "duration_s": 195.308,
+  "input_tokens": 9765,
+  "output_tokens": 21789,
+  "thinking_tokens": 20892,
+  "text": "To determine the largest integer $k$ such that $\\deg p \\le k$ guarantees the global injectivity of a polynomial map $F = (p, q): \\mathbb{R}^2 \\to \\mathbb{R}^2$ with nowhere zero Jacobian determinant, we analyze the condition for small values of $\\deg p$:\n\n1. **Case $\\deg p \\le 1$:**\n   If $\\deg p \\le 1$, then $p(x, y) = ax + by + c$. Since $\\det JF(x, y) = p_x q_y - p_y q_x \\neq 0$ everywhere, $(a, b) \\neq (0, 0)$. By an affine change of coordinates, we can take $p(x, y) = x$, so $F(x, y) = (x, q(x, y))$. The Jacobian determinant is $\\frac{\\partial q}{\\partial y}(x, y) \\neq 0$ for all $(x, y) \\in \\mathbb{R}^2$. For each fixed $x$, $y \\mapsto q(x, y)$ has a non-vanishing derivative, so it is strictly monotonic and thus injective. Hence, $F$ is globally injective.\n\n2. **Case $\\deg p \\le 2$:**\n   Suppose $\\deg p \\le 2$. Since $\\det JF \\neq 0$ everywhere, the gradient $\\nabla p(x, y) = (p_x, p_y)$ cannot vanish at any point in $\\mathbb{R}^2$. \n   Writing $p(x, y) = Ax^2 + Bxy + Cy^2 + Dx + Ey + F$, the gradient $\\nabla p(x, y)$ is an affine map:\n   $$\\nabla p(x, y) = \\begin{pmatrix} 2A & B \\\\ B & 2C \\end{pmatrix} \\begin{pmatrix} x \\\\ y \\end{pmatrix} + \\begin{pmatrix} D \\\\ E \\end{pmatrix}$$\n   For this system to have no solutions in $\\mathbb{R}^2$, the determinant of the matrix must vanish ($4AC - B^2 = 0$), meaning the quadratic part is of rank at most 1, and the vector $(D, E)^T$ cannot lie in the column space.\n   - If the rank is 0, $\\deg p \\le 1$, which is already covered.\n   - If the rank is 1, the quadratic part is $\\pm (\\alpha x + \\beta y)^2$ for some $(\\alpha, \\beta) \\neq (0, 0)$, and $(D, E)$ is linearly independent of $(\\alpha, \\beta)$. \n   \n   Under an affine change of coordinates $u = \\alpha x + \\beta y$ and $v = Dx + Ey + F$, the polynomial becomes $p(u, v) = v \\pm u^2$. The polynomial map $(u, v) \\mapsto (u, v \\pm u^2) = (u, p(u, v))$ is a global polynomial automorphism of $\\mathbb{R}^2$ with polynomial inverse $(u, w) \\mapsto (u, w \\mp u^2)$. Expressing $F$ in the coordinates $(u, w)$, the first component becomes simply $w$, reducing to the case where the first coordinate is linear. As shown in the first case, this implies that $F$ is globally injective. Thus, $k \\ge 2$.\n\n3. **Case $\\deg p \\ge 3$:**\n   For polynomials of degree 3, $\\nabla p$ can be nowhere zero while having level sets with multiple disconnected components (for example, $p(x, y) = x^2 y - x$, where $\\nabla p = (2xy - 1, x^2) \\neq (0, 0)$ everywhere, yet the level set $p^{-1}(0)$ has three connected components). Because the level sets are disconnected, global injectivity is no longer guaranteed for $\\deg p \\ge 3$.\n\nHence, the largest such integer is $k = 2$.\n\nANSWER: 2\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "2352d59e-6fbf-436a-b9fb-a03704ebd85a",
+    "status": "SUCCESS",
+    "duration_seconds": 187.099465,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9765,
+      "output_tokens": 21789,
+      "thinking_tokens": 20892,
+      "cache_read_tokens": 0,
+      "total_tokens": 31554
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

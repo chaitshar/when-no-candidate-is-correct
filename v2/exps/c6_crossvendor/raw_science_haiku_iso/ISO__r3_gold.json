@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r3_gold",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:06Z",
+  "duration_s": 6.717,
+  "input_tokens": 2,
+  "output_tokens": 1040,
+  "thinking_tokens": 497,
+  "text": "The abstract is a review. Its main thrust is that existing EV and exosome isolation methods each have significant drawbacks, and that new approaches \"show great potential.\" It outlines the strengths and limitations of conventional and microfluidic isolation methods, lists commercial kits, and assesses market demand.\n\nThe candidate hypothesis is close to this theme but goes further in three ways the abstract does not support:\n\n1. **Comparative performance claim.** The candidate says microfluidics \"can significantly improve\" isolation and characterization, with \"higher purity, yield, and specificity.\" The abstract only says microfluidic methods have potential and are outlined alongside their strengths and limitations. It reports no comparative improvement in purity, yield, or specificity.\n2. **Label-free and label-based framing.** The abstract never mentions label-free or label-based techniques, so the candidate's specific mechanistic framing is not in the evidence.\n3. **Clinical readiness.** The abstract does not claim that microfluidic isolation is essential for clinical diagnostics or therapeutics. It frames EVs as having \"great potential\" for diagnosis and treatment, and it does not link microfluidics to clinical application.\n\nA reviewer would likely say the study's position is that isolation methods are the bottleneck, and that microfluidics is a promising but limited alternative to be weighed against conventional methods. The candidate turns that into a stronger, quantitative, causal claim that the abstract does not make. The candidate could be accepted only as a loose paraphrase of the review's thrust, but as a stated main hypothesis with specific performance claims, it is not supported by this evidence.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5667,
+    "stop_reason": "end_turn",
+    "session_id": "71c3556c-c894-4b94-b986-89f1c4e98c8f",
+    "total_cost_usd": 0.0016902599999999999,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5281,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1040,
+      "output_tokens_details": {
+        "thinking_tokens": 497
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5281,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1040,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5281,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5281
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1040,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5281,
+        "webSearchRequests": 0,
+        "costUSD": 0.0016902599999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 497,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5281,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3200,
+    "type": "result",
+    "duration_ms": 5886,
+    "uuid": "328b07dc-db65-4104-a603-dadf88bddba1",
+    "ttft_stream_ms": 1017,
+    "time_to_request_ms": 218,
+    "first_content_frame_ms": 1017,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

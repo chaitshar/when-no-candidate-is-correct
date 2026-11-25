@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__r8s0_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:46:45Z",
+  "duration_s": 15.109,
+  "input_tokens": 2,
+  "output_tokens": 2531,
+  "thinking_tokens": 1587,
+  "text": "**Step 1: Independent falsification**\n\n**Hypothesis 1 (broad social-environmental factors: community support, organizational structures, policy, crime, green space, public transport).** Falsified. The abstract's ten determinants include school-based health centers, region, urban residence, accessibility of care, area socioeconomic status, parity laws, screening programs, fee-for-service plans, insurance extension, and inter-organizational collaboration. Crime rates, green spaces, transit coverage, and neighbourhood helpfulness or cohesion are not reported as determinants. The hypothesis also asserts significance for a \"comprehensive array\" of factors, while the abstract says the other 35 determinants have only limited evidence. Its measurement plan and agent-based model are proposals, not findings.\n\n**Hypothesis 2 (community factors moderating individual/family effects, with racial/ethnic subgroup differences and mediation by program alignment, social support, and self-efficacy).** Falsified. The abstract reports main associations between contextual factors and utilization. It reports no moderation of individual or family effects, no mediation pathways, no subgroup differences, and no evidence on walkability or self-efficacy. The hypothesis makes interaction and mediation claims that the review does not address.\n\n**Hypothesis 3 (synergistic three-component strategy: practitioner density, school curriculum, mobile outreach, mediated by literacy, attitudes, and social-media stigma).** Falsified. Some elements loosely resemble reported findings, such as school-based health centers, screening programs, and inter-organizational collaboration. But the abstract reports no synergistic effects, no curriculum or mobile outreach evidence, and no mediation by stigma or literacy. Social-media sentiment is absent from the review. The hypothesis is an untested design, and its causal and synergy claims are unsupported.\n\n**Hypothesis 4 (drive-time proximity and public transport density/frequency, with GIS, telehealth, and a cohort design).** Falsified as stated. The proximity component has partial support: the abstract reports positive associations for high accessibility of mental health care and for urban residence. However, public transport density and schedule frequency are not reported as determinants. Drive-time and telehealth are also absent. The hypothesis is conjunctive, so the unsupported transport claim breaks it even though part of it aligns with the evidence.\n\n**Step 2: Calibrated selection gate**\n\nNo hypothesis survives falsification. Hypotheses 1 through 3 each make claims the abstract does not support. Hypothesis 4 is partly consistent with the reported accessibility and urban findings, but its public-transport claim is unsupported, so it does not qualify for selection at confidence 4 or higher. The selection gate therefore requires CHOICE: NONE.\n\nCHOICE: NONE\nCONFIDENCE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 12393,
+    "stop_reason": "end_turn",
+    "session_id": "b82e9d93-d5ff-40b2-8eb5-ca4fb8675af4",
+    "total_cost_usd": 0.00312476,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8726,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2531,
+      "output_tokens_details": {
+        "thinking_tokens": 1587
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8726,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2531,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8726,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8726
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2531,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8726,
+        "webSearchRequests": 0,
+        "costUSD": 0.00312476,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1587,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8726,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 10344,
+    "type": "result",
+    "duration_ms": 14421,
+    "uuid": "94f22071-1a5e-4393-a1a4-b992b7ea872c",
+    "ttft_stream_ms": 2995,
+    "time_to_request_ms": 2030,
+    "first_content_frame_ms": 2996,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

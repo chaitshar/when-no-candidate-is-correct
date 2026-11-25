@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0526_32__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T18:05:21Z",
+  "duration_s": 436.24,
+  "input_tokens": 9871,
+  "output_tokens": 48031,
+  "thinking_tokens": 47425,
+  "text": "To find the optimal (minimal) integer $m$ such that the condition \n$$d_m > \\binom{n-1}{k-1} - \\binom{n-s}{k-1}$$\nguarantees that a $k$-uniform hypergraph $\\mathcal{F}$ on $n$ vertices contains a matching of size at least $s$ (for sufficiently large $n$), we determine the maximum number of vertices that can have degree strictly greater than $\\binom{n-1}{k-1} - \\binom{n-s}{k-1}$ in a hypergraph with matching number $\\nu(\\mathcal{F}) \\le s-1$.\n\nThere are two primary extremal constructions with $\\nu(\\mathcal{F}) \\le s-1$:\n\n1. **Clique-type family:** Let $A$ be a set of $2s-1$ vertices, and let $\\mathcal{F}$ consist of all edges containing at least $2$ vertices of $A$. Any matching uses at least $2$ vertices of $A$ per edge, so $\\nu(\\mathcal{F}) \\le \\lfloor \\frac{2s-1}{2} \\rfloor = s-1$. For every $v \\in A$,\n   $$d(v) = \\binom{n-1}{k-1} - \\binom{n-(2s-1)}{k-1} > \\binom{n-1}{k-1} - \\binom{n-s}{k-1}$$\n   for sufficiently large $n$. This family has $|A| = 2s-1$ vertices with degrees exceeding the threshold.\n\n2. **Hilton–Milner-type family:** Let $S$ be a set of $s-2$ vertices, $x \\notin S$, and $Y$ a set of $k$ vertices disjoint from $S \\cup \\{x\\}$. Let $\\mathcal{F}$ consist of all edges intersecting $S$, all edges containing $x$ and intersecting $Y$, and the edge $Y$. Then $\\nu(\\mathcal{F}) = s-1$, and the vertices in $S \\cup \\{x\\} \\cup Y$ all have degree strictly greater than the threshold. The number of such vertices is $(s-2) + 1 + k = k + s - 1$.\n\nThus, the maximum number of vertices of degree strictly exceeding the threshold without containing a matching of size $s$ is $\\max\\{2s - 1, k + s - 1\\}$. \n\nTo guarantee the existence of a matching of size at least $s$, $m$ must exceed this maximum:\n$$m = \\max\\{2s - 1, k + s - 1\\} + 1 = \\max\\{2s, k + s\\}.$$\n\nANSWER: $\\max\\{2s, k+s\\}$\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "97a8fee4-af6f-4823-b0cd-17877fbefc84",
+    "status": "SUCCESS",
+    "duration_seconds": 428.288923,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9871,
+      "output_tokens": 48031,
+      "thinking_tokens": 47425,
+      "cache_read_tokens": 0,
+      "total_tokens": 57902
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

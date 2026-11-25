@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r11s1_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:55Z",
+  "duration_s": 9.099,
+  "input_tokens": 2,
+  "output_tokens": 1653,
+  "thinking_tokens": 872,
+  "text": "**Hypothesis 1 (Bayesian hierarchical weighted selection):** The abstract describes no Bayesian hierarchical modeling, no weighting scheme, and no explicit dependence term in a selection model. The study ranks models with MVIE and clusters them by error-field similarity. This is a different method, so the hypothesis is not supported.\n\n**Hypothesis 2 (MVIE/VFE extended with KL divergence or PCA similarity, then validated by high-resolution downscaling):** The core framework matches. The study uses MVIE with VFE diagrams to evaluate multiple large-scale fields, and it defines pairwise similarity of multivariate error fields to measure dependence. But the specific extension (KL divergence or principal-component similarity added to the selection objective) is not in the study, and the abstract reports no downscaling validation. The hypothesis is best read as a proposed follow-up, not what the evidence shows, so it is not supported as the main hypothesis.\n\n**Hypothesis 3 (area-weighted MISS, RMSE/MAE thresholds, hierarchical clustering, reduced projection uncertainty):** Hierarchical clustering on error similarity is in the study, but the rest is not. The study does not define RMSE/MAE selection thresholds, and it does not measure reduced uncertainty or improved accuracy of regional projections for temperature, precipitation, or wind. Those are untested claims, so the hypothesis is not supported.\n\n**Hypothesis 4 (performance varies by season, domain, and variable; no single model dominates; MME generally beats individual models; interdependence exists; hierarchical clustering of error-field similarity identifies relatively independent models for subset selection):** Each element appears in the abstract. Performance varies with season, domain, and variable, and no model outperforms in all aspects. The MME performs much better than almost all models. Dependence exists among most CMIP6 models, and the top 15 are hierarchically clustered by error-field similarity to find relatively independent models. The hypothesis's claim about enhanced downscaling reliability is a motivation the study supports only indirectly, but the main findings are accurately stated. This is the hypothesis the evidence supports.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: ACCEPT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 7979,
+    "stop_reason": "end_turn",
+    "session_id": "33c8ac82-9e62-40ce-805f-8d560b863e5d",
+    "total_cost_usd": 0.00223856,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6490,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1653,
+      "output_tokens_details": {
+        "thinking_tokens": 872
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6490,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1653,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6490,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6490
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1653,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6490,
+        "webSearchRequests": 0,
+        "costUSD": 0.00223856,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 872,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6490,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4838,
+    "type": "result",
+    "duration_ms": 8169,
+    "uuid": "ff3ebc35-1e0a-41db-80d8-9b8d51c7e745",
+    "ttft_stream_ms": 920,
+    "time_to_request_ms": 187,
+    "first_content_frame_ms": 920,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

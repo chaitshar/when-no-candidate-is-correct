@@ -1,0 +1,117 @@
+{
+  "job_id": "PICK__r5s2_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:26:32Z",
+  "duration_s": 9.232,
+  "input_tokens": 2,
+  "output_tokens": 1735,
+  "thinking_tokens": 1017,
+  "text": "**Hypothesis 1 is the one the abstract supports.** The abstract's core claim is that magnetite-(apatite) deposits form by crystallization of iron-rich, ultrabasic melts generated when silicate melts interact with oxidized P-F-SO4-bearing sedimentary rocks. It describes those melts as Fe-rich and Si-Al-poor, separating from silicate magma after crustal assimilation. Hypothesis 1 matches this chain: silicate magma, interaction with oxidized sediments, separation of Fe-rich melts, and crystallization into the deposit.\n\n- **Hypothesis 1:** Consistent with the abstract. It omits detail, but it does not contradict the study.\n- **Hypothesis 2:** Conflicts with the abstract. It requires low oxygen fugacity (ΔFMQ -1 to -2), but the abstract says these systems have high fO2. It also relies on partial melting of U-Th-depleted sediments and a Pb-rich fluid mechanism that the abstract does not mention. Its numbers, such as 10–50 °C/year cooling and Pb gradients, are not in the abstract.\n- **Hypothesis 3:** Partly overlaps. It invokes contamination by P-rich sediments and F-P-rich immiscible liquids, which the abstract supports. But its central mechanism is Pb isotopic disequilibrium from ancient sedimentary Pb, and its andesite host and 1,100–1,250 °C figures are not in the abstract. The abstract instead stresses melt immiscibility and fractional crystallization, which Hypothesis 3 does not describe. Its core is a loose match, but its distinctive claims are unsupported.\n- **Hypothesis 4:** Does not match. It centers on magmatic fluids and host-rock reactions, while the abstract centers on iron-rich melts. It is also framed as a proposed research plan (\"will be analyzed,\" \"will be conducted\") rather than a genesis model, and the abstract reports no such results.\n\nHypothesis 1 is the closest match, and the others either contradict the abstract or add unsupported specifics.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8113,
+    "stop_reason": "end_turn",
+    "session_id": "664e226c-b8b9-4cd3-870e-61bdbf2bba5e",
+    "total_cost_usd": 0.00239816,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7083,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1735,
+      "output_tokens_details": {
+        "thinking_tokens": 1017
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7083,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1735,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7083,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7083
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1735,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7083,
+        "webSearchRequests": 0,
+        "costUSD": 0.00239816,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1017,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7083,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5111,
+    "type": "result",
+    "duration_ms": 8264,
+    "uuid": "117e484f-b7d3-4b13-8c3a-0b0aaf38172b",
+    "ttft_stream_ms": 1037,
+    "time_to_request_ms": 153,
+    "first_content_frame_ms": 1037,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

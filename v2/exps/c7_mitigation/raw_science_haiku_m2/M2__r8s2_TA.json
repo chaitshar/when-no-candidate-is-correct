@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__r8s2_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:46:49Z",
+  "duration_s": 10.844,
+  "input_tokens": 2,
+  "output_tokens": 1968,
+  "thinking_tokens": 1137,
+  "text": "**Step 1: Independent falsification**\n\n**Hypothesis 1 (neighborhood racial composition and utilization):** Falsified. The abstract reports no finding on neighborhood racial or ethnic composition. Its area-level determinants are region, urban residence, accessibility of care, neighborhood socioeconomic status, and organizational collaboration. The claimed direction (higher use in predominantly minority neighborhoods) and its mechanisms (community support density, cultural competence) appear nowhere in the abstract. The mixed-methods design is a proposed study, not a reported result.\n\n**Hypothesis 2 (provider density within 5 miles of schools, outreach intensity, and their synergistic interaction):** Falsified as a claim about this study's evidence. The abstract does support a positive link between area accessibility of mental health care and utilization, and between collaboration among organizations and utilization. But it reports no 5-mile provider-density measure, no outreach program intensity score, no interaction or synergy analysis, and no lagged or propensity-matched design. Those specifics are a study protocol, not findings. The abstract also states that 35 of the determinants had only limited evidence, so a synergistic effect cannot be attributed to this review.\n\n**Hypothesis 3 (racial composition × culturally competent networks):** Falsified. The abstract contains no race-based interaction, no stigma or mistrust mechanism, and no culturally tailored services. The claim that utilization is lower in predominantly white neighborhoods has no counterpart in the reported evidence.\n\n**Hypothesis 4 (perceived cultural alignment moderating racial context):** Falsified. \"Perceived alignment,\" attitudes toward treatment, and historical mistrust are not among the ten identified contextual determinants. The abstract does not report any moderation analysis involving race.\n\n**Step 2: Calibrated selection gate**\n\nNo hypothesis survives falsification. Each one either asserts a determinant the abstract never reports (racial or ethnic neighborhood composition, cultural alignment, stigma) or describes a planned study design with specifics (5-mile radius, intensity score, synergy term) that the abstract does not test. The abstract's supported determinants, such as school-based health centers, urbanicity, neighborhood SES, parity laws, screening programs, and insurance type, do not match any hypothesis. Confidence in this outcome is high but not complete, since the full paper was not available and only the abstract was checked.\n\nCHOICE: NONE\nCONFIDENCE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 9869,
+    "stop_reason": "end_turn",
+    "session_id": "5aeec70a-5adb-4df1-82e0-3a5c2551646e",
+    "total_cost_usd": 0.00247566,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6888,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1968,
+      "output_tokens_details": {
+        "thinking_tokens": 1137
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6888,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1968,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6888,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6888
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1968,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6888,
+        "webSearchRequests": 0,
+        "costUSD": 0.00247566,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1137,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6888,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 6469,
+    "type": "result",
+    "duration_ms": 10151,
+    "uuid": "50eed2f1-be1c-4313-88ae-87c6c85dd031",
+    "ttft_stream_ms": 1118,
+    "time_to_request_ms": 281,
+    "first_content_frame_ms": 1118,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

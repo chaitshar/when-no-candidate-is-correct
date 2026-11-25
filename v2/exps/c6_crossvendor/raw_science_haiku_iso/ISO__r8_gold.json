@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r8_gold",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:28Z",
+  "duration_s": 7.46,
+  "input_tokens": 2,
+  "output_tokens": 1174,
+  "thinking_tokens": 713,
+  "text": "The candidate matches the study's main finding. The abstract's central result is that ten contextual determinants show evidence of a positive association with children's and adolescents' mental health care utilization, and these are the factors policymakers and providers can act on.\n\nThe candidate's three levels line up with the ten determinants:\n- **Organizational:** access to a school-based health center, and collaboration between organizations providing care.\n- **Community:** region of residence, urban living, high accessibility of mental health care, and high neighbourhood socio-economic status.\n- **Public policy:** a mental health parity law, a mental health screening program, a fee-for-service plan (versus managed care), and extension of health insurance coverage.\n\nThe candidate's wording \"specific contextual determinants … are positively associated\" fits the abstract's \"evidence of a positive association\" and its separation of the ten from the other 35 determinants, which had only limited evidence.\n\nTwo gaps keep this from being a perfect restatement. The candidate omits the macro-environmental level, which the study also used in its four-level categorization. The study is also a systematic review that summarizes evidence rather than testing a hypothesis, so \"main hypothesis\" is a looser fit than for a confirmatory study. Neither gap makes the candidate false, since it claims that determinants at three levels are positively associated, not that these are the only levels. I judge it a faithful statement of the study's central claim.\n\nVERDICT: ACCEPT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6346,
+    "stop_reason": "end_turn",
+    "session_id": "79b37483-3b81-4d81-afc6-82b7a03fedb4",
+    "total_cost_usd": 0.00177866,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5388,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1174,
+      "output_tokens_details": {
+        "thinking_tokens": 713
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5388,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1174,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5388,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5388
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1174,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5388,
+        "webSearchRequests": 0,
+        "costUSD": 0.00177866,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 713,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5388,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4758,
+    "type": "result",
+    "duration_ms": 6756,
+    "uuid": "67b1716c-05ce-45ec-9d10-600d41d3f81b",
+    "ttft_stream_ms": 1643,
+    "time_to_request_ms": 408,
+    "first_content_frame_ms": 1643,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

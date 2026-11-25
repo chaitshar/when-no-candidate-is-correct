@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK2_OWN__arxivmath-0226_25_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T21:51:05Z",
+  "duration_s": 21.434,
+  "input_tokens": 2,
+  "output_tokens": 4319,
+  "thinking_tokens": 3554,
+  "text": "**Neither solution gives the correct limit.**\n\n**Setup.** α(G) < 3 means the complement H = Ḡ is triangle-free, and 8-cliques in G correspond to independent 8-sets in H. For a blow-up of C₅ with parts of density 1/5 each, G is a blow-up of C₅ (the complement of C₅ is C₅) in which each part is a clique and adjacent parts are fully joined. Any independent set of G uses at most one vertex per part, so α(G) = 2, which satisfies the constraint.\n\n**Solution 2 (value 1/128).** The two-disjoint-cliques graph does have α = 2, and 1/128 ≈ 0.0078 is a valid density. But it is not the minimum. The C₅ construction below gives roughly 0.0033, which is smaller. So Solution 2's claim that K_{n/2,n/2} is the extremal complement is false. Zykov symmetrization does not preserve the independent-set count in the way claimed.\n\n**Solution 1 (value 257/78125 = 1285/390625).** The construction is the right kind, but the counting is wrong. Summing (Σλᵢ)⁸ over all independent sets of C₅ counts each 8-set by its support without removing overlaps. The correct count is the probability that a random 8-tuple of vertices, drawn from the five parts with weight 1/5 each, has its support being a clique of C₅:\n\n- Singleton supports: 5·(1/5)⁸.\n- Edge supports {i, j} of C₅ (5 of them): (2/5)⁸ − 2·(1/5)⁸ each, after subtracting the two singleton cases.\n\nTotal:\n5·(2/5)⁸ − 5·(1/5)⁸ = (1280 − 5)/5⁸ = 1275/390625 = **51/15625** ≈ 0.003264.\n\nThis is the value for the uniform C₅ blow-up. I am relying on the recalled extremal result (I believe Lo's work on graphs with bounded independence number identifies balanced C₅ blow-ups as extremal for α ≤ 2) rather than a full proof that uniform weights are optimal over all triangle-free complements. Under that assumption the limit is 51/15625, and neither proposed answer matches it.\n\nCHOICE: NONE",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 20530,
+    "stop_reason": "end_turn",
+    "session_id": "c6768373-3346-418c-bf2c-fdcfeee18b24",
+    "total_cost_usd": 0.00371156,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7190,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 4319,
+      "output_tokens_details": {
+        "thinking_tokens": 3554
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7190,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 4319,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7190,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7190
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 4319,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7190,
+        "webSearchRequests": 0,
+        "costUSD": 0.00371156,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3554,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7190,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 17292,
+    "type": "result",
+    "duration_ms": 20785,
+    "uuid": "c2548dd5-8caf-4248-a7f5-7e4a9a913e2c",
+    "ttft_stream_ms": 1055,
+    "time_to_request_ms": 254,
+    "first_content_frame_ms": 1055,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

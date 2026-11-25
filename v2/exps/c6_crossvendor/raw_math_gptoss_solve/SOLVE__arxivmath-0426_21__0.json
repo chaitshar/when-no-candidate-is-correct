@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_21__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:48:19Z",
+  "duration_s": 22.017,
+  "input_tokens": 3992,
+  "output_tokens": 2901,
+  "thinking_tokens": 0,
+  "text": "**Answer Explanation**\n\nFor the set of \\(S\\)-smooth numbers we write each element uniquely as  \n\n\\[\nn = p_1^{a_1}\\,p_2^{a_2}\\dots p_r^{a_r},\\qquad a_i\\ge 0 .\n\\]\n\nThus an element corresponds to a lattice point \\(\\mathbf a=(a_1,\\dots ,a_r)\\in\\mathbb{Z}_{\\ge0}^r\\).\nFor a fixed \\(\\mathbf a\\) the forbidden configuration  \n\n\\[\n\\{n,\\;p_1n,\\dots ,p_rn\\}\n\\]\n\nis exactly the set of points  \n\n\\[\n\\{\\mathbf a,\\;\\mathbf a+e_1,\\dots ,\\mathbf a+e_r\\},\n\\]\n\nwhere \\(e_i\\) is the \\(i\\)-th unit vector.  \nHence every “hyper‑edge’’ contains \\(r+1\\) points, one with total exponent  \n\n\\[\ns=\\sum_{i=1}^{r}a_i,\n\\]\n\nand the other \\(r\\) points with total exponent \\(s+1\\).\n\n---\n\n### A construction attaining density \\(\\frac{r}{r+1}\\)\n\nColour each lattice point by the residue of its total exponent modulo \\(r+1\\):\n\n\\[\n\\chi(\\mathbf a)=\\Bigl(\\sum_{i=1}^{r}a_i\\Bigr)\\bmod (r+1)\\in\\{0,1,\\dots ,r\\}.\n\\]\n\nFor any edge \\(\\{\\mathbf a,\\mathbf a+e_1,\\dots ,\\mathbf a+e_r\\}\\) we have  \n\n\\[\n\\chi(\\mathbf a)=c,\\qquad \n\\chi(\\mathbf a+e_i)=c+1\\pmod{r+1}\\quad\\text{for all }i .\n\\]\n\nThus the edge uses exactly two colours, one appearing once (the base) and the other \\(r\\) times.\nIf we delete **all** points of a single colour (say colour \\(k\\)) and keep the remaining \\(r\\) colours, every edge loses at least one of its vertices: either its base (when \\(\\chi(\\mathbf a)=k\\)) or all its “upper’’ vertices (when \\(\\chi(\\mathbf a+e_i)=k\\)).  \nConsequently we obtain a subset of \\(M(S)\\cap[1,X]\\) with size\n\n\\[\n\\frac{r}{r+1}\\,\\Psi_S(X)+o(\\Psi_S(X)).\n\\]\n\nHence  \n\n\\[\n\\liminf_{X\\to\\infty}\\frac{F_S(X)}{\\Psi_S(X)}\\ge\\frac{r}{r+1}.\n\\]\n\n---\n\n### Upper bound\n\nConsider the hypergraph whose vertices are the \\(S\\)-smooth numbers \\(\\le X\\) and whose hyper‑edges are exactly the forbidden \\((r+1)\\)-tuples.  \nEvery vertex belongs to many edges, and each edge has size \\(r+1\\).  \nA standard fractional‑cover argument (or simply averaging over all edges) shows that any subset avoiding a full edge must miss at least a fraction \\(1/(r+1)\\) of the vertices; otherwise the average number of kept vertices per edge would exceed \\(r\\), contradicting the definition of a forbidden edge. Formally,\n\n\\[\n\\frac{F_S(X)}{\\Psi_S(X)}\\le 1-\\frac{1}{r+1} = \\frac{r}{r+1}.\n\\]\n\n---\n\n### Limit value\n\nThe lower and upper bounds coincide, so the limit exists and equals the common value:\n\n\\[\n\\boxed{\\displaystyle \\lim_{X\\to\\infty}\\frac{F_S(X)}{\\Psi_S(X)}=\\frac{r}{r+1}}.\n\\]\n\nThus the asymptotic maximal proportion of \\(S\\)-smooth numbers that can be selected while avoiding any full set \\(\\{n,p_1n,\\dots ,p_rn\\}\\) depends only on the number \\(r\\) of primes in \\(S\\) and is \\(r/(r+1)\\).\n\n**ANSWER:** r/(r+1)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "8bd604d2-cd1a-41cb-902c-8356de464f91",
+    "status": "SUCCESS",
+    "duration_seconds": 15.078338,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3992,
+      "output_tokens": 2901,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 6893
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

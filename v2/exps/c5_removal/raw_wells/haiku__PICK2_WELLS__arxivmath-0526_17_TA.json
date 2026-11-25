@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK2_WELLS__arxivmath-0526_17_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:00:31Z",
+  "duration_s": 17.554,
+  "input_tokens": 2,
+  "output_tokens": 3643,
+  "thinking_tokens": 3196,
+  "text": "**Solution 1 (answer 5)** is the more plausible of the two, but I could not verify it. I have no search tools available here, so this rests on recalled literature rather than a check.\n\n- The sequence it cites (degree ≤ 2 classical, then 3, 4, and 5 by later work) matches a progression I recall from the literature on the real Jacobian conjecture with one low-degree component.\n- Its claimed sharpness example (a non-injective map with deg p = 6) is the weakest link. I can't confirm that construction, so I'm not confident in the upper bound.\n\n**Solution 2 (answer 3)** has a more concrete argument, but it has gaps:\n\n- The cubic classification and the example p = x²y − x are plausible. I checked that this p is a submersion and that its fiber {p = 0} splits into {x = 0} and {xy = 1}.\n- The step ruling out a compatible q relies on an asserted Beta-measure identity that I did not verify.\n- The sharpness claim is essentially asserted. It says degree 4 has disconnected submersions without a line fiber, but gives no example, and it leans on Pinchuk's degree‑10 example to explain why that case works.\n\nNeither solution is fully verified. My choice of Solution 1 is a moderate-confidence judgment based on the literature progression, not a confirmed result.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 16321,
+    "stop_reason": "end_turn",
+    "session_id": "cd0f7de3-638f-434f-a709-2916d01d6b2f",
+    "total_cost_usd": 0.00328596,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6752,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 3643,
+      "output_tokens_details": {
+        "thinking_tokens": 3196
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6752,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3643,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6752,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6752
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 3643,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6752,
+        "webSearchRequests": 0,
+        "costUSD": 0.00328596,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3196,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6752,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 14754,
+    "type": "result",
+    "duration_ms": 16882,
+    "uuid": "46be3eac-f8f8-4141-9c9c-d2e94b0c90d7",
+    "ttft_stream_ms": 1338,
+    "time_to_request_ms": 558,
+    "first_content_frame_ms": 1338,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

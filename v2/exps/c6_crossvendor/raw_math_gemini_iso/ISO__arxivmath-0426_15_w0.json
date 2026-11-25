@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_15_w0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:41:26Z",
+  "duration_s": 219.14,
+  "input_tokens": 11707,
+  "output_tokens": 20523,
+  "thinking_tokens": 19800,
+  "text": "The problem asks for the minimal genus of an irreducible curve $C$ on the product $A_1 \\times A_2$ of two very general abelian surfaces such that both projections $\\pi_1: C \\to A_1$ and $\\pi_2: C \\to A_2$ are non-constant.\n\n1. **Curves on a very general abelian surface:** For a very general principally polarized abelian surface $A$, the Néron–Severi group is $\\operatorname{NS}(A) = \\mathbb{Z}[\\Theta]$. Any irreducible curve on $A$ belongs to $|k\\Theta|$ for some $k \\ge 1$. The minimal genus of a curve on $A$ is attained uniquely by translates of the theta divisor $\\Theta$, which is a smooth curve of genus $2$.\n\n2. **Subvarieties and correspondences:** Let $C_1 = \\pi_1(C) \\subset A_1$ and $C_2 = \\pi_2(C) \\subset A_2$. Then $C_1$ and $C_2$ are curves of genus $g(C_1) \\ge 2$ and $g(C_2) \\ge 2$, with equality only when both are theta divisors $\\Theta_1$ and $\\Theta_2$. Because $A_1$ and $A_2$ are very general, they are mutually non-isogenous, meaning $\\operatorname{Hom}(A_1, A_2) = 0$. Consequently, there are no non-trivial correspondences between $\\Theta_1$ and $\\Theta_2$ that induce non-zero homomorphisms between their Jacobians, so $\\operatorname{NS}(\\Theta_1 \\times \\Theta_2) = \\mathbb{Z} F_1 \\oplus \\mathbb{Z} F_2$.\n\n3. **Minimal degree and genus on $\\Theta_1 \\times \\Theta_2$:** Any curve $C \\subset \\Theta_1 \\times \\Theta_2$ with non-constant projections belongs to a linear system $|p_1^* L_1 \\otimes p_2^* L_2|$ where $h^0(\\Theta_1, L_1) \\ge 2$ and $h^0(\\Theta_2, L_2) \\ge 2$. On a curve of genus $2$, the minimal degree of a line bundle with $h^0 \\ge 2$ is $2$, uniquely attained by the canonical bundle $K$. Thus, the minimal degrees of the projections are $a = 2$ and $b = 2$, which corresponds to the fiber product $\\Theta_1 \\times_{\\mathbb{P}^1} \\Theta_2$ via the canonical hyperelliptic maps $\\Theta_i \\to \\mathbb{P}^1$.\n\n4. **Genus calculation:** By the adjunction formula on $\\Theta_1 \\times \\Theta_2$, for a smooth curve $C$ of type $(2,2)$:\n   \\[\n   2g(C) - 2 = C^2 + C \\cdot K_{\\Theta_1 \\times \\Theta_2} = 2(2)(2) + 2(2) + 2(2) = 16 \\implies g(C) = 9.\n   \\]\n\nThus, the minimal genus is indeed $9$.\n\nVERDICT: ACCEPT (the final answer is correct)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "57c96a12-7353-48e9-b16c-0274e1a0664c",
+    "status": "SUCCESS",
+    "duration_seconds": 417.581444,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 11707,
+      "output_tokens": 20523,
+      "thinking_tokens": 19800,
+      "cache_read_tokens": 7635,
+      "total_tokens": 32230
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

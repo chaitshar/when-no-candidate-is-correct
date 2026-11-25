@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_26_w2",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:45:43Z",
+  "duration_s": 105.174,
+  "input_tokens": 10290,
+  "output_tokens": 11967,
+  "thinking_tokens": 11436,
+  "text": "The proposed solution is **incorrect**. \n\n### Analysis of the Error:\n\n1. **Sign of the Fractional Laplacian:**\n   For a power function $u(x) = C(x_n)_+^\\beta$ vanishing outside the half-space $\\mathbb{R}^n_+$, the fractional Laplacian is given by:\n   $$(-\\Delta)^s (x_n)_+^\\beta = c(s, \\beta) x_n^{\\beta - 2s} \\quad \\text{for } x_n > 0$$\n   While the integral definition of $(-\\Delta)^s$ converges at infinity whenever $\\beta < 2s$, the constant $c(s, \\beta)$ is **not** positive on the entire range $(0, 2s)$:\n   - For $\\beta = s$, $(x_n)_+^s$ is $s$-harmonic in the half-space, so $c(s, s) = 0$.\n   - For $\\beta \\in (0, s)$, $c(s, \\beta) > 0$.\n   - For $\\beta \\in (s, 2s)$, $c(s, \\beta) < 0$.\n\n   Since the right-hand side $\\frac{x_n^\\alpha}{u^\\gamma}$ is strictly positive, a positive solution requires $c(s, \\beta) > 0$, which imposes the upper bound $\\beta < s$ (not $\\beta < 2s$). \n   \n   *(This directly parallels the local case $s=1$, where $-u'' = -C\\beta(\\beta-1)x_n^{\\beta-2} > 0$ requires $\\beta < 1 = s$, rather than $\\beta < 2 = 2s$.)*\n\n2. **Correct Range for $\\alpha$:**\n   Applying $\\beta \\in (0, s)$ to $\\beta = \\frac{2s + \\alpha}{\\gamma + 1}$:\n   - $\\beta > 0 \\implies \\alpha > -2s = A$\n   - $\\beta < s \\implies \\frac{2s + \\alpha}{\\gamma + 1} < s \\implies \\alpha < s(\\gamma - 1) = B$\n\n   Hence, $B = s(\\gamma - 1) \\neq 2s\\gamma$, and the sum $A + B$ is not $2s(\\gamma - 1)$.\n\nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "7b0afa15-90b4-4edb-9c66-ba9046ddbd1e",
+    "status": "SUCCESS",
+    "duration_seconds": 94.717858,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10290,
+      "output_tokens": 11967,
+      "thinking_tokens": 11436,
+      "cache_read_tokens": 0,
+      "total_tokens": 22257
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

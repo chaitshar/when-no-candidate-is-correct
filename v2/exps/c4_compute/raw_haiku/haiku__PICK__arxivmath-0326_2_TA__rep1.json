@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0326_2_TA__rep1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T23:01:10Z",
+  "duration_s": 11.841,
+  "input_tokens": 2,
+  "output_tokens": 2120,
+  "thinking_tokens": 1791,
+  "text": "Solution 1 is the only one with a checkable mechanism. Solutions 2 and 3 rest on heuristic thresholds (\"$(d-1)/4 = 1$\" and an unspecified \"noise cascade\") that aren't derived from the averaging dynamics. Solution 1 sets up an explicit two-lineage distance process and tests for a discrete eigenvalue below the tree's continuous-spectrum edge. Its algebra checks out: the discriminant of $u^2+(3-d)u+d$ is $(d-1)(d-9)$, so the quadratic has real roots only for $d\\ge 9$. At $d=9$, $s_1=3<9-4\\sqrt2\\approx 3.343$, and for $d\\le 8$ there is no bound state.\n\nI could not verify the transition rates in Solution 1's distance process from first principles, so my confidence is moderate, not high. The answer $d_c=8$ is the most plausible of the three, but it is not established.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 10574,
+    "stop_reason": "end_turn",
+    "session_id": "3b59c5e8-93b9-45ee-b4ed-b0c83f23f8dd",
+    "total_cost_usd": 0.0012605199999999998,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 20032,
+      "output_tokens": 2120,
+      "output_tokens_details": {
+        "thinking_tokens": 1791
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2120,
+          "cache_read_input_tokens": 20032,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2120,
+        "cacheReadInputTokens": 20032,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0012605199999999998,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1791,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 0,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 9741,
+    "type": "result",
+    "duration_ms": 11156,
+    "uuid": "d63e1cce-7ba4-41ab-bf83-6d071203df41",
+    "ttft_stream_ms": 1471,
+    "time_to_request_ms": 578,
+    "first_content_frame_ms": 1471,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

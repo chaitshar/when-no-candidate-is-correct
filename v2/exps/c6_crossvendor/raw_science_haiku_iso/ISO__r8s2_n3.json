@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r8s2_n3",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:38Z",
+  "duration_s": 5.194,
+  "input_tokens": 2,
+  "output_tokens": 745,
+  "thinking_tokens": 260,
+  "text": "The candidate does not match the study's hypothesis, so I'm rejecting it.\n\nThe abstract describes a systematic review that summarizes evidence on contextual determinants of mental health care utilization. It identifies ten determinants with positive associations, grouped into organizational, community, public policy, and macro-environmental levels: school-based health centers, region of residence, urban living, accessibility of care, neighborhood socioeconomic status, mental health parity laws, mental health screening programs, fee-for-service plans versus managed care, insurance coverage extensions, and inter-organizational collaboration. It does not test or propose a moderation model.\n\nThe candidate makes several claims the abstract does not contain:\n\n- **Moderation by neighborhood racial context.** Race appears nowhere among the listed determinants, and the review does not test an interaction.\n- **Cultural alignment, attitudes toward treatment, historical provider experiences, and community trust** as moderators. None of these appear in the abstract.\n- **Stigma and distrust in predominantly white neighborhoods.** Not mentioned.\n\nThe abstract also says that for 35 other determinants only limited evidence was available. Nothing in it suggests the review built a central hypothesis around cultural values or racial context. The candidate's specific mechanism therefore sits outside what the study reports. I am working from the abstract alone; the full text could differ in detail, but the abstract states the review's main conclusions, and the candidate is not among them.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 3817,
+    "stop_reason": "end_turn",
+    "session_id": "0a57008f-7936-4bf2-b24a-6c5f90b1b849",
+    "total_cost_usd": 0.00159376,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5536,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 745,
+      "output_tokens_details": {
+        "thinking_tokens": 260
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5536,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 745,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5536,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5536
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 745,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5536,
+        "webSearchRequests": 0,
+        "costUSD": 0.00159376,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 260,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5536,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2003,
+    "type": "result",
+    "duration_ms": 4017,
+    "uuid": "549a5492-e91f-4a1f-990f-b6ae7d334af5",
+    "ttft_stream_ms": 935,
+    "time_to_request_ms": 199,
+    "first_content_frame_ms": 935,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

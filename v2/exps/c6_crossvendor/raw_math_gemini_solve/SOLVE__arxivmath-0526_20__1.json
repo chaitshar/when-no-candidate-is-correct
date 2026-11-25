@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0526_20__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:58:59Z",
+  "duration_s": 82.768,
+  "input_tokens": 9859,
+  "output_tokens": 9773,
+  "thinking_tokens": 9094,
+  "text": "To find the minimum strictly positive fractional revival time $t^*$ on the unitary Cayley graph $X = \\text{Cay}(\\mathbb{Z}_{2p}, \\mathbb{Z}_{2p}^\\times)$, we analyze the spectrum of its adjacency matrix $A$.\n\nThe eigenvalues of the circulant graph $X$ are given by the Ramanujan sums $\\lambda_j = c_{2p}(j) = \\sum_{s \\in \\mathbb{Z}_{2p}^\\times} e^{2\\pi i j s / (2p)}$ for $j = 0, 1, \\dots, 2p-1$:\n- For $j = 0$: $\\lambda_0 = \\phi(2p) = p - 1$\n- For $j = p$: $\\lambda_p = -(p - 1) = 1 - p$\n- For odd $j \\neq p$: $\\lambda_j = 1$\n- For even $j \\neq 0$: $\\lambda_j = -1$\n\nThe transition amplitude from vertex $0$ to any vertex $u$ under the evolution operator $U(t) = e^{-iAt}$ is:\n$$U(t)_{u,0} = \\frac{1}{2p} \\sum_{j=0}^{2p-1} e^{-i\\lambda_j t} e^{2\\pi i j u / (2p)}$$\n\nSumming over the four spectral classes:\n$$2p\\, U(t)_{u,0} = [e^{-i(p-1)t} - e^{it}] + (-1)^u [e^{i(p-1)t} - e^{-it}] + p(\\delta_{u,0} - \\delta_{u,p})e^{-it} + p(\\delta_{u,0} + \\delta_{u,p})e^{it}$$\n\nFor fractional revival between antipodal vertices $0$ and $p$, we require $U(t)_{u,0} = 0$ for all $u \\notin \\{0, p\\}$. Because there exist both even and odd vertices outside $\\{0, p\\}$, this demands:\n$$e^{-i(p-1)t} - e^{it} = 0 \\quad \\text{and} \\quad e^{i(p-1)t} - e^{-it} = 0$$\n\nBoth equations are equivalent to:\n$$e^{ipt} = 1 \\implies pt = 2\\pi k \\quad (k \\in \\mathbb{Z}^+)$$\n\nAt these times, the amplitudes at $0$ and $p$ become:\n$$U(t)|0\\rangle = \\cos(t)|0\\rangle + i\\sin(t)|p\\rangle$$\nFor an odd prime $p \\ge 3$ and $k = 1$, we have $\\sin(2\\pi/p) \\neq 0$, which yields valid fractional revival. \n\nThus, the minimum strictly positive fractional revival time is:\n$$t^* = \\frac{2\\pi}{p}$$\n\nANSWER: \\frac{2\\pi}{p}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "f3c00ee0-9047-4177-9572-9ffc559977a3",
+    "status": "SUCCESS",
+    "duration_seconds": 75.471228,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9859,
+      "output_tokens": 9773,
+      "thinking_tokens": 9094,
+      "cache_read_tokens": 0,
+      "total_tokens": 19632
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_8__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:38:59Z",
+  "duration_s": 191.436,
+  "input_tokens": 9748,
+  "output_tokens": 22514,
+  "thinking_tokens": 21449,
+  "text": "To determine the tight upper bound on the constant stepsize $\\gamma$ that guarantees convergence for Popov's algorithm on unconstrained pseudo-monotone variational inequalities with an $L$-Lipschitz operator, we consider the algorithm's formulation and its stability limits.\n\n### 1. Algorithm Formulation\nFor an unconstrained variational inequality, the projection operator is the identity. Popov's algorithm (also known as the past extragradient method) updates as:\n$$x_{k+1} = x_k - \\gamma F(y_k)$$\n$$y_k = x_k - \\gamma F(y_{k-1})$$\n\nShifting indices, $y_{k+1} = x_{k+1} - \\gamma F(y_k) = x_k - 2\\gamma F(y_k)$. Since $x_k = y_k + \\gamma F(y_{k-1})$, substituting this into the update for $y_{k+1}$ gives:\n$$y_{k+1} = y_k - 2\\gamma F(y_k) + \\gamma F(y_{k-1})$$\nwhich is equivalent to the Optimistic Gradient Descent Ascent (OGDA) method.\n\n### 2. Linear Stability Analysis\nConsider the linear skew-symmetric operator $F(y) = A y$ on $\\mathbb{R}^2$, where:\n$$A = \\begin{pmatrix} 0 & L \\\\ -L & 0 \\end{pmatrix}$$\n- $F$ is Lipschitz continuous with constant $\\|A\\| = L$.\n- $F$ is monotone (and hence pseudo-monotone), since $\\langle F(y), y \\rangle = y^T A y = 0$.\n- The unconstrained problem has the unique solution $y^* = 0$.\n\nThe eigenvalues of $A$ are $\\lambda = \\pm i L$. Substituting $F(y) = A y$ into the second-order recurrence:\n$$y_{k+1} - (I - 2\\gamma A) y_k - \\gamma A y_{k-1} = 0$$\n\nFor the eigenvalue $\\lambda = i L$, the characteristic equation for the modes $r$ is:\n$$r^2 - (1 - 2i\\gamma L) r - i\\gamma L = 0$$\n\nLet $\\mu = \\gamma L > 0$. The characteristic equation becomes:\n$$r^2 - (1 - 2i\\mu) r - i\\mu = 0$$\n\nFor stability and convergence, all roots must lie strictly inside the unit disk ($|r| < 1$). The boundary of stability occurs when $|r| = 1$. Let $r = e^{i\\theta}$:\n$$e^{i\\theta} - (1 - 2i\\mu) - i\\mu e^{-i\\theta} = 0$$\n\nSeparating into real and imaginary parts:\n1. **Real part:**\n   $$\\cos\\theta - 1 - \\mu \\sin\\theta = 0 \\implies \\mu = \\frac{\\cos\\theta - 1}{\\sin\\theta} = -\\tan\\left(\\frac{\\theta}{2}\\right)$$\n2. **Imaginary part:**\n   $$\\sin\\theta + 2\\mu - \\mu \\cos\\theta = 0 \\implies \\sin\\theta + \\mu(2 - \\cos\\theta) = 0$$\n\nLetting $t = \\tan(\\theta/2)$, we have $\\sin\\theta = \\frac{2t}{1+t^2}$, $\\cos\\theta = \\frac{1-t^2}{1+t^2}$, and $\\mu = -t$:\n$$\\frac{2t}{1+t^2} - t \\left(2 - \\frac{1-t^2}{1+t^2}\\right) = 0$$\n$$\\frac{2t - t(1 + 3t^2)}{1+t^2} = 0 \\implies t(1 - 3t^2) = 0$$\n\nFor non-trivial solutions ($\\mu > 0$):\n$$t^2 = \\frac{1}{3} \\implies t = -\\frac{1}{\\sqrt{3}} \\implies \\mu = \\frac{1}{\\sqrt{3}}$$\n\n### 3. Conclusion\n- For $\\gamma < \\frac{1}{\\sqrt{3} L}$, the spectral radius satisfies $|r| < 1$, ensuring convergence across all unconstrained pseudo-monotone operators.\n- For $\\gamma \\ge \\frac{1}{\\sqrt{3} L}$, the roots satisfy $|r| \\ge 1$ for the skew-symmetric case, leading to non-convergence or divergence.\n\nThus, the tight upper bound on the constant stepsize is $\\frac{1}{\\sqrt{3}L}$.\n\nANSWER: 1/(sqrt(3)L)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "0b233088-4030-4fe4-89ff-b9de08350b62",
+    "status": "SUCCESS",
+    "duration_seconds": 182.742727,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9748,
+      "output_tokens": 22514,
+      "thinking_tokens": 21449,
+      "cache_read_tokens": 0,
+      "total_tokens": 32262
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

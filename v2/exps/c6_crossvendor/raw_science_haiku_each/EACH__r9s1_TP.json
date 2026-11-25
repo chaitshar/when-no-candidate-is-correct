@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r9s1_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:44Z",
+  "duration_s": 7.019,
+  "input_tokens": 2,
+  "output_tokens": 1100,
+  "thinking_tokens": 503,
+  "text": "The abstract supports Hypothesis 2 and contradicts the other three.\n\n**Hypothesis 1** describes APAM hydrogels on a hierarchically porous carbon substrate, with DFT binding energies, a BET range of 500–1500 m²/g, and tests on real wastewater. The study uses a PAA@TiO2 composite with no carbonaceous substrate, no DFT, no BET optimization, and no real-wastewater tests. Reject.\n\n**Hypothesis 2** matches the study's core claims: a PAA@TiO2 nanocomposite made by cross-linking, applied to CV dye, with a maximum adsorption capacity of 38.9 mg/g and MC/MD simulations. The abstract does not name the specific mechanisms (electrostatic attraction, hydrogen bonding, n-π interactions). Those are plausible readings of the simulations but are not confirmed by the abstract, so that part is unverified. The main claim is supported. Accept.\n\n**Hypothesis 3** describes a multiwalled carbon nanotube foam, functionalized biochar, a bacterial consortium (CM-4), and over 95% removal within 2 hours at 50 mg/L. The study has none of these components and reports neither biodegradation nor that removal figure. Reject.\n\n**Hypothesis 4** describes a TiO2/GO/APAM/date-stone composite with UV photocatalytic degradation, 500 mg/g capacity, and 99.5% degradation. The study uses no GO, no date stones, and no photocatalysis, and its capacity is 38.9 mg/g, not 500 mg/g. Reject.\n\nVERDICT 1: REJECT\nVERDICT 2: ACCEPT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5394,
+    "stop_reason": "end_turn",
+    "session_id": "c3950e91-80ca-458e-9d25-ee982e1b2828",
+    "total_cost_usd": 0.00207266,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7043,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1100,
+      "output_tokens_details": {
+        "thinking_tokens": 503
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7043,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1100,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7043,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7043
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1100,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7043,
+        "webSearchRequests": 0,
+        "costUSD": 0.00207266,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 503,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7043,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3612,
+    "type": "result",
+    "duration_ms": 5851,
+    "uuid": "34a3db4f-4477-41d3-a7f9-e0eb83a42057",
+    "ttft_stream_ms": 1600,
+    "time_to_request_ms": 472,
+    "first_content_frame_ms": 1600,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

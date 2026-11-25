@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r8s0_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:31Z",
+  "duration_s": 7.722,
+  "input_tokens": 2,
+  "output_tokens": 1405,
+  "thinking_tokens": 779,
+  "text": "Hypothesis 2 is the only one the abstract supports. The other three describe designs, mechanisms, or determinants that the review does not report.\n\n**Hypothesis 1** describes a specific three-component intervention, a synergistic interaction test, and a planned 5-year longitudinal study with mediation by stigma and literacy. The review does not test any intervention, interaction, or mediator. It is a systematic review that summarizes associations, so this hypothesis is a proposed future study, not what this evidence shows.\n\n**Hypothesis 2** says that specific contextual determinants at the organizational, community, and public policy levels are positively associated with mental health care utilization. The abstract reports positive associations at all three levels:\n- Organizational: access to a school-based health center and collaboration between organizations providing care.\n- Community: region of residence, urban living, high accessibility of mental health care, and high socio-economic status of the area.\n- Public policy: a mental health parity law, a mental health screening program, fee-for-service plans compared with managed care, and extension of health insurance coverage.\n\nThe hypothesis is broad, but the abstract supports it directly.\n\n**Hypothesis 3** names social environmental factors such as neighborhood crime rates, green spaces, and public transportation coverage, along with an agent-based model. None of these appears among the review's findings. Its measures of community support and organizational structure are also not the review's determinants.\n\n**Hypothesis 4** concerns moderation and mediation among low-income, urban, 10–18-year-olds, with effects by race and ethnicity. The review reports main associations only. It does not report moderating or mediating effects, and it does not restrict its findings to low-income or ethnic subgroups. Walkability and self-efficacy are not among its determinants.\n\nVERDICT 1: REJECT\nVERDICT 2: ACCEPT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6704,
+    "stop_reason": "end_turn",
+    "session_id": "6a0926c3-21c9-49af-b5a4-5ffa1de92533",
+    "total_cost_usd": 0.0024929600000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8382,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1405,
+      "output_tokens_details": {
+        "thinking_tokens": 779
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8382,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1405,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8382,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8382
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1405,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8382,
+        "webSearchRequests": 0,
+        "costUSD": 0.0024929600000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 779,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8382,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4315,
+    "type": "result",
+    "duration_ms": 6980,
+    "uuid": "380f782e-b12e-4bb9-92d6-5a4abdfe7cac",
+    "ttft_stream_ms": 1001,
+    "time_to_request_ms": 275,
+    "first_content_frame_ms": 1001,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

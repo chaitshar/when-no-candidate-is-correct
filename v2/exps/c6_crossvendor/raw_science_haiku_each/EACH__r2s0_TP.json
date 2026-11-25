@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r2s0_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:30:32Z",
+  "duration_s": 10.12,
+  "input_tokens": 2,
+  "output_tokens": 1861,
+  "thinking_tokens": 1116,
+  "text": "The abstract is a qualitative study: expert interviews analyzed with thematic analysis. It reports three themes (awareness of AI issues, measuring AI impacts, governing AI processes) and concludes that AI is still unfamiliar to investors, that including it in ESG analysis is not established practice, but that it may be justified as a potentially material issue. It calls for standardized metrics. It does not build, implement, or test any framework, model, or tool.\n\n**Hypothesis 1 (ESG analyses as a tool for ethics-based AI auditing):** This is the closest match. The study's motivation is that the AI auditing literature is silent on investors, and its research questions ask how responsible AI enters ESG analysis and how responsible-AI principles connect to ESG ranking criteria. The findings support the idea that ESG could be a channel for AI accountability. However, the abstract says incorporation is not yet established and only \"may be justified,\" and it never tests ESG analyses as an auditing mechanism. The evidence supports the direction, not the strength of the claim, but among the four it is the only one the evidence backs.\n\n**Hypothesis 2 (novel AI sub-criteria, AI-powered dynamic weighting, demonstrably better accuracy and portfolio performance):** The study proposes no sub-criteria and no AI-driven weighting. It measures no accuracy and no portfolio performance, and it does not compare frameworks. Its own finding that standardized metrics are still needed cuts against the claim that such a system already exists and performs better. REJECT.\n\n**Hypothesis 3 (hybrid framework with nine metrics, MCDA weighting, federated learning, quarterly feedback loop, and control group):** None of these components appear in the abstract. The study does not design or evaluate a framework of this kind. REJECT.\n\n**Hypothesis 4 (supervised ML such as decision trees and random forests, participatory action research, satellite and social-media data, scenario workshops):** The abstract mentions none of these methods or data sources. Its method is interviews and thematic analysis, not machine learning or participatory action research. REJECT.\n\nVERDICT 1: ACCEPT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8987,
+    "stop_reason": "end_turn",
+    "session_id": "a72e9c97-ef73-4483-a457-ee5a5b571619",
+    "total_cost_usd": 0.00237436,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6649,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1861,
+      "output_tokens_details": {
+        "thinking_tokens": 1116
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6649,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1861,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6649,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6649
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1861,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6649,
+        "webSearchRequests": 0,
+        "costUSD": 0.00237436,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1116,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6649,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5882,
+    "type": "result",
+    "duration_ms": 9226,
+    "uuid": "7316f587-12cb-4021-9f5d-7195cd3c02be",
+    "ttft_stream_ms": 958,
+    "time_to_request_ms": 238,
+    "first_content_frame_ms": 958,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0526_17_TP__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T23:10:35Z",
+  "duration_s": 15.471,
+  "input_tokens": 2,
+  "output_tokens": 3087,
+  "thinking_tokens": 2713,
+  "text": "I can't verify these against the literature, so this is a best-effort judgment, not a confirmed check.\n\nSolutions 1 and 3 agree that the degree-4 case is proved (Braun and Oréfice-Okamoto), and that degree-3 is also covered. They disagree on degree 5. Solution 1 says there are non-injective examples with a degree-5 component. Solution 3 says degree 5 forces injectivity and that a degree-6 counterexample exists. Both can't be right.\n\nI have a faint recollection of a published result that a component of degree at most 5 forces injectivity, which would make Solution 1's degree-5 counterexample wrong. I also don't recall any non-injective example with a component of degree 6 or 5. The known Pinchuk-type examples have much higher degrees, so Solution 3's sharpness claim is also unverified.\n\nSolution 2 is unsupported. It bounds the total degree of the map, which is not what the problem asks, and its claimed threshold of 6 has no real basis.\n\nI lean toward Solution 3 (answer 5), but I'm not confident in its sharpness claim.\n\nCHOICE: 3",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 14371,
+    "stop_reason": "end_turn",
+    "session_id": "e5de334a-5660-45c0-a7d5-36e0fb1999b6",
+    "total_cost_usd": 0.00303916,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6908,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 3087,
+      "output_tokens_details": {
+        "thinking_tokens": 2713
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6908,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3087,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6908,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6908
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 3087,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6908,
+        "webSearchRequests": 0,
+        "costUSD": 0.00303916,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2713,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6908,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 12948,
+    "type": "result",
+    "duration_ms": 14675,
+    "uuid": "dfd4e036-b0cb-47a6-8193-6828199efde8",
+    "ttft_stream_ms": 1039,
+    "time_to_request_ms": 305,
+    "first_content_frame_ms": 1040,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

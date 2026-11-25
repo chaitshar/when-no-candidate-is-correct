@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__cmimc_2025_10__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:38:11Z",
+  "duration_s": 19.94,
+  "input_tokens": 3909,
+  "output_tokens": 2489,
+  "thinking_tokens": 0,
+  "text": "The series telescopes because  \n\n\\[\na_{n+1}+2=(a_n+2)(a_n^2+3a_n+4)\n\\]\n\nso  \n\n\\[\n\\frac{2^{n}(a_n+1)}{a_n^{2}+3a_n+4}\n= \\frac{2^{n}}{a_n+2}-\\frac{2^{n+1}}{a_{n+1}+2}.\n\\]\n\nSumming from \\(n=0\\) to \\(\\infty\\) gives a telescoping sum  \n\n\\[\n\\sum_{n=0}^{\\infty}\\frac{2^{n}(a_n+1)}{a_n^{2}+3a_n+4}\n= \\frac{1}{a_0+2}-\\lim_{N\\to\\infty}\\frac{2^{N+1}}{a_{N+1}+2}= \\frac{1}{2024+2}\n= \\frac{1}{2026}.\n\\]\n\nHence the required value is  \n\n**ANSWER: \\(\\displaystyle \\frac{1}{2026}\\)**\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "78ccfaa6-6a13-45be-aaf0-62b639be39eb",
+    "status": "SUCCESS",
+    "duration_seconds": 13.175088,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3909,
+      "output_tokens": 2489,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 6398
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

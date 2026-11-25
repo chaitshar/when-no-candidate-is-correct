@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__hmmt_feb_2026_30_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T15:23:28Z",
+  "duration_s": 6552.688,
+  "input_tokens": 12322,
+  "output_tokens": 5943,
+  "thinking_tokens": 5074,
+  "text": "To determine the correctness of each solution, we can evaluate the problem and compare it with the steps and final answers provided.\n\n### Independent Verification\nPlace $M$, the midpoint of $BC$, at the origin $(0,0)$ on the $x$-axis:\n- Let $B = (-d, 0)$ and $C = (d, 0)$, so the length $BC = 2d$.\n- Let $A = (p, q)$.\n- The centroid is $G = \\left(\\frac{p}{3}, \\frac{q}{3}\\right)$.\n- The circumcenter $O = (0, k)$ lies on the perpendicular bisector of $BC$ (the $y$-axis).\n\nFrom $OB^2 = OA^2$:\n$$d^2 + k^2 = p^2 + (q-k)^2 \\implies 2qk = p^2 + q^2 - d^2 \\implies k = \\frac{p^2 + q^2 - d^2}{2q}.$$\n\nLet the orthocenter of $\\triangle AGO$ be $H = (x_H, 0)$ on line $BC$:\n1. **$AH \\perp GO$**:\n   $$\\vec{AH} \\cdot \\vec{GO} = (x_H - p, -q) \\cdot \\left(-\\frac{p}{3}, k - \\frac{q}{3}\\right) = 0 \\implies x_H = \\frac{3d^2 - p^2 - q^2}{2p}.$$\n2. **$GH \\perp AO$**:\n   $$\\vec{GH} \\cdot \\vec{AO} = \\left(x_H - \\frac{p}{3}, -\\frac{q}{3}\\right) \\cdot (-p, k - q) = 0 \\implies x_H = \\frac{p^2 + q^2 + d^2}{6p}.$$\n\nEquating the two expressions for $x_H$:\n$$\\frac{3d^2 - p^2 - q^2}{2p} = \\frac{p^2 + q^2 + d^2}{6p} \\implies 3(3d^2 - p^2 - q^2) = p^2 + q^2 + d^2 \\implies p^2 + q^2 = 2d^2.$$\n\nUsing Apollonius' Theorem on $\\triangle ABC$:\n$$AB^2 + AC^2 = 2(AM^2 + BM^2) = 2(p^2 + q^2 + d^2) = 2(2d^2 + d^2) = 6d^2.$$\nGiven $AB = 11$ and $AC = 13$:\n$$11^2 + 13^2 = 121 + 169 = 290 = 6d^2 \\implies d^2 = \\frac{145}{3}.$$\nThus:\n$$BC = 2d = 2\\sqrt{\\frac{145}{3}} = \\frac{2\\sqrt{435}}{3}.$$\n\n---\n\n### Evaluation of Proposed Solutions\n- **Solution 1:** Contains an arithmetic error in the evaluation of $RHS_1$ ($242 - 363 = -121$, but recorded as $-151$), resulting in an incorrect final value of $\\frac{\\sqrt{2010}}{3}$.\n- **Solution 2:** Correctly sets up coordinates, resolves the orthocenter condition, and reaches the correct final answer of $\\frac{2\\sqrt{435}}{3}$.\n- **Solution 3:** Although the intermediate derivation finds $BC = \\frac{2\\sqrt{435}}{3}$, its stated final answer is `2*a**2`, which is incorrect.\n\nVERDICT 1: REJECT\nVERDICT 2: ACCEPT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "7a383317-463d-4ba0-872c-881e09633752",
+    "status": "SUCCESS",
+    "duration_seconds": 49.482744,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12322,
+      "output_tokens": 5943,
+      "thinking_tokens": 5074,
+      "cache_read_tokens": 0,
+      "total_tokens": 18265
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

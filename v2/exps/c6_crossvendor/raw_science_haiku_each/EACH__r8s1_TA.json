@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r8s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:39Z",
+  "duration_s": 15.411,
+  "input_tokens": 2,
+  "output_tokens": 2894,
+  "thinking_tokens": 2064,
+  "text": "The abstract supports Hypothesis 3 most closely. The review sorts its ten determinants into organizational, community, public policy and macro-environmental levels, and Hypothesis 3 uses a parallel multilevel structure. Its policy levers, such as parity mandates, insurance coverage and school screening, also match determinants the review reports. The study does not test an intervention, so this is support for the framing, not for the specific program details.\n\n**Hypothesis 1 (CRAP framework): reject.** The review is a systematic literature synthesis. It does not build or validate predictive models, and it reports no graph neural networks, Bayesian causal inference or social-capital indices. Nothing in the abstract bears on this framework.\n\n**Hypothesis 2 (collaborative care integration in pediatric primary care): reject.** The review reports one related determinant, collaboration between care organizations, but it does not evaluate integration models, EHR sharing or referral pathways. The hypothesis also predicts a rural benefit for low-income children, while the review reports a positive association with urban residence. The abstract does not support a rural-focused effect.\n\n**Hypothesis 3 (integrated ecological, multilevel model): accept.** Its levels (interpersonal, organizational, community, public policy) closely follow the review's four-level categorization. Several of its proposed levers correspond to reported determinants: school-based health centers, mental health parity laws, screening programs, fee-for-service versus managed care, insurance coverage and inter-organizational collaboration. The review's stated aim is to identify determinants that policymakers and providers can influence, which this hypothesis addresses. The interpersonal-level components (peer support, family therapy) fall partly outside the question's \"beyond individual and family factors\" scope, and the pilot and longitudinal details are not supported by the review.\n\n**Hypothesis 4 (geographic accessibility, income, school-based counseling, spatial regression): reject.** It overlaps with three of the ten findings: area accessibility, area socioeconomic status and school-based services. However, it is framed around distance and public transport, which the abstract does not mention, and it proposes a spatial regression design the review did not use. It also omits most of the reported determinants, including parity laws, screening programs and insurance features. Its overlap is partial, not the study's main conclusion.\n\nI judged these from the abstract alone, not the full paper.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: ACCEPT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 14405,
+    "stop_reason": "end_turn",
+    "session_id": "a9f58020-ffb2-4afb-8507-defd76b34300",
+    "total_cost_usd": 0.00317746,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8082,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2894,
+      "output_tokens_details": {
+        "thinking_tokens": 2064
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8082,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2894,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8082,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8082
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2894,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8082,
+        "webSearchRequests": 0,
+        "costUSD": 0.00317746,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2064,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8082,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 10797,
+    "type": "result",
+    "duration_ms": 14654,
+    "uuid": "a93980f7-1e8e-467b-a519-a3275acc86ba",
+    "ttft_stream_ms": 1127,
+    "time_to_request_ms": 238,
+    "first_content_frame_ms": 1127,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__hmmt_feb_2026_30_TA",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T12:01:41Z",
+  "duration_s": 54.63,
+  "input_tokens": 12299,
+  "output_tokens": 5378,
+  "thinking_tokens": 4419,
+  "text": "To determine the validity of each solution, let us solve the problem independently:\n\n### Independent Solution\n\nPlace triangle $ABC$ on the Cartesian plane with the midpoint $M$ of $BC$ at the origin $(0, 0)$ and $BC$ along the $x$-axis:\n- $B = (-a, 0)$, $C = (a, 0)$, so $BC = 2a$.\n- Let $A = (p, q)$.\n- The centroid is $G = \\left(\\frac{p}{3}, \\frac{q}{3}\\right)$.\n- Since the perpendicular bisector of $BC$ is the $y$-axis, the circumcenter is $O = (0, k)$.\n\nUsing $OA^2 = OB^2$:\n$$p^2 + (q - k)^2 = a^2 + k^2 \\implies p^2 + q^2 - 2qk = a^2 \\implies qk = \\frac{p^2 + q^2 - a^2}{2}$$\n\nLet $H = (x, 0)$ be the orthocenter of $\\triangle AGO$ on line $BC$. The altitudes satisfy:\n1. **$AH \\perp GO$:**\n   $$\\vec{AH} \\cdot \\vec{GO} = (x - p, -q) \\cdot \\left(-\\frac{p}{3}, k - \\frac{q}{3}\\right) = 0$$\n   $$p(p - x) + q^2 - 3qk = 0 \\implies px = p^2 + q^2 - 3qk$$\n\n2. **$GH \\perp AO$:**\n   $$\\vec{GH} \\cdot \\vec{AO} = \\left(x - \\frac{p}{3}, -\\frac{q}{3}\\right) \\cdot (-p, k - q) = 0$$\n   $$-p(3x - p) - q(k - q) = 0 \\implies 3px = p^2 + q^2 - qk$$\n\nEquating $3(px)$ from the two relations:\n$$3(p^2 + q^2 - 3qk) = p^2 + q^2 - qk \\implies 2(p^2 + q^2) = 8qk \\implies p^2 + q^2 = 4qk$$\n\nSubstituting $qk = \\frac{p^2 + q^2 - a^2}{2}$:\n$$p^2 + q^2 = 2(p^2 + q^2 - a^2) \\implies p^2 + q^2 = 2a^2$$\n\nBy Apollonius' Theorem on $\\triangle ABC$:\n$$AB^2 + AC^2 = 2AM^2 + 2BM^2 = 2(p^2 + q^2) + 2a^2 = 4a^2 + 2a^2 = 6a^2$$\n$$11^2 + 13^2 = 121 + 169 = 290 = 6a^2 \\implies a^2 = \\frac{145}{3}$$\n\nThus,\n$$BC^2 = 4a^2 = \\frac{580}{3} \\implies BC = \\sqrt{\\frac{580}{3}} = \\frac{2\\sqrt{435}}{3}$$\n\n---\n\n### Evaluation of the Solutions\n\n- **Solution 1:** Finds the exact value $a = \\sqrt{580/3} \\approx 13.904$, but incorrectly guesses/rounds the final answer to an integer $14$. Its final answer is incorrect.\n- **Solution 2:** Derives the correct value $BC = \\frac{2\\sqrt{435}}{3}$ in the body, but gives `2*a**2` as its final answer line, which is incorrect.\n- **Solution 3:** Makes an algebraic subtraction error when expanding $x A_1 + y B_1$ ($242 - 363$ was calculated as $-151$ instead of $-121$), resulting in an incorrect final answer of $\\frac{\\sqrt{2010}}{3}$.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "74659f4a-89f8-4640-928e-3ce332749842",
+    "status": "SUCCESS",
+    "duration_seconds": 45.925848,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12299,
+      "output_tokens": 5378,
+      "thinking_tokens": 4419,
+      "cache_read_tokens": 0,
+      "total_tokens": 17677
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_17__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:33:12Z",
+  "duration_s": 69.087,
+  "input_tokens": 9842,
+  "output_tokens": 7010,
+  "thinking_tokens": 5871,
+  "text": "To determine the limiting probability that a uniformly random $[n, k]$ linear code $C \\le \\mathbb{F}_q^n$ is a maximum distance separable (MDS) code, we use the characterization of MDS codes in terms of generator matrices and the Poisson approximation method.\n\n### 1. Characterization of MDS Codes\nAn $[n, k]$ linear code $C$ is MDS if and only if its minimum distance achieves the Singleton bound:\n$$d = n - k + 1$$\nEquivalently, for any generator matrix $G \\in \\mathbb{F}_q^{k \\times n}$ of $C$, every subset of $k$ columns of $G$ is linearly independent. That is, all $\\binom{n}{k}$ square submatrices of size $k \\times k$ must be non-singular.\n\n### 2. Random Matrix Model\nA uniformly random $k$-dimensional subspace $C \\le \\mathbb{F}_q^n$ can be represented as the row space of a matrix $G \\in \\mathbb{F}_q^{k \\times n}$ with entries chosen independently and uniformly at random from $\\mathbb{F}_q$, conditioned on $G$ having full rank $k$.\n\nThe unconditional probability that $G$ has full rank $k$ is:\n$$\\prod_{i=0}^{k-1} \\left(1 - q^{i-n}\\right) \\ge 1 - \\sum_{i=0}^{k-1} q^{i-n} \\ge 1 - \\frac{q^{k-n}}{1 - q^{-1}} \\to 1$$\nsince $k/n \\to 0$ and $n - k \\to \\infty$. Thus, conditioning on this event does not affect the asymptotic distribution.\n\n### 3. Probability of Singularity of a Submatrix\nFor any subset $S \\subset \\{1, \\dots, n\\}$ of size $|S| = k$, the $k \\times k$ submatrix $G_S$ consists of $k$ independent uniform random vectors in $\\mathbb{F}_q^k$. The probability that $G_S$ is non-singular is:\n$$\\mathbb{P}(G_S \\text{ is non-singular}) = \\prod_{i=1}^k \\left(1 - q^{-i}\\right) = 1 - q^{-1} + O(q^{-2})$$\nTherefore, the indicator variable $X_S = \\mathbb{I}(G_S \\text{ is singular})$ has expectation:\n$$\\mathbb{E}[X_S] = \\mathbb{P}(G_S \\text{ is singular}) = \\frac{1}{q} + O(q^{-2})$$\n\n### 4. Poisson Approximation\nLet $X = \\sum_{|S| = k} X_S$ be the total number of singular $k \\times k$ submatrices of $G$. The expected number of singular submatrices is:\n$$\\mathbb{E}[X] = \\binom{n}{k} \\mathbb{P}(G_S \\text{ is singular}) = \\frac{1}{q}\\binom{n}{k} + O\\left(\\frac{1}{q^2}\\binom{n}{k}\\right) \\to \\lambda$$\nsince $\\frac{1}{q}\\binom{n}{k} \\to \\lambda$ and $q \\to \\infty$.\n\nFor any two distinct subsets $S, S'$ with $|S \\cap S'| = j < k$:\n- If $j \\le k-2$, the probability that the $j$ common columns are linearly dependent is at most $O(q^{-(k-j+1)}) = O(q^{-3})$. Given they are independent, the completions of $S$ and $S'$ are conditionally independent, each failing to have full rank with probability $\\frac{1}{q} + O(q^{-2})$.\n- If $j = k-1$, the number of such pairs is $\\binom{n}{k} k (n-k)$. The probability that both are singular is bounded by $O(q^{-2})$. Since $\\frac{1}{q}\\binom{n}{k} \\to \\lambda$ and $k/n \\to 0$, we have:\n  $$\\binom{n}{k} k (n-k) \\cdot \\frac{1}{q^2} \\sim \\lambda \\frac{k(n-k)}{q} = \\lambda^2 \\frac{k(n-k)}{\\binom{n}{k}} \\to 0$$\n\nBy the Chen-Stein method (or the method of factorial moments), the dependencies between the indicator variables $X_S$ are asymptotically negligible. Consequently, the random variable $X$ converges in distribution to a Poisson random variable with mean $\\lambda$:\n$$X \\xrightarrow{d} \\mathrm{Poisson}(\\lambda)$$\n\n### 5. Conclusion\nThe code $C$ is MDS if and only if there are no singular $k \\times k$ submatrices, which corresponds to $X = 0$. Hence:\n$$\\lim \\mathbb{P}(C \\text{ is MDS}) = \\lim \\mathbb{P}(X = 0) = e^{-\\lambda}$$\n\nANSWER: e^{-\\lambda}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "4c47e00f-ca6f-4859-a8c7-89e25ad99e9b",
+    "status": "SUCCESS",
+    "duration_seconds": 62.080348,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9842,
+      "output_tokens": 7010,
+      "thinking_tokens": 5871,
+      "cache_read_tokens": 0,
+      "total_tokens": 16852
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

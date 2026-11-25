@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__smt_2025_36_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:08:11Z",
+  "duration_s": 39.585,
+  "input_tokens": 10762,
+  "output_tokens": 3654,
+  "thinking_tokens": 3134,
+  "text": "The proposed solution correctly analyzes the equation and solves the problem:\n\n1. Rearranging $n = \\operatorname{lcm}(n, x) - \\operatorname{gcd}(n, y)$ gives:\n   $$\\operatorname{gcd}(n, y) = n\\left(\\frac{x}{\\operatorname{gcd}(n, x)} - 1\\right)$$\n2. Since $\\operatorname{gcd}(n, x) \\mid x$ and $\\operatorname{gcd}(n, y) \\geq 1$, the quantity $\\frac{x}{\\operatorname{gcd}(n, x)} - 1$ is a positive integer.\n3. Since $\\operatorname{gcd}(n, y) \\leq n$, the only possible value is $\\frac{x}{\\operatorname{gcd}(n, x)} - 1 = 1$, which forces:\n   - $\\frac{x}{\\operatorname{gcd}(n, x)} = 2 \\implies x$ is even, with $d = \\frac{x}{2} = \\operatorname{gcd}(n, x)$ (requiring $n/d$ to be odd).\n   - $\\operatorname{gcd}(n, y) = n \\implies n \\mid y$.\n4. Such an $n$ exists if and only if $x$ is even and $\\frac{x}{2} \\mid y$ (by choosing $n = \\frac{x}{2}$).\n5. Counting the valid pairs $(x, y)$ with $x + y \\leq 20$:\n   - $x = 2 \\implies y \\in \\{1, 2, \\dots, 18\\}$ (18 pairs)\n   - $x = 4 \\implies y \\in \\{2, 4, \\dots, 16\\}$ (8 pairs)\n   - $x = 6 \\implies y \\in \\{3, 6, 9, 12\\}$ (4 pairs)\n   - $x = 8 \\implies y \\in \\{4, 8, 12\\}$ (3 pairs)\n   - $x = 10 \\implies y \\in \\{5, 10\\}$ (2 pairs)\n   - $x = 12 \\implies y \\in \\{6\\}$ (1 pair)\n   - Total: $18 + 8 + 4 + 3 + 2 + 1 = 36$.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "a7e87481-84db-43f5-af22-6a73dbf0027e",
+    "status": "SUCCESS",
+    "duration_seconds": 31.745513,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10762,
+      "output_tokens": 3654,
+      "thinking_tokens": 3134,
+      "cache_read_tokens": 0,
+      "total_tokens": 14416
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

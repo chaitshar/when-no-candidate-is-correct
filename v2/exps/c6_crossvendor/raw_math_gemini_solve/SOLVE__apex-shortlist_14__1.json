@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__apex-shortlist_14__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T16:32:31Z",
+  "duration_s": 214.873,
+  "input_tokens": 9849,
+  "output_tokens": 23248,
+  "thinking_tokens": 22164,
+  "text": "To find the maximum possible number of edges in a connected graph with $2n$ vertices ($n > 1$) such that Alice can evade Bob indefinitely, we analyze the conditions under which Bob can always catch Alice versus when Alice can evade Bob.\n\n### 1. Universal Vertices\nSuppose the graph $G$ contains a universal vertex $u$ (a vertex adjacent to all other $2n - 1$ vertices). \n\nBob can always win in at most two turns:\n- If Bob starts at $u$ (or if Alice ever moves to $u$), Alice must be at some vertex $A \\neq u$. On Alice's turn, she moves to an adjacent vertex $A'$. Since $u$ is universal, $u$ is adjacent to $A'$, so Bob moves to $A'$ and catches Alice immediately.\n- If Bob does not start at $u$ and Alice does not start at $u$, then on Turn 1, Alice moves from $A_0$ to $A_1$. \n  - If $A_1 = u$, Bob is adjacent to $u$ and catches Alice immediately.\n  - If $A_1 \\neq u$, Bob either catches Alice immediately (if adjacent to $A_1$) or moves to $u$ (which is adjacent to Bob's position). Once Bob is at $u$, Alice must move to some $A_2 \\neq u$. Since $u$ is adjacent to all vertices, Bob then moves to $A_2$ and catches Alice.\n\nThus, **if $G$ contains a universal vertex, Bob always catches Alice.**\n\n### 2. Maximum Number of Edges Without a Universal Vertex\nIf $G$ has no universal vertex, then every vertex in the complement graph $\\overline{G}$ must have degree at least $1$. \n\nBy the Handshake Lemma in $\\overline{G}$:\n$$2|E(\\overline{G})| = \\sum_{v \\in V} \\operatorname{deg}_{\\overline{G}}(v) \\ge 2n \\implies |E(\\overline{G})| \\ge n$$\n\nTherefore, the number of edges in $G$ cannot exceed:\n$$|E(G)| = \\binom{2n}{2} - |E(\\overline{G})| \\le \\binom{2n}{2} - n = \\frac{2n(2n-1)}{2} - n = 2n^2 - 2n$$\n\nIf $|E(G)| > 2n^2 - 2n$, then $|E(\\overline{G})| < n$, which by the Pigeonhole Principle forces at least two vertices in $\\overline{G}$ to have degree $0$. These vertices would be universal in $G$, guaranteeing a win for Bob.\n\n### 3. Construction Attaining $2n^2 - 2n$ Edges\nConsider the graph $G = K_{2n} - M$, which is the complete graph $K_{2n}$ minus a perfect matching $M$.\n- The number of edges is $\\binom{2n}{2} - n = 2n^2 - 2n$.\n- For each vertex $v$, let $\\bar{v}$ denote its unique non-neighbor (paired via $M$). Every vertex $v$ is adjacent to all vertices in $V \\setminus \\{v, \\bar{v}\\}$.\n- Since $n > 1$, every vertex has degree $2n - 2 \\ge 2$, so the graph is connected.\n\n**Alice's Winning Strategy:**\n1. Alice chooses $A_0 = 1$ and $B_0 = 2$ (where $1$ and $2$ are not paired in $M$).\n2. **Turn 1 (Alice):** Alice moves to $\\bar{2}$. This is a valid move because $\\bar{2} \\neq 1$ and $\\bar{2} \\neq \\bar{1}$.\n3. **Turn 1 (Bob):** Bob is at $2$ and Alice is at $\\bar{2}$. Since $(2, \\bar{2}) \\notin E(G)$, Bob cannot catch Alice. Bob must move to some neighbor $b \\notin \\{2, \\bar{2}\\}$.\n4. **Turn 2 (Alice):** Alice is at $\\bar{2}$ and Bob is at $b$. Alice moves to $\\bar{b}$. Since $b \\notin \\{2, \\bar{2}\\}$, $\\bar{b}$ is adjacent to $\\bar{2}$, making this a valid move.\n5. **Turn 2 (Bob):** Bob is at $b$ and Alice is at $\\bar{b}$. Since $(b, \\bar{b}) \\notin E(G)$, Bob cannot catch Alice and must move to some $c \\notin \\{b, \\bar{b}\\}$.\n\nAlice repeats this strategy indefinitely, always responding to Bob's position $x$ by moving to $\\bar{x}$. Bob can never catch Alice.\n\nANSWER: 2n^2 - 2n\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "f06ce52d-7acf-4740-a61e-e9030fb614a7",
+    "status": "SUCCESS",
+    "duration_seconds": 203.467007,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9849,
+      "output_tokens": 23248,
+      "thinking_tokens": 22164,
+      "cache_read_tokens": 0,
+      "total_tokens": 33097
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

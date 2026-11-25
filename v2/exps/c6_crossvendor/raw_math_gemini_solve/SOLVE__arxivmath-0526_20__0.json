@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0526_20__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:58:32Z",
+  "duration_s": 63.037,
+  "input_tokens": 9854,
+  "output_tokens": 6929,
+  "thinking_tokens": 6208,
+  "text": "To find the minimum strictly positive fractional revival time $t^*$ on the unitary Cayley graph $X = \\text{Cay}(\\mathbb{Z}_{2p}, \\mathbb{Z}_{2p}^\\times)$ with $p$ an odd prime, we analyze the transition amplitudes of the continuous-time quantum walk given by $U(t) = e^{-iAt}$.\n\nThe eigenvalues of the adjacency matrix $A$ of the unitary Cayley graph are given by the Ramanujan sums $\\lambda_j = c_{2p}(j)$:\n- For $j = 0$: $\\lambda_0 = \\phi(2p) = p - 1$\n- For $j = p$: $\\lambda_p = -(p - 1)$\n- For odd $j \\neq p$ ($\\gcd(j, 2p) = 1$): $\\lambda_j = 1$\n- For even $j \\neq 0$ ($\\gcd(j, 2p) = 2$): $\\lambda_j = -1$\n\nUsing the Fourier basis eigenvectors of the circulant graph, the transition amplitude from vertex $0$ to any vertex $v$ is:\n$$U(t)_{v, 0} = \\frac{1}{2p} \\sum_{j=0}^{2p-1} e^{-i \\lambda_j t} e^{-i \\pi j v / p}$$\n\nEvaluating this sum for $v \\notin \\{0, p\\}$ yields:\n$$2p \\cdot U(t)_{v, 0} = \\left(e^{-i(p-1)t} - e^{it}\\right) + (-1)^v \\left(e^{i(p-1)t} - e^{-it}\\right)$$\n\nFor fractional revival between the antipodal vertices $0$ and $p$, we require $U(t)_{v, 0} = 0$ for all $v \\notin \\{0, p\\}$. Since $p \\ge 3$ is an odd prime, there exist both even and odd vertices in $\\mathbb{Z}_{2p} \\setminus \\{0, p\\}$. Thus, the coefficients for both $(-1)^v = 1$ and $(-1)^v = -1$ must vanish simultaneously:\n$$e^{-i(p-1)t} - e^{it} = 0 \\iff e^{ipt} = 1$$\n\nThis implies $pt = 2\\pi k$ for $k \\in \\mathbb{Z}^+$. When $pt \\in 2\\pi\\mathbb{Z}$, the amplitudes at vertices $0$ and $p$ become:\n$$U(t)_{0, 0} = \\cos(t), \\quad U(t)_{p, 0} = i\\sin(t)$$\nwhich satisfies $|U(t)_{0, 0}|^2 + |U(t)_{p, 0}|^2 = 1$. Since $p$ is an odd prime, $\\sin(2\\pi/p) \\neq 0$ and $\\cos(2\\pi/p) \\neq 0$, ensuring non-trivial fractional revival occurs at the smallest positive integer $k = 1$.\n\nThus, the minimum strictly positive fractional revival time is $t^* = \\frac{2\\pi}{p}$.\n\nANSWER: \\frac{2\\pi}{p}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "6be85ade-3484-423a-ae13-38d324df161a",
+    "status": "SUCCESS",
+    "duration_seconds": 55.520169,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9854,
+      "output_tokens": 6929,
+      "thinking_tokens": 6208,
+      "cache_read_tokens": 0,
+      "total_tokens": 16783
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

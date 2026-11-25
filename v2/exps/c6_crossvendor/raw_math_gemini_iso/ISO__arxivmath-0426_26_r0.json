@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_26_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:46:29Z",
+  "duration_s": 110.18,
+  "input_tokens": 10192,
+  "output_tokens": 10205,
+  "thinking_tokens": 9532,
+  "text": "To determine whether the proposed solution is correct, we can verify the key steps:\n\n1. **Self-similar ansatz and scaling:**\n   For a profile of the form $u(x) = c\\,x_n^\\beta$ with $u = 0$ for $x_n \\le 0$, the $n$-dimensional fractional Laplacian $(-\\Delta)^s$ acts as the one-dimensional fractional Laplacian in the $x_n$ variable. By dimensional analysis, \n   $$(-\\Delta)^s(x_+^\\beta) = C(\\beta)\\,x^{\\beta-2s}.$$\n   For the fractional Laplacian to be well-defined at infinity, we must have $\\beta \\in (0, 2s)$.\n\n2. **Sign of the coefficient $C(\\beta)$:**\n   The exact symbol/constant is proportional to:\n   $$C(\\beta) \\propto \\frac{\\Gamma(\\beta+1)}{\\Gamma(\\beta+1-2s)}\\frac{\\sin(\\pi(s-\\beta))}{\\sin(\\pi(2s-\\beta))}.$$\n   Using Euler's reflection formula $\\Gamma(z)\\sin(\\pi z) = \\frac{\\pi}{\\Gamma(1-z)}$ with $z = \\beta+1-2s$, the factor $\\frac{1}{\\Gamma(\\beta+1-2s)\\sin(\\pi(2s-\\beta))}$ maintains a constant sign for all $\\beta \\in (0, 2s)$. The only zero and sign change in $(0, 2s)$ occurs at $\\beta = s$ due to $\\sin(\\pi(s-\\beta))$. \n   Since $(-\\Delta)^s(x_+^s) = 0$ and $(-\\Delta)^s$ is positive on sub-harmonic profiles $\\beta < s$, we have:\n   $$C(\\beta) > 0 \\iff \\beta \\in (0, s).$$\n\n3. **Balancing exponents and existence:**\n   Equating powers in $(-\\Delta)^s u = x_n^\\alpha u^{-\\gamma}$ gives:\n   $$\\beta - 2s = \\alpha - \\gamma\\beta \\implies \\beta = \\frac{\\alpha+2s}{1+\\gamma}.$$\n   The constant equation $c\\,C(\\beta) = c^{-\\gamma} \\implies c^{1+\\gamma} = \\frac{1}{C(\\beta)}$ admits a positive solution $c > 0$ if and only if $C(\\beta) > 0$. Together with the Dirichlet boundary requirement that $u \\to 0$ as $x_n \\to 0^+$ (which requires $\\beta > 0$), existence holds precisely when:\n   $$0 < \\frac{\\alpha+2s}{1+\\gamma} < s \\iff -2s < \\alpha < s(\\gamma-1).$$\n\n4. **Sum of endpoints:**\n   Here $A = -2s$ and $B = s(\\gamma-1)$, yielding:\n   $$A+B = -2s + s(\\gamma-1) = s(\\gamma-3).$$\n\nThe derivation and the final answer are correct.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "13f462da-abdf-4688-861c-79c1d1d4612f",
+    "status": "SUCCESS",
+    "duration_seconds": 100.27833,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10192,
+      "output_tokens": 10205,
+      "thinking_tokens": 9532,
+      "cache_read_tokens": 0,
+      "total_tokens": 20397
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

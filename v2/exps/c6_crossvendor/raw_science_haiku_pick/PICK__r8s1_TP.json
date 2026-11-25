@@ -1,0 +1,117 @@
+{
+  "job_id": "PICK__r8s1_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:00Z",
+  "duration_s": 9.585,
+  "input_tokens": 2,
+  "output_tokens": 1727,
+  "thinking_tokens": 1064,
+  "text": "**Hypothesis 3 is the one the evidence supports.** The other three test things this review did not study.\n\n**Hypothesis 3** says specific contextual determinants at the organizational, community, and public policy levels are positively associated with utilization. The abstract reports positive associations at all three levels:\n- **Organizational:** access to a school-based health center, and collaboration between organizations providing care.\n- **Community:** region of residence, urban residence, high accessibility of mental health care, and high neighborhood socioeconomic status.\n- **Public policy:** a mental health parity law, a mental health screening program, extension of health insurance coverage, and a fee-for-service plan compared with a managed care plan.\n\nThe hypothesis is broad, and the review is observational, so \"associated\" is the right claim, not \"causes.\" The abstract also says the evidence for the other 35 determinants is limited.\n\n**Hypothesis 1** predicts that integrating behavioral health into pediatric primary care will increase utilization in low-income and rural children, measured against control sites over 12 months. The review does not evaluate any intervention or control-site comparison. It found urban residence, not rural, to be positively associated. Its only overlap is the school-based health center and inter-organizational collaboration findings, which do not establish the predicted effect of shared EHRs or referral pathways.\n\n**Hypothesis 2** proposes a CRAP framework built on graph convolutional networks, Bayesian causal inference, spatio-temporal regression, and social capital indices such as collective efficacy. The review is a systematic literature synthesis and does not use or test any of these methods. It does not report social cohesion or collective efficacy as determinants.\n\n**Hypothesis 4** is a multi-level intervention package with specific session schedules, sample sizes, and evaluation designs. Its ecological framing matches the review's organizing levels, but the review does not test any intervention, and the claim that the package \"will enhance\" utilization is untested here. Most of its specific details go beyond anything in the abstract.\n\nCHOICE: 3",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8288,
+    "stop_reason": "end_turn",
+    "session_id": "25befa01-8108-446b-a367-d317b24de97c",
+    "total_cost_usd": 0.00253836,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7804,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1727,
+      "output_tokens_details": {
+        "thinking_tokens": 1064
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7804,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1727,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7804,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7804
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1727,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7804,
+        "webSearchRequests": 0,
+        "costUSD": 0.00253836,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1064,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7804,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5876,
+    "type": "result",
+    "duration_ms": 8748,
+    "uuid": "6784ec1a-7070-4f3f-8cb3-68c8b06af7e9",
+    "ttft_stream_ms": 1304,
+    "time_to_request_ms": 459,
+    "first_content_frame_ms": 1304,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

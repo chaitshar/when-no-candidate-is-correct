@@ -1,0 +1,29 @@
+{
+  "job_id": "M2__arxivmath-0126_20_TA",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T22:39:54Z",
+  "duration_s": 217.538,
+  "input_tokens": 12701,
+  "output_tokens": 30019,
+  "thinking_tokens": 28752,
+  "text": "To determine which solution (if any) is correct, we evaluate each solution independently according to the two-step verification protocol.\n\n---\n\n### Step 1: Independent Falsification\n\n#### Solution 1:\n- **Claim:** $\\mathrm{ex}_L(n, P_5) = \\frac{4n}{11}$ for $11 \\mid n$.\n- **Falsification:** \n  - Solution 1 claims that the maximum number of edges in a $P_5$-free linear 3-graph on 11 vertices is 4 edges (using a single $P_4$).\n  - However, consider a star with center vertex $v$ and edges $\\{v, a_{2i-1}, a_{2i}\\}$ for $i = 1, \\dots, 5$ on 11 vertices. Every pair of edges in this star intersects at $v$, meaning no two edges are disjoint. Since $P_5$ requires non-consecutive edges to be disjoint (e.g., $e_1 \\cap e_3 = \\varnothing$), the star cannot contain a $P_3$, let alone a $P_5$.\n  - This 5-edge star on 11 vertices is linear and $P_5$-free, already achieving 5 edges on 11 vertices ($5 > 4$).\n  - Moreover, for any $n$ with $11 \\mid n$ (such as $n = 33$), a star on $n$ vertices has $\\lfloor (n-1)/2 \\rfloor$ edges (for $n=33$, 16 edges), whereas Solution 1 gives $\\frac{4 \\times 33}{11} = 12$ edges. \n  - Thus, Solution 1 is **falsified**.\n\n---\n\n#### Solution 2:\n- **Claim:** $\\mathrm{ex}_L(n, P_5) = \\frac{5n}{11}$ for $11 \\mid n$.\n- **Falsification:**\n  - Solution 2 claims that within any component on 11 vertices, at most 5 edges can coexist without forming a $P_5$, yielding an upper bound of $\\frac{5n}{11}$.\n  - Testing this on $n = 33$ (which satisfies $11 \\mid 33$):\n    - Solution 2 yields $\\frac{5 \\times 33}{11} = 15$ edges.\n    - A star on 33 vertices with center $v$ and 16 disjoint pairs has 16 edges. It is linear and contains no pair of disjoint edges, hence it is completely $P_5$-free. Since $16 > 15$, Solution 2 fails.\n  - Thus, Solution 2 is **falsified**.\n\n---\n\n#### Solution 3:\n- **Claim:** $\\mathrm{ex}_L(n, P_5) = \\frac{10n}{11}$ for $11 \\mid n$.\n- **Falsification:**\n  - Solution 3 constructs a 10-edge configuration on 11 vertices and asserts without adequate proof that no construction can exceed an edge density of $\\frac{10}{11}$.\n  - To test if $\\mathrm{ex}_L(n, P_5) \\le \\frac{10n}{11}$, consider the affine plane of order 3, $AG(2, 3)$:\n    - It is a 3-uniform hypergraph on 9 vertices with 12 edges (lines).\n    - Any two distinct lines intersect in at most 1 point, so it is linear.\n    - Two lines are disjoint if and only if they are parallel. Parallelism in $AG(2,3)$ is an equivalence relation with 4 parallel classes of 3 lines each.\n    - If $AG(2, 3)$ contained a copy of $P_5 = (e_1, e_2, e_3, e_4, e_5)$, then:\n      - $e_1 \\cap e_3 = \\varnothing \\implies e_1 \\parallel e_3$\n      - $e_3 \\cap e_5 = \\varnothing \\implies e_3 \\parallel e_5$, so $e_1 \\parallel e_5$.\n      - By disjointness of non-consecutive edges in $P_5$, $e_2 \\cap e_5 = \\varnothing \\implies e_2 \\parallel e_5$.\n      - By transitivity of parallelism, $e_1 \\parallel e_2 \\implies e_1 \\cap e_2 = \\varnothing$, which directly contradicts $|e_1 \\cap e_2| = 1$.\n    - Therefore, $AG(2, 3)$ is strictly $P_5$-free.\n  - Now consider $n = 99$, where $11 \\mid 99$ and $9 \\mid 99$:\n    - Taking 11 vertex-disjoint copies of $AG(2, 3)$ yields a $P_5$-free linear 3-graph on 99 vertices with $11 \\times 12 = 132$ edges.\n    - Solution 3 claims the maximum for $n = 99$ is $\\frac{10 \\times 99}{11} = 90$ edges.\n    - Since $132 > 90$, Solution 3's bound is severely violated.\n  - Thus, Solution 3 is **falsified**.\n\n---\n\n### Step 2: Calibrated Selection Gate\n\nAll three solutions have been definitively falsified by concrete counterexamples. None survives.\n\nCHOICE: NONE\nCONFIDENCE: 5\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "d0a03d4c-8951-474e-8d91-66d7a10e7425",
+    "status": "SUCCESS",
+    "duration_seconds": 210.011216,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12701,
+      "output_tokens": 30019,
+      "thinking_tokens": 28752,
+      "cache_read_tokens": 0,
+      "total_tokens": 42720
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

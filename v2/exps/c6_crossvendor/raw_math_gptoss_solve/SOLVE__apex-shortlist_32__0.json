@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__apex-shortlist_32__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:35:31Z",
+  "duration_s": 32.997,
+  "input_tokens": 3936,
+  "output_tokens": 3850,
+  "thinking_tokens": 0,
+  "text": "The board has \\(n=1001\\) vertices, an odd number.  \nAfter a turn the chip is at a vertex \\(c\\).  \nRose chooses a step size \\(k\\); Brunno may move to either \\(c+k\\) or \\(c-k\\) (mod \\(n\\)).  \nIf both of those vertices are still white, Brunno cannot avoid creating a new red vertex – whichever direction he chooses the chip lands on a white vertex that is then painted red.  \nTherefore Rose can force a new red vertex exactly when there exists a \\(k\\) such that **both** \\(c+k\\) and \\(c-k\\) are white.\n\nWhen the game can no longer produce a new red vertex, for the current chip position \\(c\\) every non‑zero distance \\(d\\) ( \\(1\\le d\\le 500\\) ) satisfies that at least one of the two opposite vertices \\(c+d\\) or \\(c-d\\) is already red.  \nThus the set of white vertices \\(W\\) cannot contain both members of any opposite pair \\(\\{c+d,\\,c-d\\}\\).  \nThere are \\(500\\) such opposite pairs (since \\(n\\) is odd), so \\(|W|\\le 500\\).\n\nConsequently the number of red vertices satisfies  \n\n\\[\n|R| = n - |W| \\ge 1001 - 500 = 501 .\n\\]\n\nThe bound is tight: Rose can first paint the starting vertex red (by choosing \\(k=1001\\)). Afterwards, as long as a pair of opposite white vertices exists, she picks the distance to one of them; Brunno is forced to move onto a white vertex, which becomes red. This process continues until no opposite white pair remains, at which point at most \\(500\\) vertices are still white and exactly \\(501\\) are red. Hence Rose can guarantee painting **501** vertices, and she cannot guarantee more.\n\n**ANSWER: 501**\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "8d6ca201-fe7c-4c24-a0b1-62663edac35c",
+    "status": "SUCCESS",
+    "duration_seconds": 25.302997,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3936,
+      "output_tokens": 3850,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 7786
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

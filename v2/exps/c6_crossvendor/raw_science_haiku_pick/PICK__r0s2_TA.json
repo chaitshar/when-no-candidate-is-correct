@@ -1,0 +1,117 @@
+{
+  "job_id": "PICK__r0s2_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:25:45Z",
+  "duration_s": 11.538,
+  "input_tokens": 2,
+  "output_tokens": 1308,
+  "thinking_tokens": 806,
+  "text": "The abstract is a review that announces its scope. It does not report results that test any of the four hypotheses.\n\n- **Hypothesis 1** depends on FIR–UV spatial offsets above 0.5\" and ALMA/JWST measurements. The abstract says the observational results at z > 4 are deferred to a second part, so this claim is not supported. It also specifies >0.01 M⊙ of dust per Type IIP supernova, which the abstract does not mention.\n- **Hypothesis 2** is the closest in theme. The abstract covers supernovae as dust sources and the reprocessing of dust in the ISM through destruction and growth at z > 4. However, it does not mention magnetohydrodynamic simulations, magnetic field effects, the metallicity, ejecta temperature, or density ranges, or 0.01 pc resolution. Those are the testable specifics of the hypothesis, and the evidence does not support them.\n- **Hypothesis 3** repeats the FIR–UV separation claim of Hypothesis 1 with no basis in the abstract.\n- **Hypothesis 4** concerns AGB stars in binary systems, with mass-transfer rates and binary spectral signatures. The abstract names AGB stars as a dust source but says nothing about binarity, mass transfer, or binary spectra.\n\nHypothesis 2 overlaps with the review's general topic, but the evidence does not support its specific mechanisms or parameters, so I would not count it as the study's main supported hypothesis.\n\nCHOICE: NONE",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6944,
+    "stop_reason": "end_turn",
+    "session_id": "833d95bf-cfd1-4376-b5c2-7d0bf08c95f1",
+    "total_cost_usd": 0.00207946,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6557,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1308,
+      "output_tokens_details": {
+        "thinking_tokens": 806
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6557,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1308,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6557,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6557
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1308,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6557,
+        "webSearchRequests": 0,
+        "costUSD": 0.00207946,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 806,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6557,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5013,
+    "type": "result",
+    "duration_ms": 7371,
+    "uuid": "6e2b2bd3-b973-4019-9ec6-6c2ac4552aae",
+    "ttft_stream_ms": 1415,
+    "time_to_request_ms": 427,
+    "first_content_frame_ms": 1415,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

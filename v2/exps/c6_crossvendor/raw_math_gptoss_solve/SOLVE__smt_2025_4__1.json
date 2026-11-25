@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__smt_2025_4__1",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:44:42Z",
+  "duration_s": 16.029,
+  "input_tokens": 3867,
+  "output_tokens": 1699,
+  "thinking_tokens": 0,
+  "text": "**Solution Overview**\n\nThe functional equation  \n\n\\[\nf\\bigl(x^{7}+6x^{5}+3x^{3}+1\\bigr)=9x+5\\qquad(\\forall x\\in\\mathbb R)\n\\]\n\ndefines \\(f\\) via the inverse of the strictly increasing polynomial  \n\n\\[\ng(x)=x^{7}+6x^{5}+3x^{3}+1 .\n\\]\n\nBecause \\(g'(x)=7x^{6}+30x^{4}+9x^{2}=x^{2}(7x^{4}+30x^{2}+9)\\ge 0\\) with equality only at \\(x=0\\), \\(g\\) is bijective and continuous, so it has a continuous inverse \\(g^{-1}\\).\n\nFrom the equation we obtain  \n\n\\[\nf(y)=9\\,g^{-1}(y)+5 \\qquad (\\forall y\\in\\mathbb R).\n\\]\n\nHence  \n\n\\[\n\\int_{-9}^{11} f(x)\\,dx = 9\\int_{-9}^{11} g^{-1}(x)\\,dx +5\\,(11-(-9))\n= 9I + 100,\n\\]\n\nwhere \\(I=\\displaystyle\\int_{-9}^{11} g^{-1}(x)\\,dx\\).\n\n---\n\n### Using the inverse–integral formula  \n\nFor a bijective, continuous \\(g\\),\n\n\\[\n\\int_{a}^{b} g^{-1}(y)\\,dy\n= b\\,g^{-1}(b)-a\\,g^{-1}(a)-\\int_{g^{-1}(a)}^{g^{-1}(b)} g(x)\\,dx .\n\\]\n\nWe need \\(g^{-1}(-9)\\) and \\(g^{-1}(11)\\).\n\n\\[\n\\begin{aligned}\ng( -1) &= (-1)^{7}+6(-1)^{5}+3(-1)^{3}+1 = -1-6-3+1=-9,\\\\\ng( 1) &= 1^{7}+6\\cdot1^{5}+3\\cdot1^{3}+1 = 1+6+3+1=11.\n\\end{aligned}\n\\]\n\nThus \\(g^{-1}(-9)=-1\\) and \\(g^{-1}(11)=1\\).\n\nNow\n\n\\[\n\\begin{aligned}\nI &= 11\\cdot1-(-9)\\cdot(-1)-\\int_{-1}^{1} g(x)\\,dx \\\\\n  &= 11-9-\\int_{-1}^{1} \\bigl(x^{7}+6x^{5}+3x^{3}+1\\bigr)\\,dx .\n\\end{aligned}\n\\]\n\nThe odd terms integrate to zero over \\([-1,1]\\), leaving only the constant:\n\n\\[\n\\int_{-1}^{1} g(x)\\,dx = \\int_{-1}^{1} 1\\,dx = 2.\n\\]\n\nTherefore \\(I = 2-2 = 0\\).\n\n---\n\n### Final integral\n\n\\[\n\\int_{-9}^{11} f(x)\\,dx = 9\\cdot 0 + 100 = 100.\n\\]\n\n\\[\n\\boxed{100}\n\\]\n\n---\n\n**Answer:**  \nANSWER: 100\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "acf517d0-9b25-4516-b873-172847c504fd",
+    "status": "SUCCESS",
+    "duration_seconds": 9.286001,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3867,
+      "output_tokens": 1699,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 5566
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

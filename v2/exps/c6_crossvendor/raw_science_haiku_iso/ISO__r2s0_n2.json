@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r2s0_n2",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:48Z",
+  "duration_s": 5.124,
+  "input_tokens": 2,
+  "output_tokens": 663,
+  "thinking_tokens": 221,
+  "text": "The candidate is not the study's main hypothesis, so I reject it.\n\nThe abstract describes a qualitative study. The authors ran expert interviews, analyzed them with thematic analysis, and reported three themes: awareness of AI issues, measuring AI impacts, and governing AI processes. Its findings are descriptive. AI is still little known to investors, incorporating responsible AI into ESG analysis is not yet established practice, AI may be material for some industries, and standardized metrics are needed. The study states no testable hypothesis.\n\nThe candidate describes a system design: a hybrid framework with nine specific metrics, a weighting scheme based on multi-criteria decision analysis, a quarterly feedback loop using hybrid supervised and unsupervised learning, federated learning, edge AI, a recursive self-adjusting algorithm, and a control group for comparison. None of these appear in the abstract. The study does not build or test any framework, and it does not measure whether ESG rankings become more accurate. The candidate's claims about accuracy and reliability therefore have no support in this evidence.\n\nThe abstract does touch on related themes. It mentions the need for standardized AI responsibility metrics and the link between AI and ESG materiality. That is at most a loose connection to the candidate's broader topic, not evidence for its specific hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 3486,
+    "stop_reason": "end_turn",
+    "session_id": "3af321ba-124e-4cdc-a171-4bb2aea3448d",
+    "total_cost_usd": 0.0016237600000000001,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5891,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 663,
+      "output_tokens_details": {
+        "thinking_tokens": 221
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5891,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 663,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5891,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5891
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 663,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5891,
+        "webSearchRequests": 0,
+        "costUSD": 0.0016237600000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 221,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5891,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2152,
+    "type": "result",
+    "duration_ms": 4063,
+    "uuid": "bd85145a-2cb3-4749-86c3-0c4d65f3c36d",
+    "ttft_stream_ms": 1335,
+    "time_to_request_ms": 574,
+    "first_content_frame_ms": 1336,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

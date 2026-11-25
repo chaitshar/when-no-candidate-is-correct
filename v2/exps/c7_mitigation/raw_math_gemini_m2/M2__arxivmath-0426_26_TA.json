@@ -1,0 +1,29 @@
+{
+  "job_id": "M2__arxivmath-0426_26_TA",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T22:44:10Z",
+  "duration_s": 110.642,
+  "input_tokens": 3369,
+  "output_tokens": 11986,
+  "thinking_tokens": 10808,
+  "text": "### Step 1: Independent Falsification\n\n#### Solution 1\n- **Ansatz and Exponent Matching:** Substituting $u(x) = c x_n^\\beta$ into $(-\\Delta)^s u = x_n^\\alpha u^{-\\gamma}$ gives $(-\\Delta)^s u \\propto x_n^{\\beta-2s}$ and $x_n^\\alpha u^{-\\gamma} \\propto x_n^{\\alpha - \\gamma \\beta}$. Equating exponents gives $\\beta - 2s = \\alpha - \\gamma\\beta \\implies \\beta = \\frac{\\alpha+2s}{1+\\gamma}$. This is correct.\n- **Coefficient Matching and Positivity:** To have a positive constant $c > 0$ such that $c^{1+\\gamma} = \\frac{1}{\\Lambda_s(\\beta)}$, we must have $\\Lambda_s(\\beta) > 0$.\n- **Symbol $\\Lambda_s(\\beta)$:** The fractional Laplacian of the 1D profile $(x_n)_+^\\beta$ yields the constant $\\Lambda_s(\\beta) = c_{1,s} [-\\Gamma(-2s)] \\frac{\\Gamma(\\beta+1)}{\\Gamma(\\beta+1-2s)} \\frac{2\\cos(\\pi s)\\sin(\\pi(s-\\beta))}{\\sin(\\pi(2s-\\beta))}$. \n  - Its zeros are the two fundamental homogeneous $s$-harmonic exponents $\\beta = s$ and $\\beta = s-1$.\n  - Testing $\\beta = 0$ yields $\\Lambda_s(0) = \\frac{c_{1,s}}{2s} > 0$. Testing $s = 1/2$ yields $\\Lambda_{1/2}(\\beta) \\propto \\beta \\cot(\\pi\\beta) > 0$ on $(-1/2, 1/2)$.\n  - Thus, $\\Lambda_s(\\beta) > 0$ if and only if $\\beta \\in (s-1, s)$.\n- **Bounds on $\\alpha$:** \n  - $s-1 < \\frac{\\alpha+2s}{1+\\gamma} < s \\implies A = (s-1)(1+\\gamma) - 2s = (\\gamma-1)s - (\\gamma+1)$ and $B = s(1+\\gamma) - 2s = (\\gamma-1)s$.\n- **Sum $A+B$:**\n  - $A+B = [(\\gamma-1)s - (\\gamma+1)] + [(\\gamma-1)s] = 2s(\\gamma-1) - (\\gamma+1) = 2s\\gamma - 2s - \\gamma - 1$.\n  - Checked against local limit $s \\to 1$: interval is $(-2, \\gamma-1)$, giving $A+B = \\gamma - 3$, matching $2(1)\\gamma - 2(1) - \\gamma - 1 = \\gamma - 3$.\n- **Verdict:** Survived falsification.\n\n---\n\n#### Solution 2\n- **Condition on $\\beta$:** Solution 2 asserts that the boundary condition requires $\\beta > 0$ and decay at infinity requires $\\beta < 2s$, leading to $(A, B) = (-2s, 2s\\gamma)$.\n- **Falsification:** Solution 2 completely ignores the sign of the fractional Laplacian $(-\\Delta)^s x_n^\\beta$. For $\\beta \\in (s, 2s)$, the coefficient $\\Lambda_s(\\beta)$ is negative, so $(-\\Delta)^s(c x_n^\\beta) < 0$, which cannot match the strictly positive right-hand side $x_n^\\alpha u^{-\\gamma} > 0$. In the classical limit $s \\to 1$, Solution 2 gives $(0, 2)$ for $\\beta$, but $-\\Delta(x_n^\\beta) = -\\beta(\\beta-1)x_n^{\\beta-2} > 0$ strictly requires $\\beta \\in (0, 1)$, not $(0, 2)$.\n- **Verdict:** Falsified.\n\n---\n\n#### Solution 3\n- Derives the same interval $\\beta \\in (s-1, s)$ and the same values:\n  - $A = (s-1)(1+\\gamma) - 2s$, $B = s(1+\\gamma) - 2s = s(\\gamma-1)$\n  - $A+B = (1+\\gamma)(2s-1) - 4s = 2s\\gamma - 2s - \\gamma - 1$.\n- While algebraically correct, it merely asserts that $\\lambda(s,\\beta) > 0$ on $(s-1, s)$ without explicitly computing or justifying $\\Lambda_s(\\beta)$ via the reflection formula as Solution 1 rigorously does.\n- **Verdict:** Survived falsification, but less complete in its derivation than Solution 1.\n\n---\n\n### Step 2: Calibrated Selection Gate\n\nSolution 1 fully derives $\\Lambda_s(\\beta)$, validates its positivity range, checks consistency against known special cases ($s = 1/2$, $\\gamma = 1$, and the classical limit $s \\to 1$), and accurately computes $A+B = 2s\\gamma - 2s - \\gamma - 1$.\n\nCHOICE: 1\nCONFIDENCE: 5\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "e5697245-bb79-4f3d-8ca7-898c82649009",
+    "status": "SUCCESS",
+    "duration_seconds": 103.441894,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3369,
+      "output_tokens": 11986,
+      "thinking_tokens": 10808,
+      "cache_read_tokens": 8751,
+      "total_tokens": 15355
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

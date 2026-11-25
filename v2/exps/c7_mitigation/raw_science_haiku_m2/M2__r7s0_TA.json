@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__r7s0_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:46:27Z",
+  "duration_s": 9.402,
+  "input_tokens": 2,
+  "output_tokens": 1775,
+  "thinking_tokens": 936,
+  "text": "**Step 1: Independent falsification**\n\n**Hypothesis 1** (human capital mediates trade and urbanization effects; SEM; trade-to-GDP ratio amplifies EF)\n- The abstract reports that trade *reduces* EF. H1 predicts that trade *amplifies* EF, so its core directional claim is contradicted.\n- Human capital (education, skills, health) is not among the study's variables. The abstract names life expectancy, which is only a partial health proxy.\n- No SEM, mediation, or direct/indirect effect analysis is reported. The study uses quantile regression and spectral Granger causality.\n- Falsified.\n\n**Hypothesis 2** (urbanization × technological innovation interaction modifies electricity and GDP effects; Bayesian quantile regression)\n- Technological innovation (R&D spending, renewable adoption) is not measured in the study.\n- No interaction terms are reported. The abstract gives only main effects: electricity and GDP increase EF, while trade and urbanization reduce it.\n- The method is frequentist quantile regression, not Bayesian quantile regression.\n- Falsified.\n\n**Hypothesis 3** (renewables × human capital × urbanization moderate electricity and GDP effects; SEM with interaction terms)\n- Renewable energy share and tertiary education or skill indices are not in the abstract.\n- The study reports no moderation or three-way interaction, and no SEM. It also does not claim that renewables or human capital amplify mitigation.\n- Falsified.\n\n**Hypothesis 4** (green infrastructure quality moderates human capital and urbanization effects; SEM; data 1990–2019)\n- The study covers 1960–2019, but H4 restricts the data to 1990–2019 and justifies this on relevance grounds the abstract never raises.\n- A green infrastructure quality index (vegetation cover, green space density) is not measured. Spatial compactness and governance or income-disparity moderators are also absent.\n- No SEM is reported. The abstract's urbanization finding (reduces EF) is not tied to any green infrastructure condition, so the moderation claim is unsupported.\n- Falsified.\n\n**Step 2: Calibrated selection gate**\n\nNone of the four hypotheses survives falsification. Each one either contradicts the abstract's reported direction (H1 on trade), relies on variables the study does not measure, or specifies a method the study did not use. None of them can be selected with the required confidence of 4 or higher.\n\nCHOICE: NONE\n\nCONFIDENCE: 5",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8436,
+    "stop_reason": "end_turn",
+    "session_id": "5e56788f-fc95-45eb-9026-ee3bee5eb1ff",
+    "total_cost_usd": 0.00234556,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6720,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1775,
+      "output_tokens_details": {
+        "thinking_tokens": 936
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6720,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1775,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6720,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6720
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1775,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6720,
+        "webSearchRequests": 0,
+        "costUSD": 0.00234556,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 936,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6720,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5303,
+    "type": "result",
+    "duration_ms": 8735,
+    "uuid": "170b644f-6e8f-440a-ad4d-262d5a76760c",
+    "ttft_stream_ms": 1361,
+    "time_to_request_ms": 297,
+    "first_content_frame_ms": 1361,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0226_13__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:25:23Z",
+  "duration_s": 327.102,
+  "input_tokens": 9862,
+  "output_tokens": 40134,
+  "thinking_tokens": 39131,
+  "text": "To find the variance $\\mathop{\\mathrm{Var}}[\\alpha_d]$, we first determine the first and second moments of the normalized solid angle $\\alpha_d$.\n\n1. **First Moment $\\mathbb{E}[\\alpha_d]$:**\nThe vectors $U_1, \\ldots, U_d$ are independent and uniformly distributed on $\\mathbb{S}^{d-1}$. Almost surely, they form a basis of $\\mathbb{R}^d$. The $2^d$ cones of the form\n\\[\n\\mathcal{C}_{s_1,\\ldots,s_d} = \\left\\{\\sum_{i=1}^d \\lambda_i s_i U_i : \\lambda_i \\geq 0\\right\\}, \\quad s_i \\in \\{-1, +1\\}\n\\]\npartition $\\mathbb{R}^d$ up to sets of measure zero. By symmetry under sign changes $U_i \\mapsto -U_i$, the normalized solid angles of these $2^d$ cones are identically distributed, and their sum is $1$. Therefore:\n\\[\n\\mathbb{E}[\\alpha_d] = \\frac{1}{2^d}.\n\\]\n\n2. **Second Moment $\\mathbb{E}[\\alpha_d^2]$:**\nThe normalized solid angle can be viewed as the probability that an independent uniform random vector $X \\in \\mathbb{S}^{d-1}$ falls in $\\mathcal{W}_{d,d}$:\n\\[\n\\alpha_d = \\mathbb{P}_X(X \\in \\mathcal{W}_{d,d} \\mid U_1, \\dots, U_d).\n\\]\nConsequently, for two independent uniform vectors $X, Y \\in \\mathbb{S}^{d-1}$ independent of the $U_i$:\n\\[\n\\mathbb{E}[\\alpha_d^2] = \\mathbb{P}(X \\in \\mathcal{W}_{d,d} \\text{ and } Y \\in \\mathcal{W}_{d,d}) = \\mathbb{P}(X, Y \\in \\operatorname{pos}(U_1, \\dots, U_d)).\n\\]\nNotice that $U_1, \\dots, U_d, X, Y$ form a collection of $n = d+2$ i.i.d. isotropic random vectors in $\\mathbb{R}^d$. \n\nUsing Gale duality, the linear dependencies of these $d+2$ vectors in $\\mathbb{R}^d$ correspond to $d+2$ vectors $a_1, \\dots, a_{d+2} \\in \\mathbb{R}^2$. The condition that $X$ and $Y$ (say, $a_{d+1}$ and $a_{d+2}$) lie in the positive hull of $U_1, \\dots, U_d$ (the remaining $d$ vectors) is equivalent to requiring that all $d$ vectors $a_1, \\dots, a_d$ lie in the wedge of angle $\\theta$ opposite to the wedge formed by $a_{d+1}$ and $a_{d+2}$. \n\nSince the angle $\\theta \\in [0, \\pi]$ between $a_{d+1}$ and $a_{d+2}$ is uniformly distributed on $[0, \\pi]$, and conditionally on $\\theta$, each of the other $d$ vectors independently falls into the opposite wedge of normalized angle $\\frac{\\theta}{2\\pi}$ with probability $\\frac{\\theta}{2\\pi}$, we have:\n\\[\n\\mathbb{E}[\\alpha_d^2] = \\frac{1}{\\pi} \\int_0^\\pi \\left(\\frac{\\theta}{2\\pi}\\right)^d d\\theta = 2 \\int_0^{1/2} t^d \\, dt = \\frac{2}{d+1}\\left(\\frac{1}{2}\\right)^{d+1} = \\frac{1}{(d+1)2^d}.\n\\]\n\n3. **Variance $\\mathop{\\mathrm{Var}}[\\alpha_d]$:**\nSubtracting $(\\mathbb{E}[\\alpha_d])^2$:\n\\[\n\\mathop{\\mathrm{Var}}[\\alpha_d] = \\mathbb{E}[\\alpha_d^2] - (\\mathbb{E}[\\alpha_d])^2 = \\frac{1}{(d+1)2^d} - \\frac{1}{4^d} = \\frac{2^d - d - 1}{(d+1)4^d}.\n\\]\n\nANSWER: \\frac{2^d - d - 1}{(d+1)4^d}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "e4aaad7b-bb4f-4064-9b7b-bf51a4e1c5b1",
+    "status": "SUCCESS",
+    "duration_seconds": 318.057497,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9862,
+      "output_tokens": 40134,
+      "thinking_tokens": 39131,
+      "cache_read_tokens": 0,
+      "total_tokens": 49996
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

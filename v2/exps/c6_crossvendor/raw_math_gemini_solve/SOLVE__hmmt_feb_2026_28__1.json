@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__hmmt_feb_2026_28__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:05:42Z",
+  "duration_s": 142.05,
+  "input_tokens": 9823,
+  "output_tokens": 15848,
+  "thinking_tokens": 14631,
+  "text": "To find $AM$, we analyze the properties of the circumcircles of $\\triangle ABH$, $\\triangle ACH$, and $\\triangle ABC$.\n\nLet $O$ be the circumcenter of $\\triangle ABC$ and $R$ be its circumradius. Taking $O$ as the origin of vectors, the vertices $A, B, C$ satisfy $|A| = |B| = |C| = R$. \n\nThe orthocenter is given by $H = A + B + C$. The circumcenters of $\\triangle ABH$ and $\\triangle ACH$ are:\n- $O_C = A + B$, with circumradius $R$ (since $|A - O_C| = |-B| = R$, $|B - O_C| = |-A| = R$, and $|H - O_C| = |C| = R$).\n- $O_B = A + C$, with circumradius $R$.\n\nLet $\\vec{u}$ be the unit vector along the internal angle bisector of $\\angle BAC$. The ray from $A$ along $\\vec{u}$ intersects:\n1. The circumcircle of $\\triangle ABH$ at $P$, so the chord length is:\n   $$AP = 2\\vec{u} \\cdot (O_C - A) = 2(\\vec{u} \\cdot B)$$\n2. The circumcircle of $\\triangle ACH$ at $Q$, so:\n   $$AQ = 2\\vec{u} \\cdot (O_B - A) = 2(\\vec{u} \\cdot C)$$\n3. The circumcircle of $\\triangle ABC$ at $M$, so:\n   $$AM = 2\\vec{u} \\cdot (O - A) = -2(\\vec{u} \\cdot A)$$\n\nSince $M$ lies on this ray, $\\vec{u} = \\frac{M - A}{AM}$. Thus:\n$$AP \\cdot AM = 2(M - A) \\cdot B = 2(M \\cdot B - A \\cdot B)$$\n$$AQ \\cdot AM = 2(M - A) \\cdot C = 2(M \\cdot C - A \\cdot C)$$\n\nUsing the algebraic identity for any points on a circle centered at the origin:\n$$2(M - A) \\cdot B = |B - A|^2 - |B - M|^2 = AB^2 - BM^2$$\n$$2(M - A) \\cdot C = |C - A|^2 - |C - M|^2 = AC^2 - CM^2$$\n\nSince $M$ is the midpoint of arc $BC$ not containing $A$, we have $BM = CM = d$. Setting $c = AB$ and $b = AC$:\n$$AP \\cdot AM = c^2 - d^2$$\n$$AQ \\cdot AM = b^2 - d^2$$\n\nFrom similar triangles $\\triangle ABD \\sim \\triangle AMC$ and $\\triangle MBD \\sim \\triangle MAB$ (where $D$ is the intersection of $AM$ with $BC$):\n$$AM \\cdot AD = bc \\quad \\text{and} \\quad AM \\cdot DM = d^2$$\nAdding these yields:\n$$AM^2 = AM(AD + DM) = bc + d^2 \\implies d^2 = AM^2 - bc$$\n\nSubstituting $d^2$ into our expressions for $AP \\cdot AM$ and $AQ \\cdot AM$:\n$$c^2 - (AM^2 - bc) = AP \\cdot AM \\implies c(b + c) = AM(AM + AP)$$\n$$b^2 - (AM^2 - bc) = AQ \\cdot AM \\implies b(b + c) = AM(AM + AQ)$$\n\nSumming these two equations gives:\n$$(b + c)^2 = AM(2AM + AP + AQ)$$\n\nMultiplying the two equations gives:\n$$bc(b + c)^2 = AM^2(AM + AP)(AM + AQ) \\implies bc = \\frac{AM(AM + AP)(AM + AQ)}{2AM + AP + AQ}$$\n\nThen:\n$$d^2 = AM^2 - bc = \\frac{AM(AM^2 - AP \\cdot AQ)}{2AM + AP + AQ}$$\n\nBy Ptolemy's Theorem on the cyclic quadrilateral $ABMC$:\n$$AM \\cdot BC = AB \\cdot MC + AC \\cdot MB = d(b + c) \\implies d = \\frac{a \\cdot AM}{b + c}$$\nwhere $a = BC$. Squaring this and substituting $(b+c)^2$:\n$$d^2 = \\frac{a^2 AM^2}{(b+c)^2} = \\frac{a^2 AM}{2AM + AP + AQ}$$\n\nEquating the two expressions for $d^2$:\n$$\\frac{AM(AM^2 - AP \\cdot AQ)}{2AM + AP + AQ} = \\frac{a^2 AM}{2AM + AP + AQ}$$\n\nCancelling the positive factor $\\frac{AM}{2AM + AP + AQ}$ yields:\n$$AM^2 - AP \\cdot AQ = a^2 \\implies AM = \\sqrt{a^2 + AP \\cdot AQ}$$\n\nGiven $a = BC = 7$, $AP = 4$, and $AQ = 5$:\n$$AM = \\sqrt{7^2 + 4 \\times 5} = \\sqrt{49 + 20} = \\sqrt{69}$$\n\nANSWER: \\sqrt{69}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "fdf08622-1f44-42a4-b729-03d1df715e44",
+    "status": "SUCCESS",
+    "duration_seconds": 133.170974,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9823,
+      "output_tokens": 15848,
+      "thinking_tokens": 14631,
+      "cache_read_tokens": 0,
+      "total_tokens": 25671
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

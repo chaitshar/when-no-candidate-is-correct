@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__hmmt_feb_2026_28_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T12:01:04Z",
+  "duration_s": 45.526,
+  "input_tokens": 12967,
+  "output_tokens": 4097,
+  "thinking_tokens": 3382,
+  "text": "To determine the correctness of each solution, let us analyze the geometry of the problem:\n\nLet $R$ denote the circumradius of $\\triangle ABC$, and let $\\angle BAC = 2\\alpha$.\n1. **Circumcircles of $\\triangle ABH$ and $\\triangle ACH$**: \n   The circumradii of $\\triangle ABH$ and $\\triangle ACH$ are both equal to $R$, the circumradius of $\\triangle ABC$.\n2. **Lengths of chords $AP, AQ, AM$**:\n   - In the circumcircle of $\\triangle ABH$, $A, B, H, P$ are concyclic. Since $P$ lies on the internal angle bisector of $\\angle A$, $\\angle BAP = \\alpha$. In $\\triangle ABP$, $\\angle APB = 180^\\circ - C$, which gives $\\angle ABP = C - \\alpha$. By the Law of Sines:\n     $$AP = 2R \\sin(C - \\alpha)$$\n   - Similarly, in the circumcircle of $\\triangle ACH$:\n     $$AQ = 2R \\sin(B - \\alpha)$$\n   - For $M$ on the circumcircle of $\\triangle ABC$, $M$ is the midpoint of arc $BC$, so:\n     $$AM = 2R \\sin(B + \\alpha) = 2R \\cos\\left(\\frac{B-C}{2}\\right)$$\n3. **Setting $\\beta = \\frac{B-C}{2}$**:\n   - $AP = 2R \\cos(2\\alpha + \\beta) = 4$\n   - $AQ = 2R \\cos(2\\alpha - \\beta) = 5$\n   - $BC = 2R \\sin(2\\alpha) = 7$\n   - $AM = 2R \\cos\\beta$\n\nSumming and subtracting the equations for $AP$ and $AQ$:\n- $4R \\cos(2\\alpha)\\cos\\beta = 9$\n- $4R \\sin(2\\alpha)\\sin\\beta = 2(BC)\\sin\\beta = 14\\sin\\beta = 1 \\implies \\sin\\beta = \\frac{1}{14} \\implies \\cos\\beta = \\frac{\\sqrt{195}}{14}$\n\nFrom this, $\\tan(2\\alpha) = \\frac{14\\cos\\beta}{9} = \\frac{\\sqrt{195}}{9}$, which yields $\\cos(2\\alpha) = \\frac{9}{2\\sqrt{69}}$, leading directly to:\n$$AM = \\frac{9}{2\\cos(2\\alpha)} = \\sqrt{69}$$\n\n- **Solution 1** sets up the exact trigonometry correctly and computes $AM = \\sqrt{69}$.\n- **Solution 2** makes false assumptions regarding the circumcircle equation and claims the answer is independent of $BC$, yielding an incorrect answer of $9$.\n- **Solution 3** incorrectly assumes $b/c = 5/4$ and makes unjustified substitutions, arriving at an incorrect answer of $\\frac{9\\sqrt{10}}{4}$.\n\nVERDICT 1: ACCEPT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "e42706d7-cd36-413d-904c-7e57d0ce5862",
+    "status": "SUCCESS",
+    "duration_seconds": 37.32723,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12967,
+      "output_tokens": 4097,
+      "thinking_tokens": 3382,
+      "cache_read_tokens": 0,
+      "total_tokens": 17064
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

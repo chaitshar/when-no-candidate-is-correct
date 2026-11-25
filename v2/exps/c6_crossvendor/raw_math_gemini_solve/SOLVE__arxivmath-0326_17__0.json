@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_17__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:32:33Z",
+  "duration_s": 51.217,
+  "input_tokens": 9841,
+  "output_tokens": 4912,
+  "thinking_tokens": 4032,
+  "text": "To find the limiting probability that a uniformly random $[n, k]$ linear code $C \\le \\mathbb{F}_q^n$ is a maximum distance separable (MDS) code, we use the characterization of MDS codes in terms of their weight distribution and information sets:\n\n1. **MDS Condition and Codeword Weights:**\n   By the Singleton bound, the minimum distance of an $[n, k]$ code satisfies $d \\le n - k + 1$. A code is MDS if and only if $d = n - k + 1$, which is equivalent to saying that $C$ contains no non-zero codewords of Hamming weight $w \\le n - k$.\n\n2. **Expected Number of Low-Weight Subspaces:**\n   Every non-zero codeword spans a 1-dimensional subspace (a projective point) of $C$. A 1-dimensional subspace has weight $w$ if its non-zero vectors have Hamming weight $w$. The total number of 1-dimensional subspaces in $\\mathbb{F}_q^n$ of weight $w$ is:\n   $$N_w = \\binom{n}{w}(q - 1)^{w - 1}$$\n   Since $C$ is chosen uniformly at random from the Grassmannian $\\mathrm{Gr}(k, n, \\mathbb{F}_q)$, the probability that a fixed 1-dimensional subspace lies in $C$ is:\n   $$\\mathbb{P}(L \\subset C) = \\frac{q^k - 1}{q^n - 1}$$\n   Let $Y_w$ denote the number of 1-dimensional subspaces of weight $w$ contained in $C$. Its expectation is:\n   $$\\mathbb{E}[Y_w] = \\binom{n}{w}(q - 1)^{w - 1} \\frac{q^k - 1}{q^n - 1}$$\n\n3. **Asymptotic Behavior for $w = n - k$:**\n   For $w = n - k$:\n   $$\\mathbb{E}[Y_{n-k}] = \\binom{n}{n-k}(q - 1)^{n - k - 1} \\frac{q^k - 1}{q^n - 1} = \\binom{n}{k} \\frac{1}{q} (1 + o(1)) \\to \\lambda$$\n\n4. **Asymptotic Behavior for $w < n - k$:**\n   For any $w < n - k$, the ratio of expectations between successive weights satisfies:\n   $$\\frac{\\mathbb{E}[Y_{w-1}]}{\\mathbb{E}[Y_w]} = \\frac{w}{n - w + 1} \\cdot \\frac{1}{q - 1} \\le \\frac{n}{q - 1} \\to 0$$\n   since $q \\sim \\frac{1}{\\lambda}\\binom{n}{k} \\gg n$ as $k \\to \\infty$ and $k/n \\to 0$. Thus:\n   $$\\sum_{w < n - k} \\mathbb{E}[Y_w] \\to 0$$\n   which means the probability that $C$ has any non-zero codeword of weight strictly less than $n - k$ tends to $0$.\n\n5. **Poisson Convergence:**\n   By standard factorial moment analysis (or the Poisson paradigm / Chen-Stein method), the dependency between distinct 1-dimensional subspaces of weight $n - k$ being contained in $C$ is asymptotically negligible. Consequently, the random variable $Y_{n-k}$ converges in distribution to a Poisson random variable with parameter $\\lambda$:\n   $$Y_{n-k} \\xrightarrow{d} \\mathrm{Poisson}(\\lambda)$$\n\nTherefore, the limiting probability that $C$ has no codewords of weight $\\le n - k$ is:\n$$\\lim \\mathbb{P}(C \\text{ is MDS}) = \\lim \\mathbb{P}(Y_{n-k} = 0) = e^{-\\lambda}$$\n\nANSWER: e^{-\\lambda}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "c2f91e29-af82-45a1-b6e4-4ae76d5b5a1a",
+    "status": "SUCCESS",
+    "duration_seconds": 44.19366,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9841,
+      "output_tokens": 4912,
+      "thinking_tokens": 4032,
+      "cache_read_tokens": 0,
+      "total_tokens": 14753
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r0s0_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:30:21Z",
+  "duration_s": 8.738,
+  "input_tokens": 2,
+  "output_tokens": 1523,
+  "thinking_tokens": 923,
+  "text": "The abstract is a review that frames dust sources as primarily supernovae and AGB stars, followed by ISM reprocessing through grain destruction and growth. It explicitly lists other mechanisms (Red Super Giants, Wolf-Rayet stars, novae, Type Ia supernovae, quasar winds) and defers the observational comparison to a second part.\n\n- **Hypothesis 1** singles out primordial Type II supernovae as the primary driver and proposes future MHD simulations validated with JWST and ALMA. The abstract names supernovae in general, not primordial Type II ones, and says nothing about MHD modelling or a validation programme. It is a research proposal, not a finding the abstract supports.\n- **Hypothesis 2** proposes a dual-mode obscured/unobscured star-formation model driven by turbulent mixing. The abstract does not discuss this.\n- **Hypothesis 3** gets the AGB role right, but adds specifics the abstract does not contain: a 1–7 M☉ mass range, a metallicity range of Z = 0.001–0.04, and composition-specific claims (silicates from M-stars, iron from S-stars, carbon and SiC from C-stars). The abstract supports AGB stars as a key source, not these details.\n- **Hypothesis 4** matches the abstract's core framing: several stellar sources, chiefly supernovae and AGB stars, plus ISM grain growth, form the dust picture the review builds. The abstract does not state that these sources account for the observed dust masses. That claim belongs to the observational comparison it defers to Part 2, so the match is to the framing rather than to a stated conclusion.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: ACCEPT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 7324,
+    "stop_reason": "end_turn",
+    "session_id": "7fbc8482-779e-4d55-a845-ff03b0f29ba1",
+    "total_cost_usd": 0.00215776,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6411,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1523,
+      "output_tokens_details": {
+        "thinking_tokens": 923
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6411,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1523,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6411,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6411
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1523,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6411,
+        "webSearchRequests": 0,
+        "costUSD": 0.00215776,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 923,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6411,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5379,
+    "type": "result",
+    "duration_ms": 7811,
+    "uuid": "2fcce526-b7e4-46ad-bf6f-f716fcb7ff6c",
+    "ttft_stream_ms": 1375,
+    "time_to_request_ms": 485,
+    "first_content_frame_ms": 1375,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

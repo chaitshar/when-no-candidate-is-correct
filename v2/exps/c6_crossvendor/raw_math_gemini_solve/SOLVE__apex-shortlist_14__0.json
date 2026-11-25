@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__apex-shortlist_14__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T16:31:43Z",
+  "duration_s": 167.751,
+  "input_tokens": 9847,
+  "output_tokens": 18158,
+  "thinking_tokens": 17238,
+  "text": "To find the maximum possible number of edges in a connected graph with $2n$ vertices ($n > 1$) such that Alice can evade Bob indefinitely, let us analyze the game:\n\n1. **Universal Vertices Guarantee a Win for Bob:**\n   Suppose the graph $G$ contains a universal vertex $u$ (a vertex adjacent to all other $2n - 1$ vertices):\n   - Alice cannot choose $B_0 = u$, as Bob would immediately catch her on his first turn.\n   - If Alice chooses $B_0 \\neq u$, Alice moves first to some vertex $A_1$. Alice cannot move to $u$, because $B_0$ is adjacent to $u$, meaning Bob would catch her immediately.\n   - Thus, $A_1 \\neq u$. On Bob's turn, since $u$ is adjacent to every vertex, Bob can move from $B_0$ to $u$.\n   - On Alice's next turn, she must move to some adjacent vertex $A_2$.\n   - Since $u$ is connected to every vertex in $G$, Bob can move directly from $u$ to $A_2$, catching Alice in at most two moves.\n\n   Therefore, if $G$ has at least one universal vertex, Alice cannot evade Bob indefinitely.\n\n2. **Upper Bound on the Number of Edges:**\n   Consider the complement graph $\\overline{G}$. A vertex of degree $0$ in $\\overline{G}$ is a universal vertex in $G$.\n   If the number of edges in $G$ exceeds $\\binom{2n}{2} - n = 2n(n-1)$, then the number of edges in $\\overline{G}$ satisfies:\n   $$|E(\\overline{G})| \\le n - 1$$\n   Since each edge in $\\overline{G}$ is incident to at most $2$ vertices, the edges in $\\overline{G}$ can be incident to at most $2(n - 1) = 2n - 2$ vertices. \n   Because $G$ has $2n$ vertices, by the Pigeonhole Principle, there are at least $2n - (2n - 2) = 2$ isolated vertices in $\\overline{G}$. These correspond to universal vertices in $G$. Consequently, Bob would always win. Thus, the graph can have at most $\\binom{2n}{2} - n = 2n(n-1)$ edges.\n\n3. **Achievability of $2n(n-1)$ Edges:**\n   Consider the graph $G = K_{2n} \\setminus M$, where $M$ is a perfect matching consisting of $n$ disjoint edges $\\{v_1, \\bar{v}_1\\}, \\{v_2, \\bar{v}_2\\}, \\dots, \\{v_n, \\bar{v}_n\\}$. The number of edges in $G$ is:\n   $$\\binom{2n}{2} - n = 2n(n-1)$$\n   In this graph, every vertex $x$ is adjacent to every other vertex except its paired partner $\\bar{x}$.\n   - Alice chooses starting positions $A_0 = v_1$ and $B_0 = v_2$.\n   - On her first turn, Alice moves to $\\bar{v}_2$ (the partner of Bob's vertex).\n   - Now, Bob is at $v_2$, which is not adjacent to $\\bar{v}_2$, so Bob cannot catch Alice. Bob must move to some vertex $w \\neq \\bar{v}_2$.\n   - Alice then moves to $\\bar{w}$ (the partner of Bob's new vertex). Since $\\bar{w} \\neq v_2$, it is adjacent to $\\bar{v}_2$.\n   - Bob can never move to $\\bar{w}$ because $w$ and $\\bar{w}$ are non-adjacent. \n\n   Alice can repeat this strategy indefinitely, always moving to the partner of Bob's current location, evading Bob forever.\n\nThus, the maximum possible number of edges is $2n(n-1) = 2n^2 - 2n$.\n\nANSWER: 2n(n-1)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "bfdd3c8c-18cc-4fdd-8604-ff2c70821996",
+    "status": "SUCCESS",
+    "duration_seconds": 160.198997,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9847,
+      "output_tokens": 18158,
+      "thinking_tokens": 17238,
+      "cache_read_tokens": 0,
+      "total_tokens": 28005
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

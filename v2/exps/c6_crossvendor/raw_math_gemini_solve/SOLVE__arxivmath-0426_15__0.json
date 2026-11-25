@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_15__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:45:24Z",
+  "duration_s": 319.227,
+  "input_tokens": 9775,
+  "output_tokens": 37236,
+  "thinking_tokens": 36179,
+  "text": "To find the minimal genus of a non-trivial curve $C$ on the product $A_1 \\times A_2$ of two very general abelian surfaces $A_1$ and $A_2$:\n\n1. **Reduction to Curves on the Factor Surfaces:**\n   Let $C \\subset A_1 \\times A_2$ be an irreducible curve such that both projections $\\pi_1: C \\to A_1$ and $\\pi_2: C \\to A_2$ are non-constant. Then $D_1 = \\pi_1(C) \\subset A_1$ and $D_2 = \\pi_2(C) \\subset A_2$ are irreducible curves on $A_1$ and $A_2$, respectively. \n   \n   Since $A_1$ and $A_2$ are very general abelian surfaces, they contain no rational or elliptic curves. Hence, the geometric genus of any curve on $A_1$ or $A_2$ is at least 2:\n   $$g(\\tilde{D}_1) \\ge 2, \\quad g(\\tilde{D}_2) \\ge 2$$\n   To minimize the genus of $C$, we take $D_1 \\cong \\Theta_1$ and $D_2 \\cong \\Theta_2$ to be the smooth minimal curves of genus 2 (the theta divisors of the principal polarizations).\n\n2. **Divisors on $D_1 \\times D_2$:**\n   The curve $C$ is contained in the surface $S = D_1 \\times D_2$. Since $A_1$ and $A_2$ are very general, there are no non-trivial homomorphisms between them: $\\operatorname{Hom}(A_1, A_2) = 0$. Consequently, $\\operatorname{Hom}(J(D_1), J(D_2)) = 0$, meaning there are no non-trivial correspondences between $D_1$ and $D_2$. Thus:\n   $$\\operatorname{NS}(D_1 \\times D_2) \\cong \\mathbb{Z} [F_1] \\oplus \\mathbb{Z} [F_2]$$\n   where $F_1 = \\{p\\} \\times D_2$ and $F_2 = D_1 \\times \\{q\\}$.\n   \n   If $C$ has degrees $d_1 = \\deg(C \\to D_1)$ and $d_2 = \\deg(C \\to D_2)$, then $C \\sim d_2 F_1 + d_1 F_2$. Since $\\operatorname{Hom}(J(D_1), J(D_2)) = 0$, neither projection can be birational ($d_1, d_2 \\ge 2$). To minimize the genus, we must take $d_1 = d_2 = 2$.\n\n3. **Arithmetic Genus:**\n   By the adjunction formula on $S = D_1 \\times D_2$:\n   $$p_a(C) = (d_1 + 1)(d_2 + 1) = (2 + 1)(2 + 1) = 9$$\n\n4. **Singularities and Geometric Genus:**\n   Any curve of type $(2, 2)$ on $D_1 \\times D_2$ corresponds to a section of $\\pi_1^* K_{D_1} \\otimes \\pi_2^* K_{D_2}$. Since the canonical map of a genus 2 curve is a degree 2 cover $D_i \\to \\mathbb{P}^1$ branched at 6 Weierstrass points, such a curve $C$ is the pullback of a curve of type $(1, 1)$ on $\\mathbb{P}^1 \\times \\mathbb{P}^1$, which is the graph of an automorphism $\\psi \\in \\operatorname{PGL}(2, \\mathbb{C})$.\n   \n   The singularities of $C$ arise from the coincidence of the branch points of $D_1 \\to \\mathbb{P}^1$ and the branch points of $D_2 \\to \\mathbb{P}^1$ under $\\psi$. Each coinciding branch point produces an ordinary double point (node) on $C$, decreasing the geometric genus by 1.\n   \n   Since $\\dim \\operatorname{PGL}(2, \\mathbb{C}) = 3$, and $D_1, D_2$ are very general, an element $\\psi \\in \\operatorname{PGL}(2, \\mathbb{C})$ can make at most 3 branch points coincide. Therefore, $C$ can have at most 3 nodes.\n\nThe minimal geometric genus of such an irreducible curve is:\n$$g = p_a(C) - 3 = 9 - 3 = 6$$\n\nANSWER: 6\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "6206ce22-9540-4a55-926e-89b51af908be",
+    "status": "SUCCESS",
+    "duration_seconds": 311.175566,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9775,
+      "output_tokens": 37236,
+      "thinking_tokens": 36179,
+      "cache_read_tokens": 0,
+      "total_tokens": 47011
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

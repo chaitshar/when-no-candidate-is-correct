@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0426_26_TA__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T23:06:41Z",
+  "duration_s": 23.969,
+  "input_tokens": 2,
+  "output_tokens": 5044,
+  "thinking_tokens": 4263,
+  "text": "**Solutions 2 and 3 are correct, and they agree. Solution 1 is wrong.**\n\n**Power-solution check.** Try $u = c\\,x_n^{\\beta}$ on $x_n>0$ with $u=0$ on $x_n\\le 0$. Matching exponents gives $\\beta = \\frac{\\alpha+2s}{1+\\gamma}$. Matching coefficients requires $\\lambda(s,\\beta)>0$, where $(-\\Delta)^s x_+^{\\beta} = \\lambda\\, x_+^{\\beta-2s}$ on $x_n>0$.\n\n**Sign of $\\lambda$.** Up to a positive factor, $\\lambda \\propto \\Gamma(\\beta+1)\\,\\Gamma(2s-\\beta)\\,\\sin(\\pi(s-\\beta))$. The apparent pole at $\\beta = 2s-1$ cancels, so it is not a zero. The only sign changes come from the sine factor, at $\\beta = s$ and $\\beta = s-1$. Since $\\lambda(0)>0$ (because $(-\\Delta)^s \\mathbf{1}_{\\{x_n>0\\}}>0$), $\\lambda>0$ exactly on $(s-1,s)$.\n\n**Interval for $\\alpha$.** The condition $s-1<\\beta<s$ becomes\n- $A = (s-1)(1+\\gamma)-2s = s\\gamma - s - \\gamma - 1$\n- $B = s(1+\\gamma)-2s = s(\\gamma-1)$\n\n**Sum.** $A+B = 2s\\gamma - 2s - \\gamma - 1 = 2s(\\gamma-1)-(\\gamma+1)$.\n\n**Checks.**\n- As $s\\to 1$ the interval becomes $(-2,\\gamma-1)$, which matches the classical local range from $-u''=c\\,x^{\\beta-2}$ requiring $\\beta\\in(0,1)$.\n- Solution 1 drops the $-(\\gamma+1)$ term. Its ansatz only checks the exponent and the boundary condition, and it uses an unjustified decay argument to get $B=2s\\gamma$, which is not the right upper endpoint.\n\nI did not verify the \"iff\" claim against the source paper, so the endpoints rest on the power-solution analysis above.\n\nCHOICE: 3",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 22591,
+    "stop_reason": "end_turn",
+    "session_id": "dae2d8cf-f29b-45c8-b29a-b4f6296d767e",
+    "total_cost_usd": 0.0042832600000000005,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8236,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 5044,
+      "output_tokens_details": {
+        "thinking_tokens": 4263
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8236,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 5044,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8236,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8236
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 5044,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8236,
+        "webSearchRequests": 0,
+        "costUSD": 0.0042832600000000005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4263,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8236,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 20248,
+    "type": "result",
+    "duration_ms": 23150,
+    "uuid": "bbf9857d-7b65-4817-bfe2-7903063bd3c2",
+    "ttft_stream_ms": 2360,
+    "time_to_request_ms": 555,
+    "first_content_frame_ms": 2360,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

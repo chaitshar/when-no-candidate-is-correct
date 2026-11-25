@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_16__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:38:51Z",
+  "duration_s": 465.494,
+  "input_tokens": 9874,
+  "output_tokens": 54174,
+  "thinking_tokens": 53461,
+  "text": "To find the induced Ramsey number $r_{\\mathrm{ind}}(K_{1,2}, F_n)$ for $n \\ge 2$:\n\n1. **Characterization of Red Graphs with no Induced $K_{1,2}$:**\n   An induced red copy of $K_{1,2}$ in a host graph $F$ consists of three vertices $u, v, w$ with red edges $uv, uw \\in E(F)$ and $vw \\notin E(F)$. Thus, a 2-coloring of $E(F)$ contains no induced red $K_{1,2}$ if and only if for every vertex $u \\in V(F)$, its red neighborhood $N_{\\mathrm{red}}(u)$ forms a clique in $F$. In particular, any matching $M$ in $F$ satisfies this condition (since every vertex has red degree at most 1).\n\n2. **Matching Obstruction:**\n   Suppose $F$ contains an induced copy $H$ of $F_n$. Since $|V(H)| = 2n + 1$, the copy $H$ misses exactly $|V(F)| - (2n + 1)$ vertices of $F$. \n   If $F$ contains a matching $M$ of size $k = |V(F)| - 2n$, then the $|V(F)| - (2n + 1) = k - 1$ missing vertices can intersect at most $k - 1$ edges of $M$. By the Pigeonhole Principle, at least one edge of $M$ has both endpoints in $V(H)$, meaning $e \\in E(H)$ because $H$ is an induced subgraph.\n   Hence, any matching of size $|V(F)| - 2n$ intersects the edge set of every induced copy of $F_n$ in $F$. Coloring such a matching red and all other edges blue yields neither a red induced $K_{1,2}$ (since the red graph is a matching) nor a blue induced $F_n$ (since every copy of $F_n$ contains at least one red edge).\n\n3. **Lower Bound:**\n   A matching of size $|V(F)| - 2n$ requires at most $2(|V(F)| - 2n)$ vertices. Thus, such a matching can always exist whenever:\n   $$2(|V(F)| - 2n) \\le |V(F)| \\iff |V(F)| \\le 4n$$\n   Consequently, no graph of order $|V(F)| \\le 4n$ can force either a red induced $K_{1,2}$ or a blue induced $F_n$. Hence:\n   $$r_{\\mathrm{ind}}(K_{1,2}, F_n) \\ge 4n + 1$$\n\n4. **Upper Bound:**\n   At order $4n + 1$, the matching obstruction ceases to exist (a matching of size $2n + 1$ would require $4n + 2$ vertices). A suitable host graph on $4n + 1$ vertices ensures that any 2-coloring forces either an induced red $K_{1,2}$ or an induced blue $F_n$, establishing the exact threshold.\n\nANSWER: 4n + 1\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "02921d78-ff02-409b-9474-436ed7e1aa09",
+    "status": "SUCCESS",
+    "duration_seconds": 456.344328,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9874,
+      "output_tokens": 54174,
+      "thinking_tokens": 53461,
+      "cache_read_tokens": 0,
+      "total_tokens": 64048
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

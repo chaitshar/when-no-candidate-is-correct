@@ -1,0 +1,117 @@
+{
+  "job_id": "M1_TIEBREAK__math_haiku_c3__arxivmath-0526_17_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:44:01Z",
+  "duration_s": 10.338,
+  "input_tokens": 2,
+  "output_tokens": 1857,
+  "thinking_tokens": 1420,
+  "text": "**Solution 1 (answer 5) is more likely correct, though I could not verify it.** I had no search or lookup tools available, so this rests on recollection of the literature.\n\n- **Degree ≤ 4 is established.** Braun and Oréfice-Okamoto's 2016 paper on polynomial submersions of degree 4 is, as I recall, the result that a nowhere-vanishing Jacobian plus $\\deg p \\le 4$ forces global injectivity. Both solutions agree on this.\n- **Degree 5 is where they diverge.** Solution 2 says degree 5 admits non-injective counterexamples, but it cites no specific construction. Solution 1 says Braun and Fernandes proved injectivity for $\\deg p \\le 5$. I recall that degree-5 injectivity result, and I don't recall a degree-5 counterexample, so Solution 2's claim that $k=4$ is sharp looks wrong.\n- **Sharpness at 6 is the weakest link.** Solution 1 asserts a non-injective example with $\\deg p = 6$. I believe such examples exist, but I cannot confirm the exact degree from memory, so this is the part most in need of checking.\n\nSolution 2 contradicts the degree-5 result that I recall, so I consider it the less likely of the two.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8849,
+    "stop_reason": "end_turn",
+    "session_id": "a1e10f91-a655-4746-866b-4a548f1db301",
+    "total_cost_usd": 0.00227256,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6150,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1857,
+      "output_tokens_details": {
+        "thinking_tokens": 1420
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6150,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1857,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6150,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6150
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1857,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6150,
+        "webSearchRequests": 0,
+        "costUSD": 0.00227256,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1420,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6150,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 7365,
+    "type": "result",
+    "duration_ms": 9170,
+    "uuid": "4bc67b91-eac9-4db9-9162-0bd9f83678fb",
+    "ttft_stream_ms": 1340,
+    "time_to_request_ms": 317,
+    "first_content_frame_ms": 1340,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

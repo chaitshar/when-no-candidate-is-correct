@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-1225_9__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T18:24:46Z",
+  "duration_s": 483.467,
+  "input_tokens": 9818,
+  "output_tokens": 54860,
+  "thinking_tokens": 54266,
+  "text": "To determine the values of $v(k, \\theta)$, we use the linear programming bounds for regular graphs with bounded second eigenvalue (introduced by H. Nozaki) and the extremal graphs that attain these bounds:\n\n1. **For $v(4, \\sqrt{2})$:**\n   A connected $4$-regular graph with second largest eigenvalue $\\lambda_2 \\le \\sqrt{2}$ satisfies the linear programming bound $v(4, \\sqrt{2}) \\le 14$. \n   This bound is achieved by the point-block incidence graph of the unique symmetric $(7, 4, 2)$-design (the complement of the Fano plane). This graph is bipartite, connected, $4$-regular, has $n = 2 \\times 7 = 14$ vertices, and its spectrum is:\n   $$\\{4^1,\\, (\\sqrt{2})^6,\\, (-\\sqrt{2})^6,\\, (-4)^1\\}$$\n   Its second largest eigenvalue is precisely $\\lambda_2 = \\sqrt{2} \\le \\sqrt{2}$. Thus,\n   $$v(4, \\sqrt{2}) = 14.$$\n\n2. **For $v(5, \\sqrt{5}-1)$ and $v(5, \\sqrt{2})$:**\n   The degree-$3$ and degree-$4$ linear programming bounds for $k=5$ show that:\n   - For $\\theta = \\sqrt{5}-1$ (which arises as the positive root of $x^2 + 2x - 4 = 0$), $v(5, \\sqrt{5}-1) \\le 16$.\n   - For $\\theta = \\sqrt{2}$, the extended degree-$4$ bound yields $v(5, \\sqrt{2}) \\le 16$.\n\n   Both bounds are attained by the Clebsch graph (the folded $5$-cube). The Clebsch graph is a connected, $5$-regular graph on $n = 16$ vertices with spectrum:\n   $$\\{5^1,\\, 1^{10},\\, (-3)^5\\}$$\n   Its second largest eigenvalue is $\\lambda_2 = 1$. Since $1 \\le \\sqrt{5}-1 \\approx 1.236$ and $1 \\le \\sqrt{2} \\approx 1.414$, the Clebsch graph simultaneously establishes:\n   $$v(5, \\sqrt{5}-1) = 16 \\quad \\text{and} \\quad v(5, \\sqrt{2}) = 16.$$\n\nThus, the ordered triple is $(14, 16, 16)$.\n\nANSWER: \\boxed{(14, 16, 16)}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "76e98f9a-8521-493b-9fc4-2de2a46950d9",
+    "status": "SUCCESS",
+    "duration_seconds": 474.978073,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9818,
+      "output_tokens": 54860,
+      "thinking_tokens": 54266,
+      "cache_read_tokens": 0,
+      "total_tokens": 64678
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

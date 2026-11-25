@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r8s1_n1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:30Z",
+  "duration_s": 6.558,
+  "input_tokens": 2,
+  "output_tokens": 926,
+  "thinking_tokens": 300,
+  "text": "The candidate is not the study's main hypothesis, so I reject it.\n\nThe study is a systematic review, not an intervention trial. It summarizes observational and other published evidence on contextual determinants of children's and adolescents' mental health care utilization across 74 studies. Its findings are associations, not effects of an intervention, and it does not test or propose a hypothesis about a specific program.\n\nThe candidate diverges from the abstract in several ways:\n\n- **Design:** The candidate describes a prospective evaluation with intervention and control sites over 12 months. The review reports no such design and no follow-up period.\n- **Intervention:** The candidate's core claim is that integrating behavioral health into pediatric primary care through shared EHRs and standardized referral pathways will raise utilization. The abstract does not mention primary-care integration, shared EHRs, or referral standardization. Its closest items are \"school-based health center\" access and \"collaboration between organizations providing care,\" which are related but not the same.\n- **Population:** The candidate targets low-income children and rural communities. The abstract reports urban residence and high area socioeconomic status as positively associated with utilization, which points the other way for rural areas. It does not report a low-income-specific finding.\n- **Outcomes:** The candidate measures visit counts, screening frequency, and diagnosis rates. The abstract's outcome is mental health care utilization as a determinant-level association. It does not mention screening frequency as an outcome or diagnosis rates at all. Screening programs appear only as a determinant.\n- **Evidence strength:** The abstract says only limited evidence exists for 35 of the determinants. It does not present any single determinant as a tested main hypothesis that the candidate could be checked against.\n\nThe candidate is a plausible policy question that the review touches on indirectly, through its discussion of organizational and community-level determinants. It is not the hypothesis the study's evidence supports.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5402,
+    "stop_reason": "end_turn",
+    "session_id": "23b446d2-a8ec-432f-bfb0-decf3be868cf",
+    "total_cost_usd": 0.00167506,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5490,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 926,
+      "output_tokens_details": {
+        "thinking_tokens": 300
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5490,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 926,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5490,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5490
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 926,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5490,
+        "webSearchRequests": 0,
+        "costUSD": 0.00167506,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 300,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5490,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2900,
+    "type": "result",
+    "duration_ms": 5867,
+    "uuid": "c0a2ec0e-dd36-47a3-909e-999b90dc4eeb",
+    "ttft_stream_ms": 1477,
+    "time_to_request_ms": 462,
+    "first_content_frame_ms": 1477,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__r7s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:46:31Z",
+  "duration_s": 12.159,
+  "input_tokens": 2,
+  "output_tokens": 2311,
+  "thinking_tokens": 1399,
+  "text": "**Step 1: Independent falsification**\n\n**Hypothesis 1 (urbanization and technological innovation moderate GDP and electricity effects, tested by SEM):** Falsified. The abstract reports quantile regression and spectral Granger-causality tests, not SEM. Technological innovation (R&D as a share of GDP, renewable adoption growth) is never measured. The urban population density variable is also absent. The moderation claim is an interaction effect, but the abstract reports only main effects, with no interaction terms. The directional parts (electricity and GDP raise EF; urbanization lowers it) match the abstract, but the core claim is untested.\n\n**Hypothesis 2 (renewable energy × urban compactness interaction, with thresholds and three historical periods):** Falsified. Renewable energy share, dwelling density, sprawl indices, transmission losses, and transportation emissions are all absent from the abstract. The abstract reports no threshold, no sub-period analysis, and no spatial modeling. The urbanization finding is consistent in direction with the hypothesis, but the compactness mechanism is untested.\n\n**Hypothesis 3 (human capital × urbanization moderates electricity and GDP effects):** Falsified. Human capital (educational attainment, skill indices) is not measured in the abstract. The abstract does not report interaction terms, so the claim that human capital reduces the effects of electricity and GDP is unsupported. The main-effect directions (electricity and GDP increase EF) are consistent but do not test the hypothesis.\n\n**Hypothesis 4 (renewable energy's effect on EF is mediated by trade openness, with a nonlinear threshold):** Falsified. Renewable energy consumption is not in the abstract, and no mediation analysis is reported. The abstract also gives a concrete contradiction: the spectral Granger tests find that only urbanization and life expectancy affect environmental degradation over the whole frequency domain. Trade is not among them. A hypothesis whose mediating channel runs through trade therefore conflicts with the abstract's causal evidence. The reported negative quantile-regression effect of trade on EF is a direct association and does not establish mediation.\n\n**Step 2: Calibrated selection gate**\n\nNone of the four hypotheses survives falsification. Each depends on variables the study does not measure (R&D, renewable energy, human capital, compactness, or renewable adoption growth) or on methods and interaction or mediation effects the abstract does not report. Hypothesis 4 also conflicts with the spectral Granger result for trade. At most, the abstract is partly consistent with the direction of some main effects, which is not enough to support any hypothesis with confidence 4 or higher.\n\nCHOICE: NONE\n\nCONFIDENCE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 11201,
+    "stop_reason": "end_turn",
+    "session_id": "56f558a1-7dd8-4bb6-ab09-bb76b1bb4a09",
+    "total_cost_usd": 0.00260376,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6671,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2311,
+      "output_tokens_details": {
+        "thinking_tokens": 1399
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6671,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2311,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6671,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6671
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2311,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6671,
+        "webSearchRequests": 0,
+        "costUSD": 0.00260376,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1399,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6671,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 7666,
+    "type": "result",
+    "duration_ms": 11470,
+    "uuid": "336d8068-ac6b-4367-8b63-c85e7a34c985",
+    "ttft_stream_ms": 1128,
+    "time_to_request_ms": 266,
+    "first_content_frame_ms": 1128,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

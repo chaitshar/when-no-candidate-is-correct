@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0226_2_TA__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:45:38Z",
+  "duration_s": 10.475,
+  "input_tokens": 2,
+  "output_tokens": 2113,
+  "thinking_tokens": 1497,
+  "text": "Solution 3 gives the answer I believe is correct, though I could not verify it against the paper here.\n\n- **Solution 2** is wrong. A density perturbation of order $1/(U-c)$ would not be a traveling wave with a $1/y$ singularity, and a negative critical exponent $s_\\rho=-1/2$ has no support in the setup. Its sum of 0 fails.\n- **Solution 1** is internally consistent but measures the wrong object. It places the stream function's logarithmic singularity at the velocity level and gets $s_v=1/2$. The problem's framing, with a sharp threshold on both sides and an \"H^{3/2+}×H^{1/2+}\" rigidity statement, matches the Lin–Xu style of result, where the stream function sits in $H^{3/2-}$ and the density in $H^{1/2-}$. Solution 1's sum of 1 is therefore probably off.\n- **Solution 3** uses the Frobenius structure at the critical layer. The stream function behaves like $(y-y_c)\\log|y-y_c|$, which lies in $H^{3/2-\\tau}$ but not $H^{3/2}$, and the density behaves like $\\log|y-y_c|$, which lies in $H^{1/2-\\tau}$ but not $H^{1/2}$. This gives $s_v=3/2$ and $s_\\rho=1/2$, so the sum is 2. Its indicial analysis is plausible, and the $3/2$ value is what I recall from the paper's abstract, though I'm not certain of the exact statement.\n\nThe main uncertainty is whether the paper's \"velocity\" exponent refers to the stream function ($3/2$) or the velocity field itself ($1/2$). Given the problem's wording of a two-sided sharp threshold, I take the stream-function convention, so the answer is 2.\n\nCHOICE: 3",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 9404,
+    "stop_reason": "end_turn",
+    "session_id": "e536752a-e8ff-49c1-92dd-49cdeb97053c",
+    "total_cost_usd": 0.00265616,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7428,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2113,
+      "output_tokens_details": {
+        "thinking_tokens": 1497
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7428,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2113,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7428,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7428
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2113,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7428,
+        "webSearchRequests": 0,
+        "costUSD": 0.00265616,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1497,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7428,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 7220,
+    "type": "result",
+    "duration_ms": 9765,
+    "uuid": "fc507919-86c2-49d0-81f2-db21639ce694",
+    "ttft_stream_ms": 1300,
+    "time_to_request_ms": 360,
+    "first_content_frame_ms": 1300,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

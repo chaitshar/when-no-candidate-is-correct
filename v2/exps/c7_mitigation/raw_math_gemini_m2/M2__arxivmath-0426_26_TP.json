@@ -1,0 +1,29 @@
+{
+  "job_id": "M2__arxivmath-0426_26_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T22:43:25Z",
+  "duration_s": 52.549,
+  "input_tokens": 12015,
+  "output_tokens": 5998,
+  "thinking_tokens": 5224,
+  "text": "### Step 1: Independent Falsification\n\n#### Solution 1\n- **Power profile & scaling**: For $u(x) = c x_n^\\beta$ extended by $0$ on $\\{x_n \\le 0\\}$, $(-\\Delta)^s (x_n^+)^\\beta = \\lambda(s,\\beta) x_n^{\\beta-2s}$. Matching powers in $(-\\Delta)^s u = x_n^\\alpha u^{-\\gamma}$ yields $\\beta - 2s = \\alpha - \\gamma\\beta \\implies \\beta = \\frac{\\alpha+2s}{1+\\gamma}$. This is algebraically correct.\n- **Positivity of the symbol $\\lambda(s,\\beta)$**: The profile $x_n^+$ generates positive fractional Laplacian values precisely when $\\beta$ lies between the two homogeneous $s$-harmonic profiles $s-1$ and $s$. For instance, when $s = 1/2$, $\\lambda(1/2, \\beta) \\propto \\beta \\cot(\\pi\\beta)$, which is positive on $(-1/2, 1/2) = (s-1, s)$. This allows choosing $c = \\lambda(s,\\beta)^{-1/(1+\\gamma)} > 0$.\n- **Interval bounds**: \n  $$A = (s-1)(1+\\gamma) - 2s, \\qquad B = s(1+\\gamma) - 2s = s(\\gamma-1).$$\n- **Sum**:\n  $$A+B = (2s-1)(1+\\gamma) - 4s = 2s\\gamma - 2s - \\gamma - 1.$$\n  The arithmetic is completely correct and survives falsification.\n\n#### Solution 2\n- **Derivation & Formula**: Computes the exact expression for $\\Lambda_s(\\beta)$ via the principal value representation. Identifies the zeros at $\\beta = s$ and $\\beta = s-1$, establishing positivity on $(s-1, s)$.\n- **Arithmetic**: \n  $$A = (\\gamma-1)s - (\\gamma+1), \\qquad B = s(\\gamma-1) \\implies A+B = 2s\\gamma - 2s - \\gamma - 1.$$\n  All steps and consistency checks are correct and survive falsification.\n\n#### Solution 3\n- **Sign analysis error**: Solution 3 asserts that $(-\\Delta)^{1/2} x_+^\\beta \\propto \\beta \\cot(\\pi\\beta)$ implies $C(\\beta) > 0 \\iff \\beta \\in (0, s)$. This is mathematically false: for $\\beta \\in (-1/2, 0)$, both $\\beta < 0$ and $\\cot(\\pi\\beta) < 0$, so their product is strictly positive.\n- **Flawed lower bound**: It artificially imposes $\\beta > 0$ under the claim that $\\beta \\le 0$ contradicts the Dirichlet boundary condition, ignoring the well-known boundary blow-up phenomenon for singular nonlocal problems when $\\alpha \\le -2s$. This produces the incorrect lower bound $A = -2s$.\n- **Falsification verdict**: Falsified.\n\n---\n\n### Step 2: Calibrated Selection Gate\nBoth Solution 1 and Solution 2 correctly identify the sharp existence interval $\\beta \\in (s-1, s)$ and arrive at the verified value $A+B = 2s\\gamma - 2s - \\gamma - 1$. Solution 1 is fully sound, elegant, and completely verified.\n\nCHOICE: 1\nCONFIDENCE: 5\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "8de5d3f7-9558-4e5c-ab38-5b8a2ff0e2d5",
+    "status": "SUCCESS",
+    "duration_seconds": 45.88533,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12015,
+      "output_tokens": 5998,
+      "thinking_tokens": 5224,
+      "cache_read_tokens": 0,
+      "total_tokens": 18013
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

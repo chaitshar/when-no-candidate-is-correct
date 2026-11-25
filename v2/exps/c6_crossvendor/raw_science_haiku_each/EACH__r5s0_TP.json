@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r5s0_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:30:58Z",
+  "duration_s": 7.058,
+  "input_tokens": 2,
+  "output_tokens": 1178,
+  "thinking_tokens": 549,
+  "text": "Only Hypothesis 4 matches the abstract's central claim. The other three add specifics the abstract doesn't support.\n\n- **Hypothesis 1** proposes episodic fluid pulses with specific durations, recurrence intervals, temperature ranges, δ18O/δ2H/δ56Fe values, and LA-ICP-MS protocols. The abstract mentions none of these. It describes a melt-based model, not pulsed fluid release, and it reports no isotope ranges for fluids.\n- **Hypothesis 2** gives a phase-separation sequence at about 1000 °C, 5 kbar, and 5 wt% H2O, with an FeS liquid and specific P, S, F, and Cl concentrations. The abstract describes immiscibility in Fe-rich melts, similar to blast-furnace behavior, and says high oxygen fugacity inhibits significant sulfide mineralization. That contradicts a sulfide-liquid stage as a main step, and the abstract gives no such numbers.\n- **Hypothesis 3** centers on magnetite-bearing magmatic-hydrothermal suspensions with lava-like rheology. The abstract discusses the viscosity and solidus of Fe-rich melts and the role of fluid-phase pressure, but not suspension rheology as the mechanism.\n- **Hypothesis 4** matches the abstract's core claim: silicate magma interacts with oxidized sedimentary rocks to produce Fe-rich, Si-Al-poor ultrabasic melts. Those melts separate, migrate, and crystallize to form the deposits. It omits details such as the P-F-SO4 composition of the sediments and the slag cap, but it captures the main hypothesis the study supports.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: ACCEPT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5777,
+    "stop_reason": "end_turn",
+    "session_id": "7c8fb5e0-45d2-419d-ac09-a42c6a614433",
+    "total_cost_usd": 0.0020454600000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6712,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1178,
+      "output_tokens_details": {
+        "thinking_tokens": 549
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6712,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1178,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6712,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6712
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1178,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6712,
+        "webSearchRequests": 0,
+        "costUSD": 0.0020454600000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 549,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6712,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3554,
+    "type": "result",
+    "duration_ms": 6193,
+    "uuid": "f7a7037e-c3d7-41ee-ba5a-90499e561f0a",
+    "ttft_stream_ms": 1298,
+    "time_to_request_ms": 416,
+    "first_content_frame_ms": 1298,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

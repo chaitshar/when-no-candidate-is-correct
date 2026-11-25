@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0226_9_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:23:10Z",
+  "duration_s": 101.311,
+  "input_tokens": 10757,
+  "output_tokens": 10747,
+  "thinking_tokens": 9991,
+  "text": "To determine whether the proposed solution and final answer are correct, let us analyze the problem step-by-step:\n\n1. **Model Setup and Duality:**\n   Under the impartial culture model with $n$ voters, as the number of candidates $m \\to \\infty$, the normalized rank vectors of candidates converge to independent uniform points in $[0, 1]^n$. A committee member $b \\in S$ beats an external candidate $a$ on voter $i$ if and only if $b_i < a_i$. Candidate $a$ remains undominated by the committee $S$ if $a$ beats every member of $S$ on strictly more than $(1 - \\alpha)n =: \\sigma n$ coordinates.\n\n2. **Large Deviations and Budget Constraints:**\n   Parametrizing the coordinates by $\\ell_i^{(j)} = -\\ln b_i^{(j)}$, each committee member $j \\in \\{1, \\dots, k\\}$ has an available coordinate budget $\\sum_{i=1}^n \\ell_i^{(j)} \\approx \\ln m$. Across all $k$ members, the sorted goodness profile across coordinates satisfies $\\sum_{i=1}^k h_i \\le k$ with $h_0 = 0$. \n\n   For candidate $a$ to cover each member at fraction $\\sigma$, candidate $a$ must achieve total coverage $k\\sigma$. The minimum cost for candidate $a$ to cover the committee is given by the lower convex envelope $\\hat{h}(k\\sigma)$. Domination succeeds with high probability if and only if there exists a committee configuration such that this cost strictly exceeds the threshold $1$ (so that the expected number of undominated candidates $m e^{-I} \\to 0$).\n\n3. **Optimization over Convex Profiles:**\n   For any convex profile $h$ with $h_0 = 0$ and any $\\beta \\in [0, k]$:\n   Using the subgradient inequality at $\\beta$, $h_i \\ge h(\\beta) + (i - \\beta)g$. Summing over $i = 1, \\dots, k$:\n   $$\\sum_{i=1}^k h_i \\ge k h(\\beta) + g \\left( \\frac{k(k+1)}{2} - k\\beta \\right).$$\n   At $\\beta = \\frac{k+1}{2}$, the linear term in $g$ vanishes identically, yielding:\n   $$h\\left(\\frac{k+1}{2}\\right) \\le \\frac{1}{k} \\sum_{i=1}^k h_i \\le 1.$$\n   Because $h$ is non-decreasing, for any $\\beta \\le \\frac{k+1}{2}$, we have $h(\\beta) \\le 1$ for all valid committees. Conversely, for any $\\beta > \\frac{k+1}{2}$, a linear profile achieves $h(\\beta) > 1$.\n\n4. **Threshold:**\n   Setting $k\\sigma^\\star = \\frac{k+1}{2}$ gives:\n   $$\\sigma^\\star = \\frac{k+1}{2k}.$$\n   Converting back to $\\alpha = 1 - \\sigma$:\n   $$\\alpha_{\\mathrm{dom}}^\\star = 1 - \\frac{k+1}{2k} = \\frac{k-1}{2k}.$$\n\nThe reasoning is mathematically rigorous and the final answer is correct.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "91b4f1eb-0117-4c60-b104-c6bfc8088c8f",
+    "status": "SUCCESS",
+    "duration_seconds": 90.787119,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10757,
+      "output_tokens": 10747,
+      "thinking_tokens": 9991,
+      "cache_read_tokens": 0,
+      "total_tokens": 21504
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

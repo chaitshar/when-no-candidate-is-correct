@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_16__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:38:26Z",
+  "duration_s": 436.351,
+  "input_tokens": 9876,
+  "output_tokens": 51828,
+  "thinking_tokens": 51594,
+  "text": "To find the exact value of the induced Ramsey number $r_{\\mathrm{ind}}(K_{1,2}, F_n)$ for $n \\ge 2$, we consider the graphs $K_{1,2}$ (a path of length 2, $P_3$) and the fan graph $F_n = K_1 + nK_2$, which has order $2n+1$.\n\nFor any 2-coloring of the edges of a host graph $F$, avoiding a red induced copy of $K_{1,2}$ requires that for every vertex $v$, its neighborhood of red edges forms a clique in $F$. In particular, the red edges cannot contain any induced path of length 2. \n\nBy analyzing the structure of induced subgraphs isomorphic to $F_n$ and avoiding monochromatic red induced copies of $K_{1,2}$ as well as blue induced copies of $F_n$, the minimum order of such a graph $F$ is established to be $2n + 3$ for all $n \\ge 2$.\n\nANSWER: 2n + 3\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "795c8af3-83f0-4925-826b-ea7454058239",
+    "status": "SUCCESS",
+    "duration_seconds": 427.340861,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9876,
+      "output_tokens": 51828,
+      "thinking_tokens": 51594,
+      "cache_read_tokens": 0,
+      "total_tokens": 61704
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

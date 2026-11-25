@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_26_w1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:45:07Z",
+  "duration_s": 87.9,
+  "input_tokens": 10463,
+  "output_tokens": 8367,
+  "thinking_tokens": 7673,
+  "text": "To determine whether the proposed solution and final answer are correct, let us verify each step of the derivation:\n\n1. **Reduction to 1D and power solutions:**  \n   The half-space $\\mathbb{R}^n_+ = \\{x \\in \\mathbb{R}^n : x_n > 0\\}$ and the equation $(-\\Delta)^s u = x_n^\\alpha u^{-\\gamma}$ are invariant under translations in the tangential directions $x_1, \\dots, x_{n-1}$ and dilations. Seeking solutions of the form $u(x) = c (x_n)_+^\\beta$ yields:\n   $$(-\\Delta)^s u = c\\,\\Lambda_s(\\beta)\\,x_n^{\\beta-2s}.$$\n\n2. **Exponent matching:**  \n   Equating exponents of $x_n$:\n   $$\\beta - 2s = \\alpha - \\gamma\\beta \\implies \\beta = \\frac{\\alpha+2s}{1+\\gamma}.$$\n\n3. **Coefficient matching and positivity:**  \n   Equating coefficients gives $c\\,\\Lambda_s(\\beta) = c^{-\\gamma} \\implies c^{1+\\gamma} = \\frac{1}{\\Lambda_s(\\beta)}$. For a positive solution $c > 0$ to exist, we must have $\\Lambda_s(\\beta) > 0$.\n\n4. **Sign of $\\Lambda_s(\\beta)$:**  \n   Using the reflection formula $\\Gamma(z)\\Gamma(1-z) = \\frac{\\pi}{\\sin(\\pi z)}$ for $z = \\beta+1-2s$, the symbol simplifies to:\n   $$\\Lambda_s(\\beta) = \\frac{c_{1,s}}{\\pi} [-\\Gamma(-2s)]\\,\\Gamma(\\beta+1)\\,\\Gamma(2s-\\beta)\\cdot 2\\cos(\\pi s)\\sin(\\pi(s-\\beta)).$$\n   Since $-2\\cos(\\pi s)\\Gamma(-2s) = \\frac{\\pi}{\\sin(\\pi s)\\Gamma(1+2s)} > 0$ for all $s \\in (0,1)$, and $\\Gamma(\\beta+1), \\Gamma(2s-\\beta) > 0$ on $(-1, 2s) \\supset (s-1, s)$, the sign is entirely determined by $\\sin(\\pi(s-\\beta))$. Thus:\n   $$\\Lambda_s(\\beta) > 0 \\iff \\beta \\in (s-1, s).$$\n\n5. **Interval for $\\alpha$:**  \n   From $s-1 < \\frac{\\alpha+2s}{1+\\gamma} < s$, we solve for $\\alpha$:\n   $$A = (s-1)(1+\\gamma) - 2s = s(\\gamma-1) - (\\gamma+1),$$\n   $$B = s(1+\\gamma) - 2s = s(\\gamma-1).$$\n   Summing the endpoints:\n   $$A + B = 2s(\\gamma-1) - (\\gamma+1) = 2s\\gamma - 2s - \\gamma - 1.$$\n\nAll steps and the final answer are correct.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "ca3931b1-f90a-4467-a489-0447803d945e",
+    "status": "SUCCESS",
+    "duration_seconds": 78.693274,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10463,
+      "output_tokens": 8367,
+      "thinking_tokens": 7673,
+      "cache_read_tokens": 0,
+      "total_tokens": 18830
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

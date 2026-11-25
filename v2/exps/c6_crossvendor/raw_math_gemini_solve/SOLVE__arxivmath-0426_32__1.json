@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_32__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:56:05Z",
+  "duration_s": 290.546,
+  "input_tokens": 9772,
+  "output_tokens": 35234,
+  "thinking_tokens": 34770,
+  "text": "To find the sharp upper bound on the diameter of $G$ as a function of $t$, we analyze the condition that the maximal homogeneous ideal $\\mathfrak{m}$ is an associated prime of the $t$-th power of the closed neighborhood ideal $I = NI(G)$.\n\nSince $I^t$ is a monomial ideal, $\\mathfrak{m} \\in \\operatorname{Ass}(R/I^t)$ if and only if there exists a monomial $f$ such that $(I^t : f) = \\mathfrak{m}$, which means:\n1. $f \\notin I^t$,\n2. $x_v f \\in I^t$ for every vertex $v \\in V(G)$.\n\nFor any vertex $v$, the condition $x_v f \\in I^t$ implies that there exist $t$ vertices $w_{1}, \\dots, w_{t} \\in V(G)$ such that the generator $M_{w_{1}} \\cdots M_{w_{t}}$ divides $x_v f$, where each $M_w = \\prod_{u \\in N[w]} x_u$. \n\nFor any two vertices $u, v \\in V(G)$ realizing the diameter of $G$, their distance is bounded by the maximum reach of a chain of $t$ closed neighborhoods:\n- The radius of each closed neighborhood $N[w]$ is at most $1$, so the distance from $u$ to the center of the first neighborhood is at most $1$.\n- Any two consecutive intersecting closed neighborhoods have their centers at distance at most $2$. With $t$ closed neighborhoods, there are $t - 1$ such transitions, contributing at most $2(t - 1)$ to the distance.\n- The distance from the center of the last neighborhood to $v$ is at most $1$.\n\nSumming these maximum distances yields:\n$$\\operatorname{dist}(u, v) \\le 1 + 2(t - 1) + 1 = 2t$$\n\nHence, $\\operatorname{diam}(G) \\le 2t$, and this bound is sharp.\n\nANSWER: 2t\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "87339061-15fc-40a3-ac52-d62115639eb8",
+    "status": "SUCCESS",
+    "duration_seconds": 281.338102,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9772,
+      "output_tokens": 35234,
+      "thinking_tokens": 34770,
+      "cache_read_tokens": 0,
+      "total_tokens": 45006
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

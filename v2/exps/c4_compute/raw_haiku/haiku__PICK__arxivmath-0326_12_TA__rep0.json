@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0326_12_TA__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:57:52Z",
+  "duration_s": 27.519,
+  "input_tokens": 2,
+  "output_tokens": 4745,
+  "thinking_tokens": 3943,
+  "text": "Solution 2 is the most defensible; I can't verify the exact theorem from memory, so this rests on structural reasoning.\n\n**Positive degrees are automatic.** Barwick's theorem of the heart gives $K_j(\\mathcal{C}^\\heartsuit)\\xrightarrow{\\sim}K_j(\\mathcal{C})$ for $j\\ge 0$ with no Ext hypothesis. So the question concerns negative degrees, where $K_{-i}(\\mathcal{C}^\\heartsuit)=0$ for $i\\ge 1$ by Schlichting, and the map is an isomorphism exactly when $K_{-i}(\\mathcal{C})=0$.\n\n**Solution 1 fails at $n=1$.** It claims a bounded $t$-structure forces $K_{-1}(\\mathcal{C})=0$. I don't believe this is what Antieau–Gepner–Heller prove. Their point is that bounded $t$-structures impose obstructions on negative K-theory, and they give examples with bounded $t$-structures where $K_{-1}\\neq 0$. The $\\operatorname{Ext}^{\\le 1}$ condition is automatic, so the case $n=1$ cannot give a negative-degree vanishing. That makes $j=-1$ wrong at $n=1$, and the formula $-n$ with it.\n\n**Solution 3 is wrong.** Its answer $n-1$ is a maximum rather than a minimum, and its S-construction argument is hand-waved. It also contradicts the fact that all $j\\ge 0$ are already isomorphisms.\n\n**Solution 2's calibration is consistent.** Ext$^0$ and Ext$^1$ always match, and the first possible defect is at $\\operatorname{Ext}^{2}$, which corresponds to $K_{-1}$. Under the stated hypothesis, the first possible defect is at $\\operatorname{Ext}^{n+1}$, which first affects $K_{-n}$. So $K_{-i}(\\mathcal{C})=0$ for $1\\le i\\le n-1$, and the map is an isomorphism for all $j\\ge 1-n$, with the boundary at $j=-n$ possibly failing. At $n=1$ this gives $j\\ge 0$, which is consistent with the AGH counterexamples. The minimum guaranteed integer is therefore $j=1-n$.\n\nCHOICE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 21987,
+    "stop_reason": "end_turn",
+    "session_id": "d29843ea-fa83-4d8a-a033-5585378ee437",
+    "total_cost_usd": 0.00430436,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 9089,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 4745,
+      "output_tokens_details": {
+        "thinking_tokens": 3943
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 9089,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 4745,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 9089,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 9089
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 4745,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 9089,
+        "webSearchRequests": 0,
+        "costUSD": 0.00430436,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3943,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 9089,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 18732,
+    "type": "result",
+    "duration_ms": 22701,
+    "uuid": "9a114004-c6eb-400e-9894-79463613275f",
+    "ttft_stream_ms": 1302,
+    "time_to_request_ms": 358,
+    "first_content_frame_ms": 1302,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r8s1_n3",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:33Z",
+  "duration_s": 6.18,
+  "input_tokens": 2,
+  "output_tokens": 890,
+  "thinking_tokens": 326,
+  "text": "The candidate does not match this study's hypothesis, so I reject it.\n\nThe abstract describes a systematic review, not a hypothesis-testing study. It searched five databases in August 2021, included 74 studies, and summarized the contextual determinants of children's and adolescents' mental health care utilization. It reports no spatial regression, no new survey, administrative or GIS data collection, and no tested predictors of its own.\n\nThe candidate overlaps with the review's findings only in part:\n\n- **Geographic accessibility:** The review reports positive associations for living in an area with high accessibility of mental health care and for urban residence. The candidate's \"distance to facilities and public transportation\" is a narrower operationalization of that idea.\n- **Socioeconomic status:** The review reports a positive association for living in an area with high socio-economic status. The candidate's \"median household income and poverty rates\" measure a similar construct, but the review does not name those variables.\n- **School-based services:** The review reports a positive association for access to a school-based health center. The candidate's \"counseling and therapy programs\" is a different, more specific service.\n\nThe candidate also leaves out most of the review's findings, including mental health parity laws, screening programs, fee-for-service versus managed care plans, insurance coverage extension, and inter-organizational collaboration. It also omits the review's central caveat that 35 of the determinants had only limited evidence.\n\nThe candidate's methods (spatial regression, GIS, urban-planning and education-policy integration, tailored interventions for disadvantaged communities) are a proposed future study design. The review does not state or support them as its hypothesis. The abstract's own framing is that the review's purpose was to summarize evidence and that implications for future research are discussed.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4824,
+    "stop_reason": "end_turn",
+    "session_id": "a015972e-b460-4fec-b6fc-b45020227afa",
+    "total_cost_usd": 0.00168126,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5611,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 890,
+      "output_tokens_details": {
+        "thinking_tokens": 326
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5611,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 890,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5611,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5611
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 890,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5611,
+        "webSearchRequests": 0,
+        "costUSD": 0.00168126,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 326,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5611,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2833,
+    "type": "result",
+    "duration_ms": 5372,
+    "uuid": "dd92c078-65d3-4d6e-bbbc-47c19bd2847f",
+    "ttft_stream_ms": 1400,
+    "time_to_request_ms": 549,
+    "first_content_frame_ms": 1400,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

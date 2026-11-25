@@ -1,0 +1,117 @@
+{
+  "job_id": "M3_FOIL__arxivmath-0226_2_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T10:09:10Z",
+  "duration_s": 23.286,
+  "input_tokens": 2,
+  "output_tokens": 4629,
+  "thinking_tokens": 4041,
+  "text": "I can't check the literature from here, so this screening rests on reasoning about the structure of the problem rather than a verified source.\n\n**Solution 1 (answer 4):** The scaling argument is heuristic and some steps are asserted rather than derived. Its homogeneous limit does reproduce the known Lin–Zeng thresholds: velocity in H^{5/2-} and vorticity in H^{3/2-} for traveling waves near Couette flow. Its density threshold of 3/2 matches the vorticity threshold, which is plausible because density in a traveling wave is transported like vorticity and is a function of the stream function. This is the most defensible of the four, though I haven't verified it.\n\n**Solution 2 (answer 1):** It conflates the stream function with the velocity and derives s_v = 1/2 from a logarithmic singularity in the velocity. That ignores the known homogeneous threshold of 5/2 for velocity, so the value is almost certainly too low.\n\n**Solution 3 (answer 2):** Its Frobenius analysis is reasonable as far as it goes, but it then treats the regularity of the stream function as the regularity of the velocity. Velocity is one derivative of the stream function, so the stated s_v = 3/2 is inconsistent with the homogeneous limit. The density step is also loose. I reject it.\n\n**Solution 4 (answer 4/3):** It addresses a different problem, steady pressureless Euler with a weak-continuity threshold for the Jacobian, not traveling waves of inhomogeneous Euler in a channel. I reject it as off-target.\n\nSo Solution 1 is the only candidate with a plausible answer. Its correctness depends on the density threshold being 3/2, which I could not confirm, so treat this choice as tentative.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 22214,
+    "stop_reason": "end_turn",
+    "session_id": "d55eac07-49a6-4473-b3ac-aca2ace689b7",
+    "total_cost_usd": 0.004374360000000001,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 9729,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 4629,
+      "output_tokens_details": {
+        "thinking_tokens": 4041
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 9729,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 4629,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 9729,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 9729
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 4629,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 9729,
+        "webSearchRequests": 0,
+        "costUSD": 0.004374360000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4041,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 9729,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 20033,
+    "type": "result",
+    "duration_ms": 22627,
+    "uuid": "67ab789c-5864-4ef2-82d2-4adacc204620",
+    "ttft_stream_ms": 2387,
+    "time_to_request_ms": 412,
+    "first_content_frame_ms": 2387,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r8s1_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:33Z",
+  "duration_s": 6.521,
+  "input_tokens": 2,
+  "output_tokens": 1007,
+  "thinking_tokens": 235,
+  "text": "The candidate is not the hypothesis this study's evidence supports, so I reject it.\n\nThe abstract describes a systematic review (PROSPERO CRD42021276033) of 74 studies on contextual determinants of children's and adolescents' mental health care utilization. Its aim is to summarize existing evidence and identify determinants that policymakers and providers can influence. Its main finding is a list of ten determinants with positive associations, such as school-based health centers, urban residence, area accessibility and socioeconomic status, parity laws, screening programs, fee-for-service plans, insurance extension, and inter-organizational collaboration. It also notes that the other 35 determinants have only limited evidence.\n\nThe candidate does not match that:\n\n- **Study design:** The candidate proposes an intervention model and pilot studies (500 participants, longitudinal follow-up at 6, 12, and 24 months). The review tests no intervention and reports no pilot or longitudinal data.\n- **Claim:** The candidate asserts that the model \"will enhance\" utilization. The review reports only associations between existing contextual factors and utilization, not causal effects of any program.\n- **Content:** The candidate's specifics (weekly peer support, bi-weekly family therapy, quarterly feedback meetings, 10 hours of annual teacher training, GIS and spatial autocorrelation analysis, the Mental Health Parity Act) appear nowhere in the abstract. Nothing in the abstract supports them.\n- **Level coverage:** The candidate spans interpersonal, organizational, community, and policy levels. The review categorizes determinants as organizational, community, public policy, or macro-environmental, and it does not address interpersonal or family-level factors. The research question explicitly asks for determinants beyond individual and family factors. The candidate's interpersonal component (peer support and family therapy) therefore falls outside what the review covers.\n- **Overlap:** Some candidate elements loosely align with the review's findings, such as school-based services, parity laws, screening programs, and collaboration between organizations. That overlap is partial, and it does not make the candidate the study's hypothesis. The review is a descriptive synthesis, not a test of an integrated model.\n\nThe candidate is a plausible program-design proposal built on the review's themes. It is not the hypothesis the study's evidence supports.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5462,
+    "stop_reason": "end_turn",
+    "session_id": "0439b162-0987-44e9-ab1f-b401d26b918f",
+    "total_cost_usd": 0.0020543600000000003,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7184,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1007,
+      "output_tokens_details": {
+        "thinking_tokens": 235
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7184,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1007,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7184,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7184
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1007,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7184,
+        "webSearchRequests": 0,
+        "costUSD": 0.0020543600000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 235,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7184,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2585,
+    "type": "result",
+    "duration_ms": 5709,
+    "uuid": "633448bf-fc7a-4d58-8f97-08e3bff9a0f7",
+    "ttft_stream_ms": 1568,
+    "time_to_request_ms": 233,
+    "first_content_frame_ms": 1568,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

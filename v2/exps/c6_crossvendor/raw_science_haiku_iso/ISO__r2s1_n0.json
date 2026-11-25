@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r2s1_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:54Z",
+  "duration_s": 6.53,
+  "input_tokens": 2,
+  "output_tokens": 780,
+  "thinking_tokens": 207,
+  "text": "The candidate is not the study's hypothesis. The abstract supports only a qualitative, exploratory reading, and the candidate's specific framework goes well beyond it.\n\n- **No hypothesis, no framework.** The study poses two research questions and answers them with expert interviews and thematic analysis. It names three themes: awareness of AI issues, measuring AI impacts, and governing AI processes. It proposes no named framework, scoring model, or implementation design.\n- **The candidate's specifics are absent.** The abstract mentions none of the candidate's components: the 30/40/30 weighting, the per-principle formulas (ROI_social, Risk_index, Control_metric, Fairness_score, Transparency_rating), the stakeholder weighting, the 48-hour/1-week/2-week response protocol, the score-adjustment formula, or the blockchain audit trail.\n- **The findings point the other way.** The study reports that AI is still relatively unknown to investors and that integrating responsible AI into ESG analysis \"is not an established practice.\" It says there is a need for standardized metrics and that bottlenecks and knowledge asymmetries must be tackled. That describes a gap the study identifies, not a validated system it builds.\n- **The candidate overlaps only loosely.** The candidate's general aim, bringing responsible AI principles into ESG analysis, matches the research question. The abstract's AI4People-type principles are not named, so even the principle mapping cannot be confirmed from it. Some overlap in topic does not make the candidate the study's hypothesis.\n\nThe abstract's claims are the only evidence I have. The full paper could in principle contain more, but nothing in the provided text supports the candidate as the study's main hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5303,
+    "stop_reason": "end_turn",
+    "session_id": "03825bc2-191c-42d8-a989-d5ddb44637f0",
+    "total_cost_usd": 0.00176446,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6302,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 780,
+      "output_tokens_details": {
+        "thinking_tokens": 207
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6302,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 780,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6302,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6302
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 780,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6302,
+        "webSearchRequests": 0,
+        "costUSD": 0.00176446,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 207,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6302,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2728,
+    "type": "result",
+    "duration_ms": 5619,
+    "uuid": "5385de2d-d965-4882-87bf-396f749713a7",
+    "ttft_stream_ms": 1673,
+    "time_to_request_ms": 317,
+    "first_content_frame_ms": 1673,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

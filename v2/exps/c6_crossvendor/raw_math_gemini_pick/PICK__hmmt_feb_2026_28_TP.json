@@ -1,0 +1,29 @@
+{
+  "job_id": "PICK__hmmt_feb_2026_28_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T19:48:01Z",
+  "duration_s": 51.217,
+  "input_tokens": 13209,
+  "output_tokens": 4925,
+  "thinking_tokens": 4242,
+  "text": "To determine which solution is correct, we analyze the geometry and the steps of the solutions:\n\n1. **Geometry of the Circles:**\n   - The circumcircle of $\\triangle ABH$ is the reflection of the circumcircle $\\Gamma$ of $\\triangle ABC$ across the side $AB$.\n   - The ray $AP$ is the internal angle bisector of $\\angle BAC$, making an angle $\\alpha = \\frac{A}{2}$ with $AB$. \n   - Reflecting ray $AP$ across $AB$ gives a ray $AP'$ making angle $\\alpha$ with $AB$ away from $AC$. In $\\Gamma$, the chord from $A$ along $AP'$ has length $2R \\sin(C - \\alpha)$, which equals the length of $AP$.\n   - Similarly, $AQ = 2R \\sin(B - \\alpha)$, and the chord along the internal angle bisector in $\\Gamma$ is $AM = 2R \\cos\\left(\\frac{B-C}{2}\\right)$.\n\n2. **System of Equations:**\n   - Setting $\\beta = \\frac{B-C}{2}$, we have $B - \\alpha = 90^\\circ - (2\\alpha - \\beta)$ and $C - \\alpha = 90^\\circ - (2\\alpha + \\beta)$.\n   - This gives:\n     $$AP = 2R\\cos(2\\alpha + \\beta) = 4$$\n     $$AQ = 2R\\cos(2\\alpha - \\beta) = 5$$\n     $$BC = 2R\\sin(2\\alpha) = 7$$\n     $$AM = 2R\\cos\\beta$$\n\n3. **Solving:**\n   - Taking the sum and difference:\n     $$4R\\cos(2\\alpha)\\cos\\beta = 9$$\n     $$4R\\sin(2\\alpha)\\sin\\beta = 1 \\implies 2(7)\\sin\\beta = 1 \\implies \\sin\\beta = \\frac{1}{14}, \\quad \\cos\\beta = \\frac{\\sqrt{195}}{14}$$\n   - Expressing $AM$ in two ways:\n     $$AM = \\frac{9}{2\\cos(2\\alpha)} = \\frac{7\\cos\\beta}{\\sin(2\\alpha)}$$\n     $$\\tan(2\\alpha) = \\frac{14\\cos\\beta}{9} = \\frac{\\sqrt{195}}{9}$$\n   - From $\\tan(2\\alpha) = \\frac{\\sqrt{195}}{9}$, we get:\n     $$\\cos(2\\alpha) = \\frac{9}{\\sqrt{81 + 195}} = \\frac{9}{\\sqrt{276}} = \\frac{9}{2\\sqrt{69}}$$\n   - Hence:\n     $$AM = \\frac{9}{2 \\cos(2\\alpha)} = \\sqrt{69}$$\n\nSolution 1 is completely sound, algebraically accurate, and arrives at the correct answer $\\sqrt{69}$.\n\nCHOICE: 1\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "90ef223e-7add-425c-8fb4-a322c850ed9e",
+    "status": "SUCCESS",
+    "duration_seconds": 44.170161,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 13209,
+      "output_tokens": 4925,
+      "thinking_tokens": 4242,
+      "cache_read_tokens": 0,
+      "total_tokens": 18134
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

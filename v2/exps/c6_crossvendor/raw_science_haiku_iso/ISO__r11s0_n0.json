@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r11s0_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:58Z",
+  "duration_s": 6.19,
+  "input_tokens": 2,
+  "output_tokens": 808,
+  "thinking_tokens": 283,
+  "text": "The candidate is not the study's main hypothesis. The abstract's core claims are descriptive: it evaluates 37 CMIP6 GCMs across seven driving fields and 14 CORDEX domains, ranks them with a multivariable integrated method, finds that no model wins everywhere, and reports that the multi-model mean beats almost all individual models. It then measures interdependence through pairwise similarity of multivariate error fields and hierarchically clusters the top 15 models to find relatively independent ones. Its conclusion is that this evaluation can guide model selection.\n\nThe candidate's central claims are absent from the evidence:\n- **Replicate Earth paradigm, multi-level Bayesian hierarchical modeling, and NSGA-III:** none of these appear. The study uses an integrated ranking method and hierarchical clustering, not Bayesian weighting or a genetic algorithm.\n- **\"Significantly improve\" selection:** the study does not test an improved selection framework against a baseline. It reports a ranking and an independence analysis.\n- **Controlled simulation environments and practical benchmarks:** not mentioned.\n- **Ecological and societal impact:** not discussed.\n\nThe candidate does overlap with the study in its emphasis on large-scale driving fields, error-similarity metrics, and clustering on RMSE/correlation-type measures. That overlap is at the level of methods, though, and does not make the candidate the study's hypothesis. The candidate also adds an optimization framing (minimizing inter-model spread while maximizing reliability) that the abstract never states.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4619,
+    "stop_reason": "end_turn",
+    "session_id": "495e419a-5935-46f7-b74a-b641cd30eff6",
+    "total_cost_usd": 0.0016716600000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5768,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 808,
+      "output_tokens_details": {
+        "thinking_tokens": 283
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5768,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 808,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5768,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5768
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 808,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5768,
+        "webSearchRequests": 0,
+        "costUSD": 0.0016716600000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 283,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5768,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2445,
+    "type": "result",
+    "duration_ms": 4824,
+    "uuid": "14ebdf60-b8a0-4c6a-9d24-6ccdebf8821c",
+    "ttft_stream_ms": 1292,
+    "time_to_request_ms": 206,
+    "first_content_frame_ms": 1292,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

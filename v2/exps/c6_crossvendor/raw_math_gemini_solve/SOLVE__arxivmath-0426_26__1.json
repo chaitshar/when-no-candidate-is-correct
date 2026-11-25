@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_26__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:51:39Z",
+  "duration_s": 222.239,
+  "input_tokens": 9808,
+  "output_tokens": 23327,
+  "thinking_tokens": 22420,
+  "text": "To determine the interval $(A, B)$ of the parameter $\\alpha$ for which global positive solutions exist, we analyze the problem in the half-space $\\mathbb{R}^n_+ = \\{x \\in \\mathbb{R}^n : x_n > 0\\}$ with the Dirichlet condition $u = 0$ on $\\mathbb{R}^n \\setminus \\mathbb{R}^n_+$.\n\n### 1. Reduction to One Dimension and Homogeneity\nDue to the translation invariance in the directions orthogonal to $x_n$, global positive solutions depend only on the normal coordinate $x_n > 0$. By scale invariance of the equation, solutions take the homogeneous form:\n$$u(x) = c\\, (x_n)_+^p$$\nfor some constant $c > 0$ and exponent $p > 0$.\n\n### 2. Dirichlet Boundary Condition\nThe Dirichlet condition requires $u = 0$ on $\\mathbb{R}^n \\setminus \\mathbb{R}^n_+$ and continuity up to the boundary, which implies:\n$$u(x_n) \\to 0 \\quad \\text{as } x_n \\to 0^+ \\implies p > 0.$$\n\n### 3. Action of the Fractional Laplacian\nFor a power function $u(x) = (x_n)_+^p$, its fractional Laplacian in the half-space for $x_n > 0$ is given by:\n$$(-\\Delta)^s (x_n)_+^p = c(s, p)\\, x_n^{p-2s},$$\nwhere the coefficient $c(s, p)$ can be computed explicitly via Fourier transform or singular integrals:\n$$c(s, p) = \\frac{\\Gamma(p+1)\\Gamma(2s-p)}{\\pi} \\sin(\\pi(s-p)).$$\n\nFor a positive solution to exist, the equation:\n$$(-\\Delta)^s u = c\\, c(s, p) x_n^{p-2s} = \\frac{x_n^\\alpha}{u^\\gamma} = c^{-\\gamma} x_n^{\\alpha - \\gamma p}$$\nrequires:\n1. **Matching exponents:**\n   $$p - 2s = \\alpha - \\gamma p \\implies \\alpha = p(1+\\gamma) - 2s.$$\n2. **Positivity of the coefficient:**\n   $$c(s, p) > 0.$$\n\n### 4. Determination of the Exponent Range\nFor $p > 0$ and $s \\in (0, 1)$, the Gamma functions $\\Gamma(p+1)$ and $\\Gamma(2s-p)$ are positive for $p \\in (0, 2s)$. In this range, the sign of $c(s, p)$ is governed by $\\sin(\\pi(s-p))$:\n$$\\sin(\\pi(s-p)) > 0 \\iff 0 < s - p < 1 \\iff s - 1 < p < s.$$\nCombining this with the Dirichlet requirement $p > 0$, we obtain:\n$$0 < p < s.$$\n\n### 5. Interval for $\\alpha$\nSince $\\alpha(p) = p(1+\\gamma) - 2s$ is strictly increasing in $p$:\n- As $p \\to 0^+$:\n  $$A = \\lim_{p \\to 0^+} (p(1+\\gamma) - 2s) = -2s$$\n- As $p \\to s^-$:\n  $$B = \\lim_{p \\to s^-} (p(1+\\gamma) - 2s) = s(1+\\gamma) - 2s = s(\\gamma - 1) = s\\gamma - s$$\n\nThus, global positive solutions exist if and only if $\\alpha \\in (A, B) = (-2s, s\\gamma - s)$.\n\n### 6. Value of $A + B$\n$$A + B = -2s + (s\\gamma - s) = s\\gamma - 3s = s(\\gamma - 3).$$\n\nANSWER: s(\\gamma - 3)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "96a66ae0-8af4-4595-bcf2-ebcc83514b6b",
+    "status": "SUCCESS",
+    "duration_seconds": 214.651633,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9808,
+      "output_tokens": 23327,
+      "thinking_tokens": 22420,
+      "cache_read_tokens": 0,
+      "total_tokens": 33135
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

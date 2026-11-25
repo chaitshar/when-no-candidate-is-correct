@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_17__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:47:41Z",
+  "duration_s": 186.271,
+  "input_tokens": 9868,
+  "output_tokens": 20370,
+  "thinking_tokens": 20000,
+  "text": "To find the critical exponent $p_c$ for the non-uniformly elliptic equation $a_{ij}\\partial_{ij}u = 0$ with $I \\ge a(x) \\ge \\lambda(x)I$ and $\\lambda^{-1} \\in L^p$, we analyze the conditions for regularity and counterexamples:\n\n1. **Regularity ($p > d - 1$):**\n   When the integrability exponent satisfies $p > d - 1$, the degeneracy is sufficiently controlled such that the contact set estimates in the Alexandroff–Bakelman–Pucci (ABP) technique and Krylov–Safonov theory can be adapted. This yields an improvement of oscillation for solutions across scales, establishing Hölder continuity, Harnack inequalities, and the Liouville property for entire bounded solutions.\n\n2. **Counterexamples ($p < d - 1$):**\n   In the regime $p < d - 1$, one can construct scale-invariant, homogeneous solutions of degree zero (such as $u(x) = g(x/|x|)$) or solutions with line/axial singularities. For these solutions, the degeneracy $\\lambda(x)$ behaves like $\\text{dist}(x, L)$ near a 1-dimensional axis $L$. Since the transverse dimension to the axis is $d - 1$, the integrability condition $\\int \\lambda^{-p} \\, dx < \\infty$ holds whenever $p < d - 1$. Such degree-zero homogeneous solutions remain discontinuous at the origin and bounded on $\\mathbb{R}^d$, showing that improvement of oscillation, Liouville theorems, and Harnack inequalities fail.\n\nThus, the critical exponent is $p_c = d - 1$.\n\nANSWER: d - 1\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "79723225-9263-498d-9e71-69c050f80c9d",
+    "status": "SUCCESS",
+    "duration_seconds": 177.679651,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9868,
+      "output_tokens": 20370,
+      "thinking_tokens": 20000,
+      "cache_read_tokens": 0,
+      "total_tokens": 30238
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

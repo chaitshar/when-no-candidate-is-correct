@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0326_7_TA__rep1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T23:03:14Z",
+  "duration_s": 9.6,
+  "input_tokens": 2,
+  "output_tokens": 1785,
+  "thinking_tokens": 1440,
+  "text": "Solution 1 gives the answer I believe is correct, 12, but its supporting argument is shaky.\n\n- **Solution 2 (4)** is wrong. It restricts the automorphism group to dihedral groups and rules out larger orders by assertion. It also counts only the preperiodic points of one special normal form, so it doesn't establish a maximum over all maps over Q.\n- **Solution 3 (10)** relies on a claimed classification by Yap with an A4 case. I don't trust that citation, and the claim that the maximum is attained by an A4 map is unsupported.\n- **Solution 1 (12)** has real gaps. It asserts that period-2 points contribute nothing and that the configuration is realizable without checking either claim. Its orbit bookkeeping is also loose. Still, 12 matches my recollection of the known result for quadratic rational maps over Q with nonabelian automorphism group (I recall Doyle's work on this topic giving 12). I haven't verified that recollection here, so my confidence is moderate.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8637,
+    "stop_reason": "end_turn",
+    "session_id": "1c6bd1c1-e609-4756-a31e-dab8eb1b9c3b",
+    "total_cost_usd": 0.00237256,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6830,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1785,
+      "output_tokens_details": {
+        "thinking_tokens": 1440
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6830,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1785,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6830,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6830
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1785,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6830,
+        "webSearchRequests": 0,
+        "costUSD": 0.00237256,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1440,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6830,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 7087,
+    "type": "result",
+    "duration_ms": 8866,
+    "uuid": "1c9960f2-572a-4a80-8d8e-a478d905ea12",
+    "ttft_stream_ms": 996,
+    "time_to_request_ms": 224,
+    "first_content_frame_ms": 996,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

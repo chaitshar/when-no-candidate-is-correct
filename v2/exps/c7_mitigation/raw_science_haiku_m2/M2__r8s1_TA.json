@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__r8s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:46:45Z",
+  "duration_s": 14.145,
+  "input_tokens": 2,
+  "output_tokens": 2543,
+  "thinking_tokens": 1569,
+  "text": "**Step 1: Independent falsification**\n\n**Hypothesis 1 (CRAP framework).** Falsified as a test of this study. The abstract is a systematic review that reports 10 determinants and no modeling approach. It mentions no graph neural networks, Bayesian causal inference, spatio-temporal models, or social cohesion and collective efficacy indices. The hypothesis proposes a methodology, which the review neither reports nor validates. Nothing in the abstract supports it.\n\n**Hypothesis 2 (collaborative care integration).** Falsified on two counts:\n- The abstract reports no evidence on collaborative care, shared EHRs, or referral pathways. The only related finding is a positive association with \"collaboration between organizations providing care,\" which is an observational association, not an intervention effect.\n- The prediction that integration will increase utilization \"especially in rural communities\" conflicts with the abstract, which reports a positive association with living in an urban area. The hypothesis also targets low-income children, but the abstract reports a positive association with high-SES areas.\n\n**Hypothesis 3 (integrated ecological intervention).** Falsified as a claim this study supports:\n- The abstract tests no intervention. The pilot design, sample size, timelines, and program details are not evaluated by this review.\n- The interpersonal-level components (peer support, family therapy) fall within individual and family factors, which the research question explicitly places outside the scope of contextual determinants.\n- The organizational, community, and policy levels partly match the review's categories. Some components, such as school-based screening, parity laws, and collaboration, partly match reported findings. But the claim that the model \"will enhance\" utilization is a causal leap the review cannot support.\n\n**Hypothesis 4 (accessibility, SES, school-based services).** Partially consistent, but not fully surviving:\n- Consistent: accessibility of mental health care and high-SES area both have reported positive associations, and region and urban residence are also reported.\n- Mismatches: the abstract reports \"school-based health center\" access, not school counseling or therapy programs. It does not mention public transportation distance, median household income, or poverty rates. Its SES finding is an area-level SES association, not a specific income or poverty operationalization.\n- Overreach: the review did not use spatial regression, and the abstract does not address urban planning or education policy. Calling these \"significant predictors\" also overstates a synthesis that reports most determinants (35 of 45) have only limited evidence.\n\n**Step 2: Calibrated selection gate**\n\nNo hypothesis survives falsification with the confidence required. Hypothesis 4 comes closest, since its core claim about accessibility and area SES matches reported positive associations. But its specific variables (school counseling, public transport, poverty rate, median income) are not in the abstract, and its methods go beyond what the review did. My confidence that it is fully supported is about 2 to 3, well below the threshold of 4.\n\nCHOICE: NONE\nCONFIDENCE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 13156,
+    "stop_reason": "end_turn",
+    "session_id": "5fa3a515-1e9e-4d6f-9516-873d44be4d58",
+    "total_cost_usd": 0.00304376,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8291,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2543,
+      "output_tokens_details": {
+        "thinking_tokens": 1569
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8291,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2543,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8291,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8291
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2543,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8291,
+        "webSearchRequests": 0,
+        "costUSD": 0.00304376,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1569,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8291,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 9213,
+    "type": "result",
+    "duration_ms": 13478,
+    "uuid": "3f1967db-205a-4364-ab5e-0784d8265a6e",
+    "ttft_stream_ms": 1410,
+    "time_to_request_ms": 321,
+    "first_content_frame_ms": 1410,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

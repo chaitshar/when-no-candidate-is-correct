@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__apex-shortlist_39__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:36:25Z",
+  "duration_s": 39.743,
+  "input_tokens": 3908,
+  "output_tokens": 5848,
+  "thinking_tokens": 0,
+  "text": "**Maximum number of black cubes**\n\n\\[\n\\displaystyle\nB_{\\max}(N)=\n\\begin{cases}\n20, & N=1,\\\\[4pt]\n88, & N=2,\\\\[4pt]\n4N^{3}+12N^{2}+6N+1, & N\\ge 3.\n\\end{cases}\n\\]\n\nThis value is attained by filling all corner and edge cubes first (they have the smallest “participation” in \\(2\\times2\\times2\\) blocks), then as many face‑center cubes as the weight budget allows, and finally the remaining interior cubes. The bound follows from double‑counting the total “weight’’ contributed by each \\(2\\times2\\times2\\) block (which may contain at most 4 black cubes) and using a greedy knapsack argument.\n\n**Answer:** \\( \\displaystyle B_{\\max}(N)=\\begin{cases}20 & N=1\\\\ 88 & N=2\\\\ 4N^{3}+12N^{2}+6N+1 & N\\ge 3\\end{cases} \\)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "30393b94-f850-48e7-8082-7c85710aecd2",
+    "status": "SUCCESS",
+    "duration_seconds": 32.5285,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3908,
+      "output_tokens": 5848,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 9756
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_23__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:50:43Z",
+  "duration_s": 198.616,
+  "input_tokens": 9836,
+  "output_tokens": 20533,
+  "thinking_tokens": 19751,
+  "text": "To find the exact dimension of the Schur square $C^2 = C \\ast C$ of the Hyperderivative Reed-Solomon code $C = HRS_{t}(\\{\\alpha_{1},\\dots,\\alpha_{r}\\},s)$, we consider the evaluation of pairs of polynomials $f, g \\in F[X]_{<t}$ under the hyperderivative map.\n\nThe code $C$ is defined by evaluating the tuple of Hasse derivatives:\n$$(E^{(0)}f(\\alpha_i), E^{(1)}f(\\alpha_i), \\dots, E^{(s-1)}f(\\alpha_i))_{i=1}^r$$\nfor polynomials $f \\in F[X]$ of degree $< t$.\n\nThe Schur square $C^2$ is spanned by the componentwise products of codewords, which corresponds to the evaluation of tuples of polynomials $(Q_0(X), \\dots, Q_{s-1}(X))$ at $\\alpha_1, \\dots, \\alpha_r$, where:\n$$Q_j(X) = \\sum_k E^{(j)}f_k(X) E^{(j)}g_k(X)$$\nFor monomial pairs $X^a \\odot X^b$ with degree sum $d = a + b \\in \\{0, 1, \\dots, 2t-2\\}$, the $j$-th component evaluates to $\\binom{a}{j}\\binom{d-a}{j} X^{d-2j}$. \n\nBecause the powers $X^{d-2j}$ are distinct for different $d$ within the same component, the space decomposes as a direct sum over $d \\in \\{0, 1, \\dots, 2t-2\\}$ of subspaces $U_d \\subseteq F^s$. The dimension of $U_d$ is given by the number of independent vectors $\\left(\\binom{a}{j}\\binom{d-a}{j}\\right)_{j=0}^{s-1}$. Since $\\binom{a}{j}\\binom{d-a}{j}$ is a polynomial of degree $j$ in $z = a(d-a)$, the dimension of $U_d$ is $\\min(N_d, s)$, where $N_d$ is the number of valid unordered pairs $\\{a, d-a\\}$ with $0 \\le a, d-a \\le t-1$.\n\nUnder the hypothesis $p \\ge t \\ge 2s$:\n- For $d \\in \\{2k, 2k+1\\}$ with $k \\le s-2$, we have $\\dim(U_d) = k+1$.\n- By symmetry, the same holds for the largest $2s-2$ values of $d$.\n- For all intermediate values of $d$, $\\dim(U_d) = s$.\n\nSumming the dimensions over all $2t-1$ values of $d$:\n$$\\dim(C^2) = (2t-1)s - 2\\sum_{k=0}^{s-2} (s - 1 - k) = (2t-1)s - 2\\frac{s(s-1)}{2} = s(2t - 2s + 1)$$\n\nSince $t \\le \\frac{r+2s-1}{2}$, we have $2t - 2s + 1 \\le r$, ensuring the evaluation map is injective and no evaluation points wrap around. Thus, the dimension is exactly $s(2t - 2s + 1)$.\n\nANSWER: s(2t - 2s + 1)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "2c26c53f-2eb3-4f02-996f-2bf4753b42a7",
+    "status": "SUCCESS",
+    "duration_seconds": 190.03267,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9836,
+      "output_tokens": 20533,
+      "thinking_tokens": 19751,
+      "cache_read_tokens": 0,
+      "total_tokens": 30369
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r4s1_n2",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:24Z",
+  "duration_s": 6.762,
+  "input_tokens": 2,
+  "output_tokens": 1117,
+  "thinking_tokens": 467,
+  "text": "The candidate does not match the study. The abstract supports the general topic (PAA@TiO2 synthesized and used to remove CV dye), but the candidate's specific claims either conflict with the reported results or are absent from them.\n\n- **Synthesis route:** The study uses cross-linking with N,N′-methylenebisacrylamide. The candidate describes a \"low-temperature chemical fusion process at 70°C for 4 hours\" at a 1:2 polyacrylamide:TiO2 ratio. The abstract gives none of these conditions, and the cross-linking method does not match \"fusion.\"\n- **Surface area:** The candidate claims more than 400 m²/g. The abstract reports no BET or surface-area value. It names only XRD, FT-IR and SEM-EDX.\n- **Removal efficiency:** The candidate predicts over 99% removal within 10 minutes. The study reports a maximum uptake of about 38.9 mg/g under specific conditions. It reports no removal percentage and no contact-time result.\n- **Experimental ranges:** The candidate proposes 10–100 mg/L dye, 0.1–1.0 g/L dose and pH 3–10. The study used 500 mg/L CV, a 5 g/L dose and pH 6.9. The candidate's ranges do not include the study's operating conditions.\n- **Kinetics and isotherms:** The candidate names pseudo-second-order kinetics and Langmuir isotherms. The abstract mentions neither. Its only modelling is Monte Carlo and molecular dynamics simulation, with an adsorption energy of −586.56 kcal/mol.\n\nThe abstract's central claims are the cross-linked synthesis, the homogeneous TiO2 dispersion, the 38.9 mg/g capacity under stated conditions, and the simulation-supported adsorption. The candidate's central predictions are different, and several of its numbers contradict the study's reported conditions.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5791,
+    "stop_reason": "end_turn",
+    "session_id": "4f99e9e7-1bb5-4b1f-a85d-5b49688a9dd8",
+    "total_cost_usd": 0.00179736,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5624,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1117,
+      "output_tokens_details": {
+        "thinking_tokens": 467
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5624,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1117,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5624,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5624
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1117,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5624,
+        "webSearchRequests": 0,
+        "costUSD": 0.00179736,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 467,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5624,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3331,
+    "type": "result",
+    "duration_ms": 6059,
+    "uuid": "c85a0f12-09c3-4aa5-bf7f-f2bfcd9f4ac6",
+    "ttft_stream_ms": 1616,
+    "time_to_request_ms": 267,
+    "first_content_frame_ms": 1616,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

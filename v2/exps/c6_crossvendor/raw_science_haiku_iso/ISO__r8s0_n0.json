@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r8s0_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:23Z",
+  "duration_s": 5.973,
+  "input_tokens": 2,
+  "output_tokens": 852,
+  "thinking_tokens": 266,
+  "text": "The candidate does not match the study's evidence, so I reject it.\n\nThe review is a systematic review of 74 studies. Its main finding is ten contextual determinants of children's and adolescents' mental health care utilization with at least some positive evidence: school-based health centers, region of residence, urban living, area accessibility of mental health care, area socioeconomic status, mental health parity laws, mental health screening programs, fee-for-service plans (versus managed care), extension of health insurance coverage, and collaboration between care organizations. The other 35 determinants had only limited evidence.\n\nThe candidate diverges from this in several ways:\n\n- **Determinants:** Neighborhood crime rates, green-space accessibility and quality, public transportation coverage, neighbors' helpfulness, and perceived neighborhood cohesion do not appear in the abstract's findings. The candidate's specific measures (Neighbors' Helpfulness Scale, satellite imagery, transit reports, travel diaries) are not mentioned either.\n- **Level of claim:** The study reports associations found in existing literature. The candidate asserts that these factors \"significantly influence\" utilization and that interventions \"can lead to\" better access, which the review does not establish.\n- **Proposed methods:** The candidate's structural equation modeling, policy interviews, and agent-based simulation are future research proposals. The abstract describes only a literature search and synthesis.\n- **Overlap:** The only real overlap is the general idea of contextual, multi-level influences (organizational, community, policy). Community support and organizational structures are a loose match to the review's categories, but the candidate's specific content is not what the study found.\n\nThe candidate is a plausible research agenda built on the review's broad framing, but it is not the hypothesis the study's evidence supports.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4756,
+    "stop_reason": "end_turn",
+    "session_id": "5e95f54d-5bc6-483e-8d20-d7e693587798",
+    "total_cost_usd": 0.00171206,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5860,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 852,
+      "output_tokens_details": {
+        "thinking_tokens": 266
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5860,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 852,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5860,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5860
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 852,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5860,
+        "webSearchRequests": 0,
+        "costUSD": 0.00171206,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 266,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5860,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2440,
+    "type": "result",
+    "duration_ms": 5160,
+    "uuid": "9f139802-11c9-4bd3-9bc8-89005a98254b",
+    "ttft_stream_ms": 1317,
+    "time_to_request_ms": 404,
+    "first_content_frame_ms": 1317,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

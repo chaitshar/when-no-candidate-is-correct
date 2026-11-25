@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0526_17__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:58:40Z",
+  "duration_s": 154.974,
+  "input_tokens": 9769,
+  "output_tokens": 17400,
+  "thinking_tokens": 16612,
+  "text": "To determine the largest integer $k$ such that the condition $\\deg p \\le k$ guarantees the global injectivity of $F=(p, q)$, we analyze the level sets of $p$:\n\n1. **Relation between level sets and injectivity:**\n   Since $\\det JF(x, y) \\ne 0$ everywhere on $\\mathbb{R}^2$, the gradient $\\nabla p(x, y)$ is nowhere zero. Consequently, every level set $p^{-1}(c) = \\{(x, y) \\in \\mathbb{R}^2 : p(x, y) = c\\}$ is a smooth 1-dimensional submanifold of $\\mathbb{R}^2$. \n   - A level set cannot contain any compact connected component (a closed loop homeomorphic to $S^1$), because by the Jordan Curve Theorem, $p$ would attain an extremum inside the enclosed region, which would imply the existence of a critical point of $p$, contradicting $\\nabla p \\ne 0$. Thus, every connected component of a level set is diffeomorphic to the real line $\\mathbb{R}$.\n   - Along any connected component of a level set, the directional derivative of $q$ along the tangent vector $(-p_y, p_x)$ is given by $-p_y q_x + p_x q_y = \\det JF \\ne 0$. Hence, $q$ is strictly monotonic along each connected component.\n   - Therefore, if all level sets of $p$ are connected, $F$ must be globally injective: if $F(A) = F(B)$, then $p(A) = p(B) = c$ places both points on the same connected component of $p^{-1}(c)$, and the strict monotonicity of $q$ on that component forces $A = B$.\n\n2. **Case $\\deg p \\le 2$:**\n   If $\\deg p \\le 2$ and $\\nabla p(x, y) \\ne (0, 0)$ for all $(x, y) \\in \\mathbb{R}^2$:\n   - Writing $p(x, y) = ax^2 + bxy + cy^2 + dx + ey + f$, the condition that $\\nabla p = (2ax + by + d, bx + 2cy + e)$ has no zeros requires the discriminant of the quadratic form to vanish, i.e., $4ac - b^2 = 0$.\n   - Thus, the quadratic part has rank $\\le 1$. If the rank is $0$, $p$ is affine ($\\deg p \\le 1$), and all its level sets are parallel lines (connected). If the rank is $1$, after an affine change of coordinates, $p$ can be written in the form $p(X, Y) = X^2 + Y$, where every level set $Y = c - X^2$ is a parabola, which is connected.\n   - Hence, for $\\deg p \\le 2$, every level set is connected, guaranteeing that $F$ is globally injective.\n\n3. **Case $\\deg p \\ge 3$:**\n   For polynomials of degree $3$ or higher, it is possible for a polynomial with no critical points to have disconnected level sets (for instance, $p(x, y) = x + x^2 y$ has no critical points on $\\mathbb{R}^2$, but its level set $p^{-1}(0)$ consists of the two disjoint components $x = 0$ and $xy = -1$). When level sets are disconnected, global injectivity is no longer guaranteed.\n\nThus, the largest such integer is $2$.\n\nANSWER: 2\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "7dc4ea76-2151-4982-82a6-892214b3097b",
+    "status": "SUCCESS",
+    "duration_seconds": 147.511087,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9769,
+      "output_tokens": 17400,
+      "thinking_tokens": 16612,
+      "cache_read_tokens": 0,
+      "total_tokens": 27169
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

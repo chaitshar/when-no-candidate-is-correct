@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__r8s0_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:46:45Z",
+  "duration_s": 13.465,
+  "input_tokens": 2,
+  "output_tokens": 2369,
+  "thinking_tokens": 1445,
+  "text": "**Step 1: Independent falsification**\n\n**Hypothesis 1 (synergistic three-component intervention): falsified.** The abstract reports no intervention, no synergy or interaction test, no mediation by stigma or mental health literacy, no social media sentiment data, and no 5-year cohort. It is a review of observational associations for individual contextual determinants. The hypothesis's central claim, that a combined package produces effects greater than the sum of its parts, has no support here. The abstract also says most determinants had only limited evidence.\n\n**Hypothesis 2 (organizational, community, and public policy determinants positively associated with utilization): survives.** The abstract reports positive associations at each named level:\n- Organizational: access to a school-based health center; collaboration between organizations providing care.\n- Community: region of residence; urban residence; high accessibility of mental health care; high area socio-economic status.\n- Public policy: mental health parity law; mental health screening program; fee-for-service plan versus managed care; extension of health insurance coverage.\n\nThe hypothesis is vague. It names no specific determinant and makes only a directional claim. The abstract does not show that every determinant at these levels is positive, but the hypothesis does not require that. Minor caveats: \"region of residence\" has no stated direction, and the fee-for-service finding is a comparison rather than a simple positive association.\n\n**Hypothesis 3 (social environmental factors such as crime, green spaces, transport, and community support): falsified.** None of these factors appears among the reported positive determinants. The abstract's ten determinants do not include crime rates, green space, public transport, or neighbour support. The agent-based model and the proposed measurement methods are not in the abstract. The 35 determinants with limited evidence could include some of these factors, but the abstract does not say so, so the hypothesis's claim of significant influence is unsupported.\n\n**Hypothesis 4 (walkability and program alignment as moderators; social support, self-efficacy, and coping as mediators, among low-income urban 10–18-year-olds): falsified.** The abstract reports no moderation or mediation analyses, no walkability measure, no program-alignment construct, no self-efficacy or coping variables, and no subgroup analysis by income, race, or ethnicity. The only related finding is inter-organizational collaboration, which is not the same as alignment of programmes with the social environment.\n\n**Step 2: Calibrated selection gate**\n\nOnly Hypothesis 2 survives falsification. Its claim matches the abstract's reported positive associations at the organizational, community, and public policy levels. Its vagueness and the minor caveats above keep my confidence at 4 rather than 5. Hypotheses 1, 3, and 4 each make claims the abstract contradicts or does not address.\n\nCHOICE: 2\nCONFIDENCE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 12482,
+    "stop_reason": "end_turn",
+    "session_id": "d3a7c672-ccb9-40e0-99d8-d2a73f08b64f",
+    "total_cost_usd": 0.00301676,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8591,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2369,
+      "output_tokens_details": {
+        "thinking_tokens": 1445
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8591,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2369,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8591,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8591
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2369,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8591,
+        "webSearchRequests": 0,
+        "costUSD": 0.00301676,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1445,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8591,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 9108,
+    "type": "result",
+    "duration_ms": 12777,
+    "uuid": "e7b97d4a-8235-488d-a9ff-15032e4a841a",
+    "ttft_stream_ms": 1646,
+    "time_to_request_ms": 293,
+    "first_content_frame_ms": 1646,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__arxivmath-0226_25_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:48:57Z",
+  "duration_s": 26.489,
+  "input_tokens": 2,
+  "output_tokens": 5608,
+  "thinking_tokens": 4699,
+  "text": "**Step 1: Falsification (each solution checked independently)**\n\n**Solution 1 (C₅ blow-up, 51/15625 ≈ 0.00326).** The setup is right: α(G) ≤ 2 means the complement is triangle-free, and the counting 5·C(2n/5,8) − 5·C(n/5,8) and the limit 5(2/5)⁸ − 5(1/5)⁸ = 51/15625 are arithmetically correct. The optimality claim fails. The Clebsch blow-up (Solution 2's graph) gives a smaller density, so 51/15625 is not the minimum. The \"Ramsey uniqueness\" and \"convexity\" arguments do not establish global optimality.\n\n**Solution 2 (Clebsch blow-up, 491411/268435456 ≈ 0.00183).** I checked the counts:\n- The Clebsch graph is 5-regular, triangle-free, strongly regular with parameters (16,5,0,2). Its non-neighbourhood of each vertex induces the Petersen graph, which has independence polynomial 1 + 10x + 30x² + 30x³ + 5x⁴.\n- This gives i₁ = 16, i₂ = 80, i₃ = 160, i₄ = 120, i₅ = 16. Each matches an independent double-count.\n- The surjection weights s!·S(8,s) are 1, 254, 5796, 40824, 126000. The numerator 7,862,576 is correct, and dividing by 16⁸ and reducing by 16 gives 491411/268435456.\n- The blow-up formula is valid, so this is a genuine upper bound on the minimum, and it beats Solution 1.\n\nThe weak point is optimality. The solution only compares a few candidate graphs, and \"no other triangle-free graph yields a smaller limit\" is asserted without proof. I cannot verify that the true minimum is attained by this blow-up. The answer is plausible, but my confidence is about 3, below the gate.\n\n**Solution 3 (two disjoint cliques, 1/128 ≈ 0.0078).** This is refuted directly. The C₅ blow-up already gives density ≈ 0.00326 < 0.0078, so 1/128 is not the minimum. The Zykov symmetrization claim is also unsupported, since symmetrization does not preserve the number of independent k-sets in the way claimed.\n\n**Step 2: Selection gate**\n\nNo solution survives falsification with confidence 4 or higher. Solutions 1 and 3 are shown to be non-minimal. Solution 2 has a correct computation of a valid upper bound, but its optimality is unproven, so it reaches only about confidence 3.\n\nCHOICE: NONE\n\nCONFIDENCE: 3",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 25500,
+    "stop_reason": "end_turn",
+    "session_id": "d6722baf-7baa-4631-9d88-a8ab0bace7e9",
+    "total_cost_usd": 0.00457486,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8284,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 5608,
+      "output_tokens_details": {
+        "thinking_tokens": 4699
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8284,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 5608,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8284,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8284
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 5608,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8284,
+        "webSearchRequests": 0,
+        "costUSD": 0.00457486,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4699,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8284,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 22276,
+    "type": "result",
+    "duration_ms": 25813,
+    "uuid": "135e5eba-f4c0-4901-8790-a9127863eed7",
+    "ttft_stream_ms": 1319,
+    "time_to_request_ms": 312,
+    "first_content_frame_ms": 1320,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r9s0_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:42Z",
+  "duration_s": 8.175,
+  "input_tokens": 2,
+  "output_tokens": 1452,
+  "thinking_tokens": 669,
+  "text": "Hypothesis 3 is the only one the abstract supports, though its specific mechanisms are not directly tested. The other three describe work the study did not do.\n\n**Hypothesis 1 (anionic PAM/TiO2 via in-situ polymerization, photocatalysis):** The study uses a cross-linked PAA@TiO2 composite with N,N'-methylenebisacrylamide, not in-situ polymerization or an anionic modification. It reports only adsorption. No photocatalytic activity, charge-transfer work, or byproduct analysis appears. Rejected.\n\n**Hypothesis 2 (TiO2-PAM with ZnO, quaternary ammonium modification, ≥500 mg/g, >98% photocatalytic degradation):** No ZnO and no quaternary ammonium modification are mentioned. The measured capacity is 38.9 mg/g, far below the ≥500 mg/g target, and no photocatalytic degradation is reported. The DFT, economic, and scalability components are also absent. Rejected.\n\n**Hypothesis 3 (PAA@TiO2 by cross-linking, 38.9 mg/g, electrostatic/H-bonding/n-π mechanisms):** The synthesis route, the composite, the CV target, and the 38.9 mg/g maximum all match the abstract. The abstract does not name electrostatic attraction, hydrogen bonding, or n-π interactions. It only reports MC/MD simulations and a negative adsorption energy, which support favorable binding but do not identify these specific interaction types. The adsorption energy of −586.56 kcal/mol is also implausibly large in magnitude, so it should be treated with caution. Accepted as the main hypothesis, with the mechanism details unverified.\n\n**Hypothesis 4 (biochar plus CM-4 bacterial consortium, 50 and 100 mg/L, pH 7, 30 °C, Salmonella assays):** The study uses no biochar, no bacteria, no biodegradation, and no mutagenicity testing. Its conditions are 500 mg/L CV at pH 6.9, with a contact-time and temperature set-up that differs from the hypothesis. Rejected.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: ACCEPT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 7140,
+    "stop_reason": "end_turn",
+    "session_id": "3fcdb445-c63d-4764-b221-f2e0a3fd89cd",
+    "total_cost_usd": 0.0022246600000000003,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6923,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1452,
+      "output_tokens_details": {
+        "thinking_tokens": 669
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6923,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1452,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6923,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6923
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1452,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6923,
+        "webSearchRequests": 0,
+        "costUSD": 0.0022246600000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 669,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6923,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4311,
+    "type": "result",
+    "duration_ms": 7401,
+    "uuid": "77291f1a-aeba-4e37-ba35-129e6e153369",
+    "ttft_stream_ms": 1448,
+    "time_to_request_ms": 260,
+    "first_content_frame_ms": 1448,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

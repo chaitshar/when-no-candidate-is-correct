@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_1__0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:47:02Z",
+  "duration_s": 34.517,
+  "input_tokens": 3954,
+  "output_tokens": 4816,
+  "thinking_tokens": 0,
+  "text": "The number of Fubini rankings of length $n$ that produce a given parking outcome $\\pi$ depends only on the number $k$ of ascending runs of $\\pi$.  Each ascending run of length $r$ can be split into blocks at any of its $r\\!-\\!1$ internal gaps, giving $2^{r-1}$ possibilities, and the choices for different runs are independent.  Hence the total number of rankings is  \n\n\\[\n\\prod_{\\text{run}} 2^{\\,(\\text{length of run})-1}=2^{\\left(\\sum \\text{run lengths}\\right)-k}=2^{\\,n-k}.\n\\]\n\n**Answer:** $2^{\\,n-k}$.\n\nANSWER: $2^{\\,n-k}$\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "3f860695-52af-4071-abea-4bce82cf8388",
+    "status": "SUCCESS",
+    "duration_seconds": 27.404127,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3954,
+      "output_tokens": 4816,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 8770
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

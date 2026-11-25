@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_8__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:39:30Z",
+  "duration_s": 202.563,
+  "input_tokens": 9751,
+  "output_tokens": 24132,
+  "thinking_tokens": 23653,
+  "text": "To find the tight upper bound on the constant stepsize $\\gamma$ that guarantees convergence of Popov's algorithm for unconstrained pseudo-monotone variational inequalities with an $L$-Lipschitz continuous operator $F$, we analyze the recurrence. \n\nIn the unconstrained setting, Popov's past extragradient method:\n$$x_{k+1} = x_k - \\gamma F(y_k)$$\n$$y_{k+1} = x_{k+1} - \\gamma F(y_k)$$\nis algebraically equivalent to the Optimistic Gradient Descent Ascent (OGDA) method for the iterates $y_k$:\n$$y_{k+1} = y_k - 2\\gamma F(y_k) + \\gamma F(y_{k-1}).$$\n\nFor a linear operator $F(x) = Ax$, the characteristic equation of this recurrence for an eigenvalue $\\lambda$ of $A$ is:\n$$r^2 + (2\\gamma \\lambda - 1)r - \\gamma \\lambda = 0.$$\n\nFor pseudo-monotone operators, the spectrum of the Jacobian at the solution lies in the right half-plane $\\operatorname{Re}(\\lambda) \\ge 0$ with $|\\lambda| \\le L$. The worst-case stability boundary occurs for purely imaginary eigenvalues $\\lambda = \\pm i L$ (corresponding to a skew-symmetric operator, which is monotone and pseudo-monotone). \n\nSetting $\\lambda = i L$ and analyzing the roots of:\n$$r^2 + (2i\\gamma L - 1)r - i\\gamma L = 0,$$\nthe roots lie strictly inside the unit disk $|r| < 1$ if and only if:\n$$\\gamma < \\frac{1}{\\sqrt{3}L}.$$\n\nAt $\\gamma = \\frac{1}{\\sqrt{3}L}$, the roots reach the unit circle $(|r| = 1)$, leading to non-convergent oscillations, and for $\\gamma > \\frac{1}{\\sqrt{3}L}$, the iterates diverge. Thus, the tight upper bound on the constant stepsize is $\\frac{1}{\\sqrt{3}L}$.\n\nANSWER: \\frac{1}{\\sqrt{3}L}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "f544d689-4c27-476b-9c7e-a1127ca1a153",
+    "status": "SUCCESS",
+    "duration_seconds": 194.433429,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9751,
+      "output_tokens": 24132,
+      "thinking_tokens": 23653,
+      "cache_read_tokens": 0,
+      "total_tokens": 33883
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "PICK__r8s0_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:26:59Z",
+  "duration_s": 10.688,
+  "input_tokens": 2,
+  "output_tokens": 1904,
+  "thinking_tokens": 1253,
+  "text": "None of the four hypotheses is fully supported, but Hypothesis 4 is the closest match.\n\n**Hypothesis 1 (broad social environment):** Not supported. The review's ten determinants include organizational features (school-based health centers, collaboration between organizations) and policy features (parity laws, insurance coverage, screening programs), which overlap with this hypothesis. But the abstract says nothing about neighborhood crime, green spaces, public transport, or neighbor helpfulness. The hypothesis is also a proposed study design (measurement plans, an agent-based model), not a finding.\n\n**Hypothesis 2 (moderation and mediation by community factors):** Not supported. The review reports main-effect associations, and \"high accessibility of mental health care\" partly overlaps with \"access to mental health services.\" It reports nothing about walkability, moderation of individual or family factors, moderation by race or income, or mediation by program alignment and self-efficacy.\n\n**Hypothesis 3 (synergistic three-component intervention):** Not supported. The abstract does not mention practitioner density as a single construct, a school curriculum, mobile outreach, interaction effects, or stigma and social-media sentiment as mediators. The school-based health center finding is only a loose overlap with one component.\n\n**Hypothesis 4 (proximity and public transport):** Partly supported. The review found positive associations for urban residence, region of residence, and high accessibility of mental health care. Drive-time proximity is a plausible measure of accessibility, so the core claim that geographic access matters has some support. However, public transportation density and schedule frequency do not appear among the ten determinants, and the abstract reports positive associations, not a claim of significant causal influence. The GIS and cohort-study design is also the authors' planned approach, not something the review tested.\n\nHypothesis 4 is the best fit because geographic access to services is the strongest overlap with the review's findings. Its transport component is unsupported, so the fit is partial.\n\nCHOICE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 9586,
+    "stop_reason": "end_turn",
+    "session_id": "1ef373e5-6eac-42c7-bffa-f493a48c16c1",
+    "total_cost_usd": 0.00275846,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 8462,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1904,
+      "output_tokens_details": {
+        "thinking_tokens": 1253
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8462,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1904,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 8462,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 8462
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1904,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 8462,
+        "webSearchRequests": 0,
+        "costUSD": 0.00275846,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1253,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8462,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 6921,
+    "type": "result",
+    "duration_ms": 9814,
+    "uuid": "dd030f79-9c72-4f69-b267-43362de93d4e",
+    "ttft_stream_ms": 1075,
+    "time_to_request_ms": 228,
+    "first_content_frame_ms": 1075,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0226_18_TP__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:45:26Z",
+  "duration_s": 12.885,
+  "input_tokens": 2,
+  "output_tokens": 2436,
+  "thinking_tokens": 1897,
+  "text": "None of the three solutions can be confirmed, and Solution 1 is definitely wrong.\n\n**Solution 1 (22) is wrong.** Since $K_4 \\subseteq K_5 - e$, we get $R(K_5, K_5-e) \\ge R(K_5, K_4) = 25$, so 22 is impossible. The value 22 is $R(K_5-e, K_5-e)$, not the pair the problem asks about.\n\n**Solution 2 (30) is unsupported.** The lower bound argument is not valid as written: the step \"$\\frac{3(R(K_4,K_4)-1)}{2}+1 = 26.5$\" is not a standard result and the bound it yields is not clearly derived. The claimed construction on $K_{29}$ and the upper-bound proof for $n=30$ are asserted without verifiable detail, and the \"pattern\" table is not evidence. I cannot verify the claimed upper bound.\n\n**Solution 3 (34) is also unsupported.** Its lower bound of 25 and its citation $R(K_5-e,K_5-e)=22$ are reasonable. But the claimed exact value rests on vague references to \"edge-counting\" and \"computer-assisted verification\" with no specifics. I also do not recall an established exact value for $R(K_5, K_5-e)$ in the standard small-Ramsey-number surveys. If the value is open, then no solution's claim of an exact value can be correct.\n\nI could not check the literature, so I cannot rule out that one of 30 or 34 matches a published result I don't recall. On the evidence I can assess, no solution is shown to be correct.\n\nCHOICE: NONE",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 11759,
+    "stop_reason": "end_turn",
+    "session_id": "9743945c-c9ad-4bd8-984d-c657796f27b3",
+    "total_cost_usd": 0.00266966,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6688,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2436,
+      "output_tokens_details": {
+        "thinking_tokens": 1897
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6688,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2436,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6688,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6688
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2436,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6688,
+        "webSearchRequests": 0,
+        "costUSD": 0.00266966,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1897,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6688,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 9661,
+    "type": "result",
+    "duration_ms": 12168,
+    "uuid": "f7a3a571-e0bd-4c2c-bac8-503a6586f4e8",
+    "ttft_stream_ms": 1267,
+    "time_to_request_ms": 410,
+    "first_content_frame_ms": 1267,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

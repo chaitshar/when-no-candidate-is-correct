@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r7s2_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:20Z",
+  "duration_s": 5.85,
+  "input_tokens": 2,
+  "output_tokens": 821,
+  "thinking_tokens": 287,
+  "text": "The candidate is not the study's hypothesis. The abstract's hypothesis is about how electricity consumption, real GDP, trade openness, urbanization, and life expectancy relate to EF in China (1960–2019), tested with quantile regression and spectral Granger causality. The candidate is built on variables the abstract never mentions: renewable energy adoption, human capital, urban infrastructure quality, urban compactness, regional disparities, governance, and reform-period segmentation. It also proposes SEM with latent infrastructure variables, spatial interaction models, and multi-scalar (regional, city, neighborhood) testing. None of these appear in the abstract, and its methods are different.\n\nThe candidate also conflicts with the abstract's findings on direction:\n- **Urbanization:** The abstract reports that urbanization reduces EF. The candidate's point 2 treats urbanization as adverse to EF, and point 3 says urbanization's impact is driven by resource use and industrial emissions.\n- **Trade openness:** The abstract reports that trade reduces EF. The candidate's point 3 says trade openness accelerated EF during 1979–1999.\n- **Causal structure:** The abstract finds that only urbanization and life expectancy affect environmental degradation in the spectral Granger tests. The candidate's central claim is a moderated interaction among renewable energy, human capital, and infrastructure, which the abstract does not test.\n\nAt most, the candidate shares the broad topic (EF determinants in China over 1960–2019) with the study. That is not enough to count as the main hypothesis the evidence supports.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4550,
+    "stop_reason": "end_turn",
+    "session_id": "970086a1-cc56-47ab-9c5a-815d2ab09c15",
+    "total_cost_usd": 0.00170396,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5897,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 821,
+      "output_tokens_details": {
+        "thinking_tokens": 287
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5897,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 821,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5897,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5897
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 821,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5897,
+        "webSearchRequests": 0,
+        "costUSD": 0.00170396,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 287,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5897,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2647,
+    "type": "result",
+    "duration_ms": 4813,
+    "uuid": "7d214b71-e8c1-4ee9-ab97-fad6e55dae7e",
+    "ttft_stream_ms": 1600,
+    "time_to_request_ms": 262,
+    "first_content_frame_ms": 1600,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "PICK__r8s2_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:03Z",
+  "duration_s": 7.013,
+  "input_tokens": 2,
+  "output_tokens": 1199,
+  "thinking_tokens": 574,
+  "text": "Hypothesis 4 is the only one the abstract supports. Hypotheses 1 to 3 test specific constructs the review does not report.\n\n- **Hypothesis 1** is not supported. It proposes a primary study of provider density within 5 miles of schools, a validated outreach-intensity score, and a synergy interaction term with propensity matching and lagged analysis. The review reports none of these. It reports school-based health centers, region, urbanicity, accessibility, neighborhood SES, parity laws, screening programs, plan type, insurance extension, and inter-organizational collaboration. Its only interaction-like finding is not a synergy effect.\n- **Hypothesis 2** is not supported. It predicts higher utilization in predominantly minority neighborhoods because of community networks and culturally competent services. The abstract does not mention neighborhood racial or ethnic composition, community organization density, or cultural competence as determinants. Its only neighborhood-level finding is positive association with high SES.\n- **Hypothesis 3** is not supported. Its race-by-network interaction and its stigma and mistrust mechanisms do not appear in the abstract. The abstract lists no such interaction.\n- **Hypothesis 4** is supported in its general form. The review reports positive associations at the organizational level (school-based health centers, collaboration between organizations), the community level (urban residence, area accessibility, area SES, region), and the public policy level (parity laws, screening programs, fee-for-service versus managed care, insurance coverage extension). The hypothesis is broad and does not name specific determinants, but the abstract's findings match its claim that determinants at all three levels are positively associated with utilization.\n\nThe abstract is limited to what it reports. I have not checked the full text, so the review's per-determinant evidence and its caveats, such as the limited evidence for 35 of the determinants, may qualify these conclusions.\n\nCHOICE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5974,
+    "stop_reason": "end_turn",
+    "session_id": "e19c5d39-d16f-4fba-aeed-6cdf6fe02ff4",
+    "total_cost_usd": 0.00200876,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6476,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1199,
+      "output_tokens_details": {
+        "thinking_tokens": 574
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6476,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1199,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6476,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6476
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1199,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6476,
+        "webSearchRequests": 0,
+        "costUSD": 0.00200876,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 574,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6476,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3360,
+    "type": "result",
+    "duration_ms": 6195,
+    "uuid": "de2526a1-2004-4388-9da2-03790603fdba",
+    "ttft_stream_ms": 985,
+    "time_to_request_ms": 220,
+    "first_content_frame_ms": 985,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

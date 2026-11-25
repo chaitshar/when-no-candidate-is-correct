@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0326_21_w0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:32:30Z",
+  "duration_s": 290.287,
+  "input_tokens": 10128,
+  "output_tokens": 35560,
+  "thinking_tokens": 34843,
+  "text": "To determine whether the final answer $c = 2$ is correct, we analyze the Cauchy combination test statistic $T_K = \\frac{1}{K} \\sum_{i=1}^K g(Z_i)$ with $g(z) = \\tan(\\pi(\\Phi(z) - 1/2))$ under the canonical one-factor equicorrelated Gaussian model:\n$$Z_i = \\sqrt{1 - \\rho_K}\\,\\varepsilon_i + \\sqrt{\\rho_K}\\, W, \\quad W, \\varepsilon_i \\overset{\\text{iid}}{\\sim} \\mathcal{N}(0, 1).$$\n\n### Asymptotic Analysis\n\n1. **Conditional Perturbation:**\n   Conditioned on the latent factor $W$, each $Z_i$ is shifted by $\\sqrt{\\rho_K} W$. Expanding $g(Z_i)$ around the independent components $\\varepsilon_i$:\n   $$g(Z_i) \\approx g(\\varepsilon_i) + \\sqrt{\\rho_K} W g'(\\varepsilon_i) + \\frac{1}{2} \\rho_K W^2 g''(\\varepsilon_i) + \\dots$$\n   \n2. **Cancellation of the First-Order Term:**\n   By the reflection symmetry of the Gaussian distribution, $(W, \\varepsilon) \\overset{d}{=} (-W, -\\varepsilon)$, which maps $Z_i \\mapsto -Z_i$ and $g(Z_i) \\mapsto -g(Z_i)$. Consequently, the conditional exceedance probability $P(T_K > t_\\alpha \\mid W)$ has an expansion in $W$ whose linear term in $W$ has expectation zero under $W \\sim \\mathcal{N}(0, 1)$:\n   $$\\mathbb{E}_W [W] = 0.$$\n   Therefore, the linear perturbation cancels out upon taking the expectation over $W$.\n\n3. **Leading Second-Order Deviation:**\n   The leading non-vanishing contribution to the deviation of the unconditional probability $P(T_K > t_\\alpha)$ from the nominal level $\\alpha$ is governed by the second-order term involving $\\mathbb{E}_W[W^2] = 1$:\n   - The transformation behaves near the extreme Gaussian scale $z \\asymp \\sqrt{2\\log K}$ as $g''(z) \\phi(z) \\asymp z^3$.\n   - Integrating up to the characteristic truncation boundary $M_K = \\sqrt{2\\log K}$ yields:\n     $$\\int_0^{\\sqrt{2\\log K}} z^3\\, dz = \\frac{1}{4} (\\sqrt{2\\log K})^4 = (\\log K)^2.$$\n   - Scaled by the factor $\\rho_K$, the leading deviation is sharply of order:\n     $$|P(T_K > t_\\alpha) - \\alpha| \\asymp \\rho_K (\\log K)^2.$$\n\n4. **Conclusion:**\n   Asymptotic exactness $P(T_K > t_\\alpha) \\to \\alpha$ holds if and only if $\\rho_K (\\log K)^2 \\to 0$, giving the exact exponent $c = 2$.\n\nThe proposed solution arrives at the correct final answer.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "2ca21a4d-f386-415e-9c59-a23515d37c0a",
+    "status": "SUCCESS",
+    "duration_seconds": 279.098504,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10128,
+      "output_tokens": 35560,
+      "thinking_tokens": 34843,
+      "cache_read_tokens": 0,
+      "total_tokens": 45688
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

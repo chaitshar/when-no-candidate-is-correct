@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r0s2_n1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:41Z",
+  "duration_s": 6.084,
+  "input_tokens": 2,
+  "output_tokens": 867,
+  "thinking_tokens": 331,
+  "text": "The abstract does not support this candidate as the study's hypothesis, so I reject it.\n\nThe abstract describes a review, not a hypothesis-driven study. Its stated aim is to overview findings on dust formation and evolution at z > 4 and the theoretical efforts to explain them. Part I covers theoretical models of dust sources (supernovae, AGB stars, Red Super Giants, Wolf-Rayet stars, classical novae, Type Ia supernovae, quasar winds) and dust reprocessing in the interstellar medium through destruction and growth. Part II is said to cover observations at z > 4.\n\nThe candidate's specific claims have no counterpart in the abstract:\n\n- **FIR–UV spatial separation and offsets exceeding 0.5\"**: the abstract never mentions spatial offsets, FIR or UV morphology, or resolution thresholds.\n- **Type IIP supernovae producing over 0.01 M⊙ of dust per event**: the abstract names supernovae generally, not Type IIP, and gives no per-event dust yield.\n- **Dust regulating cooling rates and star formation efficiency**: the abstract mentions dust reprocessing but not cooling or star formation efficiency as a result.\n- **ALMA and JWST testing**: the abstract does not propose or describe any such test. It only says the observational results will be discussed in Part II.\n\nThe candidate reads as a speculative follow-up study design, not as the review's main claim. The review's central theme is the origin and evolution of dust in the early universe through its sources and ISM processing, which the candidate touches on only indirectly.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4485,
+    "stop_reason": "end_turn",
+    "session_id": "301bd027-3493-4489-b7ea-7de40f55bb54",
+    "total_cost_usd": 0.00169336,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5729,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 867,
+      "output_tokens_details": {
+        "thinking_tokens": 331
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5729,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 867,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5729,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5729
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 867,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5729,
+        "webSearchRequests": 0,
+        "costUSD": 0.00169336,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 331,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5729,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2546,
+    "type": "result",
+    "duration_ms": 4938,
+    "uuid": "486aef1f-0a84-45e4-9aa2-105b972c442d",
+    "ttft_stream_ms": 1221,
+    "time_to_request_ms": 449,
+    "first_content_frame_ms": 1221,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

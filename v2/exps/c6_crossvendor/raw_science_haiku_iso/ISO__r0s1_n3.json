@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r0s1_n3",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:39Z",
+  "duration_s": 7.1,
+  "input_tokens": 2,
+  "output_tokens": 1049,
+  "thinking_tokens": 392,
+  "text": "The abstract describes a review, not a hypothesis-driven study. Its stated aim is \"to provide an overview of the several findings on dust formation and evolution at z > 4, and of the theoretical efforts to explain the observational results.\" It does not claim a main hypothesis.\n\nThe candidate overlaps with the abstract in a few places: supernovae are named as dust sources, and grain growth and destruction in the interstellar medium are discussed. Beyond that, the candidate makes claims the abstract does not support:\n\n- **Predominance of Type II SNe in early nucleation.** The abstract names supernovae and AGB stars as the primary sources, plus other mechanisms (Red Super Giants, Wolf-Rayet stars, Classical Novae, Type Ia supernovae, quasar winds). It does not say early dust is predominantly from primordial Type II SNe, and it omits AGB stars entirely from the candidate.\n- **Specific nucleation conditions.** The abstract says nothing about nucleation of silicates, amorphous carbon, or refractory cores (Ca, Al, Ti), nor about temperatures above 2000 K or shock pressures.\n- **Mantle accretion enriched in Si and Mg.** The abstract mentions grain growth but not Si/Mg mantle accretion in molecular clouds.\n- **Isotopic signatures and JWST/ALMA validation against archival early massive star data.** The abstract explicitly defers observational results at z > 4 to a second part of the review. It makes no isotopic predictions and does not mention early massive star data.\n- **A \"unified framework.\"** The abstract presents a review organized in two parts, not a unified model.\n\nThe candidate reads as an invented research proposal that borrows the abstract's vocabulary. Several of its central claims (predominance, specific nucleation conditions, isotopic predictions, the EMS validation test) have no counterpart in the evidence, so the evidence does not support it as the study's hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 5733,
+    "stop_reason": "end_turn",
+    "session_id": "7174cb77-c3ff-4d21-99c3-b5f84e30e025",
+    "total_cost_usd": 0.00179976,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5806,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1049,
+      "output_tokens_details": {
+        "thinking_tokens": 392
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5806,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1049,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5806,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5806
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1049,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5806,
+        "webSearchRequests": 0,
+        "costUSD": 0.00179976,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 392,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5806,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3397,
+    "type": "result",
+    "duration_ms": 6187,
+    "uuid": "3949d1a4-f6c5-4eff-8b0f-33eed4d2538c",
+    "ttft_stream_ms": 1634,
+    "time_to_request_ms": 454,
+    "first_content_frame_ms": 1634,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

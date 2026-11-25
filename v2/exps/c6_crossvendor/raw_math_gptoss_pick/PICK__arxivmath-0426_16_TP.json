@@ -1,0 +1,29 @@
+{
+  "job_id": "PICK__arxivmath-0426_16_TP",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T09:49:44Z",
+  "duration_s": 13.737,
+  "input_tokens": 6306,
+  "output_tokens": 929,
+  "thinking_tokens": 0,
+  "text": "The quantum Fisher (Fubini–Study) metric for a pure state is defined as  \n\n\\[\ng_{\\mu\\nu}^{\\text{FS}} = 4\\,\\text{Re}\\!\\Big[\\langle\\partial_\\mu\\psi|\\partial_\\nu\\psi\\rangle\n- \\langle\\partial_\\mu\\psi|\\psi\\rangle\\langle\\psi|\\partial_\\nu\\psi\\rangle\\Big].\n\\]\n\nUsing the Madelung representation \\(\\psi=\\sqrt{\\mathcal P}\\,e^{iS/\\hbar}\\) one finds  \n\n\\[\n\\partial_\\mu\\psi = \\frac{m}{\\hbar}\\sqrt{\\mathcal P}\\,(u_\\mu + i\\pi_\\mu)\\,e^{iS/\\hbar},\n\\]\n\nso that  \n\n\\[\n\\langle\\partial_\\mu\\psi|\\partial_\\nu\\psi\\rangle\n= \\frac{m^{2}}{\\hbar^{2}}\\big\\langle (u_\\mu-i\\pi_\\mu)(u_\\nu+i\\pi_\\nu)\\big\\rangle_{\\mathcal P}.\n\\]\n\nTaking the real part and subtracting the connection term gives  \n\n\\[\ng_{\\mu\\nu}^{\\text{FS}} = \\frac{4m^{2}}{\\hbar^{2}}\\Big[\\operatorname{Cov}(\\pi_\\mu,\\pi_\\nu)\n+ \\operatorname{Cov}(u_\\mu,u_\\nu)\\Big]_{\\mathcal P}.\n\\]\n\nHence the proportionality factor is  \n\n\\[\nC = \\frac{4m^{2}}{\\hbar^{2}} = \\frac{4m^{2}}{x^{2}}.\n\\]\n\nSolution 1 provides exactly this expression, while Solution 2 omits the factor 4 and Solution 3 ignores the dependence on \\(m\\) and \\(\\hbar\\) altogether. Therefore the correct answer is given by Solution 1.\n\n**Final answer:**  \n\n\\[\nC = \\frac{4\\,m^{2}}{x^{2}}.\n\\]\n\nCHOICE: 1\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "c09b53dc-2180-4168-b189-3b23b37b3343",
+    "status": "SUCCESS",
+    "duration_seconds": 5.793898,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 6306,
+      "output_tokens": 929,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 7235
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_17__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:46:02Z",
+  "duration_s": 140.577,
+  "input_tokens": 9859,
+  "output_tokens": 13554,
+  "thinking_tokens": 13249,
+  "text": "To determine the critical exponent $p_c$ as a function of the dimension $d$, we consider the non-uniformly elliptic equation in non-divergence form:\n$$a_{ij}(x)\\partial_{ij}u = 0 \\quad \\text{in } \\mathbb{R}^d,$$\nwith $I \\ge a(x) \\ge \\lambda(x)I$ and $\\lambda^{-1} \\in L^p$.\n\nIn this setting, the equation has at least $d-1$ non-degenerate eigenvalues bounded away from zero from above and below (since the upper bound is $I$), while at most one eigenvalue can degenerate towards zero at the rate $\\lambda(x)$. \n\nBy analyzing the contact set via an adapted Alexandrov-Bakelman-Pucci (ABP) maximum principle, one can control the geometry of the paraboloid contact points using the $d-1$ good directions. This yields an improvement of oscillation and consequently Hölder regularity and a Liouville theorem for solutions whenever:\n$$p > d - 1.$$\n\nConversely, by concentrating degeneracy along a line (which has codimension $d-1$, where the transversal spherical measure scales as $r^{d-2}$), one can construct counterexamples showing that the Harnack and Weak Harnack inequalities fail when:\n$$p < d - 1.$$\n\nThus, the critical exponent is $p_c = d - 1$.\n\nANSWER: d - 1\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "bcf8b7de-cd75-44f2-b11a-af863c35e21f",
+    "status": "SUCCESS",
+    "duration_seconds": 132.220204,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9859,
+      "output_tokens": 13554,
+      "thinking_tokens": 13249,
+      "cache_read_tokens": 0,
+      "total_tokens": 23413
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

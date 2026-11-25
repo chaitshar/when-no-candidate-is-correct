@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_15_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:40:23Z",
+  "duration_s": 140.883,
+  "input_tokens": 12361,
+  "output_tokens": 10731,
+  "thinking_tokens": 10298,
+  "text": "An inspection of the proposed solution confirms the reasoning:\n\n1. **Lower bound ($g \\ge 4$):** Since $A_1$ and $A_2$ are very general, they are simple and mutually non-isogenous. Any curve $C \\subset A_1 \\times A_2$ with non-constant projections induces a surjective morphism $JX \\twoheadrightarrow A_1 \\times A_2$, which implies $g(X) \\ge \\dim(A_1 \\times A_2) = 4$.\n2. **Impossibility of $g = 4, 5$:** Any curve $X$ of genus $4$ or $5$ mapping non-trivially to both $A_1$ and $A_2$ forces the pair $(A_1, A_2)$ to lie in the image of a family of configurations of dimension at most $5$. Since the moduli space of pairs of abelian surfaces has dimension $3 + 3 = 6$, very general $(A_1, A_2)$ cannot admit such a curve. In particular, for hyperelliptic covers, sharing $\\ge 4$ branch points requires equality of cross-ratios, imposing at least one non-trivial moduli condition.\n3. **Construction in genus 6:** Very general abelian surfaces $A_1, A_2$ are isogenous to Jacobians of genus-2 curves $C_1, C_2$. By 3-transitivity of $\\mathrm{PGL}_2(\\mathbb{C})$, any two sets of 6 branch points on $\\mathbb{P}^1$ can be placed such that they share exactly 3 points without imposing any condition on the moduli of either curve. The resulting $(\\mathbb{Z}/2)^2$-cover branched over the $3+3+3=9$ points produces a smooth curve of genus $6$ mapping non-trivially to both $A_1$ and $A_2$.\n\nThe minimal genus is indeed $6$.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "03c59a02-410a-4950-b697-62fee1113ab3",
+    "status": "SUCCESS",
+    "duration_seconds": 341.635965,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12361,
+      "output_tokens": 10731,
+      "thinking_tokens": 10298,
+      "cache_read_tokens": 8287,
+      "total_tokens": 23092
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__arxivmath-0226_32_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:50:11Z",
+  "duration_s": 60.18,
+  "input_tokens": 2,
+  "output_tokens": 13414,
+  "thinking_tokens": 12572,
+  "text": "**Solution 1 (3/5): falsified.** Its Fibonacci-type set is weak Sidon, and I checked its 6 three-term APs and the maximum AP-free subset of size 5 at n=8. The upper bound g(n) ≤ 3n/5 is therefore plausible. The lower bound, however, is only asserted (\"careful analysis shows this is tight\"), with no proof. Solution 3's construction gives ratio 1/2 < 3/5, so the claimed lower bound is contradicted.\n\n**Solution 2 (2/3): falsified.** Its lower bound claims h(A) ≥ ⌈2n/3⌉ for every weak Sidon set. The Fibonacci-type set at n=8 has α = 5, but ⌈16/3⌉ = 6, so the bound fails. The step \"τ ≤ ⌊n/3⌋\" is also unsupported and false on that same example (τ = 3 > 2).\n\n**Solution 3 (1/2): survives falsification.**\n- *Reduction:* A subset of a weak Sidon set is Sidon iff it contains no 3-AP. I checked this directly.\n- *Lower bound (checked in full):* Greedy from largest to smallest. A skipped element a is the leftmost point of a blocking AP (a, c, r) with center c in S. Each center is the center of at most one AP, since a+r = 2c = a'+r' forces {a,r} = {a',r'} under weak Sidon. So the map skipped → center is injective, giving #skipped ≤ |S| and h(A) ≥ n/2.\n- *Upper bound (partly checked):* I verified the t=2 set {-6,-1.5,0,3,4,6,8} is weak Sidon, has 5 APs, and α = 4. I verified the t=3 set {-15,-8.25,-6,-1.5,0,3,4,6,8} is weak Sidon (all 36 sums distinct), has 7 APs, and τ = 4, so α = 5. The general chain (n = 2t+3, α = t+2) is extrapolated from these two steps, not proven. The step is plausible because a generic free parameter avoids sum collisions, but τ growing by exactly 1 per gadget is unverified beyond t=3.\n\nSince the lower bound 1/2 is proven, the limit is at least 1/2. The chain supports the matching upper bound, so 1/2 is the most likely exact value. The residual uncertainty is the general chain construction.\n\nCHOICE: 3\n\nCONFIDENCE: 4",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 57730,
+    "stop_reason": "end_turn",
+    "session_id": "73a77fb3-f5a8-41a7-8737-fc129ac7c797",
+    "total_cost_usd": 0.00872586,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 9524,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 13414,
+      "output_tokens_details": {
+        "thinking_tokens": 12572
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 9524,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 13414,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 9524,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 9524
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 13414,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 9524,
+        "webSearchRequests": 0,
+        "costUSD": 0.00872586,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 12572,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 9524,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 56334,
+    "type": "result",
+    "duration_ms": 59546,
+    "uuid": "0c629ac6-c913-4aff-85c1-8154e15b461e",
+    "ttft_stream_ms": 2583,
+    "time_to_request_ms": 1816,
+    "first_content_frame_ms": 2583,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

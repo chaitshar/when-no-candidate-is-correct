@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__arxivmath-0226_12_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:48:19Z",
+  "duration_s": 16.471,
+  "input_tokens": 2,
+  "output_tokens": 3205,
+  "thinking_tokens": 2488,
+  "text": "**Step 1: Independent falsification**\n\n**Solution 1 (n+5):** The circuit analysis is plausible in outline, but the key claims are unsupported. It asserts that $j=2$ occurs for every $G/T$ with $n\\ge 2$ and that $j=3$ occurs for $SU(N)/S(U(2)\\times U(N-2))$, without checking the weight sets. It also changes its answer by case: $S=\\{1\\}$ for $n=1$, $\\{2\\}$ for $n=2$, $\\{2,3\\}$ for $n=3$, and $\\{2,3,n\\}$ for $n\\ge4$. Its final answer silently assumes $n\\ge4$, and it does not establish that $2$ and $3$ are the only values other than $n$.\n\n**Solution 2 (∞):** The CP^n example is correct: its isotropy weights $e_1-e_j$ are $n$ linearly independent vectors, so $j=n$ is attained. But the conclusion does not follow. Since $T$ has dimension $n$, any $n+1$ vectors in $\\mathbb{R}^n$ are dependent, so the maximal independence is at most $n$. Taking $S=\\mathbb{N}$ is therefore wrong for fixed $n$, and the infinite sum is an artifact of that error.\n\n**Solution 3 (5):** The claim that the maximal independence is always exactly 2 or 3 is refuted by the CP^n example. For $n\\ge4$, CP^n has $j=n\\ge4$, so the claim fails. The Grassmannian and quadric arguments are also loose. The 3-independence argument for Grassmannians is asserted rather than proved, and the \"always 2 or 3\" step is unsupported.\n\nNo solution survives falsification with the confidence needed to select it. Solution 2 is refuted by the bound $j\\le n$, Solution 3 by CP^n, and Solution 1 rests on unverified case claims.\n\n**Step 2: Calibrated selection gate**\n\nNo solution reaches confidence 4 or 5, so the gate requires CHOICE: NONE.\n\nCHOICE: NONE\nCONFIDENCE: 3",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 15418,
+    "stop_reason": "end_turn",
+    "session_id": "a4152664-9234-45c5-9bd1-9be924a84aa3",
+    "total_cost_usd": 0.00327796,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7807,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 3205,
+      "output_tokens_details": {
+        "thinking_tokens": 2488
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7807,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3205,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7807,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7807
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 3205,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7807,
+        "webSearchRequests": 0,
+        "costUSD": 0.00327796,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2488,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7807,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 12783,
+    "type": "result",
+    "duration_ms": 15811,
+    "uuid": "bec86e49-fd78-46e2-b8ed-239ee110aec9",
+    "ttft_stream_ms": 1183,
+    "time_to_request_ms": 390,
+    "first_content_frame_ms": 1183,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

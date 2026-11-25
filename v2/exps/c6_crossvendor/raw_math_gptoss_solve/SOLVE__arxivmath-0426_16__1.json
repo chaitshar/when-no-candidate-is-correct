@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_16__1",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:48:08Z",
+  "duration_s": 21.484,
+  "input_tokens": 4020,
+  "output_tokens": 2929,
+  "thinking_tokens": 0,
+  "text": "The derivation starts from the pure‑state wavefunction  \n\\[\n\\psi = \\sqrt{\\mathcal P}\\,e^{iS/\\hbar},\n\\]  \nso that the Madelung–Bohm velocities are  \n\\[\n\\pi_\\mu = \\frac{1}{m}\\,\\partial_\\mu S ,\\qquad \nu_\\mu = \\frac{\\hbar}{2}\\,\\partial_\\mu\\ln\\mathcal P .\n\\]\n\nWriting the parameter derivative of the state,\n\\[\n\\partial_\\mu\\psi = \\psi\\Bigl[\\frac{1}{2}\\partial_\\mu\\ln\\mathcal P\n        + i\\,\\frac{m}{\\hbar}\\,\\pi_\\mu\\Bigr]\n      = \\frac{\\psi}{\\hbar}\\bigl(u_\\mu+i\\,m\\pi_\\mu\\bigr),\n\\]\nand inserting this into the definition of the quantum Fisher (Fubini–Study) metric,\n\\[\ng^{\\mathrm{FS}}_{\\mu\\nu}=4\\,\n\\bigl[\\langle\\partial_\\mu\\psi|\\partial_\\nu\\psi\\rangle\n      -\\langle\\partial_\\mu\\psi|\\psi\\rangle\\langle\\psi|\\partial_\\nu\\psi\\rangle\\bigr],\n\\]\none finds that the imaginary cross‑terms cancel and the remaining real part is\n\\[\ng^{\\mathrm{FS}}_{\\mu\\nu}= \\frac{4m^{2}}{\\hbar^{2}}\n\\Bigl[\\operatorname{Cov}(\\pi_\\mu,\\pi_\\nu)\n      +\\operatorname{Cov}(u_\\mu,u_\\nu)\\Bigr]_{\\mathcal P}.\n\\]\n\nHence the proportionality factor \\(C\\) multiplying the covariances is\n\n\\[\nC = \\frac{4\\,m^{2}}{\\hbar^{2}}.\n\\]\n\nUsing the placeholder \\(x = \\hbar\\) to avoid the symbol \\(\\hbar\\),\n\n\\[\n\\boxed{C = \\dfrac{4\\,m^{2}}{x^{2}} }.\n\\]\n\nANSWER: 4*m^2/x^2\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "c21939f8-f2af-4e14-8747-ab1d60d38806",
+    "status": "SUCCESS",
+    "duration_seconds": 15.225408,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 4020,
+      "output_tokens": 2929,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 6949
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

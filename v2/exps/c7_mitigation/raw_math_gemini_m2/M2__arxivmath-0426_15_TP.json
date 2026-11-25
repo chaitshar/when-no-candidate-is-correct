@@ -1,0 +1,29 @@
+{
+  "job_id": "M2__arxivmath-0426_15_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T22:42:03Z",
+  "duration_s": 178.219,
+  "input_tokens": 2130,
+  "output_tokens": 22884,
+  "thinking_tokens": 21678,
+  "text": "To determine the correct solution, we follow the two-step verification protocol.\n\n---\n\n### Step 1: Independent Falsification\n\n#### Solution 1\n- **Derivation & Claims:** Solution 1 claims the minimal genus is $9$, citing a supposed \"Ciliberto–van der Geer result\" and asserting that the bound is attained by a general $(2,2)$-curve on $\\Theta_1 \\times \\Theta_2$.\n- **Falsification:** \n  1. A general curve in the linear system $|2\\Theta_1 + 2\\Theta_2|$ on $\\Theta_1 \\times \\Theta_2$ is indeed smooth of genus $(2+1)(2+1) = 9$. However, restricting solely to smooth curves in this linear system ignores curves with singularities or curves arising from non-trivial correspondences.\n  2. Specifically, irreducible curves on $\\Theta_1 \\times \\Theta_2 \\subset A_1 \\times A_2$ can have singular points (such as ordinary double points / nodes), lowering their geometric genus (the genus of their normalization). As shown in Solution 3, one can explicitly construct an irreducible curve on $A_1 \\times A_2$ whose normalization has genus $6$, with non-constant projections to both factors.\n  3. Thus, the lower bound of $9$ is incorrect. Solution 1 is falsified.\n\n---\n\n#### Solution 2\n- **Derivation & Claims:** Solution 2 claims the minimal genus is $5$ by gluing two genus-$2$ curves at a point to get an arithmetic genus $5$ curve, smoothing it, and claiming its Jacobian splits as $A_1 \\times A_2 \\times E$.\n- **Falsification:**\n  1. **Arithmetic Error:** Gluing two smooth curves of genus $g_1 = 2$ and $g_2 = 2$ at a single node yields a nodal curve of arithmetic genus $g_1 + g_2 = 2 + 2 = 4$, not $5$.\n  2. **Moduli / Parameter Contradiction:** Even if one considers a curve of genus $5$, the locus of genus-$5$ Jacobians in $\\mathcal{A}_5$ that split as $A_1 \\times A_2 \\times E$ has dimension at most $5$ (the Torelli locus in $\\mathcal{A}_5$ has codimension $3$, so the intersection with the $7$-dimensional family of products $A_1 \\times A_2 \\times E$ has dimension at most $4$). Since a pair of very general abelian surfaces $(A_1, A_2)$ moves in a $6$-dimensional moduli space ($\\dim \\mathcal{A}_2 \\times \\mathcal{A}_2 = 3 + 3 = 6$), a very general pair cannot be realized in this way.\n  3. Solution 2 contains both elementary calculation errors and fatal modular dimension flaws. Solution 2 is falsified.\n\n---\n\n#### Solution 3\n- **Derivation & Claims:** Solution 3 claims the minimal genus is $6$.\n  1. *Lower bounds:* Shows $g \\ge 4$ is required for $JX \\twoheadrightarrow A_1 \\times A_2$. Moduli dimension counting rules out $g = 4$ (where $JX \\sim A_1 \\times A_2$ is a $5$-parameter family in a $6$-parameter space) and $g = 5$ (which also depends on at most $5$ parameters).\n  2. *Construction in genus 6:* Very general abelian surfaces $A_1, A_2$ are Jacobians $JC_1, JC_2$ of smooth genus-$2$ curves. Representing $C_1, C_2$ as hyperelliptic double covers of $\\mathbb{P}^1$ branched at $6$ points each ($B_1, B_2$), the $3$-transitivity of $\\mathrm{PGL}_2(\\mathbb{C})$ allows matching exactly $3$ branch points ($|B_1 \\cap B_2| = 3$) without imposing any conditions on the moduli of $(C_1, C_2)$.\n  3. Taking the $(\\mathbb{Z}/2)^2$-cover $X \\to \\mathbb{P}^1$ branched over the $9$ points of $B_1 \\cup B_2$ gives intermediate double covers $C_1, C_2$, and a third genus-$2$ curve $C_3$ (branched at the symmetric difference $B_1 \\triangle B_2$, which has size $6$). The genus of $X$ is:\n     $$g(X) = g(C_1) + g(C_2) + g(C_3) = 2 + 2 + 2 = 6.$$\n  4. The morphism $(f_1, f_2): X \\to C_1 \\times C_2 \\hookrightarrow A_1 \\times A_2$ has degree $1$ onto its image (an irreducible curve with $3$ nodes), giving an irreducible curve on $A_1 \\times A_2$ of geometric genus $6$ with both projections non-constant.\n- **Falsification Attempt:** Every calculation, Riemann–Hurwitz application, representation-theoretic decomposition of $JX$, and parameter count is exact and fully verified. Solution 3 completely survives falsification.\n\n---\n\n### Step 2: Calibrated Selection Gate\n\nSolution 3 is verified with complete certainty.\n\nCHOICE: 3\nCONFIDENCE: 5\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "3db30e84-73f8-4007-a24f-4487bbfa4f25",
+    "status": "SUCCESS",
+    "duration_seconds": 170.934428,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 2130,
+      "output_tokens": 22884,
+      "thinking_tokens": 21678,
+      "cache_read_tokens": 9313,
+      "total_tokens": 25014
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

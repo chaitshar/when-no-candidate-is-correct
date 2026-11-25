@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0526_20_w0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:52:46Z",
+  "duration_s": 48.633,
+  "input_tokens": 10958,
+  "output_tokens": 4377,
+  "thinking_tokens": 3602,
+  "text": "To determine whether the proposed solution is correct, let us analyze the continuous-time quantum walk on the unitary Cayley graph $X = \\text{Cay}(\\mathbb{Z}_{2p}, \\mathbb{Z}_{2p}^\\times)$.\n\n### 1. Eigenvalues of $X$\nThe eigenvalues of the unitary Cayley graph $\\text{Cay}(\\mathbb{Z}_n, \\mathbb{Z}_n^\\times)$ are given by the Ramanujan sums:\n$$c_n(j) = \\sum_{u \\in \\mathbb{Z}_n^\\times} e^{2\\pi i j u / n} = \\mu\\left(\\frac{n}{\\gcd(j, n)}\\right) \\frac{\\phi(n)}{\\phi(n/\\gcd(j,n))}$$\n\nFor $n = 2p$, where $p$ is an odd prime:\n- For $j = 0$: $\\lambda_0 = \\phi(2p) = p - 1$\n- For $j = p$: $\\lambda_p = -(p - 1)$\n- For even $j \\notin \\{0, p\\}$: $\\lambda_j = -1$\n- For odd $j \\notin \\{0, p\\}$: $\\lambda_j = 1$\n\n### 2. Transition Amplitudes and Fractional Revival\nThe transition amplitude from vertex $0$ to any vertex $y$ under $U(t) = e^{-iAt}$ is:\n$$U(t)_{0, y} = \\frac{1}{2p} \\sum_{j=0}^{2p-1} e^{-i \\lambda_j t} e^{-2\\pi i j y / 2p}$$\n\nSeparating the sum into $j=0$, $j=p$, even $j \\notin \\{0, p\\}$, and odd $j \\notin \\{0, p\\}$, we find that for any $y \\notin \\{0, p\\}$:\n$$2p\\, U(t)_{0, y} = \\left(e^{-i(p-1)t} - e^{it}\\right) + (-1)^y \\left(e^{i(p-1)t} - e^{-it}\\right)$$\n\nFor fractional revival to occur between $0$ and $p$, we require $U(t)_{0, y} = 0$ for all $y \\notin \\{0, p\\}$. Because there exist both even and odd values of $y \\notin \\{0, p\\}$, both terms must vanish independently:\n$$e^{-i(p-1)t} - e^{it} = 0 \\implies e^{ipt} = 1 \\implies pt \\in 2\\pi \\mathbb{Z}$$\n\nThe minimum strictly positive time is:\n$$t^* = \\frac{2\\pi}{p}$$\n\nAt this time $t^* = \\frac{2\\pi}{p}$:\n$$U(t^*)_{0, 0} = \\cos\\left(\\frac{2\\pi}{p}\\right), \\quad U(t^*)_{0, p} = i\\sin\\left(\\frac{2\\pi}{p}\\right)$$\nSince $p \\ge 3$, $\\sin(2\\pi/p) \\ne 0$, so fractional revival genuinely occurs at $t^* = \\frac{2\\pi}{p}$.\n\n### Conclusion\nThe proposed solution incorrectly claims $t^* = \\frac{2\\pi}{\\lambda_{\\max}} = \\frac{2\\pi}{p-1}$, which is not the correct fractional revival time.\n\nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "8c769104-c12a-4ecf-bb17-af6b81aba65e",
+    "status": "SUCCESS",
+    "duration_seconds": 39.874689000000004,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10958,
+      "output_tokens": 4377,
+      "thinking_tokens": 3602,
+      "cache_read_tokens": 0,
+      "total_tokens": 15335
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

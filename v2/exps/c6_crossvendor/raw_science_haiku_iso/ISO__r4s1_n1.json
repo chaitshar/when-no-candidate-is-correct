@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r4s1_n1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:22Z",
+  "duration_s": 5.767,
+  "input_tokens": 2,
+  "output_tokens": 848,
+  "thinking_tokens": 247,
+  "text": "The candidate does not match the study. The abstract supports a narrower claim: a PAA@TiO2 composite, made by cross-linking with N,N'-methylenebisacrylamide, adsorbs crystal violet, with a maximum of about 38.9 mg/g at 5 g/L dose, 500 mg/L CV, and pH 6.9. Monte Carlo and molecular dynamics simulations support the adsorption interaction.\n\nThe candidate adds several elements the abstract does not contain:\n\n- **Synthesis:** the study uses cross-linking, not a sol-gel and sonochemical hybrid. It reports no N or P doping, no Pluronic P123 templating, and no microsphere self-assembly.\n- **Structure:** the study reports TiO2 dispersed in the polymer matrix. It does not claim a hierarchical mesoporous structure, and it reports no carboxylic acid functionalization.\n- **Photocatalysis:** the study tests adsorption only. It makes no claim of photocatalytic degradation, visible-light response, or UV/visible irradiation cycling, and it reports no photocurrent measurements.\n- **Scope:** the study tests one dye at one set of conditions. It does not test pH 2–10, concentrations of 5–30 mg/L, ibuprofen, atrazine, emerging pollutants, or continuous-flow systems.\n- **Characterization:** the study uses XRD, FT-IR, and SEM-EDX. The candidate's UV-Vis and transient photocurrent analyses are not in the abstract.\n\nThe candidate is a broad research proposal built around photocatalysis and doping, whereas the study's main hypothesis is that the PAA@TiO2 composite is an effective CV adsorbent, supported by experiment and simulation.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 4489,
+    "stop_reason": "end_turn",
+    "session_id": "9ce1e1f3-f90b-49b6-857f-9d15b0f6f516",
+    "total_cost_usd": 0.0017206600000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5913,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 848,
+      "output_tokens_details": {
+        "thinking_tokens": 247
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5913,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 848,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5913,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5913
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 848,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5913,
+        "webSearchRequests": 0,
+        "costUSD": 0.0017206600000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 247,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5913,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 2370,
+    "type": "result",
+    "duration_ms": 4750,
+    "uuid": "b7e8b071-cc4d-421c-90a4-93267773e9e4",
+    "ttft_stream_ms": 1350,
+    "time_to_request_ms": 260,
+    "first_content_frame_ms": 1350,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

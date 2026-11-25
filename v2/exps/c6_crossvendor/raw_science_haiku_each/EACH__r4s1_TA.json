@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r4s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:30:51Z",
+  "duration_s": 8.986,
+  "input_tokens": 2,
+  "output_tokens": 1740,
+  "thinking_tokens": 829,
+  "text": "None of the four hypotheses matches the study. The abstract describes a cross-linked PAA@TiO2 adsorbent tested for adsorption only, and each candidate adds methods or results it does not report.\n\n**Hypothesis 1** specifies a sol-gel synthesis with 5 wt% TiO2, UV photocatalytic degradation at 365 nm, 300 mg/L CV, pH 5, and 60 minutes. The study uses cross-linking with N,N'-methylenebisacrylamide, not sol-gel. It reports no TiO2 loading in wt%, no UV exposure, and no photocatalysis. Its conditions are 500 mg/L CV, pH 6.9, and 5 g/L dose. It also reports no kinetic or isotherm fitting. The hypothesis is rejected.\n\n**Hypothesis 2** is the most elaborate: sol-gel plus sonochemical assembly, N and P doping, Pluronic P123 templating, a hierarchical mesoporous structure, carboxylic acid groups, alternating UV and visible cycles, pH 2–10, and tests on ibuprofen and atrazine. The abstract mentions none of these. Its only overlap is the general use of XRD, FT-IR, and SEM characterization. The hypothesis is rejected.\n\n**Hypothesis 3** specifies a 70 °C, 4-hour fusion at a 1:2 ratio, a surface area above 400 m²/g, and over 99% removal within 10 minutes. The abstract reports neither a surface area nor a fusion step, and it contradicts the removal claim. The reported maximum uptake of 38.9 mg/g at 5 g/L from 500 mg/L CV implies roughly 195 mg/L removed, about 39% of the dye, after the study's contact time. The study's condition set (500 mg/L, 5 g/L, pH 6.9) also falls outside the hypothesis's ranges. The hypothesis is rejected.\n\n**Hypothesis 4** depends on electrospinning at 15 kV, antibacterial tests against E. coli and S. aureus, and 180-minute UV photocatalysis. The abstract mentions none of these. Its nanofibrous structure and antibacterial activity are absent, and the study reports adsorption only. The hypothesis is rejected.\n\nThe abstract's only quantitative results are the 38.9 mg/g maximum uptake under the stated conditions, the pH 6.9 optimum, and the MC/MD adsorption energy. None of the candidates predicts these, so none is supported as the main hypothesis.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 7735,
+    "stop_reason": "end_turn",
+    "session_id": "522ec750-126d-43a1-a0e9-80e55713f6c3",
+    "total_cost_usd": 0.00239606,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7060,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1740,
+      "output_tokens_details": {
+        "thinking_tokens": 829
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7060,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1740,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7060,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7060
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1740,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7060,
+        "webSearchRequests": 0,
+        "costUSD": 0.00239606,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 829,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7060,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4251,
+    "type": "result",
+    "duration_ms": 7802,
+    "uuid": "1294a75f-a430-42ef-be52-9dfa6ecb4fc6",
+    "ttft_stream_ms": 1034,
+    "time_to_request_ms": 65,
+    "first_content_frame_ms": 1034,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

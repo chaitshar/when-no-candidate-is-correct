@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0226_24_TA__rep2",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:46:29Z",
+  "duration_s": 33.052,
+  "input_tokens": 2,
+  "output_tokens": 7060,
+  "thinking_tokens": 6270,
+  "text": "**Solution 1 is correct.** Its answer, $2n-2$, checks out.\n\n**Upper bound.** A nonempty code gives a connected Stanley–Reisner complex $\\Delta$. Each $\\{x_i,y_i\\}$ is a face, because the consistent part of that set is empty and so is realized by any codeword. For $i\\ne j$, any codeword $c$ yields an edge between the blocks $\\{x_i,y_i\\}$ and $\\{x_j,y_j\\}$. By Hochster's formula, $\\beta_{2n-1}$ would need $\\widetilde H_0(\\Delta)\\neq 0$ (at $|\\sigma|=2n$) or $\\widetilde H_{-1}(\\Delta_\\sigma)\\neq 0$ (at $|\\sigma|=2n-1$). Both vanish, so $\\operatorname{pd}\\le 2n-2$.\n\n**Attainment.** For $\\mathcal C=\\{0^n,1^n\\}$, the polarized ideal is $\\langle x_iy_j : i\\ne j\\rangle$. Its complex is the union of the full simplex on $\\{x_i\\}$, the full simplex on $\\{y_i\\}$, and the $n$ edges $\\{x_i,y_i\\}$. The two simplices are contractible and meet in $n$ disjoint edges, so Mayer–Vietoris gives $\\widetilde H_1(\\Delta)\\cong k^{n-1}$. Hochster's formula then gives $\\beta_{2n-2}\\neq 0$. For $n=2$ this matches the direct computation: $(x_1y_2,\\,x_2y_1)$ has $\\operatorname{pd}=2$.\n\n**Why the others fail.**\n- **Solution 2** uses the empty code. Its neural ideal is the unit ideal, not a proper ideal, so $\\mathfrak m$ is not $\\mathcal P(J_\\emptyset)$. Its argument also does not apply to any valid code.\n- **Solution 3** claims $\\operatorname{pd}\\le n$. This is refuted by the complementary-pair code above: for $n=3$ it gives $\\operatorname{pd}=4>3$. Its single-codeword claim is also off, since $\\{v\\}$ gives $n$ variables only as a regular sequence, which yields $n$ but not the maximum.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 32171,
+    "stop_reason": "end_turn",
+    "session_id": "4f468066-fed7-46e0-b020-7ccebbca9c72",
+    "total_cost_usd": 0.0037321100000000003,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 20191,
+      "output_tokens": 7060,
+      "output_tokens_details": {
+        "thinking_tokens": 6270
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 7060,
+          "cache_read_input_tokens": 20191,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 7060,
+        "cacheReadInputTokens": 20191,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.0037321100000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6270,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 0,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 29796,
+    "type": "result",
+    "duration_ms": 32422,
+    "uuid": "d945f14b-b21c-4bae-9fe3-f8b0d4acc050",
+    "ttft_stream_ms": 1022,
+    "time_to_request_ms": 247,
+    "first_content_frame_ms": 1022,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

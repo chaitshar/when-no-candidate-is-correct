@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0226_24_TP__rep1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:47:30Z",
+  "duration_s": 79.286,
+  "input_tokens": 2,
+  "output_tokens": 17139,
+  "thinking_tokens": 16447,
+  "text": "**Solution 3 is wrong.** Its claimed bound pd ≤ n fails. The code {0ⁿ, 1ⁿ} gives a polarized ideal with projective dimension 2n−2 (for quotient) or 2n−3 (for the ideal), which exceeds n for n ≥ 4 on the ideal convention and for n ≥ 3 on the quotient convention. Its single-codeword computation is correct but is not the maximum.\n\n**Solutions 1 and 2 agree on the mathematics.** Both use the same complex Δ for C = {0ⁿ, 1ⁿ}: two simplices {x₁,…,xₙ} and {y₁,…,yₙ} joined by the n diagonal edges {xᵢ, yᵢ}. Contracting the two simplices gives n parallel edges, a wedge of n−1 circles, so H̃₁ = kⁿ⁻¹. Hochster's formula then gives pd(S/P) = 2n−2 for this code. I checked the n = 3 case independently: P is the edge ideal of a 6-cycle, and pd(S/I(C₆)) = 4 = 2n−2.\n\nThe upper bound also holds. Δ is connected for any nonempty code, so the full-vertex term contributes only at homological degree j ≥ 1. The only other large contributions come from variable-generated restrictions, which are at most n. So pd(S/P) ≤ 2n−2 for all codes.\n\n**The disagreement is only about convention.**\n- If pd(P(J_C)) means pd of the ideal itself, the answer is pd(S/P) − 1 = 2n−3 (Solution 1).\n- If it means pd of the quotient R/P(J_C), the answer is 2n−2 (Solution 2).\n\nThe neural-ideal literature usually works with the quotient R/J_C, and Solution 2's 2n−2 is the cleaner statement. I am not certain which convention the source uses, so this choice carries real uncertainty. I lean toward the quotient reading and therefore Solution 2.\n\nCHOICE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 76642,
+    "stop_reason": "end_turn",
+    "session_id": "6813e8ba-27c2-4958-ae32-efcd2e28e100",
+    "total_cost_usd": 0.008781420000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 21172,
+      "output_tokens": 17139,
+      "output_tokens_details": {
+        "thinking_tokens": 16447
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 17139,
+          "cache_read_input_tokens": 21172,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 17139,
+        "cacheReadInputTokens": 21172,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.008781420000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 16447,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 0,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 75676,
+    "type": "result",
+    "duration_ms": 78540,
+    "uuid": "1b59189f-97ae-4fc2-9c9b-06697c16b637",
+    "ttft_stream_ms": 2625,
+    "time_to_request_ms": 1897,
+    "first_content_frame_ms": 2626,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r0s0_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:27:31Z",
+  "duration_s": 5.246,
+  "input_tokens": 2,
+  "output_tokens": 705,
+  "thinking_tokens": 149,
+  "text": "The candidate is not the study's hypothesis. The abstract describes a review article, not a hypothesis-testing study. It states an aim: to overview findings on dust formation and evolution at z > 4 and the theoretical efforts to explain them. It then lists the topics covered: dust production by supernovae, AGB stars, Red Super Giants, Wolf-Rayet stars, classical novae, type Ia supernovae, and quasar winds, plus dust reprocessing in the ISM through destruction and growth.\n\nThe candidate makes claims the abstract does not contain:\n\n- **Spatial separation of dust emission** is not discussed. The abstract mentions no spatial mapping of dust versus UV emission.\n- **A dual-mode star formation model** (obscured versus unobscured) is not proposed. The abstract says dust-obscured star formation dominated cosmic star formation since z ≈ 4, but it does not frame this as a two-mode model.\n- **Turbulent gas regions, high density and low temperature conditions, and turbulent mixing** as dust-production drivers are not mentioned.\n- **Molecular gas as a condition for dust formation** is not mentioned.\n\nThe abstract also says the review's focus is on theoretical models of dust sources and reprocessing, with observations discussed only for comparison. It does not test or advance the candidate's mechanism.\n\nThe candidate may loosely overlap with the review's general theme, which is that dust is obscuring star formation at high redshift. But the specific dual-mode model, the spatial-separation argument, and the turbulent-mixing mechanism are absent from the evidence, so the candidate is not the main hypothesis the study supports.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 3871,
+    "stop_reason": "end_turn",
+    "session_id": "f447d0de-ac17-4bc9-916f-8f8266359513",
+    "total_cost_usd": 0.00157576,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5546,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 705,
+      "output_tokens_details": {
+        "thinking_tokens": 149
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5546,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 705,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5546,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5546
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 705,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5546,
+        "webSearchRequests": 0,
+        "costUSD": 0.00157576,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 149,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5546,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1605,
+    "type": "result",
+    "duration_ms": 4078,
+    "uuid": "b35db2c0-7b53-4de5-bae3-56a23bde8244",
+    "ttft_stream_ms": 1002,
+    "time_to_request_ms": 207,
+    "first_content_frame_ms": 1002,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

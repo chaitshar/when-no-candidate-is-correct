@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-1225_9_w2",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T11:20:22Z",
+  "duration_s": 130.922,
+  "input_tokens": 10065,
+  "output_tokens": 13274,
+  "thinking_tokens": 12816,
+  "text": "The proposed solution is incorrect.\n\nTo see why, consider the claim that $v(4, \\sqrt{2}) = 10$:\n\nWe can construct a connected 4-regular graph on $14$ vertices with second largest eigenvalue $\\lambda_2 = \\sqrt{2}$ from the incidence graph of the unique symmetric $2\\text{-}(7, 4, 2)$ design (the complement of the Fano plane):\n- Let $B$ be the $7 \\times 7$ incidence matrix of the $2\\text{-}(7, 4, 2)$ design. Every row and column has degree $k = 4$, and any two distinct blocks intersect in $\\lambda = 2$ points.\n- Thus, $B B^T = (k - \\lambda)I + \\lambda J = 2I + 2J$.\n- The all-ones matrix $J$ of order 7 has eigenvalues $7$ (multiplicity 1) and $0$ (multiplicity 6). Consequently, $B B^T$ has eigenvalues $2 + 2(7) = 16 = 4^2$ (multiplicity 1) and $2 + 2(0) = 2$ (multiplicity 6).\n- The bipartite incidence graph has adjacency matrix $A = \\begin{pmatrix} 0 & B \\\\ B^T & 0 \\end{pmatrix}$ with $14$ vertices.\n- The eigenvalues of $A$ are $\\pm 4$ (multiplicity 1 each) and $\\pm \\sqrt{2}$ (multiplicity 6 each).\n\nSince the eigenvalue $4$ has multiplicity 1, this graph is connected, 4-regular, has 14 vertices, and its second largest eigenvalue is precisely $\\lambda_2 = \\sqrt{2} \\le \\sqrt{2}$. \n\nTherefore, $v(4, \\sqrt{2}) \\ge 14 > 10$, which disproves the value $v(4, \\sqrt{2}) = 10$ given in the proposed solution.\n\nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "98f45002-96b3-483b-b642-06dc6f807af2",
+    "status": "SUCCESS",
+    "duration_seconds": 120.538501,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10065,
+      "output_tokens": 13274,
+      "thinking_tokens": 12816,
+      "cache_read_tokens": 0,
+      "total_tokens": 23339
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

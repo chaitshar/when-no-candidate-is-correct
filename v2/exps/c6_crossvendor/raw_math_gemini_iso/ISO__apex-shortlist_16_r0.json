@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__apex-shortlist_16_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T09:30:53Z",
+  "duration_s": 78.255,
+  "input_tokens": 10779,
+  "output_tokens": 8143,
+  "thinking_tokens": 7490,
+  "text": "To determine whether the proposed solution is correct, we review the key steps:\n\n1. **Polynomial Divisibility**: Since $P(n) \\mid Q(n)^2 + aQ(n) + 1$ for all positive integers $n$, the remainder upon polynomial division must vanish at infinitely many integers, implying $P(x) \\mid Q(x)^2 + aQ(x) + 1$ in $\\mathbb{Z}[x]$, and similarly $Q(x) \\mid P(x)^2 + bP(x) + 1$.\n2. **Degree Analysis**: For $|a| \\geq 3$, $a^2 - 4$ is never a perfect square, so $\\mathbb{Q}(\\sqrt{a^2-4})/\\mathbb{Q}$ is a quadratic field extension. Any root $\\xi$ of an irreducible factor of $P$ satisfies $\\sqrt{a^2-4} \\in \\mathbb{Q}(\\xi)$, forcing $2 \\mid [\\mathbb{Q}(\\xi):\\mathbb{Q}]$. Thus, every irreducible factor of $P$ (and $Q$) has even degree, so $\\deg P$ must be an even positive integer. The minimum degree is 2, and all even degrees $2k \\geq 2$ are achievable via composition with monic polynomials $\\phi(x) = x^k$. The 10 smallest values of $|\\deg P|$ are $2, 4, \\dots, 20$, giving:\n   $$S_2 = 2 \\sum_{k=1}^{10} k = 110.$$\n3. **Values of $|a+b|$**: With $D = Q - P$, we have $P \\mid D^2 + aD + 1$ and $Q \\mid D^2 - bD + 1$. Since $P$ and $Q$ are monic of the same degree and non-identical, this forces $-(a+b) = c^2$, where $c \\geq 1$ is the leading coefficient of $D$. Hence $|a+b| = c^2$ must be a non-zero perfect square. Setting $a = c^2 + 2$ and $b = -2c^2 - 2$ gives $|a| \\geq 3, |b| \\geq 3$, and yields valid monic integer polynomials $P(x) = x^2 + cx - 1$ and $Q(x) = x^2 + 2cx - 2$ for every positive integer $c$. The 10 smallest values of $|a+b|$ are $1^2, 2^2, \\dots, 10^2$, giving:\n   $$S_1 = \\sum_{k=1}^{10} k^2 = 385.$$\n4. **Sum**: $S_1 + S_2 = 385 + 110 = 495$.\n\nThe reasoning and final answer are correct.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "f8477eb6-c0d6-443a-8d78-0f2d9847eba5",
+    "status": "SUCCESS",
+    "duration_seconds": 68.924464,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10779,
+      "output_tokens": 8143,
+      "thinking_tokens": 7490,
+      "cache_read_tokens": 0,
+      "total_tokens": 18922
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

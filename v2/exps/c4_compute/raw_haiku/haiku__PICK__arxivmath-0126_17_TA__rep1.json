@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0126_17_TA__rep1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:42:21Z",
+  "duration_s": 7.16,
+  "input_tokens": 2,
+  "output_tokens": 1107,
+  "thinking_tokens": 704,
+  "text": "None of the three solutions gives the threshold I believe is correct, so my answer is NONE.\n\nI'm recalling this from the literature rather than checking it. I believe the sharp result for proper conflict-free (degree+2)-choosability is **mad(G) < 8/3**, with C5 as the exception. None of the solutions reaches 8/3.\n\n- **Solution 1 (18/5):** The discharging is asserted rather than shown. It also claims that every 2-vertex has only 4⁺-neighbours, which the reducibility arguments do not establish. Its tightness argument is only a sketch.\n- **Solution 2 (4):** Its reducible-configuration claims are heuristic, and its tightness example is not constructed. A bound of 4 would also be far above the sharp value I recall.\n- **Solution 3 (36/11):** Its own discharging leaves degree-3 vertices short (charge 3 < 36/11), and it defers the fix to an unspecified \"refined analysis.\" Its tightness example, 8 vertices of degree 3 and 3 of degree 4, is not verified and does not match any sharp construction I know.\n\nEach argument stops at unverified claims, so none can be credited as correct.\n\nCHOICE: NONE",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6047,
+    "stop_reason": "end_turn",
+    "session_id": "ec913ddd-6a19-4ba8-842e-6e1ca33ab6a1",
+    "total_cost_usd": 0.00076088,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 20718,
+      "output_tokens": 1107,
+      "output_tokens_details": {
+        "thinking_tokens": 704
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1107,
+          "cache_read_input_tokens": 20718,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1107,
+        "cacheReadInputTokens": 20718,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.00076088,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 704,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 0,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4369,
+    "type": "result",
+    "duration_ms": 6235,
+    "uuid": "66a7debc-c7be-4f19-b3ef-8df644a837b2",
+    "ttft_stream_ms": 1011,
+    "time_to_request_ms": 186,
+    "first_content_frame_ms": 1011,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

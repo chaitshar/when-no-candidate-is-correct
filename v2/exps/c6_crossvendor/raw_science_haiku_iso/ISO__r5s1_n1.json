@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r5s1_n1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:39Z",
+  "duration_s": 7.641,
+  "input_tokens": 2,
+  "output_tokens": 1280,
+  "thinking_tokens": 629,
+  "text": "The candidate does not match this study's central hypothesis, so I reject it.\n\nThe abstract's main claim is that magnetite-(apatite) deposits form by crystallization of iron-rich ultrabasic melts. Those melts are generated when silicate melts interact with oxidized P-F-SO4-bearing sedimentary rocks. The deposit then forms by liquid immiscibility and gravity separation of massive magnetite, with a silicate \"slag\" cap above it. The abstract also links high fO2, low-Ti magnetite, and the alteration aureole to that magmatic sequence. It states that these systems are more akin to carbonatite and ultramafic systems than to felsic magmatic-hydrothermal ones.\n\nThe candidate differs in several ways:\n\n- **Mechanism:** It describes a \"multi-stage\" interplay of melts, hydrothermal fluids, and pre-existing assemblages. It does not name melt immiscibility, neutral buoyancy, or the separation of an iron-rich melt from a silicate magma, which are the study's core mechanisms.\n- **Role of fluids:** In the study, magmatic-hydrothermal fluids are a consequence of massive magnetite crystallization (high fluid-phase pressures), not a co-equal driver.\n- **Sedimentary assimilation:** The study's key source of iron-rich melt is assimilation of oxidized P-F-SO4 sedimentary rocks. The candidate never mentions it.\n- **Unsupported elements:** Deformation and metamorphism, δ26Mg, and Ce and V ratios do not appear in the abstract as study findings.\n- **Future tense:** The final sentence (\"will be employed to quantitatively assess…\") is a proposed analytical plan, not a hypothesis that the evidence supports.\n\nThe candidate is a generic, partly off-target description of ore-forming complexity, and the abstract's evidence does not support it as the study's hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6660,
+    "stop_reason": "end_turn",
+    "session_id": "f429c1a6-cbbd-4db9-9190-0a44a173001c",
+    "total_cost_usd": 0.00193646,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5912,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1280,
+      "output_tokens_details": {
+        "thinking_tokens": 629
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5912,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1280,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5912,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5912
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1280,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5912,
+        "webSearchRequests": 0,
+        "costUSD": 0.00193646,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 629,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5912,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4162,
+    "type": "result",
+    "duration_ms": 6951,
+    "uuid": "16bd30a7-14c3-4e3b-896e-258e3307e07b",
+    "ttft_stream_ms": 1453,
+    "time_to_request_ms": 289,
+    "first_content_frame_ms": 1453,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

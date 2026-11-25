@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0426_26_w0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T10:45:41Z",
+  "duration_s": 100.648,
+  "input_tokens": 10101,
+  "output_tokens": 10556,
+  "thinking_tokens": 9989,
+  "text": "To determine whether the proposed solution is correct, we verify each step:\n\n1. **Ansatz and Exponent Matching:**\n   For $u(x) = c\\,x_n^\\beta$, the fractional Laplacian scales as $(-\\Delta)^s u \\propto x_n^{\\beta-2s}$, while the right-hand side scales as $x_n^\\alpha u^{-\\gamma} \\propto x_n^{\\alpha-\\gamma\\beta}$. Matching exponents gives:\n   $$\\beta - 2s = \\alpha - \\gamma\\beta \\implies \\beta = \\frac{\\alpha+2s}{1+\\gamma}.$$\n\n2. **Range of $\\beta$ for Positive Multiplier $\\lambda(s,\\beta)$:**\n   The action of the fractional Laplacian on the profile $(x_n^+)^\\beta$ satisfies\n   $$(-\\Delta)^s (x_n^+)^\\beta = \\lambda(s,\\beta)\\,x_n^{\\beta-2s}\\quad (x_n>0).$$\n   The multiplier $\\lambda(s,\\beta)$ vanishes at the two $s$-harmonic boundary profiles:\n   - $\\beta = s$, since $x_n^s$ is $s$-harmonic in the half-space ($\\lambda(s,s)=0$).\n   - $\\beta = s-1$, which follows from differentiating the profile $x_n^s$ ($\\lambda(s,s-1)=0$).\n   \n   Between these two roots, $\\lambda(s,\\beta) > 0$ strictly on the interval $\\beta \\in (s-1, s)$. This allows choosing a positive constant $c = \\lambda(s,\\beta)^{-1/(1+\\gamma)} > 0$.\n\n3. **Determining $A$ and $B$:**\n   Solving $s-1 < \\frac{\\alpha+2s}{1+\\gamma} < s$ for $\\alpha$:\n   $$A = (s-1)(1+\\gamma) - 2s,$$\n   $$B = s(1+\\gamma) - 2s = s(\\gamma-1).$$\n\n4. **Computing $A+B$:**\n   $$A+B = \\big[(s-1)(1+\\gamma) - 2s\\big] + \\big[s(1+\\gamma) - 2s\\big] = (2s-1)(1+\\gamma) - 4s = 2s\\gamma - \\gamma - 2s - 1.$$\n   This matches the provided final answer: `(-2*s + (2*(gamma*s) - gamma)) - 1`.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "c8680802-800d-493a-88a8-5e86a251ec44",
+    "status": "SUCCESS",
+    "duration_seconds": 91.734776,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10101,
+      "output_tokens": 10556,
+      "thinking_tokens": 9989,
+      "cache_read_tokens": 0,
+      "total_tokens": 20657
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

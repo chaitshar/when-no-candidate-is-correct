@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__arxivmath-1225_15_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T17:33:18Z",
+  "duration_s": 163.594,
+  "input_tokens": 12873,
+  "output_tokens": 18755,
+  "thinking_tokens": 17584,
+  "text": "To determine the correctness of each solution, let us analyze the optimization problem and the order-$r$ Putinar-type SOS relaxation.\n\n### Problem Analysis\nWe wish to compute:\n\\[\n\\rho_r = \\sup \\left\\{ \\gamma \\in \\mathbb{R} : f(x) - \\gamma = \\sigma_0(x) + \\sigma_1(x) g(x), \\; \\sigma_0, \\sigma_1 \\in \\Sigma[x], \\; \\deg(\\sigma_0) \\le 2r, \\; \\deg(\\sigma_1 g) \\le 2r \\right\\}\n\\]\nwhere $f(x) = 1-x^2$ and $g(x) = (1-x^2)^3$.\n\nLet $u = 1-x^2 \\le 1$. Exploiting the even symmetry of $f$ and $g$, any SOS decomposition can be symmetrized such that $\\sigma_0(x) = P(1-x^2)$ and $\\sigma_1(x) = Q(1-x^2)$. Then:\n- $\\sigma_0 \\in \\Sigma[x]$ of degree $\\le 2r \\iff P(u) \\ge 0$ for all $u \\le 1$ with $\\deg(P) \\le r$.\n- $\\sigma_1 \\in \\Sigma[x]$ of degree $\\le 2r-6 \\iff Q(u) \\ge 0$ for all $u \\le 1$ with $\\deg(Q) \\le r-3$.\n- The identity becomes $u - \\gamma = P(u) + Q(u)u^3$.\n\nMatching Taylor expansions around $u=0$ (corresponding to $x = \\pm 1$), we have:\n\\[\nP(0) = -\\gamma =: \\delta, \\quad P'(0) = 1, \\quad P''(0) = 0.\n\\]\n\n### Testing Specific Values of $r$:\n- **For $r = 3$:**\n  $\\deg(Q) \\le 0 \\implies Q(u) = c \\ge 0$.\n  $P(u) = \\frac{4}{3}(1-u)(u + \\frac{1}{2})^2 \\ge 0$ on $(-\\infty, 1]$ and $Q(u) = \\frac{4}{3}$ achieves:\n  \\[\n  P(u) + Q(u)u^3 = u + \\frac{1}{3} \\implies \\rho_3 = -\\frac{1}{3}.\n  \\]\n- **For $r = 4$:**\n  Consider $P(u) = 8\\left(u^2 - \\frac{u}{2} - \\frac{1}{8}\\right)^2$ and $Q(u) = 8(1-u)$:\n  - $\\sigma_0(x) = P(1-x^2) = 8\\left((1-x^2)^2 - \\frac{1-x^2}{2} - \\frac{1}{8}\\right)^2 \\in \\Sigma[x]$ with $\\deg(\\sigma_0) = 8 \\le 2r$.\n  - $\\sigma_1(x) = Q(1-x^2) = 8x^2 = (\\sqrt{8}x)^2 \\in \\Sigma[x]$ with $\\deg(\\sigma_1 g) = 2 + 6 = 8 \\le 2r$.\n  - $P(u) + Q(u)u^3 = 8\\left(u^4 - u^3 + \\frac{u}{8} + \\frac{1}{64}\\right) + 8u^3(1-u) = u + \\frac{1}{8}$.\n  \n  This explicit feasible SOS certificate achieves $\\gamma = -\\frac{1}{8}$. Using the moment dual, the maximum feasible pseudo-moment $y_2$ is bounded by $1 + \\frac{1}{8} = \\frac{9}{8}$, proving $\\rho_4 = -\\frac{1}{8}$ exactly.\n\n### Evaluation of the Solutions:\n- **Solution 1:** Claims $\\rho_4 = \\frac{1-\\sqrt{3}}{4} \\approx -0.1830$. Since $-\\frac{1}{8} = -0.125 > -0.1830$, Solution 1 severely underestimates the supremum. (Solution 1 incorrectly assumed an $(r-2)$-fold root at $u=1$).\n- **Solution 2:** Claims $\\rho_r = -\\frac{1}{r}$, which gives $\\rho_4 = -\\frac{1}{4} = -0.25$. Since $-\\frac{1}{8} > -\\frac{1}{4}$, this value is suboptimal and incorrect.\n- **Solution 3:** Correctly finds $\\rho_3 = -\\frac{1}{3}$, $\\rho_4 = -\\frac{1}{8}$, $\\rho_5 = -\\frac{1}{15}$, and the general formula $\\rho_r = -\\frac{1}{r(r-2)}$.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "a0db60df-4637-4dc0-b1a6-adc2f74b4dcc",
+    "status": "SUCCESS",
+    "duration_seconds": 155.203116,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12873,
+      "output_tokens": 18755,
+      "thinking_tokens": 17584,
+      "cache_read_tokens": 0,
+      "total_tokens": 31628
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

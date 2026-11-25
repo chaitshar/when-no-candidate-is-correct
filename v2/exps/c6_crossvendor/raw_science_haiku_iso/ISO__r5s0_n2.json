@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r5s0_n2",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:32Z",
+  "duration_s": 8.229,
+  "input_tokens": 2,
+  "output_tokens": 1487,
+  "thinking_tokens": 639,
+  "text": "**Verdict: REJECT.** The candidate shares some vocabulary with the study, including iron-rich melts, immiscibility, and P, F, and S, but its specific mechanism and conditions are not what the abstract supports.\n\n**Where the candidate overlaps with the study:**\n- Iron-rich melts are central to the genesis.\n- Melt immiscibility during fractional crystallization separates massive magnetite ore from an overlying iron-poor \"slag\" cap.\n- P-, F-, and S-bearing components are involved, via oxidized P-F-SO4 sedimentary rocks.\n\n**Where it departs from the evidence:**\n- **Mechanism.** The study's hypothesis is that silicate melts interacting with P-F-SO4 sediments and assimilating crust generate Fe-rich ultrabasic melts. Those melts crystallize, and immiscibility separates magnetite ore from the cap. The candidate instead proposes a sequence of immiscible liquids: silica-rich, FeS, and Fe-poor silicate. The abstract describes no silica-rich liquid and no FeS liquid.\n- **Sulfur.** The study states that high oxygen fugacity inhibits significant sulfide mineralization. An FeS liquid segregating as a key stage is hard to reconcile with that. The candidate's sulfide-liquid step contradicts the study's emphasis on oxidized, sulfide-poor systems.\n- **Conditions and numbers.** The candidate's T ≈ 1000 °C, P ≈ 5 kbar, 5 wt% H2O, and anion concentration ranges (P 0.4–0.6, S 0.1–0.3, F 0.05–0.15, Cl 0.1–0.3 wt%) do not appear in the abstract. The study says the mineralogy and morphology of the iron-depleted cap depend on emplacement depth and magma composition, but it gives no such numbers.\n- **Missing elements.** The study's central features (assimilation-driven separation of Fe-rich, Si-Al-poor melts, low-Ti magnetite, high fluid-phase pressures driving alkali-calcic-iron alteration, and the carbonatite-like affinity) are absent from the candidate.\n\nThe candidate is a plausible-sounding elaboration of immiscibility, but it introduces a mechanism and quantitative conditions that the evidence neither states nor supports, and it conflicts with the study's oxidized, low-sulfide framing. It is therefore not the study's hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 7117,
+    "stop_reason": "end_turn",
+    "session_id": "88e65175-b1c3-49ae-9cbc-302f515d1e11",
+    "total_cost_usd": 0.00204956,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5960,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1487,
+      "output_tokens_details": {
+        "thinking_tokens": 639
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5960,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1487,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5960,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5960
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1487,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5960,
+        "webSearchRequests": 0,
+        "costUSD": 0.00204956,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 639,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5960,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3759,
+    "type": "result",
+    "duration_ms": 7325,
+    "uuid": "0d6467fb-9147-4cb8-8f2b-7a46dc867430",
+    "ttft_stream_ms": 1111,
+    "time_to_request_ms": 206,
+    "first_content_frame_ms": 1111,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

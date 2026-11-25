@@ -1,0 +1,29 @@
+{
+  "job_id": "PICK__arxivmath-0426_26_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T09:00:31Z",
+  "duration_s": 278.792,
+  "input_tokens": 25563,
+  "output_tokens": 27701,
+  "thinking_tokens": 27114,
+  "text": "To determine which solution has the correct final answer, we analyze the problem and the proposed solutions:\n\n1. **Exponents and Scaling:**  \n   Seeking one-dimensional profiles $u(x) = c\\,(x_n)_+^\\beta$, the equation $(-\\Delta)^s u = x_n^\\alpha u^{-\\gamma}$ in $\\{x_n > 0\\}$ requires matching the homogeneity degrees:\n   $$\\beta - 2s = \\alpha - \\gamma\\beta \\implies \\beta = \\frac{\\alpha+2s}{1+\\gamma}.$$\n\n2. **Positivity of the Fractional Laplacian Constant:**  \n   For the half-space exterior Dirichlet problem ($u \\equiv 0$ on $\\{x_n \\le 0\\}$), the fractional Laplacian of the profile is given by\n   $$(-\\Delta)^s (x_n)_+^\\beta = \\Lambda_s(\\beta)\\,x_n^{\\beta-2s} \\quad (x_n > 0).$$\n   The multiplier $\\Lambda_s(\\beta)$ vanishes at the two $s$-harmonic profiles $\\beta = s$ and $\\beta = s-1$. A sign analysis confirms that:\n   $$\\Lambda_s(\\beta) > 0 \\iff \\beta \\in (s-1, s).$$\n   (For example, at $s = \\frac{1}{2}$, $\\Lambda_{1/2}(\\beta) \\propto \\beta \\cot(\\pi\\beta)$, which is strictly positive on $(-\\frac{1}{2}, \\frac{1}{2}) = (s-1, s)$.)\n\n   Hence, positive solutions exist if and only if:\n   $$s-1 < \\frac{\\alpha+2s}{1+\\gamma} < s,$$\n   which gives the interval $(A, B)$ with:\n   $$A = (s-1)(1+\\gamma) - 2s,$$\n   $$B = s(1+\\gamma) - 2s = s(\\gamma-1).$$\n\n3. **Sum $A+B$:**\n   $$A+B = \\big[(s-1)(1+\\gamma) - 2s\\big] + \\big[s(1+\\gamma) - 2s\\big] = (2s-1)(1+\\gamma) - 4s = 2s\\gamma - 2s - \\gamma - 1.$$\n\nSolution 3 incorrectly restricts $\\beta \\in (0, s)$, missing the nonlocal solutions for $\\beta \\in (s-1, 0]$. Both Solution 1 and Solution 2 correctly derive this interval and reach the correct final answer $2s\\gamma - 2s - \\gamma - 1$.\n\nCHOICE: 1\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "661e14c5-1505-4191-a099-9e25ecd82a27",
+    "status": "SUCCESS",
+    "duration_seconds": 716.493844,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 25563,
+      "output_tokens": 27701,
+      "thinking_tokens": 27114,
+      "cache_read_tokens": 9255,
+      "total_tokens": 53264
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

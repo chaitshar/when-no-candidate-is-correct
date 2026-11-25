@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__apex-shortlist_7__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T16:52:44Z",
+  "duration_s": 415.727,
+  "input_tokens": 9906,
+  "output_tokens": 58451,
+  "thinking_tokens": 57311,
+  "text": "To solve this problem, we analyze the behavior of the MEX game on a graph $G$ with $n$ vertices.\n\nOn day $1$, each vertex $v$ is assigned an integer $x_v(1) \\ge 0$. On each subsequent day $i+1$,\n$$x_v(i+1) = \\operatorname{mex}(\\{x_u(i) : u \\in N(v)\\})$$\nThe game stops on day $k$ if $x_v(k) = x_v(k-1)$ for all $v \\in V$, and day $k$ is the earliest such day. We seek $D(n)$, the maximum day on which the game can stop.\n\n### Small Values of $n$:\n1. **$n = 1$:** \n   - A single vertex has an empty neighborhood $N(v) = \\emptyset$. \n   - On day $2$, $x_v(2) = \\operatorname{mex}(\\emptyset) = 0$. \n   - On day $3$, $x_v(3) = \\operatorname{mex}(\\emptyset) = 0$.\n   - If $x_v(1) > 0$, the numbers on days $1, 2, 3$ are $x_v(1), 0, 0$. Day $3$ is the first day matching the previous day, so the game stops on day $3$. Thus, $D(1) = 3$.\n\n2. **$n = 2$:** \n   - If the two vertices are disconnected, both become $0$ on day $2$ and stay $0$ on day $3$, stopping on day $3$.\n   - If connected, $x_A(t+1) = \\operatorname{mex}(x_B(t)) \\in \\{0, 1\\}$ and $x_B(t+1) = \\operatorname{mex}(x_A(t)) \\in \\{0, 1\\}$ for all $t \\ge 1$. For any initial values, the state on day $2$ is in $\\{0, 1\\}^2$. It either alternates with period $2$ (never stopping) or is already at a fixed point ($(0, 1)$ or $(1, 0)$), which then repeats on day $3$. Thus, it can never stop on day $4$ or later, giving $D(2) = 3$.\n\n3. **$n = 3$:** \n   - For a path $P_3$ with vertices $A-B-C$, with initial values $(x_A, x_B, x_C) = (0, 1, 1)$:\n     - Day 1: $(0, 1, 1)$\n     - Day 2: $(0, 2, 0)$\n     - Day 3: $(0, 1, 0)$\n     - Day 4: $(0, 1, 0)$\n   - The game stops on day $4$. A full case check shows that no graph on 3 vertices can stop on day $5$ or later, so $D(3) = 4$.\n\n4. **$n = 4$:** \n   - Checking all 6 connected graphs on 4 vertices confirms that the maximum stabilization day is $D(4) = 4$.\n\n### General Formula:\nIn general, information propagates at a rate of at most one edge per day, and stabilization to a fixed point across an $n$-vertex graph takes at most $\\lfloor \\frac{n-1}{2} \\rfloor$ steps of transient updates before reaching the fixed point, leading to:\n$$D(n) = \\left\\lceil \\frac{n}{2} \\right\\rceil + 2$$\n\nFor each pair of integers $(2k-1, 2k)$:\n$$D(2k-1) = D(2k) = k + 2$$\n\n### Computing the Sum for $n = 1$ to $2025$:\nFor $k = 1, 2, \\dots, 1012$, the pairs $(2k-1, 2k)$ cover $n = 1$ through $2024$:\n$$\\sum_{k=1}^{1012} [D(2k-1) + D(2k)] = \\sum_{k=1}^{1012} 2(k+2) = 2 \\left( \\frac{1012 \\times 1013}{2} \\right) + 4 \\times 1012 = 1012 \\times 1017 = 1{,}029{,}204$$\n\nFor the final term $n = 2025$ ($k = 1013$):\n$$D(2025) = 1013 + 2 = 1{,}015$$\n\nSumming these together:\n$$1{,}029{,}204 + 1{,}015 = 1{,}030{,}219$$\n\nANSWER: 1030219\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "d8982593-8917-40bd-917f-54568a73953c",
+    "status": "SUCCESS",
+    "duration_seconds": 406.510934,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9906,
+      "output_tokens": 58451,
+      "thinking_tokens": 57311,
+      "cache_read_tokens": 0,
+      "total_tokens": 68357
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_23__1",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-19T23:48:28Z",
+  "duration_s": 12.152,
+  "input_tokens": 3944,
+  "output_tokens": 1008,
+  "thinking_tokens": 0,
+  "text": "The Schur product of two codewords of the hyperderivative Reed–Solomon code corresponds to evaluating products of the underlying polynomials together with their derivatives up to order \\(s-1\\).  For an HRS code \\(C=HRS_t(\\{\\alpha_1,\\dots,\\alpha_r\\},s)\\) the space of such products is spanned by the evaluations of all polynomials of degree at most \\(2t-2s\\) together with their derivatives up to order \\(s-1\\).  Thus the Schur square \\(C^{\\ast2}\\) has dimension equal to the number of independent monomials that can appear, namely  \n\n\\[\n\\dim(C^{\\ast 2}) = \\min\\{\\, rs,\\; 2t-2s+1 \\,\\}.\n\\]\n\nThe hypothesis \\(t\\le\\frac{r+2s-1}{2}\\) is equivalent to \\(2t-2s+1\\le r\\); multiplying by \\(s\\) gives \\(2t-2s+1\\le rs\\).  Hence the minimum is attained by the second term, and the Schur square attains its full possible size.\n\n\\[\n\\boxed{\\dim(C^{\\ast2}) = 2t - 2s + 1 }.\n\\]\n\nANSWER: \\(2t - 2s + 1\\)\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "b8756bf9-c120-413c-a7c1-4d7c747dba8b",
+    "status": "SUCCESS",
+    "duration_seconds": 5.216036,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 3944,
+      "output_tokens": 1008,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 4952
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__hmmt_feb_2026_28_TA",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T12:01:18Z",
+  "duration_s": 68.316,
+  "input_tokens": 12545,
+  "output_tokens": 6758,
+  "thinking_tokens": 5549,
+  "text": "To determine the correctness of each solution, let us solve the problem independently.\n\n### Geometry Analysis\n\n1. **Reflection of Circumcircles:**\n   It is a well-known theorem that the reflection of the orthocenter $H$ across any side of triangle $ABC$ lies on the circumcircle $(ABC)$. Consequently:\n   - The circumcircle of $\\triangle ABH$ is the reflection of the circumcircle of $\\triangle ABC$ across line $AB$.\n   - The circumcircle of $\\triangle ACH$ is the reflection of the circumcircle of $\\triangle ABC$ across line $AC$.\n\n2. **Reflecting the Rays:**\n   Let the internal angle bisector of $\\angle A$ be ray $l$, which has direction $0$ from $A$. \n   - Side $AB$ is at angle $+\\frac{A}{2}$ and side $AC$ is at angle $-\\frac{A}{2}$.\n   - Reflecting ray $l$ across line $AB$ gives a ray $l'$ at angle $+A$. The point $P \\in l \\cap (ABH)$ reflects to a point $P' \\in l' \\cap (ABC)$, with distance $AP' = AP = 4$.\n   - Reflecting ray $l$ across line $AC$ gives a ray $l''$ at angle $-A$. The point $Q \\in l \\cap (ACH)$ reflects to a point $Q' \\in l'' \\cap (ABC)$, with distance $AQ' = AQ = 5$.\n   - Point $M$ lies on $l \\cap (ABC)$, so it is at angle $0$ with distance $AM$.\n\n3. **Circle Equation in Polar Coordinates:**\n   Since $A, M, P', Q'$ all lie on the circumcircle $(ABC)$ of radius $R$ passing through $A$, the chord length along a ray of direction $\\theta$ from $A$ is given by:\n   $$r(\\theta) = 2R \\cos(\\theta - \\theta_0)$$\n   where $\\theta_0$ is the direction of the circumcenter from $A$.\n   \n   Evaluating at $\\theta = 0, +A, -A$:\n   - $AM = r(0) = 2R \\cos \\theta_0$\n   - $AP' = r(A) = 2R \\cos(A - \\theta_0) = 4$\n   - $AQ' = r(-A) = 2R \\cos(A + \\theta_0) = 5$\n\n4. **Solving for $AM$:**\n   Adding the two equations:\n   $$r(A) + r(-A) = 2R[\\cos(A - \\theta_0) + \\cos(A + \\theta_0)] = 2 \\cos A (2R \\cos \\theta_0) = 2 AM \\cos A$$\n   $$4 + 5 = 9 \\implies 2 AM \\cos A = 9 \\implies AM = \\frac{9}{2 \\cos A}$$\n\n   Subtracting the two equations:\n   $$r(A) - r(-A) = 2R[\\cos(A - \\theta_0) - \\cos(A + \\theta_0)] = 2(2R \\sin A)\\sin \\theta_0 = -1$$\n   \n   By the Law of Sines in $\\triangle ABC$, $2R \\sin A = BC = 7$:\n   $$2(7)\\sin \\theta_0 = \\pm 1 \\implies |\\sin \\theta_0| = \\frac{1}{14}$$\n   $$\\cos^2 \\theta_0 = 1 - \\sin^2 \\theta_0 = \\frac{195}{196}$$\n\n   Since $AM = 2R \\cos \\theta_0 = \\frac{7 \\cos \\theta_0}{\\sin A}$, we equate this with $AM = \\frac{9}{2 \\cos A}$:\n   $$\\tan A = \\frac{14 \\cos \\theta_0}{9} \\implies \\tan^2 A = \\frac{196 \\cos^2 \\theta_0}{81} = \\frac{195}{81} = \\frac{65}{27}$$\n   $$\\cos^2 A = \\frac{1}{1 + \\tan^2 A} = \\frac{27}{92}$$\n   $$AM^2 = \\frac{81}{4 \\cos^2 A} = \\frac{81 \\times 92}{4 \\times 27} = 69 \\implies AM = \\sqrt{69}$$\n\n---\n\n### Evaluation of the Proposed Solutions\n\n- **Solution 1:** Claims $AM = 9$, relying on an invalid coordinate setup and unjustified circle equations. The answer is incorrect.\n- **Solution 2:** Claims $AM = \\frac{9\\sqrt{10}}{4}$, based on several ungrounded assertions (such as $\\frac{b}{c} = \\frac{5}{4}$ and arbitrary values for $\\sin^2\\alpha$). The answer is incorrect.\n- **Solution 3:** Claims $AM = \\frac{9}{2} = 4.5$, which directly contradicts the problem condition that $A, P, Q, M$ lie in that order (since $AQ = 5 > 4.5$). The answer is incorrect.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "23e6d825-e81e-4378-a2eb-1afc2c1e4042",
+    "status": "SUCCESS",
+    "duration_seconds": 59.603122,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12545,
+      "output_tokens": 6758,
+      "thinking_tokens": 5549,
+      "cache_read_tokens": 0,
+      "total_tokens": 19303
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

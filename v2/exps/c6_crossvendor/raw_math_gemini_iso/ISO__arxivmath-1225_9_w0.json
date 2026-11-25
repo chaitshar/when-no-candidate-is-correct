@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-1225_9_w0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T11:25:19Z",
+  "duration_s": 257.077,
+  "input_tokens": 12518,
+  "output_tokens": 24272,
+  "thinking_tokens": 23972,
+  "text": "The proposed solution is incorrect. \n\nSpecifically, the claim that $v(4, \\sqrt{2}) = 13$ is false because there exists a connected 4-regular graph on $14$ vertices with second largest eigenvalue $\\lambda_2 = \\sqrt{2} \\le \\sqrt{2}$.\n\nSuch a graph is given by the incidence graph of the complement of the Fano plane (the unique symmetric $(7, 4, 2)$-design):\n- It has $7 + 7 = 14$ vertices and is connected and 4-regular.\n- Its incidence matrix $B$ satisfies $BB^T = (k - \\lambda)I + \\lambda J = 2I + 2J$.\n- The eigenvalues of $BB^T$ are $16$ (multiplicity 1) and $2$ (multiplicity 6).\n- Consequently, the eigenvalues of its bipartite adjacency matrix $A = \\begin{pmatrix} 0 & B \\\\ B^T & 0 \\end{pmatrix}$ are $\\pm 4$ (multiplicity 1 each) and $\\pm \\sqrt{2}$ (multiplicity 6 each).\n\nThus, $\\lambda_2 = \\sqrt{2} \\le \\sqrt{2}$, which proves $v(4, \\sqrt{2}) \\ge 14 > 13$.\n\nVERDICT: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "733547b7-23eb-47c2-9932-8a56583bf6d7",
+    "status": "SUCCESS",
+    "duration_seconds": 375.980352,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12518,
+      "output_tokens": 24272,
+      "thinking_tokens": 23972,
+      "cache_read_tokens": 8442,
+      "total_tokens": 36790
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

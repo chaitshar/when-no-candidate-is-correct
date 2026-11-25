@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r6s1_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:12Z",
+  "duration_s": 7.918,
+  "input_tokens": 2,
+  "output_tokens": 1227,
+  "thinking_tokens": 453,
+  "text": "The abstract is a review, and it reports only a few quantitative results: an 85% friction-coefficient reduction for jatropha-oil alumina nanofluid versus dry conditions, 177-230% tool-life improvement for alumina nanofluid in hard milling, and a 145.06% convective heat-transfer increase for carbon-nanotube nanofluid in normal saline. None of the four hypotheses' specific mechanisms or parameters appear in it.\n\n- **Hypothesis 1** proposes magnetorheological fluids with electrostatic atomization at 100 mT and 10-20 µm droplets. The abstract mentions atomization mechanisms under different boundary conditions and a controllable supply system, but not MR fluids, electrostatic atomization, or these values. The claimed 35% tool-wear reduction and 20% Ra improvement are not reported.\n- **Hypothesis 2** proposes MoO3 nanofluid with SDS and polyethoxylated nonylphenol surfactants at 0.45 vol% and a 3:2 surfactant ratio, with at least 30% gains. The abstract mentions none of these materials, concentrations, or the 30% figure. Its only comparable results involve alumina and CNT nanofluids.\n- **Hypothesis 3** proposes Fe3O4 at 0.1 vol% under a 0.5 T field at 1 Hz, with 40% tool-life and 25% energy gains. The abstract says nothing about magnetic fields, Fe3O4, or energy consumption. Its tool-life figure concerns alumina, not Fe3O4.\n- **Hypothesis 4** proposes 1 wt% surface-modified CuO (50 nm) in mineral oil, with specified MQL delivery, cutting conditions, and wear and Ra targets on AISI 1045 steel. The abstract reports no CuO experiment, no orthogonal-turning data, and no flank-wear or Ra results for any nanofluid on that steel.\n\nThe abstract does support the general premise that nanofluid MQL can improve machining. None of the four candidates matches the specific parameters the study reports, so none is the main hypothesis the evidence supports.\n\nVERDICT 1: REJECT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6557,
+    "stop_reason": "end_turn",
+    "session_id": "c6493542-f361-4de5-ab19-7e5b0d969a88",
+    "total_cost_usd": 0.00208056,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6765,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1227,
+      "output_tokens_details": {
+        "thinking_tokens": 453
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6765,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1227,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6765,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6765
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1227,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6765,
+        "webSearchRequests": 0,
+        "costUSD": 0.00208056,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 453,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6765,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3966,
+    "type": "result",
+    "duration_ms": 7162,
+    "uuid": "d5001f49-2f80-46a9-b471-1990fc424904",
+    "ttft_stream_ms": 2102,
+    "time_to_request_ms": 606,
+    "first_content_frame_ms": 2102,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

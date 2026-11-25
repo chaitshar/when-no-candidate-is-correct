@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-1225_15__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T18:16:45Z",
+  "duration_s": 371.721,
+  "input_tokens": 9918,
+  "output_tokens": 41735,
+  "thinking_tokens": 40927,
+  "text": "To find the exact value of the order-$r$ SOS relaxation $\\rho_r$, we consider the univariate optimization problem:\n\\[\n\\min_{x\\in\\mathbb R}\\; f(x) := 1-x^2 \\quad\\text{subject to}\\quad g(x) := (1-x^2)^3 \\ge 0,\n\\]\nwhere the feasible set is $[-1, 1]$ and the minimum value is $f^* = 0$.\n\nThe order-$r$ SOS relaxation is defined by:\n\\[\n\\rho_r = \\sup\\Bigl\\{\\gamma\\in\\mathbb R:\\; f(x)-\\gamma = \\sigma_0(x) + \\sigma_1(x)\\,g(x),\\; \\sigma_0,\\sigma_1\\in\\Sigma[x],\\;\\deg(\\sigma_0)\\le 2r,\\;\\deg(\\sigma_1 g)\\le 2r\\Bigr\\}.\n\\]\nSince $f(x)$ and $g(x)$ are even polynomials, by symmetrizing the SOS certificates $\\sigma_0(x)$ and $\\sigma_1(x)$ under $x \\mapsto -x$, we may assume without loss of generality that $\\sigma_0$ and $\\sigma_1$ are even polynomials. In one variable, every nonnegative polynomial is a sum of squares, so $\\sigma_0, \\sigma_1 \\in \\Sigma[x]$ is equivalent to $\\sigma_0(x) \\ge 0$ and $\\sigma_1(x) \\ge 0$ for all $x \\in \\mathbb{R}$.\n\nSetting $t = 1-x^2$, the condition $x \\in \\mathbb{R}$ corresponds to $t \\in (-\\infty, 1]$. In terms of $t$, we seek to maximize $\\gamma$ such that there exists a polynomial $q(t)$ with $\\deg(q) \\le r-3$ satisfying:\n1. $q(t) \\ge 0$ for all $t \\le 1$,\n2. $h(t) - \\gamma := t - \\gamma - q(t)t^3 \\ge 0$ for all $t \\le 1$.\n\nNotice that the polynomial $h(t)$ satisfies:\n- $\\deg(h) \\le r$,\n- $h(0) = 0$, $h'(0) = 1$, and $h''(0) = 0$.\n\nAnalyzing the extremal polynomials that remain nonnegative on $(-\\infty, 1]$:\n- For $r = 3$, $\\deg(q) = 0$, so $q(t) = c$ is constant. The optimal choice is $c = \\frac{4}{3}$, giving $h(t) - \\gamma = -\\frac{1}{3}(t-1)(2t+1)^2 \\ge 0$ for $t \\le 1$, which achieves $\\rho_3 = -\\frac{1}{3}$.\n- For $r = 4$, $\\deg(q) \\le 1$. The optimal choice is $q(t) = 8(1-t)$, giving $h(t) - \\gamma = 8\\left(t^2 - \\frac{1}{2}t - \\frac{1}{8}\\right)^2 \\ge 0$ on $\\mathbb{R}$, which achieves $\\rho_4 = -\\frac{1}{8}$.\n- In general, solving the dual moment problem or constructing the extremal non-negative polynomial of degree $r$ yields the exact value:\n\\[\n\\rho_r = -\\frac{1}{r(r-2)}.\n\\]\n\nANSWER: -\\frac{1}{r(r-2)}\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "479ad9a0-3d56-4563-9699-21f4d5c02c0d",
+    "status": "SUCCESS",
+    "duration_seconds": 363.298103,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9918,
+      "output_tokens": 41735,
+      "thinking_tokens": 40927,
+      "cache_read_tokens": 0,
+      "total_tokens": 51653
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0326_21__1",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:38:08Z",
+  "duration_s": 179.48,
+  "input_tokens": 9820,
+  "output_tokens": 21097,
+  "thinking_tokens": 20101,
+  "text": "To find the exponent $c$, we analyze the asymptotic distribution of the Cauchy combination test (CCT) statistic $T_K = \\frac{1}{K} \\sum_{k=1}^K C_k$, where $C_k = \\tan((0.5 - p_k)\\pi)$.\n\nUnder the canonical one-factor equicorrelated Gaussian model:\n$$X_k = \\sqrt{\\rho_K} Z_0 + \\sqrt{1 - \\rho_K} Z_k, \\quad k = 1, \\dots, K$$\nwhere $Z_0, Z_1, \\dots, Z_K \\stackrel{\\text{i.i.d.}}{\\sim} \\mathcal{N}(0, 1)$, and the $p$-values are given by $p_k = 1 - \\Phi(X_k)$.\n\nFor large $X_k$, using Mill's ratio $1 - \\Phi(x) \\approx \\frac{\\phi(x)}{x}$, the Cauchy transformation satisfies:\n$$C_k = \\cot(\\pi p_k) \\approx \\frac{1}{\\pi(1 - \\Phi(X_k))} \\approx \\sqrt{\\frac{2}{\\pi}} X_k e^{X_k^2/2}$$\n\nConditional on the latent factor $Z_0$, the variables $X_1, \\dots, X_K$ are independent with distribution $\\mathcal{N}(\\sqrt{\\rho_K}Z_0, 1 - \\rho_K)$. The effective support contributing to the characteristic function of $T_K$ is bounded by the sample maximum $X_{(K)} \\approx \\sqrt{2 \\log K}$.\n\nThe conditional mean shift of each summand induced by the asymmetry from $Z_0$ is:\n$$\\mathbb{E}[C_k \\mid Z_0] \\approx \\int_0^{\\sqrt{2 \\log K}} C(x) \\left[\\phi\\left(\\frac{x - \\sqrt{\\rho_K}Z_0}{\\sqrt{1-\\rho_K}}\\right) - \\phi\\left(\\frac{x + \\sqrt{\\rho_K}Z_0}{\\sqrt{1-\\rho_K}}\\right)\\right] dx$$\n\nExpanding for small $\\rho_K$:\n$$\\phi\\left(\\frac{x - \\sqrt{\\rho_K}Z_0}{\\sqrt{1-\\rho_K}}\\right) - \\phi\\left(\\frac{x + \\sqrt{\\rho_K}Z_0}{\\sqrt{1-\\rho_K}}\\right) \\approx 2 \\sqrt{\\rho_K} Z_0 x \\phi(x)$$\n\nSince $C(x)\\phi(x) \\approx \\sqrt{\\frac{2}{\\pi}} x$:\n$$\\mathbb{E}[C_k \\mid Z_0] \\approx \\frac{2\\sqrt{2}}{\\sqrt{\\pi}} \\sqrt{\\rho_K} Z_0 \\int_0^{\\sqrt{2 \\log K}} x^2 dx = \\frac{4\\sqrt{2}}{3\\sqrt{\\pi}} Z_0 \\sqrt{\\rho_K} (\\log K)^{3/2}$$\n\nBecause $T_K = \\frac{1}{K} \\sum_{k=1}^K C_k$ is the average of $K$ Cauchy variables, the conditional distribution of $T_K$ given $Z_0$ behaves as a shifted Cauchy:\n$$T_K \\mid Z_0 \\sim \\text{Cauchy}(\\Delta_K, 1), \\quad \\text{where } \\Delta_K \\propto Z_0 \\sqrt{\\rho_K (\\log K)^3}$$\n\nSince $Z_0 \\sim \\mathcal{N}(0, 1)$, the random shift has variance proportional to $\\rho_K (\\log K)^3$. For any fixed nominal level $\\alpha \\in (0, 1/2)$, the Cauchy tail probability function $t \\mapsto \\mathbb{P}(\\text{Cauchy}(0,1) > t_\\alpha - t)$ is strictly convex at $t = 0$ (since $t_\\alpha > 0$). By Jensen's inequality, any non-vanishing variance in $\\Delta_K$ inflates the Type I error. \n\nHence, the raw CCT is asymptotically exact if and only if $\\Delta_K \\xrightarrow{p} 0$, which is equivalent to:\n$$\\rho_K (\\log K)^3 \\to 0$$\n\nThus, the exact value of the exponent is $c = 3$.\n\nANSWER: 3\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "78f1f4a3-2447-4b1e-b985-a2a6223c669e",
+    "status": "SUCCESS",
+    "duration_seconds": 171.978607,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9820,
+      "output_tokens": 21097,
+      "thinking_tokens": 20101,
+      "cache_read_tokens": 0,
+      "total_tokens": 30917
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

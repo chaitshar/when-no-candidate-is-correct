@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__arxivmath-0426_26_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T17:25:43Z",
+  "duration_s": 78.507,
+  "input_tokens": 11613,
+  "output_tokens": 7711,
+  "thinking_tokens": 7095,
+  "text": "To determine the validity of each solution, let us analyze the problem and verify the mathematical steps.\n\n1. **Fractional Laplacian of the one-dimensional profile:**  \n   Seeking 1D power-type solutions $u(x) = c (x_n)_+^\\beta$ for the fractional Laplacian in the half-space $\\{x_n > 0\\}$ with exterior Dirichlet condition $u \\equiv 0$ on $\\{x_n \\le 0\\}$, we have:\n   $$(-\\Delta)^s (x_n)_+^\\beta = \\Lambda_s(\\beta)\\, x_n^{\\beta-2s} \\quad (x_n > 0).$$\n   The multiplier $\\Lambda_s(\\beta)$ vanishes precisely at the two homogeneous $s$-harmonic exponents $\\beta = s$ and $\\beta = s-1$ (as seen in the explicit case $s = \\frac{1}{2}$, where $\\Lambda_{1/2}(\\beta) \\propto \\beta \\cot(\\pi\\beta)$). \n   \n   The sign analysis confirms that $\\Lambda_s(\\beta) > 0$ if and only if $\\beta \\in (s-1, s)$.\n\n2. **Matching exponents and existence interval:**  \n   Balancing the powers in $(-\\Delta)^s u = x_n^\\alpha u^{-\\gamma}$ requires:\n   $$\\beta - 2s = \\alpha - \\gamma\\beta \\implies \\beta = \\frac{\\alpha+2s}{1+\\gamma}.$$\n   Since solvability for $c > 0$ requires $\\Lambda_s(\\beta) > 0$, we have:\n   $$s-1 < \\frac{\\alpha+2s}{1+\\gamma} < s.$$\n   Solving for $\\alpha$ gives the interval $(A, B)$ where:\n   $$A = (s-1)(1+\\gamma) - 2s,$$\n   $$B = s(1+\\gamma) - 2s = s(\\gamma-1).$$\n\n3. **Sum of the endpoints:**  \n   $$A + B = (s-1)(1+\\gamma) - 2s + s(\\gamma-1) = 2s\\gamma - 2s - \\gamma - 1.$$\n\n- **Solution 1** correctly determines $A$, $B$, and computes $A+B = 2s\\gamma - \\gamma - 2s - 1$.\n- **Solution 2** correctly determines $A$, $B$, and computes $A+B = 2s\\gamma - 2s - \\gamma - 1$.\n- **Solution 3** incorrectly restricts the positivity range of the constant to $\\beta \\in (0, s)$, erroneously concluding $A = -2s$.\n\nVERDICT 1: ACCEPT\nVERDICT 2: ACCEPT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "dc3db6d1-7966-465e-9df4-0ebd6607b294",
+    "status": "SUCCESS",
+    "duration_seconds": 71.158456,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 11613,
+      "output_tokens": 7711,
+      "thinking_tokens": 7095,
+      "cache_read_tokens": 0,
+      "total_tokens": 19324
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

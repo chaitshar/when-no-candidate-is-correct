@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__apex-shortlist_7_r0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T09:49:02Z",
+  "duration_s": 173.162,
+  "input_tokens": 10901,
+  "output_tokens": 22102,
+  "thinking_tokens": 21450,
+  "text": "An analysis of the problem and the proposed solution:\n\n1. **Autonomous 0-set dynamics:**\n   A vertex writes $0$ on day $t+1$ if and only if none of its neighbors wrote $0$ on day $t$. Thus, the set $Z_t = \\{v : x_v^{(t)} = 0\\}$ evolves via $Z_{t+1} = \\overline{N(Z_t)}$. Any fixed point $S$ of this map is a maximal independent set. Since any state in the image of this map that transitions to $S$ must equal $S$, the $0$-set settles to a fixed point in at most one change after day $1$ (settling by day $2$).\n\n2. **Hierarchical settling:**\n   Once levels $0, \\dots, k-1$ settle, each vertex in the remaining set $A_k$ has fixed neighbors providing all values $0, \\dots, k-1$. Consequently, level $k$ follows the exact same antitone dynamics on the induced subgraph $G[A_k]$, settling within $\\rho_k \\le 1$ additional change.\n   - For any non-top level to have $\\rho_k = 1$, the subset must be proper and dominating, forcing $|S_k| \\ge 2$.\n   - The top level $M$ only requires $|S_M| \\ge 1$.\n\n3. **Bound and construction:**\n   To stop on day $T$, we require $\\sum \\rho_k = T - 2$ levels with $\\rho_k = 1$. Minimizing the number of vertices gives:\n   $$n \\ge 1 + 2(T - 3) = 2T - 5 \\implies T \\le \\left\\lfloor \\frac{n+5}{2} \\right\\rfloor = \\left\\lceil \\frac{n}{2} \\right\\rceil + 2$$\n   The construction achieves this bound for all odd $n$, and adding an isolated vertex achieves it for even $n$. Hence, $D(n) = \\left\\lceil \\frac{n}{2} \\right\\rceil + 2$ for all $n \\ge 1$.\n\n4. **Summation:**\n   $$\\sum_{n=1}^{2025} \\left\\lceil \\frac{n}{2} \\right\\rceil = 2 \\sum_{k=1}^{1012} k + 1013 = 1012 \\times 1013 + 1013 = 1013^2 = 1026169$$\n   $$\\sum_{n=1}^{2025} D(n) = 1026169 + 2 \\times 2025 = 1026169 + 4050 = 1030219$$\n\nThe reasoning and calculations are entirely correct.\n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "cfc66593-411f-404a-bc6e-25e99544a8e9",
+    "status": "SUCCESS",
+    "duration_seconds": 161.967009,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 10901,
+      "output_tokens": 22102,
+      "thinking_tokens": 21450,
+      "cache_read_tokens": 0,
+      "total_tokens": 33003
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r5s2_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:09Z",
+  "duration_s": 11.035,
+  "input_tokens": 2,
+  "output_tokens": 2204,
+  "thinking_tokens": 1223,
+  "text": "**Hypothesis 1** matches the abstract's core claim. The abstract says magnetite-(apatite) deposits form from iron-rich ultrabasic melts generated mainly by silicate melts interacting with oxidized P-F-SO4-bearing sedimentary rocks. It then describes Fe-rich, Si-Al-poor melts separating from silicate magma and crystallizing to massive magnetite ore. The hypothesis contains the same sequence: sediment interaction, then separation of Fe-rich melt, then crystallization of the deposit.\n\n**Hypothesis 2** makes claims the abstract does not support, and some conflict with it:\n- It proposes partial melting of U-Th-depleted sediments, but the abstract describes sediment interaction with silicate melts, not sediment melting.\n- Its oxygen fugacity (ΔFMQ -1 to -2 for melt generation, then +1 to +2 for ore formation) conflicts with the abstract's emphasis on high fO2 in most systems.\n- It adds a Pb-fluid two-stage model, specific Pb isotope thresholds, U/Th and P2O5 cutoffs, cooling rates and thermal gradients. None of these appear in the abstract.\n\n**Hypothesis 3** overlaps in part. It invokes contamination by sedimentary sequences, Fe-rich melts, and immiscibility, all of which the abstract mentions. However, it departs from the evidence in several ways:\n- It specifies \"Palaeozoic P-rich ironstones\" and \"U-Th-depleted\" sediments, not oxidized P-F-SO4 sediments. The oxidized sulfate-bearing character is central to the abstract and is missing here.\n- Its central mechanism is an F-rich apatite-magnetite immiscible liquid precipitating at 1100–1250 °C from melt inclusions in a host andesite. The abstract makes no such claim about andesite hosts or those temperatures.\n- Its Pb isotopic disequilibrium claim is not in the abstract.\n\nBecause the specific mechanism and key details differ from the study, it is not the main hypothesis the study supports.\n\n**Hypothesis 4** is a research proposal, not a conclusion. It uses future tense (\"will be systematically analyzed,\" \"will be conducted\") and centers on magmatic-hydrothermal fluids, SIMS and LA-ICP-MS work, and fluid pH. The abstract's main thesis is about iron-rich melts and their crystallization, not hydrothermal fluid evolution. The abstract also explicitly contrasts these systems with magmatic-hydrothermal systems related to intermediate to felsic rocks, which runs against Hypothesis 4's framing.\n\nOnly Hypothesis 1 is supported as the main hypothesis.\n\nVERDICT 1: ACCEPT\nVERDICT 2: REJECT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 9965,
+    "stop_reason": "end_turn",
+    "session_id": "5eb694be-fde0-4609-9c05-6daf96ca5e4d",
+    "total_cost_usd": 0.00264366,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7138,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2204,
+      "output_tokens_details": {
+        "thinking_tokens": 1223
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7138,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2204,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7138,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7138
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2204,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7138,
+        "webSearchRequests": 0,
+        "costUSD": 0.00264366,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1223,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7138,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 6170,
+    "type": "result",
+    "duration_ms": 10156,
+    "uuid": "8396b351-1e9f-4aa5-9e4b-60016811f3ec",
+    "ttft_stream_ms": 1044,
+    "time_to_request_ms": 191,
+    "first_content_frame_ms": 1044,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

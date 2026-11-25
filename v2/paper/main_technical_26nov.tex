@@ -1,0 +1,266 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{natbib}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\dbltopfraction}{0.9}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\dblfloatpagefraction}{0.7}
+% Result macros are generated with ASCII hyphens; read them with an active
+% hyphen so that negative numbers print with a true minus sign.
+\begingroup\lccode`\~=`\-\lowercase{\endgroup\def~}{\ensuremath{-}}
+\catcode`\-=\active
+\input{results.tex}
+\input{results_extra.tex}
+\catcode`\-=12
+\newcommand{\res}[1]{\csname res@#1\endcsname}
+
+\title{Lineups Without a Culprit: A Criterion-Shift Account of LLM Selection Among Candidates, and What Fixes It}
+\author{Chaitanya Sharma\\Independent Researcher}
+\date{November 2026}
+
+\begin{document}
+\sloppy
+\maketitle
+
+\begin{abstract}
+Pipelines that generate several candidate answers and ask an LLM judge to pick the best one face a hidden case: sometimes every candidate is wrong and the judge should abstain. Borrowing the target-absent lineup from eyewitness research, we compare pooled selection with an explicit \texttt{NONE} option (\texttt{PICK}) against isolated verification of each candidate (\texttt{ISO}) on matched all-wrong and one-right pools, using signal detection theory. Our account is that pooling makes the judge's criterion more liberal, so false choices rise most where sensitivity is near zero. For \texttt{claude-haiku-5-5} on hard math pools, the excess survives three locally preregistered controls: matching compute with three repeated \texttt{PICK} calls (\res{c4_ta_maj3} vs \res{c4_ta_iso} false choices), removing the judge's own earlier answer (gap \res{c5o_all_dc5}), and removing the candidate it first chose (\res{c5w_pick2} vs \res{c5w_iso2}). Evidence beyond that judge is mixed. On \res{c6_n_problems} judge-family-excluded math problems the criterion shift is negative overall for \texttt{gpt-oss-120b-medium} and \texttt{gemini-3.8-flash-medium}, but raw false choices do not rise for the former, whose isolated verification is already credulous, and both judges miss our stratum-size gate. On hypothesis pools from 10 ResearchBench papers, pooling raises false choices for Haiku and \texttt{gpt-oss-120b-medium} but mainly raises correct selections for three Gemini configurations. Of three mitigations, a known decoy and a falsification-first confidence gate fail on hard math, while filtering by isolated verification before picking matches \texttt{ISO}'s false-choice rate (\res{c7_m1_m1_f} vs \res{c7_m1_pick_f} for \texttt{PICK}) at about three times the calls. Deviations from the preregistration are listed.
+\end{abstract}
+
+\section{Introduction}
+Multi-agent reasoning systems and AI co-scientist pipelines commonly separate generation from selection: multiple candidate solutions or scientific hypotheses are sampled, and a verifier, reward model or LLM judge selects the winner \citep{cobbe2021training,brown2024large,gottweis2025towards}, with LLM judges increasingly filling that role \citep{zheng2023judging}. Standard benchmarks evaluate selection on \emph{target-present} (TP) pools containing a correct answer. Yet early in open-ended research or frontier problem solving, every candidate in the pool is frequently wrong. In such \emph{target-absent} (TA) pools, picking the ``best'' candidate produces a false discovery rather than progress.
+
+Eyewitness identification research provides a direct structural analogue \citep{wells1984psychology,malpass1981eyewitness,steblay2001eyewitness,steblay2011seventytwo}. When witnesses view a simultaneous lineup that does not contain the culprit, relative judgments pull them toward whichever face looks closest to memory even when told the culprit may be absent. Showing lineup members sequentially forces an absolute criterion and lowers false identifications. We adopt the target-absent lineup design and the signal detection theory (SDT) framework \citep{wixted2012field} as a measurement protocol for LLM judges, without claiming that language models share human cognitive mechanisms.
+
+Our earlier study \citep[v1;][]{sharma2026nocandidate} documented that pooled selection (\texttt{PICK}) raised false choices over isolated verification (\texttt{ISO}) on all-wrong MathArena \citep{balunovic2025matharena} pools for \texttt{claude-haiku-5-5} and \texttt{claude-sonnet-5-5}, but left five core questions open: (i) why raw false-choice spikes appeared concentrated on unsolved items despite an inconclusive interaction test; (ii) whether the penalty was merely a 1x vs 3x compute mismatch; (iii) whether own-answer self-recognition or same-vendor Claude candidates drove the gap; (iv) whether the effect generalizes across model vendors, thinking budgets, and scientific hypotheses; and (v) which structural protocol fixes the failure without destroying recall.
+
+\paragraph{Contributions and their status.}
+\begin{enumerate}\setlength{\itemsep}{2pt}
+\item \textbf{A criterion-shift account.} Modeling aligned hit and false-alarm rates with equal-variance Gaussian SDT ($F = 1 - \Phi(d'/2 + c)$), a criterion shift $\Delta c < 0$ of similar size across strata produces a small raw false-choice rise on solvable items (flat tail, high $d'$) and a large one on unsolved items (steep center, $d' \approx 0$). Our plan documents call this the SDT Criterion-Shift Law; we say ``account'' here because it was found post hoc on v1 data, and the v2 evidence supports its sign more firmly than its constancy (Section~\ref{sec:c6}).
+\item \textbf{Mechanism controls (C4, C5).} On \texttt{claude-haiku-5-5}, 3x compute-matched repeat-\texttt{PICK}, own-answer removal without replacement and removal of the chosen candidate each leave the excess in place, so token budget and own-answer recognition are not sole explanations.
+\item \textbf{Other vendors and a second domain (C6, C8, C9).} We test \texttt{gpt-oss-120b-medium}, \texttt{gemini-3.8-flash-medium}, \texttt{gemini-3.8-flash-low} and \texttt{gemini-4-hydrogen-medium} alongside \texttt{claude-haiku-5-5} on ResearchBench hypothesis pools, and the first two on judge-family-excluded MathArena and arXivMath pools. The results are mixed and we report them as such.
+\item \textbf{Mitigations (C7).} On a 40 problem subset of hard math pools, a known-foil lineup (M3) does not reduce false choices, a single-call falsification gate (M2) reduces them only by collapsing correct selections, and \texttt{ISO}-filter-then-\texttt{PICK} (M1) equals \texttt{ISO} on false choices. The practical message is that isolated verification itself is the remedy, at its usual cost in calls.
+\end{enumerate}
+
+\section{Related Work}
+Work on inference-time scaling with imperfect verifiers characterizes how resampling saturates when verifier precision is bounded \citep{stroebl2026limits}. In concurrent NeurIPS 2026 theory, \citet{zhang2026selected} formalizes selected-tail reliability for verifier-guided Best-of-$N$ inference and proposes Tail-Certified Compute Caps; that analysis takes scalar verifier scores as given and does not compare pooled selection against isolated verification on target-absent pools.
+
+In evaluation and abstention research, \citet{wang2025llms} argue that LLMs answer multiple-choice questions by selecting the least incorrect option, including on questions with no correct option, \citet{kim2026penalty} study no-valid-option questions, \citet{tam2025none} examine none-of-the-above answering, \citet{wen2025know} survey LLM abstention, and \citet{kadavath2022language} study model self-evaluation. \citet{jeong2025comparative} show pairwise comparisons amplify preference bias over pointwise ratings, \citet{ji2026candidate} analyze candidate supply in multi-agent judging (excluding all-wrong pools from stratified rankings), \citet{rho2025best} introduce outside options in reward models, \citet{ma2026selecting} contrast selecting and solving in video reasoning, and \citet{chen2026beyond} show procedural traces shift LLM overseer criteria. Scientific discovery benchmarks such as ResearchBench \citep{liu2025researchbench} evaluate hypothesis ranking on pools that contain the ground-truth hypothesis, and AI co-scientist systems \citep{gottweis2025towards} rank generated hypotheses by tournament; our C9 experiment converts ResearchBench items into paired target-absent and target-present hypothesis lineups.
+
+\section{The Criterion-Shift Account}
+Let $H$ denote the aligned hit rate on TP pools (probability of selecting the unique correct candidate) and $F$ denote the false-alarm rate on TA pools (probability of selecting any wrong candidate rather than abstaining). To place all procedures in one output space, \texttt{ISO} and \texttt{EACH} select uniformly at random among the candidates they accept (scored in expectation) and abstain when they accept none. Using \citet{hautus1995corrections} log-linear smoothing over $n$ paired pools,
+\begin{equation}
+H_{\mathrm{adj}} = \frac{\sum_{i=1}^n H_i + 0.5}{n + 1}, \qquad F_{\mathrm{adj}} = \frac{\sum_{i=1}^n F_i + 0.5}{n + 1},
+\end{equation}
+sensitivity $d'$ and decision criterion $c$ are defined as
+\begin{align}
+d' &= \Phi^{-1}(H_{\mathrm{adj}}) - \Phi^{-1}(F_{\mathrm{adj}}), \nonumber \\
+c  &= -\tfrac{1}{2}\bigl[\Phi^{-1}(H_{\mathrm{adj}}) + \Phi^{-1}(F_{\mathrm{adj}})\bigr],
+\end{align}
+so that $F = 1 - \Phi(d'/2 + c)$. Negative $c$ denotes a liberal threshold (willingness to choose), and negative $\Delta c = c_{\mathrm{PICK}} - c_{\mathrm{ISO}}$ denotes a pooled shift toward choosing.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig1_criterion_shift}
+\caption{Paired criterion shift $\Delta c$ (\texttt{PICK} minus \texttt{ISO}) with \res{lvl95} item-bootstrap intervals across v1 MathArena strata (\texttt{claude-haiku-5-5}, \texttt{claude-sonnet-5-5}), v2 judge-family-excluded math (C6), and v2 ResearchBench hypotheses (C9). Negative $\Delta c$ means a more liberal threshold under \texttt{PICK}. The shaded band spans the eight v1 point estimates; it is a visual reference, not a prediction interval. ResearchBench rows are not stratified by solvability, and their intervals ignore clustering within 10 papers (Table~\ref{tab:science} gives paper-clustered intervals).}
+\label{fig:criterion}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig2_sdt_law_curve}
+\caption{The criterion-shift account: $F = 1 - \Phi(d'/2 + c)$ for baseline \texttt{ISO} and shifted \texttt{PICK}. On high-sensitivity SOLVED pools (flat right tail), a constant $\Delta c$ produces a small raw rise in $F$. On low-sensitivity UNSOLVED pools ($d' \approx 0$, steep central slope), the identical shift produces a large rise. Curves use the mean \texttt{ISO} criterion and mean $\Delta c$ of the eight v1 cells, and the shaded band spans the range of the v1 $\Delta c$ estimates; dotted connectors join the \texttt{ISO} and \texttt{PICK} points of one judge and stratum. Several v2 points sit far from both curves, which is the visual form of the mixed C6 and C9 results.}
+\label{fig:sdtlaw}
+\end{figure*}
+
+\paragraph{Exploratory v1 anchor.}
+Table~\ref{tab:v1sdt} summarizes the v1 C3 aligned SDT results across \texttt{claude-haiku-5-5} and \texttt{claude-sonnet-5-5}. Across all eight judge-by-stratum cells (pre-registered and audited/corrected), $\Delta c$ lies strictly below zero (between \res{c3sp_s_pi_dc} and \res{c3hc_s_pi_dc}). Sensitivity loss ($\Delta d' < 0$) is specific to \texttt{claude-haiku-5-5} UNSOLVED (corrected \res{c3hc_u_pi_ddp}, \res{c3hc_u_pi_ddp_ci}), whereas \texttt{claude-sonnet-5-5} UNSOLVED (\res{c3sc_u_pi_ddp}, \res{c3sc_u_pi_ddp_ci}) and both SOLVED strata show CIs spanning zero. On this account the apparent ``unsolved specificity'' of raw false-choice gaps arises from where each stratum sits on the Gaussian tail, not because SOLVED items escape the criterion shift. Because this account was formulated after inspecting v1 C3 outcomes, v1 provides exploratory motivation and v2 provides confirmatory tests.
+
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrrrr}
+\toprule
+Judge & Stratum (cohort) & $N$ & $F_{\mathrm{ISO}}$ & $F_{\mathrm{PICK}}$ & $\Delta d'$ [\res{lvl95} CI] & $\Delta c$ [\res{lvl95} CI] \\
+\midrule
+\texttt{claude-haiku-5-5} & UNSOLVED (prereg) & \res{c3hp_u_pi_n} & \res{c3hp_u_iso_f} & \res{c3hp_u_pick_f} & \res{c3hp_u_pi_ddp} \res{c3hp_u_pi_ddp_ci} & \res{c3hp_u_pi_dc} \res{c3hp_u_pi_dc_ci} \\
+\texttt{claude-haiku-5-5} & SOLVED (prereg) & \res{c3hp_s_pi_n} & \res{c3hp_s_iso_f} & \res{c3hp_s_pick_f} & \res{c3hp_s_pi_ddp} \res{c3hp_s_pi_ddp_ci} & \res{c3hp_s_pi_dc} \res{c3hp_s_pi_dc_ci} \\
+\texttt{claude-haiku-5-5} & UNSOLVED (corrected) & \res{c3hc_u_pi_n} & \res{c3hc_u_iso_f} & \res{c3hc_u_pick_f} & \res{c3hc_u_pi_ddp} \res{c3hc_u_pi_ddp_ci} & \res{c3hc_u_pi_dc} \res{c3hc_u_pi_dc_ci} \\
+\texttt{claude-haiku-5-5} & SOLVED (corrected) & \res{c3hc_s_pi_n} & \res{c3hc_s_iso_f} & \res{c3hc_s_pick_f} & \res{c3hc_s_pi_ddp} \res{c3hc_s_pi_ddp_ci} & \res{c3hc_s_pi_dc} \res{c3hc_s_pi_dc_ci} \\
+\midrule
+\texttt{claude-sonnet-5-5} & UNSOLVED (prereg) & \res{c3sp_u_pi_n} & \res{c3sp_u_iso_f} & \res{c3sp_u_pick_f} & \res{c3sp_u_pi_ddp} \res{c3sp_u_pi_ddp_ci} & \res{c3sp_u_pi_dc} \res{c3sp_u_pi_dc_ci} \\
+\texttt{claude-sonnet-5-5} & SOLVED (prereg) & \res{c3sp_s_pi_n} & \res{c3sp_s_iso_f} & \res{c3sp_s_pick_f} & \res{c3sp_s_pi_ddp} \res{c3sp_s_pi_ddp_ci} & \res{c3sp_s_pi_dc} \res{c3sp_s_pi_dc_ci} \\
+\texttt{claude-sonnet-5-5} & UNSOLVED (corrected) & \res{c3sc_u_pi_n} & \res{c3sc_u_iso_f} & \res{c3sc_u_pick_f} & \res{c3sc_u_pi_ddp} \res{c3sc_u_pi_ddp_ci} & \res{c3sc_u_pi_dc} \res{c3sc_u_pi_dc_ci} \\
+\texttt{claude-sonnet-5-5} & SOLVED (corrected) & \res{c3sc_s_pi_n} & \res{c3sc_s_iso_f} & \res{c3sc_s_pick_f} & \res{c3sc_s_pi_ddp} \res{c3sc_s_pi_ddp_ci} & \res{c3sc_s_pi_dc} \res{c3sc_s_pi_dc_ci} \\
+\bottomrule
+\end{tabular}
+\caption{Exploratory v1 C3 aligned SDT anchor (5,000 problem bootstraps, Hautus 1995 log-linear correction). Paired $\Delta c = c_{\mathrm{PICK}} - c_{\mathrm{ISO}}$ is strictly negative across all eight judge-by-stratum cells.}
+\label{tab:v1sdt}
+\end{table*}
+
+\section{v2 Experimental Design}
+\label{sec:design}
+The v2 banks, the parser, two plan documents (\texttt{PREREGISTRATION\_V2.md}, \texttt{PREREG\_C7.md}) and the C7 job files were hashed with SHA-256 in \texttt{LOCKED.sha256} before the corresponding subject calls. This is a local lock, not a deposit with an external registry, so ``preregistered'' below means ``fixed in a hashed local file before the calls''. All subject calls went through subscription command-line clients (the Claude CLI for \texttt{claude-haiku-5-5}; the Antigravity CLI for the other judges), each from an empty working directory with an instruction not to use tools. The Antigravity client does not let us switch tools off or remove its own scaffolding, so for those judges isolation rests on the instruction. Statistics were computed by two analysis scripts (\texttt{analysis\_a.py}, \texttt{analysis\_b.py}) and compared leaf by leaf; both were written by AI agents in the same project, so this guards against coding slips more than against shared assumptions. Confidence intervals use 5,000 item-level bootstrap resamples, and $p$ values are one-sided bootstrap or exact McNemar values without multiplicity adjustment.
+
+\begin{itemize}\setlength{\itemsep}{2pt}
+\item \textbf{C4 (3x compute-matched control):} On corrected \texttt{claude-haiku-5-5} UNSOLVED pools ($N=\res{c4_n_ta}$ TA, $N=\res{c4_n_tp}$ paired TP; \res{c4_calls_ok}/\res{c4_calls_exp} calls, \res{c4_parse_pct} parsed), we run three independent \texttt{PICK} calls per pool and score majority-of-3 (\texttt{PICK\_MAJ3}, abstaining on 3-way splits) and any-of-3 (\texttt{PICK\_ANY3}) against 3-call \texttt{ISO}.
+\item \textbf{C5 (own-answer removal and chosen-candidate removal):} On the $N=\res{c5o_all_n}$ v1 UNSOLVED TA pools containing exactly one answer matching Haiku's own SOLVE attempt ($N=\res{c5o_corr_n}$ after the v1 label and stratum audit), we remove that candidate without replacement and run \texttt{PICK-2}, compared with the stored v1 \texttt{ISO} verdicts on the two retained candidates (\texttt{ISO-2}). Second, following the removal-without-replacement procedure of \citet{wells1993what}, which tests the relative-judgment account of \citet{wells1984psychology}, on $N=\res{c5w_n}$ TA pools where Haiku chose a wrong candidate in v1 \texttt{PICK} we remove the chosen candidate and run \texttt{PICK-2} on the remaining two.
+\item \textbf{C6 (judge-family-excluded math):} $N=\res{c6_n_problems}$ MathArena and arXivMath problems (50 contest, 50 arXivMath), with no GPT and no Gemini candidates in any pool and rotated TP target positions, judged by \texttt{gpt-oss-120b-medium} and \texttt{gemini-3.8-flash-medium}. Each judge first makes two \texttt{SOLVE} attempts, which define its own \texttt{SOLVED\_M} (both right), \texttt{UNSOLVED\_M} (both wrong) and \texttt{MIXED\_M} strata.
+\item \textbf{C9 and C8 (ResearchBench hypotheses and low thinking):} From 10 ResearchBench papers \citep{liu2025researchbench} we build $N=\res{c9_n_items}$ TA and $N=\res{c9_n_items}$ TP four-candidate hypothesis pools: three draws of wrong hypotheses per paper, with the paper's one ground-truth hypothesis reused across its three TP pools and verified in isolation once per judge. Judges: \texttt{gpt-oss-120b-medium}, \texttt{gemini-3.8-flash-medium}, \texttt{gemini-3.8-flash-low} (C8, reduced thinking), \texttt{gemini-4-hydrogen-medium} and \texttt{claude-haiku-5-5}.
+\item \textbf{C7 (mitigations):} Fixed in \texttt{PREREG\_C7.md}, against \texttt{PICK} (M0) and \texttt{ISO}: \textbf{M1} (\texttt{ISO}-filter-then-\texttt{PICK}: $k=0$ accepted candidates gives \texttt{NONE}, $k=1$ gives that candidate, $k \ge 2$ triggers one \texttt{PICK}-$k$ tie-break call), \textbf{M2} (one pooled call that must look for a concrete error in each candidate, with a fixed confidence threshold $\tau = 4$ on a 1 to 5 scale) and \textbf{M3} (a known wrong solution from another problem inserted into each 3-candidate pool, position balanced). The Haiku math leg uses a seeded random subset of 40 of the 56 paired C4 problems.
+\end{itemize}
+
+\paragraph{Deviations from the locked plans.}
+(i) C4 was planned on the v1 preregistered stratum (90 TA, 78 TP) with the corrected stratum as sensitivity; only the corrected stratum was run. (ii) The C5 fresh-\texttt{ISO} drift check and the 45 pool sensitivity set were not run. (iii) The C6 plan named other judge models and the v1 pool bank; we ran the two judges available on our subscription route on a new family-excluded bank, locked before its calls, and did not run the planned regression on solvability. (iv) The C6 gate required at least 25 problems in each of \texttt{SOLVED\_M} and \texttt{UNSOLVED\_M}; neither judge meets it (Section~\ref{sec:c6}), so by our own rule the per-stratum C6 results are descriptive. (v) C9 pools have four candidates, not three, and come from 10 papers. Our \texttt{ISO} gate required a nonzero acceptance rate for wrong candidates; only \texttt{gpt-oss-120b-medium} meets it on C9, because the other four configurations accepted no wrong hypothesis in isolation. (vi) C7 follows the later \texttt{PREREG\_C7.md}: a 40 problem subset instead of the full stratum, M3 added, and no check on SOLVED pools. (vii) After the lock we found two mechanical parser gaps (algebraically equivalent \texttt{SOLVE} answers graded as wrong in 14 files, and bold or bare boxed final lines in 10 \texttt{gpt-oss-120b-medium} files). The locked parser is unchanged; an extension handles these cases and both analysis scripts apply the same rules. The fix moves some C6 problems from \texttt{UNSOLVED\_M} to \texttt{SOLVED\_M}. (viii) The planned blind human audit of the v1 labels has not been done.
+
+\section{Results}
+
+\subsection{Compute Matching Does Not Eliminate the Penalty (C4)}
+Across \res{c4_tok_n} paired TA+TP pools, 3x repeat-\texttt{PICK} matches 3-call \texttt{ISO} in output+thinking token budget: median tokens are \res{c4_tok_pick} vs \res{c4_tok_iso}, a median ratio of \res{c4_tok_ratio}, inside our planned $[0.90, 1.10]$ band. By pool type the ratio is \res{c4_tok_ratio_ta} on TA pools and \res{x_c4_tok_ratio_tp} on TP pools, so on TP pools repeat-\texttt{PICK} used somewhat fewer tokens than \texttt{ISO} and falls just outside the band.
+
+With compute matched this closely, the false-choice excess does not shrink. On corrected UNSOLVED TA pools ($N=\res{c4_n_ta}$), \texttt{PICK\_MAJ3} chooses a wrong candidate in \res{c4_ta_maj3} (\res{c4_ta_maj3_ci}) of pools, matching single-call \texttt{PICK\_1X} (\res{c4_ta_pick1x}, contrast \res{c4_d_maj3_p1x}, \res{c4_d_maj3_p1x_ci}) and exceeding \texttt{ISO\_any} (\res{c4_ta_iso}) by \res{c4_d_maj3_iso} (\res{c4_d_maj3_iso_ci}, one-sided $p$ \res{c4_d_maj3_iso_p}). Union aggregation (\texttt{PICK\_ANY3}) worsens TA false choices to \res{c4_ta_any3} (contrast vs \texttt{ISO\_any}: \res{c4_d_any3_iso}, \res{c4_d_any3_iso_ci}). On aligned TA+TP SDT ($N=\res{c4_n_tp}$), \texttt{PICK\_MAJ3} shifts criterion by \res{c4_sdtd_maj3_iso_dc} (\res{c4_sdtd_maj3_iso_dc_ci}) and lowers sensitivity by \res{c4_sdtd_maj3_iso_ddp} (\res{c4_sdtd_maj3_iso_ddp_ci}) relative to \texttt{ISO}. For this judge and stratum, the pooled false-choice excess is therefore not an artifact of 1x vs 3x test-time compute.
+
+\subsection{Own-Answer Removal and Wells Removal (C5)}
+In v1 C3, 46 of 90 UNSOLVED TA pools contained an answer matching Haiku's own wrong SOLVE reply. Removing that own-answer candidate without replacement (C5, \res{c5o_ok}/\res{c5o_exp} calls, \res{c5o_parse_pct} parsed) leaves a gap between \texttt{PICK-2} and \texttt{ISO-2}: across all \res{c5o_all_n} single-own-answer pools, \texttt{PICK-2} chooses a wrong candidate in \res{c5o_all_pick2} (\res{c5o_all_pick2_ci}) vs \res{c5o_all_iso2} (\res{c5o_all_iso2_ci}) for \texttt{ISO-2}, giving $d_{\mathrm{C5}} = \res{c5o_all_dc5}$ (\res{c5o_all_dc5_ci}, one-sided $p$ \res{c5o_all_dc5_p}). On the audited subset ($N=\res{c5o_corr_n}$), $d_{\mathrm{C5}} = \res{c5o_corr_dc5}$ (\res{c5o_corr_dc5_ci}, $p$ \res{c5o_corr_dc5_p}). Because C5 inherits v1 pools, we separate remaining 2-candidate pools with zero Claude candidates ($N=\res{c5o_all_cl0_n}$: \texttt{PICK-2} \res{c5o_all_cl0_pick2} vs \texttt{ISO-2} \res{c5o_all_cl0_iso2}, $d_{\mathrm{C5}} = \res{c5o_all_cl0_dc5}$, \res{c5o_all_cl0_dc5_ci}) from pools retaining at least one Claude candidate ($N=\res{c5o_all_cl1_n}$: \texttt{PICK-2} \res{c5o_all_cl1_pick2} vs \texttt{ISO-2} \res{c5o_all_cl1_iso2}, $d_{\mathrm{C5}} = \res{c5o_all_cl1_dc5}$, \res{c5o_all_cl1_dc5_ci}). Own-answer self-recognition is therefore not the sole driver of the lineup effect, though the zero-Claude C5 subgroup is small.
+
+In the Wells removal-without-replacement test ($N=\res{c5w_n}$, \res{c5w_parse_pct} parsed), after deleting the wrong candidate Haiku originally picked in C3, Haiku still picked one of the two remaining wrong candidates in \res{c5w_pick2} (\res{c5w_pick2_ci}) of pools, exceeding both the proportional $2/3$ baseline (\res{c5w_prop_base}, difference \res{c5w_vs_prop}) and \texttt{ISO-2} (\res{c5w_iso2}, paired difference \res{c5w_diff}, \res{c5w_diff_ci}, $p$ \res{c5w_diff_p}). The pattern resembles the eyewitness finding that removing the chosen lineup member moves many choices to another member instead of to ``not present.'' The proportional baseline is descriptive and has no interval.
+
+\subsection{Scientific Hypotheses (C9) and Thinking Budget (C8)}
+Table~\ref{tab:science} and Figure~\ref{fig:crossvendor}(b) report the five judge configurations on the \res{c9_n_items} TA and \res{c9_n_items} TP ResearchBench pools (1,250 calls; parse rates \res{c9_haiku_parse_pct}, \res{c9_gptoss_parse_pct}, \res{c9_gemini_parse_pct}, \res{c9_gemlow_parse_pct} and \res{c9_hydro_parse_pct} in table order). The estimated criterion shift $\Delta c$ is negative for every configuration, also when the bootstrap resamples the 10 papers instead of the 30 pools. The reasons differ by judge, and the sample is small.
+
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Judge (ResearchBench, $N=\res{c9_n_items}$) & TA \texttt{ISO} & TA \texttt{EACH} & TA \texttt{PICK} & TP \texttt{ISO} & TP \texttt{PICK} & $\Delta c$ [item CI] & [paper CI] \\
+\midrule
+\texttt{claude-haiku-5-5} & \res{c9_haiku_ta_iso} & \res{c9_haiku_ta_each} & \res{c9_haiku_ta_pick} & \res{c9_haiku_tp_iso} & \res{c9_haiku_tp_pick} & \res{c9_haiku_pi_dc} \res{c9_haiku_pi_dc_ci} & \res{x_c9_haiku_dc_ci} \\
+\texttt{gpt-oss-120b-medium} & \res{c9_gptoss_ta_iso} & \res{c9_gptoss_ta_each} & \res{c9_gptoss_ta_pick} & \res{c9_gptoss_tp_iso} & \res{c9_gptoss_tp_pick} & \res{c9_gptoss_pi_dc} \res{c9_gptoss_pi_dc_ci} & \res{x_c9_gptoss_dc_ci} \\
+\texttt{gemini-3.8-flash-medium} & \res{c9_gemini_ta_iso} & \res{c9_gemini_ta_each} & \res{c9_gemini_ta_pick} & \res{c9_gemini_tp_iso} & \res{c9_gemini_tp_pick} & \res{c9_gemini_pi_dc} \res{c9_gemini_pi_dc_ci} & \res{x_c9_gemini_dc_ci} \\
+\texttt{gemini-3.8-flash-low} (C8) & \res{c9_gemlow_ta_iso} & \res{c9_gemlow_ta_each} & \res{c9_gemlow_ta_pick} & \res{c9_gemlow_tp_iso} & \res{c9_gemlow_tp_pick} & \res{c9_gemlow_pi_dc} \res{c9_gemlow_pi_dc_ci} & \res{x_c9_gemlow_dc_ci} \\
+\texttt{gemini-4-hydrogen-medium} & \res{c9_hydro_ta_iso} & \res{c9_hydro_ta_each} & \res{c9_hydro_ta_pick} & \res{c9_hydro_tp_iso} & \res{c9_hydro_tp_pick} & \res{c9_hydro_pi_dc} \res{c9_hydro_pi_dc_ci} & \res{x_c9_hydro_dc_ci} \\
+\bottomrule
+\end{tabular}
+\caption{C9 ResearchBench hypothesis lineups ($N=\res{c9_n_items}$ TA and \res{c9_n_items} TP pools from 10 papers, 4 candidates per pool). Both intervals are \res{lvl95} bootstrap intervals for $\Delta c$ (\texttt{PICK} minus \texttt{ISO}); the last column resamples papers and is a post hoc addition. For the Gemini rows $\Delta c$ comes almost entirely from TP pools.}
+\label{tab:science}
+\end{table*}
+
+For \texttt{claude-haiku-5-5} and \texttt{gpt-oss-120b-medium}, \texttt{PICK} raises TA false choices over \texttt{ISO}: \res{c9_haiku_iso_ta_k}/\res{c9_haiku_iso_ta_n} to \res{c9_haiku_pick_ta_k}/\res{c9_haiku_pick_ta_n} for Haiku (exact McNemar $p$ \res{c9_haiku_mcn_ta_p}; the false choices fall in \res{x_c9_haiku_pfa_pick} of the 10 papers) and \res{c9_gptoss_iso_ta_k}/\res{c9_gptoss_iso_ta_n} to \res{c9_gptoss_pick_ta_k}/\res{c9_gptoss_pick_ta_n} for \texttt{gpt-oss-120b-medium} ($p$ \res{c9_gptoss_mcn_ta_p}, not significant at 0.05; \res{x_c9_gptoss_pfa_pick} papers). The three Gemini configurations stay at the TA floor under both procedures (\res{c9_gemini_iso_ta_k}/\res{c9_gemini_iso_ta_n} to \res{c9_gemini_pick_ta_k}/\res{c9_gemini_pick_ta_n}, \res{c9_gemlow_iso_ta_k}/\res{c9_gemlow_iso_ta_n} to \res{c9_gemlow_pick_ta_k}/\res{c9_gemlow_pick_ta_n}, and \res{c9_hydro_iso_ta_k}/\res{c9_hydro_iso_ta_n} to \res{c9_hydro_pick_ta_k}/\res{c9_hydro_pick_ta_n}).
+
+On TP pools every judge selects the right hypothesis far more often under \texttt{PICK}. In isolation the judges accepted the ground-truth hypothesis for only \res{x_c9_haiku_gold}, \res{x_c9_gptoss_gold}, \res{x_c9_gemini_gold}, \res{x_c9_gemlow_gold} and \res{x_c9_hydro_gold} of the 10 papers (table order), while \texttt{PICK} selected it in \res{c9_haiku_pick_tp_k}, \res{c9_gptoss_pick_tp_k}, \res{c9_gemini_pick_tp_k}, \res{c9_gemlow_pick_tp_k} and \res{c9_hydro_pick_tp_k} of \res{c9_gemini_pick_tp_n} TP pools. Because each ground-truth hypothesis was verified once and reused in three pools, the \texttt{ISO} TP rate rests on 10 verdicts per judge, and item-level tests on TP would overstate the evidence; we do not report them. For the Gemini configurations the negative $\Delta c$ therefore reflects more correct selections at almost no cost in false choices, amplified by the log-linear correction at floor and ceiling. On these pools \texttt{PICK} was simply the better procedure for those judges. This fits the account (a liberal shift is cheap when sensitivity is high), but it also shows that isolated verification has a real cost in missed correct candidates. Lowering thinking effort on \texttt{gemini-3.8-flash} (C8) changes the isolated acceptance of the ground truth by one paper and leaves \texttt{PICK} unchanged.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/fig3_crossvendor_domains}
+\caption{TA false-choice rates under \texttt{ISO}, \texttt{EACH} and \texttt{PICK} with \res{lvl95} item-bootstrap intervals. (a) Mathematics, UNSOLVED stratum of each judge: the Claude bars are v1 pools (not family-excluded, shown without intervals), the other two are the family-excluded C6 pools. (b) ResearchBench hypothesis lineups, five judge configurations.}
+\label{fig:crossvendor}
+\end{figure*}
+
+\subsection{Judge-Family-Excluded Math (C6)}
+\label{sec:c6}
+Table~\ref{tab:c6math} reports the family-excluded MathArena and arXivMath replication (1,000 calls per judge; \res{c6_gptoss_parse_pct} parsed for \texttt{gpt-oss-120b-medium} and \res{c6_gemini_parse_pct} for \texttt{gemini-3.8-flash-medium}; no own-family candidate in any pool). The strata are unbalanced in opposite directions: \texttt{gpt-oss-120b-medium} has $N_{\mathrm{UNSOLVED}}=\res{c6_gptoss_n_u}$ (\res{c6_gptoss_n_u_contest} contest, \res{c6_gptoss_n_u_arxiv} arXivMath) and $N_{\mathrm{SOLVED}}=\res{c6_gptoss_n_s}$, while \texttt{gemini-3.8-flash-medium} has $N_{\mathrm{UNSOLVED}}=\res{c6_gemini_n_u}$ (\res{c6_gemini_n_u_contest} contest, \res{c6_gemini_n_u_arxiv} arXivMath) and $N_{\mathrm{SOLVED}}=\res{c6_gemini_n_s}$. Neither judge has 25 problems in both strata, so both miss our stratum-size gate and the per-stratum rows are descriptive. The $N$ column of Table~\ref{tab:c6math} counts the problems that enter the paired \texttt{PICK} minus \texttt{ISO} contrast, which is one fewer than the stratum size in three rows and 98 of 100 overall.
+
+\paragraph{The planned primary test is not supported.} The plan's primary C6 test was a higher TA false-choice rate under \texttt{PICK} than under \texttt{ISO} on \texttt{UNSOLVED\_M}. For \texttt{gpt-oss-120b-medium} the difference is \res{c6_gptoss_u_pi_df} (\res{c6_gptoss_u_pi_df_ci}), with \texttt{ISO} at \res{c6_gptoss_u_ta_iso} and \texttt{PICK} at \res{c6_gptoss_u_ta_pick}; over all problems it is \res{c6_gptoss_all_pi_df} (\res{c6_gptoss_all_pi_df_ci}). For \texttt{gemini-3.8-flash-medium} it is \res{c6_gemini_u_pi_df} (\res{c6_gemini_u_pi_df_ci}) on \texttt{UNSOLVED\_M} and \res{c6_gemini_all_pi_df} (\res{c6_gemini_all_pi_df_ci}) over all problems. On \texttt{UNSOLVED\_M}, where the test was planned, neither interval excludes zero. Only the all-problem difference for \texttt{gemini-3.8-flash-medium} is borderline (lower bound at zero), and for \texttt{gpt-oss-120b-medium} the sign is reversed. The raw false-choice excess seen for Claude judges in v1 is at most weakly present here.
+
+\paragraph{The criterion shift is negative overall.} Over all problems $\Delta c$ is \res{c6_gptoss_all_pi_dc} (\res{c6_gptoss_all_pi_dc_ci}) for \texttt{gpt-oss-120b-medium} and \res{c6_gemini_all_pi_dc} (\res{c6_gemini_all_pi_dc_ci}) for \texttt{gemini-3.8-flash-medium}. In both cases the shift shows up mostly as more correct selections on TP pools (\res{c6_gptoss_all_tp_iso} to \res{c6_gptoss_all_tp_pick}, and \res{c6_gemini_all_tp_iso} to \res{c6_gemini_all_tp_pick}). By stratum the picture is uneven: for \texttt{gpt-oss-120b-medium}, $\Delta c$ is \res{c6_gptoss_u_pi_dc} (\res{c6_gptoss_u_pi_dc_ci}) on \texttt{UNSOLVED\_M} and \res{c6_gptoss_s_pi_dc} (\res{c6_gptoss_s_pi_dc_ci}, $N=\res{c6_gptoss_s_pi_n}$) on \texttt{SOLVED\_M}; for \texttt{gemini-3.8-flash-medium} it is \res{c6_gemini_s_pi_dc} (\res{c6_gemini_s_pi_dc_ci}) on \texttt{SOLVED\_M} and \res{c6_gemini_u_pi_dc} (\res{c6_gemini_u_pi_dc_ci}, $N=\res{c6_gemini_u_pi_n}$) on \texttt{UNSOLVED\_M}, where the interval is wide and centered near zero. \texttt{gpt-oss-120b-medium} is a credulous isolated verifier (it accepts \res{c6_gptoss_cal_w} of wrong candidates one at a time, against \res{c6_gemini_cal_w} for \texttt{gemini-3.8-flash-medium}), so its 3-call \texttt{ISO} already accepts some wrong candidate in most all-wrong pools and has little room to look better than \texttt{PICK}.
+
+\paragraph{Out-of-sample prediction.} Our plan included a quantitative test: take $\Delta c$ from a judge's SOLVED stratum, add it to that judge's \texttt{ISO} criterion on UNSOLVED, and predict the UNSOLVED \texttt{PICK} false-choice rate from $F = 1 - \Phi(d'/2 + c)$. For \texttt{gpt-oss-120b-medium} the prediction is \res{x_h3_gptoss_pred} against an observed \res{c6_gptoss_u_pick_f} (\res{c6_gptoss_u_pick_f_ci}), outside the interval. For \texttt{gemini-3.8-flash-medium} it is \res{x_h3_gemini_pred} against \res{c6_gemini_u_pick_f} (\res{c6_gemini_u_pick_f_ci}), inside an interval too wide to be informative at $N=\res{c6_gemini_u_pi_n}$. Both use a SOLVED or UNSOLVED stratum below the gate. We read this as no support yet for a constant shift across strata outside the Claude judges. We computed this check at finalisation with a separate script.
+
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Judge (C6 math, family-excluded) & Stratum & $N$ & TA \texttt{ISO} & TA \texttt{PICK} & TP \texttt{ISO} & TP \texttt{PICK} & $\Delta c$ [\res{lvl95} CI] \\
+\midrule
+\texttt{gpt-oss-120b-medium} & ALL & \res{c6_gptoss_all_pi_n} & \res{c6_gptoss_all_ta_iso} & \res{c6_gptoss_all_ta_pick} & \res{c6_gptoss_all_tp_iso} & \res{c6_gptoss_all_tp_pick} & \res{c6_gptoss_all_pi_dc} \res{c6_gptoss_all_pi_dc_ci} \\
+\texttt{gpt-oss-120b-medium} & UNSOLVED\_M & \res{c6_gptoss_u_pi_n} & \res{c6_gptoss_u_ta_iso} & \res{c6_gptoss_u_ta_pick} & \res{c6_gptoss_u_tp_iso} & \res{c6_gptoss_u_tp_pick} & \res{c6_gptoss_u_pi_dc} \res{c6_gptoss_u_pi_dc_ci} \\
+\texttt{gpt-oss-120b-medium} & SOLVED\_M & \res{c6_gptoss_s_pi_n} & \res{c6_gptoss_s_ta_iso} & \res{c6_gptoss_s_ta_pick} & \res{c6_gptoss_s_tp_iso} & \res{c6_gptoss_s_tp_pick} & \res{c6_gptoss_s_pi_dc} \res{c6_gptoss_s_pi_dc_ci} \\
+\midrule
+\texttt{gemini-3.8-flash-medium} & ALL & \res{c6_gemini_all_pi_n} & \res{c6_gemini_all_ta_iso} & \res{c6_gemini_all_ta_pick} & \res{c6_gemini_all_tp_iso} & \res{c6_gemini_all_tp_pick} & \res{c6_gemini_all_pi_dc} \res{c6_gemini_all_pi_dc_ci} \\
+\texttt{gemini-3.8-flash-medium} & UNSOLVED\_M & \res{c6_gemini_u_pi_n} & \res{c6_gemini_u_ta_iso} & \res{c6_gemini_u_ta_pick} & \res{c6_gemini_u_tp_iso} & \res{c6_gemini_u_tp_pick} & \res{c6_gemini_u_pi_dc} \res{c6_gemini_u_pi_dc_ci} \\
+\texttt{gemini-3.8-flash-medium} & SOLVED\_M & \res{c6_gemini_s_pi_n} & \res{c6_gemini_s_ta_iso} & \res{c6_gemini_s_ta_pick} & \res{c6_gemini_s_tp_iso} & \res{c6_gemini_s_tp_pick} & \res{c6_gemini_s_pi_dc} \res{c6_gemini_s_pi_dc_ci} \\
+\bottomrule
+\end{tabular}
+\caption{C6 judge-family-excluded math ($N=\res{c6_n_problems}$ problems, half contest and half arXivMath; no own-family candidate in any pool). Per-stratum rows are descriptive because both judges miss the stratum-size gate.}
+\label{tab:c6math}
+\end{table*}
+
+\subsection{Mitigations (C7)}
+Table~\ref{tab:mitigation} and Figure~\ref{fig:mitigation} compare the three mitigation arms on the same $N=\res{c7_m1_n}$ corrected UNSOLVED \texttt{claude-haiku-5-5} math problems, alongside M2 on C6 math and ResearchBench pools. One caution applies to every Haiku math number in this section. The 40 problems were drawn by a seeded shuffle that does not look at outcomes, but the draw happened to be favorable to \texttt{ISO}: stored \texttt{ISO} verdicts accept some wrong candidate in \res{x_c7_sub_k} of the 40 selected TA pools against \res{x_c7_rest_k} of the \res{x_c7_rest_n} left out (\res{x_c7_full_k} of \res{x_c7_full_n}, or \res{x_c7_full_f}, on the full paired stratum; a draw this low has hypergeometric probability \res{x_c7_tail}), while the \texttt{PICK} rate on the subset matches the full stratum. The gap between \texttt{PICK} and anything built on \texttt{ISO} is therefore probably overstated here; the C4 contrast on the full stratum (\res{c4_d_maj3_iso}) is the better guide to its size.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.94\textwidth]{figures/fig4_mitigation_frontier}
+\caption{Operating points on the 40 problem UNSOLVED \texttt{claude-haiku-5-5} math subset: TA false-choice rate against TP correct selection rate, with \res{lvl95} bootstrap crosshairs. M1 and \texttt{ISO} share the same false-choice rate. Right panel: TA false-choice rates in the C4 and C5 controls.}
+\label{fig:mitigation}
+\end{figure*}
+
+\begin{table*}[t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrr}
+\toprule
+Domain / Judge & Arm & $N$ & TA $F$ & TP $H$ & $d'$ [\res{lvl95} CI] & $c$ [\res{lvl95} CI] \\
+\midrule
+Math UNSOLVED, \texttt{claude-haiku-5-5} & M0 (\texttt{PICK}) & \res{c7_m1_n} & \res{c7_m1_pick_f} & \res{c7_m1_pick_h} & \res{c7_m1_pick_dp} \res{c7_m1_pick_dp_ci} & \res{c7_m1_pick_c} \res{c7_m1_pick_c_ci} \\
+Math UNSOLVED, \texttt{claude-haiku-5-5} & \texttt{ISO} (3x) & \res{c7_m1_n} & \res{c7_m1_iso_f} & \res{c7_m1_iso_h} & \res{c7_m1_iso_dp} \res{c7_m1_iso_dp_ci} & \res{c7_m1_iso_c} \res{c7_m1_iso_c_ci} \\
+Math UNSOLVED, \texttt{claude-haiku-5-5} & \textbf{M1 (\texttt{ISO}$\to$\texttt{PICK})} & \res{c7_m1_n} & \res{c7_m1_m1_f} & \res{c7_m1_m1_h} & \res{c7_m1_m1_dp} \res{c7_m1_m1_dp_ci} & \res{c7_m1_m1_c} \res{c7_m1_m1_c_ci} \\
+Math UNSOLVED, \texttt{claude-haiku-5-5} & M2 (Falsify Gate) & \res{c7_m2h_n} & \res{c7_m2h_g4_f} & \res{c7_m2h_g4_h} & \res{c7_m2h_g4_dp} \res{c7_m2h_g4_dp_ci} & \res{c7_m2h_g4_c} \res{c7_m2h_g4_c_ci} \\
+Math UNSOLVED, \texttt{claude-haiku-5-5} & M3 (Known Foil) & \res{c7_m3_n} & \res{c7_m3_f} & \res{c7_m3_h} & \res{c7_m3_dp} \res{c7_m3_dp_ci} & \res{c7_m3_c} \res{c7_m3_c_ci} \\
+\midrule
+Math C6, \texttt{gpt-oss-120b-medium} & M2 (Falsify Gate) & \res{c7_m2m_gptoss_n} & \res{c7_m2m_gptoss_g4_f} & \res{c7_m2m_gptoss_g4_h} & \res{c7_m2m_gptoss_g4_dp} \res{c7_m2m_gptoss_g4_dp_ci} & \res{c7_m2m_gptoss_g4_c} \res{c7_m2m_gptoss_g4_c_ci} \\
+Math C6, \texttt{gemini-3.8-flash-medium} & M2 (Falsify Gate) & \res{c7_m2m_gemini_n} & \res{c7_m2m_gemini_g4_f} & \res{c7_m2m_gemini_g4_h} & \res{c7_m2m_gemini_g4_dp} \res{c7_m2m_gemini_g4_dp_ci} & \res{c7_m2m_gemini_g4_c} \res{c7_m2m_gemini_g4_c_ci} \\
+\midrule
+Science C9, \texttt{claude-haiku-5-5} & M2 (Falsify Gate) & \res{c9_n_items} & \res{c7_m2s_haiku_g4_f} & \res{c7_m2s_haiku_g4_h} & \res{c7_m2s_haiku_g4_dp} \res{c7_m2s_haiku_g4_dp_ci} & \res{c7_m2s_haiku_g4_c} \res{c7_m2s_haiku_g4_c_ci} \\
+Science C9, \texttt{gpt-oss-120b-medium} & M2 (Falsify Gate) & \res{c9_n_items} & \res{c7_m2s_gptoss_g4_f} & \res{c7_m2s_gptoss_g4_h} & \res{c7_m2s_gptoss_g4_dp} \res{c7_m2s_gptoss_g4_dp_ci} & \res{c7_m2s_gptoss_g4_c} \res{c7_m2s_gptoss_g4_c_ci} \\
+Science C9, \texttt{gemini-3.8-flash-medium} & M2 (Falsify Gate) & \res{c9_n_items} & \res{c7_m2s_gemini_g4_f} & \res{c7_m2s_gemini_g4_h} & \res{c7_m2s_gemini_g4_dp} \res{c7_m2s_gemini_g4_dp_ci} & \res{c7_m2s_gemini_g4_c} \res{c7_m2s_gemini_g4_c_ci} \\
+Science C9, \texttt{gemini-3.8-flash-low} & M2 (Falsify Gate) & \res{c9_n_items} & \res{c7_m2s_gemlow_g4_f} & \res{c7_m2s_gemlow_g4_h} & \res{c7_m2s_gemlow_g4_dp} \res{c7_m2s_gemlow_g4_dp_ci} & \res{c7_m2s_gemlow_g4_c} \res{c7_m2s_gemlow_g4_c_ci} \\
+Science C9, \texttt{gemini-4-hydrogen-medium} & M2 (Falsify Gate) & \res{c9_n_items} & \res{c7_m2s_hydro_g4_f} & \res{c7_m2s_hydro_g4_h} & \res{c7_m2s_hydro_g4_dp} \res{c7_m2s_hydro_g4_dp_ci} & \res{c7_m2s_hydro_g4_c} \res{c7_m2s_hydro_g4_c_ci} \\
+\bottomrule
+\end{tabular}%
+}
+\caption{C7 mitigation results (TA false-choice rate $F$ and TP hit rate $H$). On the Haiku math subset, M1 and \texttt{ISO} have the same false-choice rate; M1 differs from \texttt{ISO} only in how it breaks ties among accepted candidates.}
+\label{tab:mitigation}
+\end{table*}
+
+On the Haiku math subset ($N=\res{c7_m1_n}$) the three arms behave differently:
+\begin{itemize}\setlength{\itemsep}{2pt}
+\item \textbf{M1 (\texttt{ISO}-filter-then-\texttt{PICK}) equals \texttt{ISO} on false choices.} Stage 1 resolves 72 of 80 pools without a further call (48 with $k=0$, 24 with $k=1$), and \res{c7_m1_tb_ok} pools need a tie-break. M1 therefore costs the three \texttt{ISO} calls plus \res{c7_m1_extra_calls} calls per pool, against one call for \texttt{PICK}. Its TA false-choice rate is \res{c7_m1_m1_f}, identical to \texttt{ISO} (\res{c7_m1_iso_f}) and below \texttt{PICK} (\res{c7_m1_pick_f}; paired difference \res{c7_m1_mp_df}, \res{c7_m1_mp_df_ci}). Against \texttt{PICK} it moves the criterion by \res{c7_m1_mp_dc} (\res{c7_m1_crec} of the \texttt{PICK} minus \texttt{ISO} shift) and raises $d'$ from \res{c7_m1_pick_dp} to \res{c7_m1_m1_dp} (difference \res{c7_m1_mp_ddp}, \res{c7_m1_mp_ddp_ci}). Against \texttt{ISO} its only gain is the tie-break: TP hits \res{c7_m1_m1_h} vs \res{c7_m1_iso_h} (difference \res{c7_m1_mi_dh}, \res{c7_m1_mi_dh_ci}) and $d'$ difference \res{c7_m1_mi_ddp} (\res{c7_m1_mi_ddp_ci}), based on 8 pools. So M1 is best described as \texttt{ISO} with a sensible tie-break, and its advantage over \texttt{PICK} is the advantage of \texttt{ISO}.
+\item \textbf{M2 (falsification-first gate) over-corrects on hard math.} On the Haiku math subset M2 drops TA false choices to \res{c7_m2h_g4_f} but TP hits fall to \res{c7_m2h_g4_h} (from \res{c7_m1_iso_h} under \texttt{ISO} and \res{c7_m1_pick_h} under \texttt{PICK}), with $c = \res{c7_m2h_g4_c}$. Its $d'$ (\res{c7_m2h_g4_dp}) is above \texttt{PICK} but not above \texttt{ISO}, so it buys nothing that \texttt{ISO} does not give at a far better hit rate. On ResearchBench pools it also removes Haiku's TA false choices (\res{c9_haiku_ta_pick} to \res{c7_m2s_haiku_g4_f}) at the cost of TP hits (\res{c9_haiku_tp_pick} to \res{c7_m2s_haiku_g4_h}). For \texttt{gpt-oss-120b-medium} on ResearchBench it roughly halves TA false choices (\res{c9_gptoss_ta_pick} to \res{c7_m2s_gptoss_g4_f}) with TP hits at \res{c7_m2s_gptoss_g4_h} (\res{c9_gptoss_tp_pick} under \texttt{PICK}), and the Gemini configurations were already near the floor. On the C6 math subset M2 gives \res{c7_m2m_gptoss_g4_f} false choices and \res{c7_m2m_gptoss_g4_h} hits for \texttt{gpt-oss-120b-medium} and \res{c7_m2m_gemini_g4_f} and \res{c7_m2m_gemini_g4_h} for \texttt{gemini-3.8-flash-medium}. The gate's effect depends strongly on judge and domain.
+\item \textbf{M3 (known-foil lineup) does not help.} Haiku never selected the inserted decoy (\res{c7_m3_foil_all} across 80 pools), so the prompt was read. TA false choices on the three real wrong candidates stayed at \res{c7_m3_f} (difference from \texttt{PICK} \res{c7_m3_mp_df}, \res{c7_m3_mp_df_ci}, interval includes zero), with the criterion still well below \texttt{ISO} ($\Delta c$ vs \texttt{ISO} \res{c7_m3_mi_dc}). Rejecting an obvious decoy did not make the judge stricter about plausible wrong solutions.
+\end{itemize}
+
+\section{Limitations}
+\begin{enumerate}\setlength{\itemsep}{2pt}
+\item \textbf{Post hoc account.} The criterion-shift account was formed after seeing v1 data. In v2 its sign prediction holds in most cells, its constancy across strata is not established outside the Claude judges, and the one planned quantitative prediction is unsupported (Section~\ref{sec:c6}).
+\item \textbf{One judge carries the mechanism controls.} C4, C5 and the M1 and M3 arms use only \texttt{claude-haiku-5-5}, on pools inherited from v1 in which most candidate sets include a Claude solution. The zero-Claude subgroup in C5 is small ($N=\res{c5o_all_cl0_n}$) and its interval touches zero.
+\item \textbf{Small and clustered science sample.} C9 has 30 pools per type from 10 papers, with each ground-truth hypothesis verified once per judge. Item-level intervals understate uncertainty; Table~\ref{tab:science} adds paper-clustered intervals.
+\item \textbf{Unbalanced C6 strata.} Neither non-Anthropic judge has enough problems in both solvability strata, and \texttt{UNSOLVED\_M} for \texttt{gemini-3.8-flash-medium} is almost entirely arXivMath.
+\item \textbf{A favorable subset in C7.} The seeded 40 problem subset has an unusually low \texttt{ISO} false-acceptance rate, which inflates every Haiku math contrast against \texttt{PICK} in C7.
+\item \textbf{Final-answer line shown to judges.} Each math candidate was shown with a line ``Final answer:'' taken from MathArena's parsed answer field. In some pools that field does not match the boxed answer in the solution text (evaluated floats, stray digits, parser artifacts): 68 of 543 v1 pools, 17 of 200 C6 pools, 9 of 124 C4 pools and 6 of 81 C5 pools. Labels are unaffected in our audit (no wrong-labelled candidate has a boxed answer equal to the reference), but judges saw an inconsistent line in those pools, the same in every arm. We have not rerun the analyses without them.
+\item \textbf{Labels.} The v1 label corrections were adjudicated by AI agents. A blind human audit tool is prepared but the audit has not been done. A scripted 120 file audit found no parser errors on C6, C9 and C7 M2 replies after the extension described in Section~\ref{sec:design}.
+\item \textbf{Client scaffolding.} Subscription clients add their own system prompts. C4 matches output and thinking tokens, not total context, and we could not run a bare API control.
+\item \textbf{Scope.} Results are for the named model versions and effort settings, in November 2026, on short-answer math and abstract-level hypothesis selection.
+\end{enumerate}
+
+\section{Conclusion}
+For \texttt{claude-haiku-5-5} on hard math, asking the judge to pick among candidates produces more false choices on all-wrong pools than verifying candidates one at a time, and this survives matched compute, removal of the judge's own answer and removal of its first choice. A more liberal criterion under pooling describes those data well. Beyond that judge the picture is mixed: the estimated criterion shift is negative overall for two other model families on family-excluded math and for all five configurations on scientific hypotheses, but the raw false-choice excess does not appear for \texttt{gpt-oss-120b-medium} on math, and for Gemini judges on hypotheses pooling mostly helps. Among the mitigations we tried, only verifying candidates in isolation before any pooled choice reduced false choices without a clear loss of correct ones on hard math, and it costs about three times the calls. Whether to pool or isolate therefore depends on how often a pool is likely to contain no correct candidate and on how discriminating the judge is in isolation; measuring both on target-absent pools is cheap and, in our view, worth doing before trusting a selection stage.
+
+\section*{Data and code availability}
+The v1 archive (plans, prompts, raw replies, grading code and analysis scripts) is public at \url{https://github.com/chaitshar/when-no-candidate-is-correct/tree/v1.0}. The v2 banks, plan documents, lock files, raw replies, both analysis scripts and the finalisation script (\texttt{scripts/final\_sensitivity.py}) are in the \texttt{v2/} folder of the same archive, release v2.0 (\url{https://github.com/chaitshar/when-no-candidate-is-correct/tree/v2.0/v2}). MathArena data carry a CC BY-NC-SA licence.
+
+\section*{AI assistance}
+The author set the research direction and constraints. AI coding agents (Google Antigravity and Claude Code) wrote the harness, ran the experiments and analyses, and drafted the paper under those constraints; an AI agent also audited the draft against the raw replies and the plan documents, which led to the deviations paragraph and several of the limitations above. ``Independent'' scripts or checks in this paper are separate AI-written programs, not human checks. The author is responsible for the content.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0326_7_TP__rep0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T23:03:24Z",
+  "duration_s": 10.405,
+  "input_tokens": 2,
+  "output_tokens": 1875,
+  "thinking_tokens": 1327,
+  "text": "**Solution 2 is the most likely correct answer (12).** I checked it against a partial recollection of the literature, not a full derivation.\n\n- **Solution 1 (6)** has a valid example. Its map sends 2/3 to 2, and 4/3 to 0, and both points check out. But it asserts that no other rational preperiodic points exist. It only checks some second-level preimages and never considers a full search over the $S_3$-symmetric family, so its maximality claim is unsupported. I recall that the known maximum for this class is larger than 6.\n- **Solution 2 (12)** uses the $S_3$ structure properly: the three fixed points form one orbit, and rational orbits have size 3 or 6. Its count of 3 fixed points, 3 strictly preperiodic points landing on them, and a rational size-6 orbit is a plausible route to 12. I believe Doyle's work on quadratic rational maps with nonabelian automorphism group over $\\mathbb{Q}$ gives 12 as the sharp bound, though I could not confirm the exact statement here. I did not verify that the 12-point configuration is realizable with explicit coordinates.\n- **Solution 3 (4)** is wrong. It asserts that every such map is conjugate to $1/z^2$ over $\\overline{\\mathbb{Q}}$ and that the rational points are capped at 4. But the example from Solution 1 already has 6 rational preperiodic points with $\\mathrm{Aut}$ nonabelian, which contradicts that bound. Its claim that the 4th roots of unity are the only torsion in the unit circle's rational points is also an unsupported step.\n\nCHOICE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8904,
+    "stop_reason": "end_turn",
+    "session_id": "11c6cace-1a8a-492d-a8a0-140fb864281b",
+    "total_cost_usd": 0.0026381600000000005,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7933,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1875,
+      "output_tokens_details": {
+        "thinking_tokens": 1327
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7933,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1875,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7933,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7933
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1875,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7933,
+        "webSearchRequests": 0,
+        "costUSD": 0.0026381600000000005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1327,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7933,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 6661,
+    "type": "result",
+    "duration_ms": 8998,
+    "uuid": "ff82ffb7-2143-4982-a46d-f81a6cd3f941",
+    "ttft_stream_ms": 811,
+    "time_to_request_ms": 95,
+    "first_content_frame_ms": 811,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

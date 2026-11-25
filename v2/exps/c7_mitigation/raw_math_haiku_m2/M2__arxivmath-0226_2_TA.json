@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__arxivmath-0226_2_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:48:31Z",
+  "duration_s": 16.26,
+  "input_tokens": 2,
+  "output_tokens": 3148,
+  "thinking_tokens": 2219,
+  "text": "**Step 1: Independent falsification**\n\n**Solution 1 (answer 1).** The log-singularity picture is reasonable: the neutral mode behaves like δ ln|δ|, so the density perturbation ~ ln|δ| is plausible. But the claimed exponent is not justified. A function with a log singularity lies in H^s for s < 1/2, so the threshold is 1/2 only if the singularity is the worst one present. The solution never checks whether the ψ-to-velocity map (one derivative) or the specific log coefficient changes the threshold. The sum 1/2 + 1/2 = 1 is arithmetically fine, but the exponents are asserted rather than derived. Falsification failed to find a definite error, but the threshold step is unsupported.\n\n**Solution 2 (answer 0).** This cites a specific paper and claims a density exponent of −1/2 from a 1/(U−c) singularity. That is a leap. A 1/δ singularity is not in H^{−1/2−τ} in any standard sense without further justification, and the proposed mechanism does not follow from the Frobenius structure of the distorted Rayleigh equation. The attribution to a specific paper is also unverified. The solution fails falsification.\n\n**Solution 3 (answer 2).** The Frobenius analysis is standard and mostly sound: the indicial roots 0 and 1 differ by an integer, so the r = 0 solution carries a log term, φ₂ ≈ 1 + α s log|s|. The Sobolev threshold for s log|s| in H^s is s < 3/2, which is correct for the stream function. The flaw is the identification of stream-function regularity with velocity regularity. Velocity is u = ψ_y, which shifts the threshold down by one derivative, giving u ~ log|s| ∈ H^{1/2−}. The solution uses 3/2 for velocity, which contradicts its own setup. The density step is also hand-waved: ρ̂ = ρ̄'φ/(U−c) is not derived from the linearized equations, and the claim φ(y_c) = 0 is asserted, not shown. Even so, the value 3/2 may match the published threshold for the stream function, and the answer 2 may be correct, but the derivation does not establish it. It fails falsification on the velocity–stream-function conflation.\n\n**Step 2: Calibrated selection gate**\n\nNone of the three solutions survives falsification with confidence 4 or higher. Solution 3 has a clear conceptual error in the velocity exponent. Solution 1 leaves its exponents unjustified. Solution 2 rests on an unverified citation and an unsupported singularity claim. I cannot check the source paper with the tools available here, so I cannot raise any answer to verified confidence.\n\nCHOICE: NONE\nCONFIDENCE: 2",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 15005,
+    "stop_reason": "end_turn",
+    "session_id": "a399035c-2126-4e42-a654-16224517dce5",
+    "total_cost_usd": 0.00322406,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 7680,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 3148,
+      "output_tokens_details": {
+        "thinking_tokens": 2219
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7680,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 3148,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 7680,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 7680
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 3148,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 7680,
+        "webSearchRequests": 0,
+        "costUSD": 0.00322406,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2219,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7680,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 11431,
+    "type": "result",
+    "duration_ms": 15604,
+    "uuid": "ae63afbc-e695-4c0a-bf6a-15d38f71c6cf",
+    "ttft_stream_ms": 1810,
+    "time_to_request_ms": 601,
+    "first_content_frame_ms": 1811,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

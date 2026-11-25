@@ -1,0 +1,117 @@
+{
+  "job_id": "M2__r6s2_TA",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-20T09:46:19Z",
+  "duration_s": 11.104,
+  "input_tokens": 2,
+  "output_tokens": 2021,
+  "thinking_tokens": 823,
+  "text": "**Step 1: Independent falsification**\n\n**Hypothesis 1** (TiO2 vegetable-oil MQL with adaptive thermal conductivity, 0.15 to 0.45 W/mK over 35 to 85°C)\n- The abstract never mentions TiO2, vegetable oil, or a temperature-responsive conductivity. Its nanoparticle examples are alumina, carbon nanotubes, and CuO-free thermal data for normal saline.\n- The \"adaptive\" mechanism is an unsupported causal claim. The abstract reports thermal properties only as a 145.06% convective heat transfer gain for CNT-saline, with no conductivity-versus-temperature curve.\n- Falsified: the materials, mechanism, and numeric conductivity range are absent from the evidence.\n\n**Hypothesis 2** (electrostatic atomization, 2% w/v SiO2, 10% v/v MR fluid; at least 40% less tool wear and at least 30% better Ra versus MCF and pneumatic MQL)\n- The abstract reviews atomization mechanisms and supply equipment, which partly overlaps. It does not mention SiO2, MR fluid, or any comparison of electrostatic against pneumatic atomization.\n- The only quantified tool-life result is 177 to 230% improvement for alumina nanofluid in hard milling. That is a different nanoparticle, process, and baseline, so it cannot confirm the 40% or 30% thresholds.\n- Falsified: the specific formulation and the numeric thresholds have no support in the abstract.\n\n**Hypothesis 3** (electrostatic atomization with an unspecified SiO2 formulation; at least 30% lower friction and at least 25% lower wear versus MCF and pneumatic MQL, turning at 100 m/min)\n- The \"specific formulation\" is never stated, so the claim cannot be checked against the abstract.\n- The abstract's friction result (85% reduction for jatropha-alumina) is measured against dry conditions, not MCF or pneumatic MQL. It does not support the 30% or 25% thresholds.\n- Falsified: the claim is untestable as written and its quantitative comparisons are not in the evidence.\n\n**Hypothesis 4** (dynamically controlled MQL with surface-modified CuO in bio-ester, concentration modulated by real-time temperature and vibration; at least 20% less tool wear, 15% better Ra/Rz, 10% lower specific cutting energy, on AISI 1045 and AlSi10Mg)\n- The abstract does say a \"parameterized controllable supply system\" was addressed, which loosely matches the control theme. However, it describes no closed-loop feedback on temperature or vibration and no in-situ concentration modulation.\n- It names no CuO nanofluid, no bio-ester base, and no AISI 1045 or AlSi10Mg workpieces. It reports no specific cutting energy result and no Ra/Rz or flank/crater wear percentages.\n- The one relevant tool-life figure (177 to 230%) is for alumina in hard milling, not the claimed mechanism or metrics.\n- Falsified: the control architecture, materials, and all quantitative thresholds exceed the evidence.\n\n**Step 2: Calibrated selection gate**\n\nNo hypothesis survived falsification. Each one either names materials, mechanisms, or numeric thresholds that the abstract does not report, or compares against baselines the abstract does not use. None reaches the confidence-4 threshold for selection, so the answer is NONE.\n\nCHOICE: NONE\n\nCONFIDENCE: 5",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 10134,
+    "stop_reason": "end_turn",
+    "session_id": "80e2f662-a3ed-4fc9-ae20-190d55cce2ca",
+    "total_cost_usd": 0.0025147599999999996,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6951,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 2021,
+      "output_tokens_details": {
+        "thinking_tokens": 823
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6951,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2021,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6951,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6951
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2021,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6951,
+        "webSearchRequests": 0,
+        "costUSD": 0.0025147599999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 823,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6951,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5315,
+    "type": "result",
+    "duration_ms": 10435,
+    "uuid": "9581e800-cbee-4143-8994-040ea94ac836",
+    "ttft_stream_ms": 1805,
+    "time_to_request_ms": 301,
+    "first_content_frame_ms": 1805,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

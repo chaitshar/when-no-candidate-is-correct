@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0426_14__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T17:40:04Z",
+  "duration_s": 50.666,
+  "input_tokens": 9865,
+  "output_tokens": 5221,
+  "thinking_tokens": 4578,
+  "text": "To find the order $\\beta$ such that Sibson's $\\alpha$-mutual information $I_\\alpha(X; Y)$ converges to the Rényi entropy $H_\\beta(X)$ as $\\mathsf{snr} \\to \\infty$, we recall the expression for Sibson's $\\alpha$-mutual information:\n$$I_\\alpha(X; Y) = \\frac{\\alpha}{\\alpha - 1} \\log \\int \\left( \\sum_x P(x) p(y|x)^\\alpha \\right)^{1/\\alpha} dy$$\n\nFor the additive Gaussian noise channel $Y = \\sqrt{\\mathsf{snr}} X + Z$, the conditional density is:\n$$p(y|x) = \\frac{1}{\\sqrt{2\\pi}} \\exp\\left( -\\frac{(y - \\sqrt{\\mathsf{snr}} x)^2}{2} \\right)$$\nso that:\n$$p(y|x)^\\alpha = (2\\pi)^{-\\alpha/2} \\exp\\left( -\\frac{\\alpha(y - \\sqrt{\\mathsf{snr}} x)^2}{2} \\right)$$\n\nIn the high-SNR regime ($\\mathsf{snr} \\to \\infty$), the separation between adjacent support points scaled by $\\sqrt{\\mathsf{snr}}$ tends to infinity, meaning the Gaussian bumps in the mixture $\\sum_x P(x) p(y|x)^\\alpha$ become non-overlapping. Consequently:\n$$\\left( \\sum_x P(x) p(y|x)^\\alpha \\right)^{1/\\alpha} \\approx \\sum_x P(x)^{1/\\alpha} \\left( p(y|x)^\\alpha \\right)^{1/\\alpha} = \\sum_x P(x)^{1/\\alpha} \\frac{1}{\\sqrt{2\\pi}} \\exp\\left( -\\frac{(y - \\sqrt{\\mathsf{snr}} x)^2}{2} \\right)$$\n\nIntegrating over $y$ yields:\n$$\\int \\left( \\sum_x P(x) p(y|x)^\\alpha \\right)^{1/\\alpha} dy \\xrightarrow{\\mathsf{snr} \\to \\infty} \\sum_x P(x)^{1/\\alpha}$$\n\nSubstituting this back into the expression for $I_\\alpha(X; Y)$:\n$$\\lim_{\\mathsf{snr} \\to \\infty} I_\\alpha(X; Y) = \\frac{\\alpha}{\\alpha - 1} \\log \\sum_x P(x)^{1/\\alpha} = \\frac{1}{1 - 1/\\alpha} \\log \\sum_x P(x)^{1/\\alpha}$$\n\nComparing this with the definition of the Rényi entropy of order $\\beta$:\n$$H_\\beta(X) = \\frac{1}{1 - \\beta} \\log \\sum_x P(x)^\\beta$$\nwe identify:\n$$\\beta = \\frac{1}{\\alpha}$$\n\nANSWER: 1/\\alpha\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "3be1f13b-d86f-4207-913e-90efd6105431",
+    "status": "SUCCESS",
+    "duration_seconds": 43.451254,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9865,
+      "output_tokens": 5221,
+      "thinking_tokens": 4578,
+      "cache_read_tokens": 0,
+      "total_tokens": 15086
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

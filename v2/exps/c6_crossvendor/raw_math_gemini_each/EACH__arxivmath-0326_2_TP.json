@@ -1,0 +1,29 @@
+{
+  "job_id": "EACH__arxivmath-0326_2_TP",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-21T17:22:22Z",
+  "duration_s": 128.422,
+  "input_tokens": 12432,
+  "output_tokens": 14851,
+  "thinking_tokens": 13743,
+  "text": "To determine the correct critical degree $d_c$, we analyze the spectral properties of the two-particle generator $\\mathcal{G}$ governing the second-moment dynamics (the meeting process of two lineages) on the $d$-regular tree.\n\n### 1. Analysis of the Generator and Spectrum\n\nBy radial symmetry, tracking the distance $r = d(X, Y)$ between the two lineages yields the generator:\n$$\n\\begin{aligned}\n(\\mathcal{G}\\phi)(0) &= \\frac{d}{2}\\big(\\phi(1) - \\phi(0)\\big), \\\\\n(\\mathcal{G}\\phi)(1) &= \\frac{1}{2}\\big(\\phi(0) - \\phi(1)\\big) + (d-1)\\big(\\phi(2) - \\phi(1)\\big), \\\\\n(\\mathcal{G}\\phi)(r) &= \\big(\\phi(r-1) - \\phi(r)\\big) + (d-1)\\big(\\phi(r+1) - \\phi(r)\\big), \\quad r \\ge 2.\n\\end{aligned}\n$$\n\nThe reversible measure on distance states is $\\pi(0) = 1$ and $\\pi(r) = d(d-1)^{r-1}$ for $r \\ge 1$. \n\nFor the free recurrence $(d-1)\\phi(r+1) - (d-\\lambda)\\phi(r) + \\phi(r-1) = 0$ with $\\phi(r) = z^r$:\n- The continuous spectrum corresponds to $|z| = (d-1)^{-1/2}$, with bottom edge $\\lambda_2 = d - 2\\sqrt{d-1}$ (the spectral gap of the random walk).\n- An isolated bound state (discrete eigenvalue below the continuous spectrum) requires an ansatz $\\phi(r) = z^r$ that is **square-integrable** with respect to $\\pi$, which imposes the condition:\n  $$\\sum_{r=1}^\\infty z^{2r} (d-1)^{r-1} < \\infty \\iff z < \\frac{1}{\\sqrt{d-1}}.$$\n\n### 2. Boundary Equations\n\nApplying the boundary conditions at $r = 1$ and $r = 0$:\n1. At $r = 1$, using $(d-1)z^2 = (d-\\lambda)z - 1$, we find $\\phi(0) = 2 - z$.\n2. At $r = 0$, substituting $\\phi(0) = 2 - z$ and $\\phi(1) = z$ into $\\frac{d}{2}(\\phi(1) - \\phi(0)) = -\\lambda \\phi(0)$ together with the dispersion relation $\\lambda = d - (d-1)z - z^{-1}$ yields:\n   $$(z-1)\\big[(d-1)z^2 - (d-1)z + 2\\big] = 0.$$\n\nDiscarding the trivial mode $z = 1$, the bound state parameter $z$ must satisfy:\n$$(d-1)z^2 - (d-1)z + 2 = 0.$$\n\n### 3. Locating the Phase Transition\n\nThe bound state enters the $\\ell^2(\\pi)$ spectrum exactly when the smaller root $z_-$ crosses the threshold $(d-1)^{-1/2}$:\n$$(d-1)\\left(\\frac{1}{\\sqrt{d-1}}\\right)^2 - (d-1)\\left(\\frac{1}{\\sqrt{d-1}}\\right) + 2 = 0 \\implies 3 - \\sqrt{d-1} = 0 \\implies d - 1 = 9 \\implies d = 10.$$\n\n- For $d \\le 10$: Either roots are complex ($d \\le 8$) or real with $z_- \\ge (d-1)^{-1/2}$ ($d \\in \\{9, 10\\}$). No $\\ell^2$ bound state exists, and mixing is governed by the random walk rate $\\lambda_2$.\n- For $d > 10$: $z_- < (d-1)^{-1/2}$, creating a genuine square-integrable bound state with eigenvalue $\\beta_{\\text{bound}} < \\lambda_2$, leading to a slower mixing mechanism.\n\nThus, the exact critical degree is $d_c = 10$.\n\n- **Solution 1** incorrectly stops at the discriminant threshold $\\Delta \\ge 0$ ($d=9$), overlooking the normalizability condition in $\\ell^2(\\pi)$, and reaches $d_c = 8$.\n- **Solution 2** correctly sets up the radial operator, solves the boundary conditions, and applies the square-integrability condition to find $d_c = 10$.\n- **Solution 3** uses an oversimplified branching heuristic that fails to model the continuous-time coalescing dynamics.\n\nVERDICT 1: REJECT\nVERDICT 2: ACCEPT\nVERDICT 3: REJECT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "ff7b1911-07e5-4eb3-83ca-2ed555b3a83b",
+    "status": "SUCCESS",
+    "duration_seconds": 120.434992,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 12432,
+      "output_tokens": 14851,
+      "thinking_tokens": 13743,
+      "cache_read_tokens": 0,
+      "total_tokens": 27283
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

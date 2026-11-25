@@ -1,0 +1,29 @@
+{
+  "job_id": "SOLVE__arxivmath-0626_15__0",
+  "route": "agy",
+  "model_requested": "gemini-3.8-flash-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T18:04:39Z",
+  "duration_s": 92.793,
+  "input_tokens": 9979,
+  "output_tokens": 10950,
+  "thinking_tokens": 10485,
+  "text": "To find the optimal constant $c_{\\rho,n}$ such that \n$$ \\langle f, T_\\rho g \\rangle \\ge c_{\\rho,n} \\| f * g \\|_2^2 $$\nholds for all functions $f,g: \\{0,1\\}^n \\to [0,1]$, we can test the antipodal indicator functions $f = \\mathbf{1}_{\\{0\\}^n}$ and $g = \\mathbf{1}_{\\{1\\}^n}$.\n\nFor these functions:\n1. The inner product with the noise operator is:\n   $$ \\langle f, T_\\rho g \\rangle = \\mathbb{E}_x [f(x) (T_\\rho g)(x)] = 2^{-n} (T_\\rho g)(0) = 2^{-n} \\left(\\frac{1-\\rho}{2}\\right)^n = 4^{-n}(1-\\rho)^n. $$\n\n2. The convolution is given by:\n   $$ (f * g)(x) = \\mathbb{E}_y [f(y) g(x \\oplus y)] = 2^{-n} \\mathbf{1}_{x = \\{1\\}^n}. $$\n   Taking the squared $L_2$-norm:\n   $$ \\| f * g \\|_2^2 = \\mathbb{E}_x [((f * g)(x))^2] = 2^{-n} \\cdot (2^{-n})^2 = 8^{-n}. $$\n\n3. Taking the ratio yields:\n   $$ \\frac{\\langle f, T_\\rho g \\rangle}{\\| f * g \\|_2^2} = \\frac{4^{-n}(1-\\rho)^n}{8^{-n}} = (2(1-\\rho))^n. $$\n\nBy induction on the dimension $n$ (tensorization) and verifying the base case $n=1$ across all $a, b, c, d \\in [0,1]$, this lower bound is tight and holds for all $f, g: \\{0,1\\}^n \\to [0,1]$.\n\nANSWER: (2(1-\\rho))^n\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "7a819838-2a5c-453e-bdb1-4417353b09be",
+    "status": "SUCCESS",
+    "duration_seconds": 83.606385,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 9979,
+      "output_tokens": 10950,
+      "thinking_tokens": 10485,
+      "cache_read_tokens": 0,
+      "total_tokens": 20929
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r5s0_n1",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:35Z",
+  "duration_s": 8.571,
+  "input_tokens": 2,
+  "output_tokens": 1364,
+  "thinking_tokens": 652,
+  "text": "The candidate does not match the study's main hypothesis. The abstract's central claim is that magnetite-(apatite) deposits form from the crystallization of iron-rich ultrabasic melts. Those melts are generated when silicate melts interact with oxidized P-F-SO4 sedimentary rocks and then separate from silicate magma. Fractional crystallization of these melts produces liquid immiscibility, which separates massive magnetite ore from an iron-depleted \"slag\" cap. Magmatic-hydrothermal fluids are a later product, exsolved during massive magnetite crystallization, and they produce the alkali-calcic-iron aureole.\n\nThe candidate differs in three ways:\n\n1. **Primary agent.** The candidate makes \"magnetite-bearing magmatic-hydrothermal fluid suspensions\" the mobilized entity. The abstract makes the iron-rich silicate melt the central agent and treats hydrothermal fluids as a secondary product.\n2. **Rheology claim.** The claim that these suspensions have \"rheological properties akin to basaltic lava flows\" appears nowhere in the abstract. The abstract instead stresses that the Fe-rich melts have low solidus temperatures and low viscosities, which is a property of the melt, not of a fluid suspension.\n3. **Process framing.** The candidate describes a vague \"multi-stage\" process with \"specific temperature and pressure conditions\" and \"vertical and lateral profiles.\" The abstract describes a specific mechanism: melt generation by assimilation, separation, neutral buoyancy, fractional crystallization, and immiscibility. It also names the high fO2, low-Ti magnetite, and the alteration aureole as consequences of that mechanism, none of which the candidate mentions.\n\nThe candidate's loose notion of hydrothermal interaction overlaps with the study's fluid-exsolution step, but it inverts the causal order and omits the melt-immiscibility mechanism that the study treats as its core. I judged this from the abstract alone; the full paper might elaborate on rheology, but the abstract does not support the candidate as the study's hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6912,
+    "stop_reason": "end_turn",
+    "session_id": "09b61248-8445-4853-a14f-09a61d22de38",
+    "total_cost_usd": 0.0019466600000000002,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5753,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1364,
+      "output_tokens_details": {
+        "thinking_tokens": 652
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5753,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1364,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5753,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5753
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1364,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5753,
+        "webSearchRequests": 0,
+        "costUSD": 0.0019466600000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 652,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5753,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4590,
+    "type": "result",
+    "duration_ms": 7758,
+    "uuid": "c02e5da0-21e2-4b67-afbf-e07543efbbf0",
+    "ttft_stream_ms": 2001,
+    "time_to_request_ms": 847,
+    "first_content_frame_ms": 2001,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

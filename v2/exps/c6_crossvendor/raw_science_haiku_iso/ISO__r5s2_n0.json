@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r5s2_n0",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:28:50Z",
+  "duration_s": 7.579,
+  "input_tokens": 2,
+  "output_tokens": 1388,
+  "thinking_tokens": 555,
+  "text": "The candidate does not match the study's hypothesis. The abstract's central claim is that magnetite-(apatite) ore forms from the crystallization of iron-rich ultrabasic **melts**, generated when silicate melts interact with oxidized P-F-SO4-bearing sedimentary rocks. Those melts separate from silicate magma through assimilation, then form massive magnetite by fractional crystallization and melt immiscibility, with a slag-like iron-depleted cap above it. Magmatic-hydrothermal fluids are a secondary consequence: high fluid pressure from magnetite crystallization drives the alkali-calcic alteration aureole.\n\nThe candidate differs on several points:\n\n- **Central mechanism:** The candidate makes \"high-temperature, iron-rich magmatic fluids\" the主 agent. The study makes iron-rich melts the主 agent, with fluids arising later.\n- **Host-rock role:** The study's key process is interaction with oxidized P-F-SO4 sedimentary rocks, which generates the iron-rich melt. The candidate only says \"reactive volcanic host rocks\" and never mentions sedimentary rocks, phosphorus, fluorine, or sulfate.\n- **Absent processes:** The candidate does not mention melt immiscibility, fractional crystallization, the massive magnetite body, the slag cap, or the Ti-poor magnetite result (Ti acting as an incompatible element). These are core elements of the study.\n- **Unsupported specifics:** The candidate's ~900 °C and ~3 kbar conditions do not appear in the abstract. The abstract instead stresses that the deposit style depends on emplacement depth and melt composition, and that these systems are more akin to carbonatite and ultramafic systems than to intermediate-felsic magmatic-hydrothermal ones. The candidate's framing also fits a volcanic setting, whereas the study covers deep to subaerial emplacement.\n- **Nature of the text:** The candidate reads as a proposed research program (\"will be systematically analyzed,\" \"will be conducted\"). It is not a hypothesis the abstract's evidence supports. The study's evidence bears on a genetic model; it does not call for δ⁵⁶Fe, SIMS, or LA-ICP-MS work on fluid evolution.\n\nThe candidate shares only the broad topic of iron oxide ore formation with magmatic fluids and host-rock reaction, which is not enough to count as the study's main hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6613,
+    "stop_reason": "end_turn",
+    "session_id": "1aa7fddc-dfac-4c16-9500-9129108ed8d2",
+    "total_cost_usd": 0.00200926,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6006,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1388,
+      "output_tokens_details": {
+        "thinking_tokens": 555
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6006,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1388,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6006,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6006
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1388,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6006,
+        "webSearchRequests": 0,
+        "costUSD": 0.00200926,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 555,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6006,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 3402,
+    "type": "result",
+    "duration_ms": 6915,
+    "uuid": "59785c63-33bb-4c66-b6a0-9de40e6395a7",
+    "ttft_stream_ms": 1172,
+    "time_to_request_ms": 302,
+    "first_content_frame_ms": 1172,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

@@ -1,0 +1,29 @@
+{
+  "job_id": "ISO__arxivmath-0526_20_r0",
+  "route": "agy",
+  "model_requested": "gpt-oss-120b-medium",
+  "model_returned": null,
+  "timestamp_utc": "2026-11-20T12:37:09Z",
+  "duration_s": 23.048,
+  "input_tokens": 4872,
+  "output_tokens": 1709,
+  "thinking_tokens": 0,
+  "text": "The proposed solution correctly identifies the spectrum of the unitary Cayley graph \\(X=\\operatorname{Cay}(\\mathbb Z_{2p},\\mathbb Z_{2p}^{\\times})\\) and uses the circulant structure to write the transition amplitudes in closed form.  \n\nFrom the eigenvalue classification we obtain the expressions for the matrix entries \\(U(t)_{0,d}\\). The requirement that all amplitudes to vertices other than \\(0\\) and the antipode \\(p\\) vanish forces \\(\\sin\\!\\big(\\tfrac{p t}{2}\\big)=0\\), i.e. \\(t=\\tfrac{2\\pi m}{p}\\) with \\(m\\in\\mathbb Z_{>0}\\).  \n\nAt such times the amplitudes reduce to  \n\\[\nU(t)e_{0}= \\cos t\\,e_{0}+ i\\sin t\\,e_{p},\n\\]\nso a genuine fractional revival occurs provided \\(\\sin t\\neq0\\). The smallest positive integer \\(m\\) that satisfies this while keeping \\(\\sin t\\neq0\\) is \\(m=1\\), giving the minimal revival time  \n\\[\nt^{*}= \\frac{2\\pi}{p}.\n\\]\n\nThe derivation matches known special cases (e.g., \\(p=3\\) yields the well‑known fractional revival on the 6‑cycle) and there are no hidden steps or missing eigenvalue contributions. Thus the closed‑form expression \\(t^{*}=2\\pi/p\\) is correct.\n\n**Verdict:** the final answer is correct.  \n\nVERDICT: ACCEPT\n",
+  "raw_meta": {
+    "returncode": 0,
+    "conversation_id": "dcee8cab-8c3e-4c46-b53d-8796d32f07f5",
+    "status": "SUCCESS",
+    "duration_seconds": 14.859378,
+    "num_turns": 1,
+    "usage": {
+      "input_tokens": 4872,
+      "output_tokens": 1709,
+      "thinking_tokens": 0,
+      "cache_read_tokens": 4416,
+      "total_tokens": 6581
+    },
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

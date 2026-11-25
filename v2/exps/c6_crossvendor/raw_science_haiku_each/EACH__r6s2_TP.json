@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r6s2_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:31:21Z",
+  "duration_s": 9.279,
+  "input_tokens": 2,
+  "output_tokens": 1432,
+  "thinking_tokens": 716,
+  "text": "The abstract supports Hypothesis 2 only. It is a broad framing: tailor nanofluid properties, optimize MQL delivery, and understand the tribological and heat-transfer mechanisms. The review's content matches that framing: preparation, properties, delivery equipment, atomization, a mapping from nanofluid parameters to machining performance, and interface mechanisms. It is vague and not directly testable, but it is the study's main thrust.\n\nHypotheses 1, 3, and 4 each commit to specific materials and quantitative targets that the abstract does not report:\n\n- **Hypothesis 1** names SiO2 at 2% w/v plus 10% v/v magnetorheological fluid, and claims at least 40% less tool wear and 30% better Ra. The abstract mentions no MR fluid and no electrostatic atomization. Its only SiO2-free numbers are for alumina and CuO-free carbon nanotubes, so these specifics are unsupported.\n- **Hypothesis 3** proposes a real-time, sensor-driven adjustment of CuO concentration in bio-ester oil, with at least 20% less tool wear, 15% better surface finish, and 10% lower specific cutting energy on AISI 1045 and AlSi10Mg. The abstract mentions none of the CuO, the dynamic control, the sensing, or the alloys, and reports no such figures.\n- **Hypothesis 4** claims SiO2 in a biolubricant with electrostatic atomization gives at least 30% lower friction and 25% lower wear in turning at 100 m/min. The abstract's friction figure is an 85% reduction for jatropha oil with alumina nanoparticles, not SiO2 and not 30%. Its tool-life figure (177–230% in hard milling) is also for alumina. Nothing supports the turning-specific SiO2 claim.\n\nThe abstract's quantitative results are for alumina and carbon nanotube nanofluids, so the specific hypotheses are not supported by this study.\n\nVERDICT 1: REJECT\nVERDICT 2: ACCEPT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 8083,
+    "stop_reason": "end_turn",
+    "session_id": "592d9fc5-9a03-493c-aeec-9fe468ae392d",
+    "total_cost_usd": 0.00217506,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6725,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1432,
+      "output_tokens_details": {
+        "thinking_tokens": 716
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6725,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1432,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6725,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6725
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1432,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6725,
+        "webSearchRequests": 0,
+        "costUSD": 0.00217506,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 716,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6725,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 5412,
+    "type": "result",
+    "duration_ms": 8568,
+    "uuid": "1b6e45b6-1b6b-4b21-8a2f-35098ecff249",
+    "ttft_stream_ms": 2433,
+    "time_to_request_ms": 481,
+    "first_content_frame_ms": 2433,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

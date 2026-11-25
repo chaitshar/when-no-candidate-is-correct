@@ -1,0 +1,117 @@
+{
+  "job_id": "haiku__PICK__arxivmath-0226_2_TP__rep2",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:46:00Z",
+  "duration_s": 14.176,
+  "input_tokens": 2,
+  "output_tokens": 2741,
+  "thinking_tokens": 2271,
+  "text": "Solution 1 is the most plausible, though I can't verify it against the source paper.\n\n- **Solution 2** gives velocity and density both $H^{1/2}$, sum 1. Its premise is a streamfunction with a $\\delta\\ln|\\delta|$ singularity, which makes the velocity $u'=\\psi_y$ behave like $\\ln|\\delta|$. That reasoning drops a derivative: $u'$ is one derivative rougher than $\\psi$, so the velocity threshold it reports is too low.\n- **Solution 3** gives velocity $H^{3/2}$. That contradicts the homogeneous limit, where the known Lin–Zeng-type velocity threshold is $H^{5/2}$ (vorticity $H^{3/2}$). Its density threshold also rests on an unjustified claim that $\\phi(y_c)=0$.\n- **Solution 1** reproduces the homogeneous threshold ($s_v = 5/2$ when $\\bar\\rho'=0$), and its scaling argument for the density ($\\rho_1 \\sim \\sqrt{\\epsilon}$ at width $\\sqrt{\\epsilon}$, giving $s_\\rho = 3/2$) is internally consistent. Its critical-layer scaling is heuristic, though, and I have not checked the density exponent against the source paper. The sum is therefore probably 4, but that is not confirmed.\n\nCHOICE: 1",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 13116,
+    "stop_reason": "end_turn",
+    "session_id": "41d7a9d6-ba0c-467a-a147-de7f8842e0a5",
+    "total_cost_usd": 0.00156815,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 19745,
+      "output_tokens": 2741,
+      "output_tokens_details": {
+        "thinking_tokens": 2271
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2741,
+          "cache_read_input_tokens": 19745,
+          "cache_creation_input_tokens": 0,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 0
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2741,
+        "cacheReadInputTokens": 19745,
+        "cacheCreationInputTokens": 0,
+        "webSearchRequests": 0,
+        "costUSD": 0.00156815,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2271,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 0,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 11366,
+    "type": "result",
+    "duration_ms": 13445,
+    "uuid": "3894e5f0-bad0-44cd-a197-49d07de08039",
+    "ttft_stream_ms": 1542,
+    "time_to_request_ms": 327,
+    "first_content_frame_ms": 1542,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

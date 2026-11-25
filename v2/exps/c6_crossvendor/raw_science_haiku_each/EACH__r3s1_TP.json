@@ -1,0 +1,117 @@
+{
+  "job_id": "EACH__r3s1_TP",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:30:42Z",
+  "duration_s": 7.625,
+  "input_tokens": 2,
+  "output_tokens": 1323,
+  "thinking_tokens": 736,
+  "text": "The abstract is a narrative review. It reports no experiments, measurements, or quantitative results, so it cannot confirm any hypothesis's specific claims.\n\n- **Hypothesis 1** specifies an acoustic microfluidic and EIS platform with numeric parameters (1-5 MHz, 1 Hz-1 MHz, 100 µL/min, 98.5% purity, >97% yield). None of this appears in the abstract. The abstract mentions microfluidics only as a novel EV isolation approach it outlines, not a specific design. REJECT.\n- **Hypothesis 2** is the closest match in direction. The abstract says new microfluidic approaches \"show great potential\" for isolating and characterizing EVs and that their strengths and limitations are outlined. That aligns with the review's central theme. However, the abstract does not claim or demonstrate that microfluidics \"significantly\" improves purity, yield, or specificity, and it does not separate label-free from label-based methods. I accept it as the main hypothesis the review's framing supports, but only in its general form, with the \"significant improvement\" wording unsupported by the abstract.\n- **Hypothesis 3** depends on the PNB thermosensitive copolymer, the aptamer panel, a ~32°C phase transition, and comparison against ultrafiltration in MSC cultures. None of this is in the abstract. REJECT.\n- **Hypothesis 4** depends on the PNB copolymer combined with SEC and a multi-aptamer system, plus quantitative targets (>30% yield increase, ≥90% purity). None of this is in the abstract. REJECT.\n\nVERDICT 1: REJECT\nVERDICT 2: ACCEPT\nVERDICT 3: REJECT\nVERDICT 4: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 6386,
+    "stop_reason": "end_turn",
+    "session_id": "93379534-3c77-4933-9100-ee265c357af7",
+    "total_cost_usd": 0.00202296,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 6237,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 1323,
+      "output_tokens_details": {
+        "thinking_tokens": 736
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6237,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1323,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 6237,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 6237
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 1323,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 6237,
+        "webSearchRequests": 0,
+        "costUSD": 0.00202296,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 736,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6237,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 4414,
+    "type": "result",
+    "duration_ms": 6799,
+    "uuid": "024ae885-3f6b-4a07-a237-7c32201685d7",
+    "ttft_stream_ms": 1180,
+    "time_to_request_ms": 412,
+    "first_content_frame_ms": 1180,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}

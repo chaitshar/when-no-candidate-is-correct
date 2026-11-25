@@ -1,0 +1,117 @@
+{
+  "job_id": "ISO__r6s2_n3",
+  "route": "claude_cli",
+  "model_requested": "haiku",
+  "model_returned": "claude-haiku-5-5",
+  "timestamp_utc": "2026-11-19T22:29:02Z",
+  "duration_s": 4.861,
+  "input_tokens": 2,
+  "output_tokens": 666,
+  "thinking_tokens": 190,
+  "text": "The candidate is not supported by this study's evidence. The abstract is a review of nanofluid MQL machining, and it does not state a hypothesis of that kind. It makes no claim about TiO2 nanoparticles, the 20-40 nm size, the 0.5-1.0 vol% concentration, an adaptive or self-adjusting cooling mechanism, thermal conductivity rising from 0.15 to 0.45 W/mK, or a 35-85°C operating range.\n\nThe specific results it does report involve other materials:\n- Jatropha oil-based alumina nanofluids reduce the friction coefficient by 85% relative to dry conditions in friction and wear tests.\n- Alumina-based cutting fluid improves tool life by 177-230% in hard milling.\n- Carbon nanotubes raise the convective heat transfer coefficient of normal saline by 145.06%.\n\nThe abstract also frames its contribution as a review of preparation, properties, supply equipment, atomization, and the mapping between nanofluid parameters and machining performance across turning, milling, and grinding, plus a roadmap for future development. The candidate is a specific, untested prediction about a different nanoparticle and a temperature-responsive property that the abstract never mentions. The abstract also does not address the adaptive-property mechanism the candidate describes.\n\nThe candidate could be a reasonable future research direction, but this study does not support it as its hypothesis.\n\nVERDICT: REJECT",
+  "raw_meta": {
+    "returncode": 0,
+    "duration_api_ms": 3559,
+    "stop_reason": "end_turn",
+    "session_id": "40e82684-635b-4701-8d21-f829fcf5c84e",
+    "total_cost_usd": 0.00159966,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 5763,
+      "cache_read_input_tokens": 11386,
+      "output_tokens": 666,
+      "output_tokens_details": {
+        "thinking_tokens": 190
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 5763,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 666,
+          "cache_read_input_tokens": 11386,
+          "cache_creation_input_tokens": 5763,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 5763
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 666,
+        "cacheReadInputTokens": 11386,
+        "cacheCreationInputTokens": 5763,
+        "webSearchRequests": 0,
+        "costUSD": 0.00159966,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 190,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 5763,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "ttft_ms": 1927,
+    "type": "result",
+    "duration_ms": 3853,
+    "uuid": "866dac12-3c7b-44f5-b500-0503f7252dc8",
+    "ttft_stream_ms": 1277,
+    "time_to_request_ms": 297,
+    "first_content_frame_ms": 1277,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "credential_expires_at": "2026-12-16T06:34:57.192Z",
+    "attempts": 1
+  },
+  "status": "ok",
+  "error": null
+}
