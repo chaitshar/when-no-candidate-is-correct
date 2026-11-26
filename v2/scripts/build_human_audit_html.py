@@ -410,6 +410,21 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
     font-family: inherit;
   }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+  /* Math display (added 26 Nov 2026). Needs an internet connection to load KaTeX; without it the raw text is shown. */
+  div.box { margin: 0; padding: 10px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; overflow-x: auto; }
+  div.box.gold-box { background: #ecfdf5; border-color: #6ee7b7; }
+  div.textmath { white-space: pre-wrap; word-break: break-word; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 14px; line-height: 1.6; }
+  .ans-render { font-size: 19px; line-height: 1.5; padding: 2px 0 6px; }
+  .ans-render:empty { display: none; }
+  .ans-raw { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11.5px; color: #64748b; white-space: pre-wrap; word-break: break-word; }
+  .ans-raw::before { content: "as written: "; color: #94a3b8; }
+  .katex-display { margin: 0.5em 0; overflow-x: auto; overflow-y: hidden; }
+  .math-note { font-size: 12px; color: #64748b; margin: 6px 0 0; }
+</style>
 </head>
 <body>
 <header>
@@ -526,6 +541,95 @@ function updateProgress() {
   document.getElementById("overall-progress").textContent = totDone + " / " + totAll + " completed";
 }
 
+// ---- Math display (added 26 Nov 2026) ----
+const MATH_OPTS = {
+  delimiters: [
+    { left: "$$", right: "$$", display: true },
+    { left: "\\[", right: "\\]", display: true },
+    { left: "\\(", right: "\\)", display: false },
+    { left: "$", right: "$", display: false }
+  ],
+  throwOnError: false,
+  strict: "ignore"
+};
+
+// A text cut at the front ("...") can start in the middle of a formula. Re-open the formula so the rest pairs up.
+function fixTail(str) {
+  let s = String(str || "");
+  if (!s.startsWith("...")) return s;
+  const singles = (s.replace(/\\\$/g, "").replace(/\$\$/g, "").match(/\$/g) || []).length;
+  if (singles % 2 === 1) return "...$" + s.slice(3);
+  const firstClose = s.indexOf("\\)"), firstOpen = s.indexOf("\\(");
+  if (firstClose !== -1 && (firstOpen === -1 || firstClose < firstOpen)) return "...\\(" + s.slice(3);
+  const firstCloseD = s.indexOf("\\]"), firstOpenD = s.indexOf("\\[");
+  if (firstCloseD !== -1 && (firstOpenD === -1 || firstCloseD < firstOpenD)) return "...\\[" + s.slice(3);
+  return s;
+}
+
+function textBox(str) {
+  return `<div class="box textmath">${esc(fixTail(str))}</div>`;
+}
+
+// An answer is shown twice: typeset, and exactly as written underneath.
+function mathBox(tex, gold) {
+  const raw = esc(tex);
+  return `<div class="box ${gold ? "gold-box" : ""}"><div class="ans-render" data-tex="${raw}"></div><div class="ans-raw">${raw}</div></div>`;
+}
+
+function typeset() {
+  if (!window.katex) return;
+  document.querySelectorAll(".ans-render").forEach(el => {
+    const t = (el.getAttribute("data-tex") || "").trim();
+    if (!t) return;
+    if (/\$|\\\(|\\\[/.test(t)) {
+      el.textContent = t;
+      if (window.renderMathInElement) renderMathInElement(el, MATH_OPTS);
+    } else if (/[\\^_{}]/.test(t) || /^[\s0-9a-zA-Z+\-*\/().,=<>!|]{1,40}$/.test(t) && !/[a-zA-Z]{4,}/.test(t)) {
+      try { katex.render(t, el, { throwOnError: false, displayMode: false, strict: "ignore" }); }
+      catch (e) { el.textContent = t; }
+    } else {
+      el.textContent = t;
+    }
+  });
+  if (window.renderMathInElement) {
+    document.querySelectorAll(".textmath").forEach(el => { renderMathInElement(el, MATH_OPTS); renderBareBoxed(el); });
+  }
+}
+
+// Solutions often end with a bare \boxed{...} outside any $...$; typeset those too.
+function renderBareBoxed(el) {
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => (n.parentElement && n.parentElement.closest(".katex")) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT
+  });
+  const nodes = [];
+  while (walker.nextNode()) { if (walker.currentNode.nodeValue.indexOf("\\boxed{") !== -1) nodes.push(walker.currentNode); }
+  nodes.forEach(node => {
+    const text = node.nodeValue;
+    const frag = document.createDocumentFragment();
+    let pos = 0;
+    while (true) {
+      const start = text.indexOf("\\boxed{", pos);
+      if (start === -1) break;
+      let depth = 0, end = -1;
+      for (let i = start + 6; i < text.length; i++) {
+        if (text[i] === "{") depth++;
+        else if (text[i] === "}") { depth--; if (depth === 0) { end = i; break; } }
+      }
+      if (end === -1) break;
+      frag.appendChild(document.createTextNode(text.slice(pos, start)));
+      const span = document.createElement("span");
+      try { katex.render(text.slice(start, end + 1), span, { throwOnError: false, strict: "ignore" }); }
+      catch (e) { span.textContent = text.slice(start, end + 1); }
+      frag.appendChild(span);
+      pos = end + 1;
+    }
+    if (pos === 0) return;
+    frag.appendChild(document.createTextNode(text.slice(pos)));
+    node.parentNode.replaceChild(frag, node);
+  });
+}
+window.addEventListener("load", typeset);
+
 function esc(str) {
   return String(str || "")
     .replace(/&/g, "&amp;")
@@ -574,45 +678,45 @@ function render() {
         <div class="cand-card">
           <div class="cand-title">Candidate ${c.index}</div>
           <div class="block-label">Candidate Final Answer</div>
-          <pre class="box">${esc(c.answer)}</pre>
+          ${mathBox(c.answer)}
           <div class="block-label">Last 400 Chars of Reasoning</div>
-          <pre class="box">${esc(c.tail_reasoning)}</pre>
+          ${textBox(c.tail_reasoning)}
         </div>
       `).join("");
       bodyHtml = `
         <div class="block-label">Problem</div>
-        <pre class="box">${esc(it.problem)}</pre>
+        ${textBox(it.problem)}
         <div class="block-label">Official Answer</div>
-        <pre class="box gold-box">${esc(it.official_answer)}</pre>
+        ${mathBox(it.official_answer, true)}
         <div class="block-label">3 Candidate Solutions (Blinded)</div>
         <div class="cand-grid">${candsHtml}</div>
       `;
     } else if (currentTab === "b") {
       bodyHtml = `
         <div class="block-label">Problem</div>
-        <pre class="box">${esc(it.problem)}</pre>
+        ${textBox(it.problem)}
         <div class="block-label">Official Answer</div>
-        <pre class="box gold-box">${esc(it.official_answer)}</pre>
+        ${mathBox(it.official_answer, true)}
         <div class="block-label">Extracted Subject Answer (Attempt ${esc(it.attempt)})</div>
-        <pre class="box">${esc(it.extracted_answer)}</pre>
+        ${mathBox(it.extracted_answer)}
         <div class="block-label">Last 600 Chars of SOLVE Reply</div>
-        <pre class="box">${esc(it.tail_reply)}</pre>
+        ${textBox(it.tail_reply)}
       `;
     } else {
       const attHtml = it.attempts.map(a => `
         <div class="cand-card">
           <div class="cand-title">Attempt ${esc(a.attempt)}</div>
           <div class="block-label">Extracted Answer</div>
-          <pre class="box">${esc(a.extracted_answer)}</pre>
+          ${mathBox(a.extracted_answer)}
           <div class="block-label">Last 600 Chars of SOLVE Reply</div>
-          <pre class="box">${esc(a.tail_reply)}</pre>
+          ${textBox(a.tail_reply)}
         </div>
       `).join("");
       bodyHtml = `
         <div class="block-label">Problem</div>
-        <pre class="box">${esc(it.problem)}</pre>
+        ${textBox(it.problem)}
         <div class="block-label">Official Answer</div>
-        <pre class="box gold-box">${esc(it.official_answer)}</pre>
+        ${mathBox(it.official_answer, true)}
         <div class="block-label">Two SOLVE Attempts (Blinded)</div>
         <div class="cand-grid">${attHtml}</div>
       `;
@@ -635,6 +739,7 @@ function render() {
     `;
   }
   app.innerHTML = html;
+  typeset();
 }
 
 function downloadJSON() {
