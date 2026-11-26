@@ -1,6 +1,6 @@
 # When No Candidate Is Correct: study archive
 
-**Update, November 2026 (release `v2.1`).** The follow-up study, "Lineups Without a Culprit: AI Judges Pick a Wrong Answer More Often When They See All the Answers Together", is in [`v2/`](v2/README.md): paper, plans, locked pools, raw replies and analysis code. Everything below describes the first study (release `v1.0`), which is unchanged.
+**Update, November 2026 (release `v2.2`).** The follow-up study, "Lineups Without a Culprit: AI Judges Lower Their Bar When They See All the Answers Together", is in [`v2/`](v2/README.md): paper, plans, locked pools, raw replies and analysis code. Everything below describes the first study (release `v1.0`), which is unchanged.
 
 Data, code and records for the preprint "When No Candidate Is Correct: Pooled Selection Raises False Choices by Claude Judges" by Chaitanya Sharma (`paper/main.pdf`).
 
