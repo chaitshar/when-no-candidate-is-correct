@@ -47,6 +47,17 @@ git diff --stat paper/
 
 The last command should show no change in `paper/results.tex`, `paper/results_extra.tex` and the `.svg` figures. The PDF figures were made from the SVG files with a headless browser.
 
+## Recompute everything from the raw replies
+
+This is the full check. It reads the raw judge replies, recomputes every rate, range and test, and compares the result with the published numbers. It needs only Python 3.9 or newer (no extra packages) and takes about 30 seconds. Run it from this `v2/` folder.
+
+```
+python3 autoloop/analysis_b.py --root . --c3-root .. --out /tmp/results_check.json
+python3 autoloop/diff_results.py --a results/results_b.json --b /tmp/results_check.json
+```
+
+The second command should end with `Mismatches: 0`. `analysis_a.py` is the second, separately written program and takes the same kind of arguments (`--help` lists them).
+
 ## Limits to keep in mind
 
 - The mechanism checks (C4, C5) and two of the three fixes use one judge, claude-haiku-5-5.
